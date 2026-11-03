@@ -44,7 +44,7 @@ p1 = f'''<section class="page">{header('Frango com Catupiry', 'Receita da produ�
 <div class="dark"><h3>Antes de começar</h3><ul>
 <li>Mãos lavadas, touca e avental</li><li>Frango e muçarela porcionados e na geladeira</li>
 <li>Bancada limpa e salpicada de farinha</li><li>Cortador de pizza e colher funda</li>
-<li>Balança conferida</li><li>Bisnaga ou colher do catupiry</li>
+<li>Balança conferida</li><li>Bisnaga do catupiry com o bico padrão</li>
 <li>Forno a lenha no ponto (340–380 °C)</li><li>Pá de pizza e caixas</li></ul></div>
 </div>{foot('Grande: 8 fatias · Média: 5 · Broto: 4')}</section>'''
 

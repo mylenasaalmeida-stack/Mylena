@@ -46,7 +46,7 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Cortador de pizza (carretilha)', 'Aparar a borda da massa aberta e cortar as fatias'],
         ['Colher funda (padrão)', 'Aplicar e espalhar o molho (150 ml na Grande)'],
         ['Balança', 'Conferir bolinha, muçarela, frango e azeitona'],
-        ['Bisnaga ou colher para catupiry', 'Aplicar as listras de catupiry'],
+        ['Bisnaga do catupiry, com bico padrão', 'Aplicar as listras de catupiry (ver guia do catupiry)'],
         ['Pá de pizza, forno a lenha e caixa', 'Assar a pizza (girar e retirar) e embalar para entrega'],
     ], widths=['40%', '60%'])
 
@@ -123,7 +123,7 @@ p6 = sec('09', 'Controle de qualidade e falhas comuns') + '<h3 class="sub" style
         ['Frango ressecado ou queimado', 'Frango por cima sem proteção ou forno quente demais', 'Distribuir o frango sobre a muçarela e conferir o tempo de 3 a 4 min'],
         ['Frango concentrado no centro', 'Distribuição apressada', 'Espalhar os 140 g por toda a pizza, até perto da borda'],
         ['Pizza encharcada', 'Molho demais ou frango muito úmido', 'Medir o molho com a colher funda e escorrer o frango antes de usar'],
-        ['Catupiry queimado ou escorrido', 'Listras grossas ou forno muito quente', 'Padronizar a bisnaga e o comprimento das listras'],
+        ['Catupiry queimado ou escorrido', 'Listras grossas ou forno muito quente', 'Usar o bico padrão na bisnaga e o mesmo comprimento de listra'],
         ['Borda queimada ou pálida', 'Forno quente ou frio demais; tempo errado', 'Conferir o ponto do forno e o tempo de 3 a 4 min'],
         ['Pizza maior ou menor que o padrão', 'Bolinha sem peso e abertura no olho', 'Pesar a bolinha e usar gabarito'],
     ], widths=['26%', '34%', '40%']) + sec('10', 'Armazenamento dos ingredientes') + table(
@@ -140,7 +140,7 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
     + sec('12', 'Melhorias recomendadas') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         '<b>Pré-porcionar:</b> deixar muçarela (280 g) e frango (140 g) já pesados em porções, para a montagem sair sempre igual.',
         '<b>Padronizar a colher funda:</b> conferir uma vez que a colher entrega os 150 ml de molho e marcar essa colher para a Grande.',
-        '<b>Padronizar a listra de catupiry:</b> usar sempre a mesma bisnaga e o mesmo comprimento de listra.',
+        '<b>Padronizar a listra de catupiry:</b> usar a bisnaga sempre com o mesmo bico e o mesmo comprimento de listra (ver guia do catupiry).',
         '<b>Peso da bolinha e gabarito:</b> pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
         '<b>Fotos da Grande:</b> fotografar a montagem de uma pizza Grande para completar o guia visual.']) + '</ul>' \
     + sec('13', 'Orientações finais') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [

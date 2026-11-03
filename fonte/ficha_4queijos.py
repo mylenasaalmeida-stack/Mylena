@@ -45,7 +45,7 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Colher funda (padrão)', 'Aplicar e espalhar o molho (150 ml na Grande)'],
         ['Balança', 'Conferir bolinha, muçarela, gorgonzola e provolone'],
         ['Faca e tábua dos queijos', 'Picar o gorgonzola'],
-        ['Bisnaga ou colher para catupiry', 'Aplicar as listras de catupiry'],
+        ['Bisnaga do catupiry, com bico padrão', 'Aplicar as listras de catupiry (ver guia do catupiry)'],
         ['Pá de pizza, forno a lenha e caixa', 'Assar a pizza (girar e retirar) e embalar para entrega'],
     ], widths=['40%', '60%'])
 
@@ -134,7 +134,7 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
     + sec('12', 'Melhorias recomendadas') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         '<b>Pré-porcionar os queijos:</b> deixar muçarela (280 g), gorgonzola (24 g) e provolone (75 g) já pesados em porções, para a montagem sair sempre igual.',
         '<b>Padronizar a colher funda:</b> conferir uma vez que a colher entrega os 150 ml de molho e marcar essa colher para a Grande.',
-        '<b>Padronizar a listra de catupiry:</b> usar sempre a mesma bisnaga e o mesmo comprimento de listra, para todas as pizzas saírem iguais.',
+        '<b>Padronizar a listra de catupiry:</b> usar a bisnaga sempre com o mesmo bico e o mesmo comprimento de listra (ver guia do catupiry).',
         '<b>Peso da bolinha e gabarito:</b> hoje o tamanho é definido no olho e a borda é aparada com o cortador. Pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
         '<b>Validar Média e Broto:</b> medir os diâmetros reais e testar as porções estimadas da seção 07 com o pizzaiolo.',
         '<b>Padronizar o orégano:</b> definir uma medida fixa (por exemplo, uma colher-medida) no lugar do “a olho”.']) + '</ul>' \
