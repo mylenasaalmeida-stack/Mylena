@@ -12,7 +12,7 @@ cover = f'''<section class="page cover"><div class="chk top"></div>
 <p class="lead">Muçarela, gorgonzola, provolone e listras de catupiry sobre molho de tomate artesanal, finalizada com orégano e assada em forno a lenha.</p>
 <div class="stats">
 <div class="st"><b>280 g</b><small>de muçarela por pizza Grande</small></div>
-<div class="st"><b>4 listras</b><small>de catupiry por cima dos queijos (a confirmar)</small></div>
+<div class="st"><b>Catupiry</b><small>em listras por cima dos queijos · quantidade de listras de catupiry a confirmar com a equipe</small></div>
 <div class="st"><b>3 a 4 min</b><small>no forno a lenha, a 340 a 380 °C</small></div>
 </div>
 <div class="ver">{VER}</div>
@@ -35,9 +35,9 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Muçarela', '280 g', 'Por toda a massa, sobre o molho', 'Base de queijo'],
         ['Gorgonzola', f'24 g', 'Picado, sobre a muçarela', 'Sabor forte'],
         ['Provolone', '75 g', f'Picado · ralado ou em pedaços {AC}', 'Sabor defumado'],
-        ['Catupiry', '4 listras', f'Em listras por cima dos queijos · nº de listras {AC}', 'Cremosidade'],
+        ['Catupiry', '<span class="tbc">a confirmar</span>', 'Em listras por cima · quantidade de listras de catupiry a confirmar com a equipe', 'Cremosidade'],
         ['Orégano', 'a olho', 'Salpicado por cima, antes do forno', 'Aroma'],
-    ], num_cols=(1,), widths=['27%', '12%', '44%', '17%']) \
+    ], num_cols=(1,), widths=['25%', '13%', '45%', '17%']) \
     + '<p class="note">Quantidades por pizza Grande. O catupiry é medido em listras e o orégano vai a olho.</p>' \
     + sec('03', 'Equipamentos e utensílios') + table(['Item', 'Uso'], [
         ['Mesa / bancada higienizada', 'Abrir a massa e montar a pizza'],
@@ -55,24 +55,24 @@ steps = [
     ('Aplicar 150 ml de molho', ' com a colher funda (padrão) e espalhar por toda a massa.' + pcc(2)),
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
     ('Distribuir o gorgonzola', ' (24 g) e o <b>provolone</b> (75 g), picados, por cima da muçarela.' + pcc(2)),
-    ('Aplicar o catupiry', ' em <b>4 listras</b> por cima dos queijos.' + pcc(2) + ac('Nº DE LISTRAS A CONFIRMAR')),
+    ('Aplicar o catupiry', ' em listras por cima dos queijos (<span class="tbc">quantidade de listras de catupiry a confirmar com a equipe</span>).' + pcc(2)),
     ('Finalizar com orégano', ' a olho, por cima de tudo, antes de ir ao forno.' + foto(2)),
     ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até os queijos derreterem e a borda dourar.' + pcc(3)),
     ('Retirar, cortar', ' em 8 fatias (Grande) e embalar na caixa ou servir na hora.' + foto(3)),
 ]
 st = ''.join(f'<div class="s"><span class="i">{i:02d}</span><p><b>{a}</b>{b}</p></div>' for i, (a, b) in enumerate(steps, 1))
 flow = '<div class="flow">' + ''.join(f'<div><b>{a}</b><small>{b}</small></div>' for a, b in [
-    ('Abrir', 'e aparar'), ('Molho', '150 ml'), ('Muçarela', '280 g'), ('Gorgonzola', 'e provolone'), ('Catupiry', '4 listras'), ('Orégano', 'e forno')]) + '</div>'
+    ('Abrir', 'e aparar'), ('Molho', '150 ml'), ('Muçarela', '280 g'), ('Gorgonzola', 'e provolone'), ('Catupiry', 'em listras'), ('Orégano', 'e forno')]) + '</div>'
 p3 = sec('04', 'Modo de montagem') + flow + f'<div class="steps">{st}</div>' + '<h3 class="sub">Pontos críticos de controle (PCC)</h3>' + table(
     ['PCC', 'O que controlar', 'Limite / referência'], [
         ['1 · Higienização', 'Mesa, utensílios e mãos limpos; queijos picados e porcionados refrigerados até o uso', 'Conforme RDC 216/2004 e rótulo dos fabricantes'],
-        ['2 · Porções', 'Medida e peso de cada ingrediente por pizza', 'Grande: molho 150 ml · muçarela 280 g · gorgonzola 24 g · provolone 75 g · catupiry 4 listras'],
+        ['2 · Porções', 'Medida e peso de cada ingrediente por pizza', 'Grande: molho 150 ml · muçarela 280 g · gorgonzola 24 g · provolone 75 g · catupiry: quantidade de listras de catupiry a confirmar com a equipe'],
         ['3 · Forno', 'Temperatura e tempo de forno', '340 a 380 °C · 3 a 4 min · queijos derretidos, borda dourada'],
     ], widths=['18%', '44%', '38%'])
 
 fotos = [
     (1, 'Massa aberta e aparada', 'Etapa 2', 'Pizzaiolo aparando o excesso da borda com o cortador de pizza, na mesa enfarinhada, deixando a massa redonda.', ''),
-    (2, 'Pronta para o forno', 'Etapas 3 a 7', 'Molho por toda a massa, muçarela, pedaços de gorgonzola e provolone, listras onduladas de catupiry e orégano por cima. Na foto aparecem cerca de 6 listras, não 4 (a confirmar).', ''),
+    (2, 'Pronta para o forno', 'Etapas 3 a 7', 'Molho por toda a massa, muçarela, pedaços de gorgonzola e provolone, listras onduladas de catupiry e orégano por cima. Na foto aparecem cerca de 6 listras.', ''),
     (3, 'Pizza pronta na caixa', 'Etapas 8 e 9', 'Pizza assada já na caixa: muçarela dourada, gorgonzola derretido, listras de catupiry levemente douradas, orégano visível e borda assada.', ' wide'),
 ]
 gal = ''.join(f'''<div class="ph{w}"><div class="im"><img src="img/q4-foto{n}.jpg"><span class="lb">FOTO {n}</span></div>
@@ -87,7 +87,7 @@ p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão espe
     ['Molho', 'Cobrindo toda a massa, sem encharcar nem deixar áreas secas'],
     ['Aroma / sabor', 'Queijos equilibrados: gorgonzola presente sem dominar; provolone defumado; catupiry cremoso; orégano sem queimar'],
 ], widths=['20%', '80%']) + sec('07', 'Padrão por tamanho') + \
-    f'<p class="note" style="margin:-1mm 0 3mm">Grande: quantidades definidas. Média e Broto {EST}: proporcionais ao número de fatias (Média 5/8 · Broto 4/8 da Grande), com as listras de catupiry arredondadas. Hoje o tamanho é definido no olho; os diâmetros reais de Média e Broto ainda precisam ser medidos.</p>' + table(
+    f'<p class="note" style="margin:-1mm 0 3mm">Grande: quantidades definidas. Média e Broto {EST}: proporcionais ao número de fatias (Média 5/8 · Broto 4/8 da Grande). Hoje o tamanho é definido no olho; os diâmetros reais de Média e Broto ainda precisam ser medidos.</p>' + table(
     ['Item', 'Grande · 8 fatias', 'Média · 5 fatias (est.)', 'Broto · 4 fatias (est.)'], [
         ['Diâmetro', '≈35 cm (est.)', '≈28 cm', '≈25 cm'],
         ['Massa (bolinha)', '320 g', '≈200 g', '≈160 g'],
@@ -96,7 +96,7 @@ p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão espe
         ['Muçarela', '280 g', '≈175 g', '≈140 g'],
         ['Gorgonzola', '24 g', '≈15 g', '≈12 g'],
         ['Provolone', '75 g', '≈47 g', '≈38 g'],
-        ['Catupiry', '4 listras', '≈3 listras', '≈2 listras'],
+        ['Catupiry', '<span class="tbc">a confirmar com a equipe</span>', '<span class="tbc">a confirmar com a equipe</span>', '<span class="tbc">a confirmar com a equipe</span>'],
         ['Orégano', 'a olho', 'a olho', 'a olho'],
     ], num_cols=(1, 2, 3), widths=['28%', '24%', '24%', '24%']) + \
     '<p class="note">Atenção: 320 g é o <b>peso</b> da bolinha da Grande, não o diâmetro. Como padronizar o tamanho: ver o material “Materiais e sugestão de compras” (gabarito, marcação na bancada, etiqueta por cor e conferência na pá).</p>' \
@@ -139,7 +139,7 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
         '<b>Validar Média e Broto:</b> medir os diâmetros reais e testar as porções estimadas da seção 07 com o pizzaiolo.',
         '<b>Padronizar o orégano:</b> definir uma medida fixa (por exemplo, uma colher-medida) no lugar do “a olho”.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        'Se são 4 listras de catupiry: a foto da pizza crua mostra cerca de 6 listras mais curtas.',
+        'Quantidade de listras de catupiry por tamanho (a foto da pizza crua mostra cerca de 6 listras mais curtas).',
         'Se o provolone vai ralado ou em pedaços.',
         'Validade dos queijos picados e marca dos queijos.',
         'Diâmetros reais de Média e Broto e teste das porções estimadas.']) + '</ul></div>' \

@@ -30,17 +30,17 @@ ings = [
     ('Muçarela', 'por toda a massa', '280 g'),
     ('Gorgonzola', 'picado', '24 g'),
     ('Provolone', 'picado · ralado ou pedaços a confirmar', '75 g'),
-    ('Catupiry', 'em listras · nº de listras a confirmar', '4 listras'),
+    ('Catupiry', 'em listras · quantidade de listras de catupiry a confirmar com a equipe', 'a confirmar'),
     ('Orégano', 'por cima, antes do forno', 'a olho'),
 ]
 rows = ''.join(f'<div class="r"><span class="bx"></span><div class="t">{a}<small>{b}</small></div>'
-               f'<div class="q{" o" if q == "a olho" else ""}">{q}</div></div>' for a, b, q in ings)
+               f'<div class="q{" o" if q in ("a olho", "a confirmar") else ""}">{q}</div></div>' for a, b, q in ings)
 dot = lambda c: f'<span class="dt" style="background:{c}"></span>'
 sizes = '<table><thead><tr><th>Tamanho</th><th>Fatias</th><th>Bolinha</th><th>Molho</th><th>Muçarela</th><th>Gorgonzola</th><th>Provolone</th><th>Catupiry</th></tr></thead><tbody>' + ''.join(
     f'<tr><td>{d}{t}</td>' + ''.join(f'<td>{x}</td>' for x in v) + '</tr>' for d, t, v in [
-        (dot('#d7141a'), '<b>Grande</b>', ['8', '320 g', '150 ml', '280 g', '24 g', '75 g', '4 listras']),
-        (dot('#f2b705'), 'Média <span class="est">(est.)</span>', ['5', '≈200 g', '≈95 ml', '≈175 g', '≈15 g', '≈47 g', '≈3 listras']),
-        (dot('#3aa63a'), 'Broto <span class="est">(est.)</span>', ['4', '≈160 g', '≈75 ml', '≈140 g', '≈12 g', '≈38 g', '≈2 listras']),
+        (dot('#d7141a'), '<b>Grande</b>', ['8', '320 g', '150 ml', '280 g', '24 g', '75 g', 'a confirmar']),
+        (dot('#f2b705'), 'Média <span class="est">(est.)</span>', ['5', '≈200 g', '≈95 ml', '≈175 g', '≈15 g', '≈47 g', 'a confirmar']),
+        (dot('#3aa63a'), 'Broto <span class="est">(est.)</span>', ['4', '≈160 g', '≈75 ml', '≈140 g', '≈12 g', '≈38 g', 'a confirmar']),
     ]) + '</tbody></table>'
 
 p1 = f'''<section class="page">{header(NOME, 'Receita da produção', 1)}<div class="in">
@@ -68,9 +68,9 @@ B = blk('B', 'Molho e queijos',
         + '<div class="al"><b>Pese os queijos.</b> Gorgonzola demais domina o sabor; queijo demais deixa a pizza oleosa.</div>',
         tip('Gorgonzola em pedaços pequenos e espalhados por toda a pizza'))
 C = blk('C', 'Catupiry e orégano',
-        st(6, 'Aplique o <b>catupiry em 4 listras</b> por cima dos queijos.')
+        st(6, 'Aplique o <b>catupiry em listras</b> por cima dos queijos.')
         + st(7, 'Finalize com <b>orégano a olho</b> por cima de tudo.')
-        + '<div class="al"><b>Atenção:</b> o número de listras ainda está <span class="tbc">a confirmar</span>. A foto mostra cerca de 6 listras mais curtas.</div>',
+        + '<div class="al"><b>Atenção:</b> <span class="tbc">quantidade de listras de catupiry a confirmar com a equipe</span>. A foto mostra cerca de 6 listras mais curtas.</div>',
         pic(2, 'Pronta para o forno', 't'))
 D = blk('D', 'Assar',
         st(8, 'Leve ao <b>forno a lenha</b> com a pá, a <b>340–380 °C</b>, por <b>3 a 4 minutos</b>. Gire para assar por igual.')
