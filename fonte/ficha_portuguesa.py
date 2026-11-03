@@ -25,7 +25,7 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
     ['Tamanho de referência', f'Grande · 8 fatias · bolinha de 320 g · ≈35 cm {EST} (Média e Broto na seção 07)'],
     ['Base', 'Massa de pizza artesanal (ficha própria) + molho de tomate artesanal (150 ml)'],
     ['Forno', 'A lenha · 340 a 380 °C (ponto ideal) · 3 a 4 min'],
-    ['Alérgenos', 'CONTÉM GLÚTEN (trigo), LEITE (muçarela) e OVO. Conferir também o rótulo do presunto.'],
+    ['Alérgenos', 'CONTÉM GLÚTEN (trigo), LEITE (muçarela), OVO e SOJA (óleo da massa). Conferir também o rótulo do presunto.'],
     ['Responsável técnico', '<span class="blank" style="min-width:80mm"></span>'],
     ['Data de elaboração', 'Novembro de 2026 · versão 1.3'],
 ], widths=['31%', '69%']) + '''<p class="note"><b>Descrição:</b> pizza tradicional montada em camadas sobre a massa aberta na hora: molho de tomate, muçarela ralada, presunto fatiado em tiras, ovo cozido em rodelas, cebola e azeitona preta, finalizada com orégano.</p>''' \
