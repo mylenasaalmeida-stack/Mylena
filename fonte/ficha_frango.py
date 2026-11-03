@@ -72,19 +72,19 @@ p3 = sec('04', 'Modo de montagem') + flow + f'<div class="steps">{st}</div>' + '
     ], widths=['18%', '44%', '38%'])
 
 p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4mm">Registro fotográfico enviado pela casa. A foto é de uma pizza <b>Broto</b>; as quantidades desta ficha são da <b>Grande</b>. Use a foto como referência de distribuição e de ponto, não de quantidade.</p>' + '''
-<div style="display:grid;grid-template-columns:92mm 1fr;gap:7mm">
-<div class="ph"><div class="im" style="height:163mm"><img src="img/frango-foto1.jpg" style="object-position:50% 62%"><span class="lb">FOTO 1</span></div>
-<h4>Pizza Broto assada</h4><p><b>Etapa 8</b> · Pizza Broto saída do forno: frango desfiado e alaranjado por toda a pizza, muçarela derretida aparecendo por baixo, listras onduladas de catupiry levemente douradas, orégano por cima e borda assada.</p></div>
+<div class="ph"><div class="im" style="height:122mm"><img src="img/frango-foto1.jpg" style="object-position:50% 45%"><span class="lb">FOTO 1</span></div>
+<h4>Detalhe da pizza assada</h4><p><b>Etapa 8</b> · Close da pizza Broto saída do forno: frango desfiado e alaranjado cobrindo toda a pizza, muçarela derretida aparecendo entre o frango, listras onduladas de catupiry em paralelo, levemente douradas, orégano por cima e borda clara e assada.</p></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:7mm;margin-top:5mm">
 <div><h3 class="sub" style="margin-top:0">O que observar na foto</h3><ul class="chk-l">
 <li>Frango distribuído por toda a pizza, até perto da borda, sem montes.</li>
 <li>Catupiry em listras paralelas por cima do frango, de um lado ao outro.</li>
 <li>Orégano espalhado por cima das listras.</li>
-<li>Borda clara e assada, sem queimar; muçarela derretida.</li></ul>
-<div class="box" style="margin-top:6mm"><h5>Diferenças em relação à receita</h5><ul class="dot">
-<li>Na foto (Broto) aparecem cerca de 7 listras de catupiry: a quantidade por tamanho ainda está a confirmar com a equipe.</li>
+<li>Borda clara e assada, sem queimar; muçarela derretida.</li></ul></div>
+<div><div class="box" style="margin-top:0"><h5>Diferenças em relação à receita</h5><ul class="dot">
 <li>A azeitona preta não aparece na foto, mas está na receita.</li>
-<li>A foto é de uma Broto: as quantidades dela não valem para a Grande.</li></ul></div>
-<p class="note" style="margin-top:5mm">Para completar o guia visual, vale fotografar uma pizza Grande nas etapas: massa aberta e aparada, muçarela e frango, catupiry e azeitona (crua) e pizza pronta na caixa.</p></div></div>'''
+<li>A foto é de uma Broto: as quantidades dela não valem para a Grande.</li>
+<li>A quantidade de listras de catupiry ainda está a confirmar com a equipe.</li></ul></div></div></div>
+<p class="note" style="margin-top:4mm">Para completar o guia visual, vale fotografar uma pizza Grande nas etapas: massa aberta e aparada, muçarela e frango, catupiry e azeitona (crua) e pizza pronta na caixa.</p>'''
 
 dot = lambda c: f'<span class="dot-size" style="background:{c}"></span>'
 p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão esperado'], [
@@ -147,7 +147,7 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
         '<b>Fazer a ficha técnica do frango pré-preparado.</b> Ela não faz parte deste trabalho, mas é necessária: o frango é preparado antes (cozido, desfiado e temperado), guardado e só depois usado na pizza. Sem ficha própria não há padrão de tempero, ponto e sabor, nem regra de resfriamento, armazenamento e validade, e não dá para listar os alérgenos dos temperos. Pela RDC 216/2004, todo alimento preparado e guardado precisa desse controle. Esta ficha considera só a porção de 140 g por pizza Grande.',
         '<b>Média e Broto são estimativas.</b> As quantidades da seção 07 foram calculadas a partir da Grande, na proporção das fatias (5/8 e 4/8). É preciso aferir os dados reais: medir o diâmetro, pesar a bolinha e as porções de algumas pizzas de cada tamanho, ajustar com o pizzaiolo e atualizar a ficha.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        'Quantidade de listras de catupiry por tamanho (a foto da Broto mostra cerca de 7).',
+        'Quantidade de listras de catupiry por tamanho.',
         'Marca da muçarela e do catupiry; diâmetros reais de Média e Broto.']) + '</ul></div>' \
     + '<div class="sign"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
 

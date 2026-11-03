@@ -62,13 +62,13 @@ B = blk('B', 'Molho, muçarela e frango',
 C = blk('C', 'Catupiry, azeitona e orégano',
         st(6, 'Aplique o <b>catupiry em listras</b> por cima de tudo.')
         + st(7, 'Espalhe a <b>azeitona preta em pedaços (≈9 g)</b> e polvilhe <b>orégano a olho</b>.')
-        + f'<div class="al"><b>Atenção:</b> <span class="tbc">{P}</span>. A foto (Broto) mostra cerca de 7 listras.</div>',
+        + f'<div class="al"><b>Atenção:</b> <span class="tbc">{P}</span>.</div>',
         tip('Listras paralelas, de um lado ao outro da pizza'))
 D = blk('D', 'Assar',
         st(8, 'Leve ao <b>forno a lenha</b> com a pá, a <b>340–380 °C</b>, por <b>3 a 4 minutos</b>. Gire para assar por igual.')
         + st(9, 'Tire quando a <b>muçarela derreter</b>, o <b>catupiry dourar levemente</b> e a <b>borda assar</b>.')
         + '<div class="al"><b>Frango ressecado?</b> Forno quente demais ou tempo longo. <b>Borda pálida?</b> Espere o forno voltar ao ponto.</div>',
-        '<div class="pic t" style="height:62mm"><img src="img/frango-foto1.jpg" style="object-position:50% 55%"><em>FOTO 1</em><span>Ponto de saída (foto de uma Broto)</span></div>')
+        '<div class="pic t" style="height:62mm"><img src="img/frango-foto1.jpg" style="object-position:50% 45%"><em>FOTO 1</em><span>Ponto de saída (foto de uma Broto)</span></div>')
 
 p2 = f'''<section class="page">{header('Modo de montagem', '', 2)}<div class="in" style="padding-top:5mm">{A}{B}{C}{D}</div>{foot('Dúvida no ponto? Compare com a foto.')}</section>'''
 
