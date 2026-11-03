@@ -28,8 +28,8 @@ ings = [
     ('Massa de pizza (bolinha)', 'aberta na hora', '320 g'),
     ('Molho de tomate', 'colher funda (padrão)', '150 ml'),
     ('Muçarela', 'por toda a massa', '280 g'),
-    ('Gorgonzola', 'picado · peso a confirmar', '24 g'),
-    ('Provolone', 'picado · ralado ou pedaços a confirmar', '150 g'),
+    ('Gorgonzola', 'picado', '24 g'),
+    ('Provolone', 'picado · ralado ou pedaços a confirmar', '75 g'),
     ('Catupiry', 'em listras · nº de listras a confirmar', '4 listras'),
     ('Orégano', 'por cima, antes do forno', 'a olho'),
 ]
@@ -38,9 +38,9 @@ rows = ''.join(f'<div class="r"><span class="bx"></span><div class="t">{a}<small
 dot = lambda c: f'<span class="dt" style="background:{c}"></span>'
 sizes = '<table><thead><tr><th>Tamanho</th><th>Fatias</th><th>Bolinha</th><th>Molho</th><th>Muçarela</th><th>Gorgonzola</th><th>Provolone</th><th>Catupiry</th></tr></thead><tbody>' + ''.join(
     f'<tr><td>{d}{t}</td>' + ''.join(f'<td>{x}</td>' for x in v) + '</tr>' for d, t, v in [
-        (dot('#d7141a'), '<b>Grande</b>', ['8', '320 g', '150 ml', '280 g', '24 g', '150 g', '4 listras']),
-        (dot('#f2b705'), 'Média <span class="est">(est.)</span>', ['5', '≈200 g', '≈95 ml', '≈175 g', '≈15 g', '≈95 g', '≈3 listras']),
-        (dot('#3aa63a'), 'Broto <span class="est">(est.)</span>', ['4', '≈160 g', '≈75 ml', '≈140 g', '≈12 g', '≈75 g', '≈2 listras']),
+        (dot('#d7141a'), '<b>Grande</b>', ['8', '320 g', '150 ml', '280 g', '24 g', '75 g', '4 listras']),
+        (dot('#f2b705'), 'Média <span class="est">(est.)</span>', ['5', '≈200 g', '≈95 ml', '≈175 g', '≈15 g', '≈47 g', '≈3 listras']),
+        (dot('#3aa63a'), 'Broto <span class="est">(est.)</span>', ['4', '≈160 g', '≈75 ml', '≈140 g', '≈12 g', '≈38 g', '≈2 listras']),
     ]) + '</tbody></table>'
 
 p1 = f'''<section class="page">{header(NOME, 'Receita da produção', 1)}<div class="in">
@@ -64,7 +64,7 @@ A = blk('A', 'Abrir e aparar',
 B = blk('B', 'Molho e queijos',
         st(3, 'Coloque <b>150 ml de molho</b> com a <b>colher funda</b> e espalhe por toda a massa.')
         + st(4, 'Espalhe os <b>280 g de muçarela</b> por igual sobre o molho.')
-        + st(5, 'Distribua o <b>gorgonzola (24 g)</b> e o <b>provolone (150 g)</b>, picados, por cima da muçarela.')
+        + st(5, 'Distribua o <b>gorgonzola (24 g)</b> e o <b>provolone (75 g)</b>, picados, por cima da muçarela.')
         + '<div class="al"><b>Pese os queijos.</b> Gorgonzola demais domina o sabor; queijo demais deixa a pizza oleosa.</div>',
         tip('Gorgonzola em pedaços pequenos e espalhados por toda a pizza'))
 C = blk('C', 'Catupiry e orégano',
@@ -94,7 +94,7 @@ p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in
 <div class="vc" style="background:var(--navy)"><h4>Queijos picados</h4><b>A confirmar</b><p>Geladeira, pote tampado e etiquetado.</p></div>
 </div>
 <div class="two">
-<div class="fs"><h4>Faça sempre</h4><ul><li>Use primeiro o que vence primeiro.</li><li>Pese os queijos: 280 g, 24 g, 150 g.</li><li>Molho sempre com a colher funda: 150 ml.</li><li>Guarde o gorgonzola separado, para não passar cheiro.</li><li>Etiquete todo pote aberto ou porcionado.</li></ul></div>
+<div class="fs"><h4>Faça sempre</h4><ul><li>Use primeiro o que vence primeiro.</li><li>Pese os queijos: 280 g, 24 g, 75 g.</li><li>Molho sempre com a colher funda: 150 ml.</li><li>Guarde o gorgonzola separado, para não passar cheiro.</li><li>Etiquete todo pote aberto ou porcionado.</li></ul></div>
 <div class="jf"><h4>Jogue fora se</h4><ul><li>Passou da validade da etiqueta.</li><li>Cheiro azedo ou cor estranha.</li><li>Mofo diferente do normal do gorgonzola.</li><li>Catupiry com água separada ou azedo.</li><li>Ficou fora da geladeira por muito tempo.</li></ul></div>
 </div>
 <div class="bar"><b>Nunca</b> deixe os queijos na bancada fora do uso. Volte para a geladeira assim que terminar.</div>

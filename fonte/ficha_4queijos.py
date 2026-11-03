@@ -33,12 +33,12 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Massa de pizza (bolinha)', '1 un · 320 g', 'Aberta na hora e aparada com o cortador', 'Base'],
         ['Molho de tomate artesanal', '150 ml', 'Colher funda (padrão), por toda a massa', 'Sabor e umidade'],
         ['Muçarela', '280 g', 'Por toda a massa, sobre o molho', 'Base de queijo'],
-        ['Gorgonzola', f'24 g', f'Picado, sobre a muçarela · peso {AC}', 'Sabor forte'],
-        ['Provolone', '150 g', f'Picado · ralado ou em pedaços {AC}', 'Sabor defumado'],
-        ['Catupiry', '4 listras', f'Em listras por cima dos queijos · peso e espessura {AC}', 'Cremosidade'],
+        ['Gorgonzola', f'24 g', 'Picado, sobre a muçarela', 'Sabor forte'],
+        ['Provolone', '75 g', f'Picado · ralado ou em pedaços {AC}', 'Sabor defumado'],
+        ['Catupiry', '4 listras', f'Em listras por cima dos queijos · nº de listras {AC}', 'Cremosidade'],
         ['Orégano', 'a olho', 'Salpicado por cima, antes do forno', 'Aroma'],
     ], num_cols=(1,), widths=['27%', '12%', '44%', '17%']) \
-    + '<p class="note">Quantidades por pizza Grande. O catupiry é medido em listras (sem peso informado) e o orégano vai a olho; ver Melhorias.</p>' \
+    + '<p class="note">Quantidades por pizza Grande. O catupiry é medido em listras e o orégano vai a olho.</p>' \
     + sec('03', 'Equipamentos e utensílios') + table(['Item', 'Uso'], [
         ['Mesa / bancada higienizada', 'Abrir a massa e montar a pizza'],
         ['Cortador de pizza (carretilha)', 'Aparar a borda da massa aberta e cortar as fatias'],
@@ -54,7 +54,7 @@ steps = [
     ('Abrir a bolinha', ' de massa (320 g) na mesa enfarinhada e <b>aparar o excesso da borda com o cortador</b>, deixando a massa redonda e uniforme.' + foto(1)),
     ('Aplicar 150 ml de molho', ' com a colher funda (padrão) e espalhar por toda a massa.' + pcc(2)),
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
-    ('Distribuir o gorgonzola', ' (24 g) e o <b>provolone</b> (150 g), picados, por cima da muçarela.' + pcc(2)),
+    ('Distribuir o gorgonzola', ' (24 g) e o <b>provolone</b> (75 g), picados, por cima da muçarela.' + pcc(2)),
     ('Aplicar o catupiry', ' em <b>4 listras</b> por cima dos queijos.' + pcc(2) + ac('Nº DE LISTRAS A CONFIRMAR')),
     ('Finalizar com orégano', ' a olho, por cima de tudo, antes de ir ao forno.' + foto(2)),
     ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até os queijos derreterem e a borda dourar.' + pcc(3)),
@@ -66,7 +66,7 @@ flow = '<div class="flow">' + ''.join(f'<div><b>{a}</b><small>{b}</small></div>'
 p3 = sec('04', 'Modo de montagem') + flow + f'<div class="steps">{st}</div>' + '<h3 class="sub">Pontos críticos de controle (PCC)</h3>' + table(
     ['PCC', 'O que controlar', 'Limite / referência'], [
         ['1 · Higienização', 'Mesa, utensílios e mãos limpos; queijos picados e porcionados refrigerados até o uso', 'Conforme RDC 216/2004 e rótulo dos fabricantes'],
-        ['2 · Porções', 'Medida e peso de cada ingrediente por pizza', 'Grande: molho 150 ml · muçarela 280 g · gorgonzola 24 g · provolone 150 g · catupiry 4 listras'],
+        ['2 · Porções', 'Medida e peso de cada ingrediente por pizza', 'Grande: molho 150 ml · muçarela 280 g · gorgonzola 24 g · provolone 75 g · catupiry 4 listras'],
         ['3 · Forno', 'Temperatura e tempo de forno', '340 a 380 °C · 3 a 4 min · queijos derretidos, borda dourada'],
     ], widths=['18%', '44%', '38%'])
 
@@ -95,7 +95,7 @@ p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão espe
         ['Molho de tomate', '150 ml', '≈95 ml', '≈75 ml'],
         ['Muçarela', '280 g', '≈175 g', '≈140 g'],
         ['Gorgonzola', '24 g', '≈15 g', '≈12 g'],
-        ['Provolone', '150 g', '≈95 g', '≈75 g'],
+        ['Provolone', '75 g', '≈47 g', '≈38 g'],
         ['Catupiry', '4 listras', '≈3 listras', '≈2 listras'],
         ['Orégano', 'a olho', 'a olho', 'a olho'],
     ], num_cols=(1, 2, 3), widths=['28%', '24%', '24%', '24%']) + \
@@ -132,16 +132,14 @@ p6 = sec('09', 'Controle de qualidade e falhas comuns') + '<h3 class="sub" style
 reg = table(['Data', 'Responsável', 'Tamanho', 'Peso bolinha', 'Tempo forno', 'Ponto OK?', 'Visto'], [[''] * 7 for _ in range(7)], widths=['12%', '22%', '13%', '14%', '13%', '13%', '13%'])
 p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class="note">Registro para conferir a padronização: tamanho, peso da bolinha e tempo de forno de algumas pizzas por turno.</p>' \
     + sec('12', 'Melhorias recomendadas') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        '<b>Pré-porcionar os queijos:</b> deixar muçarela (280 g), gorgonzola (24 g) e provolone (150 g) já pesados em porções, para a montagem sair sempre igual.',
+        '<b>Pré-porcionar os queijos:</b> deixar muçarela (280 g), gorgonzola (24 g) e provolone (75 g) já pesados em porções, para a montagem sair sempre igual.',
         '<b>Padronizar a colher funda:</b> conferir uma vez que a colher entrega os 150 ml de molho e marcar essa colher para a Grande.',
-        '<b>Padronizar a listra de catupiry:</b> definir espessura e comprimento (ou usar bisnaga com bico fixo) e pesar uma vez o catupiry de uma pizza para ter um peso de referência.',
+        '<b>Padronizar a listra de catupiry:</b> usar sempre a mesma bisnaga e o mesmo comprimento de listra, para todas as pizzas saírem iguais.',
         '<b>Peso da bolinha e gabarito:</b> hoje o tamanho é definido no olho e a borda é aparada com o cortador. Pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
         '<b>Validar Média e Broto:</b> medir os diâmetros reais e testar as porções estimadas da seção 07 com o pizzaiolo.',
         '<b>Padronizar o orégano:</b> definir uma medida fixa (por exemplo, uma colher-medida) no lugar do “a olho”.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        'Se o gorgonzola é mesmo 24 g (bem menos que os 150 g de provolone).',
         'Se são 4 listras de catupiry: a foto da pizza crua mostra cerca de 6 listras mais curtas.',
-        'Peso e espessura da listra de catupiry.',
         'Se o provolone vai ralado ou em pedaços.',
         'Validade dos queijos picados e marca dos queijos.',
         'Diâmetros reais de Média e Broto e teste das porções estimadas.']) + '</ul></div>' \
