@@ -57,18 +57,18 @@ B = blk('B', 'Molho, muçarela e lombo',
         st(3, 'Coloque <b>150 ml de molho</b> com a <b>colher funda</b> e espalhe por toda a massa.')
         + st(4, 'Espalhe os <b>280 g de muçarela</b> por igual sobre o molho.')
         + st(5, '<b>Logo depois da muçarela</b>, distribua os <b>105 g de lombo fatiado</b> por toda a pizza, até perto da borda.')
-        + '<div class="al"><b>Atenção:</b> a etapa do lombo segue a Frango com Catupiry e está <span class="tbc">a confirmar</span>.</div>',
+        + '<div class="al"><b>Atenção:</b> a etapa do lombo segue as fotos (sobre a muçarela) e está <span class="tbc">a confirmar</span>.</div>',
         tip('Lombo espalhado por igual, sem montes no centro'))
 C = blk('C', 'Catupiry, azeitona e orégano',
         st(6, 'Aplique o <b>catupiry em listras</b> por cima de tudo.')
         + st(7, 'Espalhe a <b>azeitona preta em pedaços (≈9 g)</b> e polvilhe <b>orégano a olho</b>.')
         + f'<div class="al"><b>Atenção:</b> <span class="tbc">{P}</span>.</div>',
-        tip('Listras paralelas, de um lado ao outro da pizza'))
+        '<div class="pic t" style="height:58mm"><img src="img/lombo-foto1.jpg" style="object-position:50% 88%"><em>FOTO 1</em><span>Pronta para o forno</span></div>')
 D = blk('D', 'Assar',
         st(8, 'Leve ao <b>forno a lenha</b> com a pá, a <b>340–380 °C</b>, por <b>3 a 4 minutos</b>. Gire para assar por igual.')
         + st(9, 'Tire quando a <b>muçarela derreter</b>, o <b>catupiry dourar levemente</b> e a <b>borda assar</b>.')
         + '<div class="al"><b>Lombo ressecado?</b> Forno quente demais ou tempo longo. <b>Borda pálida?</b> Espere o forno voltar ao ponto.</div>',
-        tip('Foto a enviar · ponto: muçarela derretida, catupiry levemente dourado, borda assada'))
+        '<div class="pic t" style="height:58mm"><img src="img/lombo-foto2.jpg" style="object-position:50% 50%"><em>FOTO 2</em><span>Ponto: catupiry cremoso, borda dourada</span></div>')
 
 p2 = f'''<section class="page">{header('Modo de montagem', '', 2)}<div class="in" style="padding-top:5mm">{A}{B}{C}{D}</div>{foot('Dúvida no ponto? Compare com a foto.')}</section>'''
 

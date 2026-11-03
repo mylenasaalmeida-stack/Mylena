@@ -57,8 +57,8 @@ steps = [
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
     ('Distribuir o lombo', ' fatiado (105 g) logo depois da muçarela, por toda a pizza, até perto da borda.' + pcc(2) + ac('ETAPA A CONFIRMAR')),
     ('Aplicar o catupiry', f' em listras por cima de tudo (<span class="tbc">{P}</span>).' + pcc(2)),
-    ('Espalhar a azeitona preta', ' em pedaços (≈9 g) e <b>polvilhar orégano</b> a olho, antes de ir ao forno.'),
-    ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até a muçarela derreter, o catupiry dourar levemente e a borda assar.' + foto(1) + pcc(3)),
+    ('Espalhar a azeitona preta', ' em pedaços (≈9 g) e <b>polvilhar orégano</b> a olho, antes de ir ao forno.' + foto(1)),
+    ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até a muçarela derreter, o catupiry dourar levemente e a borda assar.' + foto(2) + pcc(3)),
     ('Retirar, cortar', ' em 8 fatias (Grande) e embalar na caixa ou servir na hora.'),
 ]
 st = ''.join(f'<div class="s"><span class="i">{i:02d}</span><p><b>{a}</b>{b}</p></div>' for i, (a, b) in enumerate(steps, 1))
@@ -71,19 +71,19 @@ p3 = sec('04', 'Modo de montagem') + flow + f'<div class="steps">{st}</div>' + '
         ['3 · Forno', 'Temperatura e tempo de forno', '340 a 380 °C · 3 a 4 min · muçarela derretida, borda dourada'],
     ], widths=['18%', '44%', '38%'])
 
-FOTOS_PEND = [
-    (1, 'Massa aberta e aparada', 'Etapa 2', 'Massa redonda, de espessura igual, com a borda aparada.'),
-    (2, 'Muçarela e lombo', 'Etapas 4 e 5', 'Muçarela por igual e lombo fatiado distribuído por toda a pizza.'),
-    (3, 'Pronta para o forno', 'Etapas 6 e 7', 'Listras de catupiry, azeitona preta em pedaços e orégano por cima.'),
-    (4, 'Pizza pronta na caixa', 'Etapas 8 e 9', 'Muçarela derretida, catupiry levemente dourado e borda assada.'),
+fotos = [
+    (1, 'lombo-foto1', 'Pronta para o forno', 'Etapa 7', 'Pizza crua sobre a pá, na boca do forno a lenha: fatias redondas de lombo sobrepostas cobrindo a pizza, muçarela aparecendo por baixo na borda, listras onduladas de catupiry em paralelo, azeitona preta em pedaços e orégano por cima.', '50% 88%'),
+    (2, 'lombo-foto2', 'Pizza assada', 'Etapa 8', 'Detalhe da pizza saída do forno: lombo levemente dourado nas bordas das fatias, muçarela derretida, listras de catupiry inteiras e cremosas, azeitona preta em pedaços, orégano e borda dourada.', '50% 50%'),
 ]
-PH_STYLE = 'height:58mm;display:flex;align-items:center;justify-content:center;background:var(--cream);border:1.5px dashed #d9c4ae'
-gal = ''.join(f'<div class="ph"><div class="im" style="{PH_STYLE}"><span class="lb">FOTO {n}</span>'
-              f'<span style="font-family:Roboto Condensed;font-weight:800;color:var(--orange);font-size:12pt">FOTO A ENVIAR</span></div>'
-              f'<h4>{t}</h4><p><b>{e}</b> · {d}</p></div>' for n, t, e, d in FOTOS_PEND)
-p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4mm">Espaço reservado para as fotos reais da montagem. Cada foto vai aparecer uma única vez, na etapa indicada.</p>' \
-    + f'<div class="gal">{gal}</div>' \
-    + '<div class="box" style="margin-top:6mm"><h5>Fotos pendentes</h5><p>A foto citada na receita não foi recebida. Ao enviar, as fotos reais substituem estes espaços, com a descrição de cada uma conferida.</p></div>'
+def _ph(n, f, t, e, d, pos, h):
+    return f'''<div class="ph"><div class="im" style="height:{h}"><img src="img/{f}.jpg" style="object-position:{pos}"><span class="lb">FOTO {n}</span></div>
+<h4>{t}</h4><p><b>{e}</b> · {d}</p></div>'''
+gal = _ph(*fotos[0][:5], '50% 50%', '84mm') + '<div style="display:grid;grid-template-columns:72mm 1fr;gap:7mm;margin-top:5mm">' + _ph(*fotos[1][:5], '50% 50%', '96mm') + '<div>BOXSLOT</div></div>'
+p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4mm">Registro fotográfico enviado pela casa. Cada foto aparece uma única vez e corresponde à etapa indicada. Use como referência de distribuição e de ponto.</p>' \
+    + gal.replace('BOXSLOT', '<div class="box" style="margin-top:0"><h5>O que as fotos mostram</h5><ul class="dot">' \
+    + '<li>O lombo aparece por cima da muçarela e por baixo do catupiry, o que reforça a ordem desta ficha.</li>' \
+    + '<li>A azeitona preta vai em pedaços, espalhada por cima, junto com o orégano.</li>' \
+    + '<li>Não há fotos da massa aberta nem da muçarela: vale fotografar essas etapas para completar o guia.</li></ul></div>')
 
 dot = lambda c: f'<span class="dot-size" style="background:{c}"></span>'
 p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão esperado'], [
@@ -142,15 +142,14 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
         '<b>Padronizar a colher funda:</b> conferir uma vez que a colher entrega os 150 ml de molho e marcar essa colher para a Grande.',
         '<b>Padronizar a listra de catupiry:</b> usar sempre a mesma bisnaga e o mesmo comprimento de listra.',
         '<b>Peso da bolinha e gabarito:</b> pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
-        '<b>Fotos da montagem:</b> fotografar uma pizza Grande nas etapas da seção 05 para completar o guia visual.']) + '</ul>' \
+        '<b>Fotos da montagem:</b> fotografar as etapas de massa aberta e muçarela para completar o guia visual.']) + '</ul>' \
     + sec('13', 'Orientações finais') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         '<b>Lombo fatiado:</b> esta ficha considera o lombo comprado já fatiado, com validade e alérgenos conforme o rótulo. Se o lombo for preparado ou temperado na casa, ele precisa de ficha técnica própria (preparo, resfriamento, armazenamento, validade e alérgenos), como pede a RDC 216/2004.',
         '<b>Média e Broto são estimativas.</b> As quantidades da seção 07 foram calculadas a partir da Grande, na proporção das fatias (5/8 e 4/8). É preciso aferir os dados reais: medir o diâmetro, pesar a bolinha e as porções de algumas pizzas de cada tamanho, ajustar com o pizzaiolo e atualizar a ficha.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Quantidade de listras de catupiry por tamanho.',
-        'Se o lombo entra logo depois da muçarela, como na Frango com Catupiry.',
+        'Se o lombo entra logo depois da muçarela (as fotos indicam que sim).',
         'Tipo de lombo (defumado/canadense ou preparado na casa) e marca.',
-        'Fotos reais da montagem e da pizza pronta.',
         'Marca da muçarela e do catupiry; diâmetros reais de Média e Broto.']) + '</ul></div>' \
     + '<div class="sign"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
 
