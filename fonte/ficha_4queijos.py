@@ -28,13 +28,13 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
     ['Alérgenos', 'CONTÉM GLÚTEN (trigo), LEITE (muçarela, gorgonzola, provolone e catupiry) e SOJA (óleo da massa).'],
     ['Responsável técnico', '<span class="blank" style="min-width:80mm"></span>'],
     ['Data de elaboração', 'Novembro de 2026 · versão 1.1'],
-], widths=['31%', '69%']) + '''<p class="note"><b>Descrição:</b> pizza de quatro queijos montada em camadas sobre a massa aberta na hora: molho de tomate, muçarela, gorgonzola e provolone picados e listras de catupiry por cima, finalizada com orégano.</p>''' \
+], widths=['31%', '69%']) + '''<p class="note"><b>Descrição:</b> pizza de quatro queijos montada em camadas sobre a massa aberta na hora: molho de tomate, muçarela, gorgonzola picado, provolone ralado e listras de catupiry por cima, finalizada com orégano.</p>''' \
     + sec('02', 'Ingredientes por pizza') + table(['Ingrediente', 'Quantidade', 'Forma de uso', 'Função'], [
         ['Massa de pizza (bolinha)', '1 un · 320 g', 'Aberta na hora e aparada com o cortador', 'Base'],
         ['Molho de tomate artesanal', '150 ml', 'Colher funda (padrão), por toda a massa', 'Sabor e umidade'],
         ['Muçarela', '280 g', 'Por toda a massa, sobre o molho', 'Base de queijo'],
         ['Gorgonzola', f'24 g', 'Picado, sobre a muçarela', 'Sabor forte'],
-        ['Provolone', '75 g', f'Picado · ralado ou em pedaços {AC}', 'Sabor defumado'],
+        ['Provolone', '75 g', 'Ralado, sobre a muçarela', 'Sabor defumado'],
         ['Catupiry', '<span class="tbc">a confirmar</span>', 'Em listras por cima · quantidade de listras de catupiry a confirmar com a equipe', 'Cremosidade'],
         ['Orégano', 'a olho', 'Salpicado por cima, antes do forno', 'Aroma'],
     ], num_cols=(1,), widths=['25%', '13%', '45%', '17%']) \
@@ -44,7 +44,7 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Cortador de pizza (carretilha)', 'Aparar a borda da massa aberta e cortar as fatias'],
         ['Colher funda (padrão)', 'Aplicar e espalhar o molho (150 ml na Grande)'],
         ['Balança', 'Conferir bolinha, muçarela, gorgonzola e provolone'],
-        ['Faca e tábua dos queijos', 'Picar gorgonzola e provolone'],
+        ['Faca e tábua dos queijos', 'Picar o gorgonzola'],
         ['Bisnaga ou colher para catupiry', 'Aplicar as listras de catupiry'],
         ['Pá de pizza, forno a lenha e caixa', 'Assar a pizza (girar e retirar) e embalar para entrega'],
     ], widths=['40%', '60%'])
@@ -54,7 +54,7 @@ steps = [
     ('Abrir a bolinha', ' de massa (320 g) na mesa enfarinhada e <b>aparar o excesso da borda com o cortador</b>, deixando a massa redonda e uniforme.' + foto(1)),
     ('Aplicar 150 ml de molho', ' com a colher funda (padrão) e espalhar por toda a massa.' + pcc(2)),
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
-    ('Distribuir o gorgonzola', ' (24 g) e o <b>provolone</b> (75 g), picados, por cima da muçarela.' + pcc(2)),
+    ('Distribuir o gorgonzola', ' picado (24 g) e o <b>provolone ralado</b> (75 g) por cima da muçarela.' + pcc(2)),
     ('Aplicar o catupiry', ' em listras por cima dos queijos (<span class="tbc">quantidade de listras de catupiry a confirmar com a equipe</span>).' + pcc(2)),
     ('Finalizar com orégano', ' a olho, por cima de tudo, antes de ir ao forno.' + foto(2)),
     ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até os queijos derreterem e a borda dourar.' + pcc(3)),
@@ -65,14 +65,14 @@ flow = '<div class="flow">' + ''.join(f'<div><b>{a}</b><small>{b}</small></div>'
     ('Abrir', 'e aparar'), ('Molho', '150 ml'), ('Muçarela', '280 g'), ('Gorgonzola', 'e provolone'), ('Catupiry', 'em listras'), ('Orégano', 'e forno')]) + '</div>'
 p3 = sec('04', 'Modo de montagem') + flow + f'<div class="steps">{st}</div>' + '<h3 class="sub">Pontos críticos de controle (PCC)</h3>' + table(
     ['PCC', 'O que controlar', 'Limite / referência'], [
-        ['1 · Higienização', 'Mesa, utensílios e mãos limpos; queijos picados e porcionados refrigerados até o uso', 'Conforme RDC 216/2004 e rótulo dos fabricantes'],
+        ['1 · Higienização', 'Mesa, utensílios e mãos limpos; queijos porcionados (gorgonzola picado, provolone ralado) refrigerados até o uso', 'Conforme RDC 216/2004 e rótulo dos fabricantes'],
         ['2 · Porções', 'Medida e peso de cada ingrediente por pizza', 'Grande: molho 150 ml · muçarela 280 g · gorgonzola 24 g · provolone 75 g · catupiry: quantidade de listras de catupiry a confirmar com a equipe'],
         ['3 · Forno', 'Temperatura e tempo de forno', '340 a 380 °C · 3 a 4 min · queijos derretidos, borda dourada'],
     ], widths=['18%', '44%', '38%'])
 
 fotos = [
     (1, 'Massa aberta e aparada', 'Etapa 2', 'Pizzaiolo aparando o excesso da borda com o cortador de pizza, na mesa enfarinhada, deixando a massa redonda.', ''),
-    (2, 'Pronta para o forno', 'Etapas 3 a 7', 'Molho por toda a massa, muçarela, pedaços de gorgonzola e provolone, listras onduladas de catupiry e orégano por cima. Na foto aparecem cerca de 6 listras.', ''),
+    (2, 'Pronta para o forno', 'Etapas 3 a 7', 'Molho por toda a massa, muçarela, pedaços de gorgonzola, provolone ralado, listras onduladas de catupiry e orégano por cima. Na foto aparecem cerca de 6 listras.', ''),
     (3, 'Pizza pronta na caixa', 'Etapas 8 e 9', 'Pizza assada já na caixa: muçarela dourada, gorgonzola derretido, listras de catupiry levemente douradas, orégano visível e borda assada.', ' wide'),
 ]
 gal = ''.join(f'''<div class="ph{w}"><div class="im"><img src="img/q4-foto{n}.jpg"><span class="lb">FOTO {n}</span></div>
@@ -82,7 +82,7 @@ p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4
 
 dot = lambda c: f'<span class="dot-size" style="background:{c}"></span>'
 p5 = sec('06', 'Características do produto') + table(['Atributo', 'Padrão esperado'], [
-    ['Aparência', 'Queijos derretidos e uniformes; pedaços de gorgonzola e provolone distribuídos; listras de catupiry e orégano visíveis; borda dourada'],
+    ['Aparência', 'Queijos derretidos e uniformes; pedaços de gorgonzola e provolone ralado distribuídos; listras de catupiry e orégano visíveis; borda dourada'],
     ['Massa', 'Borda dourada e levantada, sem partes cruas no centro'],
     ['Molho', 'Cobrindo toda a massa, sem encharcar nem deixar áreas secas'],
     ['Aroma / sabor', 'Queijos equilibrados: gorgonzola presente sem dominar; provolone defumado; catupiry cremoso; orégano sem queimar'],
@@ -118,14 +118,14 @@ p6 = sec('09', 'Controle de qualidade e falhas comuns') + '<h3 class="sub" style
         ['Borda queimada ou pálida', 'Forno quente ou frio demais; tempo errado', 'Conferir o ponto do forno e o tempo de 3 a 4 min'],
         ['Gorgonzola dominante ou ausente', 'Peso fora dos 24 g ou mal distribuído', 'Pesar o gorgonzola e espalhar em pedaços pequenos'],
         ['Catupiry queimado ou escorrido', 'Listras grossas ou forno muito quente', 'Padronizar a espessura das listras e o tempo de forno'],
-        ['Queijo sem derreter', 'Pouco tempo de forno ou pedaços grandes', 'Picar os queijos menores e manter o tempo de forno'],
+        ['Queijo sem derreter', 'Pouco tempo de forno ou gorgonzola em pedaços grandes', 'Picar o gorgonzola menor e manter o tempo de forno'],
         ['Pizza maior ou menor que o padrão', 'Bolinha sem peso e abertura no olho', 'Pesar a bolinha e usar gabarito'],
     ], widths=['26%', '34%', '40%']) + sec('10', 'Armazenamento dos ingredientes') + table(
     ['Ingrediente', 'Condição', 'Prazo'], [
         ['Muçarela e provolone', 'Refrigerados, na embalagem ou em recipiente tampado', 'Conforme rótulo'],
         ['Gorgonzola', 'Refrigerado, bem embalado, longe de outros alimentos para não passar aroma', 'Conforme rótulo'],
         ['Catupiry', 'Refrigerado após aberto, em recipiente tampado e identificado com a data de abertura', 'Conforme rótulo'],
-        ['Queijos picados', 'Porcionados em recipiente tampado e identificado, sob refrigeração', AC],
+        ['Gorgonzola picado e provolone ralado', 'Porcionados em recipiente tampado e identificado, sob refrigeração', AC],
         ['Etiqueta', 'Produto · data de preparo · validade · responsável · usar primeiro o que vence primeiro (PVPS)', 'Obrigatória'],
     ], widths=['22%', '58%', '20%'])
 
@@ -140,8 +140,7 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
         '<b>Padronizar o orégano:</b> definir uma medida fixa (por exemplo, uma colher-medida) no lugar do “a olho”.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Quantidade de listras de catupiry por tamanho (a foto da pizza crua mostra cerca de 6 listras mais curtas).',
-        'Se o provolone vai ralado ou em pedaços.',
-        'Validade dos queijos picados e marca dos queijos.',
+        'Validade do gorgonzola picado e do provolone ralado, e marca dos queijos.',
         'Diâmetros reais de Média e Broto e teste das porções estimadas.']) + '</ul></div>' \
     + '<div class="sign"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
 

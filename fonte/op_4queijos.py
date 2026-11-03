@@ -29,7 +29,7 @@ ings = [
     ('Molho de tomate', 'colher funda (padrão)', '150 ml'),
     ('Muçarela', 'por toda a massa', '280 g'),
     ('Gorgonzola', 'picado', '24 g'),
-    ('Provolone', 'picado · ralado ou pedaços a confirmar', '75 g'),
+    ('Provolone', 'ralado', '75 g'),
     ('Catupiry', 'em listras · quantidade de listras de catupiry a confirmar com a equipe', 'a confirmar'),
     ('Orégano', 'por cima, antes do forno', 'a olho'),
 ]
@@ -50,7 +50,7 @@ p1 = f'''<section class="page">{header(NOME, 'Receita da produção', 1)}<div cl
 {sec(2, 'Por tamanho')}{sizes}
 <p class="note">Média e Broto são estimativas <span class="est">(est.)</span>, em teste. Etiqueta da bolinha: vermelha (Grande), amarela (Média), verde (Broto). Na dúvida, pese.</p>
 <div class="dark"><h3>Antes de começar</h3><ul>
-<li>Mãos lavadas, touca e avental</li><li>Queijos picados, porcionados e na geladeira</li>
+<li>Mãos lavadas, touca e avental</li><li>Queijos porcionados e na geladeira</li>
 <li>Bancada limpa e salpicada de farinha</li><li>Cortador de pizza e colher funda</li>
 <li>Balança conferida</li><li>Bisnaga ou colher do catupiry</li>
 <li>Forno a lenha no ponto (340–380 °C)</li><li>Pá de pizza e caixas</li></ul></div>
@@ -64,7 +64,7 @@ A = blk('A', 'Abrir e aparar',
 B = blk('B', 'Molho e queijos',
         st(3, 'Coloque <b>150 ml de molho</b> com a <b>colher funda</b> e espalhe por toda a massa.')
         + st(4, 'Espalhe os <b>280 g de muçarela</b> por igual sobre o molho.')
-        + st(5, 'Distribua o <b>gorgonzola (24 g)</b> e o <b>provolone (75 g)</b>, picados, por cima da muçarela.')
+        + st(5, 'Distribua o <b>gorgonzola picado (24 g)</b> e o <b>provolone ralado (75 g)</b> por cima da muçarela.')
         + '<div class="al"><b>Pese os queijos.</b> Gorgonzola demais domina o sabor; queijo demais deixa a pizza oleosa.</div>',
         tip('Gorgonzola em pedaços pequenos e espalhados por toda a pizza'))
 C = blk('C', 'Catupiry e orégano',
@@ -91,7 +91,7 @@ p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in
 <div class="vcards">
 <div class="vc" style="background:var(--blue)"><h4>Muçarela e provolone</h4><b>Rótulo</b><p>Geladeira, na embalagem ou em pote tampado.</p></div>
 <div class="vc" style="background:var(--blue)"><h4>Gorgonzola e catupiry</h4><b>Rótulo</b><p>Geladeira. Gorgonzola bem embalado; catupiry com a data de abertura.</p></div>
-<div class="vc" style="background:var(--navy)"><h4>Queijos picados</h4><b>A confirmar</b><p>Geladeira, pote tampado e etiquetado.</p></div>
+<div class="vc" style="background:var(--navy)"><h4>Gorgonzola picado e provolone ralado</h4><b>A confirmar</b><p>Geladeira, pote tampado e etiquetado.</p></div>
 </div>
 <div class="two">
 <div class="fs"><h4>Faça sempre</h4><ul><li>Use primeiro o que vence primeiro.</li><li>Pese os queijos: 280 g, 24 g, 75 g.</li><li>Molho sempre com a colher funda: 150 ml.</li><li>Guarde o gorgonzola separado, para não passar cheiro.</li><li>Etiquete todo pote aberto ou porcionado.</li></ul></div>
