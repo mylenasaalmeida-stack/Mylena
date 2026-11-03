@@ -1,0 +1,14 @@
+FOTOS_PEND = [
+    (1, 'Massa aberta e aparada', 'Etapa 2', 'Massa redonda, de espessura igual, com a borda aparada.'),
+    (2, 'Muçarela e lombo', 'Etapas 4 e 5', 'Muçarela por igual e lombo fatiado distribuído por toda a pizza.'),
+    (3, 'Pronta para o forno', 'Etapas 6 e 7', 'Listras de catupiry, azeitona preta em pedaços e orégano por cima.'),
+    (4, 'Pizza pronta na caixa', 'Etapas 8 e 9', 'Muçarela derretida, catupiry levemente dourado e borda assada.'),
+]
+PH_STYLE = 'height:58mm;display:flex;align-items:center;justify-content:center;background:var(--cream);border:1.5px dashed #d9c4ae'
+gal = ''.join(f'<div class="ph"><div class="im" style="{PH_STYLE}"><span class="lb">FOTO {n}</span>'
+              f'<span style="font-family:Roboto Condensed;font-weight:800;color:var(--orange);font-size:12pt">FOTO A ENVIAR</span></div>'
+              f'<h4>{t}</h4><p><b>{e}</b> · {d}</p></div>' for n, t, e, d in FOTOS_PEND)
+p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4mm">Espaço reservado para as fotos reais da montagem. Cada foto vai aparecer uma única vez, na etapa indicada.</p>' \
+    + f'<div class="gal">{gal}</div>' \
+    + '<div class="box" style="margin-top:6mm"><h5>Fotos pendentes</h5><p>A foto citada na receita não foi recebida. Ao enviar, as fotos reais substituem estes espaços, com a descrição de cada uma conferida.</p></div>'
+
