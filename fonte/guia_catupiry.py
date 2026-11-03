@@ -68,33 +68,39 @@ p3 = sec('03', 'A melhor forma: recomendação') + '<p style="margin-bottom:2mm"
             '<b>Montar a pizza normalmente</b> até a etapa do catupiry (massa, molho, queijo e recheio).',
             '<b>Colocar a pizza sobre a balança</b> (em uma assadeira ou disco, se preciso) e <b>zerar a balança (tara)</b>.',
             '<b>Aplicar o catupiry</b> como o pizzaiolo faz hoje, contando as listras e fazendo cada uma de borda a borda.',
-            '<b>Anotar no formulário</b> (seção 05): tamanho, número de listras e peso em gramas.',
+            '<b>Anotar no formulário</b> (seção 06): tamanho, número de listras e peso em gramas.',
             '<b>Repetir em 5 pizzas de cada tamanho</b>, de preferência com mais de um pizzaiolo.',
             '<b>Provar e olhar a pizza assada:</b> catupiry cremoso, sem escorrer nem queimar, e presente em todas as fatias.',
             '<b>Definir o padrão</b> de cada tamanho (peso de referência e número de listras), aprovar com a responsável e atualizar as fichas técnicas.',
-        ], 1)) + '</div>'
+        ], 1)) + '</div>' \
+    + sec('05', 'Bico recomendado') + table(['Opção', 'Bico', 'Por que'], [
+        ['<b>Recomendado</b>', '<b>Pitanga aberto (estrela aberta), médio</b><br>abertura de 8 a 10 mm, em inox', 'Faz a listra com frisos, igual à das fotos da casa (Lombinho). A listra fica com volume, não se espalha e é fácil ver se ficou igual às outras.'],
+        ['Alternativa', 'Perlê liso (redondo), médio<br>abertura de 8 a 10 mm, em inox', 'Listra lisa e uniforme, mais fácil de lavar. Boa opção se a casa preferir o visual liso.'],
+        ['Evitar', 'Bico fino (abaixo de 6 mm) ou ponta da bisnaga cortada a olho', 'Bico fino demora e a listra quebra; a ponta cortada muda de abertura a cada bisnaga e acaba com a padronização.'],
+    ], widths=['16%', '34%', '50%']) + '<p class="note">A numeração dos bicos muda de fabricante para fabricante: compre pela <b>abertura em milímetros</b> e pelo desenho. Tenha 2 ou 3 bicos iguais, para trocar durante a limpeza, e faça o teste da seção 04 já com o bico escolhido.</p>'
 
 reg = lambda t: f'<h3 class="sub">{t}</h3><div class="fill">' + table(['Nº', 'Data', 'Pizzaiolo', 'Pizza (sabor)', 'Nº de listras', 'Peso (g)', 'Pizza assada OK?'], [[str(i), '', '', '', '', '', ''] for i in range(1, 6)],
                                                                     widths=['6%', '13%', '20%', '21%', '13%', '12%', '15%']) + '</div>'
-p4 = sec('05', 'Formulário do teste') + '<p class="note" style="margin:-1mm 0 1mm">Preencher durante o teste da seção 04. Peso lido na balança depois da tara, só do catupiry.</p>' \
+p4 = sec('06', 'Formulário do teste') + '<p class="note" style="margin:-1mm 0 1mm">Preencher durante o teste da seção 04, com o bico da seção 05. Peso lido na balança depois da tara, só do catupiry.</p>' \
     + reg('Grande · 8 fatias') + reg('Média · 5 fatias') + reg('Broto · 4 fatias') \
     + '<h3 class="sub">Padrão definido</h3><div class="std">' + ''.join(
-        f'<div><h5>{t}</h5><p>Peso de referência: ______ g</p><p>Número de listras: ______</p><p>Bico: ________________</p></div>' for t in ['Grande', 'Média', 'Broto']) + '</div>'
+        f'<div><h5>{t}</h5><p>Peso de referência: ______ g</p><p>Número de listras: ______</p><p>Bico: pitanga aberto ____ mm</p></div>' for t in ['Grande', 'Média', 'Broto']) + '</div>'
 
 conf = table(['Semana', 'Tamanho', 'Pizza 1 (g)', 'Pizza 2 (g)', 'Pizza 3 (g)', 'Dentro do padrão?', 'Visto'], [[''] * 7 for _ in range(6)], widths=['14%', '14%', '13%', '13%', '13%', '19%', '14%'])
-p5 = sec('06', 'Conferência semanal') + f'<div class="fill">{conf}</div>' + \
+p5 = sec('07', 'Conferência semanal') + f'<div class="fill">{conf}</div>' + \
     '<p class="note">Sugestão de faixa aceitável: até 10% acima ou abaixo do peso de referência. Ajustar com a equipe depois das primeiras semanas.</p>' \
-    + sec('07', 'Materiais') + table(['Item', 'Para que serve', 'Situação', 'Preço'], [
+    + sec('08', 'Materiais') + table(['Item', 'Para que serve', 'Situação', 'Preço'], [
         ['Balança digital (1 g de precisão)', 'Tara e pesagem do catupiry', 'Já indicada no material de compras', 'cotar'],
-        ['Bisnaga ou saco de confeitar com bico', 'Aplicar as listras sempre iguais', 'Definir o modelo de bico padrão', 'cotar'],
+        ['Bico pitanga aberto, 8 a 10 mm, inox (2 a 3 iguais)', 'Aplicar as listras sempre iguais', 'Comprar (ver seção 05)', 'cotar'],
+        ['Saco de confeitar ou bisnaga com encaixe para bico', 'Usar o bico padrão', 'Conferir o que a casa já tem', 'cotar'],
         ['Etiquetas', 'Identificar a bisnaga com a data de abertura do catupiry', 'Já em uso', '—'],
     ], widths=['30%', '32%', '26%', '12%']) + '<p class="note">Os preços não foram pesquisados: ficam em branco para cotação.</p>' \
-    + sec('08', 'Cuidados de higiene') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
+    + sec('09', 'Cuidados de higiene') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Bisnaga e bico lavados e higienizados todo dia, e sempre que a bisnaga for reabastecida.',
         'Catupiry na geladeira; a bisnaga fica fora só durante a montagem.',
         'Não devolver a sobra da bisnaga para a embalagem original.',
         'Etiqueta na bisnaga com produto, data de abertura, validade e responsável (RDC 216/2004).']) + '</ul>' \
-    + sec('09', 'Depois do teste') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
+    + sec('10', 'Depois do teste') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Atualizar as fichas técnicas e as receitas de produção da <b>4 Queijos</b>, da <b>Frango com Catupiry</b> e da <b>Pizza de Lombinho</b> com o peso e o número de listras de cada tamanho.',
         'Treinar todos os pizzaiolos com o bico padrão e mostrar uma pizza modelo de cada tamanho.']) + '</ul>' \
     + '<div class="sign" style="margin-top:12mm"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
