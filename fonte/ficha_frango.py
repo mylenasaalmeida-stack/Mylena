@@ -11,7 +11,7 @@ cover = f'''<section class="page cover"><div class="chk top"></div>
 <div class="in">{logo()}
 <div class="tag">Ficha técnica de montagem</div>
 <h1 style="font-size:42pt">Pizza Frango<span>com Catupiry</span></h1>
-<p class="lead">Frango pré-preparado, muçarela e listras de catupiry sobre molho de tomate artesanal, com azeitona e orégano, assada em forno a lenha.</p>
+<p class="lead">Frango pré-preparado, muçarela e listras de catupiry sobre molho de tomate artesanal, com azeitona preta e orégano, assada em forno a lenha.</p>
 <div class="stats">
 <div class="st"><b>140 g</b><small>de frango pré-preparado por pizza Grande</small></div>
 <div class="st"><b>280 g</b><small>de muçarela por pizza Grande</small></div>
@@ -27,7 +27,7 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
     ['Tamanho de referência', f'Grande · 8 fatias · bolinha de 320 g · ≈35 cm {EST} (Média e Broto na seção 07)'],
     ['Base', 'Massa de pizza artesanal (ficha própria) + molho de tomate artesanal (150 ml)'],
     ['Forno', 'A lenha · 340 a 380 °C (ponto ideal) · 3 a 4 min'],
-    ['Alérgenos', f'CONTÉM GLÚTEN (trigo), LEITE (muçarela e catupiry) e SOJA (óleo da massa). Temperos do frango: {AC}.'],
+    ['Alérgenos', f'CONTÉM GLÚTEN (trigo), LEITE (muçarela e catupiry) e SOJA (óleo da massa). Alérgenos do tempero do frango: ver Orientações finais (seção 13).'],
     ['Responsável técnico', '<span class="blank" style="min-width:80mm"></span>'],
     ['Data de elaboração', 'Novembro de 2026 · versão 1.0'],
 ], widths=['31%', '69%']) + '''<p class="note"><b>Descrição:</b> pizza montada em camadas sobre a massa aberta na hora: molho de tomate, muçarela, frango pré-preparado e listras de catupiry por cima, com azeitona e orégano.</p>''' \
@@ -35,9 +35,9 @@ p2 = sec('01', 'Identificação geral') + table(['Campo', 'Informação'], [
         ['Massa de pizza (bolinha)', '1 un · 320 g', 'Aberta na hora e aparada com o cortador', 'Base'],
         ['Molho de tomate artesanal', '150 ml', 'Colher funda (padrão), por toda a massa', 'Sabor e umidade'],
         ['Muçarela', '280 g', 'Por toda a massa, sobre o molho', 'Base de queijo'],
-        ['Frango', '140 g', f'Pré-preparado e porcionado · receita do preparo {AC}', 'Recheio principal'],
+        ['Frango', '140 g', 'Pré-preparado e porcionado (ver Orientações finais)', 'Recheio principal'],
         ['Catupiry', TB, f'Em listras por cima · {P}', 'Cremosidade'],
-        ['Azeitona', '≈9 g', 'Espalhada por cima', 'Finalização'],
+        ['Azeitona preta', '≈9 g', 'Em pedaços, espalhada por cima', 'Finalização'],
         ['Orégano', 'a olho', 'Polvilhado por cima, antes do forno', 'Aroma'],
     ], num_cols=(1,), widths=['25%', '13%', '45%', '17%']) \
     + '<p class="note">Quantidades por pizza Grande. O catupiry é medido em listras e o orégano vai a olho.</p>' \
@@ -55,9 +55,9 @@ steps = [
     ('Abrir a bolinha', ' de massa (320 g) na mesa enfarinhada e <b>aparar o excesso da borda com o cortador</b>, deixando a massa redonda e uniforme.'),
     ('Aplicar 150 ml de molho', ' com a colher funda (padrão) e espalhar por toda a massa.' + pcc(2)),
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
-    ('Distribuir o frango', ' (140 g) por toda a pizza, sobre a muçarela.' + pcc(2) + ac('ETAPA CONFORME A FOTO · A CONFIRMAR')),
+    ('Distribuir o frango', ' (140 g) logo depois da muçarela, por toda a pizza, até perto da borda.' + pcc(2)),
     ('Aplicar o catupiry', f' em listras por cima de tudo (<span class="tbc">{P}</span>).' + pcc(2)),
-    ('Espalhar a azeitona', ' (≈9 g) e <b>polvilhar orégano</b> a olho, antes de ir ao forno.'),
+    ('Espalhar a azeitona preta', ' em pedaços (≈9 g) e <b>polvilhar orégano</b> a olho, antes de ir ao forno.'),
     ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até a muçarela derreter, o catupiry dourar levemente e a borda assar.' + foto(1) + pcc(3)),
     ('Retirar, cortar', ' em 8 fatias (Grande) e embalar na caixa ou servir na hora.'),
 ]
@@ -80,10 +80,10 @@ p4 = sec('05', 'Guia visual de fotos') + '<p class="note" style="margin:-1mm 0 4
 <li>Catupiry em listras paralelas por cima do frango, de um lado ao outro.</li>
 <li>Orégano espalhado por cima das listras.</li>
 <li>Borda clara e assada, sem queimar; muçarela derretida.</li></ul>
-<div class="box" style="margin-top:6mm"><h5>Diferenças a confirmar</h5><ul class="dot">
+<div class="box" style="margin-top:6mm"><h5>Diferenças em relação à receita</h5><ul class="dot">
 <li>Na foto (Broto) aparecem cerca de 7 listras de catupiry: a quantidade por tamanho ainda está a confirmar com a equipe.</li>
-<li>A azeitona não aparece na foto, mas está na receita.</li>
-<li>O frango aparece sobre a muçarela e sob o catupiry; a ordem foi assumida conforme a foto.</li></ul></div>
+<li>A azeitona preta não aparece na foto, mas está na receita.</li>
+<li>A foto é de uma Broto: as quantidades dela não valem para a Grande.</li></ul></div>
 <p class="note" style="margin-top:5mm">Para completar o guia visual, vale fotografar uma pizza Grande nas etapas: massa aberta e aparada, muçarela e frango, catupiry e azeitona (crua) e pizza pronta na caixa.</p></div></div>'''
 
 dot = lambda c: f'<span class="dot-size" style="background:{c}"></span>'
@@ -128,27 +128,26 @@ p6 = sec('09', 'Controle de qualidade e falhas comuns') + '<h3 class="sub" style
         ['Pizza maior ou menor que o padrão', 'Bolinha sem peso e abertura no olho', 'Pesar a bolinha e usar gabarito'],
     ], widths=['26%', '34%', '40%']) + sec('10', 'Armazenamento dos ingredientes') + table(
     ['Ingrediente', 'Condição', 'Prazo'], [
-        ['Frango pré-preparado', 'Cozido, resfriado e refrigerado, porcionado em recipiente tampado e etiquetado', AC],
+        ['Frango pré-preparado', 'Refrigerado, porcionado em recipiente tampado e etiquetado', 'Conforme ficha do frango'],
         ['Muçarela', 'Refrigerada, na embalagem ou em recipiente tampado', 'Conforme rótulo'],
         ['Catupiry', 'Refrigerado após aberto, em recipiente tampado e identificado com a data de abertura', 'Conforme rótulo'],
-        ['Azeitona e orégano', 'Azeitona tampada e refrigerada após aberta; orégano em pote fechado, em local seco', 'Conforme rótulo'],
+        ['Azeitona preta e orégano', 'Azeitona tampada e refrigerada após aberta; orégano em pote fechado, em local seco', 'Conforme rótulo'],
         ['Etiqueta', 'Produto · data de preparo · validade · responsável · usar primeiro o que vence primeiro (PVPS)', 'Obrigatória'],
     ], widths=['22%', '58%', '20%'])
 
-reg = table(['Data', 'Responsável', 'Tamanho', 'Peso bolinha', 'Tempo forno', 'Ponto OK?', 'Visto'], [[''] * 7 for _ in range(7)], widths=['12%', '22%', '13%', '14%', '13%', '13%', '13%'])
+reg = table(['Data', 'Responsável', 'Tamanho', 'Peso bolinha', 'Tempo forno', 'Ponto OK?', 'Visto'], [[''] * 7 for _ in range(5)], widths=['12%', '22%', '13%', '14%', '13%', '13%', '13%'])
 p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class="note">Registro para conferir a padronização: tamanho, peso da bolinha e tempo de forno de algumas pizzas por turno.</p>' \
     + sec('12', 'Melhorias recomendadas') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        '<b>Ficha do frango pré-preparado:</b> registrar a receita, o tempero e a validade do frango, já que ele é preparado antes e porcionado.',
         '<b>Pré-porcionar:</b> deixar muçarela (280 g) e frango (140 g) já pesados em porções, para a montagem sair sempre igual.',
         '<b>Padronizar a colher funda:</b> conferir uma vez que a colher entrega os 150 ml de molho e marcar essa colher para a Grande.',
         '<b>Padronizar a listra de catupiry:</b> usar sempre a mesma bisnaga e o mesmo comprimento de listra.',
         '<b>Peso da bolinha e gabarito:</b> pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
         '<b>Fotos da Grande:</b> fotografar a montagem de uma pizza Grande para completar o guia visual.']) + '</ul>' \
+    + sec('13', 'Orientações finais') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
+        '<b>Fazer a ficha técnica do frango pré-preparado.</b> Ela não faz parte deste trabalho, mas é necessária: o frango é preparado antes (cozido, desfiado e temperado), guardado e só depois usado na pizza. Sem ficha própria não há padrão de tempero, ponto e sabor, nem regra de resfriamento, armazenamento e validade, e não dá para listar os alérgenos dos temperos. Pela RDC 216/2004, todo alimento preparado e guardado precisa desse controle. Esta ficha considera só a porção de 140 g por pizza Grande.',
+        '<b>Média e Broto são estimativas.</b> As quantidades da seção 07 foram calculadas a partir da Grande, na proporção das fatias (5/8 e 4/8). É preciso aferir os dados reais: medir o diâmetro, pesar a bolinha e as porções de algumas pizzas de cada tamanho, ajustar com o pizzaiolo e atualizar a ficha.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Quantidade de listras de catupiry por tamanho (a foto da Broto mostra cerca de 7).',
-        'Se o frango entra depois da muçarela e antes do catupiry, como na foto.',
-        'Receita, tempero e validade do frango pré-preparado.',
-        'Tipo de azeitona (preta ou verde) e se vai inteira ou em pedaços.',
         'Marca da muçarela e do catupiry; diâmetros reais de Média e Broto.']) + '</ul></div>' \
     + '<div class="sign"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
 

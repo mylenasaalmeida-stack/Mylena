@@ -22,7 +22,7 @@ ings = [
     ('Muçarela', 'por toda a massa', '280 g'),
     ('Frango', 'pré-preparado e porcionado', '140 g'),
     ('Catupiry', f'em listras · {P}', 'a confirmar'),
-    ('Azeitona', 'espalhada por cima', '≈9 g'),
+    ('Azeitona preta', 'em pedaços, espalhada por cima', '≈9 g'),
     ('Orégano', 'polvilhado, antes do forno', 'a olho'),
 ]
 rows = ''.join(f'<div class="r"><span class="bx"></span><div class="t">{a}<small>{b}</small></div>'
@@ -56,12 +56,12 @@ A = blk('A', 'Abrir e aparar',
 B = blk('B', 'Molho, muçarela e frango',
         st(3, 'Coloque <b>150 ml de molho</b> com a <b>colher funda</b> e espalhe por toda a massa.')
         + st(4, 'Espalhe os <b>280 g de muçarela</b> por igual sobre o molho.')
-        + st(5, 'Distribua os <b>140 g de frango</b> por toda a pizza, até perto da borda.')
-        + '<div class="al"><b>Atenção:</b> a etapa do frango segue a foto (depois da muçarela) e está <span class="tbc">a confirmar</span>.</div>',
+        + st(5, '<b>Logo depois da muçarela</b>, distribua os <b>140 g de frango</b> por toda a pizza, até perto da borda.')
+        + '<div class="al"><b>Frango sempre sobre a muçarela.</b> Assim ele não resseca no forno.</div>',
         tip('Frango espalhado por igual, sem montes no centro'))
 C = blk('C', 'Catupiry, azeitona e orégano',
         st(6, 'Aplique o <b>catupiry em listras</b> por cima de tudo.')
-        + st(7, 'Espalhe a <b>azeitona (≈9 g)</b> e polvilhe <b>orégano a olho</b>.')
+        + st(7, 'Espalhe a <b>azeitona preta em pedaços (≈9 g)</b> e polvilhe <b>orégano a olho</b>.')
         + f'<div class="al"><b>Atenção:</b> <span class="tbc">{P}</span>. A foto (Broto) mostra cerca de 7 listras.</div>',
         tip('Listras paralelas, de um lado ao outro da pizza'))
 D = blk('D', 'Assar',
@@ -81,9 +81,9 @@ E = blk('E', 'Cortar e embalar',
 p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in" style="padding-top:5mm">{E}
 {sec('!', 'Validade dos ingredientes')}
 <div class="vcards">
-<div class="vc" style="background:var(--navy)"><h4>Frango pré-preparado</h4><b>A confirmar</b><p>Geladeira, porcionado, pote tampado e etiquetado.</p></div>
+<div class="vc" style="background:var(--navy)"><h4>Frango pré-preparado</h4><b>Ver ficha</b><p>Geladeira, porcionado e etiquetado. Validade conforme a ficha do frango.</p></div>
 <div class="vc" style="background:var(--blue)"><h4>Muçarela e catupiry</h4><b>Rótulo</b><p>Geladeira. Catupiry com a data de abertura.</p></div>
-<div class="vc" style="background:var(--blue)"><h4>Azeitona</h4><b>Rótulo</b><p>Tampada, na geladeira depois de aberta.</p></div>
+<div class="vc" style="background:var(--blue)"><h4>Azeitona preta</h4><b>Rótulo</b><p>Tampada, na geladeira depois de aberta.</p></div>
 </div>
 <div class="two">
 <div class="fs"><h4>Faça sempre</h4><ul><li>Use primeiro o que vence primeiro.</li><li>Pese: muçarela 280 g e frango 140 g.</li><li>Molho sempre com a colher funda: 150 ml.</li><li>Frango na geladeira até a hora de montar.</li><li>Etiquete todo pote aberto ou porcionado.</li></ul></div>
@@ -94,6 +94,9 @@ p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in
 <div>Produto: <span class="ln"></span></div><div>Lote: <span class="ln"></span></div>
 <div>Preparo: <span class="ln"></span></div><div>Validade: <span class="ln"></span></div>
 <div>Responsável: <span class="ln" style="width:24mm"></span></div><div>☐ Geladeira</div></div>
+<div class="two" style="grid-template-columns:1fr"><div class="fs"><h4>Orientações finais</h4><ul>
+<li><b>Ficha do frango:</b> ainda precisa ser feita. O frango é preparado antes e guardado; sem ficha não há padrão de tempero, validade nem lista de alérgenos dos temperos.</li>
+<li><b>Média e Broto são estimativas</b> calculadas a partir da Grande. Meça e pese algumas pizzas reais e avise o responsável para ajustar.</li></ul></div></div>
 </div>{foot('Boas Práticas · RDC ANVISA 216/2004')}</section>'''
 
 open('receita_op_frango.html', 'w').write(
