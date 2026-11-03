@@ -55,7 +55,7 @@ steps = [
     ('Abrir a bolinha', ' de massa (320 g) na mesa enfarinhada e <b>aparar o excesso da borda com o cortador</b>, deixando a massa redonda e uniforme.'),
     ('Aplicar 150 ml de molho', ' com a colher funda (padrão) e espalhar por toda a massa.' + pcc(2)),
     ('Espalhar a muçarela', ' (280 g) sobre o molho, distribuindo por igual.' + pcc(2)),
-    ('Distribuir o lombo', ' fatiado (105 g) logo depois da muçarela, por toda a pizza, até perto da borda.' + pcc(2) + ac('ETAPA A CONFIRMAR')),
+    ('Distribuir o lombo', ' fatiado (105 g) logo depois da muçarela, por toda a pizza, até perto da borda.' + pcc(2)),
     ('Aplicar o catupiry', f' em listras por cima de tudo (<span class="tbc">{P}</span>).' + pcc(2)),
     ('Espalhar a azeitona preta', ' em pedaços (≈9 g) e <b>polvilhar orégano</b> a olho, antes de ir ao forno.' + foto(1)),
     ('Assar no forno a lenha', ' a 340 a 380 °C, por 3 a 4 min, até a muçarela derreter, o catupiry dourar levemente e a borda assar.' + foto(2) + pcc(3)),
@@ -128,7 +128,7 @@ p6 = sec('09', 'Controle de qualidade e falhas comuns') + '<h3 class="sub" style
         ['Pizza maior ou menor que o padrão', 'Bolinha sem peso e abertura no olho', 'Pesar a bolinha e usar gabarito'],
     ], widths=['26%', '34%', '40%']) + sec('10', 'Armazenamento dos ingredientes') + table(
     ['Ingrediente', 'Condição', 'Prazo'], [
-        ['Lombo fatiado', 'Refrigerado, na embalagem ou porcionado em recipiente tampado e etiquetado', 'Conforme rótulo'],
+        ['Lombo', 'Refrigerado, na embalagem ou fatiado e porcionado em recipiente tampado e etiquetado', 'Ver seção 13'],
         ['Muçarela', 'Refrigerada, na embalagem ou em recipiente tampado', 'Conforme rótulo'],
         ['Catupiry', 'Refrigerado após aberto, em recipiente tampado e identificado com a data de abertura', 'Conforme rótulo'],
         ['Azeitona preta e orégano', 'Azeitona tampada e refrigerada após aberta; orégano em pote fechado, em local seco', 'Conforme rótulo'],
@@ -144,12 +144,11 @@ p7 = sec('11', 'Registro de montagem') + f'<div class="reg">{reg}</div><p class=
         '<b>Peso da bolinha e gabarito:</b> pesar a bolinha e abrir até o gabarito reduz a apara e o desperdício.',
         '<b>Fotos da montagem:</b> fotografar as etapas de massa aberta e muçarela para completar o guia visual.']) + '</ul>' \
     + sec('13', 'Orientações finais') + '<ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
-        '<b>Lombo fatiado:</b> esta ficha considera o lombo comprado já fatiado, com validade e alérgenos conforme o rótulo. Se o lombo for preparado ou temperado na casa, ele precisa de ficha técnica própria (preparo, resfriamento, armazenamento, validade e alérgenos), como pede a RDC 216/2004.',
+        '<b>Forma de compra do lombo: informação a ser apresentada pela equipe.</b> Não se sabe ainda se o lombo chega já fatiado ou se é fatiado na casa, e isso muda o controle. Se vier fatiado, valem a validade e os alérgenos do rótulo. Se for fatiado na casa, é preciso definir a espessura da fatia, a higienização do fatiador e a validade depois de aberto e fatiado, com etiqueta. Se for preparado ou temperado na casa, precisa de ficha técnica própria, como pede a RDC 216/2004.',
         '<b>Média e Broto são estimativas.</b> As quantidades da seção 07 foram calculadas a partir da Grande, na proporção das fatias (5/8 e 4/8). É preciso aferir os dados reais: medir o diâmetro, pesar a bolinha e as porções de algumas pizzas de cada tamanho, ajustar com o pizzaiolo e atualizar a ficha.']) + '</ul>' \
     + '<div class="box"><h5>A confirmar com a equipe</h5><ul class="dot">' + ''.join(f'<li>{x}</li>' for x in [
         'Quantidade de listras de catupiry por tamanho.',
-        'Se o lombo entra logo depois da muçarela (as fotos indicam que sim).',
-        'Tipo de lombo (defumado/canadense ou preparado na casa) e marca.',
+        'Se o lombo chega já fatiado ou é fatiado na casa, e a marca (ver seção 13).',
         'Marca da muçarela e do catupiry; diâmetros reais de Média e Broto.']) + '</ul></div>' \
     + '<div class="sign"><div>Elaborado por</div><div>Responsável técnico</div><div>Aprovado por (Speciale)</div></div>'
 

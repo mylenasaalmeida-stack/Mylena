@@ -57,7 +57,7 @@ B = blk('B', 'Molho, muçarela e lombo',
         st(3, 'Coloque <b>150 ml de molho</b> com a <b>colher funda</b> e espalhe por toda a massa.')
         + st(4, 'Espalhe os <b>280 g de muçarela</b> por igual sobre o molho.')
         + st(5, '<b>Logo depois da muçarela</b>, distribua os <b>105 g de lombo fatiado</b> por toda a pizza, até perto da borda.')
-        + '<div class="al"><b>Atenção:</b> a etapa do lombo segue as fotos (sobre a muçarela) e está <span class="tbc">a confirmar</span>.</div>',
+        + '<div class="al"><b>Lombo sempre sobre a muçarela.</b> Assim ele não resseca no forno.</div>',
         tip('Lombo espalhado por igual, sem montes no centro'))
 C = blk('C', 'Catupiry, azeitona e orégano',
         st(6, 'Aplique o <b>catupiry em listras</b> por cima de tudo.')
@@ -81,7 +81,7 @@ E = blk('E', 'Cortar e embalar',
 p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in" style="padding-top:5mm">{E}
 {sec('!', 'Validade dos ingredientes')}
 <div class="vcards">
-<div class="vc" style="background:var(--navy)"><h4>Lombo fatiado</h4><b>Rótulo</b><p>Geladeira, na embalagem ou em pote tampado e etiquetado.</p></div>
+<div class="vc" style="background:var(--navy)"><h4>Lombo</h4><b>A definir</b><p>Geladeira, tampado e etiquetado. Prazo depende da forma de compra.</p></div>
 <div class="vc" style="background:var(--blue)"><h4>Muçarela e catupiry</h4><b>Rótulo</b><p>Geladeira. Catupiry com a data de abertura.</p></div>
 <div class="vc" style="background:var(--blue)"><h4>Azeitona preta</h4><b>Rótulo</b><p>Tampada, na geladeira depois de aberta.</p></div>
 </div>
@@ -95,7 +95,7 @@ p3 = f'''<section class="page">{header('Servir e guardar', '', 3)}<div class="in
 <div>Preparo: <span class="ln"></span></div><div>Validade: <span class="ln"></span></div>
 <div>Responsável: <span class="ln" style="width:24mm"></span></div><div>☐ Geladeira</div></div>
 <div class="two" style="grid-template-columns:1fr"><div class="fs"><h4>Orientações finais</h4><ul>
-<li><b>Lombo:</b> considerado comprado já fatiado (validade do rótulo). Se for preparado na casa, precisa de ficha própria.</li>
+<li><b>Lombo:</b> a equipe precisa informar se ele chega já fatiado ou se é fatiado na casa. Isso define a validade e o cuidado com o fatiador.</li>
 <li><b>Média e Broto são estimativas</b> calculadas a partir da Grande. Meça e pese algumas pizzas reais e avise o responsável para ajustar.</li></ul></div></div>
 </div>{foot('Boas Práticas · RDC ANVISA 216/2004')}</section>'''
 
