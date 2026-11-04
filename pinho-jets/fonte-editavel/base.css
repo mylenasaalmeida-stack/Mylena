@@ -1,0 +1,23 @@
+@font-face{font-family:Saira;src:url(assets/saira.woff2) format('woff2');font-weight:100 900;font-stretch:50% 125%;font-style:normal}
+@font-face{font-family:Saira;src:url(assets/saira-i.woff2) format('woff2');font-weight:100 900;font-stretch:50% 125%;font-style:italic}
+:root{--abismo:#061a2e;--marinho:#0a2742;--sinal:#ff4a1c;--casco:#ffd400;--agua:#13b3c4;--espuma:#eef4f3;--espuma2:#dfeae8;--tinta2:#3f5a72;--claro2:#a9bfd0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:Saira,sans-serif;-webkit-font-smoothing:antialiased}
+.f{position:relative;width:1080px;height:1350px;overflow:hidden;margin:40px;background:var(--abismo);color:#fff}
+.f.story{height:1920px}
+.abs{position:absolute}
+canvas{position:absolute;inset:0}
+/* tipografia */
+.disp{font-style:italic;font-weight:900;font-stretch:62%;text-transform:uppercase;line-height:.8;letter-spacing:-.01em}
+.lab{font-weight:650;font-stretch:100%;text-transform:uppercase;letter-spacing:.16em;font-size:22px}
+.body{font-weight:500;font-stretch:100%;font-size:40px;line-height:1.18}
+.mono{font-weight:600;font-stretch:88%;letter-spacing:.06em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.wm{font-style:italic;font-weight:900;font-stretch:70%;text-transform:uppercase;letter-spacing:.01em;font-size:34px;line-height:1}
+.wm b{color:var(--sinal);font-weight:900}
+.out{color:transparent;-webkit-text-stroke:3px currentColor}
+/* moldura comum (zona segura do grid 3:4 = x 34..1046) */
+.hd{position:absolute;left:80px;right:80px;top:64px;display:flex;justify-content:space-between;align-items:center;z-index:20}
+.ft{position:absolute;left:80px;right:80px;bottom:60px;display:flex;justify-content:space-between;align-items:center;z-index:20}
+.rule{height:3px;background:currentColor}
+.grain{position:absolute;inset:0;z-index:30;pointer-events:none;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.pill{display:inline-flex;align-items:center;gap:14px;padding:18px 30px;border-radius:999px;font-weight:800;font-stretch:90%;text-transform:uppercase;letter-spacing:.06em;font-size:28px}

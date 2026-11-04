@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+#pano{width:3104px;height:1350px;margin:0}
+#pano .big{position:absolute;left:40px;top:150px;font-size:640px;white-space:nowrap;color:var(--sinal);z-index:2;letter-spacing:-.02em}
+#pano .big .o{color:transparent;-webkit-text-stroke:5px rgba(238,244,243,.9)}
+#jet{position:absolute;left:760px;top:236px;width:1760px;z-index:5;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+#fx{z-index:6}
+#back{z-index:1}
+.cap{position:absolute;top:0;width:1080px;height:1350px;z-index:20}
+.cap .hd{left:84px;right:84px}
+.cap .ft{left:84px;right:84px;bottom:66px;align-items:flex-end}
+.cap .t{font-style:italic;font-weight:900;font-stretch:70%;text-transform:uppercase;font-size:76px;line-height:.86}
+.cap .n{font-style:italic;font-weight:900;font-stretch:62%;font-size:150px;line-height:.75;color:var(--casco)}
+.cap .sw{display:flex;align-items:center;gap:12px}
+.cap .sw i{display:block;width:64px;height:64px;border-radius:50%;background:var(--casco);color:var(--abismo);font-style:normal;font-weight:900;font-size:36px;display:grid;place-items:center}
+.tag{background:rgba(6,26,46,.55);backdrop-filter:blur(6px);padding:10px 16px;border:1.5px solid rgba(238,244,243,.35)}
+.coord{position:absolute;z-index:20;font-size:20px;color:rgba(238,244,243,.75)}
+</style></head><body>
+<section class="f" id="pano">
+  <canvas id="back" width="3104" height="1350"></canvas>
+  <div class="big disp">Vem <span class="o">pi</span>lotar.</div>
+  <img id="jet" src="assets/jet-casal.webp">
+  <canvas id="fx" width="3104" height="1350"></canvas>
+
+  <!-- capa 1 -->
+  <div class="cap" style="left:0">
+    <div class="hd"><div class="wm">Pinho <b>Jets</b></div><div class="lab tag">Fixado · 01</div></div>
+    <div class="ft"><div><div class="lab" style="display:inline-block;background:var(--sinal);color:#fff;padding:8px 14px;margin-bottom:20px">Quem somos</div><div class="t">Jet, lancha<br>e mar o dia<br>todo.</div></div><div class="sw"><span class="lab" style="opacity:.8">Deslize</span><i>→</i></div></div>
+  </div>
+  <!-- capa 2 -->
+  <div class="cap" style="left:1012px">
+    <div class="hd"><div class="lab tag">Fixado · 02</div><div class="lab mono" style="opacity:.75">PE · Litoral Sul</div></div>
+    <div class="ft"><div><div class="lab" style="display:inline-block;background:var(--sinal);color:#fff;padding:8px 14px;margin-bottom:20px">Preços do jet</div><div style="display:flex;align-items:flex-end;gap:18px"><div class="lab" style="font-size:26px;line-height:1.1">A partir<br>de R$</div><div class="n">200</div><div class="lab" style="font-size:26px;line-height:1.1">/20<br>min</div></div></div><div class="sw"><span class="lab" style="opacity:.8">Deslize</span><i>→</i></div></div>
+  </div>
+  <!-- capa 3 -->
+  <div class="cap" style="left:2024px">
+    <div class="hd"><div class="lab tag">Fixado · 03</div><div class="wm" style="font-size:28px;opacity:.9">@pinho_jets</div></div>
+    <div class="ft"><div><div class="lab" style="display:inline-block;background:var(--sinal);color:#fff;padding:8px 14px;margin-bottom:20px">Onde + como reservar</div><div class="t">Paiva · Barra<br>de Jangada<br>· Suape</div></div><div class="sw"><span class="lab" style="opacity:.8">Deslize</span><i>→</i></div></div>
+  </div>
+  <div class="grain"></div>
+</section>
+<script src="splash.js"></script>
+<script>
+const W=3104,H=1350,WL=1080;
+const b=document.getElementById('back').getContext('2d');
+// céu/noite profunda
+
+ocean(b,W,H,-60,{seed:4,n:5200,top:'#0c3556',mid:'#0a2742',bot:'#041322'});
+// halo de luz atrás do jet
+let rg=b.createRadialGradient(1700,700,0,1700,700,1300);rg.addColorStop(0,'rgba(19,179,196,.38)');rg.addColorStop(1,'rgba(19,179,196,0)');b.fillStyle=rg;b.fillRect(0,0,W,H);
+
+// splash de trás (rooster tail p/ esquerda, atrás do texto? não: atrás do jet)
+splash(b,{x:1040,y:1100,a0:120,a1:178,v:1500,g:1100,T:1.25,n:3200,seed:2,glow:520,scale:1.4,streak:1.3,sheets:90,bias:.8});
+const f=document.getElementById('fx').getContext('2d');
+// spray frontal saindo do casco + spray lateral
+splash(f,{x:1060,y:1120,a0:100,a1:170,v:1100,g:1300,T:.9,n:2400,seed:9,glow:300,scale:1.1,streak:1.1,sheets:50});
+splash(f,{x:2440,y:1030,a0:15,a1:60,v:380,g:1100,T:.5,n:500,seed:21,glow:90,scale:.7});
+foam(f,780,1120,1700,60,5);
+drops(f,W,H,13,70);
+// sombra p/ legibilidade embaixo
+let sh=f.createLinearGradient(0,1000,0,H);sh.addColorStop(0,'rgba(4,19,34,0)');sh.addColorStop(.45,'rgba(4,19,34,.78)');sh.addColorStop(1,'rgba(4,19,34,.95)');f.fillStyle=sh;f.fillRect(0,1000,W,H-1000);
+let st=f.createLinearGradient(0,0,0,220);st.addColorStop(0,'rgba(4,19,34,.6)');st.addColorStop(1,'rgba(4,19,34,0)');f.fillStyle=st;f.fillRect(0,0,W,220);
+window.READY=true;
+</script></body></html>

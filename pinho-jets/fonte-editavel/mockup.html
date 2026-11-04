@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#ddd;font-family:-apple-system,"Helvetica Neue",Arial,"Noto Color Emoji",sans-serif}
+#m{width:1080px;background:#fff;color:#000;padding:40px 0 0;margin:0}
+.top{display:flex;align-items:center;gap:60px;padding:0 40px}
+.av{width:240px;height:240px;border-radius:50%;padding:8px;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#feda75)}
+.av img{width:100%;height:100%;border-radius:50%;border:6px solid #fff;object-fit:cover}
+.st{display:flex;gap:70px;font-size:34px}.st b{display:block;font-size:40px}
+.bio{padding:30px 40px 0;font-size:32px;line-height:1.38;white-space:pre-line}
+.bio .n{font-weight:700}.bio .c{color:#737373}.bio a{color:#00376b;font-weight:600;text-decoration:none}
+.hls{display:flex;gap:34px;padding:40px 40px 30px;overflow:hidden}
+.h{text-align:center;font-size:24px;width:150px;flex:none}
+.h div{width:150px;height:150px;border-radius:50%;border:3px solid #dbdbdb;padding:6px;margin-bottom:10px}
+.h i{display:block;width:100%;height:100%;border-radius:50%;background-size:auto 190%;background-position:center}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.g div{aspect-ratio:3/4;background-size:cover;background-position:center;position:relative}
+.g div.p::after{content:"📌";position:absolute;right:12px;top:10px;font-size:30px}
+</style></head><body><section id="m" data-out="00_mockup-perfil">
+<div class="top"><div class="av"><img src="./00_foto-de-perfil.png"></div>
+<div><div style="font-size:38px;font-weight:700;margin-bottom:22px">pinho_jets</div><div class="st"><span><b>24</b>posts</span><span><b>5.283</b>seguidores</span><span><b>1.514</b>seguindo</span></div></div></div>
+<div class="bio"><span class="n">Pinho Jets | Aluguel de Jet Ski</span>
+<span class="c">Agência de passeios de barco</span>
+Jet ski, lancha, sofá maluco, drone e oficina 🌊
+📍 Paiva · Barra de Jangada · Suape (PE)
+🚤 Jet a partir de R$ 200
+👇 Reserve seu passeio no link
+<a>🔗 Reserve seu passeio</a></div>
+<div class="hls" id="hl"></div>
+<div class="g" id="g"></div>
+</section><script>
+const h=['01_reservar:Reservar','02_precos:Preços','03_onde:Onde','04_jet:Jet ski','05_lancha:Lancha','06_sofa:Sofá'];
+hl.innerHTML=h.map(x=>{const[f,n]=x.split(':');return`<div class="h"><div><i style="background-image:url(./07_destaques/${f}.png)"></i></div>${n}</div>`}).join('');
+const g2=['01_capa','02_capa','03_capa','04_post-lancha','05_post-sofa-maluco','06_post-oficina'];
+g.innerHTML=g2.map((f,i)=>`<div class="${i<3?'p':''}" style="background-image:url(./${f}.png)"></div>`).join('');
+window.READY=true;</script></body></html>
