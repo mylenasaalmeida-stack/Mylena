@@ -140,7 +140,10 @@ Jet ski, lancha, sofá maluco, drone e oficina 🌊
 ---
 
 ## 4. Destaques
-`3_destaques/` (1080×1920, ícone centralizado para o recorte em círculo)
+- `3_destaques/capas/`: as capas (1080×1920, com o ícone centralizado para o recorte em círculo)
+- `3_destaques/stories/`: um story pronto para cada destaque (1080×1920), com o mesmo número da capa
+
+Nos stories, o texto fica longe do topo (nome do perfil) e do rodapé (caixa de resposta). Onde aparece "↓ no link", cole o **sticker de link** logo abaixo da seta, apontando para a landing.
 
 | # | Nome | Conteúdo sugerido |
 |---|---|---|
@@ -181,5 +184,6 @@ Jet ski, lancha, sofá maluco, drone e oficina 🌊
 A pasta `fonte-editavel/` tem os arquivos HTML de cada peça: textos, cores e fotos ficam no próprio código. Para gerar os PNGs de novo:
 ```
 node render.js capas.html saida/      # as 3 capas fixadas (fatiadas)
-node render.js pecas.html saida/      # slides, posts, destaques, foto de perfil
+node render.js pecas.html saida/      # slides, posts, capas de destaque, foto de perfil
+node render.js stories.html saida/    # stories dos destaques
 ```
