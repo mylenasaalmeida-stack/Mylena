@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlitos Burguer · Em cartaz há 30 anos</title>
+<meta name="description" content="Hambúrguer 100% artesanal em Recife desde 1995. Carlitos é coisa de cinema. Peça pelo pedir.to, iFood, 99 Food ou delivery.">
+<meta name="theme-color" content="#D62718">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Ultra&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D62718; --red-deep:#8E120C; --red-ink:#5A0B07;
+  --orange:#F5891F; --mustard:#FFC93C; --gold:#FFD970;
+  --wood:#2B150B; --wood-2:#3D1E10; --ink:#120B08; --ink-2:#1C120D;
+  --cream:#FFF4E2; --paper:#FBF6EC; --muted:#CDB8A6;
+  --display:"Ultra", "Rockwell", "Georgia", serif;
+  --marquee:"Bebas Neue", "Impact", "Arial Narrow", sans-serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);line-height:1.5;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- INTRO (film leader) ---------- */
+.leader{position:fixed;inset:0;z-index:100;background:#0b0705;display:grid;place-items:center;cursor:pointer;transition:opacity .5s ease, visibility .5s}
+.leader.done{opacity:0;visibility:hidden}
+.leader-ring{width:min(62vmin,420px);aspect-ratio:1;border-radius:50%;position:relative;display:grid;place-items:center;
+  background:conic-gradient(rgba(255,201,60,.22) var(--sweep,0deg), transparent 0);border:3px solid #e9dcc8}
+.leader-ring::before,.leader-ring::after{content:"";position:absolute;background:#e9dcc8}
+.leader-ring::before{width:2px;height:140%;}
+.leader-ring::after{height:2px;width:140%;}
+.leader-ring span{position:relative;z-index:1;font-family:var(--marquee);font-size:min(38vmin,260px);color:#f3e8d6;line-height:1}
+.leader small{position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#8d7a6a}
+.leader::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(255,255,255,.015) 3px 4px);animation:flick .12s steps(2) infinite}
+@keyframes flick{50%{opacity:.4}}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s, box-shadow .3s}
+.nav.solid{background:rgba(18,11,8,.86);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,201,60,.15)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:18px;letter-spacing:.02em;line-height:1}
+.brand svg{width:44px;height:44px;flex:none}
+.brand small{display:block;font-family:var(--marquee);font-size:12px;letter-spacing:.25em;color:var(--mustard);margin-top:3px}
+.nav-links{display:flex;gap:26px;font-weight:500;font-size:15px}
+.nav-links a{opacity:.8;transition:opacity .2s}
+.nav-links a:hover{opacity:1;color:var(--mustard)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;border-radius:999px;padding:14px 24px;transition:transform .2s, box-shadow .2s, background .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px -8px rgba(214,39,24,.8), inset 0 -3px 0 rgba(0,0,0,.2)}
+.btn-red:hover{background:#ea3020;transform:translateY(-2px)}
+.btn-ghost{border:2px solid rgba(255,244,226,.35)}
+.btn-ghost:hover{border-color:var(--mustard);color:var(--mustard)}
+.btn-sm{padding:10px 18px;font-size:14px}
+@media (max-width:860px){.nav-links{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;overflow:hidden;padding:110px 0 70px;
+  background:radial-gradient(ellipse 60% 55% at 70% 45%, rgba(245,137,31,.35), transparent 70%),
+             radial-gradient(ellipse 80% 60% at 50% 110%, rgba(214,39,24,.55), transparent 70%),
+             linear-gradient(#170d09, #0f0806)}
+.spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,70%) var(--my,40%), rgba(255,217,112,.13), transparent 60%)}
+.curtain{position:absolute;top:0;bottom:0;width:52%;z-index:40;pointer-events:none;
+  background:repeating-linear-gradient(90deg,#7d0f09 0 18px,#b41b10 30px,#d62718 40px,#9a150c 54px,#7d0f09 64px);
+  box-shadow:inset 0 -60px 80px rgba(0,0,0,.5);transition:transform 1.6s cubic-bezier(.7,0,.2,1)}
+.curtain.l{left:0;transform-origin:left}
+.curtain.r{right:0}
+.open .curtain.l{transform:translateX(-120%) skewX(-4deg)}
+.open .curtain.r{transform:translateX(120%) skewX(4deg)}
+.valance{position:absolute;top:0;left:0;right:0;height:44px;z-index:41;pointer-events:none;
+  background:radial-gradient(circle at 30px -10px,#b41b10 34px,transparent 35px) 0 0/60px 44px repeat-x, linear-gradient(#5a0b07,#8e120c);
+  -webkit-mask:radial-gradient(circle at 30px 0,#000 40px,transparent 41px) 0 0/60px 44px repeat-x;mask:radial-gradient(circle at 30px 0,#000 40px,transparent 41px) 0 0/60px 44px repeat-x;opacity:.95}
+
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--marquee);letter-spacing:.22em;font-size:16px;color:var(--mustard)}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.hero h1{font-family:var(--display);font-size:clamp(46px,7.4vw,104px);line-height:.92;margin:18px 0 22px;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--mustard);display:inline-block;position:relative}
+.hero h1 em::after{content:"";position:absolute;left:2%;right:2%;bottom:.04em;height:.12em;background:var(--red);z-index:-1;transform:skew(-12deg)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:520px}
+.lead b{color:var(--cream)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 34px}
+.stub{display:inline-flex;align-items:stretch;background:var(--paper);color:var(--ink);border-radius:12px;overflow:hidden;font-size:13px;box-shadow:0 18px 40px -18px rgba(0,0,0,.8);transform:rotate(-2deg)}
+.stub .a{padding:12px 16px;border-right:2px dashed #c9b7a0}
+.stub .a b{display:block;font-family:var(--marquee);font-size:24px;letter-spacing:.06em;line-height:1;color:var(--red)}
+.stub .b{padding:12px 16px;display:grid;place-items:center;font-family:var(--marquee);font-size:15px;letter-spacing:.14em;background:var(--mustard)}
+
+.marquee-box{position:relative;background:linear-gradient(#1b0f0a,#120a07);border:6px solid #3a2015;border-radius:22px;padding:30px 22px 26px;box-shadow:0 0 0 2px #6b3a21, 0 40px 80px -30px rgba(0,0,0,.9), inset 0 0 60px rgba(245,137,31,.12)}
+.bulbs{position:absolute;left:12px;right:12px;display:flex;justify-content:space-between}
+.bulbs.t{top:9px}.bulbs.b{bottom:9px}
+.bulbs i{width:10px;height:10px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 8px 2px rgba(255,201,60,.9), 0 0 18px rgba(255,140,0,.6);animation:blink 1.2s infinite}
+.bulbs i:nth-child(2n){animation-delay:.6s}
+@keyframes blink{50%{background:#7a5a20;box-shadow:none}}
+.hero-burger{position:relative;margin:8px auto 0;width:min(100%,460px);filter:drop-shadow(0 40px 40px rgba(0,0,0,.6))}
+.hero-burger .ly{transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.hero-burger:hover .ly{transform:translateY(calc(var(--k) * -9px))}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px) rotate(-1.5deg)}}
+.marquee-title{text-align:center;font-family:var(--marquee);letter-spacing:.16em;line-height:1}
+.marquee-title .s{font-size:15px;color:var(--orange)}
+.marquee-title .t{white-space:nowrap;font-size:clamp(24px,3vw,38px);color:#fff;text-shadow:0 0 18px rgba(255,201,60,.55)}
+.badge30{position:absolute;right:-14px;bottom:-22px;z-index:3;width:104px;height:104px;border-radius:50%;background:var(--red);display:grid;place-items:center;text-align:center;
+  font-family:var(--marquee);line-height:.85;color:#fff;border:4px dashed var(--mustard);animation:spin 18s linear infinite;box-shadow:0 10px 30px -6px rgba(214,39,24,.8)}
+.badge30 b{font-size:44px;display:block}
+.badge30 span{font-size:13px;letter-spacing:.14em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:-1;max-width:440px;margin:0 auto;width:100%}
+  .badge30{width:84px;height:84px;right:-6px}.badge30 b{font-size:34px}
+}
+
+/* ---------- FILM STRIP TICKER ---------- */
+.strip{background:#0a0605;padding:14px 0;position:relative;overflow:hidden;border-block:1px solid #2a1a12}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:9px;background:repeating-linear-gradient(90deg,#efe3cf 0 12px,transparent 12px 26px);opacity:.85}
+.strip::before{top:3px}.strip::after{bottom:3px}
+.track{display:flex;gap:0;width:max-content;animation:roll 38s linear infinite}
+.strip:hover .track{animation-play-state:paused}
+.track span{font-family:var(--marquee);font-size:clamp(22px,3vw,34px);letter-spacing:.08em;padding:6px 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
+.track span::after{content:"★";color:var(--red);font-size:.7em}
+.track span:nth-child(3n+2){color:var(--mustard)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,11vw,140px) 0}
+.sec-head{max-width:720px;margin-bottom:48px}
+.sec-head h2{font-family:var(--display);font-size:clamp(36px,5.4vw,68px);line-height:.95;margin-top:14px;text-wrap:balance}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:18px;max-width:560px}
+.center{text-align:center;margin-inline:auto}
+.center .eyebrow::after{content:"";width:34px;height:2px;background:currentColor}
+
+/* ---------- EXPLODED BURGER (scroll) ---------- */
+.making{height:420vh;background:linear-gradient(#0f0806, var(--wood) 30%, var(--wood) 70%, #0f0806)}
+.making-pin{position:sticky;top:0;height:100svh;display:grid;align-items:center;overflow:hidden}
+.making-pin::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 45% 55% at 64% 50%, rgba(255,201,60,.18), transparent 70%);pointer-events:none}
+.making-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center;position:relative}
+.scene-list{list-style:none;position:relative}
+.scene{padding:14px 0 14px 22px;border-left:3px solid rgba(255,244,226,.12);opacity:.35;transition:opacity .4s, border-color .4s, transform .4s}
+.scene.on{opacity:1;border-color:var(--mustard);transform:translateX(6px)}
+.scene .n{font-family:var(--marquee);letter-spacing:.2em;color:var(--orange);font-size:14px}
+.scene h3{font-family:var(--display);font-size:clamp(20px,2.3vw,28px);line-height:1.05;margin:2px 0 4px}
+.scene p{color:var(--muted);font-size:15px;max-height:0;overflow:hidden;transition:max-height .45s ease}
+.scene.on p{max-height:90px}
+.boom{position:relative;width:min(100%,460px);margin:70px auto 0}
+.boom svg{overflow:visible;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.clap{position:absolute;left:0;top:4%;font-family:var(--marquee);background:#111;color:#fff;border-radius:8px;padding:8px 12px 6px;font-size:15px;letter-spacing:.12em;transform:rotate(-6deg);
+  box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.clap::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;border-radius:6px 6px 0 0;background:repeating-linear-gradient(135deg,#fff 0 10px,#111 10px 20px)}
+.clap b{color:var(--mustard)}
+.progress{position:absolute;left:0;right:0;bottom:28px;display:flex;justify-content:center;gap:8px}
+.progress i{width:28px;height:4px;border-radius:2px;background:rgba(255,244,226,.18);overflow:hidden;position:relative}
+.progress i::after{content:"";position:absolute;inset:0;background:var(--mustard);transform:scaleX(var(--p,0));transform-origin:left}
+@media (max-width:900px){
+  .making-grid{grid-template-columns:1fr;gap:6px}
+  .boom{width:min(64%,280px);order:-1;margin:0 auto 10px}
+  .scene{padding:8px 0 8px 16px;display:none}
+  .scene.on{display:block;transform:none}
+  .clap{display:none}
+  .making-pin .sec-head h2{font-size:34px}
+}
+
+/* ---------- MENU POSTERS ---------- */
+.menu{background:radial-gradient(ellipse at 50% 0, rgba(214,39,24,.25), transparent 60%), var(--ink)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{padding:10px 18px;border-radius:999px;border:1.5px solid rgba(255,244,226,.2);font-weight:500;font-size:15px;transition:.2s}
+.chip:hover{border-color:var(--mustard)}
+.chip[aria-pressed="true"]{background:var(--mustard);color:var(--ink);border-color:var(--mustard)}
+.posters{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.poster{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg,var(--red));isolation:isolate;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, opacity .3s;box-shadow:0 20px 40px -24px rgba(0,0,0,.9);transform-style:preserve-3d}
+.poster:hover{box-shadow:0 30px 60px -20px rgba(0,0,0,.9), 0 0 0 2px var(--mustard)}
+.poster.hide{display:none}
+.poster .top{padding:18px 18px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.genre{font-family:var(--marquee);letter-spacing:.18em;font-size:14px;background:rgba(0,0,0,.28);padding:5px 10px 3px;border-radius:6px}
+.rating{width:30px;height:30px;border-radius:6px;background:#1a9a3d;color:#fff;font-weight:700;display:grid;place-items:center;font-size:15px;flex:none}
+.poster .art{height:200px;display:grid;place-items:center;position:relative}
+.poster .art::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle, rgba(255,255,255,.22), transparent 65%)}
+.poster .art svg{width:190px;position:relative;transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.poster:hover .art svg{transform:scale(1.08) rotate(-4deg)}
+.poster .body{padding:4px 20px 22px;background:linear-gradient(transparent, rgba(0,0,0,.35) 40%)}
+.poster h3{font-family:var(--display);font-size:26px;line-height:1;margin-bottom:8px}
+.poster p{font-size:14.5px;color:rgba(255,244,226,.85);min-height:66px}
+.poster .foot{display:flex;align-items:end;justify-content:space-between;margin-top:14px;gap:10px}
+.price small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.price b{font-family:var(--marquee);font-size:34px;letter-spacing:.02em;line-height:1}
+.add{width:46px;height:46px;border-radius:50%;background:var(--paper);color:var(--red);display:grid;place-items:center;font-size:26px;font-weight:700;transition:.25s;flex:none}
+.add:hover{transform:rotate(90deg);background:var(--mustard);color:var(--ink)}
+.menu-note{margin-top:26px;font-size:13px;color:#8d7a6a}
+
+/* ---------- 30 ANOS ---------- */
+.years{background:var(--red);color:#fff;overflow:hidden}
+.years::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 120%, rgba(255,255,255,.07) 0 6deg, transparent 6deg 12deg);pointer-events:none}
+.years-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+.big30{font-family:var(--display);font-size:clamp(140px,24vw,330px);line-height:.8;color:var(--mustard);text-shadow:6px 6px 0 var(--red-ink);letter-spacing:-.04em}
+.big30 small{display:block;font-family:var(--marquee);font-size:clamp(26px,3.4vw,44px);letter-spacing:.2em;color:#fff;text-shadow:none;margin-top:16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);padding:20px}
+.stat b{font-family:var(--marquee);font-size:clamp(40px,4.6vw,56px);line-height:1;display:block;color:var(--mustard)}
+.stat span{font-size:14px;opacity:.9}
+.years h2{font-family:var(--display);font-size:clamp(30px,3.6vw,46px);line-height:1;margin-bottom:16px}
+.years p.t{opacity:.92;margin-bottom:26px;font-size:17px}
+@media (max-width:900px){.years-grid{grid-template-columns:1fr;gap:30px}}
+
+/* ---------- NOTE + CHAT ---------- */
+.fans{background:linear-gradient(var(--wood), var(--ink))}
+.fans-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.note{background:var(--paper);color:#2a2622;padding:40px 36px 46px;border-radius:4px;transform:rotate(-3deg);max-width:440px;margin:auto;position:relative;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.8);background-image:repeating-linear-gradient(transparent 0 37px, rgba(66,110,190,.18) 37px 38px)}
+.note::before{content:"";position:absolute;top:-16px;left:50%;width:110px;height:32px;transform:translateX(-50%) rotate(2deg);background:rgba(255,217,112,.75)}
+.note q{font-family:var(--hand);font-size:clamp(32px,3.6vw,44px);line-height:1.12;display:block;quotes:none;text-transform:uppercase;letter-spacing:.02em}
+.note cite{display:block;margin-top:20px;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.chat{background:#0b141a;border-radius:28px;padding:22px 18px;max-width:420px;margin:auto;box-shadow:0 30px 60px -24px rgba(0,0,0,.9);border:8px solid #1f1612}
+.chat-h{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid #1f2c33;margin-bottom:16px}
+.chat-h svg{width:38px;height:38px}
+.chat-h b{display:block;font-size:15px}
+.chat-h span{font-size:12px;color:#8696a0}
+.msg{max-width:82%;padding:9px 12px 6px;border-radius:10px;font-size:15px;margin:8px 0;position:relative;opacity:0;transform:translateY(10px);transition:.45s}
+.msg.in{opacity:1;transform:none}
+.msg time{display:block;text-align:right;font-size:11px;color:#8696a0;margin-top:2px}
+.msg.me{background:#005c4b;margin-left:auto;border-top-right-radius:2px}
+.msg.them{background:#202c33;border-top-left-radius:2px}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;background:#202c33;border-radius:10px;opacity:0;transition:.3s}
+.typing.in{opacity:1}
+.typing i{width:7px;height:7px;border-radius:50%;background:#8696a0;animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{transform:translateY(-4px);opacity:.4}}
+.tag-cta{margin-top:30px;font-size:17px;color:var(--muted)}
+.tag-cta a{color:var(--mustard);font-weight:700}
+@media (max-width:900px){.fans-grid{grid-template-columns:1fr;gap:56px}}
+
+/* ---------- WHERE ---------- */
+.where-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.chan{background:var(--ink-2);border:1px solid rgba(255,244,226,.1);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:.25s;min-height:190px}
+.chan:hover{border-color:var(--mustard);transform:translateY(-4px)}
+.chan .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--red);font-size:22px}
+.chan h3{font-family:var(--display);font-size:22px;line-height:1}
+.chan p{color:var(--muted);font-size:14.5px;flex:1}
+.chan .go{font-weight:700;color:var(--mustard);font-size:14px}
+.unit{margin-top:16px;display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.unit > div{background:var(--paper);color:var(--ink);border-radius:var(--r);padding:28px}
+.unit h3{font-family:var(--display);font-size:28px;line-height:1;margin:6px 0 10px}
+.unit .k{font-family:var(--marquee);letter-spacing:.2em;color:var(--red)}
+.unit p{color:#4b3f36}
+.unit .hours{background:var(--mustard)}
+.unit .hours p{color:#3b2a10}
+.unit a.btn{margin-top:18px}
+@media (max-width:900px){.where-grid{grid-template-columns:1fr 1fr}.unit{grid-template-columns:1fr}}
+@media (max-width:520px){.where-grid{grid-template-columns:1fr}.chan{min-height:0}}
+
+/* ---------- FINAL TICKET ---------- */
+.final{padding:clamp(90px,12vw,150px) 0;background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(214,39,24,.45), transparent 70%), #0b0705;text-align:center;overflow:hidden}
+.final h2{font-family:var(--display);font-size:clamp(40px,6.4vw,84px);line-height:.92;margin:14px auto 36px;max-width:900px}
+.ticket{display:inline-flex;align-items:stretch;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7));text-align:left;max-width:100%}
+.ticket .main,.ticket .tear{background:var(--mustard);color:var(--ink);position:relative}
+.ticket .main{padding:26px 30px;border-radius:16px 0 0 16px;
+  -webkit-mask:radial-gradient(circle at 100% 0,transparent 14px,#000 15px) top/100% 51% no-repeat, radial-gradient(circle at 100% 100%,transparent 14px,#000 15px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 100% 0,transparent 14px,#000 15px) top/100% 51% no-repeat, radial-gradient(circle at 100% 100%,transparent 14px,#000 15px) bottom/100% 51% no-repeat}
+.ticket .main small{font-family:var(--marquee);letter-spacing:.24em;color:var(--red-deep)}
+.ticket .main b{display:block;font-family:var(--display);font-size:clamp(24px,3.4vw,38px);line-height:1;margin:6px 0}
+.ticket .main span{font-size:14px}
+.ticket .tear{display:grid;place-items:center;padding:20px 26px;border-left:3px dashed rgba(18,11,8,.4);border-radius:0 16px 16px 0;background:var(--red);color:#fff;
+  font-family:var(--marquee);font-size:22px;letter-spacing:.12em;transition:transform .6s cubic-bezier(.5,-0.3,.6,1.4), opacity .6s;transform-origin:left bottom;writing-mode:vertical-rl;text-orientation:mixed;
+  -webkit-mask:radial-gradient(circle at 0 0,transparent 14px,#000 15px) top/100% 51% no-repeat, radial-gradient(circle at 0 100%,transparent 14px,#000 15px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 0 0,transparent 14px,#000 15px) top/100% 51% no-repeat, radial-gradient(circle at 0 100%,transparent 14px,#000 15px) bottom/100% 51% no-repeat}
+.ticket:hover .tear{transform:rotate(6deg) translateX(4px)}
+.ticket.torn .tear{transform:rotate(38deg) translate(40px,70px);opacity:0}
+.final .hint{margin-top:22px;color:#8d7a6a;font-size:14px}
+
+/* ---------- FOOTER ---------- */
+footer{background:#070403;padding:46px 0 34px;font-size:14px;color:#9c8b7c;border-top:1px solid #21150f}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+footer .brand{color:var(--cream)}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer a:hover{color:var(--mustard)}
+
+/* sticky mobile order bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:10px;transform:translateY(130%);transition:transform .35s}
+.mbar.show{transform:none}
+.mbar .btn{flex:1;padding:14px}
+.mbar .btn-ghost{flex:0 0 56px}
+@media (max-width:700px){.mbar{display:flex}footer{padding-bottom:96px}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Gradientes compartilhados pelos hambúrgueres em SVG -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gBun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7A944"/><stop offset=".55" stop-color="#E07F1F"/><stop offset="1" stop-color="#B85A12"/></linearGradient>
+    <linearGradient id="gBunB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3B866"/><stop offset="1" stop-color="#C46A1A"/></linearGradient>
+    <linearGradient id="gMeat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B3419"/><stop offset=".5" stop-color="#4A220F"/><stop offset="1" stop-color="#2E1407"/></linearGradient>
+    <linearGradient id="gSoy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9C6A33"/><stop offset="1" stop-color="#5E3B17"/></linearGradient>
+    <linearGradient id="gChick" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6B36A"/><stop offset="1" stop-color="#A86A28"/></linearGradient>
+    <radialGradient id="gShine" cx=".35" cy=".25" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+
+<!-- INTRO -->
+<div class="leader" id="leader" role="button" aria-label="Pular abertura" tabindex="0">
+  <div class="leader-ring"><span id="count">3</span></div>
+  <small>Toque para pular a abertura</small>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Carlitos Burguer, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="31" fill="#D62718"/><circle cx="32" cy="32" r="27" fill="none" stroke="#4E7FD8" stroke-width="2.5"/>
+        <path d="M14 36c0-10 8-16 18-16s18 6 18 16z" fill="url(#gBun)"/>
+        <rect x="13" y="36" width="38" height="5" rx="2.5" fill="#FFC93C"/>
+        <rect x="14" y="40" width="36" height="6" rx="3" fill="#4A220F"/>
+        <path d="M16 46h32l-2 4c-1 2-2 2-4 2H22c-2 0-3 0-4-2z" fill="url(#gBunB)"/>
+        <ellipse cx="32" cy="17" rx="13" ry="3" fill="#111"/><path d="M23 17c0-8 4-11 9-11s9 3 9 11z" fill="#1b1b1b"/><rect x="23" y="13.5" width="18" height="2.5" fill="#D62718"/>
+        <circle cx="27.5" cy="28" r="3.2" fill="#fff"/><circle cx="36.5" cy="28" r="3.2" fill="#fff"/><circle cx="28" cy="28.6" r="1.6" fill="#111"/><circle cx="37" cy="28.6" r="1.6" fill="#111"/>
+        <path d="M27 33.5c2-1.8 3.4-1.8 5 0 1.6-1.8 3-1.8 5 0-2 1.6-3.6 1.4-5 .2-1.4 1.2-3 1.4-5-.2z" fill="#111"/>
+      </svg>
+      <span>Carlitos Burguer<small>Recife · desde 1995</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#bastidores">Bastidores</a>
+      <a href="#cartaz">Em cartaz</a>
+      <a href="#30anos">30 anos</a>
+      <a href="#carlovers">Carlovers</a>
+      <a href="#onde">Onde pedir</a>
+    </nav>
+    <a class="btn btn-red btn-sm" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener">Pedir agora</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="spot" id="spot"></div>
+  <div class="valance" aria-hidden="true"></div>
+  <div class="curtain l" aria-hidden="true"></div>
+  <div class="curtain r" aria-hidden="true"></div>
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Hambúrguer 100% artesanal · Recife-PE</span>
+      <h1>Carlitos é coisa de <em>cinema.</em></h1>
+      <p class="lead">Há <b>30 anos</b> em cartaz no Recife, com pão brioche levemente adocicado, carne no ponto e aquele molho que você já conhece. A sessão começa quando você pede.</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener">🎟️ Pedir agora</a>
+        <a class="btn btn-ghost" href="tel:+558132285717">📞 (81) 3228-5717</a>
+      </div>
+      <div class="stub" aria-label="Disponível no pedir.to, iFood, 99 Food e delivery próprio">
+        <div class="a">Sessão em casa<b>iFood · 99 Food · Delivery</b></div>
+        <div class="b">ADMIT ONE</div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="marquee-box">
+        <div class="bulbs t" aria-hidden="true"></div>
+        <div class="bulbs b" aria-hidden="true"></div>
+        <div class="badge30" aria-label="30 anos"><div><b>30</b><span>ANOS</span></div></div>
+        <div class="marquee-title"><div class="s">★ Hoje em cartaz ★</div><div class="t">O Clássico de Recife</div></div>
+        <div class="hero-burger float" id="heroBurger"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="strip" aria-hidden="true">
+  <div class="track" id="track"></div>
+</div>
+
+<!-- BASTIDORES: hambúrguer explodido com scroll -->
+<section class="making" id="bastidores" aria-label="Bastidores: como o hambúrguer é feito">
+  <div class="making-pin">
+    <div class="wrap making-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:22px">
+          <span class="eyebrow">Bastidores</span>
+          <h2>Cada camada é uma cena.</h2>
+        </div>
+        <ol class="scene-list" id="scenes">
+          <li class="scene on"><span class="n">CENA 01</span><h3>Pão brioche</h3><p>Levemente adocicado, macio por dentro, dourado por fora. É ele que abre e fecha o filme.</p></li>
+          <li class="scene"><span class="n">CENA 02</span><h3>Alface e tomate</h3><p>Folha crocante e tomate fresco, cortados todo dia. Elenco de apoio que faz diferença.</p></li>
+          <li class="scene"><span class="n">CENA 03</span><h3>Queijo derretendo</h3><p>Cheddar escorrendo pela borda. Pode pausar e dar zoom, a gente espera.</p></li>
+          <li class="scene"><span class="n">CENA 04</span><h3>Hambúrguer artesanal</h3><p>Blend moldado na casa, selado na chapa. 100% artesanal desde a primeira sessão, em 1995.</p></li>
+          <li class="scene"><span class="n">CENA FINAL</span><h3>Montado, embalado, seu.</h3><p>Sai quentinho pro balcão ou pro delivery. Os créditos sobem quando acaba a última mordida.</p></li>
+        </ol>
+      </div>
+      <div class="boom" id="boom">
+        <div class="clap">TAKE <b id="take">01</b> · CARLITOS</div>
+      </div>
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- EM CARTAZ -->
+<section class="sec menu" id="cartaz">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Em cartaz</span>
+      <h2>Campeões de bilheteria</h2>
+      <p>Os mais pedidos da casa. Escolha o gênero, a fome faz o resto.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filtrar cardápio">
+      <button class="chip" aria-pressed="true" data-f="all">Todos</button>
+      <button class="chip" aria-pressed="false" data-f="combo">Combos</button>
+      <button class="chip" aria-pressed="false" data-f="burger">Hambúrgueres</button>
+      <button class="chip" aria-pressed="false" data-f="veg">Vegano</button>
+    </div>
+    <div class="posters" id="posters"></div>
+    <p class="menu-note">Preços e itens conforme publicações recentes da casa; confira os valores atualizados no app na hora do pedido.</p>
+  </div>
+</section>
+
+<!-- 30 ANOS -->
+<section class="sec years" id="30anos">
+  <div class="wrap years-grid">
+    <div class="big30 rv">30<small>anos em cartaz</small></div>
+    <div class="rv">
+      <h2>De 1995 até hoje, a mesma receita de sucesso.</h2>
+      <p class="t">Três décadas de chapa quente no Recife. Gerações que vieram com os pais hoje trazem os filhos. Tem cliente que já pede sem olhar o cardápio.</p>
+      <div class="stats">
+        <div class="stat"><b data-n="1995">1995</b><span>ano da estreia</span></div>
+        <div class="stat"><b data-n="30">30</b><span>anos de história</span></div>
+        <div class="stat"><b data-n="22.6" data-suf=" mil">22,6 mil</b><span>Carlovers no Instagram</span></div>
+        <div class="stat"><b data-n="100" data-suf="%">100%</b><span>artesanal, sempre</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARLOVERS -->
+<section class="sec fans" id="carlovers">
+  <div class="wrap fans-grid">
+    <div class="rv">
+      <div class="note">
+        <q>Sucesso pra mim é ser escolhido pelo mesmo cliente várias vezes.</q>
+        <cite>— Carlitos Burguer</cite>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:26px">
+        <span class="eyebrow">Carlovers</span>
+        <h2>Tédio tem cura.</h2>
+      </div>
+      <div class="chat" id="chat" aria-label="Conversa de exemplo">
+        <div class="chat-h">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#D62718"/><path d="M14 36c0-10 8-16 18-16s18 6 18 16z" fill="url(#gBun)"/><rect x="14" y="36" width="36" height="6" rx="3" fill="#4A220F"/><path d="M16 42h32l-2 5c-1 2-2 2-4 2H22c-2 0-3 0-4-2z" fill="url(#gBunB)"/><ellipse cx="32" cy="18" rx="12" ry="3" fill="#111"/><path d="M24 18c0-7 4-10 8-10s8 3 8 10z" fill="#1b1b1b"/></svg>
+          <div><b>Carlitos Burguer</b><span id="status">online</span></div>
+        </div>
+        <div class="msg me" data-d="300">Estou muito entediada 😑<time>17:00 ✓✓</time></div>
+        <div class="typing" id="typing"><i></i><i></i><i></i></div>
+        <div class="msg them" data-d="2200">Calma, eu levo um hambúrguer 100% artesanal da Carlitos pra você! 🍔<time>17:04</time></div>
+        <div class="msg me" data-d="3400">Fala que me ama 🥹<time>17:04 ✓✓</time></div>
+        <div class="msg them" data-d="4600">Já tá saindo da chapa. 🎬<time>17:05</time></div>
+      </div>
+      <p class="tag-cta">Postou sua sessão? Marca a gente: <a href="https://instagram.com/carlitosburguer.oficial" target="_blank" rel="noopener">@carlitosburguer.oficial</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ONDE PEDIR -->
+<section class="sec" id="onde">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Onde assistir</span>
+      <h2>Escolha sua sala.</h2>
+      <p>Pede pelo app que preferir, liga pra gente ou vem buscar no balcão.</p>
+    </div>
+    <div class="where-grid">
+      <a class="chan rv" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener"><div class="ic">🎟️</div><h3>Pedido direto</h3><p>Cardápio completo e pedido sem intermediário.</p><span class="go">pedir.to/carlitosburger →</span></a>
+      <a class="chan rv" href="https://www.ifood.com.br/busca?q=carlitos%20burguer" target="_blank" rel="noopener"><div class="ic">🛵</div><h3>iFood</h3><p>Busque por Carlitos Burguer no app.</p><span class="go">Abrir no iFood →</span></a>
+      <a class="chan rv" href="https://99app.com/99food/recife/" target="_blank" rel="noopener"><div class="ic">🚗</div><h3>99 Food</h3><p>Também estamos na 99 Food em Recife.</p><span class="go">Abrir na 99 Food →</span></a>
+      <a class="chan rv" href="tel:+558132285717"><div class="ic">📞</div><h3>Disk Carlitos</h3><p>O telefone de sempre, desde os anos 90.</p><span class="go">(81) 3228-5717 →</span></a>
+    </div>
+    <div class="unit rv">
+      <div>
+        <span class="k">Nossa sala</span>
+        <h3>Unidade Madalena</h3>
+        <p>Av. José Gonçalves de Medeiros, 84 · Madalena, Recife-PE</p>
+        <a class="btn btn-red btn-sm" href="https://www.google.com/maps/search/?api=1&query=Carlitos+Burguer+Av.+Jos%C3%A9+Gon%C3%A7alves+de+Medeiros+84+Recife" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+      <div class="hours">
+        <span class="k">Horário das sessões</span>
+        <h3>A partir das 18h</h3>
+        <p>Balcão e delivery todas as noites. Confira o horário do dia no destaque "Horário" do Instagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="final">
+  <div class="wrap">
+    <span class="eyebrow">Última chamada</span>
+    <h2>A sessão já vai começar. Garanta seu lugar.</h2>
+    <a class="ticket" id="ticket" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener" aria-label="Pedir agora no pedir.to">
+      <div class="main"><small>Carlitos Burguer · Recife</small><b>1 ingresso para a fome</b><span>Válido hoje · Sala: sua casa · Fileira: sofá</span></div>
+      <div class="tear">RASGAR</div>
+    </a>
+    <p class="hint">Rasgue o ingresso pra pedir.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand"><span>Carlitos Burguer<small>Hambúrguer 100% artesanal · desde 1995</small></span></a>
+    <nav aria-label="Rodapé">
+      <a href="https://instagram.com/carlitosburguer.oficial" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://pedir.to/carlitosburger" target="_blank" rel="noopener">Pedir</a>
+      <a href="tel:+558132285717">(81) 3228-5717</a>
+    </nav>
+    <span>© <span id="y">2026</span> Carlitos Burguer · Recife-PE</span>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-red" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener">🎟️ Pedir agora</a>
+  <a class="btn btn-ghost" style="background:#120b08" href="tel:+558132285717" aria-label="Ligar">📞</a>
+</div>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ---------- Hambúrguer em SVG, camada por camada ---------- */
+  function burger(o = {}) {
+    const meat = o.meat || 'url(#gMeat)';
+    const sesame = [[120,80,-20],[160,62,10],[205,56,-5],[250,64,15],[290,84,-12],[140,112,25],[185,96,-8],[230,100,12],[275,118,-20],[110,140,5],[320,136,-5],[200,132,30]]
+      .map(([x,y,r]) => `<ellipse cx="${x}" cy="${y}" rx="7" ry="3.5" fill="#FFF1D2" transform="rotate(${r} ${x} ${y})"/>`).join('');
+    const L = {
+      top: `<g class="ly" style="--k:5"><path d="M40 170C40 80 120 40 200 40s160 40 160 130q0 12-12 12H52q-12 0-12-12z" fill="url(#gBun)"/><path d="M40 170C40 80 120 40 200 40s160 40 160 130q0 12-12 12H52q-12 0-12-12z" fill="url(#gShine)"/>${o.seeds === false ? '' : sesame}</g>`,
+      lettuce: `<g class="ly" style="--k:4"><path d="M30 190q20-12 40 2t40 0 40 0 40 0 40 0 40 0 40 0 40 0q22-8 22 4l-6 10q-166 10-332 0z" fill="#5DBB3F"/><path d="M40 196q160 8 320 0" stroke="#3E9327" stroke-width="3" fill="none" stroke-linecap="round"/></g>`,
+      tomato: `<g class="ly" style="--k:3"><rect x="52" y="200" width="140" height="18" rx="9" fill="#E5372B"/><rect x="206" y="200" width="142" height="18" rx="9" fill="#D62718"/><rect x="66" y="204" width="40" height="4" rx="2" fill="#FF8A7A" opacity=".6"/><rect x="222" y="204" width="40" height="4" rx="2" fill="#FF8A7A" opacity=".6"/></g>`,
+      cheese: `<g class="ly" style="--k:2"><path d="M42 214h316v10h-26q-8 26-16 0h-62q-7 32-15 0h-86q-8 22-16 0H60q-6 14-12 0h-6z" fill="${o.cheese || '#FFC93C'}"/></g>`,
+      patty: `<g class="ly" style="--k:1"><rect x="46" y="222" width="308" height="44" rx="22" fill="${meat}"/><g fill="#000" opacity=".22"><circle cx="90" cy="240" r="3"/><circle cx="140" cy="250" r="2.5"/><circle cx="190" cy="236" r="3"/><circle cx="240" cy="252" r="2.5"/><circle cx="290" cy="240" r="3"/><circle cx="320" cy="254" r="2"/></g><path d="M64 230q136-8 272 0" stroke="#fff" stroke-opacity=".12" stroke-width="3" fill="none" stroke-linecap="round"/></g>`,
+      bottom: `<g class="ly" style="--k:0"><path d="M50 268h300q8 0 6 10l-6 22q-4 12-16 12H66q-12 0-16-12l-6-22q-2-10 6-10z" fill="url(#gBunB)"/></g>`
+    };
+    if (o.extra === 'egg') L.lettuce += `<g class="ly" style="--k:4"><ellipse cx="200" cy="198" rx="120" ry="12" fill="#fff"/><ellipse cx="190" cy="196" rx="34" ry="9" fill="#FFB020"/></g>`;
+    if (o.extra === 'corn') L.tomato += `<g fill="#FFE04A">${[80,110,140,170,230,260,290,320].map(x=>`<circle cx="${x}" cy="199" r="6"/>`).join('')}</g>`;
+    const order = o.layers || ['bottom','patty','cheese','tomato','lettuce','top'];
+    return `<svg viewBox="20 30 360 300" role="img" aria-label="${o.label || 'Hambúrguer'}">${order.map(k => L[k]).join('')}</svg>`;
+  }
+
+  function hotdog() {
+    return `<svg viewBox="20 30 360 300" role="img" aria-label="Cachorro-quente">
+      <path d="M40 200q0-40 40-40h240q40 0 40 40v30q0 50-50 50H90q-50 0-50-50z" fill="url(#gBunB)"/>
+      <rect x="30" y="170" width="340" height="44" rx="22" fill="#B23A1C"/><rect x="40" y="176" width="320" height="10" rx="5" fill="#E2603C" opacity=".6"/>
+      <path d="M60 172q20-14 40 0t40 0 40 0 40 0 40 0 40 0 40 0" stroke="#FFC93C" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <g fill="#E5372B">${[90,150,210,270,320].map(x=>`<circle cx="${x}" cy="166" r="12"/>`).join('')}</g>
+      <g fill="#FFE04A">${[120,180,240,300].map(x=>`<circle cx="${x}" cy="160" r="6"/>`).join('')}</g>
+      <path d="M40 210q0-30 40-30v60q-40 0-40-30z" fill="#E9A24E"/></svg>`;
+  }
+
+  $('#heroBurger').innerHTML = burger({ label: 'Hambúrguer artesanal Carlitos' });
+
+  /* ---------- Lâmpadas do letreiro ---------- */
+  $$('.bulbs').forEach(b => b.innerHTML = '<i></i>'.repeat(innerWidth < 500 ? 12 : 18));
+
+  /* ---------- Ticker ---------- */
+  const words = ['100% artesanal','Desde 1995','Recife-PE','Pão brioche','Carlitos é coisa de cinema','iFood · 99 Food · Delivery','30 anos em cartaz','Sabadou!'];
+  $('#track').innerHTML = [...words, ...words].map(w => `<span>${w}</span>`).join('');
+
+  /* ---------- Abertura (contagem de filme) ---------- */
+  const leader = $('#leader'), hero = $('#hero');
+  let seen = false; try { seen = sessionStorage.getItem('carlitos-intro') === '1'; } catch (e) {}
+  const finish = () => { leader.classList.add('done'); setTimeout(() => hero.classList.add('open'), 150); try { sessionStorage.setItem('carlitos-intro', '1'); } catch (e) {} };
+  if (reduce || seen) { leader.style.display = 'none'; hero.classList.add('open'); }
+  else {
+    let n = 3, deg = 0; const ring = $('.leader-ring'), cnt = $('#count');
+    const t0 = performance.now();
+    (function tick(t) {
+      if (leader.classList.contains('done')) return;
+      const e = (t - t0) / 600; const k = Math.floor(e);
+      deg = (e % 1) * 360; ring.style.setProperty('--sweep', deg + 'deg');
+      const v = 3 - k; if (v !== n && v > 0) { n = v; cnt.textContent = v; }
+      if (k >= 3) return finish();
+      requestAnimationFrame(tick);
+    })(t0);
+    leader.addEventListener('click', finish);
+    leader.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && finish());
+  }
+
+  /* ---------- Spotlight do hero ---------- */
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    $('#spot').style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    $('#spot').style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+
+  /* ---------- Nav sólida + barra mobile ---------- */
+  const nav = $('#nav'), mbar = $('#mbar');
+  const onScroll = () => {
+    nav.classList.toggle('solid', scrollY > 40);
+    const nearEnd = innerHeight + scrollY > document.body.scrollHeight - 500;
+    mbar.classList.toggle('show', scrollY > innerHeight * .7 && !nearEnd);
+    making();
+  };
+
+  /* ---------- Bastidores: hambúrguer explodindo ---------- */
+  const boom = $('#boom');
+  boom.insertAdjacentHTML('beforeend', burger({ label: 'Hambúrguer montado camada por camada' }));
+  const layers = $$('.ly', boom); // bottom, patty, cheese, tomato, lettuce, top
+  const spread = [100, 55, 15, -25, -70, -125];
+  const scenes = $$('.scene'), bars = $$('#progress i'), take = $('#take'), sec = $('#bastidores');
+  let lastStep = -1;
+  function making() {
+    const r = sec.getBoundingClientRect();
+    const total = r.height - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / total));
+    // explode até 70%, recompõe no fim (cena final)
+    const ex = p < .72 ? Math.min(1, p / .22) : Math.max(0, 1 - (p - .72) / .2);
+    layers.forEach((l, i) => l.setAttribute('transform', `translate(0 ${spread[i] * ex * (innerWidth < 900 ? .38 : 1)}) rotate(${(i - 2.5) * 1.6 * ex} 200 200)`));
+    const step = Math.min(4, Math.floor(p * 5));
+    bars.forEach((b, i) => b.style.setProperty('--p', Math.min(1, Math.max(0, p * 5 - i))));
+    if (step !== lastStep) {
+      lastStep = step;
+      scenes.forEach((s, i) => s.classList.toggle('on', i === step));
+      take.textContent = String(step + 1).padStart(2, '0');
+      // destaca a camada da cena
+      const focus = [[0,5],[3,4],[2],[1],[0,1,2,3,4,5]][step];
+      layers.forEach((l, i) => l.style.opacity = focus.includes(i) || step === 4 ? 1 : .45);
+    }
+  }
+  layers.forEach(l => l.style.transition = 'opacity .4s');
+
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---------- Cardápio (pôsteres) ---------- */
+  const menu = [
+    { t:'combo', name:'Combo Coração', genre:'Romance', bg:'#B8180F', desc:'Pão bola brioche levemente adocicado, coração de frango temperado, fritas e bebida.', price:'37,81', from:true,
+      art: () => burger({ meat:'url(#gChick)', label:'Combo Coração', layers:['bottom','patty','tomato','lettuce','top'] }) },
+    { t:'combo', name:'Combo Bem Bom', genre:'Comédia', bg:'#D9561A', desc:'Pão brioche levemente adocicado, peito de frango desfiado temperado, fritas e bebida.', price:'33,61', from:true,
+      art: () => burger({ meat:'url(#gChick)', label:'Combo Bem Bom', layers:['bottom','patty','cheese','lettuce','top'] }) },
+    { t:'combo', name:'Combo da Casa', genre:'Ação', bg:'#7A1B0F', desc:'Pão brioche levemente adocicado, hambúrguer artesanal da casa, fritas e bebida.', price:'42,00',
+      art: () => burger({ label:'Combo da Casa' }) },
+    { t:'burger', name:'Fala que me ama', genre:'Drama', bg:'#3D1E10', desc:'Hambúrguer artesanal, bacon, ovo, cheddar derretido, alface e tomate.', price:null,
+      art: () => burger({ extra:'egg', label:'Fala que me ama' }) },
+    { t:'veg', name:'Hambúrguer de Soja', genre:'Vegano', bg:'#2F6B2A', desc:'Hambúrguer de soja, milho, batata palha, tomate e alface no brioche.', price:null,
+      art: () => burger({ meat:'url(#gSoy)', extra:'corn', label:'Hambúrguer de Soja', layers:['bottom','lettuce','patty','tomato','top'] }) },
+    { t:'burger', name:'Cachorro-quente', genre:'Clássico', bg:'#A0441A', desc:'Salsicha no pão, molho, tomate e milho. Pra quem gosta de reprise.', price:null,
+      art: hotdog }
+  ];
+  const posters = $('#posters');
+  posters.innerHTML = menu.map(m => `
+    <article class="poster rv" data-t="${m.t}" style="--bg:${m.bg}">
+      <div class="top"><span class="genre">${m.genre}</span><span class="rating" title="Classificação livre para todas as fomes">L</span></div>
+      <div class="art">${m.art()}</div>
+      <div class="body">
+        <h3>${m.name}</h3>
+        <p>${m.desc}</p>
+        <div class="foot">
+          <div class="price">${m.price ? `<small>${m.from ? 'a partir de' : 'combo'}</small><b>R$ ${m.price}</b>` : `<small>no cardápio</small><b>Ver preço</b>`}</div>
+          <a class="add" href="https://pedir.to/carlitosburger" target="_blank" rel="noopener" aria-label="Pedir ${m.name}">+</a>
+        </div>
+      </div>
+    </article>`).join('');
+
+  $$('.chip').forEach(c => c.addEventListener('click', () => {
+    $$('.chip').forEach(x => x.setAttribute('aria-pressed', x === c));
+    const f = c.dataset.f;
+    $$('.poster').forEach(p => p.classList.toggle('hide', f !== 'all' && p.dataset.t !== f));
+  }));
+
+  // tilt 3D nos pôsteres
+  if (!reduce && matchMedia('(hover:hover)').matches) {
+    $$('.poster').forEach(p => {
+      p.addEventListener('pointermove', e => {
+        const r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        p.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-6px)`;
+      });
+      p.addEventListener('pointerleave', () => p.style.transform = '');
+    });
+  }
+
+  /* ---------- Reveal + contadores + chat ---------- */
+  const fmt = (v, d) => v.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+  function countUp(el) {
+    const end = parseFloat(el.dataset.n), suf = el.dataset.suf || '', dec = (el.dataset.n.split('.')[1] || '').length;
+    const start = end === 1995 ? 1900 : 0, t0 = performance.now(), dur = 1400;
+    (function f(t) {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = (end === 1995 ? Math.round(start + (end - start) * e) : fmt(end * e, dec)) + suf;
+      if (k < 1) requestAnimationFrame(f);
+    })(t0);
+  }
+  function playChat() {
+    const typing = $('#typing'), status = $('#status');
+    $$('#chat .msg').forEach(m => setTimeout(() => {
+      m.classList.add('in');
+      if (m.classList.contains('them')) { typing.classList.remove('in'); typing.style.display = 'none'; status.textContent = 'online'; }
+    }, reduce ? 0 : +m.dataset.d));
+    if (!reduce) [900, 3900].forEach(d => setTimeout(() => {
+      typing.style.display = 'inline-flex'; requestAnimationFrame(() => typing.classList.add('in')); status.textContent = 'digitando…';
+      const next = d < 2000 ? $$('#chat .msg')[1] : $$('#chat .msg')[3];
+      next.before(typing);
+    }, d));
+    else typing.style.display = 'none';
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; el.classList.add('in'); io.unobserve(el);
+    if (el.dataset.n) countUp(el);
+    if (el.id === 'chat') playChat();
+  }), { threshold: .2 });
+  $$('.rv, .stat b, #chat').forEach(el => io.observe(el));
+
+  /* ---------- Ingresso ---------- */
+  $('#ticket').addEventListener('click', () => {
+    const t = $('#ticket'); t.classList.add('torn');
+    setTimeout(() => t.classList.remove('torn'), 2200);
+  });
+
+  $('#y').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
