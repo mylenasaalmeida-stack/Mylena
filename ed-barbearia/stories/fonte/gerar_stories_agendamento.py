@@ -30,3 +30,19 @@ S['12-app-novo'] = st('y', 'Aviso', f'''
 for n, h in S.items():
     open(f'{n}.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}{EXTRA}</style></head><body style="margin:0">{h}</body></html>')
 print(len(S), 'stories')
+
+# ---- Onde estamos (refeito do story do destaque Localização) ----
+S2 = {}
+S2['13-onde-estamos'] = st('k', 'Localização', f'''
+<div class="lab am" style="margin-top:20px">Casa Amarela · Recife</div>
+<div class="big" style="font-size:200px;margin-top:20px">Onde<br><span class="am">estamos.</span></div>
+<div style="margin-top:46px;height:330px;border-radius:30px;overflow:hidden;border:6px solid {Y}">
+<img src="img/fachada.jpg" style="width:100%;height:100%;object-fit:cover;object-position:15% 0%"></div>
+<div style="margin-top:44px;display:grid;grid-template-columns:96px 1fr;gap:0 26px;align-items:center">
+<svg viewBox="0 0 24 24" style="width:96px" fill="{Y}"><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7 11.5 7.3 11.8a1 1 0 0 0 1.4 0C13 21.5 20 15.4 20 10a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+<div><div class="big" style="font-size:72px;line-height:1">Rua Paula Batista, 604</div>
+<div style="font-size:32px;font-weight:600;color:#bdbab2;margin-top:6px">Casa Amarela, Recife - PE</div></div></div>
+<div style="margin-top:30px;background:{Y};color:{K};border-radius:24px;padding:22px 30px;font-size:32px;font-weight:700">Do lado da Delegacia de Casa Amarela</div>''',
+                              '<span class="am">Toca na localização e abre o mapa ↓</span>')
+for n, h in S2.items():
+    open(f'{n}.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}{EXTRA}</style></head><body style="margin:0">{h}</body></html>')
