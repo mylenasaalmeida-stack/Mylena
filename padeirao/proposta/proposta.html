@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta House x Padeirão</title>
+<style>
+@font-face{font-family:P;font-weight:400;src:url(assets/Poppins-400.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(assets/Poppins-500.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(assets/Poppins-600.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(assets/Poppins-700.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(assets/Poppins-800.woff2)}
+@font-face{font-family:P;font-weight:900;src:url(assets/Poppins-900.woff2)}
+@page{size:1333px 750px;margin:0}
+:root{--ink:#0E0E0E;--card:#181818;--line:#2a2a2a;--y:#FECF05;--mut:#9a9a9a;--g:#7ED69B;--r:#F07A6A;--o:#F2B13D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:P,sans-serif;background:#444;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.s{width:1333px;height:750px;position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:0 78px;page-break-after:always;break-after:page}
+.s.y{background:var(--y);color:var(--ink)}
+.k{position:absolute;top:47px;left:78px;font-size:11px;font-weight:700;letter-spacing:.28em;color:var(--y);text-transform:uppercase}
+.y .k{color:var(--ink)}
+.hc{position:absolute;top:37px;right:78px;height:34px}
+.ft{position:absolute;left:78px;right:78px;bottom:24px;border-top:1px solid var(--line);padding-top:13px;display:flex;justify-content:space-between;font-size:9.5px;font-weight:700;letter-spacing:.24em;color:#6c6c6c;text-transform:uppercase}
+.y .ft{border-color:rgba(0,0,0,.15);color:rgba(0,0,0,.55)}
+h1{font-weight:800;font-size:46px;line-height:1.02;letter-spacing:-.02em;position:absolute;top:100px;left:78px}
+h1 em,.hl{font-style:normal;color:var(--y)}
+.y h1 em{color:var(--ink)}
+.lead{position:absolute;left:78px;font-size:15.5px;line-height:1.55;color:#b9b9b9;max-width:740px}
+.y .lead{color:#3a3200}
+.ray{position:absolute;width:44px;height:44px}
+.ray i{position:absolute;background:var(--y);border-radius:8px;width:9px;height:24px}
+.ray i:nth-child(1){left:20px;top:0;transform:rotate(-35deg)}
+.ray i:nth-child(2){left:2px;top:22px;width:24px;height:9px;transform:rotate(-20deg)}
+.box{background:var(--card);border-radius:22px;padding:26px 28px}
+.y .box{background:var(--ink);color:#fff}
+.box.on{background:var(--y);color:var(--ink)}
+.n{font-weight:800;font-size:26px;color:var(--y);line-height:1}
+.box.on .n{color:var(--ink)}
+.bt{font-weight:700;font-size:16px;margin:12px 0 6px;line-height:1.2}
+.bd{font-size:12.5px;line-height:1.55;color:#a7a7a7}
+.box.on .bd{color:#2b2500}
+.lab{font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#fff}
+.grid{position:absolute;left:78px;right:78px;display:grid;gap:18px}
+ul.ck{list-style:none;display:grid;gap:14px}
+ul.ck li{position:relative;padding-left:28px;font-size:13.5px;line-height:1.45;color:#cfcfcf}
+ul.ck li.sub{padding-left:0}
+ul.ck li.sub::before{display:none}
+ul.ck li::before{content:"";position:absolute;left:0;top:3px;width:15px;height:9px;border-left:3px solid var(--y);border-bottom:3px solid var(--y);transform:rotate(-45deg)}
+ul.ck.gr li::before{border-color:var(--g)}
+ul.x li::before,ul.x li::after{content:"";position:absolute;left:2px;top:9px;width:14px;height:3px;background:var(--r);border:0;transform:rotate(45deg);border-radius:2px}
+ul.x li::after{transform:rotate(-45deg)}
+.phone{position:absolute;border-radius:38px;background:#222;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:29px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.16em;padding:6px 14px;border-radius:999px;color:var(--ink)}
+.dots{position:absolute;left:78px;right:78px;height:2px;background:var(--line)}
+.dots b{position:absolute;top:-8px;width:18px;height:18px;border-radius:50%;background:var(--ink);border:5px solid var(--y)}
+.pill{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:10px 16px;border-radius:999px;margin:0 8px 8px 0}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<section class="s">
+  <img src="assets/logo-branca.png" style="position:absolute;top:44px;left:78px;height:62px">
+  <div class="k" style="top:156px">Proposta comercial &nbsp;·&nbsp; Padeirão Food Service &nbsp;·&nbsp; Recife</div>
+  <div class="ray" style="left:28px;top:205px"><i></i><i></i></div>
+  <h1 style="top:205px;font-size:60px;line-height:1.08;width:680px">A Padeirão já é referência no balcão. Agora é hora de <em>vender no digital.</em></h1>
+  <p class="lead" style="top:500px;max-width:600px;font-size:16px">Diagnóstico do @padeiraolojaedistribuicao, a landing page que a gente já montou pra vocês, estratégias de venda pra padarias de PE e PB e os planos da House.</p>
+  <div style="position:absolute;left:78px;top:612px;width:528px;border-top:1px solid var(--line);padding-top:20px">
+    <div style="font-weight:700;font-size:15px">Ryan Coimbra &amp; Fontenele</div>
+    <div style="font-size:12.5px;color:#777;margin-top:4px">CEOs · House do Creator &nbsp;·&nbsp; novembro de 2026</div>
+  </div>
+  <div class="phone" style="right:90px;top:120px;width:275px;height:560px"><img src="assets/perfil.jpg"></div>
+  <div class="ray" style="right:56px;top:96px;transform:scaleX(-1)"><i></i><i></i></div>
+</section>
+
+<!-- 02 PONTO DE PARTIDA -->
+<section class="s">
+  <div class="k">Ponto de partida</div><img class="hc" src="assets/hc-branca.png">
+  <div class="ray" style="left:28px;top:148px"><i></i><i></i></div>
+  <h1 style="top:148px;font-size:54px;width:800px">27 anos de parceria. O digital ainda não conta <em>essa história inteira.</em></h1>
+  <div class="grid" style="top:420px;grid-template-columns:repeat(3,1fr);gap:40px">
+    <div><div style="width:56px;height:3px;background:#3a3a3a;margin-bottom:22px"></div><div class="lab">O que a Padeirão já tem</div><p class="bd" style="font-size:15px;color:#a0a0a0;margin-top:8px">89,7 mil seguidores, duas lojas, distribuição em PE e PB, cursos, estande em feira e um diferencial raro: entrega em até 48h.</p></div>
+    <div><div style="width:56px;height:3px;background:#3a3a3a;margin-bottom:22px"></div><div class="lab">O que ainda falta</div><p class="bd" style="font-size:15px;color:#a0a0a0;margin-top:8px">Um caminho curto pra padaria nova virar cliente, o 48h na vitrine e conteúdo que mostra o produto vendendo.</p></div>
+    <div><div style="width:56px;height:3px;background:var(--y);margin-bottom:22px"></div><div class="lab" style="color:var(--y)">O que a House faz</div><p class="bd" style="font-size:15px;color:#a0a0a0;margin-top:8px">Transforma a autoridade que vocês construíram em pedido no WhatsApp, nas duas lojas e na distribuição.</p></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>02</span></div>
+</section>
+
+<!-- 03 RAIO-X -->
+<section class="s">
+  <div class="k">Raio-X do perfil</div><img class="hc" src="assets/hc-branca.png">
+  <h1>O perfil da Padeirão<br>em <em>números.</em></h1>
+  <p class="lead" style="top:236px;max-width:620px;font-size:14.5px">Análise feita em 07/11/2026, só com o que aparece pra quem visita o perfil. Alcance, salvamentos e cliques a gente puxa no diagnóstico, com acesso aos Insights.</p>
+  <div class="grid" style="top:345px;right:560px;grid-template-columns:1fr 1fr">
+    <div class="box" style="height:158px"><div class="n" style="font-size:36px">89,7 mil</div><div class="lab" style="margin:12px 0 6px">Seguidores</div><div class="bd">Base grande pra um negócio regional. Audiência pronta pra receber oferta.</div></div>
+    <div class="box" style="height:158px"><div class="n" style="font-size:36px">5.573</div><div class="lab" style="margin:12px 0 6px">Posts</div><div class="bd">Constância não é problema. O que falta é cada post puxar um pedido.</div></div>
+    <div class="box" style="height:158px"><div class="n" style="font-size:36px">27 anos</div><div class="lab" style="margin:12px 0 6px">De história</div><div class="bd">Autoridade de verdade, que aparece na feira mas pouco no dia a dia do feed.</div></div>
+    <div class="box on" style="height:158px"><div class="n" style="font-size:36px">48h</div><div class="lab" style="margin:12px 0 6px;color:var(--ink)">Entrega na distribuição</div><div class="bd">O maior diferencial da Padeirão não aparece na bio.</div></div>
+  </div>
+  <div class="phone" style="right:250px;top:150px;width:250px;height:510px"><img src="assets/perfil.jpg"></div>
+  <p style="position:absolute;right:78px;top:420px;width:150px;font-size:12.5px;line-height:1.5;color:#ddd">Leitura: a marca é forte e a base é grande. O que trava é o caminho entre ver o post e fazer o pedido.</p>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>03</span></div>
+</section>
+
+<!-- 04 DIAGNOSTICO -->
+<section class="s">
+  <div class="k">Diagnóstico</div><img class="hc" src="assets/hc-branca.png">
+  <h1>O que <em>funciona</em> e o que<br>trava o pedido.</h1>
+  <div class="grid" style="top:236px;grid-template-columns:1fr 1fr;gap:22px">
+    <div class="box" style="height:448px;padding:30px">
+      <div class="lab" style="color:var(--g);padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:22px">O que funciona</div>
+      <ul class="ck gr" style="gap:19px">
+        <li>27 anos de autoridade: estande em feira, chefs e marcas líderes.</li>
+        <li>Mascote chef próprio, que já dá cara e simpatia à marca.</li>
+        <li>Equipe e lojas aparecendo: rosto humano no atendimento.</li>
+        <li>Calendário ativo: Halloween, Natal, sorteio com cupom.</li>
+        <li>Cursos e eventos, até pras crianças. Comunidade de verdade.</li>
+        <li>Produtos de marcas fortes em Reels: Mauri, Puratos, Nestlé.</li>
+      </ul>
+    </div>
+    <div class="box" style="height:448px;padding:30px">
+      <div class="lab" style="color:var(--r);padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:22px">O que trava</div>
+      <ul class="ck x" style="gap:19px">
+        <li>A entrega em até 48h não aparece na bio nem nos fixados.</li>
+        <li>Bio fala com quem visita a loja, mas não diz como uma padaria vira cliente.</li>
+        <li>Link via Linktree: um clique a mais até o WhatsApp.</li>
+        <li>Avisos ("horário especial") ocupando espaço de venda no feed.</li>
+        <li>Ofertas em flyer cheio de texto: some no feed e não vira Reels.</li>
+        <li>Produto aparece parado: falta receita, resultado e preço.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>04</span></div>
+</section>
+
+<!-- 05 CONTEUDO HOJE -->
+<section class="s">
+  <div class="k">Conteúdo hoje</div><img class="hc" src="assets/hc-branca.png">
+  <h1>O que o perfil<br>entrega <em>hoje.</em></h1>
+  <div style="position:absolute;left:78px;top:225px;width:780px">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;border-top:1px solid var(--line);padding:15px 0">
+      <div><div style="font-weight:700;font-size:15.5px">Produto em Reels</div><div class="bd" style="font-size:12.5px">Chantilly, Norcau, Nestlé. Mostra o que tem, mas não o que dá pra fazer com ele.</div></div><span class="tag" style="background:var(--g)">ESCALAR</span></div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;border-top:1px solid var(--line);padding:15px 0">
+      <div><div style="font-weight:700;font-size:15.5px">Feira, eventos e cursos</div><div class="bd" style="font-size:12.5px">Constrói autoridade. O "27 anos parceira do panificador" precisa morar no perfil.</div></div><span class="tag" style="background:var(--y)">MANTER</span></div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;border-top:1px solid var(--line);padding:15px 0">
+      <div><div style="font-weight:700;font-size:15.5px">Equipe e lojas</div><div class="bd" style="font-size:12.5px">O formato mais humano do perfil. Dá pra virar série fixa com o time.</div></div><span class="tag" style="background:var(--g)">ESCALAR</span></div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;border-top:1px solid var(--line);padding:15px 0">
+      <div><div style="font-weight:700;font-size:15.5px">Ofertas em flyer</div><div class="bd" style="font-size:12.5px">"Super Ofertas" com muito texto. Vira Reels de 15s com preço na tela.</div></div><span class="tag" style="background:var(--o)">AJUSTAR</span></div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0">
+      <div><div style="font-weight:700;font-size:15.5px">Avisos da loja</div><div class="bd" style="font-size:12.5px">Horário especial e comunicados servem por um dia e ficam no feed pra sempre.</div></div><span class="tag" style="background:var(--r)">PRO STORIES</span></div>
+  </div>
+  <div class="phone" style="right:78px;top:150px;width:300px;height:520px;padding:8px;border-radius:30px"><img src="assets/feed.jpg" style="border-radius:23px"></div>
+  <p style="position:absolute;left:78px;top:652px;font-size:11.5px;color:#777">Leitura feita pelos prints do feed. A ideia não é jogar fora o que funciona: é fazer cada post também vender.</p>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>05</span></div>
+</section>
+
+<!-- 06 SWOT -->
+<section class="s y">
+  <div class="k">Análise SWOT</div><img class="hc" src="assets/hc-preta.png">
+  <h1>Forças, fraquezas,<br>oportunidades e ameaças.</h1>
+  <div class="grid" style="top:238px;grid-template-columns:1fr 1fr;gap:18px">
+    <div class="box" style="height:214px;position:relative"><div class="lab" style="color:var(--y)">Forças</div><span style="position:absolute;right:30px;top:20px;font-size:40px;font-weight:800;color:#2b2b2b">S</span>
+      <ul style="margin-top:14px;font-size:13px;line-height:1.75;padding-left:16px;color:#e5e5e5"><li>Entrega em até 48h em PE e PB</li><li>2 lojas (Imbiribeira e Rosarinho) + distribuidora</li><li>27 anos e 89,7 mil seguidores</li><li>Cursos, eventos e presença em feira</li><li>Mix com marcas líderes do setor</li></ul></div>
+    <div class="box" style="height:214px;position:relative"><div class="lab" style="color:var(--y)">Fraquezas</div><span style="position:absolute;right:30px;top:20px;font-size:40px;font-weight:800;color:#2b2b2b">W</span>
+      <ul style="margin-top:14px;font-size:13px;line-height:1.75;padding-left:16px;color:#e5e5e5"><li>O 48h escondido: não está na bio</li><li>Sem caminho pra padaria nova virar cliente</li><li>Linktree antes do WhatsApp</li><li>Avisos e flyers ocupando o feed</li><li>Produto mostrado sem receita nem resultado</li></ul></div>
+    <div class="box" style="height:214px;position:relative"><div class="lab" style="color:var(--y)">Oportunidades</div><span style="position:absolute;right:30px;top:20px;font-size:40px;font-weight:800;color:#2b2b2b">O</span>
+      <ul style="margin-top:14px;font-size:13px;line-height:1.75;padding-left:16px;color:#e5e5e5"><li>Natal e Páscoa: as maiores épocas da confeitaria</li><li>Confeiteiro caseiro crescendo e comprando na loja</li><li>Ações com as marcas parceiras</li><li>Google: "distribuidora de panificação Recife"</li><li>Paraíba: praça pra crescer com anúncio local</li></ul></div>
+    <div class="box" style="height:214px;position:relative"><div class="lab" style="color:var(--y)">Ameaças</div><span style="position:absolute;right:30px;top:20px;font-size:40px;font-weight:800;color:#2b2b2b">T</span>
+      <ul style="margin-top:14px;font-size:13px;line-height:1.75;padding-left:16px;color:#e5e5e5;list-style-color:red"><li>Atacarejos e marketplaces brigando por preço</li><li>Distribuidoras concorrentes no WhatsApp</li><li>Padaria compra de quem lembra primeiro</li><li>Algoritmo esconde vídeo sem retenção</li><li>Concorrente prometer entrega mais rápida</li></ul></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>06</span></div>
+</section>
+
+<!-- 07 LANDING PAGE -->
+<section class="s">
+  <div class="k">A gente já começou</div><img class="hc" src="assets/hc-branca.png">
+  <div class="ray" style="left:28px;top:100px"><i></i><i></i></div>
+  <h1>Uma landing page<br>com a cara da <em>Padeirão.</em></h1>
+  <p class="lead" style="top:236px;max-width:470px;font-size:14.5px">Antes de pedir qualquer coisa, a gente montou uma prévia com as fotos reais do Instagram e a identidade de vocês: vermelho, dourado e a letra arredondada da logo. Ela explica o que a Padeirão faz e leva direto pro pedido.</p>
+  <div style="position:absolute;left:78px;top:410px;width:470px;display:grid;gap:10px">
+    <div style="display:flex;gap:14px;align-items:center"><span class="n" style="font-size:20px;width:34px">12</span><span style="font-size:13.5px;color:#cfcfcf">seções: da apresentação às perguntas frequentes</span></div>
+    <div style="display:flex;gap:14px;align-items:center"><span class="n" style="font-size:20px;width:34px">17</span><span style="font-size:13.5px;color:#cfcfcf">fotos reais dos posts de vocês</span></div>
+    <div style="display:flex;gap:14px;align-items:center"><span class="n" style="font-size:20px;width:34px">2</span><span style="font-size:13.5px;color:#cfcfcf">versões: celular e computador, no mesmo link</span></div>
+  </div>
+  <div style="position:absolute;left:78px;top:560px;width:470px;font-size:11.5px;color:#777;line-height:1.5">Prévia montada com o que é público. Categorias, cidades atendidas e número de WhatsApp a gente ajusta junto com vocês.</div>
+  <div style="position:absolute;right:120px;top:150px;width:560px;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);border:1px solid #333">
+    <div style="height:24px;background:#222;display:flex;gap:6px;align-items:center;padding-left:12px"><i style="width:9px;height:9px;border-radius:50%;background:#555"></i><i style="width:9px;height:9px;border-radius:50%;background:#555"></i><i style="width:9px;height:9px;border-radius:50%;background:#555"></i></div>
+    <img src="assets/lp-desk-hero.jpg" style="display:block;width:100%">
+  </div>
+  <div class="phone" style="right:78px;top:290px;width:190px;height:390px;padding:7px;border-radius:30px"><img src="assets/lp-mob-hero.jpg" style="border-radius:24px"></div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>07</span></div>
+</section>
+
+<!-- 08 LP FEATURES -->
+<section class="s">
+  <div class="k">O que a página faz</div><img class="hc" src="assets/hc-branca.png">
+  <h1>Do Instagram ao pedido<br>em <em>dois toques.</em></h1>
+  <p class="lead" style="top:236px;max-width:620px;font-size:14.5px">Uma página da Padeirão pra bio, pro Google, pros anúncios e pra mandar pra padaria que ainda não compra com vocês.</p>
+  <div class="grid" style="top:345px;right:520px;grid-template-columns:1fr 1fr;gap:26px 30px">
+    <div><ul class="ck"><li><b style="color:#fff">Entrega em até 48h</b><br><span style="color:#8a8a8a;font-size:12px">Com a data estimada calculada na hora</span></li></ul></div>
+    <div><ul class="ck"><li><b style="color:#fff">Mix por categoria</b><br><span style="color:#8a8a8a;font-size:12px">Panificação, confeitaria, chocolataria e mais</span></li></ul></div>
+    <div><ul class="ck"><li><b style="color:#fff">As 2 lojas</b><br><span style="color:#8a8a8a;font-size:12px">Endereço e "como chegar" no mapa</span></li></ul></div>
+    <div><ul class="ck"><li><b style="color:#fff">Pra quem é</b><br><span style="color:#8a8a8a;font-size:12px">Padaria, confeitaria, restaurante, caseiro</span></li></ul></div>
+    <div><ul class="ck"><li><b style="color:#fff">Cursos e eventos</b><br><span style="color:#8a8a8a;font-size:12px">Feira, aulas e oficina das crianças</span></li></ul></div>
+    <div><ul class="ck"><li><b style="color:#fff">Botão de pedido fixo</b><br><span style="color:#8a8a8a;font-size:12px">Sempre a um toque do WhatsApp</span></li></ul></div>
+  </div>
+  <div class="phone" style="right:300px;top:120px;width:250px;height:540px"><img src="assets/lp-mob-48h.jpg"></div>
+  <div style="position:absolute;right:78px;top:300px;width:190px;border-radius:12px;overflow:hidden;border:1px solid #333;box-shadow:0 20px 40px rgba(0,0,0,.5)"><img src="assets/lp-desk-produtos.jpg" style="display:block;width:100%"></div>
+  <div style="position:absolute;right:78px;top:420px;width:190px;font-size:11.5px;line-height:1.5;color:#999">Abre rápido no celular, que é onde o dono da padaria faz o pedido.</div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>08</span></div>
+</section>
+
+<!-- 09 ESTRATEGIA -->
+<section class="s">
+  <div class="k">Estratégia</div><img class="hc" src="assets/hc-branca.png">
+  <h1>Três frentes pra vender<br><em>todo mês.</em></h1>
+  <div class="grid" style="top:250px;grid-template-columns:repeat(3,1fr);gap:22px">
+    <div class="box" style="height:432px;padding:30px"><div class="n" style="font-size:34px">01</div><div style="font-weight:700;letter-spacing:.14em;font-size:17px;margin-top:22px">ATRAIR</div><div style="font-size:12px;color:#777;margin:4px 0 18px;padding-bottom:18px;border-bottom:1px solid var(--line)">Padaria e confeiteiro novo conhecendo a Padeirão</div>
+      <ul class="ck"><li>Reels com receita: o produto da loja virando bolo, pão e doce</li><li>Anúncio local pra padarias de PE e PB</li><li>Cursos e eventos gravados como série</li></ul></div>
+    <div class="box on" style="height:432px;padding:30px"><div class="n" style="font-size:34px">02</div><div style="font-weight:700;letter-spacing:.14em;font-size:17px;margin-top:22px">CONVERTER</div><div style="font-size:12px;color:#5a4d00;margin:4px 0 18px;padding-bottom:18px;border-bottom:1px solid rgba(0,0,0,.15)">Seguidor virando pedido</div>
+      <ul class="ck" style="--y:#0E0E0E"><li style="color:#1c1a10">Bio e fixados com o 48h e o "como ser cliente"</li><li style="color:#1c1a10">Landing page no link da bio, sem Linktree</li><li style="color:#1c1a10">WhatsApp com mensagem pronta por loja e por região</li><li style="color:#1c1a10">Google das 2 lojas com avaliações</li></ul></div>
+    <div class="box" style="height:432px;padding:30px"><div class="n" style="font-size:34px">03</div><div style="font-weight:700;letter-spacing:.14em;font-size:17px;margin-top:22px">FAZER VOLTAR</div><div style="font-size:12px;color:#777;margin:4px 0 18px;padding-bottom:18px;border-bottom:1px solid var(--line)">Cliente repondo estoque com vocês</div>
+      <ul class="ck"><li>Lista de clientes por segmento no WhatsApp</li><li>Oferta da semana chegando primeiro pra lista</li><li>Lembrete de reposição antes das datas fortes</li><li>Aluno de curso virando cliente da loja</li></ul></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>09</span></div>
+</section>
+
+<!-- 10 FORMATOS -->
+<section class="s">
+  <div class="k">Conteúdos validados no nicho</div><img class="hc" src="assets/hc-branca.png">
+  <h1>8 formatos que vendem<br><em>insumo.</em></h1>
+  <div class="grid" style="top:250px;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div class="box" style="height:196px"><div class="n">01</div><div class="bt">Receita com produto</div><div class="bd">"Bolo de pote com o chantilly que chegou na loja." Quem assiste quer fazer e quer comprar.</div></div>
+    <div class="box" style="height:196px"><div class="n">02</div><div class="bt">Chegou na Padeirão</div><div class="bd">Lançamento e novidade do mix em 15 segundos, com preço na tela.</div></div>
+    <div class="box" style="height:196px"><div class="n">03</div><div class="bt">Cronômetro 48h</div><div class="bd">Do pedido no WhatsApp à entrega na padaria, gravado de verdade. Prova, não promessa.</div></div>
+    <div class="box" style="height:196px"><div class="n">04</div><div class="bt">Padaria parceira</div><div class="bd">Cliente mostrando a produção com insumo da Padeirão. Prova social que vende sozinha.</div></div>
+    <div class="box" style="height:196px"><div class="n">05</div><div class="bt">Teste lado a lado</div><div class="bd">Ponto do chantilly, rendimento, textura da massa. Comparação gera comentário.</div></div>
+    <div class="box" style="height:196px"><div class="n">06</div><div class="bt">Dica do Padeirão</div><div class="bd">O mascote chef em carrossel: "3 erros que derrubam teu chantilly". Salvamento garantido.</div></div>
+    <div class="box" style="height:196px"><div class="n">07</div><div class="bt">Bastidor dos cursos</div><div class="bd">Cada aula vira uma série de cortes, com a técnica e o produto usado.</div></div>
+    <div class="box" style="height:196px"><div class="n">08</div><div class="bt">Oferta da semana</div><div class="bd">O flyer de hoje virando Reels: produto, preço e "chama no WhatsApp".</div></div>
+  </div>
+  <p style="position:absolute;left:78px;top:680px;font-size:11.5px;color:#777">Formatos recorrentes nas distribuidoras e lojas de confeitaria que crescem no Instagram. A House adapta roteiro, gancho e estética pra cara da Padeirão.</p>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>10</span></div>
+</section>
+
+<!-- 11 ACOES -->
+<section class="s y">
+  <div class="k">Estratégias de venda</div><img class="hc" src="assets/hc-preta.png">
+  <h1>8 ações pra transformar<br>seguidor em pedido.</h1>
+  <div class="grid" style="top:238px;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div class="box" style="height:214px"><div class="n">01</div><div class="bt">48h na vitrine</div><div class="bd">O diferencial no topo da bio, no 1º fixado e em todo post de oferta.</div></div>
+    <div class="box" style="height:214px"><div class="n">02</div><div class="bt">WhatsApp direto</div><div class="bd">Sai o Linktree, entra a landing page com botão e mensagem pronta.</div></div>
+    <div class="box" style="height:214px"><div class="n">03</div><div class="bt">"Quero ser cliente"</div><div class="bd">Formulário pra padaria nova que cai direto com o representante da região.</div></div>
+    <div class="box" style="height:214px"><div class="n">04</div><div class="bt">Catálogo por categoria</div><div class="bd">Panificação, confeitaria, chocolataria: o cliente escolhe e já chama.</div></div>
+    <div class="box" style="height:214px"><div class="n">05</div><div class="bt">Google das 2 lojas</div><div class="bd">Aparecer em "loja de confeitaria perto de mim" com fotos e avaliações.</div></div>
+    <div class="box" style="height:214px"><div class="n">06</div><div class="bt">Lista por segmento</div><div class="bd">Padaria, confeitaria e caseiro: cada lista recebe a oferta que faz sentido.</div></div>
+    <div class="box" style="height:214px"><div class="n">07</div><div class="bt">Ação com marca parceira</div><div class="bd">Receita do mês feita com Mauri, Puratos ou Nestlé, com apoio da marca.</div></div>
+    <div class="box" style="height:214px"><div class="n">08</div><div class="bt">Do curso pro balcão</div><div class="bd">Aluno sai da aula com cupom pra comprar os insumos que usou.</div></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>11</span></div>
+</section>
+
+<!-- 12 CALENDARIO -->
+<section class="s">
+  <div class="k">Calendário de oportunidades</div><img class="hc" src="assets/hc-branca.png">
+  <h1>Os próximos 4 meses<br>são os que <em>mais vendem.</em></h1>
+  <p class="lead" style="top:236px;max-width:720px;font-size:14.5px">É agora que padaria e confeiteiro abastecem pro Natal e já pensam na Páscoa. Fechando agora, a House entra a tempo de cada campanha, com Reels, artes e disparo pra lista.</p>
+  <div class="grid" style="top:330px;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div class="box on" style="height:270px"><div class="lab" style="color:var(--ink)">Novembro</div><div style="font-weight:700;font-size:21px;margin:12px 0 10px;line-height:1.15">Black Friday do Confeiteiro</div><div class="bd">Lista VIP com acesso antecipado à Black Friday (27/11) e combos pra produção de Natal.</div></div>
+    <div class="box" style="height:270px"><div class="lab" style="color:var(--y)">Dezembro</div><div style="font-weight:700;font-size:21px;margin:12px 0 10px;line-height:1.15">Natal da Padeirão</div><div class="bd">Panetone, chocotone e bolo natalino. A campanha do cupom com sorteio em 28/12 ganha Reels de contagem regressiva.</div></div>
+    <div class="box" style="height:270px"><div class="lab" style="color:var(--y)">Janeiro</div><div style="font-weight:700;font-size:21px;margin:12px 0 10px;line-height:1.15">Verão e reposição</div><div class="bd">Dindin gourmet, sobremesas geladas e reposição de estoque depois das festas.</div></div>
+    <div class="box" style="height:270px"><div class="lab" style="color:var(--y)">Fevereiro</div><div style="font-weight:700;font-size:21px;margin:12px 0 10px;line-height:1.15">Largada da Páscoa</div><div class="bd">Chocolate, formas e embalagens: quem produz ovo de colher começa a comprar no Carnaval.</div></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>12</span></div>
+</section>
+
+<!-- 13 COMO FUNCIONA -->
+<section class="s">
+  <div class="k">Como funciona</div><img class="hc" src="assets/hc-branca.png">
+  <h1>Um mês de trabalho<br>nas lojas e na <em>distribuição.</em></h1>
+  <p class="lead" style="top:236px;max-width:760px;font-size:14.5px">A House alterna as visitas entre Imbiribeira e Rosarinho e acompanha a rota de entrega. Vocês cuidam dos clientes, a gente cuida da imagem e da venda no digital.</p>
+  <div class="dots" style="top:372px"><b style="left:0"></b><b style="left:25.6%"></b><b style="left:51.2%"></b><b style="left:76.8%"></b></div>
+  <div class="grid" style="top:405px;grid-template-columns:repeat(4,1fr);gap:30px">
+    <div><div class="lab" style="color:var(--y)">Semana 1</div><div style="font-weight:700;font-size:20px;margin:8px 0 16px">Perfil + Reels</div><ul class="ck"><li>Diagnóstico com os Insights</li><li>Bio, fixados e destaques novos</li><li>Landing page no ar</li></ul></div>
+    <div><div class="lab" style="color:var(--y)">Semana 2</div><div style="font-weight:700;font-size:20px;margin:8px 0 16px">Receita + rota</div><ul class="ck"><li>Diária de Reels com receitas</li><li>Gravação do cronômetro 48h</li><li>Artes da campanha do mês</li></ul></div>
+    <div><div class="lab" style="color:var(--y)">Semana 3</div><div style="font-weight:700;font-size:20px;margin:8px 0 16px">Fotos + campanha</div><ul class="ck"><li>Sessão de fotos do mix</li><li>Campanha do mês no ar</li><li>Disparo pra lista do WhatsApp</li></ul></div>
+    <div><div class="lab" style="color:var(--y)">Semana 4</div><div style="font-weight:700;font-size:20px;margin:8px 0 16px">Reels + resultado</div><ul class="ck"><li>Diária de Reels na outra loja</li><li>Relatório: alcance, contatos, pedidos</li><li>O que funcionou vira pauta</li></ul></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>13</span></div>
+</section>
+
+<!-- 14 INVESTIMENTO -->
+<section class="s y">
+  <div class="k">Investimento mensal</div><img class="hc" src="assets/hc-preta.png">
+  <h1 style="width:320px">Escolhe a fornada da Padeirão.</h1>
+  <p class="lead" style="top:290px;width:290px;font-size:14px">Captação, roteiro, edição, legendas e postagem inclusos em todos os planos.</p>
+  <p style="position:absolute;left:78px;top:388px;width:280px;font-size:11.5px;line-height:1.55;color:#5a4d00">Valores mensais, contrato mínimo de 3 meses. Verba de anúncio paga à parte.</p>
+  <div class="box" style="position:absolute;left:78px;top:520px;width:270px;height:150px;padding:22px 24px"><div class="lab" style="color:var(--y)">Só a landing page</div><div style="font-weight:700;font-size:13.5px;margin-top:10px;line-height:1.45">Ajuste com os dados reais, domínio e publicação. R$ 990 em pagamento único.</div></div>
+  <div class="box" style="position:absolute;left:442px;top:92px;width:258px;height:586px;padding:28px 24px">
+    <div class="lab" style="color:var(--y)">Fermento</div><div style="font-size:11.5px;color:#888;margin:4px 0 12px">Pra organizar o perfil</div>
+    <div style="font-weight:800;font-size:34px;line-height:1"><small style="font-size:14px">R$</small> 2.000 <small style="font-size:12px;color:#888;font-weight:400">/mês</small></div>
+    <ul class="ck gr" style="--y:#ccc;margin-top:20px;gap:9px;border-top:1px solid var(--line);padding-top:16px"><li style="font-size:12px">4 visitas no mês (2 por loja)</li><li style="font-size:12px">8 Reels com roteiro e gancho</li><li style="font-size:12px">1 sessão de fotos do mix</li><li style="font-size:12px">6 artes ou carrosséis</li><li style="font-size:12px">Legendas, calendário e Stories</li><li style="font-size:12px">Bio, fixados e destaques novos</li><li style="font-size:12px">Relatório mensal</li></ul>
+  </div>
+  <div class="box" style="position:absolute;left:718px;top:82px;width:258px;height:604px;padding:42px 24px 24px">
+    <div style="position:absolute;left:18px;right:18px;top:-2px;background:var(--y);color:var(--ink);border-radius:999px;text-align:center;font-size:9px;font-weight:800;letter-spacing:.2em;padding:7px 0">A ESCOLHA DA HOUSE</div>
+    <div class="lab" style="color:var(--y);margin-top:6px">Fornada</div><div style="font-size:11.5px;color:#888;margin:4px 0 12px">Pra vender todo mês</div>
+    <div style="font-weight:800;font-size:34px;line-height:1"><small style="font-size:14px">R$</small> 2.800 <small style="font-size:12px;color:#888;font-weight:400">/mês</small></div>
+    <ul class="ck" style="margin-top:20px;gap:8px;border-top:1px solid var(--line);padding-top:14px"><li style="font-size:12px">5 visitas no mês</li><li style="font-size:12px">12 Reels com roteiro e gancho</li><li style="font-size:12px">1 sessão de fotos + 8 artes</li><li class="sub" style="font-size:12px;color:var(--y);font-weight:700">Tudo do Fermento, mais:</li><li style="font-size:12px">Google das 2 lojas + avaliações</li><li style="font-size:12px">1 campanha de vendas por mês</li><li style="font-size:12px">Funil "Quero ser cliente" (B2B)</li><li style="font-size:12px">Lista de clientes no WhatsApp</li></ul>
+    <div style="margin-top:14px;background:var(--y);color:var(--ink);border-radius:999px;font-size:10.5px;font-weight:700;padding:7px 12px"><span style="font-size:8px;letter-spacing:.2em;font-weight:800;margin-right:6px">INCLUSO</span>Landing page no ar</div>
+  </div>
+  <div class="box" style="position:absolute;right:78px;top:92px;width:258px;height:586px;padding:28px 24px">
+    <div class="lab" style="color:var(--y)">Padeirão 360</div><div style="font-size:11.5px;color:#888;margin:4px 0 12px">Pra dominar PE e PB</div>
+    <div style="font-weight:800;font-size:34px;line-height:1"><small style="font-size:14px">R$</small> 3.500 <small style="font-size:12px;color:#888;font-weight:400">/mês</small></div>
+    <ul class="ck gr" style="--y:#ccc;margin-top:20px;gap:8px;border-top:1px solid var(--line);padding-top:14px"><li style="font-size:12px">6 visitas no mês</li><li style="font-size:12px">15 Reels com roteiro e gancho</li><li style="font-size:12px">1 sessão de fotos + 10 artes</li><li class="sub" style="font-size:12px;color:var(--y);font-weight:700">Tudo do Fornada, mais:</li><li style="font-size:12px">Tráfego pago pra padarias de PE e PB</li><li style="font-size:12px">Atendimento automático no WhatsApp</li><li style="font-size:12px">Ação mensal com marca parceira</li><li style="font-size:12px">Reunião quinzenal + suporte</li></ul>
+    <div style="margin-top:14px;background:var(--y);color:var(--ink);border-radius:999px;font-size:10.5px;font-weight:700;padding:7px 12px"><span style="font-size:8px;letter-spacing:.2em;font-weight:800;margin-right:6px">INCLUSO</span>Landing page no ar</div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>14</span></div>
+</section>
+
+<!-- 15 POR QUE A HOUSE -->
+<section class="s">
+  <div class="k">Por que a House</div><img class="hc" src="assets/hc-branca.png">
+  <div class="ray" style="left:28px;top:118px"><i></i><i></i></div>
+  <h1 style="top:118px;font-size:54px;line-height:1.08">Padrão de estúdio,<br>do roteiro ao <em>pedido.</em></h1>
+  <p class="lead" style="top:300px;max-width:520px;font-size:15px">A House do Creator é estúdio de foto e vídeo em Recife. Quem vai nas lojas da Padeirão é a mesma equipe que faz direção, captação, edição, design, página e estratégia.</p>
+  <div style="position:absolute;right:78px;top:96px;width:534px;display:grid;gap:18px">
+    <div class="box" style="height:164px"><div style="font-weight:800;font-size:14px;color:var(--y)">01</div><div class="bt" style="font-size:19px">Equipe completa</div><div class="bd" style="font-size:13.5px">Foto, vídeo, design, site e estratégia no mesmo contrato.</div></div>
+    <div class="box on" style="height:164px"><div style="font-weight:800;font-size:14px">02</div><div class="bt" style="font-size:19px">Trabalho na mesa antes do sim</div><div class="bd" style="font-size:13.5px">A landing page da Padeirão já está pronta. Vocês veem antes de decidir.</div></div>
+    <div class="box" style="height:164px"><div style="font-weight:800;font-size:14px;color:var(--y)">03</div><div class="bt" style="font-size:19px">Feito pra vender</div><div class="bd" style="font-size:13.5px">Cada Reels, arte e página termina num pedido no WhatsApp.</div></div>
+  </div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>15</span></div>
+</section>
+
+<!-- 16 PROXIMOS PASSOS -->
+<section class="s y">
+  <div class="k">Próximos passos</div><img class="hc" src="assets/hc-preta.png">
+  <h1>Do sim ao primeiro<br>post em 10 dias.</h1>
+  <div class="grid" style="top:292px;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div class="box" style="height:250px;padding:30px"><div class="n" style="font-size:36px">01</div><div class="bt" style="font-size:18px;margin-top:26px">Conversa de 15 min</div><div class="bd" style="font-size:13.5px">A gente apresenta a página e a proposta e tira as dúvidas.</div></div>
+    <div class="box" style="height:250px;padding:30px"><div class="n" style="font-size:36px">02</div><div class="bt" style="font-size:18px;margin-top:26px">Escolhe o plano</div><div class="bd" style="font-size:13.5px">Fermento, Fornada ou Padeirão 360, no ritmo de vocês.</div></div>
+    <div class="box" style="height:250px;padding:30px"><div class="n" style="font-size:36px">03</div><div class="bt" style="font-size:18px;margin-top:26px">Diagnóstico</div><div class="bd" style="font-size:13.5px">Acesso aos Insights, ajuste da página e campanha de Natal.</div></div>
+    <div class="box" style="height:250px;padding:30px"><div class="n" style="font-size:36px">04</div><div class="bt" style="font-size:18px;margin-top:26px">Primeira visita</div><div class="bd" style="font-size:13.5px">Gravação na loja, perfil novo e landing page no ar.</div></div>
+  </div>
+  <div style="position:absolute;left:78px;top:588px"><div class="lab" style="color:var(--ink);margin-bottom:12px">Condições</div>
+    <span class="pill">Pagamento mensal via Pix</span><span class="pill">Contrato mínimo de 3 meses</span><span class="pill">Tráfego com verba à parte</span><span class="pill">Conteúdo aprovado antes de ir ao ar</span><span class="pill">Proposta válida por 15 dias</span></div>
+  <div class="ft"><span>House do Creator &nbsp;·&nbsp; Proposta Padeirão</span><span>16</span></div>
+</section>
+
+<!-- 17 FECHAMENTO -->
+<section class="s" style="text-align:center">
+  <img src="assets/logo-branca.png" style="position:absolute;left:50%;top:78px;height:80px;transform:translateX(-50%)">
+  <div class="ray" style="left:130px;top:206px"><i></i><i></i></div>
+  <h1 style="left:0;right:0;top:228px;font-size:52px;line-height:1.14">A Padeirão transforma quem produz.<br>Agora a gente transforma<br><em>a Padeirão no digital.</em></h1>
+  <div class="ray" style="right:270px;top:404px;transform:scale(-1,-1)"><i></i><i></i></div>
+  <div style="position:absolute;left:50%;top:494px;transform:translateX(-50%);background:var(--y);color:var(--ink);border-radius:999px;padding:18px 78px;font-weight:700;font-size:18px;white-space:nowrap">WhatsApp &nbsp;(81) 98355-4583</div>
+  <div style="position:absolute;left:0;right:0;top:578px;font-size:14px;color:#9a9a9a">@housedocreator</div>
+  <div style="position:absolute;left:0;right:0;top:648px;font-size:14px;font-weight:700">Ryan Coimbra &amp; Fontenele &nbsp;·&nbsp; CEOs</div>
+  <div style="position:absolute;left:0;right:0;top:672px;font-size:12px;color:#777">House do Creator &nbsp;·&nbsp; Recife/PE</div>
+</section>
+
+</body>
+</html>
