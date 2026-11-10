@@ -1,0 +1,26 @@
+DESTAQUES — @sidney_filhinho
+===========================
+
+Ordem (da esquerda pra direita) e capa de cada um.
+As capas estão em png/ no tamanho de story (1080x1920).
+Como usar: postar a capa como story, criar o destaque com o nome abaixo
+e, em "Editar capa", escolher essa imagem.
+
+1. Agenda        → png/destaque-agenda.png
+   Arte do mês + story de cada show. Atualizar todo dia 1º.
+
+2. Shows         → png/destaque-shows.png
+   Os melhores trechos ao vivo, com público. Voz e teclado e banda completa.
+
+3. Contrate      → png/destaque-contrate.png
+   Formatos de show, cidades onde já tocou, WhatsApp (83) 99813-7990,
+   e-mail e CMN Produções.
+
+4. História      → png/destaque-historia.png
+   1997, São Paulo, Nordeste, a volta em 2026. Ele contando em vídeo curto.
+
+5. Lançamentos   → png/destaque-lancamentos.png
+   As 2 músicas autorais: contagem regressiva, estúdio e link do Spotify.
+
+6. Fé            → png/destaque-fe.png
+   As frases de motivação, no template da Segunda de fé.

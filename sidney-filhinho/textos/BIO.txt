@@ -1,0 +1,39 @@
+BIO — @sidney_filhinho
+=====================
+
+CAMPO "NOME" (aparece na busca, 43/64 caracteres)
+Sidney Filhinho | Forró • Piseiro • Arrocha
+
+CATEGORIA
+Músico/banda
+
+BIO (145/150 caracteres)
+🎹 Voz, teclado e sanfona
+📍 PB e PE | Shows, eventos e prefeituras
+🎶 Música nova em breve no Spotify
+🔴 Live no TikTok toda sexta, 20h
+📲 Contrate 👇
+
+LINK
+Por enquanto: wa.me/5583998137990
+Título do link: Contrate o Sidney · shows e prefeituras
+Quando a landing page ficar pronta, trocar pelo link dela.
+
+BOTÕES DE CONTATO (conta profissional)
+WhatsApp: (83) 99813-7990
+E-mail: (pendente, o Sidney ainda vai mandar)
+
+FOTO DE PERFIL
+png/foto-perfil.png (1080x1080)
+
+------------------------------------------
+BIO DO TIKTOK (mesmo @)
+🎹 Voz, teclado e sanfona
+📍 PB e PE | Shows, eventos e prefeituras
+🔴 Live toda sexta, 20h, aqui
+📲 Shows: (83) 99813-7990
+
+------------------------------------------
+QUANDO AS MÚSICAS SAÍREM
+Trocar a linha 🎶 por:
+🎶 Ouça "[nome da música]" no Spotify
