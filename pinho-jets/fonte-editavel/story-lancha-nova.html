@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+.f.story{width:1080px;height:1920px}
+.top{position:absolute;left:80px;right:80px;top:250px;display:flex;justify-content:space-between;align-items:center;z-index:20}
+.tagx{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:999px;font-weight:800;font-stretch:90%;text-transform:uppercase;letter-spacing:.14em;font-size:24px}
+.hero{position:absolute;left:0;top:660px;width:1080px;height:600px;overflow:hidden;z-index:2}
+.hero img{position:absolute;height:720px;left:-100px;top:-40px}
+.fade{position:absolute;left:0;right:0;z-index:3}
+.polar{position:absolute;z-index:6;background:#fff;padding:12px 12px 0;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.polar .ph{width:340px;height:250px;overflow:hidden;position:relative}
+.polar .ph img{position:absolute;height:100%;left:-40px}
+.polar .cap{font-style:italic;font-weight:900;font-stretch:70%;text-transform:uppercase;color:var(--abismo);font-size:30px;padding:10px 4px 12px}
+</style></head><body>
+<section class="f story" data-out="story-lancha-nova">
+  <canvas width="1080" height="1920" data-scene="mar"></canvas>
+  <div class="top"><div class="wm">Pinho <b>Jets</b></div><div class="tagx" style="background:var(--sinal);color:#fff">✸ Novidade</div></div>
+
+  <div class="abs disp" style="left:64px;top:360px;font-size:200px;z-index:4">Lancha nova</div>
+  <div class="abs disp" style="left:64px;top:520px;font-size:200px;z-index:4;color:var(--casco)">zero km.</div>
+
+  <div class="hero"><img src="assets/nx-curva.jpg"></div>
+  <div class="fade" style="top:660px;height:170px;background:linear-gradient(180deg,#061a2e,rgba(6,26,46,0));"></div>
+  <div class="fade" style="top:1080px;height:180px;background:linear-gradient(0deg,#061a2e,rgba(6,26,46,0));"></div>
+  <img class="abs" src="assets/nx280-logo.png" style="left:80px;top:1150px;width:320px;z-index:5;opacity:.95">
+
+  <div class="polar" style="right:70px;top:1010px;transform:rotate(4deg)"><div class="ph"><img src="assets/nx-mesa.jpg"></div><div class="cap">Espaço pra galera</div></div>
+
+  <div class="abs" style="left:80px;top:1290px;z-index:5">
+    <div class="lab" style="color:var(--casco);font-size:26px;margin-bottom:14px">Vem garantir sua</div>
+    <div class="disp" style="font-size:132px;line-height:1"><span style="display:inline-block;background:var(--sinal);padding:6px 20px 0 12px">Confraterni-</span><br><span style="display:inline-block;background:var(--sinal);padding:6px 20px 0 12px;margin-top:6px">zação.</span></div>
+  </div>
+
+  <div class="abs" style="right:80px;top:1478px;text-align:right;z-index:5">
+    <div class="body" style="font-size:30px;color:var(--claro2)">Navegar é preciso.</div>
+    <div class="lab" style="color:var(--casco);font-size:24px;margin-top:10px">Reserve a data no link ↓</div>
+  </div>
+  <div class="grain"></div>
+</section>
+<script src="splash.js"></script>
+<script>
+document.querySelectorAll('canvas[data-scene]').forEach(cv=>{const c=cv.getContext('2d');ocean(c,cv.width,cv.height,-40,{seed:23,n:3000});c.fillStyle='rgba(6,26,46,.55)';c.fillRect(0,0,cv.width,cv.height);});
+window.READY=true;
+</script></body></html>
