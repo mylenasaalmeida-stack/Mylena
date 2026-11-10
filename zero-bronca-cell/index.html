@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero Bronca Cell | Assistência técnica de celular em Candeias</title>
+<meta name="description" content="Assistência técnica de celulares, troca de display de todas as marcas, película de hidrogel, acessórios e Ponto de Coleta Mercado Livre em Candeias, Jaboatão dos Guararapes. Aberto de domingo a domingo.">
+<meta property="og:title" content="Zero Bronca Cell: celular quebrou? Zero bronca.">
+<meta property="og:description" content="Troca de display, película de hidrogel, acessórios e Ponto Mercado Livre. Av. Presidente Castelo Branco, 5630, Candeias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#050b24; --navy2:#0a1540; --blue:#1f6bff; --cyan:#22d3ee; --yellow:#ffe600; --ml:#2d3277;
+  --ink:#eef3ff; --muted:#9fb0d9; --line:rgba(255,255,255,.1); --card:rgba(255,255,255,.04);
+  --green:#25d366; --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:Inter,system-ui,sans-serif;background:var(--navy);color:var(--ink);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:"Archivo Black",Inter,sans-serif;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.6vw,52px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,19px);max-width:620px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:800;font-size:16px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--green);color:#03240f;box-shadow:0 10px 30px -8px rgba(37,211,102,.6)}
+.btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-yellow{background:var(--yellow);color:#111}
+.ico{width:20px;height:20px;flex:none}
+section{padding:96px 0;position:relative}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,backdrop-filter .3s}
+header.solid{background:rgba(5,11,36,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Archivo Black";font-size:20px;letter-spacing:.01em}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#2b7bff,#0a1a5c);border:2px solid var(--yellow);display:grid;place-items:center;font-size:16px;color:#fff}
+.logo b{color:var(--cyan);font-style:italic}
+.nav ul{display:flex;gap:28px;list-style:none;font-weight:600;font-size:15px;color:var(--muted)}
+.nav ul a:hover{color:#fff}
+.nav .btn{padding:11px 18px;font-size:14px}
+@media(max-width:900px){.nav ul{display:none}}
+@media(max-width:420px){.nav .btn span{display:none}.nav .btn{padding:11px}}
+
+/* hero */
+.hero{padding:140px 0 80px;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 500px at 80% 30%,rgba(31,107,255,.35),transparent 60%),
+  radial-gradient(500px 400px at 10% 90%,rgba(34,211,238,.18),transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(circle at 60% 40%,#000,transparent 70%);opacity:.4;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+.badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+.pill.ml{background:var(--yellow);color:var(--ml);border:0;font-weight:800}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(37,211,102,.7);animation:ping 1.8s infinite}
+@keyframes ping{to{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
+.hero h1{font-size:clamp(44px,7.2vw,92px);margin-bottom:22px}
+.hero h1 .strike{position:relative;color:var(--muted)}
+.hero h1 .strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:.12em;background:#ff3b5c;transform:rotate(-4deg);border-radius:4px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin-bottom:34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:44px;color:var(--muted);font-size:14px}
+.hero-meta strong{display:block;font-family:"Archivo Black";font-size:28px;color:#fff;line-height:1.1}
+
+/* phone visual */
+.phone-stage{position:relative;display:grid;place-items:center;min-height:520px}
+.phone{width:260px;height:520px;border-radius:44px;background:#0b0f1f;border:10px solid #1a2140;box-shadow:0 40px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08),0 0 120px -20px rgba(31,107,255,.6);position:relative;overflow:hidden;transform:rotate(-6deg);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-6deg) translateY(-14px)}}
+.phone::before{content:"";position:absolute;top:10px;left:50%;translate:-50%;width:80px;height:22px;background:#000;border-radius:20px;z-index:3}
+.screen{position:absolute;inset:0;background:linear-gradient(160deg,#1f6bff,#22d3ee 55%,#a7f3d0);}
+.screen .time{position:absolute;top:70px;width:100%;text-align:center;font-family:"Archivo Black";font-size:58px;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.2)}
+.screen .date{position:absolute;top:140px;width:100%;text-align:center;color:#fff;font-weight:600;opacity:.9}
+.crack{position:absolute;inset:0;z-index:2;animation:fix 7s ease-in-out infinite}
+.crack svg{width:100%;height:100%}
+@keyframes fix{0%,35%{clip-path:inset(0 0 0 0)}55%,85%{clip-path:inset(0 0 100% 0)}100%{clip-path:inset(0 0 0 0)}}
+.scan{position:absolute;left:0;right:0;height:4px;background:var(--yellow);box-shadow:0 0 24px 6px rgba(255,230,0,.7);z-index:4;animation:scan 7s ease-in-out infinite;opacity:0}
+@keyframes scan{0%,35%{top:0;opacity:0}36%{opacity:1}55%{top:100%;opacity:1}56%,100%{opacity:0;top:100%}}
+.chip{position:absolute;padding:12px 16px;border-radius:16px;background:rgba(10,21,64,.85);backdrop-filter:blur(10px);border:1px solid var(--line);font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -10px rgba(0,0,0,.5)}
+.chip i{font-style:normal;font-size:20px}
+.chip small{display:block;color:var(--muted);font-weight:500}
+.chip.c1{top:40px;left:-10px;animation:float2 5s ease-in-out infinite}
+.chip.c2{bottom:70px;right:-14px;animation:float2 5s ease-in-out infinite 1.5s}
+.chip.c3{bottom:10px;left:0;animation:float2 5s ease-in-out infinite .8s}
+@keyframes float2{50%{transform:translateY(-10px)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.phone-stage{min-height:460px}.phone{width:220px;height:440px}.chip.c1{left:0}.chip.c2{right:0}}
+
+/* marquee */
+.marquee{background:var(--yellow);color:#0a0f2c;padding:16px 0;overflow:hidden;transform:rotate(-1.5deg);margin:-10px -20px 0;position:relative;z-index:2}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:mq 30s linear infinite;font-family:"Archivo Black";font-size:20px;text-transform:uppercase;white-space:nowrap}
+.marquee-track span::after{content:"✦";margin-left:48px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* services */
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:52px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,background .3s}
+.svc:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.5);background:rgba(31,107,255,.08)}
+.svc .num{position:absolute;top:22px;right:24px;font-family:"Archivo Black";color:rgba(255,255,255,.06);font-size:56px;line-height:1}
+.svc .icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-size:26px;margin-bottom:22px;box-shadow:0 10px 30px -10px rgba(31,107,255,.8)}
+.svc h3{font-size:22px;margin-bottom:10px}
+.svc p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.svc a:not(.btn){font-weight:700;color:var(--cyan);font-size:14px;display:inline-flex;gap:6px}
+.svc a:not(.btn):hover{gap:10px}
+.svc.big{grid-column:span 2;background:linear-gradient(135deg,rgba(255,59,92,.18),rgba(31,107,255,.12));display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.svc.big h3{font-size:clamp(26px,3vw,38px)}
+.svc.big .tag{display:inline-block;background:#ff3b5c;color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:6px;margin-bottom:14px;letter-spacing:.06em}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.brands span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.25)}
+@media(max-width:980px){.services{grid-template-columns:1fr 1fr}.svc.big{grid-column:span 2;grid-template-columns:1fr}}
+@media(max-width:640px){.services{grid-template-columns:1fr}.svc.big{grid-column:auto}}
+
+/* quote builder */
+.quote{background:linear-gradient(180deg,var(--navy),var(--navy2))}
+.quote-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:28px;padding:44px;align-items:start}
+.steps-mini{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.steps-mini div{display:flex;gap:14px;align-items:flex-start;color:var(--muted)}
+.steps-mini b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--yellow);color:#111;display:grid;place-items:center;font-family:"Archivo Black"}
+.steps-mini strong{color:#fff;display:block}
+form label{display:block;font-weight:700;font-size:14px;margin:0 0 8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label span{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);font-weight:600;font-size:14px;cursor:pointer;transition:.2s}
+.opts label{margin:0}
+.opts input:checked + span{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px -8px rgba(31,107,255,.9)}
+.opts input:focus-visible + span{outline:2px solid var(--cyan);outline-offset:2px}
+.field{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:#fff;font:inherit;margin-bottom:22px}
+.field:focus{outline:2px solid var(--cyan);border-color:transparent}
+.field::placeholder{color:#6b7aa6}
+form .btn{width:100%}
+@media(max-width:860px){.quote-box{grid-template-columns:1fr;padding:26px}}
+
+/* hydrogel */
+.hydro{overflow:hidden}
+.hydro-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hydro-visual{position:relative;aspect-ratio:1;max-width:480px;width:100%;margin-inline:auto}
+.hv-phone{position:absolute;inset:12% 22%;border-radius:36px;background:linear-gradient(160deg,#0b1d5c,#1f6bff);border:8px solid #1a2140;transform:rotate(12deg)}
+.hv-film{position:absolute;inset:8% 18%;border-radius:40px;background:linear-gradient(120deg,rgba(255,255,255,.35),rgba(255,255,255,.05) 40%,rgba(167,243,208,.25));border:1px solid rgba(255,255,255,.5);transform:rotate(12deg) translate(30px,-30px);backdrop-filter:blur(2px);animation:peel 5s ease-in-out infinite;box-shadow:0 30px 60px -20px rgba(34,211,238,.5)}
+@keyframes peel{50%{transform:rotate(12deg) translate(0,0)}}
+.hv-glow{position:absolute;inset:0;background:radial-gradient(circle,rgba(34,211,238,.35),transparent 60%)}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+.feat{display:flex;gap:12px;align-items:center;padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line);font-weight:700;font-size:15px}
+.feat i{font-style:normal;width:40px;height:40px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(34,211,238,.12);font-size:20px}
+.title-hydro{font-size:clamp(40px,6vw,72px);color:var(--yellow)}
+.title-hydro span{display:block;color:transparent;-webkit-text-stroke:2px var(--cyan)}
+@media(max-width:860px){.hydro-grid{grid-template-columns:1fr}.feats{grid-template-columns:1fr}}
+
+/* mercado livre */
+.mlsec{background:var(--yellow);color:#14185a;overflow:hidden}
+.mlsec .eyebrow{color:var(--ml)}
+.ml-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.mlsec h2{font-size:clamp(34px,5.4vw,64px)}
+.mlsec p{font-size:18px;margin:18px 0 28px;max-width:560px;color:#2b2f6b}
+.ml-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+.ml-list div{background:rgba(45,50,119,.08);border-radius:14px;padding:14px 16px;font-weight:700}
+.ml-card{background:#fff;border-radius:28px;padding:34px;box-shadow:0 30px 60px -20px rgba(45,50,119,.4);transform:rotate(3deg);text-align:center}
+.ml-card .hs{font-size:64px}
+.ml-card h3{font-size:26px;margin:10px 0}
+.ml-card p{font-size:15px;margin:0}
+.btn-ml{background:var(--ml);color:#fff}
+@media(max-width:860px){.ml-grid{grid-template-columns:1fr}.ml-card{transform:none}.ml-list{grid-template-columns:1fr}}
+
+/* training */
+.train{background:radial-gradient(800px 500px at 50% 0,rgba(31,107,255,.2),transparent 70%)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:26px;scrollbar-width:thin}
+.tab{flex:none;padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font:600 15px Inter;cursor:pointer;display:flex;gap:8px;align-items:center;transition:.2s}
+.tab[aria-selected="true"]{background:#fff;color:var(--navy);border-color:#fff}
+.panel{display:none;grid-template-columns:1.3fr .7fr;gap:22px}
+.panel.on{display:grid;animation:fadein .4s}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}}
+.panel-main{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px}
+.panel-main h3{font-size:28px;margin-bottom:8px}
+.panel-main > p{color:var(--muted);margin-bottom:24px}
+.checklist{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:12px}
+.checklist li{counter-increment:s;display:flex;gap:14px;padding:16px;border-radius:14px;background:rgba(0,0,0,.25);cursor:pointer;transition:.2s;align-items:flex-start;user-select:none}
+.checklist li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--cyan);color:var(--cyan);display:grid;place-items:center;font-weight:800;font-size:14px}
+.checklist li.done{opacity:.55}
+.checklist li.done::before{content:"✓";background:var(--green);border-color:var(--green);color:#03240f}
+.checklist li strong{display:block}
+.checklist li span{color:var(--muted);font-size:14px}
+.progress{height:6px;border-radius:6px;background:rgba(255,255,255,.08);margin:22px 0 0;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .4s}
+.prog-label{font-size:13px;color:var(--muted);margin-top:8px}
+.panel-side{display:flex;flex-direction:column;gap:16px}
+.alert{border-radius:24px;padding:26px;background:linear-gradient(135deg,rgba(255,59,92,.2),rgba(255,59,92,.05));border:1px solid rgba(255,59,92,.35)}
+.alert h4{font-size:17px;margin-bottom:10px;display:flex;gap:8px;align-items:center}
+.alert ul{padding-left:18px;color:#ffd0d8;font-size:14px;display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.alert .btn{width:100%;padding:13px;font-size:14px}
+.tip{border-radius:24px;padding:24px;background:rgba(255,230,0,.08);border:1px solid rgba(255,230,0,.3);font-size:14px;color:#fff6b0}
+.tip b{color:var(--yellow);display:block;margin-bottom:6px;font-size:15px}
+@media(max-width:860px){.panel.on{grid-template-columns:1fr}.panel-main{padding:24px}}
+
+.care{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.care div{padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.care i{font-style:normal;font-size:28px;display:block;margin-bottom:10px}
+.care strong{display:block;margin-bottom:6px}
+.care p{color:var(--muted);font-size:14px}
+@media(max-width:900px){.care{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.care{grid-template-columns:1fr}}
+
+/* location */
+.loc-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:stretch}
+.loc-info{background:linear-gradient(160deg,var(--blue),#0b2a8a);border-radius:28px;padding:36px;display:flex;flex-direction:column;gap:22px}
+.loc-info h3{font-size:28px}
+.loc-row{display:flex;gap:14px;align-items:flex-start}
+.loc-row i{font-style:normal;width:44px;height:44px;flex:none;border-radius:14px;background:rgba(255,255,255,.15);display:grid;place-items:center;font-size:20px}
+.loc-row small{display:block;opacity:.75;font-size:13px}
+.loc-row strong{font-size:16px}
+.loc-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.loc-btns .btn{padding:13px;font-size:14px}
+.btn-white{background:#fff;color:var(--navy)}
+.map{border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:440px;background:#0a1540;position:relative}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;filter:saturate(1.1)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.gallery figure{border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--card)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.06)}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+
+/* faq */
+.faq{max-width:820px;margin-inline:auto}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;line-height:1;color:var(--cyan);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:12px}
+
+/* final cta */
+.final{text-align:center;padding:110px 0;background:radial-gradient(600px 400px at 50% 100%,rgba(37,211,102,.25),transparent 70%)}
+.final h2{font-size:clamp(40px,7vw,86px);margin-bottom:18px}
+.final .lead{margin:0 auto 34px}
+.final .cta-row{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.foot a:hover{color:#fff}
+.socials{display:flex;gap:10px}
+.socials a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+
+/* float wa */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.7);animation:ping2 2.4s infinite}
+@keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6),0 12px 30px -6px rgba(37,211,102,.7)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0),0 12px 30px -6px rgba(37,211,102,.7)}}
+.fab svg{width:32px;height:32px}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.82 11.82 0 0012.04 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></symbol>
+  <symbol id="ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Zero Bronca Cell, início">
+      <span class="logo-mark">Z</span>
+      <span>ZERO <b>BRONCA</b></span>
+    </a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#orcamento">Orçamento</a></li>
+      <li><a href="#treinamento">Central de ajuda</a></li>
+      <li><a href="#mercado-livre">Mercado Livre</a></li>
+      <li><a href="#localizacao">Onde estamos</a></li>
+    </ul>
+    <a class="btn btn-wa" data-wa="Olá, Zero Bronca! Vim pelo site e quero um orçamento." href="#"><svg class="ico"><use href="#wa"/></svg><span>Chamar no Whats</span></a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge-row">
+        <span class="pill"><span class="dot"></span> Aberto de domingo a domingo</span>
+        <span class="pill ml">📦 Ponto Mercado Livre</span>
+      </div>
+      <h1>Celular quebrou?<br><span class="strike">Bronca.</span> <em>Zero bronca.</em></h1>
+      <p class="lead">Assistência técnica de celulares em Candeias. Troca de display de todas as marcas e modelos, película de hidrogel, bateria, conector, acessórios e computadores, num lugar só e todo dia da semana.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-wa="Olá, Zero Bronca! Meu celular está com problema e quero um orçamento." href="#"><svg class="ico"><use href="#wa"/></svg>Orçamento pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#localizacao">📍 Como chegar</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>7 dias</strong>por semana</div>
+        <div><strong>Todas</strong>as marcas</div>
+        <div><strong>1.400+</strong>seguidores no Insta</div>
+      </div>
+    </div>
+
+    <div class="phone-stage" aria-hidden="true">
+      <div class="phone">
+        <div class="screen"><div class="time">11:59</div><div class="date">Consertado na Zero Bronca</div></div>
+        <div class="crack">
+          <svg viewBox="0 0 240 500" preserveAspectRatio="none">
+            <rect width="240" height="500" fill="#0b0f1f" opacity=".55"/>
+            <g stroke="#fff" stroke-width="1.6" fill="none" opacity=".9" stroke-linecap="round">
+              <path d="M150 210 L40 120 L10 90"/><path d="M150 210 L230 140"/><path d="M150 210 L200 330 L240 360"/>
+              <path d="M150 210 L60 300 L0 320"/><path d="M150 210 L120 420 L100 500"/><path d="M150 210 L170 40 L160 0"/>
+              <path d="M95 165 L70 210 L60 300"/><path d="M190 175 L215 250"/><path d="M175 270 L130 320"/>
+              <path d="M110 260 L135 330 L120 420"/><path d="M40 120 L90 60"/><path d="M200 330 L150 370"/>
+              <circle cx="150" cy="210" r="10"/><circle cx="150" cy="210" r="22" opacity=".5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="scan"></div>
+      </div>
+      <div class="chip c1"><i>🛠️</i><div>Troca de display<small>Todas as marcas</small></div></div>
+      <div class="chip c2"><i>🛡️</i><div>Película hidrogel<small>Nano tecnologia</small></div></div>
+      <div class="chip c3"><i>📦</i><div>Retire seu pedido<small>Mercado Livre</small></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Troca de display</span><span>Película de hidrogel</span><span>Bateria</span><span>Conector de carga</span><span>Acessórios</span><span>Computadores</span><span>Ponto Mercado Livre</span><span>Domingo a domingo</span>
+    <span>Troca de display</span><span>Película de hidrogel</span><span>Bateria</span><span>Conector de carga</span><span>Acessórios</span><span>Computadores</span><span>Ponto Mercado Livre</span><span>Domingo a domingo</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que a gente resolve</span>
+      <h2>Tudo pro seu celular.<br>Sem dor de cabeça.</h2>
+      <p class="lead">Do vidro trincado ao celular que não liga. Você chega com o problema e sai com o aparelho funcionando.</p>
+    </div>
+    <div class="services">
+      <article class="svc big reveal">
+        <div>
+          <span class="tag">MAIS PROCURADO</span>
+          <h3>Troca de display</h3>
+          <p>Tela trincada, manchada, com listras ou touch falhando? Trocamos o display de todas as marcas e modelos.</p>
+          <div class="brands"><span>iPhone</span><span>Samsung</span><span>Motorola</span><span>Xiaomi</span><span>Realme</span><span>LG</span><span>e outros</span></div>
+          <a class="btn btn-wa" data-wa="Olá! Quero orçamento de troca de display. Meu celular é: " href="#"><svg class="ico"><use href="#wa"/></svg>Quanto fica no meu modelo?</a>
+        </div>
+      </article>
+      <article class="svc reveal"><span class="num">02</span><div class="icon">🛡️</div><h3>Película de hidrogel</h3><p>Proteção com nano tecnologia, 100% transparente e sem perder a sensibilidade do toque.</p><a href="#hidrogel">Ver detalhes →</a></article>
+      <article class="svc reveal"><span class="num">03</span><div class="icon">🔋</div><h3>Bateria</h3><p>Celular descarregando rápido, desligando sozinho ou bateria estufada? A gente avalia e troca.</p><a href="#" data-wa="Olá! Quero orçamento de troca de bateria. Meu celular é: ">Pedir orçamento →</a></article>
+      <article class="svc reveal"><span class="num">04</span><div class="icon">🔌</div><h3>Conector de carga</h3><p>Cabo com mau contato, só carrega "de jeito" ou não carrega? Limpeza ou troca do conector.</p><a href="#" data-wa="Olá! Meu celular não está carregando direito. Meu modelo é: ">Pedir orçamento →</a></article>
+      <article class="svc reveal"><span class="num">05</span><div class="icon">🎧</div><h3>Acessórios</h3><p>Capinhas, carregadores, cabos, fones, suportes e muito mais pra pronta entrega na loja.</p><a href="#" data-wa="Olá! Quero saber dos acessórios disponíveis para o modelo: ">Ver o que tem →</a></article>
+      <article class="svc reveal"><span class="num">06</span><div class="icon">💻</div><h3>Computadores</h3><p>Também atendemos computadores e notebooks. Chame no Whats e conte o que está acontecendo.</p><a href="#" data-wa="Olá! Preciso de ajuda com meu computador/notebook: ">Falar com a gente →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section id="orcamento" class="quote">
+  <div class="wrap">
+    <div class="quote-box reveal">
+      <div>
+        <span class="eyebrow">Orçamento em 30 segundos</span>
+        <h2 style="margin:14px 0 12px">Monte seu pedido e mande direto no Whats.</h2>
+        <p class="lead">Escolha a marca e o problema. A mensagem já vai pronta, é só enviar.</p>
+        <div class="steps-mini">
+          <div><b>1</b><p><strong>Escolha a marca e o defeito</strong>Leva menos de um minuto.</p></div>
+          <div><b>2</b><p><strong>Envie pelo WhatsApp</strong>A mensagem já sai preenchida.</p></div>
+          <div><b>3</b><p><strong>Traga o aparelho</strong>Candeias, de domingo a domingo.</p></div>
+        </div>
+      </div>
+      <form id="qform">
+        <label>Marca do celular</label>
+        <div class="opts" role="radiogroup">
+          <label><input type="radio" name="marca" value="iPhone" checked><span>iPhone</span></label>
+          <label><input type="radio" name="marca" value="Samsung"><span>Samsung</span></label>
+          <label><input type="radio" name="marca" value="Motorola"><span>Motorola</span></label>
+          <label><input type="radio" name="marca" value="Xiaomi"><span>Xiaomi</span></label>
+          <label><input type="radio" name="marca" value="Realme"><span>Realme</span></label>
+          <label><input type="radio" name="marca" value="Outra"><span>Outra</span></label>
+        </div>
+        <label for="modelo">Modelo</label>
+        <input class="field" id="modelo" placeholder="Ex.: iPhone 13, Galaxy A54, Moto G84…">
+        <label>Qual o problema?</label>
+        <div class="opts">
+          <label><input type="radio" name="prob" value="tela quebrada / display" checked><span>Tela quebrada</span></label>
+          <label><input type="radio" name="prob" value="bateria"><span>Bateria</span></label>
+          <label><input type="radio" name="prob" value="não carrega"><span>Não carrega</span></label>
+          <label><input type="radio" name="prob" value="não liga"><span>Não liga</span></label>
+          <label><input type="radio" name="prob" value="caiu na água"><span>Molhou</span></label>
+          <label><input type="radio" name="prob" value="película de hidrogel"><span>Película</span></label>
+          <label><input type="radio" name="prob" value="outro problema"><span>Outro</span></label>
+        </div>
+        <button class="btn btn-wa" type="submit"><svg class="ico"><use href="#wa"/></svg>Enviar pedido de orçamento</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- HYDROGEL -->
+<section id="hidrogel" class="hydro">
+  <div class="wrap hydro-grid">
+    <div class="hydro-visual reveal" aria-hidden="true"><div class="hv-glow"></div><div class="hv-phone"></div><div class="hv-film"></div></div>
+    <div class="reveal">
+      <span class="eyebrow">Proteção de verdade</span>
+      <h2 class="title-hydro" style="margin-top:14px">Película<span>Hidrogel</span></h2>
+      <div class="feats">
+        <div class="feat"><i>💧</i>Nano tecnologia</div>
+        <div class="feat"><i>✨</i>100% transparente</div>
+        <div class="feat"><i>🫧</i>Revestimento oleofóbico</div>
+        <div class="feat"><i>⚡</i>Fácil aplicação</div>
+        <div class="feat"><i>👆</i>Sem perda de sensibilidade</div>
+        <div class="feat"><i>🛡️</i>Resistente a arranhões</div>
+      </div>
+      <a class="btn btn-wa" data-wa="Olá! Quero colocar película de hidrogel. Meu celular é: " href="#"><svg class="ico"><use href="#wa"/></svg>Quero a minha</a>
+    </div>
+  </div>
+</section>
+
+<!-- MERCADO LIVRE -->
+<section id="mercado-livre" class="mlsec">
+  <div class="wrap ml-grid">
+    <div class="reveal">
+      <span class="eyebrow">Novidade</span>
+      <h2 style="margin-top:14px">Agora somos Ponto Mercado Livre!</h2>
+      <p>Comprou no Mercado Livre? Escolha a Zero Bronca Cell como ponto de retirada ou de envio e resolva tudo aqui em Candeias, com agilidade e segurança.</p>
+      <div class="ml-list">
+        <div>📥 Retire seus pedidos</div>
+        <div>📤 Despache suas vendas</div>
+        <div>📅 Domingo a domingo</div>
+        <div>📍 Av. Pres. Castelo Branco</div>
+      </div>
+      <a class="btn btn-ml" href="#localizacao">📍 Ver no mapa</a>
+    </div>
+    <div class="ml-card reveal">
+      <div class="hs">🤝</div>
+      <h3>Ponto de Coleta</h3>
+      <p>Zero Bronca Cell<br>Av. Presidente Castelo Branco, 5630<br>Candeias, Jaboatão dos Guararapes, PE</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="treinamento" class="train">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Central de ajuda Zero Bronca</span>
+      <h2>Celular deu problema?<br>Tente isso antes.</h2>
+      <p class="lead">Um passo a passo pra você mesmo testar em casa. Toque em cada etapa pra marcar como feita. Se nada resolver, a gente assume daqui.</p>
+    </div>
+
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="panels"></div>
+
+    <div class="care reveal">
+      <div><i>🌡️</i><strong>Calor é inimigo</strong><p>Não deixe o celular no sol ou no carro fechado. Evite usar pesado enquanto carrega.</p></div>
+      <div><i>🔌</i><strong>Carregador bom</strong><p>Use carregador e cabo de qualidade. Os muito baratos podem danificar a bateria e o conector.</p></div>
+      <div><i>🛡️</i><strong>Proteção desde o dia 1</strong><p>Película e capinha custam bem menos que uma tela nova.</p></div>
+      <div><i>☁️</i><strong>Backup sempre</strong><p>Ative o backup de fotos e contatos. Se algo acontecer, suas memórias estão salvas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="localizacao">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onde estamos</span>
+      <h2>Fácil de chegar,<br>em Candeias.</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-info reveal">
+        <h3>Zero Bronca Cell</h3>
+        <div class="loc-row"><i>📍</i><div><small>Endereço</small><strong>Av. Presidente Castelo Branco, 5630<br>Candeias, Jaboatão dos Guararapes, PE</strong></div></div>
+        <div class="loc-row"><i>🕒</i><div><small>Funcionamento</small><strong>De domingo a domingo</strong></div></div>
+        <div class="loc-row"><i>📱</i><div><small>WhatsApp</small><strong>(81) 9.8804-3279</strong></div></div>
+        <div class="loc-btns">
+          <a class="btn btn-white" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Av.+Presidente+Castelo+Branco,+5630,+Candeias,+Jaboat%C3%A3o+dos+Guararapes+-+PE">🗺️ Google Maps</a>
+          <a class="btn btn-white" target="_blank" rel="noopener" href="https://waze.com/ul?q=Av.%20Presidente%20Castelo%20Branco%205630%20Candeias%20Jaboat%C3%A3o%20dos%20Guararapes&navigate=yes">🚗 Waze</a>
+          <a class="btn btn-wa" style="grid-column:span 2" data-wa="Olá! Estou indo até a loja, podem me ajudar com a localização?" href="#"><svg class="ico"><use href="#wa"/></svg>Chamar no Whats</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Mapa da Zero Bronca Cell" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Av.+Presidente+Castelo+Branco,+5630,+Candeias,+Jaboat%C3%A3o+dos+Guararapes+-+PE&z=17&output=embed"></iframe>
+      </div>
+    </div>
+    <!-- Fotos reais da loja: salve em zero-bronca-cell/fotos/loja-1.jpg ... loja-4.jpg. Se não existirem, a galeria some sozinha. -->
+    <div class="gallery" id="gallery">
+      <figure><img src="fotos/loja-1.jpg" alt="Fachada da Zero Bronca Cell" loading="lazy"></figure>
+      <figure><img src="fotos/loja-2.jpg" alt="Balcão de atendimento" loading="lazy"></figure>
+      <figure><img src="fotos/loja-3.jpg" alt="Acessórios na loja" loading="lazy"></figure>
+      <figure><img src="fotos/loja-4.jpg" alt="Ponto Mercado Livre na loja" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head reveal" style="align-items:center;text-align:center">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntou, respondeu.</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Vocês trocam tela de qualquer celular?</summary><p>Sim, trocamos display de todas as marcas e modelos. Mande o modelo no WhatsApp que a gente passa o valor e o prazo.</p></details>
+      <details><summary>Abre no domingo mesmo?</summary><p>Abre! A Zero Bronca Cell funciona de domingo a domingo.</p></details>
+      <details><summary>Como faço pra retirar meu pedido do Mercado Livre aí?</summary><p>Na hora da compra, escolha a Zero Bronca Cell como ponto de retirada. Quando o app avisar que chegou, é só vir com o código de retirada.</p></details>
+      <details><summary>Película de hidrogel é melhor que a de vidro?</summary><p>Ela é fina, flexível, cobre bem a tela inteira (inclusive as curvas) e não tira a sensibilidade do toque. Passa aqui que a gente mostra e aplica na hora.</p></details>
+      <details><summary>Meu celular caiu na água. E agora?</summary><p>Desligue na hora, não carregue e não coloque no arroz. Abra a aba "Molhou" na central de ajuda acima e traga pra loja o quanto antes. Quanto mais rápido, maior a chance de salvar.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <h2>Quebrou? <em style="font-style:normal;color:var(--green)">Zero bronca.</em></h2>
+    <p class="lead">Chama a gente no WhatsApp agora e já sai com o orçamento.</p>
+    <div class="cta-row">
+      <a class="btn btn-wa" data-wa="Olá, Zero Bronca! Quero um orçamento." href="#"><svg class="ico"><use href="#wa"/></svg>(81) 9.8804-3279</a>
+      <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.instagram.com/zerobronca.cell/"><svg class="ico"><use href="#ig"/></svg>@zerobronca.cell</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><span class="logo-mark">Z</span><span>ZERO <b>BRONCA</b> CELL</span></div>
+    <div>Assistência e acessórios · Ponto Mercado Livre<br>Av. Presidente Castelo Branco, 5630, Candeias, Jaboatão dos Guararapes, PE</div>
+    <div class="socials">
+      <a href="https://www.instagram.com/zerobronca.cell/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#ig"/></svg></a>
+      <a href="#" data-wa="Olá, Zero Bronca!" aria-label="WhatsApp"><svg class="ico"><use href="#wa"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="#" data-wa="Olá, Zero Bronca! Vim pelo site." aria-label="Falar no WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
+
+<script>
+const PHONE = "5581988043279";
+const waLink = msg => `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=waLink(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+
+// header
+const hdr=document.querySelector("header");
+const onScroll=()=>hdr.classList.toggle("solid",scrollY>30);addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+// quote form
+document.getElementById("qform").addEventListener("submit",e=>{
+  e.preventDefault();const f=e.target;
+  const marca=f.marca.value, modelo=document.getElementById("modelo").value.trim(), prob=f.prob.value;
+  const msg=`Olá, Zero Bronca! Quero um orçamento.\n\n📱 Marca: ${marca}${modelo?`\n🔎 Modelo: ${modelo}`:""}\n⚠️ Problema: ${prob}\n\n(Enviado pelo site)`;
+  window.open(waLink(msg),"_blank","noopener");
+});
+
+// training guides
+const guides=[
+ {id:"tela",icon:"📱",label:"Tela / touch",title:"Tela preta, piscando ou touch falhando",intro:"Nem sempre é o display. Antes de concluir que a tela foi, faça esses testes:",
+  steps:[["Reinicie forçado","Segure Liga + Volume − por 10 a 15 segundos (no iPhone: Volume +, Volume −, depois segure o Liga)."],["Tire capinha e película","Película rachada ou suja pode atrapalhar o toque. Limpe a tela com pano seco."],["Ligue pra ele","Se ele toca ou vibra mas a tela fica preta, o celular está vivo e o problema provavelmente é o display."],["Teste o brilho","Desative o brilho automático e coloque no máximo pelo painel rápido."],["Modo de segurança","Se o toque só falha num app, desinstale o que você instalou por último."]],
+  when:["Vidro trincado ou com manchas/listras","Tela preta mas o celular toca","Toque sozinho (\"touch fantasma\")"],
+  tip:"Não continue usando com vidro trincado: os cacos podem cortar o dedo e a umidade entra pelas rachaduras.", wa:"Olá! Minha tela está com problema. Já fiz os testes da central de ajuda. Meu celular é: "},
+ {id:"carga",icon:"🔌",label:"Não carrega",title:"Não carrega ou carrega devagar",intro:"Em muitos casos o culpado é o cabo, a fonte ou sujeira no conector:",
+  steps:[["Troque cabo e fonte","Teste com outro carregador que você sabe que funciona."],["Teste outra tomada","Às vezes é a tomada ou a extensão."],["Olhe dentro do conector","Com uma lanterna, veja se tem fiapo de bolso ou poeira. Não enfie metal (agulha, clipe)."],["Reinicie o aparelho","Um travamento de sistema pode impedir a carga."],["Deixe esfriar","Celular quente demais pausa a carga por segurança."]],
+  when:["Só carrega com o cabo em uma posição","Conector com folga ou mal-encaixado","Mostra que está carregando mas a porcentagem não sobe"],
+  tip:"Limpeza do conector é rápida e às vezes resolve sem trocar peça. Traga pra gente avaliar.", wa:"Olá! Meu celular não está carregando direito. Meu modelo é: "},
+ {id:"bateria",icon:"🔋",label:"Bateria",title:"Bateria acabando rápido",intro:"Antes de trocar a bateria, veja se é algum app ou configuração drenando a carga:",
+  steps:[["Veja o consumo","Configurações › Bateria: veja qual app está gastando mais."],["Confira a saúde","iPhone: Configurações › Bateria › Saúde. Abaixo de 80% já vale trocar."],["Reduza brilho e telas","Brilho automático e tempo de tela menor fazem diferença."],["Atualize o sistema","Atualizações costumam corrigir bugs de consumo."],["Reinicie","Processos travados em segundo plano gastam bateria."]],
+  when:["Celular desliga com 20–30%","Bateria estufada (tela levantando ou tampa abrindo)","Esquenta muito parado"],
+  tip:"⚠️ Bateria estufada é perigosa: pare de carregar e traga pra loja o quanto antes.", wa:"Olá! Minha bateria está com problema. Meu celular é: "},
+ {id:"agua",icon:"💧",label:"Molhou",title:"Caiu na água",intro:"Aqui os primeiros minutos fazem toda a diferença. Siga na ordem:",
+  steps:[["Desligue imediatamente","Não fique testando se ainda funciona. Desligue."],["Não carregue","Ligar na tomada molhado pode causar curto e matar a placa."],["Tire capinha e chip","Remova capinha, chip e cartão de memória."],["Seque por fora","Pano seco. Nada de secador de cabelo (o calor piora)."],["Esqueça o arroz","Arroz não tira a umidade de dentro e ainda solta pó. Traga pra limpeza técnica."]],
+  when:["Sempre, mesmo que pareça funcionar","Água do mar ou com açúcar (refrigerante, suco) é urgente"],
+  tip:"A oxidação continua agindo por dentro nos dias seguintes. Quanto antes a limpeza, maior a chance de salvar.", wa:"Olá! Meu celular molhou. Já desliguei. Posso levar agora? Modelo: "},
+ {id:"lento",icon:"🐢",label:"Lento / travando",title:"Lento, travando ou fechando apps",intro:"Geralmente é espaço cheio ou sistema desatualizado:",
+  steps:[["Libere espaço","Deixe pelo menos 10% do armazenamento livre. Apague vídeos de WhatsApp repetidos."],["Limpe o cache","Android: Configurações › Apps › app pesado › Armazenamento › Limpar cache."],["Atualize","Sistema e apps na última versão."],["Reinicie toda semana","Ajuda a liberar memória."],["Backup e restauração","Como último recurso, faça backup e restaure de fábrica."]],
+  when:["Continua travando após restaurar","Reinicia sozinho em loop","Fica na logo e não passa"],
+  tip:"Antes de restaurar de fábrica, confirme que suas fotos e contatos estão salvos na nuvem.", wa:"Olá! Meu celular está muito lento/travando. Modelo: "},
+ {id:"sinal",icon:"📶",label:"Sem sinal / chip",title:"Sem sinal ou não reconhece o chip",intro:"Teste o básico antes de suspeitar da placa:",
+  steps:[["Modo avião","Ative por 10 segundos e desative."],["Tire e recoloque o chip","Limpe o contato dourado com pano seco."],["Teste o chip em outro celular","Se não funcionar lá também, o problema é o chip: troque na operadora."],["Redefina a rede","Configurações › Sistema › Redefinir › Configurações de rede."],["Confira a operadora","Pode ser instabilidade na região."]],
+  when:["Outro chip também não funciona","Sinal some só em uma posição","Wi-Fi e Bluetooth não ligam"],
+  tip:"Se o aparelho caiu antes de perder o sinal, pode ser a antena. Isso a gente resolve na bancada.", wa:"Olá! Meu celular está sem sinal/não reconhece chip. Modelo: "},
+ {id:"audio",icon:"🔊",label:"Som / microfone",title:"Não escutam você ou o som está baixo",intro:"Sujeira e configurações causam boa parte desses casos:",
+  steps:[["Limpe as saídas","Escova macia e seca nos furinhos do alto-falante e microfone."],["Tire a capinha","Algumas tampam o microfone."],["Desconecte o Bluetooth","O som pode estar indo pra um fone conectado."],["Teste gravando um áudio","Isola se é microfone ou alto-falante."],["Reinicie","Resolve falhas de software."]],
+  when:["Som chiando ou estourado","Ninguém te escuta nas ligações mesmo após limpar"],
+  tip:"Nunca use agulha ou alfinete nos furos: dá pra furar a tela de proteção do alto-falante.", wa:"Olá! Estou com problema no som/microfone. Modelo: "}
+];
+const tabsEl=document.getElementById("tabs"), panelsEl=document.getElementById("panels");
+guides.forEach((g,i)=>{
+  const b=document.createElement("button");b.className="tab";b.role="tab";b.id="t-"+g.id;b.setAttribute("aria-controls","p-"+g.id);b.setAttribute("aria-selected",i===0);
+  b.innerHTML=`<span>${g.icon}</span>${g.label}`;b.onclick=()=>select(g.id);tabsEl.appendChild(b);
+  const p=document.createElement("div");p.className="panel"+(i===0?" on":"");p.id="p-"+g.id;p.role="tabpanel";
+  p.innerHTML=`<div class="panel-main"><h3>${g.title}</h3><p>${g.intro}</p><ol class="checklist">${g.steps.map(s=>`<li tabindex="0"><div><strong>${s[0]}</strong><span>${s[1]}</span></div></li>`).join("")}</ol>
+   <div class="progress"><i></i></div><div class="prog-label">0 de ${g.steps.length} etapas feitas</div></div>
+   <div class="panel-side"><div class="alert"><h4>🚨 Hora de trazer pra loja</h4><ul>${g.when.map(w=>`<li>${w}</li>`).join("")}</ul>
+   <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink(g.wa)}"><svg class="ico"><use href="#wa"/></svg>Não resolveu? Chama a gente</a></div>
+   <div class="tip"><b>💡 Dica Zero Bronca</b>${g.tip}</div></div>`;
+  panelsEl.appendChild(p);
+  const items=[...p.querySelectorAll(".checklist li")],bar=p.querySelector(".progress i"),lab=p.querySelector(".prog-label");
+  const upd=()=>{const d=items.filter(x=>x.classList.contains("done")).length;bar.style.width=d/items.length*100+"%";
+    lab.textContent=d===items.length?"Fez tudo e não resolveu? Então é com a gente: chama no Whats 👉":`${d} de ${items.length} etapas feitas`};
+  items.forEach(li=>{const t=()=>{li.classList.toggle("done");upd()};li.onclick=t;li.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}}});
+});
+function select(id){
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.id==="t-"+id));
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.id==="p-"+id));
+}
+
+// gallery: hide missing photos, hide gallery if none
+const gal=document.getElementById("gallery");let loaded=0,done=0;const imgs=gal.querySelectorAll("img");
+gal.style.display="none";
+imgs.forEach(img=>{const fin=ok=>{done++;if(ok)loaded++;else img.parentElement.remove();if(done===imgs.length&&loaded)gal.style.display="";};
+  if(img.complete&&img.naturalWidth)fin(true);else{img.onload=()=>fin(true);img.onerror=()=>fin(false);}
+  img.loading="eager";});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
