@@ -23,3 +23,17 @@ for nome, paths in ICONES.items():
 <g transform="translate(395 815) scale(12.08)" fill="none" stroke="{Y}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{paths}</g></svg>'''
     open(f'destaque-{nome}.svg', 'w').write(svg)
 print(len(ICONES), 'capas')
+
+# Capas que não usam ícone de linha: G10 (nome em Anton) e Barberdy (poste de barbearia).
+EXTRAS = {
+    'g10': '<text x="540" y="1032" text-anchor="middle" font-family="Anton" font-size="230" fill="' + Y + '">G10</text>',
+    'barberdy': '<g transform="translate(395 815) scale(12.08)" fill="none" stroke="' + Y + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'
+                '<rect x="8" y="2" width="8" height="3" rx="1"/><rect x="9" y="5" width="6" height="14"/><rect x="8" y="19" width="8" height="3" rx="1"/>'
+                '<path d="M9 9.5 15 6.5M9 13.5l6-3M9 17.5l6-3"/></g>',
+}
+for nome, conteudo in EXTRAS.items():
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<style>@font-face{{font-family:Anton;src:url('../../marca/fonte/fonts/Anton.ttf')}}</style>
+<rect width="1080" height="1920" fill="{Y}"/><circle cx="540" cy="960" r="380" fill="{K}"/>{conteudo}</svg>'''
+    open(f'destaque-{nome}.svg', 'w').write(svg)
+print(len(EXTRAS), 'capas extras')
