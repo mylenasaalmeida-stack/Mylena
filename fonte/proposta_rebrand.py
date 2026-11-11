@@ -166,11 +166,11 @@ p6 = page(6, 'Escopo · Identidade visual', '''<div class="kick">05 · Escopo</d
         ['Paleta de cores com códigos para gráfica, tela e tinta', '✓', '✓', '✓'],
         ['Tipografia (fontes de títulos e textos)', '✓', '✓', '✓'],
         ['Elementos gráficos (padrões, ícones, texturas)', '✓', '✓', '✓'],
-        ['Aplicações: caixa de pizza, sacola, uniforme, cartão, adesivo', '3 peças', '5 peças', '5 peças'],
-        ['Kit digital: avatar, capa e modelos de post para redes', '✓', '✓', '✓'],
+        ['Aplicações: caixa de pizza, sacola, uniforme, cartão, adesivo', '2 peças', '3 peças', '3 peças'],
+        ['Kit digital: foto de perfil, capa e destaques para redes', '✓', '✓', '✓'],
         ['Orientação de cores e sinalização para a reforma (fachada e salão)', '—', '✓', '✓'],
-        ['Manual da marca (PDF)', 'Guia resumido', 'Manual completo', 'Manual completo'],
-        ['Rodadas de ajuste', '2', '2 por etapa', '2 por etapa'],
+        ['Manual da marca (PDF)', 'Guia resumido', 'Guia resumido', 'Manual completo'],
+        ['Rodadas de ajuste', '2', '2', '2 por etapa'],
     ], widths=['46%', '18%', '18%', '18%']) +
     '<p class="note">A orientação de fachada e salão é visual (cores, logo, posição e tamanho). O projeto e a execução de obra, placas e letreiros ficam com o arquiteto e os fornecedores.</p>')
 
@@ -207,22 +207,22 @@ p8 = page(8, 'Perguntas para o cardápio', f'''<div class="kick">07 · Briefing<
 <div class="grid2" style="gap:2mm 7mm">{qhtml}</div>''')
 
 pkg = tbl(['Pacote', 'O que inclui', 'Prazo', 'Investimento'], [
-    ['<b>Só o cardápio</b>', 'Escopo da página 7, usando cores e fontes já definidas pela casa', '3 semanas', '<span class="price">R$ 1.500</span>'],
-    ['<b>Identidade A · Manter a logo</b>', 'Logo nas novas cores + identidade + guia resumido', '3 semanas', '<span class="price">R$ 2.500</span>'],
-    ['<b>Identidade B · Ajustar a logo</b>', 'Redesenho da logo + identidade + manual completo', '5 semanas', '<span class="price">R$ 3.800</span>'],
-    ['<b>Identidade C · Logo nova</b>', 'Logo nova + identidade + manual completo', '6 semanas', '<span class="price">R$ 5.500</span>'],
+    ['<b>Só o cardápio</b>', 'Escopo da página 7, usando cores e fontes já definidas pela casa', '2 semanas', '<span class="price">R$ 600</span>'],
+    ['<b>Identidade A · Manter a logo</b>', 'Logo nas novas cores + identidade + guia resumido', '2 semanas', '<span class="price">R$ 900</span>'],
+    ['<b>Identidade B · Ajustar a logo</b>', 'Redesenho da logo + identidade + guia resumido', '3 semanas', '<span class="price">R$ 1.400</span>'],
+    ['<b>Identidade C · Logo nova</b>', 'Logo nova + identidade + manual completo', '4 semanas', '<span class="price">R$ 2.000</span>'],
 ], widths=['26%', '46%', '12%', '16%'], right=(3,))
 combo = tbl(['Combo (identidade + cardápio)', 'Separado', 'No combo', 'Economia'], [
-    ['<b>Combo A</b> · Manter a logo + cardápio', 'R$ 4.000', '<span class="price">R$ 3.500</span>', 'R$ 500'],
-    ['<b>Combo B</b> · Ajustar a logo + cardápio <span class="tag">recomendado</span>', 'R$ 5.300', '<span class="price">R$ 4.600</span>', 'R$ 700'],
-    ['<b>Combo C</b> · Logo nova + cardápio', 'R$ 7.000', '<span class="price">R$ 6.000</span>', 'R$ 1.000'],
+    ['<b>Combo A</b> · Manter a logo + cardápio', 'R$ 1.500', '<span class="price">R$ 1.300</span>', 'R$ 200'],
+    ['<b>Combo B</b> · Ajustar a logo + cardápio <span class="tag">recomendado</span>', 'R$ 2.000', '<span class="price">R$ 1.700</span>', 'R$ 300'],
+    ['<b>Combo C</b> · Logo nova + cardápio', 'R$ 2.600', '<span class="price">R$ 2.200</span>', 'R$ 400'],
 ], widths=['46%', '16%', '20%', '18%'], right=(1, 2, 3))
 extras = tbl(['Adicional', 'Investimento'], [
-    ['Definição de cores e fontes só para o cardápio (se a casa não tiver identidade definida)', 'R$ 500'],
-    ['Cardápio de parede, lousa ou display de balcão', 'R$ 400'],
-    ['Adaptação para aplicativos de delivery', 'R$ 350'],
-    ['Direção de fotografia (o fotógrafo é contratado à parte)', 'R$ 600'],
-    ['Atualização dos documentos internos (fichas, receitas e guias)', 'R$ 400'],
+    ['Definição de cores e fontes só para o cardápio (se a casa não tiver identidade definida)', 'R$ 200'],
+    ['Cardápio de parede, lousa ou display de balcão', 'R$ 150'],
+    ['Adaptação para aplicativos de delivery', 'R$ 150'],
+    ['Direção de fotografia (o fotógrafo é contratado à parte)', 'R$ 250'],
+    ['Atualização dos documentos internos (fichas, receitas e guias)', 'R$ 200'],
 ], widths=['80%', '20%'], right=(1,))
 p9 = page(9, 'Investimento', f'''<div class="kick">08 · Investimento</div><h2>Pacotes e combos</h2>
 <h3 style="margin-top:0">Serviços separados</h3>{pkg}<h3>Combos com desconto</h3>{combo}<h3>Adicionais</h3>{extras}
@@ -230,8 +230,8 @@ p9 = page(9, 'Investimento', f'''<div class="kick">08 · Investimento</div><h2>P
 
 p10 = page(10, 'Condições e próximos passos', '''<div class="kick">09 · Condições</div><h2>Prazos, condições e próximos passos</h2>
 <div class="grid2"><div><h3 style="margin-top:0">Condições comerciais</h3>''' + ul([
-    '<b>Pagamento:</b> 50% na aprovação da proposta e 50% na entrega dos arquivos finais. Pix ou transferência; parcelamento a combinar.',
-    '<b>Prazos:</b> contam a partir do pagamento da entrada e do envio das informações do briefing. No combo, o cardápio é feito logo depois da identidade aprovada.',
+    '<b>Pagamento:</b> 50% na aprovação da proposta e 50% na entrega dos arquivos finais, por Pix ou transferência. Os combos podem ser pagos em até 3 parcelas mensais sem acréscimo.',
+    '<b>Prazos:</b> contam a partir do pagamento da entrada e do envio das informações do briefing. No combo, o cardápio é feito logo depois da identidade aprovada (some 2 semanas ao prazo da identidade).',
     '<b>Ajustes:</b> as rodadas de ajuste estão descritas em cada escopo. Ajustes extras ou mudança de direção depois da aprovação são orçados à parte.',
     '<b>Arquivos:</b> ao final, a Speciale recebe os arquivos abertos e finais, com direito de uso da marca.',
     '<b>Validade:</b> 15 dias a partir da data desta proposta.']) + '''</div><div><h3 style="margin-top:0">Não incluso</h3>''' + ul([
