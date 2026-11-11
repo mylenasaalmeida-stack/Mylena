@@ -103,7 +103,7 @@ p2 = page(2, '''<div class="k">Por que agora</div><h2>O espaço vai mudar.<br><s
 <div><span class="n">02</span><h4>Espaço novo</h4><p>A reforma muda mesas, balcão e iluminação. O cardápio precisa de formato e material pensados para esse novo ambiente.</p></div>
 <div><span class="n">03</span><h4>Cardápio que vende</h4><p>Um cardápio organizado destaca os carros-chefe, deixa a escolha mais rápida e mostra tamanhos e sabores de forma clara, no salão e no WhatsApp.</p></div>
 </div>
-<div class="quote">A reabertura é a melhor hora para mudar: o cliente já espera novidade. <b>Fazer marca e cardápio juntos sai mais barato e deixa tudo pronto para o primeiro dia.</b></div>
+<div class="quote">A reabertura é a melhor hora para mudar: o cliente já espera novidade. <b>Fazer marca e cardápio (físico e digital) juntos sai mais barato e deixa tudo pronto para o primeiro dia.</b></div>
 <div class="k" style="margin-top:9mm">Uma decisão para começar</div>
 <p style="margin-top:1.5mm;font-size:10pt"><b>E a logo?</b> Com as novas cores, ela muda pelo menos de cor. Vocês escolhem até onde ir:</p>
 <div class="logo3">
@@ -129,6 +129,10 @@ p3 = page(3, '''<div class="k">Investimento</div><h2>Escolha o <span>seu pacote<
 <tr><td>Ser ajustada <span class="tag">sugerido</span></td><td class="r"><b>R$ 1.400</b></td><td class="r"><b>R$ 1.700</b></td><td class="r">5 semanas</td></tr>
 <tr><td>Ser nova</td><td class="r"><b>R$ 2.000</b></td><td class="r"><b>R$ 2.200</b></td><td class="r">6 semanas</td></tr>
 </tbody></table>
+<div style="margin-top:5mm;display:grid;grid-template-columns:1fr auto;gap:5mm;align-items:center;background:var(--ink);color:#fff;border-radius:8px;padding:5mm 6mm">
+<div><div class="k" style="color:#ffb98a">Novo · também no celular</div><div style="font-family:'Roboto Condensed';font-weight:800;font-size:15pt;text-transform:uppercase;margin-top:1mm">Cardápio digital no site</div>
+<div style="font-size:8.4pt;color:#e9e0d7;margin-top:1mm">O mesmo cardápio no celular do cliente, aberto pelo QR Code da mesa ou pelo Instagram, com o pedido saindo pronto no WhatsApp. Preço atualizado na hora, sem reimprimir.</div></div>
+<div style="text-align:right;white-space:nowrap"><div style="font-family:'Roboto Condensed';font-weight:800;font-size:22pt;line-height:1">+ R$ 400</div><div style="font-size:7.6pt;color:#cfc4ba">junto com o cardápio<br>ou R$ 500 avulso</div></div></div>
 <p class="note">Opcionais: cardápio de parede ou balcão (R$ 150) · adaptação para aplicativos de delivery (R$ 150) · direção das fotos das pizzas (R$ 250, fotógrafo à parte).</p></div>''')
 
 p4 = page(4, '''<div class="k">Como funciona</div><h2>Simples, rápido e <span>no seu ritmo</span></h2>
@@ -156,10 +160,10 @@ p4 = page(4, '''<div class="k">Como funciona</div><h2>Simples, rápido e <span>n
 <li>As novas cores já foram definidas? Quais?</li>
 <li>A logo vai ser mantida, ajustada ou trocada?</li>
 <li>Qual é a data da reabertura?</li></ul>
-<p class="note">As demais perguntas ficam para a reunião, com o questionário de briefing.</p></div>
+<p class="note">As demais perguntas estão no questionário de briefing, enviado à parte.</p></div>
 <div class="ok"><h4>Vamos começar?</h4><div class="opts">
 <span>☐ Cardápio · R$ 600</span><span>☐ Combo · logo mantida · R$ 1.300</span><span>☐ Combo · logo ajustada · R$ 1.700</span><span>☐ Combo · logo nova · R$ 2.200</span>
-<span>☐ Identidade · logo mantida · R$ 900</span><span>☐ Identidade · logo ajustada · R$ 1.400</span><span>☐ Identidade · logo nova · R$ 2.000</span></div>
+<span>☐ Identidade · logo mantida · R$ 900</span><span>☐ Identidade · logo ajustada · R$ 1.400</span><span>☐ Identidade · logo nova · R$ 2.000</span><span>☐ + Cardápio digital no site · R$ 400 (avulso R$ 500)</span></div>
 <div class="sg"><div>Speciale Pizzas Artesanais · assinatura e data</div><div>''' + PROV + ''' · assinatura e data</div></div></div>''')
 
 open('proposta_v2.html', 'w').write(

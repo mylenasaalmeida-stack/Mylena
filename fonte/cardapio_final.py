@@ -87,7 +87,7 @@ def frame(n, total, label):
     return f'<div class="cap">Speciale · Cardápio · {label} · página {n} de {total} · tamanho real</div>'
 
 
-TOTAL = 7
+TOTAL = 8
 
 # ============ 1. CAPA DO ARQUIVO ============
 capa = f'''<section class="page" style="background:{INK};color:#fff">
@@ -102,7 +102,8 @@ capa = f'''<section class="page" style="background:{INK};color:#fff">
 <div class="bd" style="color:#e6e9e4;line-height:1.9">
 <b style="color:{G2}">A</b> · Tríptico de mesa · lado de fora e lado de dentro (págs. 2 e 3)<br>
 <b style="color:{G2}">B</b> · Cardápio redondo · frente e verso (págs. 4 e 5)<br>
-<b style="color:{G2}">+</b> · Peças de apoio e kit “Estou na Speciale” (págs. 6 e 7)</div></div>
+<b style="color:{G2}">C</b> · Cardápio digital no site · celular (pág. 6)<br>
+<b style="color:{G2}">+</b> · Peças de apoio, kit “Estou na Speciale” e padrão visual (págs. 7 e 8)</div></div>
 <div><div class="ov" style="color:{G2};margin-bottom:2.5mm">Preços das pizzas</div>{price_row('#fff', G2, 18)}
 <div class="sm" style="color:#9aa29b;margin-top:2mm">Base: Média a R$ 45. Mesmo preço para todos os sabores.</div></div></div>
 </section>'''
@@ -291,6 +292,16 @@ guia = f'''<section class="page" style="background:{OW};color:{INK};padding:16mm
 <li>Toda peça tem o perfil, a hashtag e o QR Code.</li></ul></div></div>
 </section>'''
 
-pages = [capa, pA_fora, pA_dentro, pB_frente, pB_verso, pApoio, guia]
+from digital import EXTRA as DEXTRA, s_inicio, s_lista, s_det, s_pedido
+pC = f'''<section class="page paper" style="padding:12mm 12mm">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div><div class="ov" style="color:{G}">Proposta C · no celular</div><div class="h2" style="color:{INK};font-size:22pt;margin-top:1.5mm">Cardápio digital no site</div></div>
+<div class="bd" style="color:#444;max-width:120mm;text-align:right">Aberto pelo QR Code da mesa, pela bio do Instagram ou pelo Google. O cliente escolhe tamanho e sabor e o pedido chega pronto no WhatsApp.</div></div>
+<div style="display:flex;justify-content:space-between;margin-top:7mm">
+<div>{s_inicio}<div class="cap2"><b>Início</b>Horário, pedido, Instagram e mapa.</div></div>
+<div>{s_lista}<div class="cap2"><b>Cardápio</b>Tamanho primeiro, depois o sabor.</div></div>
+<div>{s_det}<div class="cap2"><b>Sabor</b>Ingredientes, alérgenos e meio a meio.</div></div>
+<div>{s_pedido}<div class="cap2"><b>Pedido</b>Total somado e mensagem pronta.</div></div></div></section>'''
+pages = [capa, pA_fora, pA_dentro, pB_frente, pB_verso, pC, pApoio, guia]
 open('cardapio_final.html', 'w').write(
-    f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Cardápio Speciale</title>{CSS}</head><body>{"".join(pages)}</body></html>')
+    f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Cardápio Speciale</title>{CSS}<style>:root{{--ink:#1f1a17;--paper:#faf6f0;--acc:#c8361f;--line:#e7ddd2;--muted:#6f6560}}</style>{DEXTRA}</head><body>{"".join(pages)}</body></html>')
