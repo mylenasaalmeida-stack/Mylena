@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Diagnóstico Instagram PR Conecta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+@page{size:A4;margin:0}
+:root{--noite:#050b1a;--fundo:#081430;--cartao:#eef5ff;--linha:#cfe0f7;--tinta:#0b1630;--cinza:#4a5a7a;--ceu:#8fc6f5;--azul:#2d7bff;--azul-esc:#1757d6;--ouro:#f5b800;--rosa:#ff4f9e;--verde:#14a85a;--verm:#e5484d}
+*{box-sizing:border-box}
+body{margin:0;font:10.5pt/1.55 "Manrope",sans-serif;color:var(--tinta);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3{font-family:"Unbounded",sans-serif;margin:0;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:20pt;font-weight:900;margin-bottom:5mm}
+h2 span{color:var(--azul)}
+h3{font-size:11pt;font-weight:700;margin-bottom:2mm}
+p{margin:0 0 3mm}
+.pg{width:210mm;height:297mm;padding:15mm 17mm 16mm;position:relative;page-break-after:always;overflow:hidden}
+.pg:last-child{page-break-after:auto}
+.rod{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;justify-content:space-between;font-size:8pt;color:var(--cinza);border-top:1px solid var(--linha);padding-top:3mm}
+.eyebrow{font:800 8pt "Manrope";letter-spacing:.2em;text-transform:uppercase;color:var(--azul);margin-bottom:3mm;display:block}
+.muted{color:var(--cinza)}
+
+/* capa */
+.capa{background:var(--noite);color:#eaf4ff;display:flex;flex-direction:column;justify-content:space-between;padding:20mm 18mm}
+.capa::before{content:"";position:absolute;right:-60mm;top:-40mm;width:200mm;height:200mm;border-radius:50%;background:radial-gradient(closest-side,rgba(45,123,255,.55),transparent 70%)}
+.capa::after{content:"";position:absolute;left:-50mm;bottom:-60mm;width:160mm;height:160mm;border-radius:50%;background:radial-gradient(closest-side,rgba(255,79,158,.22),transparent 70%)}
+.capa > *{position:relative;z-index:1}
+.capa .topo{display:flex;align-items:center;gap:4mm;font:900 12pt "Unbounded"}
+.capa .topo svg{width:14mm;height:14mm}
+.capa h1{font-size:40pt;font-weight:900;line-height:1}
+.capa h1 span{color:var(--ceu)}
+.capa .handle{display:inline-block;margin-top:7mm;font:700 15pt "Unbounded";color:#fff;background:rgba(143,198,245,.14);border:1px solid rgba(143,198,245,.35);padding:3mm 6mm;border-radius:20mm}
+.capa .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;font-size:9pt;color:#9db3d9}
+.capa .meta b{display:block;color:#fff;font-size:10.5pt}
+.robo-capa{position:absolute;right:18mm;top:34mm;width:62mm;height:62mm;z-index:1}
+
+/* blocos */
+.resumo{background:var(--fundo);color:#eaf4ff;border-radius:5mm;padding:5.5mm 7mm;margin-bottom:5mm}
+.resumo h3{color:var(--ceu);font-size:9pt;letter-spacing:.14em;text-transform:uppercase;font-family:"Manrope";font-weight:800}
+.resumo p{font-size:11pt;line-height:1.5;margin:0}
+.resumo b{color:#fff}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-bottom:5mm}
+.num{background:var(--cartao);border-radius:4mm;padding:4.5mm}
+.num b{display:block;font:900 18pt "Unbounded";letter-spacing:-.03em}
+.num span{font-size:8.5pt;color:var(--cinza);font-weight:700;line-height:1.3;display:block}
+.num.d b{color:var(--azul)}
+table{width:100%;border-collapse:collapse;font-size:8.8pt}
+th{text-align:left;font:800 7.5pt "Manrope";letter-spacing:.14em;text-transform:uppercase;color:var(--cinza);padding:0 3mm 2.5mm;border-bottom:2px solid var(--tinta)}
+td{padding:2.2mm 3mm;line-height:1.4;border-bottom:1px solid var(--linha);vertical-align:top}
+td:first-child{font-weight:800;width:20%}
+td:nth-child(2){width:36%;color:var(--cinza)}
+.tag{display:inline-block;font:800 7pt "Manrope";letter-spacing:.1em;text-transform:uppercase;padding:.6mm 2mm;border-radius:2mm;margin-right:1.5mm;vertical-align:1px}
+.ok{background:#dcf5e7;color:var(--verde)}
+.ruim{background:#fde3e4;color:var(--verm)}
+.atn{background:#fff3cc;color:#8a6500}
+
+/* reels */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:4mm 0 5mm}
+.reel{border-radius:4mm;overflow:hidden;position:relative;height:52mm;background:#ddd}
+.reel img{width:100%;height:100%;object-fit:cover}
+.reel .v{position:absolute;left:2.5mm;bottom:2.5mm;background:rgba(5,11,26,.85);color:#fff;font:800 9pt "Manrope";padding:1mm 3mm;border-radius:10mm}
+.reel.top{outline:1.2mm solid var(--ouro)}
+.reel.top .v{background:var(--ouro);color:#2a1d00}
+.barras{display:grid;gap:2.2mm;margin-bottom:6mm}
+.barra{display:grid;grid-template-columns:45mm 1fr 18mm;align-items:center;gap:3mm;font-size:8.5pt}
+.barra i{display:block;height:5mm;border-radius:1.5mm;background:var(--ceu)}
+.barra.top i{background:var(--ouro)}
+.barra b{text-align:right}
+.lista{margin:0;padding:0;list-style:none;display:grid;gap:3.2mm}
+.lista li{display:grid;grid-template-columns:7mm 1fr;gap:2mm}
+.lista li::before{content:counter(item);counter-increment:item;width:6.5mm;height:6.5mm;border-radius:50%;display:grid;place-items:center;font:800 8pt "Manrope";color:#fff;background:var(--verde)}
+.lista.neg li::before{background:var(--verm)}
+.lista{counter-reset:item}
+.lista b{display:block}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
+
+/* recomendações */
+.rec{border:1px solid var(--linha);border-radius:4mm;padding:4mm 5mm;margin-bottom:3.5mm;break-inside:avoid}
+.rec .cab{display:flex;align-items:center;gap:3mm;margin-bottom:2.5mm}
+.rec .n{width:8mm;height:8mm;border-radius:2.5mm;background:var(--azul);color:#fff;display:grid;place-items:center;font:900 10pt "Unbounded";flex:none}
+.rec .prazo{margin-left:auto;font:800 7.5pt "Manrope";letter-spacing:.1em;text-transform:uppercase;color:var(--azul-esc);background:var(--cartao);padding:1mm 2.5mm;border-radius:2mm}
+.bio{display:grid;grid-template-columns:1fr 1fr;gap:5mm;align-items:start}
+.celular{background:var(--noite);color:#eaf4ff;border-radius:4mm;padding:4mm 4.5mm;font-size:9pt;line-height:1.45}
+.celular .nm{font-weight:800}
+.celular .cat{color:#9db3d9;font-size:8.5pt}
+.celular .lk{color:#8fc6f5;font-weight:700}
+.celular .bt{display:flex;gap:2mm;margin-top:3mm}
+.celular .bt span{flex:1;text-align:center;background:#1c2742;border-radius:2mm;padding:1.5mm;font-weight:800;font-size:8.5pt}
+.celular .bt span.z{background:#25d366;color:#04210f}
+.dest{display:flex;flex-wrap:wrap;gap:3mm;margin-top:1mm}
+.dest div{text-align:center;font-size:8pt;font-weight:700;width:17mm}
+.dest i{display:grid;place-items:center;width:11mm;height:11mm;margin:0 auto 1mm;border-radius:50%;background:radial-gradient(circle at 40% 35%,#cfe7ff,#8fc6f5 55%,#2d7bff);font-style:normal;font-size:12pt;box-shadow:0 0 0 .6mm #fff,0 0 0 1.1mm var(--azul)}
+.pilares{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:1mm}
+.pilar{background:var(--cartao);border-radius:3mm;padding:2.8mm 3mm}
+.pilar b{display:block;font-size:9.5pt}
+.pilar em{font-style:normal;font:900 13pt "Unbounded";color:var(--azul);display:block;margin-bottom:1mm}
+.pilar span{font-size:8pt;color:var(--cinza);line-height:1.3;display:block}
+.semana{width:100%;margin-top:2.5mm;font-size:8.3pt}
+.semana td,.semana th{padding:1.3mm;text-align:center;width:auto!important;color:var(--tinta);font-weight:700}
+.semana td{background:var(--cartao);border:1.5mm solid #fff;border-radius:2mm}
+.semana td.h{background:#fff3cc}
+.semana td.p{background:#dcebff}
+.semana td.g{background:#dcf5e7}
+.semana td.c{background:#ffe0ef}
+.semana td.x{background:#f4f6fa;color:#9aa6bd}
+.check{list-style:none;padding:0;margin:0;display:grid;gap:2.6mm}
+.check li{display:grid;grid-template-columns:6mm 1fr auto;gap:2.5mm;align-items:start;padding-bottom:2.6mm;border-bottom:1px dashed var(--linha)}
+.check li::before{content:"";width:4.5mm;height:4.5mm;border:1.6px solid var(--tinta);border-radius:1.2mm;margin-top:.6mm}
+.check em{font-style:normal;font:800 7.5pt "Manrope";color:var(--cinza);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.nota{background:#fff8e0;border-left:1.2mm solid var(--ouro);padding:4mm 5mm;border-radius:0 3mm 3mm 0;font-size:9pt;margin-top:6mm}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="robo" viewBox="0 0 200 200">
+  <line x1="100" y1="22" x2="100" y2="48" stroke="#0a0f1f" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="100" cy="18" r="11" fill="#ffcd38"/>
+  <rect x="22" y="78" width="20" height="54" rx="9" fill="#0a0f1f"/><rect x="158" y="78" width="20" height="54" rx="9" fill="#0a0f1f"/>
+  <rect x="34" y="46" width="132" height="118" rx="30" fill="#9fd0fa" stroke="#0a0f1f" stroke-width="8"/>
+  <circle cx="74" cy="96" r="12" fill="#0a0f1f"/>
+  <path d="M114 98 q14 -18 28 0" fill="none" stroke="#0a0f1f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M72 122 q28 22 56 0" fill="none" stroke="#0a0f1f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M64 144 q9 -9 18 0 q9 9 18 0 q9 -9 18 0 q9 9 18 0" fill="none" stroke="#0a0f1f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M176 46 l12 -10 M182 62 l15 -4 M182 80 l15 3" stroke="#2d7bff" stroke-width="7" stroke-linecap="round"/>
+</symbol></defs></svg>
+
+<!-- 1. CAPA -->
+<section class="pg capa">
+  <div class="topo"><svg><use href="#robo"/></svg>PR CONECTA</div>
+  <svg class="robo-capa"><use href="#robo"/></svg>
+  <div>
+    <span class="eyebrow" style="color:#8fc6f5">Estudo de perfil · Novembro de 2026</span>
+    <h1>Diagnóstico<br>do <span>Instagram</span></h1>
+    <span class="handle">@pr_conecta</span>
+    <p style="margin-top:8mm;font-size:12pt;color:#c6d6f0;max-width:120mm">O que o perfil comunica hoje, o que já está trazendo resultado, o que está deixando cliente escapar e o plano para transformar seguidor em venda.</p>
+  </div>
+  <div class="meta">
+    <div><b>Loja</b>PR Conecta · Acessórios, Variedades e Limpeza</div>
+    <div><b>Local</b>Candeias (Esquina Rosa), Jaboatão dos Guararapes, PE</div>
+    <div><b>Base do estudo</b>Perfil, aba de Reels e aba de marcações em 12/11/2026</div>
+  </div>
+</section>
+
+<!-- 2. RAIO-X -->
+<section class="pg">
+  <span class="eyebrow">01 · Raio-x</span>
+  <h2>Como o perfil <span>se apresenta hoje</span></h2>
+
+  <div class="resumo">
+    <h3>Resumo em uma frase</h3>
+    <p>A PR Conecta tem <b>o que falta para a maioria das lojas de bairro</b>: gente real aparecendo, preço na tela e presença na comunidade. O que falta é <b>o caminho até a compra</b>: o perfil não tem link, nem botão de WhatsApp, e os destaques não respondem o que o cliente pergunta antes de comprar.</p>
+  </div>
+
+  <div class="nums">
+    <div class="num"><b>330</b><span>posts publicados</span></div>
+    <div class="num"><b>1.863</b><span>seguidores</span></div>
+    <div class="num"><b>543</b><span>perfis seguidos</span></div>
+    <div class="num d"><b>4,7×</b><span>o melhor Reels alcançou quase 5 vezes a base de seguidores</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Elemento</th><th>O que aparece</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>Nome</td><td>"Pr Conecta Acessórios•Variedades•Limpeza"</td><td><span class="tag ok">Bom</span>As palavras do nome entram na busca do Instagram. Quem procura "acessórios" na região pode achar a loja.</td></tr>
+      <tr><td>Bio</td><td>🥇 Melhor preço da Zona Sul · 📍 Candeias (Esquina Rosa) · 🚚 Fazemos entregas</td><td><span class="tag atn">Ajustar</span>Proposta clara, mas não diz o que vende nem o que fazer em seguida. Não há chamada para ação.</td></tr>
+      <tr><td>Link e contato</td><td>Nenhum link visível. Só os botões Seguir e Mensagem.</td><td><span class="tag ruim">Crítico</span>Quem se interessa só tem a DM. Sem WhatsApp, sem catálogo, sem rota.</td></tr>
+      <tr><td>Foto de perfil</td><td>Logo adaptado para o Novembro Azul, com texto pequeno</td><td><span class="tag atn">Ajustar</span>No tamanho do círculo, o texto não dá para ler e o robô perde força.</td></tr>
+      <tr><td>Destaques</td><td>🚐📦🚐 · Clientes ✨ · Gratidão · Evento 🧡🦈 · ZERA…</td><td><span class="tag atn">Ajustar</span>Falam da loja, não respondem preço, pagamento, iPhone ou como chegar. As capas são fotos sem padrão.</td></tr>
+      <tr><td>Fixados</td><td>Dono na loja · Vendedora com iPhone · "Localização"</td><td><span class="tag ok">Bom</span>Os três mostram rosto. Dá para trocar um deles pelo Reels de melhor resultado.</td></tr>
+      <tr><td>Rede local</td><td>Seguida por b.silva081, barbeariagribeiro e mais 35 que você segue</td><td><span class="tag ok">Bom</span>Já tem presença entre comércios e moradores da região.</td></tr>
+      <tr><td>Marcações</td><td>Patrocínio de evento, ação social, atleta de jiu-jitsu, academia, post da resma A4</td><td><span class="tag ok">Bom</span>Prova de envolvimento com o bairro, mas fica escondida na aba de marcações.</td></tr>
+    </tbody>
+  </table>
+  <div class="rod"><span>Diagnóstico do Instagram · @pr_conecta</span><span>2</span></div>
+</section>
+
+<!-- 3. O QUE FUNCIONA / O QUE ATRAPALHA -->
+<section class="pg">
+  <span class="eyebrow">02 · Conteúdo</span>
+  <h2>O que já dá resultado <span>e por quê</span></h2>
+
+  <div class="reels">
+    <div class="reel"><img src="../img/sabao.jpg" alt=""><span class="v">▶ 520</span></div>
+    <div class="reel"><img src="../img/iphone17.jpg" alt=""><span class="v">▶ 631</span></div>
+    <div class="reel top"><img src="../img/iphone-rosa.jpg" alt=""><span class="v">▶ 8.751</span></div>
+  </div>
+  <div class="barras">
+    <div class="barra"><span>Sabão em galão (produto)</span><i style="width:5.9%"></i><b>520</b></div>
+    <div class="barra"><span>iPhone 17 Pro Max (trend)</span><i style="width:7.2%"></i><b>631</b></div>
+    <div class="barra top"><span>"Eu com o celular que ou eu comprava ou eu morria" (humor)</span><i style="width:100%"></i><b>8.751</b></div>
+  </div>
+  <p><b>Leitura:</b> o vídeo que viralizou não mostrava só o produto. Ele usou <b>humor e identificação</b> ("ou eu comprava ou eu morria") com um <b>produto de desejo</b>. Teve 14 vezes mais views que os vizinhos e chegou a quem ainda não segue a loja. O formato precisa virar série, não ficar num acerto isolado.</p>
+
+  <div class="duas" style="margin-top:6mm">
+    <div>
+      <h3 style="color:var(--verde)">O que está funcionando</h3>
+      <ol class="lista">
+        <li><div><b>Gente aparecendo</b>Dono e vendedora mostram o rosto. Em loja de bairro, isso gera confiança mais rápido que foto de produto.</div></li>
+        <li><div><b>iPhone como isca</b>É o produto que mais desperta desejo e puxa alcance para o resto da loja.</div></li>
+        <li><div><b>Preço na tela</b>A arte da resma A4 a R$ 29,99 confirma o "melhor preço" em vez de só prometer.</div></li>
+        <li><div><b>Presença na comunidade</b>Patrocínio oficial de evento, ação social e apoio a atletas. Poucas lojas da região têm isso.</div></li>
+      </ol>
+    </div>
+    <div>
+      <h3 style="color:var(--verm)">O que está atrapalhando</h3>
+      <ol class="lista neg">
+        <li><div><b>Sem caminho até a compra</b>O Reels de 8 mil views não leva a lugar nenhum: sem link, sem WhatsApp, sem endereço completo.</div></li>
+        <li><div><b>Destaques que não vendem</b>Faltam as respostas que o cliente procura: preços, modelos, pagamento e rota.</div></li>
+        <li><div><b>Posicionamento solto</b>Do iPhone ao galão de sabão. Faz sentido como "resolve tudo num lugar só", mas o perfil não diz isso.</div></li>
+        <li><div><b>Acerto que não virou série</b>Depois do vídeo de humor, os posts voltaram à faixa de 500 a 600 views.</div></li>
+      </ol>
+    </div>
+  </div>
+  <div class="rod"><span>Diagnóstico do Instagram · @pr_conecta</span><span>3</span></div>
+</section>
+
+<!-- 4. RECOMENDAÇÕES -->
+<section class="pg">
+  <span class="eyebrow">03 · Plano</span>
+  <h2>O que mudar, <span>em ordem de prioridade</span></h2>
+
+  <div class="rec">
+    <div class="cab"><span class="n">1</span><h3 style="margin:0">Bio, link e botão de contato</h3><span class="prazo">Hoje</span></div>
+    <div class="bio">
+      <div>
+        <p>A bio precisa dizer <b>o que vende, onde fica e o que fazer agora</b>. O link pode levar para a landing page da loja ou direto para o WhatsApp. Ative também o botão <b>Contato</b> com o WhatsApp da loja.</p>
+        <p class="muted" style="font-size:9pt;margin:0">Troque também a foto de perfil pelo robô sozinho, grande, no fundo azul-céu. A versão do Novembro Azul pode ir para os stories.</p>
+      </div>
+      <div class="celular">
+        <div class="nm">PR Conecta</div>
+        <div class="cat">Loja de eletrônicos</div>
+        🥇 O melhor preço da Zona Sul<br>📱 iPhone • acessórios • limpeza • presentes<br>📍 Candeias, Esquina Rosa<br>🚚 Entregamos! Peça no zap 👇<br>
+        <span class="lk">🔗 link para o WhatsApp ou para o site</span>
+        <div class="bt"><span>Seguir</span><span>Mensagem</span><span class="z">WhatsApp</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="cab"><span class="n">2</span><h3 style="margin:0">Destaques que respondem antes da pergunta</h3><span class="prazo">Esta semana</span></div>
+    <div class="dest">
+      <div><i>💰</i>Preços</div><div><i>📱</i>iPhone</div><div><i>🎧</i>Acessórios</div><div><i>🧴</i>Limpeza</div><div><i>🚚</i>Entregas</div><div><i>📍</i>Como chegar</div><div><i>⭐</i>Clientes</div><div><i>🤝</i>Comunidade</div>
+    </div>
+    <p class="muted" style="font-size:9pt;margin:3mm 0 0">Todas as capas no mesmo padrão: ícone sobre o azul da marca. "Gratidão", "Evento" e "ZERA…" entram dentro de "Comunidade" e "Clientes".</p>
+  </div>
+
+  <div class="rec">
+    <div class="cab"><span class="n">3</span><h3 style="margin:0">Quatro tipos de conteúdo, toda semana</h3><span class="prazo">Rotina</span></div>
+    <div class="pilares">
+      <div class="pilar"><em>2×</em><b>Humor com produto</b><span>Repetir o formato dos 8.751 views: trend ou meme com o iPhone ou um acessório como protagonista.</span></div>
+      <div class="pilar"><em>2×</em><b>Preço na tela</b><span>"Chegou / quanto custa", com valor grande. Vale para limpeza e papelaria também.</span></div>
+      <div class="pilar"><em>1×</em><b>Gente da loja</b><span>Bastidor, cliente retirando, entrega saindo da loja.</span></div>
+      <div class="pilar"><em>1×/mês</em><b>Comunidade</b><span>Patrocínios e ações sociais, repostados dos parceiros.</span></div>
+    </div>
+    <table class="semana">
+      <tr><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr>
+      <tr><td class="p">Preço</td><td class="h">Humor</td><td class="g">Loja</td><td class="p">Preço</td><td class="h">Humor</td><td class="c">Stories de entregas</td><td class="x">Folga</td></tr>
+    </table>
+  </div>
+
+  <div class="duas">
+    <div class="rec" style="margin:0">
+      <div class="cab"><span class="n">4</span><h3 style="margin:0">Fixados</h3></div>
+      <p style="font-size:9.5pt;margin:0">Manter um post com rosto. Trocar os outros pelo <b>Reels de 8.751 views</b> (prova de que o conteúdo funciona) e por um post <b>"Como comprar"</b>: WhatsApp, entrega e endereço.</p>
+    </div>
+    <div class="rec" style="margin:0">
+      <div class="cab"><span class="n">5</span><h3 style="margin:0">Medir todo mês</h3></div>
+      <p style="font-size:9.5pt;margin:0"><b>Views de quem não segue</b> nos Reels e <b>cliques no link e no WhatsApp</b>. Esses dois mostram se o perfil traz cliente novo, não só curtida.</p>
+    </div>
+  </div>
+  <div class="rod"><span>Diagnóstico do Instagram · @pr_conecta</span><span>4</span></div>
+</section>
+
+<!-- 5. CHECKLIST -->
+<section class="pg">
+  <span class="eyebrow">04 · Próximos passos</span>
+  <h2>Checklist <span>de execução</span></h2>
+  <ul class="check">
+    <li><span><b>Colocar o link do WhatsApp ou do site na bio</b></span><em>Dia 1</em></li>
+    <li><span><b>Reescrever a bio</b> com o que vende, onde fica e a chamada "Peça no zap"</span><em>Dia 1</em></li>
+    <li><span><b>Ativar o botão Contato</b> com o WhatsApp da loja</span><em>Dia 1</em></li>
+    <li><span><b>Trocar a foto de perfil</b> pelo robô em tamanho grande</span><em>Dia 2</em></li>
+    <li><span><b>Criar as 8 capas de destaque</b> no padrão da marca</span><em>Dias 2 a 4</em></li>
+    <li><span><b>Montar o destaque "Preços"</b> com os produtos mais pedidos e valor visível</span><em>Dias 2 a 4</em></li>
+    <li><span><b>Gravar o destaque "Como chegar"</b>: um vídeo curto saindo de um ponto conhecido até a Esquina Rosa</span><em>Dias 2 a 4</em></li>
+    <li><span><b>Fixar o Reels de 8.751 views</b> e criar o post "Como comprar"</span><em>Semana 1</em></li>
+    <li><span><b>Gravar 4 vídeos de humor</b> no formato que viralizou, para ter estoque de conteúdo</span><em>Semana 1</em></li>
+    <li><span><b>Seguir o calendário semanal</b> de conteúdo por 30 dias</span><em>Semanas 1 a 4</em></li>
+    <li><span><b>Anotar os resultados</b>: views de não seguidores e cliques no link</span><em>Dia 30</em></li>
+    <li><span><b>Revisar o plano</b> com os números do mês e repetir o que funcionou</span><em>Dia 30</em></li>
+  </ul>
+
+  <div class="nota">
+    <b>Sobre este estudo.</b> A análise usa o que aparece no perfil, na aba de Reels e na aba de marcações em 12/11/2026. Não teve acesso ao painel de insights da conta, às legendas dos posts nem ao conteúdo dos destaques. Com esses dados (principalmente alcance, seguidores ganhos e cliques dos últimos 30 dias) dá para medir o ponto de partida e acompanhar a evolução com números.
+  </div>
+  <div class="rod"><span>Diagnóstico do Instagram · @pr_conecta</span><span>5</span></div>
+</section>
+
+</body>
+</html>
