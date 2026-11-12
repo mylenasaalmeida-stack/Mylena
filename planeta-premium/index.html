@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planeta Premium</title>
+<meta name="description" content="Planeta Premium — loja de preços a partir de R$ 25 em Prazeres, Jaboatão dos Guararapes. Moda feminina, bolsas, moda praia, casa e acessórios. Reserve online e receba com Uber Flash.">
+<meta name="theme-color" content="#07070a">
+<meta property="og:title" content="Planeta Premium — tudo a partir de R$ 25">
+<meta property="og:description" content="Moda de qualidade com custo-benefício. Reserve online e receba com Uber Flash ou retire na loja.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#07070a;
+  --ink-2:#0e0d12;
+  --ink-3:#17151c;
+  --line:rgba(255,150,60,.16);
+  --line-strong:rgba(255,160,70,.42);
+  --orange:#ff7a18;
+  --amber:#ffb347;
+  --glow:#ffe2a8;
+  --cream:#f7efe4;
+  --muted:#a69d93;
+  --grad:linear-gradient(100deg,#b8390a 0%,#ff7a18 22%,#ffb347 42%,#ffe8b8 52%,#ffa040 66%,#ff7a18 82%,#b8390a 100%);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--cream);font-family:Outfit,system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit;background:none;border:0}
+button{cursor:pointer}
+::selection{background:var(--orange);color:#1a0a00}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+.grad-text{background:var(--grad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s linear infinite}
+@keyframes sheen{to{background-position:-220% 0}}
+.serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;letter-spacing:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,122,24,.06);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange);animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+h1,h2,h3{font-weight:800;line-height:1;letter-spacing:-.035em}
+h2{font-size:clamp(2.3rem,6vw,4.6rem)}
+h2 .serif{font-weight:400;letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);max-width:54ch;font-weight:300}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px;border-radius:999px;font-weight:700;font-size:.95rem;letter-spacing:-.005em;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background-position .6s;isolation:isolate;white-space:nowrap}
+.btn-main{color:#1d0b00;background:var(--grad);background-size:200% 100%;box-shadow:0 12px 40px -12px rgba(255,122,24,.75),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-main:hover{background-position:100% 0;box-shadow:0 20px 60px -14px rgba(255,160,70,.9),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-main::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn-main:hover::after{transform:translateX(120%)}
+.btn-ghost{border:1px solid var(--line-strong);background:rgba(255,255,255,.03);backdrop-filter:blur(8px)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--glow)}
+.btn svg{width:19px;height:19px;flex:none}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:400;background:var(--ink);display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s}
+#loader.done{opacity:0;visibility:hidden}
+.ld{position:relative;width:120px;height:120px}
+.ld .pl{position:absolute;inset:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#d9d4cc 30%,#6d6760 75%,#2a2724);box-shadow:inset -8px -8px 20px rgba(0,0,0,.5)}
+.ld .rg{position:absolute;inset:6px 0;border-radius:50%;border:3px solid var(--orange);border-color:var(--orange) var(--amber) transparent transparent;transform:rotate(-20deg) scaleY(.38);animation:ldspin 1.1s linear infinite}
+@keyframes ldspin{to{transform:rotate(340deg) scaleY(.38)}}
+.ld-t{position:absolute;top:calc(100% + 18px);left:50%;translate:-50% 0;font-weight:800;letter-spacing:.32em;font-size:.8rem;white-space:nowrap}
+
+/* cursor */
+.cur{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--orange);pointer-events:none;z-index:350;transform:translate(-50%,-50%);box-shadow:0 0 20px var(--orange);display:none;transition:width .3s var(--ease),height .3s var(--ease),background .3s}
+.cur.big{width:54px;height:54px;background:rgba(255,122,24,.18);box-shadow:none;border:1px solid var(--orange)}
+@media (hover:hover) and (pointer:fine){.cur{display:block}}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:100;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(7,7,10,.72);backdrop-filter:blur(16px) saturate(1.5);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:18px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px var(--line-strong)}
+.brand b{font-weight:800;letter-spacing:.06em;font-size:1rem;line-height:1}
+.brand small{display:block;font-weight:600;letter-spacing:.32em;font-size:.56rem;color:var(--amber);margin-top:4px}
+.links{display:flex;gap:30px;font-size:.9rem;color:var(--muted)}
+.links a{transition:color .3s;position:relative}
+.links a:hover{color:var(--cream)}
+.links a::before{content:"";position:absolute;left:50%;top:-10px;width:4px;height:4px;border-radius:50%;background:var(--orange);translate:-50% 0;scale:0;transition:scale .3s var(--ease)}
+.links a:hover::before{scale:1}
+.nav-r{display:flex;align-items:center;gap:10px}
+.bag-btn{position:relative;width:46px;height:46px;border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;transition:border-color .3s,background .3s}
+.bag-btn:hover{border-color:var(--orange);background:rgba(255,122,24,.1)}
+.bag-btn svg{width:20px;height:20px;stroke:var(--cream);fill:none;stroke-width:1.6}
+.bag-btn .n{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--orange);color:#1d0b00;font-size:.7rem;font-weight:800;display:grid;place-items:center;scale:0;transition:scale .4s var(--ease)}
+.bag-btn .n.on{scale:1}
+.bag-btn.bump{animation:bump .5s var(--ease)}
+@keyframes bump{40%{transform:scale(1.25)}}
+.nav .btn{padding:12px 20px;font-size:.85rem}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line-strong);border-radius:50%;position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1.5px;background:var(--cream);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:19px}.burger i:last-child{top:26px}
+.menu-open .burger i:first-child{top:22px;transform:rotate(45deg)}
+.menu-open .burger i:last-child{top:22px;transform:rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:90;background:rgba(7,7,10,.97);display:grid;place-content:center;gap:22px;text-align:center;clip-path:circle(0 at calc(100% - 40px) 38px);transition:clip-path .8s var(--ease)}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 40px) 38px)}
+.mmenu a{font-size:2.2rem;font-weight:800;letter-spacing:-.03em}
+.mmenu a:not(.btn):hover{color:var(--orange)}
+@media (max-width:980px){.links,.nav-r>.btn{display:none}.burger{display:block}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:center;padding:120px 0 90px;overflow:hidden}
+#stars{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:
+  radial-gradient(45% 55% at 75% 50%,rgba(255,122,24,.2),transparent 70%),
+  radial-gradient(35% 40% at 0% 100%,rgba(255,80,20,.12),transparent 70%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(3rem,6.4vw,5.6rem);margin:24px 0 0}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.hero h1 .w>span{display:inline-block;transform:translateY(110%) rotate(6deg);transition:transform 1.2s var(--ease)}
+.ready .hero h1 .w>span{transform:none}
+.hero h1 .w:nth-child(2)>span{transition-delay:.06s}.hero h1 .w:nth-child(3)>span{transition-delay:.12s}
+.hero h1 .w:nth-child(5)>span{transition-delay:.18s}.hero h1 .w:nth-child(6)>span{transition-delay:.24s}
+.hero h1 .serif{font-size:1.06em}
+.hero .lead{margin:26px 0 36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:40px;font-size:.88rem;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust svg{width:18px;height:18px;stroke:var(--amber);fill:none;stroke-width:1.8}
+
+.system{position:relative;aspect-ratio:1;width:min(100%,580px);justify-self:center}
+.system .core{position:absolute;inset:31%;border-radius:50%;z-index:3;transition:transform .3s ease-out}
+.system .core img{width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 1px rgba(255,160,70,.35)}
+.system::before{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(255,122,24,.38),transparent 65%)}
+.orbit{position:absolute;border-radius:50%;border:1px dashed rgba(255,170,90,.22);animation:spin var(--d) linear infinite}
+.orbit.o1{inset:16%;--d:38s}
+.orbit.o2{inset:1%;--d:56s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sat{position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);transform:rotate(var(--a)) translateX(var(--R)) rotate(calc(var(--a) * -1))}
+.sat>div{width:100%;height:100%;border-radius:50%;overflow:hidden;border:2px solid rgba(255,170,90,.55);box-shadow:0 14px 34px -10px #000,0 0 24px -6px rgba(255,122,24,.6);animation:spin var(--d) linear infinite reverse}
+.orbit.o2 .sat>div{animation-direction:normal}
+.sat img{width:100%;height:100%;object-fit:cover}
+.o1 .sat{--s:19%;--R:calc(var(--w) * .34)}
+.o2 .sat{--s:16%;--R:calc(var(--w) * .49)}
+.price-stamp{position:absolute;z-index:5;right:2%;bottom:6%;width:31%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--grad);background-size:200% 100%;color:#1d0b00;box-shadow:0 20px 50px -14px rgba(255,122,24,.8);animation:wob 6s ease-in-out infinite}
+.price-stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
+.price-stamp text{font-size:8.2px;font-weight:700;letter-spacing:1.9px;fill:#1d0b00;text-transform:uppercase}
+.price-stamp b{display:block;font-size:clamp(1.3rem,3.2vw,2.2rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+.price-stamp small{font-size:clamp(.55rem,1vw,.7rem);font-weight:700;letter-spacing:.1em}
+@keyframes wob{50%{transform:rotate(-8deg) scale(1.04)}}
+@media (max-width:980px){
+  .hero{min-height:auto;padding:104px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .system{width:min(84vw,400px);order:-1}
+}
+
+/* marquee */
+.mq-zone{overflow:hidden;padding:24px 0 30px;margin:-24px 0 -30px;position:relative;z-index:3}
+.bag-btn svg,.add svg{pointer-events:none}
+.marquee{overflow:hidden;background:var(--orange);color:#1d0b00;padding:16px 0;transform:rotate(-1.6deg);margin:10px -10px;box-shadow:0 20px 50px -20px rgba(255,122,24,.6);position:relative;z-index:3}
+.marquee.alt{background:var(--ink-3);color:var(--cream);transform:rotate(1.4deg);margin-top:-46px;z-index:2;box-shadow:none;border-block:1px solid var(--line)}
+.mq{display:flex;width:max-content;animation:mq 30s linear infinite}
+.marquee.alt .mq{animation-direction:reverse}
+.mq span{display:flex;align-items:center;gap:34px;padding-right:34px;font-weight:800;font-size:clamp(1.05rem,2.4vw,1.5rem);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
+.mq span::after{content:"";width:14px;height:14px;border-radius:50%;border:2px solid currentColor;box-shadow:0 0 0 4px transparent,inset 0 0 0 3px currentColor}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.sec{position:relative;padding:clamp(90px,12vw,150px) 0}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:50px}
+.head h2{margin-top:18px}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* categories bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--ink-2);text-align:left;isolation:isolate}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.cat:hover img{transform:scale(1.08)}
+.cat::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,7,10,0) 35%,rgba(7,7,10,.9))}
+.cat::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(255,140,50,.25),transparent 55%);opacity:0;transition:opacity .4s}
+.cat:hover::after{opacity:1}
+.cat .ct{position:absolute;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.cat h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}
+.cat p{font-size:.84rem;color:rgba(247,239,228,.75);margin-top:4px}
+.cat .go{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);transition:background .4s,transform .5s var(--ease)}
+.cat:hover .go{background:var(--orange);transform:rotate(-45deg)}
+.cat .go svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.cat.c1{grid-column:span 2;grid-row:span 2}
+.cat.c2{grid-column:span 2}
+.cat.c6{background:radial-gradient(circle at 70% 20%,rgba(255,180,90,.35),transparent 50%),radial-gradient(circle at 10% 90%,rgba(255,90,140,.25),transparent 50%),var(--ink-3)}
+.cat.c6 .big{position:absolute;top:18px;right:20px;font-size:4rem;line-height:1;filter:drop-shadow(0 10px 20px rgba(0,0,0,.4));animation:floaty 5s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-10px) rotate(6deg)}}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:190px}.cat.c1{grid-row:span 2}.cat.c2{grid-column:span 2}}
+@media (max-width:520px){.bento{grid-auto-rows:170px;gap:10px}.cat .ct{left:14px;right:14px;bottom:14px}.cat .go{width:36px;height:36px}.cat p{display:none}.cat.c1 p{display:block}}
+
+/* vitrine */
+.filters{display:flex;gap:4px;padding:5px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);position:relative;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.filters::-webkit-scrollbar{display:none}
+.filters button{position:relative;z-index:1;flex:none;padding:10px 18px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--muted);transition:color .3s}
+.filters button.on{color:#1d0b00}
+.filters .pill{position:absolute;z-index:0;border-radius:999px;background:var(--grad);background-size:200% 100%;transition:left .5s var(--ease),width .5s var(--ease)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.item{position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-2);border:1px solid var(--line);transition:transform .35s ease-out,border-color .4s}
+.item:hover{border-color:var(--line-strong)}
+.item .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1a1816}
+.item .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
+.item:hover .ph img{transform:scale(1.07)}
+.item .tag{position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(7,7,10,.72);backdrop-filter:blur(8px);color:var(--amber);border:1px solid var(--line-strong)}
+.item .add{position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:8px;height:44px;padding:0 13px;border-radius:999px;background:var(--cream);color:#1d0b00;font-weight:700;font-size:.82rem;box-shadow:0 10px 24px -8px rgba(0,0,0,.6);transition:background .3s,transform .4s var(--ease)}
+.item .add span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .5s var(--ease)}
+.item:hover .add span,.item .add.in span{max-width:120px}
+.item .add:hover{background:var(--orange);transform:scale(1.05)}
+.item .add.in{background:var(--orange)}
+.item .add svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;flex:none;transition:transform .4s var(--ease)}
+.item .add.in svg{transform:rotate(45deg)}
+.item .info{padding:16px 18px 18px}
+.item .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.item h3{font-size:1.04rem;font-weight:600;letter-spacing:-.01em;margin-top:4px;line-height:1.25}
+.item .p{font-size:.82rem;color:var(--muted);margin-top:8px}
+.item.hide{display:none}
+.more{text-align:center;margin-top:44px}
+@media (max-width:1060px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.grid{grid-template-columns:1fr 1fr;gap:12px}.item .info{padding:12px 12px 14px}.item h3{font-size:.9rem}.item .add{height:40px;padding:0 11px}.item .add span{display:none}}
+
+.fly{position:fixed;z-index:250;border-radius:16px;overflow:hidden;pointer-events:none;box-shadow:0 20px 40px -10px #000}
+.fly img{width:100%;height:100%;object-fit:cover}
+
+/* uber flash */
+.flash{border-radius:32px;border:1px solid var(--line);background:radial-gradient(70% 90% at 100% 0%,rgba(255,122,24,.22),transparent 60%),var(--ink-2);padding:clamp(28px,5vw,64px);overflow:hidden;position:relative}
+.flash-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.flash .badge-new{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--orange);color:#1d0b00;font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;animation:blink 2.4s ease-in-out infinite}
+.flash h2{font-size:clamp(2rem,4.6vw,3.6rem)}
+.flash .lead{margin:18px 0 30px}
+.route{position:relative;height:300px;border-radius:24px;background:
+  linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/34px 34px,
+  linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/34px 34px,var(--ink);border:1px solid var(--line);overflow:hidden}
+.route svg.path{position:absolute;inset:0;width:100%;height:100%}
+.route .pathline{fill:none;stroke:rgba(255,170,90,.25);stroke-width:3;stroke-dasharray:6 8}
+.route .pathfill{fill:none;stroke:var(--orange);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px var(--orange))}
+.route.in .pathfill{animation:drawp 3.6s var(--ease) .3s infinite}
+@keyframes drawp{0%{stroke-dashoffset:1}70%,100%{stroke-dashoffset:0}}
+.route .node{position:absolute;display:grid;justify-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;translate:-50% -50%}
+.route .node i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:1.4rem;background:var(--ink-3);border:1px solid var(--line-strong);box-shadow:0 0 0 6px rgba(255,122,24,.08)}
+.route .n1{left:16%;top:72%}.route .n2{left:84%;top:28%}
+.route .moto{position:absolute;left:0;top:0;font-size:1.6rem;offset-path:path("M60 216 C 150 216, 160 90, 260 120 S 380 84, 420 84");offset-rotate:0deg;animation:ride 3.6s var(--ease) .3s infinite;opacity:0}
+.route.in .moto{opacity:1}
+@keyframes ride{0%{offset-distance:0%}70%,100%{offset-distance:100%}}
+.steps3{display:grid;gap:14px;counter-reset:s}
+.st{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:border-color .3s,background .3s}
+.st:hover{border-color:var(--line-strong);background:rgba(255,122,24,.05)}
+.st b{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#1d0b00;font-weight:900}
+.st h4{font-size:1.02rem;font-weight:700}
+.st p{font-size:.88rem;color:var(--muted)}
+@media (max-width:900px){.flash-grid{grid-template-columns:1fr}.route{height:240px}}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.nums div{padding:50px 20px;text-align:center}
+.nums div+div{border-left:1px solid var(--line)}
+.nums b{display:block;font-size:clamp(2.6rem,7vw,5.6rem);font-weight:900;letter-spacing:-.05em;line-height:1}
+.nums span{color:var(--muted);font-size:.92rem}
+@media (max-width:640px){.nums{grid-template-columns:1fr}.nums div+div{border-left:0;border-top:1px solid var(--line)}.nums div{padding:34px 10px}}
+
+/* feed */
+.feed{display:flex;gap:14px;width:max-content;animation:mq 60s linear infinite}
+.feed-wrap{overflow:hidden;mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.feed-wrap:hover .feed{animation-play-state:paused}
+.feed a{flex:none;width:220px;aspect-ratio:4/5;border-radius:18px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.feed img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .5s}
+.feed a:hover img{transform:scale(1.08);filter:brightness(.6)}
+.feed a::after{content:"Ver no Instagram";position:absolute;inset:auto 0 16px;text-align:center;font-size:.8rem;font-weight:700;opacity:0;transform:translateY(8px);transition:all .4s var(--ease)}
+.feed a:hover::after{opacity:1;transform:none}
+@media (max-width:600px){.feed a{width:160px}}
+
+/* store */
+.store{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:32px;overflow:hidden;border:1px solid var(--line);background:var(--ink-2)}
+.store .txt{padding:clamp(28px,5vw,60px)}
+.store h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:18px 0}
+.addr{display:flex;gap:14px;margin:26px 0 30px;padding:18px 20px;border-radius:18px;border:1px solid var(--line);background:var(--ink)}
+.addr svg{width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:1.8;flex:none;margin-top:2px}
+.addr b{display:block;font-size:1.08rem}
+.addr span{color:var(--muted);font-size:.9rem}
+.map{position:relative;min-height:400px;background:#0b0a0e;overflow:hidden}
+.map .streets{position:absolute;inset:-20%;transform:rotate(-12deg);background:
+  linear-gradient(90deg,transparent 47%,rgba(255,255,255,.07) 47% 53%,transparent 53%) 0 0/160px 160px,
+  linear-gradient(0deg,transparent 46%,rgba(255,255,255,.06) 46% 54%,transparent 54%) 0 0/220px 220px}
+.map .avenue{position:absolute;left:-10%;right:-10%;top:58%;height:26px;background:rgba(255,170,90,.12);transform:rotate(-12deg);border-block:1px solid rgba(255,170,90,.18)}
+.map .blk{position:absolute;padding:10px 14px;border-radius:12px;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line-strong);background:rgba(23,21,28,.9);backdrop-filter:blur(6px)}
+.map .arco{left:8%;top:14%;color:var(--muted)}
+.map .me{left:58%;top:48%;translate:-50% -50%;display:grid;justify-items:center;gap:10px;padding:0;border:0;background:none}
+.map .me img{width:74px;height:74px;border-radius:50%;border:3px solid var(--orange);box-shadow:0 0 0 0 rgba(255,122,24,.6);animation:pulse 2s infinite}
+.map .me span{padding:7px 12px;border-radius:999px;background:var(--orange);color:#1d0b00}
+@keyframes pulse{70%{box-shadow:0 0 0 28px rgba(255,122,24,0)}100%{box-shadow:0 0 0 0 rgba(255,122,24,0)}}
+@media (max-width:860px){.store{grid-template-columns:1fr}.map{min-height:280px;order:-1}}
+
+/* faq */
+.faq{max-width:880px;margin:auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:clamp(1.05rem,2vw,1.3rem);font-weight:600;letter-spacing:-.01em;transition:color .3s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--amber)}
+.faq summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-strong);position:relative;transition:background .3s,transform .5s var(--ease)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:1.5px;background:var(--orange);translate:-50% -50%}
+.faq summary i::after{rotate:90deg;transition:rotate .5s var(--ease)}
+.faq details[open] summary i{background:rgba(255,122,24,.12);transform:rotate(180deg)}
+.faq details[open] summary i::after{rotate:0deg}
+.faq .ans{color:var(--muted);padding:0 50px 24px 0;animation:pop .5s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+
+/* final */
+.final{position:relative;text-align:center;padding:clamp(110px,15vw,190px) 0;overflow:hidden}
+.final .planet{position:absolute;left:50%;top:50%;width:min(900px,140vw);aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,122,24,.22),transparent 60%)}
+.final .ring{position:absolute;left:50%;top:50%;width:min(1000px,150vw);aspect-ratio:1;translate:-50% -50%;border-radius:50%;border:1px solid rgba(255,170,90,.25);transform:rotateX(74deg);animation:ringspin 20s linear infinite}
+@keyframes ringspin{to{transform:rotateX(74deg) rotateZ(360deg)}}
+.final .ring::before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 20px var(--orange)}
+.final h2{position:relative;font-size:clamp(2.6rem,8.5vw,7rem)}
+.final p{position:relative;margin:24px auto 38px;color:var(--muted);max-width:44ch}
+.final .cta-row{position:relative;justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:42px 0 110px;color:var(--muted);font-size:.88rem}
+.foot{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
+.foot nav{display:flex;flex-wrap:wrap;gap:22px}
+.foot nav a:hover{color:var(--orange)}
+
+/* bag drawer */
+.scrim{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:210;width:min(440px,100%);background:var(--ink-2);border-left:1px solid var(--line-strong);display:flex;flex-direction:column;transform:translateX(105%);transition:transform .7s var(--ease)}
+.bag-open .scrim{opacity:1;visibility:visible}
+.bag-open .drawer{transform:none}
+.dr-h{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.dr-h h3{font-size:1.4rem}
+.dr-h h3 small{font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:0;margin-left:6px}
+.x{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong);font-size:1.3rem;line-height:1;transition:background .3s,transform .4s var(--ease)}
+.x:hover{background:rgba(255,122,24,.12);transform:rotate(90deg)}
+.dr-b{flex:1;overflow-y:auto;padding:18px 24px}
+.empty{text-align:center;padding:50px 10px;color:var(--muted)}
+.empty div{font-size:3rem;margin-bottom:10px;animation:floaty 4s ease-in-out infinite}
+.li{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);animation:pop .4s var(--ease)}
+.li img{width:62px;height:72px;border-radius:12px;object-fit:cover;object-position:top}
+.li div{flex:1;min-width:0}
+.li b{display:block;font-size:.95rem;font-weight:600;line-height:1.25}
+.li small{color:var(--muted);font-size:.78rem}
+.li button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);color:var(--muted);transition:all .3s}
+.li button:hover{border-color:var(--orange);color:var(--orange)}
+.dr-f{padding:20px 24px 24px;border-top:1px solid var(--line);display:grid;gap:14px;background:var(--ink)}
+.opt-t{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{padding:12px;border-radius:14px;border:1px solid var(--line);font-size:.86rem;font-weight:600;text-align:left;transition:all .3s;line-height:1.25}
+.seg button small{display:block;font-weight:400;color:var(--muted);font-size:.74rem}
+.seg button.on{border-color:var(--orange);background:rgba(255,122,24,.1)}
+.inp{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--line);background:var(--ink-2);outline:none;transition:border-color .3s}
+.inp:focus{border-color:var(--orange)}
+.inp::placeholder{color:#6f675f}
+.dr-f .btn{width:100%}
+.dr-f .btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.note{font-size:.74rem;color:var(--muted);text-align:center}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:120;display:flex;align-items:center;gap:10px;height:58px;padding:0 20px 0 16px;border-radius:999px;background:var(--grad);background-size:200% 100%;color:#1d0b00;font-weight:800;box-shadow:0 14px 40px -10px rgba(255,122,24,.8);transform:translateY(150%);transition:transform .7s var(--ease)}
+.fab.show{transform:none}
+.fab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.fab .n{min-width:22px;height:22px;border-radius:999px;background:#1d0b00;color:var(--amber);font-size:.72rem;display:grid;place-items:center;padding:0 6px}
+
+.toast{position:fixed;left:50%;bottom:90px;z-index:260;translate:-50% 0;padding:12px 20px;border-radius:999px;background:var(--ink-3);border:1px solid var(--line-strong);font-size:.9rem;opacity:0;transform:translateY(20px);transition:all .5s var(--ease);pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true"><div class="ld"><div class="pl"></div><div class="rg"></div><div class="ld-t grad-text">PLANETA PREMIUM</div></div></div>
+<div class="cur"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Planeta Premium, início"><img src="img/logo.png" alt=""><b>PLANETA<small>PREMIUM</small></b></a>
+    <nav class="links" aria-label="Principal">
+      <a href="#categorias">Categorias</a><a href="#vitrine">Vitrine</a><a href="#entrega">Entrega</a><a href="#loja">A loja</a><a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-r">
+      <a class="btn btn-main contact" href="#" data-msg="Olá, Planeta Premium! Vim pelo site.">Fale com a gente</a>
+      <button class="bag-btn" id="bagBtn" aria-label="Abrir sacola de reservas">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="n" id="bagN">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Abrir menu"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#categorias">Categorias</a><a href="#vitrine">Vitrine</a><a href="#entrega">Entrega</a><a href="#loja">A loja</a><a href="#faq">Dúvidas</a>
+  <a class="btn btn-main contact" href="#" data-msg="Olá, Planeta Premium! Vim pelo site.">Fale com a gente</a>
+</div>
+
+<main id="top">
+
+<section class="hero">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><i></i>Loja de preços · Prazeres, Jaboatão</span>
+      <h1>
+        <span class="w"><span>Moda</span></span> <span class="w"><span>que</span></span> <span class="w"><span>tira</span></span><br>
+        <span class="w"><span>você</span></span> <span class="w"><span class="serif grad-text">de órbita.</span></span>
+      </h1>
+      <p class="lead">Moda feminina, bolsas, moda praia, casa e acessórios com <strong style="color:var(--cream);font-weight:600">peças a partir de R$&nbsp;25</strong>. Custo-benefício e qualidade, agora também com reserva online e entrega por Uber Flash.</p>
+      <div class="cta-row">
+        <a class="btn btn-main mag" href="#vitrine">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+          Reservar minhas peças
+        </a>
+        <a class="btn btn-ghost mag" href="#categorias">Explorar categorias</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>+5 mil seguidores</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Entrega Uber Flash</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Retirada na loja</span>
+      </div>
+    </div>
+
+    <div class="system" id="system">
+      <div class="orbit o2">
+        <div class="sat" style="--a:20deg"><div><img src="img/bolsas-u.jpg" alt=""></div></div>
+        <div class="sat" style="--a:110deg"><div><img src="img/garrafa-preta.jpg" alt=""></div></div>
+        <div class="sat" style="--a:200deg"><div><img src="img/chapeu.jpg" alt=""></div></div>
+        <div class="sat" style="--a:290deg"><div><img src="img/porta-joias.jpg" alt=""></div></div>
+      </div>
+      <div class="orbit o1">
+        <div class="sat" style="--a:60deg"><div><img src="img/macacao-rosa.jpg" alt=""></div></div>
+        <div class="sat" style="--a:180deg"><div><img src="img/bolsa-caramelo.jpg" alt=""></div></div>
+        <div class="sat" style="--a:300deg"><div><img src="img/conjunto-off.jpg" alt=""></div></div>
+      </div>
+      <div class="core" id="core"><img src="img/logo.png" alt="Logo Planeta Premium, moda de qualidade"></div>
+      <div class="price-stamp" aria-label="Peças a partir de 25 reais">
+        <svg viewBox="0 0 100 100"><defs><path id="c" d="M50 50 m-37 0 a37 37 0 1 1 74 0 a37 37 0 1 1 -74 0"/></defs><text><textPath href="#c">peças a partir de · custo benefício ·</textPath></text></svg>
+        <div><small>A PARTIR DE</small><b>R$25</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mq-zone">
+<div class="marquee" aria-hidden="true"><div class="mq">
+  <span>Moda feminina</span><span>Bolsas</span><span>Moda praia</span><span>Casa &amp; cozinha</span><span>Acessórios</span><span>Infantil</span><span>A partir de R$ 25</span>
+  <span>Moda feminina</span><span>Bolsas</span><span>Moda praia</span><span>Casa &amp; cozinha</span><span>Acessórios</span><span>Infantil</span><span>A partir de R$ 25</span>
+</div></div>
+<div class="marquee alt" aria-hidden="true"><div class="mq">
+  <span>Reserve online</span><span>Receba com Uber Flash</span><span>Ou retire na loja</span><span>Ao lado do ArcoMix</span>
+  <span>Reserve online</span><span>Receba com Uber Flash</span><span>Ou retire na loja</span><span>Ao lado do ArcoMix</span>
+  <span>Reserve online</span><span>Receba com Uber Flash</span><span>Ou retire na loja</span><span>Ao lado do ArcoMix</span>
+</div></div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="sec" id="categorias">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv"><span class="eyebrow"><i></i>Um universo de categorias</span><h2>Tudo num só <span class="serif grad-text">planeta.</span></h2></div>
+      <p class="lead rv d1">Do look de sábado à garrafa térmica do café: aqui você resolve a vida gastando pouco.</p>
+    </div>
+    <div class="bento">
+      <button class="cat c1 rv" data-go="moda"><img src="img/conjunto-off.jpg" alt="" loading="lazy" style="object-position:top"><div class="ct"><div><h3>Moda feminina</h3><p>Conjuntos, macacões, jeans e alfaiataria</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+      <button class="cat c2 rv d1" data-go="bolsas"><img src="img/bolsas-u.jpg" alt="" loading="lazy"><div class="ct"><div><h3>Bolsas</h3><p>Baguete, transversal, clutch e mais</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+      <button class="cat rv d2" data-go="praia"><img src="img/chapeu.jpg" alt="" loading="lazy" style="object-position:top"><div class="ct"><div><h3>Verão</h3><p>Moda praia e chapéus</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+      <button class="cat rv d3" data-go="casa"><img src="img/garrafa-preta.jpg" alt="" loading="lazy"><div class="ct"><div><h3>Casa</h3><p>Garrafas e cozinha</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+      <button class="cat c2 rv" data-go="acessorios"><img src="img/porta-joias.jpg" alt="" loading="lazy"><div class="ct"><div><h3>Acessórios</h3><p>Porta-joias, bijus e detalhes que fazem o look</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+      <button class="cat c2 c6 rv d1" data-go="infantil"><span class="big">🧸</span><div class="ct"><div><h3>Infantil</h3><p>Brinquedos e moda praia kids. Pergunte o que chegou</p></div><span class="go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></button>
+    </div>
+  </div>
+</section>
+
+<!-- VITRINE -->
+<section class="sec" id="vitrine" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv"><span class="eyebrow"><i></i>Vitrine · reserve com 1 toque</span><h2>Gostou? <span class="serif grad-text">Reserva.</span></h2></div>
+      <div class="filters rv d1" id="filters" role="tablist" aria-label="Filtrar vitrine">
+        <span class="pill"></span>
+        <button class="on" data-f="all">Tudo</button><button data-f="moda">Moda</button><button data-f="praia">Verão</button><button data-f="bolsas">Bolsas</button><button data-f="casa">Casa</button><button data-f="acessorios">Acessórios</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more rv"><a class="btn btn-ghost mag" href="https://instagram.com/planetapremiumprazeres" target="_blank" rel="noopener">Ver todas as novidades no Instagram</a></div>
+  </div>
+</section>
+
+<!-- ENTREGA -->
+<section class="sec" id="entrega" style="padding-top:0">
+  <div class="wrap">
+    <div class="flash rv">
+      <div class="flash-grid">
+        <div>
+          <span class="badge-new">Novidade</span>
+          <h2>Escolheu, reservou, <span class="serif grad-text">chegou.</span></h2>
+          <p class="lead">Agora a Planeta Premium vende online. Você escolhe suas peças, faz a reserva e recebe com Uber Flash ou retira direto na loja. Mais praticidade pra você.</p>
+          <div class="steps3">
+            <div class="st"><b>1</b><div><h4>Escolha na vitrine</h4><p>Toque em “Reservar” nas peças que você amou.</p></div></div>
+            <div class="st"><b>2</b><div><h4>Envie sua reserva</h4><p>Sua sacola vai pronta pra gente confirmar tamanho, cor e valor.</p></div></div>
+            <div class="st"><b>3</b><div><h4>Receba ou retire</h4><p>Uber Flash até sua casa ou retirada na loja, você escolhe.</p></div></div>
+          </div>
+        </div>
+        <div class="route" id="route">
+          <svg class="path" viewBox="0 0 480 300" preserveAspectRatio="none"><path class="pathline" d="M60 216 C 150 216, 160 90, 260 120 S 380 84, 420 84"/><path class="pathfill" pathLength="1" d="M60 216 C 150 216, 160 90, 260 120 S 380 84, 420 84"/></svg>
+          <div class="node n1"><i>🪐</i>Loja</div>
+          <div class="node n2"><i>🏠</i>Você</div>
+          <div class="moto">🛵</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="nums">
+      <div class="rv"><b class="grad-text" data-count="5414" data-prefix="+">+0</b><span>seguidores no Instagram</span></div>
+      <div class="rv d1"><b class="grad-text" data-count="237">0</b><span>posts de novidades</span></div>
+      <div class="rv d2"><b class="grad-text" data-count="25" data-prefix="R$ ">R$ 0</b><span>preço inicial das peças</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEED -->
+<section class="sec" style="padding-top:0;padding-bottom:clamp(70px,9vw,110px)">
+  <div class="wrap head" style="margin-bottom:34px">
+    <div class="rv"><span class="eyebrow"><i></i>@planetapremiumprazeres</span><h2 style="font-size:clamp(2rem,4.6vw,3.4rem)">Siga a gente <span class="serif grad-text">por aí.</span></h2></div>
+    <a class="btn btn-ghost rv d1" href="https://instagram.com/planetapremiumprazeres" target="_blank" rel="noopener">Seguir no Instagram</a>
+  </div>
+  <div class="feed-wrap"><div class="feed" id="feed"></div></div>
+</section>
+
+<!-- STORE -->
+<section class="sec" id="loja" style="padding-top:0">
+  <div class="wrap">
+    <div class="store rv">
+      <div class="txt">
+        <span class="eyebrow"><i></i>A loja</span>
+        <h2>Pertinho de você, <span class="serif grad-text">em Prazeres.</span></h2>
+        <p class="lead">Vem ver tudo de perto, provar e sair com a sacola cheia. Fica fácil de achar: bem ao lado do ArcoMix.</p>
+        <div class="addr">
+          <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>Santo Elias, 16</b><span>Ao lado do Supermercado ArcoMix<br>Prazeres · Jaboatão dos Guararapes – PE</span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-main mag" href="https://www.google.com/maps/search/?api=1&query=Santo+Elias+16+Prazeres+Jaboat%C3%A3o+dos+Guararapes" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn btn-ghost mag contact" href="#" data-msg="Olá, Planeta Premium! Qual o horário de funcionamento da loja?">Horário de hoje</a>
+        </div>
+      </div>
+      <div class="map" aria-hidden="true">
+        <div class="streets"></div><div class="avenue"></div>
+        <div class="blk arco">🛒 ArcoMix</div>
+        <div class="blk me"><img src="img/logo.png" alt=""><span>Planeta Premium</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="head" style="justify-content:center;text-align:center"><div class="rv"><span class="eyebrow"><i></i>Dúvidas</span><h2>Antes de <span class="serif grad-text">reservar.</span></h2></div></div>
+    <div class="faq rv">
+      <details><summary>Tem peça a partir de R$ 25 mesmo?<i></i></summary><p class="ans">Tem sim! A loja trabalha com preços a partir de R$ 25,00. O valor de cada peça a gente confirma na hora da reserva.</p></details>
+      <details><summary>Como funciona a reserva online?<i></i></summary><p class="ans">Toque em “Reservar” nas peças da vitrine, abra sua sacola e envie. A gente confirma tamanho, cor, disponibilidade e valor com você antes de fechar.</p></details>
+      <details><summary>Vocês entregam?<i></i></summary><p class="ans">Sim, com Uber Flash. Se preferir, é só retirar direto na loja, em Prazeres, ao lado do ArcoMix.</p></details>
+      <details><summary>Vocês só vendem roupa?<i></i></summary><p class="ans">Não! Tem moda feminina, moda praia, bolsas, acessórios, porta-joias, utilidades de casa e cozinha, além de itens infantis.</p></details>
+      <details><summary>Chega novidade com frequência?<i></i></summary><p class="ans">Toda semana tem coisa nova. Segue o @planetapremiumprazeres pra ver primeiro.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="planet"></div><div class="ring"></div>
+  <div class="wrap">
+    <span class="eyebrow rv"><i></i>Planeta Premium · Moda de qualidade</span>
+    <h2 class="rv d1" style="margin-top:22px">Seu próximo look<br>está a <span class="grad-text">R$&nbsp;25</span> <span class="serif">de distância.</span></h2>
+    <p class="rv d2">Reserve agora e receba em casa, ou passa na loja pra conhecer o planeta inteiro.</p>
+    <div class="cta-row rv d3">
+      <a class="btn btn-main mag" href="#vitrine">Começar minha reserva</a>
+      <a class="btn btn-ghost mag" href="https://instagram.com/planetapremiumprazeres" target="_blank" rel="noopener">@planetapremiumprazeres</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="brand"><img src="img/logo.png" alt=""><b>PLANETA<small>PREMIUM</small></b></a>
+    <nav><a href="https://instagram.com/planetapremiumprazeres" target="_blank" rel="noopener">Instagram</a><a href="#loja">Santo Elias, 16 · Prazeres</a><a href="#faq">Dúvidas</a></nav>
+    <span>© <span id="yr"></span> Planeta Premium</span>
+  </div>
+</footer>
+
+<button class="fab" id="fab" aria-label="Abrir sacola">
+  <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+  Minha sacola <span class="n" id="fabN">0</span>
+</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Sacola de reservas">
+  <div class="dr-h"><h3>Sacola <small id="drCount">0 peças</small></h3><button class="x" id="closeBag" aria-label="Fechar">×</button></div>
+  <div class="dr-b" id="drList"></div>
+  <div class="dr-f">
+    <div class="opt-t">Como você quer receber?</div>
+    <div class="seg" id="seg">
+      <button class="on" data-v="Entrega via Uber Flash">🛵 Uber Flash<small>Entrega na sua casa</small></button>
+      <button data-v="Retirada na loja">🪐 Retirar<small>Na loja, em Prazeres</small></button>
+    </div>
+    <input class="inp" id="nome" placeholder="Seu nome (opcional)" autocomplete="name">
+    <a class="btn btn-main" id="sendBag" href="#" aria-disabled="true">Enviar reserva</a>
+    <p class="note" id="sendNote">A gente confirma tamanho, cor e valor antes de fechar.</p>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  /* Coloque aqui o WhatsApp da loja (só números, com 55 + DDD). Ex.: '5581999999999'.
+     Enquanto estiver vazio, os botões levam ao Direct do Instagram e copiam a mensagem. */
+  const WHATSAPP = '';
+  const IG = 'planetapremiumprazeres';
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  $('#yr').textContent = new Date().getFullYear();
+
+  const toastEl = $('#toast'); let tt;
+  const toast = m => { toastEl.textContent = m; toastEl.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove('show'), 2600); };
+
+  const send = msg => {
+    if (WHATSAPP) { window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener'); return; }
+    const go = () => window.open(`https://ig.me/m/${IG}`, '_blank', 'noopener');
+    if (navigator.clipboard) navigator.clipboard.writeText(msg).then(() => toast('Mensagem copiada! É só colar no Direct ✨')).catch(() => {});
+    go();
+  };
+  $$('.contact').forEach(a => a.addEventListener('click', e => { e.preventDefault(); send(a.dataset.msg); }));
+
+  /* products */
+  const P = [
+    ['conjunto-off','Conjunto Alfaiataria Off-White','moda','Mais amado'],
+    ['bolsas-u','Bolsa Baguete Fivela U','bolsas','4 cores'],
+    ['macacao-verde','Macacão Fitness Oliva','moda',''],
+    ['garrafa-preta','Garrafa Térmica Digital','casa','Novo'],
+    ['chapeu','Chapéu de Palha','praia','Verão'],
+    ['bolsa-caramelo','Bolsa Ombro Caramelo','bolsas',''],
+    ['camisa-jeans','Camisa Cropped + Saia Jeans','moda',''],
+    ['porta-joias','Porta-Joias Veludo','acessorios',''],
+    ['macacao-rosa','Macacão Fitness Rosé','moda',''],
+    ['praia-jeans','Kimono Franja + Short Jeans','praia',''],
+    ['bolsa-off','Bolsa Off Fivela Prata','bolsas',''],
+    ['porta-temperos','Porta-Temperos Giratório','casa',''],
+    ['macacao-menta','Macacão Menta','moda',''],
+    ['clutch','Clutch Aro Dourado','bolsas','Festa'],
+    ['garrafa-vermelha','Garrafa Térmica Vermelha','casa',''],
+    ['colete','Colete & Short Preto','moda',''],
+    ['short-jeans','Bermuda Jeans Black','praia',''],
+    ['bolsa-preta','Bolsa Corrente Preta','bolsas',''],
+    ['garrafa-amarela','Garrafa Térmica Amarela','casa',''],
+    ['conjunto-listrado','Conjuntos Listrados','moda','Cores'],
+  ];
+  const NAMES = { moda: 'Moda feminina', praia: 'Verão', bolsas: 'Bolsas', casa: 'Casa & cozinha', acessorios: 'Acessórios' };
+  const grid = $('#grid');
+  grid.innerHTML = P.map(([img, name, cat, tag], i) => `
+    <article class="item rv ${['', 'd1', 'd2', 'd3'][i % 4]}" data-c="${cat}" data-i="${i}">
+      <div class="ph">${tag ? `<span class="tag">${tag}</span>` : ''}<img src="img/${img}.jpg" alt="${name}" loading="lazy">
+        <button class="add" data-i="${i}" aria-label="Reservar ${name}"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Reservar</span></button></div>
+      <div class="info"><div class="k">${NAMES[cat]}</div><h3>${name}</h3><div class="p">A partir de R$ 25 · consulte</div></div>
+    </article>`).join('');
+  $('#feed').innerHTML = [...P, ...P].map(([img, name]) => `<a href="https://instagram.com/${IG}" target="_blank" rel="noopener" aria-label="${name} no Instagram"><img src="img/${img}.jpg" alt="" loading="lazy"></a>`).join('');
+
+  /* loader */
+  const finish = () => { $('#loader').classList.add('done'); document.body.classList.add('ready'); };
+  addEventListener('load', () => setTimeout(finish, reduce ? 0 : 1200)); setTimeout(finish, 3500);
+
+  /* nav */
+  const nav = $('#nav'), fab = $('#fab');
+  const onScroll = () => { nav.classList.toggle('scrolled', scrollY > 30); fab.classList.toggle('show', scrollY > innerHeight * .7 && bag.length > 0); };
+  addEventListener('scroll', onScroll, { passive: true });
+  $('#burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  $$('#mmenu a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+  /* reveal */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('.rv, #route').forEach(el => io.observe(el));
+
+  /* counters */
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; const el = e.target, end = +el.dataset.count, pre = el.dataset.prefix || '';
+    const t0 = performance.now(), dur = reduce ? 1 : 2000;
+    const step = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = pre + Math.round(end * (1 - Math.pow(1 - p, 4))).toLocaleString('pt-BR'); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step); cio.unobserve(el);
+  }), { threshold: .5 });
+  $$('[data-count]').forEach(el => cio.observe(el));
+
+  /* orbit sizing */
+  const sys = $('#system');
+  const sizeSys = () => sys.style.setProperty('--w', sys.offsetWidth + 'px');
+  sizeSys(); addEventListener('resize', sizeSys);
+  if (fine && !reduce) {
+    const core = $('#core');
+    addEventListener('mousemove', e => { const x = (e.clientX / innerWidth - .5), y = (e.clientY / innerHeight - .5); core.style.transform = `translate(${x * 18}px,${y * 18}px)`; sys.style.transform = `translate(${x * -10}px,${y * -10}px)`; });
+  }
+
+  /* cursor + magnetic */
+  if (fine && !reduce) {
+    const c = $('.cur'); let x = 0, y = 0, cx = 0, cy = 0;
+    addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; });
+    (function loop() { cx += (x - cx) * .2; cy += (y - cy) * .2; c.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover', e => c.classList.toggle('big', !!e.target.closest('a,button,summary,.item')));
+    $$('.mag').forEach(b => {
+      b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .22}px,${(e.clientY - r.top - r.height / 2) * .32}px)`; });
+      b.addEventListener('mouseleave', () => b.style.transform = '');
+    });
+    $$('.item').forEach(it => {
+      it.addEventListener('mousemove', e => { const r = it.getBoundingClientRect(), px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5; it.style.transform = `perspective(900px) rotateX(${py * -7}deg) rotateY(${px * 9}deg) translateY(-5px)`; });
+      it.addEventListener('mouseleave', () => it.style.transform = '');
+    });
+  }
+  $$('.cat').forEach(el => el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', e.clientX - r.left + 'px'); el.style.setProperty('--my', e.clientY - r.top + 'px'); }));
+
+  /* filters */
+  const fw = $('#filters'), pill = $('.pill', fw), fb = $$('button', fw);
+  const movePill = b => Object.assign(pill.style, { left: b.offsetLeft + 'px', width: b.offsetWidth + 'px', top: b.offsetTop + 'px', height: b.offsetHeight + 'px' });
+  const setFilter = f => {
+    const b = fb.find(x => x.dataset.f === f) || fb[0];
+    fb.forEach(x => x.classList.toggle('on', x === b)); movePill(b);
+    b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    let k = 0;
+    $$('.item', grid).forEach(it => {
+      const show = f === 'all' || it.dataset.c === f;
+      it.classList.toggle('hide', !show);
+      if (show) { it.classList.add('in'); if (!reduce) it.animate([{ opacity: 0, transform: 'translateY(24px) scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: (k++) * 45, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }); }
+    });
+  };
+  fb.forEach(b => b.addEventListener('click', () => setFilter(b.dataset.f)));
+  requestAnimationFrame(() => movePill(fb[0]));
+  document.fonts && document.fonts.ready.then(() => movePill($('.on', fw)));
+  addEventListener('resize', () => movePill($('.on', fw)));
+  $$('.cat').forEach(c => c.addEventListener('click', () => {
+    const g = c.dataset.go;
+    if (g === 'infantil') { send('Olá, Planeta Premium! Quero ver o que vocês têm de infantil (brinquedos e moda kids).'); return; }
+    $('#vitrine').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); setTimeout(() => setFilter(g), 350);
+  }));
+
+  /* bag */
+  let bag = [], mode = 'Entrega via Uber Flash';
+  const body = document.body, list = $('#drList'), sendBtn = $('#sendBag');
+  const openBag = () => body.classList.add('bag-open', 'lock');
+  const closeBag = () => body.classList.remove('bag-open', 'lock');
+  $('#bagBtn').addEventListener('click', openBag); fab.addEventListener('click', openBag);
+  $('#closeBag').addEventListener('click', closeBag); $('#scrim').addEventListener('click', closeBag);
+  addEventListener('keydown', e => e.key === 'Escape' && closeBag());
+  const render = () => {
+    const n = bag.length;
+    [$('#bagN'), $('#fabN')].forEach(el => { el.textContent = n; }); $('#bagN').classList.toggle('on', n > 0);
+    $('#drCount').textContent = n === 1 ? '1 peça' : `${n} peças`;
+    list.innerHTML = n ? bag.map(i => { const [img, name, cat] = P[i]; return `<div class="li"><img src="img/${img}.jpg" alt=""><div><b>${name}</b><small>${NAMES[cat]}</small></div><button data-rm="${i}" aria-label="Remover ${name}">✕</button></div>`; }).join('')
+      : '<div class="empty"><div>🪐</div>Sua sacola está vazia.<br>Toque em <b style="color:var(--cream)">Reservar</b> nas peças da vitrine.</div>';
+    sendBtn.setAttribute('aria-disabled', n ? 'false' : 'true');
+    $$('.add', grid).forEach(b => { const on = bag.includes(+b.dataset.i); b.classList.toggle('in', on); b.querySelector('span').textContent = on ? 'Reservado' : 'Reservar'; });
+    $('#sendNote').textContent = WHATSAPP ? 'Abre o WhatsApp com sua reserva pronta.' : 'Copiamos sua reserva e abrimos o Direct: é só colar e enviar.';
+    onScroll();
+  };
+  const flyToBag = img => {
+    if (reduce) return;
+    const r = img.getBoundingClientRect(), t = ($('#bagBtn').offsetParent ? $('#bagBtn') : fab).getBoundingClientRect();
+    const f = document.createElement('div'); f.className = 'fly'; f.innerHTML = `<img src="${img.src}" alt="">`;
+    Object.assign(f.style, { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' });
+    document.body.appendChild(f);
+    const dx = t.left + t.width / 2 - (r.left + r.width / 2), dy = t.top + t.height / 2 - (r.top + r.height / 2);
+    f.animate([{ transform: 'none', opacity: 1, borderRadius: '16px' }, { transform: `translate(${dx * .5}px,${dy * .5 - 80}px) scale(.45) rotate(-8deg)`, opacity: 1, offset: .5 }, { transform: `translate(${dx}px,${dy}px) scale(.08)`, opacity: .3, borderRadius: '50%' }], { duration: 850, easing: 'cubic-bezier(.5,0,.3,1)' }).onfinish = () => { f.remove(); $('#bagBtn').classList.remove('bump'); void $('#bagBtn').offsetWidth; $('#bagBtn').classList.add('bump'); };
+  };
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('.add'); if (!b) return;
+    const i = +b.dataset.i;
+    if (bag.includes(i)) { bag = bag.filter(x => x !== i); toast('Removido da sacola'); }
+    else { bag.push(i); flyToBag(b.closest('.ph').querySelector('img')); toast(`${P[i][1]} na sacola 🛍️`); }
+    render();
+  });
+  list.addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (!b) return; bag = bag.filter(x => x !== +b.dataset.rm); render(); });
+  $$('#seg button').forEach(b => b.addEventListener('click', () => { $$('#seg button').forEach(x => x.classList.toggle('on', x === b)); mode = b.dataset.v; }));
+  sendBtn.addEventListener('click', e => {
+    e.preventDefault(); if (!bag.length) return;
+    const nome = $('#nome').value.trim();
+    const msg = `Olá, Planeta Premium! 🪐 Quero reservar pelo site:\n\n${bag.map(i => `• ${P[i][1]}`).join('\n')}\n\nRecebimento: ${mode}${nome ? `\nNome: ${nome}` : ''}\n\nPodem confirmar tamanho, cor e valor?`;
+    send(msg);
+  });
+  render();
+
+  /* starfield */
+  const cv = $('#stars'), ctx = cv.getContext('2d'); let W, H, stars = [], shoot = null; const dpr = Math.min(2, devicePixelRatio || 1);
+  const size = () => { W = cv.offsetWidth; H = cv.offsetHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = Array.from({ length: Math.round(W * H / 5200) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.2 + .2, t: Math.random() * 6, s: Math.random() * .02 + .005, warm: Math.random() < .25 })); };
+  size(); addEventListener('resize', size);
+  let vis = true; new IntersectionObserver(([e]) => vis = e.isIntersecting).observe(cv);
+  let mx = 0, my = 0; addEventListener('mousemove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
+  const draw = () => {
+    if (vis) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) { s.t += s.s; const a = .35 + Math.sin(s.t) * .35; ctx.fillStyle = s.warm ? `rgba(255,190,120,${a})` : `rgba(255,255,255,${a})`; ctx.beginPath(); ctx.arc(s.x + mx * s.r * 14, s.y + my * s.r * 14, s.r, 0, 7); ctx.fill(); }
+      if (!shoot && Math.random() < .006) shoot = { x: Math.random() * W * .6 + W * .3, y: Math.random() * H * .3, l: 0 };
+      if (shoot) { shoot.l += 14; const x = shoot.x - shoot.l, y = shoot.y + shoot.l * .5; const g = ctx.createLinearGradient(x, y, x + 90, y - 45); g.addColorStop(0, 'rgba(255,200,140,.9)'); g.addColorStop(1, 'rgba(255,200,140,0)'); ctx.strokeStyle = g; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 90, y - 45); ctx.stroke(); if (shoot.l > 420) shoot = null; }
+    }
+    requestAnimationFrame(draw);
+  };
+  if (!reduce) draw();
+})();
+</script>
+</body>
+</html>
