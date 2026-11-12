@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PR Conecta</title>
+<meta name="description" content="PR Conecta: acessórios, eletrônicos, iPhone, variedades e produtos de limpeza com o melhor preço da Zona Sul. Candeias, Esquina Rosa. Fazemos entregas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+/* Conceito: "sempre conectado". Fundo noite azul, o robô da marca como mascote vivo,
+   azul-céu do logo como cor principal, rosa da Esquina Rosa como acento de localização,
+   dourado do "melhor preço" para ofertas. */
+:root{
+  --noite:#050b1a; --fundo:#081430; --cartao:#0d1d42; --cartao-2:#12275a; --linha:#1f3a78;
+  --gelo:#eaf4ff; --nevoa:#9db3d9; --ceu:#8fc6f5; --azul:#2d7bff; --azul-2:#1757d6;
+  --ouro:#ffcd38; --rosa:#ff5fa8; --zap:#25d366; --zap-esc:#0a3d1e;
+  --f-tit:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-txt:"Manrope","Segoe UI",system-ui,sans-serif;
+  --r:22px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--noite);color:var(--gelo);font:16px/1.6 var(--f-txt)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-tit);margin:0;line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(30px,5.2vw,58px);font-weight:900}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.in{max-width:1200px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+section{padding-block:clamp(72px,10vw,120px);position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:800 12px var(--f-txt);letter-spacing:.2em;text-transform:uppercase;color:var(--ceu)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.head{display:flex;flex-direction:column;gap:16px;max-width:760px;margin-bottom:48px}
+.head p{color:var(--nevoa);font-size:18px;max-width:60ch}
+.grad{background:linear-gradient(100deg,var(--ceu),#ffffff 45%,var(--ceu));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:brilho 6s linear infinite}
+@keyframes brilho{to{background-position:-200% 0}}
+
+/* botões */
+.btn{--c:var(--azul);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:0;font:800 15.5px var(--f-txt);text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;position:relative;isolation:isolate}
+.btn svg{width:21px;height:21px;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-zap{background:var(--zap);color:#04210f;box-shadow:0 10px 30px -8px rgba(37,211,102,.55)}
+.btn-zap::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:onda 2.2s infinite;z-index:-1}
+@keyframes onda{70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.btn-out{background:rgba(143,198,245,.08);color:var(--gelo);box-shadow:inset 0 0 0 1.5px var(--linha)}
+.btn-out:hover{box-shadow:inset 0 0 0 1.5px var(--ceu)}
+.btn-ouro{background:var(--ouro);color:#2a1d00}
+:focus-visible{outline:2.5px solid var(--ouro);outline-offset:3px}
+
+/* faixa Novembro Azul */
+.nov{background:linear-gradient(90deg,#0f3a8a,#2d7bff,#0f3a8a);color:#fff;font:700 13px var(--f-txt);text-align:center;padding:9px 16px;padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.nov b{font-weight:800}
+
+/* topo */
+.top{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(5,11,26,.72);border-bottom:1px solid rgba(31,58,120,.6)}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca svg{width:40px;height:40px}
+.marca b{font:900 17px var(--f-tit);letter-spacing:-.01em}
+.marca small{display:block;font:700 9.5px var(--f-txt);letter-spacing:.2em;color:var(--nevoa);text-transform:uppercase}
+.top nav{display:flex;gap:28px;font-weight:700;font-size:14.5px}
+.top nav a{text-decoration:none;color:var(--nevoa);transition:color .2s}
+.top nav a:hover{color:var(--gelo)}
+.top .btn{min-height:44px;padding:0 18px;font-size:14px;white-space:nowrap}
+@media (max-width:480px){.marca small{display:none}.marca b{font-size:15px}.top .btn{padding:0 14px}}
+@media (max-width:900px){.top nav{display:none}}
+
+/* hero */
+.hero{padding-top:clamp(40px,7vw,90px);padding-bottom:clamp(60px,8vw,100px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:900px;height:900px;background:radial-gradient(closest-side,rgba(45,123,255,.35),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -20%;width:700px;height:700px;background:radial-gradient(closest-side,rgba(255,95,168,.16),transparent 70%);pointer-events:none}
+.grade-fundo{position:absolute;inset:0;background-image:linear-gradient(rgba(143,198,245,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(143,198,245,.06) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 70%);pointer-events:none}
+.hero .in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
+.selo{display:inline-flex;align-items:center;gap:10px;background:rgba(255,205,56,.1);border:1px solid rgba(255,205,56,.35);color:var(--ouro);padding:8px 14px 8px 8px;border-radius:999px;font:800 13px var(--f-txt);letter-spacing:.04em}
+.selo i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ouro);color:#2a1d00;font-style:normal;font-size:14px}
+.hero h1{font-size:clamp(36px,5.4vw,70px);font-weight:900;margin:22px 0 22px}
+.hero h1 .rosa{color:var(--rosa);position:relative;white-space:nowrap}
+.hero h1 .rosa svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.3em;overflow:visible}
+.hero h1 .rosa path{stroke-dasharray:400;stroke-dashoffset:400;animation:risco 1.2s .9s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes risco{to{stroke-dashoffset:0}}
+.hero .sub{font-size:clamp(17px,1.8vw,20px);color:var(--nevoa);max-width:36ch}
+.hero .sub b{color:var(--gelo)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.prova{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:14px;color:var(--nevoa)}
+.avatares{display:flex}
+.avatares span{width:38px;height:38px;border-radius:50%;border:2.5px solid var(--noite);margin-left:-10px;display:grid;place-items:center;font:800 13px var(--f-txt);color:#fff;overflow:hidden;background-size:cover;background-position:center}
+.avatares span:first-child{margin-left:0}
+.prova b{color:var(--gelo)}
+
+/* mascote */
+.palco{position:relative;aspect-ratio:1;max-width:520px;width:100%;margin-inline:auto}
+.anel{position:absolute;inset:8%;border-radius:50%;border:1.5px dashed rgba(143,198,245,.25);animation:gira 40s linear infinite}
+.anel.b{inset:-2%;border-style:solid;border-color:rgba(143,198,245,.08);animation-duration:70s;animation-direction:reverse}
+@keyframes gira{to{transform:rotate(360deg)}}
+.halo{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 40% 35%,#cfe7ff,#8fc6f5 40%,#2d7bff 75%,#0b3c9e);box-shadow:0 0 120px rgba(45,123,255,.55),inset 0 -30px 60px rgba(5,11,26,.35)}
+.robo{position:absolute;left:20%;top:17%;width:60%;height:60%;overflow:visible;animation:flutua 5s ease-in-out infinite}
+@keyframes flutua{50%{transform:translateY(-14px) rotate(-2deg)}}
+.robo .olho-d{transform-origin:center;transform-box:fill-box;animation:pisca 4.5s infinite}
+@keyframes pisca{0%,44%,50%,100%{transform:scaleY(1)}47%{transform:scaleY(.1)}}
+.robo .antena{transform-box:fill-box;transform-origin:center;animation:luz 1.6s ease-in-out infinite}
+@keyframes luz{50%{fill:#ffcd38;filter:drop-shadow(0 0 6px #ffcd38)}}
+.robo .onda{animation:som 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:left center}
+.robo .onda:nth-of-type(2){animation-delay:.2s}.robo .onda:nth-of-type(3){animation-delay:.4s}
+@keyframes som{50%{opacity:.25;transform:translateX(4px)}}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(13,29,66,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--linha);padding:9px 14px 9px 10px;border-radius:14px;font:800 13px var(--f-txt);white-space:nowrap;box-shadow:0 14px 30px -12px rgba(0,0,0,.6);animation:flutua 6s ease-in-out infinite}
+.chip i{font-style:normal;font-size:18px}
+.chip small{display:block;font-weight:600;font-size:11px;color:var(--nevoa)}
+.c1{top:6%;left:-2%;animation-delay:-1s}
+.c2{top:18%;right:-4%;animation-delay:-2.5s}
+.c3{bottom:20%;left:-6%;animation-delay:-3.5s}
+.c4{bottom:4%;right:4%;animation-delay:-.5s;border-color:rgba(255,205,56,.5)}
+.c4 b{color:var(--ouro)}
+@media (max-width:900px){
+  .hero .in{grid-template-columns:1fr}
+  .palco{max-width:340px}
+  .c1{left:0}.c3{left:0}.c2{right:0}
+}
+
+/* letreiro */
+.letreiro{background:var(--azul);color:#fff;overflow:hidden;padding:16px 0;transform:rotate(-1.5deg);margin:0 -20px;box-shadow:0 20px 60px -20px rgba(45,123,255,.6);position:relative;z-index:3}
+.letreiro .trilho{display:flex;gap:42px;width:max-content;animation:corre 32s linear infinite}
+.letreiro span{font:900 clamp(18px,2.4vw,26px) var(--f-tit);text-transform:uppercase;display:flex;align-items:center;gap:42px;white-space:nowrap}
+.letreiro span::after{content:"✦";color:var(--ouro);font-size:.8em}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* números */
+.numeros{padding-block:80px 40px}
+.numeros .in{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.num{background:linear-gradient(180deg,var(--cartao),rgba(13,29,66,.4));border:1px solid var(--linha);border-radius:var(--r);padding:26px 22px}
+.num strong{display:block;font:900 clamp(30px,4vw,44px) var(--f-tit);letter-spacing:-.03em}
+.num span{color:var(--nevoa);font-size:14.5px;font-weight:600}
+.num:nth-child(3) strong{color:var(--ouro)}
+.num:nth-child(4) strong{color:var(--rosa)}
+@media (max-width:820px){.numeros .in{grid-template-columns:1fr 1fr}}
+
+/* categorias / bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(150px,auto);gap:16px}
+.cat{position:relative;overflow:hidden;border-radius:var(--r);background:var(--cartao);border:1px solid var(--linha);padding:24px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:220px;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.cat:hover{transform:translateY(-6px);border-color:var(--ceu)}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.cat:hover img{transform:scale(1.06)}
+.cat.foto::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,26,.96) 8%,rgba(5,11,26,.55) 45%,rgba(5,11,26,0) 75%);z-index:1}
+.cat > *:not(img){position:relative;z-index:2}
+.cat .ico{font-size:34px;line-height:1;margin-bottom:auto}
+.cat p{color:var(--nevoa);font-size:14.5px}
+.cat .add{align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;gap:6px;background:rgba(143,198,245,.12);border:1px solid rgba(143,198,245,.3);color:var(--gelo);font:800 13px var(--f-txt);padding:9px 14px;border-radius:999px;cursor:pointer;transition:background .2s}
+.cat .add:hover{background:rgba(143,198,245,.25)}
+.cat .add.on{background:var(--zap);color:#04210f;border-color:var(--zap)}
+.a{grid-column:span 3;grid-row:span 2;min-height:440px}
+.b{grid-column:span 3}
+.c{grid-column:span 3}
+.d{grid-column:span 2}
+.e{grid-column:span 2}
+.f{grid-column:span 2}
+.cat.liso{background:radial-gradient(circle at 100% 0%,rgba(45,123,255,.35),transparent 60%),var(--cartao)}
+.cat.limpeza{background:radial-gradient(circle at 100% 0%,rgba(143,198,245,.25),transparent 60%),var(--cartao)}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.a{grid-column:span 2;min-height:380px}.b,.c{grid-column:span 2;min-height:240px}.d,.e,.f{grid-column:span 1}}
+@media (max-width:520px){.d,.e,.f{grid-column:span 2;min-height:180px}}
+
+/* iPhone */
+.iphone{background:linear-gradient(180deg,var(--noite),var(--fundo) 30%,var(--fundo) 70%,var(--noite))}
+.iphone .in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.vitrine{position:relative;height:540px;perspective:1200px}
+.tela{position:absolute;width:52%;aspect-ratio:9/15;border-radius:28px;overflow:hidden;border:6px solid #0b142b;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px var(--linha);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tela img{width:100%;height:100%;object-fit:cover}
+.t1{left:0;top:40px;transform:rotate(-8deg);z-index:1}
+.t2{left:24%;top:0;z-index:3;transform:translateZ(40px)}
+.t3{right:0;top:60px;transform:rotate(8deg);z-index:2}
+.vitrine:hover .t1{transform:rotate(-12deg) translateX(-14px)}
+.vitrine:hover .t3{transform:rotate(12deg) translateX(14px)}
+.lista{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.lista li{display:flex;gap:14px;align-items:flex-start;font-size:16.5px}
+.lista li::before{content:"";flex:none;width:24px;height:24px;margin-top:2px;border-radius:50%;background:var(--zap) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2304210f' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/15px no-repeat}
+.lista b{color:var(--gelo)}
+.lista span{color:var(--nevoa)}
+.aviso{margin-top:26px;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ouro);font-weight:700}
+.aviso i{width:10px;height:10px;border-radius:50%;background:var(--ouro);box-shadow:0 0 0 0 rgba(255,205,56,.7);animation:ponto 1.6s infinite}
+@keyframes ponto{70%{box-shadow:0 0 0 10px rgba(255,205,56,0)}100%{box-shadow:0 0 0 0 rgba(255,205,56,0)}}
+@media (max-width:900px){.iphone .in{grid-template-columns:1fr}.vitrine{height:min(118vw,480px)}}
+
+/* oferta */
+.oferta{border-radius:32px;overflow:hidden;position:relative;background:linear-gradient(120deg,#ffcd38,#ffb21e);color:#2a1d00;display:grid;grid-template-columns:1.2fr 1fr;align-items:center}
+.oferta .txt{padding:clamp(28px,5vw,60px);display:flex;flex-direction:column;gap:18px}
+.oferta .tag{align-self:flex-start;background:#2a1d00;color:var(--ouro);font:800 12px var(--f-txt);letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+.oferta h2{color:#1a1200}
+.preco{display:flex;align-items:baseline;gap:6px;font-family:var(--f-tit);font-weight:900}
+.preco small{font-size:22px}
+.preco strong{font-size:clamp(64px,10vw,112px);letter-spacing:-.05em;line-height:.9}
+.preco em{font-style:normal;font-size:clamp(28px,4vw,44px)}
+.relogio{display:flex;gap:10px;flex-wrap:wrap}
+.relogio div{background:#2a1d00;color:#fff;border-radius:14px;padding:10px 12px;min-width:68px;text-align:center}
+.relogio b{display:block;font:900 26px var(--f-tit);font-variant-numeric:tabular-nums}
+.relogio span{font:700 11px var(--f-txt);letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
+.oferta .btn-escuro{background:#2a1d00;color:#fff;align-self:flex-start}
+.resma{position:relative;height:100%;min-height:340px;display:grid;place-items:center;padding:30px}
+.resma .pilha{position:relative;width:min(260px,70%);aspect-ratio:3/4;animation:flutua 5s ease-in-out infinite}
+.resma .folha{position:absolute;inset:0;border-radius:14px;background:linear-gradient(160deg,#0f6b3a,#16a35a);box-shadow:0 30px 60px -20px rgba(42,29,0,.55);display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:#fff}
+.resma .folha:nth-child(1){transform:rotate(-9deg) translate(-18px,10px);opacity:.55}
+.resma .folha:nth-child(2){transform:rotate(-4deg) translate(-8px,4px);opacity:.8}
+.resma .folha b{font:900 64px/1 var(--f-tit)}
+.resma .folha span{font:800 13px var(--f-txt);letter-spacing:.14em;text-transform:uppercase}
+.resma .folha small{font:600 12px var(--f-txt);opacity:.85}
+.resma .estrela{position:absolute;top:8%;right:8%;width:110px;height:110px;display:grid;place-items:center;text-align:center;font:900 15px/1.05 var(--f-tit);color:#fff;background:var(--rosa);clip-path:polygon(50% 0,61% 13%,77% 6%,80% 23%,96% 26%,90% 42%,100% 55%,87% 65%,91% 82%,74% 83%,66% 98%,50% 89%,34% 98%,26% 83%,9% 82%,13% 65%,0 55%,10% 42%,4% 26%,20% 23%,23% 6%,39% 13%);animation:gira 18s linear infinite}
+.resma .estrela span{animation:gira 18s linear infinite reverse;display:block}
+@media (max-width:860px){.oferta{grid-template-columns:1fr}.resma{min-height:300px}}
+
+/* porquê */
+.motivos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.motivo{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,border-color .3s}
+.motivo:hover{transform:translateY(-4px);border-color:var(--ceu)}
+.motivo .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(45,123,255,.15);color:var(--ceu)}
+.motivo .ic svg{width:26px;height:26px}
+.motivo p{color:var(--nevoa);font-size:15px}
+@media (max-width:960px){.motivos{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.motivos{grid-template-columns:1fr}}
+
+.compara{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;border:1px solid var(--linha)}
+.compara > div{padding:30px 28px}
+.compara h3{margin-bottom:18px;font-size:17px}
+.compara ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15.5px}
+.compara li{display:flex;gap:10px}
+.compara .ruim{background:rgba(13,29,66,.45);color:var(--nevoa)}
+.compara .ruim li::before{content:"✕";color:#ff7b7b;font-weight:800}
+.compara .bom{background:linear-gradient(140deg,var(--azul-2),var(--azul));color:#fff}
+.compara .bom li::before{content:"✓";color:var(--ouro);font-weight:900}
+@media (max-width:700px){.compara{grid-template-columns:1fr}}
+
+/* equipe */
+.equipe .in{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fotos figure{margin:0;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:3/4;border:1px solid var(--linha)}
+.fotos figure:nth-child(2){transform:translateY(40px)}
+.fotos img{width:100%;height:100%;object-fit:cover}
+.fotos figcaption{position:absolute;left:10px;bottom:10px;background:rgba(5,11,26,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 11px;border-radius:999px;font:700 12.5px var(--f-txt)}
+.citacao{font:700 clamp(22px,2.6vw,30px)/1.3 var(--f-tit);letter-spacing:-.02em;margin-top:22px}
+.citacao span{color:var(--ceu)}
+@media (max-width:900px){.equipe .in{grid-template-columns:1fr}.fotos{max-width:460px}}
+
+/* comunidade */
+.comunidade{background:radial-gradient(ellipse at 50% 0%,rgba(45,123,255,.18),transparent 60%)}
+.selos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sel{border-radius:var(--r);padding:26px 22px;border:1px solid var(--linha);background:var(--cartao);display:flex;flex-direction:column;gap:10px;min-height:190px}
+.sel .emo{font-size:30px}
+.sel p{color:var(--nevoa);font-size:14.5px}
+.sel.azul{background:linear-gradient(160deg,#0f3a8a,#163f99);border-color:#2d5fc4}
+@media (max-width:960px){.selos{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.selos{grid-template-columns:1fr}}
+
+/* pedido */
+.pedido{background:var(--fundo)}
+.pedido .in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.form{background:var(--cartao);border:1px solid var(--linha);border-radius:28px;padding:clamp(22px,4vw,36px);display:flex;flex-direction:column;gap:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.form label,.form legend{font:800 13px var(--f-txt);letter-spacing:.08em;text-transform:uppercase;color:var(--ceu);display:block;margin-bottom:10px}
+.form fieldset{border:0;padding:0;margin:0}
+.itens{display:flex;flex-wrap:wrap;gap:8px}
+.itens button{font:700 14px var(--f-txt);color:var(--gelo);background:rgba(143,198,245,.06);border:1.5px solid var(--linha);padding:9px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.itens button:hover{border-color:var(--ceu)}
+.itens button[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.itens button[aria-pressed="true"]::before{content:"✓ "}
+.form input,.form textarea{width:100%;font:500 16px var(--f-txt);color:var(--gelo);background:var(--noite);border:1.5px solid var(--linha);border-radius:14px;padding:14px 16px;transition:border-color .2s}
+.form input:focus,.form textarea:focus{border-color:var(--ceu);outline:none}
+.form textarea{resize:vertical;min-height:80px}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.modo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modo input{position:absolute;opacity:0;pointer-events:none}
+.modo label{margin:0;text-transform:none;letter-spacing:0;font:800 15px var(--f-txt);color:var(--gelo);border:1.5px solid var(--linha);border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .2s}
+.modo input:checked + label{border-color:var(--zap);background:rgba(37,211,102,.12)}
+.modo input:focus-visible + label{outline:2.5px solid var(--ouro);outline-offset:3px}
+.previa{background:var(--noite);border:1px dashed var(--linha);border-radius:14px;padding:14px 16px;font:500 14px/1.55 ui-monospace,Menlo,monospace;color:var(--nevoa);white-space:pre-wrap;min-height:90px}
+.form .btn{width:100%}
+.passos{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:20px;counter-reset:p}
+.passos li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.passos li::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--cartao-2);border:1px solid var(--linha);font:900 20px var(--f-tit);color:var(--ceu)}
+.passos b{display:block;font-size:17px}
+.passos span{color:var(--nevoa);font-size:15px}
+@media (max-width:900px){.pedido .in{grid-template-columns:1fr}}
+@media (max-width:460px){.duas{grid-template-columns:1fr}}
+
+/* local */
+.local .in{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mapa{position:relative;border-radius:28px;overflow:hidden;min-height:380px;background:#0a1836;border:1px solid var(--linha)}
+.mapa svg{position:absolute;inset:0;width:100%;height:100%}
+.pino{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.pino .bal{background:var(--rosa);color:#fff;font:800 14px var(--f-txt);padding:10px 14px;border-radius:14px;white-space:nowrap;box-shadow:0 12px 30px -8px rgba(255,95,168,.7);animation:pula 2s ease-in-out infinite}
+@keyframes pula{50%{transform:translateY(-8px)}}
+.pino .pt{width:18px;height:18px;border-radius:50%;background:var(--rosa);border:3px solid #fff;box-shadow:0 0 0 0 rgba(255,95,168,.7);animation:ponto 1.8s infinite}
+.info{background:var(--cartao);border:1px solid var(--linha);border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:20px;justify-content:center}
+.info dl{margin:0;display:grid;gap:16px}
+.info dt{font:800 12px var(--f-txt);letter-spacing:.16em;text-transform:uppercase;color:var(--ceu)}
+.info dd{margin:2px 0 0;font-size:18px;font-weight:700}
+.info .btns{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:860px){.local .in{grid-template-columns:1fr}.mapa{min-height:300px}}
+
+/* faq */
+.faq .in{max-width:860px}
+details{border-bottom:1px solid var(--linha)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font:700 clamp(16px,2vw,19px) var(--f-tit);letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--cartao);border:1px solid var(--linha);font:500 22px var(--f-txt);color:var(--ceu);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--nevoa);max-width:64ch}
+
+/* final */
+.final{text-align:center;overflow:hidden}
+.final .in{display:flex;flex-direction:column;align-items:center;gap:24px}
+.final h2{font-size:clamp(34px,6.4vw,76px);max-width:15ch}
+.final p{color:var(--nevoa);font-size:18px;max-width:46ch}
+.final .robo-mini{width:120px;height:120px;overflow:visible;animation:flutua 4s ease-in-out infinite}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(45,123,255,.28),transparent 70%);pointer-events:none}
+
+footer{border-top:1px solid var(--linha);padding:32px 0 calc(110px + env(safe-area-inset-bottom,0px));color:var(--nevoa);font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
+
+/* botão flutuante */
+.flut{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:10px;background:var(--zap);color:#04210f;text-decoration:none;font:800 15px var(--f-txt);padding:0 20px 0 16px;height:58px;border-radius:999px;box-shadow:0 16px 40px -10px rgba(37,211,102,.6);transform:translateY(120px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.flut.on{transform:none}
+.flut svg{width:26px;height:26px}
+.flut .cont{display:none;min-width:24px;height:24px;border-radius:12px;background:#04210f;color:var(--zap);font-size:13px;place-items:center;padding:0 6px}
+.flut .cont.tem{display:grid}
+.flut::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:onda 2.2s infinite;box-shadow:0 0 0 0 rgba(37,211,102,.6);z-index:-1}
+
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;z-index:70;background:var(--gelo);color:var(--noite);font:800 14px var(--f-txt);padding:12px 18px;border-radius:999px;box-shadow:0 16px 40px -10px rgba(0,0,0,.6);transition:all .35s cubic-bezier(.2,.8,.2,1);pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* revelação ao rolar */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .rosa path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<!-- símbolo do robô, reaproveitado no topo, no hero e no fim -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="robo" viewBox="0 0 200 200">
+      <line x1="100" y1="22" x2="100" y2="48" stroke="#0a0f1f" stroke-width="7" stroke-linecap="round"/>
+      <circle class="antena" cx="100" cy="18" r="11" fill="#0a0f1f"/>
+      <rect x="22" y="78" width="20" height="54" rx="9" fill="#0a0f1f"/>
+      <rect x="158" y="78" width="20" height="54" rx="9" fill="#0a0f1f"/>
+      <rect x="34" y="46" width="132" height="118" rx="30" fill="#9fd0fa" stroke="#0a0f1f" stroke-width="8"/>
+      <circle cx="74" cy="96" r="12" fill="#0a0f1f"/>
+      <path class="olho-d" d="M114 98 q14 -18 28 0" fill="none" stroke="#0a0f1f" stroke-width="8" stroke-linecap="round"/>
+      <path d="M72 122 q28 22 56 0" fill="none" stroke="#0a0f1f" stroke-width="8" stroke-linecap="round"/>
+      <path d="M64 144 q9 -9 18 0 q9 9 18 0 q9 -9 18 0 q9 9 18 0" fill="none" stroke="#0a0f1f" stroke-width="6" stroke-linecap="round"/>
+      <path class="onda" d="M176 46 l12 -10" stroke="#2d7bff" stroke-width="7" stroke-linecap="round"/>
+      <path class="onda" d="M182 62 l15 -4" stroke="#2d7bff" stroke-width="7" stroke-linecap="round"/>
+      <path class="onda" d="M182 80 l15 3" stroke="#2d7bff" stroke-width="7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.98 1.37-.5.05-1.13.22-3.74-.8-3.14-1.24-5.12-4.45-5.28-4.66-.15-.2-1.25-1.67-1.25-3.19 0-1.52.8-2.26 1.08-2.57.28-.31.62-.39.82-.39h.59c.19 0 .45-.07.7.53.25.62.86 2.14.94 2.29.08.15.13.34.03.54-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.18.31.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.08.18-.2.77-.9.98-1.21.2-.31.41-.26.69-.15.28.1 1.79.84 2.1 1 .31.15.51.23.59.36.08.13.08.74-.17 1.44Z"/></symbol>
+  </defs>
+</svg>
+
+<div class="nov">💙 <b>Novembro Azul</b> · Homem também se cuida. Faça o exame, previna-se contra o câncer de próstata.</div>
+
+<header class="top">
+  <div class="in">
+    <a class="marca" href="#topo" aria-label="PR Conecta, início">
+      <svg aria-hidden="true"><use href="#robo"/></svg>
+      <span><b>PR CONECTA</b><small>Acessórios e variedades</small></span>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#produtos">Produtos</a>
+      <a href="#iphone">iPhone</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#pedido">Fazer pedido</a>
+      <a href="#onde">Onde fica</a>
+    </nav>
+    <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero fazer um pedido."><svg aria-hidden="true"><use href="#zap"/></svg>Pedir agora</a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grade-fundo" aria-hidden="true"></div>
+  <div class="in">
+    <div>
+      <span class="selo rv"><i>🥇</i>O melhor preço da Zona Sul</span>
+      <h1 class="rv d1">Do carregador ao iPhone, tá tudo na <span class="rosa">Esquina Rosa<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 2, 200 2, 297 12" fill="none" stroke="#ff5fa8" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
+      <p class="sub rv d2">Acessórios, eletrônicos, iPhone, games, presentes e produtos de limpeza <b>num lugar só, em Candeias</b>. Não quer sair de casa? <b>A gente entrega.</b></p>
+      <div class="cta rv d3">
+        <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero saber o preço de um produto."><svg aria-hidden="true"><use href="#zap"/></svg>Consultar preço no WhatsApp</a>
+        <a class="btn btn-out" href="#produtos">Ver o que tem na loja ↓</a>
+      </div>
+      <div class="prova rv d4">
+        <div class="avatares" aria-hidden="true">
+          <span style="background-image:url({{dono}})"></span>
+          <span style="background-image:url({{iphone-vendedora}})"></span>
+          <span style="background:#2d7bff">+35</span>
+        </div>
+        <p><b>1.863 vizinhos</b> acompanham as ofertas, incluindo barbearias e lojas da região.</p>
+      </div>
+    </div>
+
+    <div class="palco" aria-hidden="true">
+      <div class="anel b"></div>
+      <div class="anel"></div>
+      <div class="halo"></div>
+      <svg class="robo"><use href="#robo"/></svg>
+      <div class="chip c1"><i>🎧</i><span>Fones e caixas<small>com e sem fio</small></span></div>
+      <div class="chip c2"><i>📱</i><span>iPhone<small>pergunte os modelos</small></span></div>
+      <div class="chip c3"><i>🧴</i><span>Limpeza<small>galões de 5 litros</small></span></div>
+      <div class="chip c4"><i>🚚</i><span><b>Fazemos entregas</b><small>chama no zap</small></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="letreiro" aria-hidden="true">
+  <div class="trilho">
+    <span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Games</span><span>Utilidades</span><span>Limpeza</span><span>Papelaria</span><span>Presentes</span>
+    <span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Games</span><span>Utilidades</span><span>Limpeza</span><span>Papelaria</span><span>Presentes</span>
+  </div>
+</div>
+
+<!-- NÚMEROS -->
+<section class="numeros" aria-label="PR Conecta em números">
+  <div class="in">
+    <div class="num rv"><strong data-conta="1863">0</strong><span>pessoas seguindo as ofertas</span></div>
+    <div class="num rv d1"><strong data-conta="330">0</strong><span>posts mostrando produto e preço</span></div>
+    <div class="num rv d2"><strong data-conta="8751">0</strong><span>visualizações em um único vídeo</span></div>
+    <div class="num rv d3"><strong>1 parada</strong><span>pra resolver tudo, sem ir pro centro</span></div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos">
+  <div class="in">
+    <div class="head rv">
+      <span class="eyebrow">O que tem na loja</span>
+      <h2>Precisou? <span class="grad">Tem aqui.</span></h2>
+      <p>Toque em <b>"Quero esse"</b> nos itens que você procura. A gente monta a lista e você manda tudo de uma vez no WhatsApp.</p>
+    </div>
+
+    <div class="bento">
+      <article class="cat foto a rv">
+        <img src="{{iphone-rosa}}" alt="iPhone rosa na mão de uma cliente" loading="lazy">
+        <h3>iPhone</h3>
+        <p>Do modelo que cabe no bolso ao 17 Pro Max. Pergunte o que chegou e o valor de hoje.</p>
+        <button class="add" data-item="iPhone">+ Quero esse</button>
+      </article>
+      <article class="cat foto b rv d1">
+        <img src="{{dono}}" alt="Atendente da PR Conecta em frente à parede de fones e caixas de som" loading="lazy" style="object-position:50% 20%">
+        <h3>Acessórios e eletrônicos</h3>
+        <p>Fones, caixas de som, carregadores, cabos, capinhas e películas.</p>
+        <button class="add" data-item="Acessórios para celular">+ Quero esse</button>
+      </article>
+      <article class="cat foto c rv d2">
+        <img src="{{sabao}}" alt="Galão de 5 litros de sabão líquido" loading="lazy" style="object-position:50% 100%">
+        <h3>Produtos de limpeza</h3>
+        <p>Sabão líquido em galão de 5 litros, em várias fragrâncias. Rende o mês todo.</p>
+        <button class="add" data-item="Produtos de limpeza">+ Quero esse</button>
+      </article>
+      <article class="cat liso d rv">
+        <span class="ico" aria-hidden="true">🎮</span>
+        <h3>Games</h3>
+        <p>Controles e acessórios pra jogar.</p>
+        <button class="add" data-item="Games">+ Quero esse</button>
+      </article>
+      <article class="cat limpeza e rv d1">
+        <span class="ico" aria-hidden="true">📄</span>
+        <h3>Papelaria</h3>
+        <p>Resma de papel A4 e o básico do escritório.</p>
+        <button class="add" data-item="Resma de papel A4">+ Quero esse</button>
+      </article>
+      <article class="cat liso f rv d2">
+        <span class="ico" aria-hidden="true">🎁</span>
+        <h3>Presentes e utilidades</h3>
+        <p>Aquela lembrança de última hora, resolvida.</p>
+        <button class="add" data-item="Presentes e utilidades">+ Quero esse</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- IPHONE -->
+<section id="iphone" class="iphone">
+  <div class="in">
+    <div class="vitrine rv" aria-hidden="true">
+      <div class="tela t1"><img src="{{iphone-vendedora}}" alt="" loading="lazy" style="object-position:50% 30%"></div>
+      <div class="tela t2"><img src="{{iphone17}}" alt="" loading="lazy"></div>
+      <div class="tela t3"><img src="{{iphone-rosa}}" alt="" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="head rv" style="margin-bottom:0">
+        <span class="eyebrow">Tá procurando iPhone?</span>
+        <h2>O celular que você queria, <span class="grad">sem pagar preço de shopping.</span></h2>
+        <p>Você vê o aparelho de perto, tira as dúvidas com quem entende e sai com ele na mão. Ou recebe em casa.</p>
+      </div>
+      <ul class="lista rv d1">
+        <li><div><b>Veja antes de comprar.</b> <span>Vem na loja, pega na mão, confere tudo.</span></div></li>
+        <li><div><b>Atendimento de gente daqui.</b> <span>Sem robô de central, sem fila de SAC.</span></div></li>
+        <li><div><b>Já sai com tudo.</b> <span>Capinha, película e carregador no mesmo lugar.</span></div></li>
+      </ul>
+      <div class="cta rv d2">
+        <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site. Quais modelos de iPhone vocês têm hoje e qual o valor?"><svg aria-hidden="true"><use href="#zap"/></svg>Ver modelos e valores de hoje</a>
+      </div>
+      <p class="aviso rv d3"><i aria-hidden="true"></i>Os modelos mudam toda semana. Pergunte o que chegou antes que acabe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="in">
+    <div class="oferta rv">
+      <div class="txt">
+        <span class="tag">Oferta da semana</span>
+        <h2>Resma de papel A4 Report</h2>
+        <div class="preco" aria-label="29 reais e 99 centavos"><small>R$</small><strong>29</strong><em>,99</em></div>
+        <p style="font-weight:700;max-width:40ch">Papel A4 Report de 75 g/m². Pra escola, escritório e impressão de casa, por um preço difícil de achar por aí.</p>
+        <div>
+          <p style="font:800 12px var(--f-txt);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px">As ofertas desta semana acabam em</p>
+          <div class="relogio" id="relogio" aria-live="off">
+            <div><b data-u="d">0</b><span>dias</span></div>
+            <div><b data-u="h">00</b><span>horas</span></div>
+            <div><b data-u="m">00</b><span>min</span></div>
+            <div><b data-u="s">00</b><span>seg</span></div>
+          </div>
+        </div>
+        <a class="btn btn-escuro js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero a resma de papel A4 por R$ 29,99. Ainda tem?"><svg aria-hidden="true"><use href="#zap"/></svg>Garantir a minha</a>
+      </div>
+      <div class="resma" aria-hidden="true">
+        <div class="pilha">
+          <div class="folha"></div>
+          <div class="folha"></div>
+          <div class="folha"><span>Report</span><b>A4</b><small>210 × 297 mm · 75 g/m²</small></div>
+        </div>
+        <div class="estrela"><span>SÓ<br>R$ 29,99</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE -->
+<section id="porque">
+  <div class="in">
+    <div class="head rv">
+      <span class="eyebrow">Por que comprar aqui</span>
+      <h2>Mais perto, mais barato <span class="grad">e com cara de vizinho.</span></h2>
+    </div>
+    <div class="motivos">
+      <div class="motivo rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
+        <h3>O melhor preço da Zona Sul</h3>
+        <p>Achou mais barato? Manda o print no zap e conversa com a gente.</p>
+      </div>
+      <div class="motivo rv d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
+        <h3>Fazemos entregas</h3>
+        <p>Pediu pelo WhatsApp, recebe em casa. Sem pegar ônibus, sem perder tempo.</p>
+      </div>
+      <div class="motivo rv d2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span>
+        <h3>Tudo num lugar só</h3>
+        <p>Do fone ao sabão, do papel ao presente. Uma parada resolve a lista inteira.</p>
+      </div>
+      <div class="motivo rv d3">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Resposta de gente</h3>
+        <p>Quem atende o zap é quem está no balcão. Você pergunta, a gente responde.</p>
+      </div>
+    </div>
+
+    <div class="compara rv">
+      <div class="ruim">
+        <h3>Ir pro shopping ou pro centro</h3>
+        <ul>
+          <li>Ônibus, estacionamento e trânsito</li>
+          <li>Uma loja pra cada coisa</li>
+          <li>Preço de vitrine de shopping</li>
+          <li>Atendente que você nunca mais vê</li>
+        </ul>
+      </div>
+      <div class="bom">
+        <h3>Comprar na PR Conecta</h3>
+        <ul>
+          <li>Aqui em Candeias, ou entregue na sua porta</li>
+          <li>Tudo numa loja só</li>
+          <li>O melhor preço da Zona Sul</li>
+          <li>Gente do bairro, que você encontra de novo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe">
+  <div class="in">
+    <div class="fotos rv">
+      <figure><img src="{{dono}}" alt="Atendente da PR Conecta sorrindo na loja" loading="lazy" style="object-position:50% 15%"><figcaption>No balcão</figcaption></figure>
+      <figure><img src="{{iphone-vendedora}}" alt="Vendedora da PR Conecta mostrando um iPhone" loading="lazy" style="object-position:50% 20%"><figcaption>Nas ofertas</figcaption></figure>
+    </div>
+    <div>
+      <div class="head rv" style="margin-bottom:0">
+        <span class="eyebrow">Quem atende você</span>
+        <h2>Loja de bairro, <span class="grad">atendimento de gente.</span></h2>
+        <p>A PR Conecta é feita por gente da Zona Sul que mostra a cara no Instagram todo dia. A mesma pessoa que posta a oferta é a que te atende no balcão e responde o seu WhatsApp.</p>
+      </div>
+      <p class="citacao rv d1">“O nosso lema é simples: <span>sempre conectado com você.</span>”</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDADE -->
+<section class="comunidade">
+  <div class="in">
+    <div class="head rv">
+      <span class="eyebrow">Na comunidade</span>
+      <h2>A gente não só vende aqui. <span class="grad">A gente vive aqui.</span></h2>
+      <p>Quando o bairro se junta, a PR Conecta está junto, de patrocinador oficial a parceiro de ação social.</p>
+    </div>
+    <div class="selos">
+      <div class="sel rv"><span class="emo" aria-hidden="true">🎤</span><h3>Patrocinador oficial</h3><p>Apoio a eventos e festas de quem movimenta a cultura da região.</p></div>
+      <div class="sel rv d1"><span class="emo" aria-hidden="true">🤝</span><h3>Ação social</h3><p>Parceria em ações que levam ajuda pra quem mais precisa.</p></div>
+      <div class="sel rv d2"><span class="emo" aria-hidden="true">🥋</span><h3>Esporte local</h3><p>Do treino ao pódio, torcendo pelos atletas da Zona Sul.</p></div>
+      <div class="sel azul rv d3"><span class="emo" aria-hidden="true">💙</span><h3>Novembro Azul</h3><p>Homem também se cuida. Faça o exame e cuide de quem você ama.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEDIDO -->
+<section id="pedido" class="pedido">
+  <div class="in">
+    <div>
+      <div class="head rv" style="margin-bottom:0">
+        <span class="eyebrow">Pedido em 30 segundos</span>
+        <h2>Monte sua lista. <span class="grad">A gente separa.</span></h2>
+        <p>Marque o que você precisa, diga se vai buscar ou receber em casa, e a mensagem já vai pronta pro nosso WhatsApp.</p>
+      </div>
+      <ol class="passos rv d1">
+        <li><div><b>Escolha os itens</b><span>Marque as categorias ou escreva o produto.</span></div></li>
+        <li><div><b>Entrega ou retirada</b><span>Recebe em casa ou passa na Esquina Rosa.</span></div></li>
+        <li><div><b>Envie no WhatsApp</b><span>A gente confirma preço, estoque e entrega na hora.</span></div></li>
+      </ol>
+    </div>
+
+    <form class="form rv d2" id="form" novalidate>
+      <fieldset>
+        <legend>O que você precisa?</legend>
+        <div class="itens" id="itens">
+          <button type="button" data-item="iPhone" aria-pressed="false">iPhone</button>
+          <button type="button" data-item="Acessórios para celular" aria-pressed="false">Acessórios para celular</button>
+          <button type="button" data-item="Fone ou caixa de som" aria-pressed="false">Fone ou caixa de som</button>
+          <button type="button" data-item="Carregador ou cabo" aria-pressed="false">Carregador ou cabo</button>
+          <button type="button" data-item="Produtos de limpeza" aria-pressed="false">Produtos de limpeza</button>
+          <button type="button" data-item="Resma de papel A4" aria-pressed="false">Resma A4</button>
+          <button type="button" data-item="Games" aria-pressed="false">Games</button>
+          <button type="button" data-item="Presentes e utilidades" aria-pressed="false">Presentes</button>
+        </div>
+      </fieldset>
+      <div>
+        <label for="obs">Detalhes (modelo, cor, quantidade)</label>
+        <textarea id="obs" placeholder="Ex.: capinha pro iPhone 13 e 2 galões de sabão de lavanda"></textarea>
+      </div>
+      <fieldset>
+        <legend>Como prefere?</legend>
+        <div class="modo">
+          <input type="radio" name="modo" id="m-ent" value="Entrega em casa" checked><label for="m-ent">🚚 Entrega</label>
+          <input type="radio" name="modo" id="m-ret" value="Retirada na loja"><label for="m-ret">🏪 Retirar na loja</label>
+        </div>
+      </fieldset>
+      <div class="duas">
+        <div><label for="nome">Seu nome</label><input id="nome" autocomplete="given-name" placeholder="Como te chamamos?"></div>
+        <div><label for="bairro">Bairro</label><input id="bairro" autocomplete="address-level3" placeholder="Ex.: Candeias"></div>
+      </div>
+      <div>
+        <label>Prévia da mensagem</label>
+        <div class="previa" id="previa" aria-live="polite"></div>
+      </div>
+      <button class="btn btn-zap" type="submit"><svg aria-hidden="true"><use href="#zap"/></svg>Enviar pedido no WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- ONDE -->
+<section id="onde" class="local">
+  <div class="in">
+    <div class="mapa rv" aria-hidden="true">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice">
+        <rect width="600" height="420" fill="#0a1836"/>
+        <g fill="#0e2049">
+          <rect x="20" y="20" width="160" height="110" rx="10"/><rect x="220" y="20" width="140" height="110" rx="10"/><rect x="400" y="20" width="180" height="110" rx="10"/>
+          <rect x="20" y="230" width="160" height="170" rx="10"/><rect x="400" y="230" width="180" height="170" rx="10"/><rect x="220" y="260" width="140" height="140" rx="10"/>
+        </g>
+        <path d="M0 180 H600" stroke="#1f3a78" stroke-width="40"/>
+        <path d="M290 0 V420" stroke="#1f3a78" stroke-width="34"/>
+        <path d="M0 180 H600" stroke="#2d4f99" stroke-width="2" stroke-dasharray="14 12"/>
+        <path d="M290 0 V420" stroke="#2d4f99" stroke-width="2" stroke-dasharray="14 12"/>
+        <path d="M480 420 C 480 300, 380 200, 300 190" stroke="#ff5fa8" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="2 12"/>
+        <rect x="600" y="0" width="0" height="0"/>
+        <path d="M0 360 Q 120 330 200 400 L 0 420 Z" fill="#103a6e" opacity=".6"/>
+      </svg>
+      <div class="pino"><span class="bal">PR Conecta · Esquina Rosa</span><span class="pt"></span></div>
+    </div>
+    <div class="info rv d1">
+      <span class="eyebrow">Onde fica</span>
+      <h2 style="font-size:clamp(28px,4vw,44px)">Passa aqui. <span style="color:var(--rosa)">É fácil de achar.</span></h2>
+      <dl>
+        <div><dt>Endereço</dt><dd>Candeias, na Esquina Rosa<br><span style="color:var(--nevoa);font-weight:500;font-size:16px">Jaboatão dos Guararapes, PE</span></dd></div>
+        <div><dt>Não pode vir?</dt><dd>A gente leva até você.</dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn btn-out" href="https://www.google.com/maps/search/?api=1&query=PR+Conecta+Esquina+Rosa+Candeias+Jaboat%C3%A3o+dos+Guararapes" target="_blank" rel="noopener">📍 Abrir no Maps</a>
+        <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site. Vocês entregam no meu bairro?"><svg aria-hidden="true"><use href="#zap"/></svg>Entregam no meu bairro?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="in">
+    <div class="head rv"><span class="eyebrow">Dúvidas rápidas</span><h2>Antes de chamar no zap</h2></div>
+    <details class="rv"><summary>Vocês entregam no meu bairro?</summary><p>Fazemos entregas, sim. Manda o seu bairro no WhatsApp que a gente confirma o prazo e a taxa na hora.</p></details>
+    <details class="rv"><summary>Como sei o preço de um produto?</summary><p>Os preços estão nos posts do Instagram @pr_conecta e mudam com as ofertas da semana. Pra saber o valor de hoje, é só perguntar no WhatsApp com o nome ou a foto do produto.</p></details>
+    <details class="rv"><summary>Tem iPhone pra pronta entrega?</summary><p>Os modelos disponíveis mudam toda semana. Pergunte no WhatsApp quais chegaram e venha ver de perto, ou receba em casa.</p></details>
+    <details class="rv"><summary>Posso separar um produto e buscar depois?</summary><p>Monte seu pedido aqui na página, escolha "Retirar na loja" e envie. A gente separa e te avisa quando estiver pronto.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="in">
+    <svg class="robo-mini" aria-hidden="true"><use href="#robo"/></svg>
+    <h2 class="rv">Precisou de alguma coisa? <span class="grad">Chama a PR Conecta.</span></h2>
+    <p class="rv d1">O melhor preço da Zona Sul, a um zap de distância. Responde quem está no balcão.</p>
+    <div class="cta rv d2" style="justify-content:center">
+      <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero fazer um pedido."><svg aria-hidden="true"><use href="#zap"/></svg>Chamar no WhatsApp</a>
+      <a class="btn btn-out" href="https://instagram.com/pr_conecta" target="_blank" rel="noopener">Ver ofertas no Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <span>© <span id="ano">2026</span> PR Conecta · Acessórios · Variedades · Limpeza · Candeias, Jaboatão dos Guararapes, PE</span>
+    <a href="https://instagram.com/pr_conecta" target="_blank" rel="noopener">@pr_conecta</a>
+  </div>
+</footer>
+
+<a class="flut js-zap" id="flut" href="#" data-pedido="1" aria-label="Fazer pedido no WhatsApp"><svg aria-hidden="true"><use href="#zap"/></svg><span>Fazer pedido</span><span class="cont" id="cont">0</span></a>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===== CONFIGURAÇÃO: troque pelo WhatsApp da loja (55 + DDD + número, só dígitos) ===== */
+const WHATSAPP = "5581900000000";
+
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const zap = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+$("#ano").textContent = new Date().getFullYear();
+
+/* pedido: estado compartilhado entre os cards e o formulário */
+const pedido = new Set();
+function msgPedido() {
+  const nome = $("#nome").value.trim();
+  const bairro = $("#bairro").value.trim();
+  const obs = $("#obs").value.trim();
+  const modo = $('input[name="modo"]:checked').value;
+  let t = "Olá, PR Conecta! Vim pelo site e quero fazer um pedido.\n";
+  if (pedido.size) t += "\nQuero:\n" + [...pedido].map(i => "• " + i).join("\n") + "\n";
+  if (obs) t += "\nDetalhes: " + obs + "\n";
+  t += "\n" + modo;
+  if (bairro) t += " · Bairro: " + bairro;
+  if (nome) t += "\nMeu nome: " + nome;
+  return t;
+}
+function sincroniza() {
+  $$("[data-item]").forEach(b => {
+    const on = pedido.has(b.dataset.item);
+    if (b.classList.contains("add")) { b.classList.toggle("on", on); b.textContent = on ? "✓ Na sua lista" : "+ Quero esse"; }
+    else b.setAttribute("aria-pressed", on);
+  });
+  const c = $("#cont"); c.textContent = pedido.size; c.classList.toggle("tem", pedido.size > 0);
+  $("#previa").textContent = msgPedido();
+}
+let tt;
+function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => el.classList.remove("on"), 2200); }
+$$("[data-item]").forEach(b => b.addEventListener("click", () => {
+  const i = b.dataset.item, tinha = pedido.has(i);
+  tinha ? pedido.delete(i) : pedido.add(i);
+  if (b.classList.contains("add")) toast(tinha ? "Removido da sua lista" : `“${i}” foi pra sua lista ✓`);
+  sincroniza();
+}));
+["nome", "bairro", "obs"].forEach(id => $("#" + id).addEventListener("input", sincroniza));
+$$('input[name="modo"]').forEach(r => r.addEventListener("change", sincroniza));
+$("#form").addEventListener("submit", e => { e.preventDefault(); window.open(zap(msgPedido()), "_blank", "noopener"); });
+
+/* todos os botões de WhatsApp */
+$$(".js-zap").forEach(a => {
+  if (!a.dataset.pedido) a.href = zap(a.dataset.msg);
+  a.target = "_blank"; a.rel = "noopener";
+  a.addEventListener("click", e => {
+    if (a.dataset.pedido) { e.preventDefault(); window.open(zap(pedido.size ? msgPedido() : "Olá, PR Conecta! Vim pelo site e quero fazer um pedido."), "_blank", "noopener"); }
+  });
+});
+sincroniza();
+
+/* botão flutuante aparece depois do hero */
+const flut = $("#flut");
+new IntersectionObserver(([e]) => flut.classList.toggle("on", !e.isIntersecting), { threshold: 0 }).observe($(".hero"));
+
+/* revelação ao rolar */
+const ioRv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vis"); ioRv.unobserve(e.target); } }), { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+$$(".rv").forEach(el => ioRv.observe(el));
+
+/* contadores */
+const fmt = n => n.toLocaleString("pt-BR");
+const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ioN = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, alvo = +el.dataset.conta; ioN.unobserve(el);
+  if (reduz) { el.textContent = fmt(alvo); return; }
+  const t0 = performance.now(), dur = 1600;
+  const passo = t => { const p = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - p, 4); el.textContent = fmt(Math.round(alvo * ease)); if (p < 1) requestAnimationFrame(passo); };
+  requestAnimationFrame(passo);
+}), { threshold: .5 });
+$$("[data-conta]").forEach(el => ioN.observe(el));
+
+/* contagem até domingo 23:59:59 */
+function fimDaSemana() { const d = new Date(); d.setDate(d.getDate() + ((7 - d.getDay()) % 7)); d.setHours(23, 59, 59, 999); return d; }
+let alvo = fimDaSemana();
+const pad = n => String(n).padStart(2, "0");
+function tick() {
+  let ms = alvo - new Date();
+  if (ms <= 0) { alvo = fimDaSemana(); if (alvo - new Date() <= 0) alvo.setDate(alvo.getDate() + 7); ms = alvo - new Date(); }
+  const s = Math.floor(ms / 1000);
+  $('[data-u="d"]').textContent = Math.floor(s / 86400);
+  $('[data-u="h"]').textContent = pad(Math.floor(s % 86400 / 3600));
+  $('[data-u="m"]').textContent = pad(Math.floor(s % 3600 / 60));
+  $('[data-u="s"]').textContent = pad(s % 60);
+}
+tick(); setInterval(tick, 1000);
+
+/* inclinação 3D da vitrine de iPhone */
+const vit = $(".vitrine");
+if (vit && !reduz && matchMedia("(hover: hover)").matches) {
+  vit.addEventListener("mousemove", e => { const r = vit.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; vit.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg)`; });
+  vit.addEventListener("mouseleave", () => vit.style.transform = "");
+  vit.style.transition = "transform .3s"; vit.style.transformStyle = "preserve-3d";
+}
+</script>
+</body>
+</html>
