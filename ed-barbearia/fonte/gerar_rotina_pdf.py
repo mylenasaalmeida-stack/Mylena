@@ -19,8 +19,8 @@ table.r tr.g td{background:#1d1b12}
 
 # (início, fim, minutos, atividade, como fazer, se atrasar, gravação?)
 BLOCOS = [
-    ('13:00', '13:10', 10, 'Chegar e montar o set',
-     'O equipamento já sai de casa montado e carregado. Lá é só escolher o canto com luz de lado (a janela nunca atrás do Ed), pôr a lapela nele e testar o áudio em 5 s.', 'Não corta', False),
+    ('', '', 5, 'Chegar e escolher o lugar',
+     'Sem montar luz: a iluminação da ED já é boa. Escolhe o canto onde a luz do salão cai de frente no rosto do Ed, com a fachada de vidro fora do fundo. Põe a lapela nele e testa o áudio em 5 s.', 'Não corta', False),
     ('13:10', '13:20', 10, 'Conversa rápida com o Ed',
      'Só o que trava a gravação: a história do V1 (há quantos anos corta, o erro, o que mudou), se os 3 erros do V2 batem e quem da equipe faz o V3. Autorização de imagem.', 'Não corta', False),
     ('13:20', '13:45', 25, 'Gravar V1 · O corte que eu errei',
@@ -43,7 +43,7 @@ BLOCOS = [
 
 LEVAR = ['Tripé', 'Microfone de lapela (carregado)', 'Power bank e cabo', 'Celular com 10 GB livres, no modo avião',
          'Celular extra com “CARECA” escrito na tela (V3)', 'Boné e 2 camisas diferentes (V3)',
-         'Aparelho de barbear e um pote de pomada (V2)', 'Ring light, se tiver',
+         'Aparelho de barbear e um pote de pomada (V2)',
          'Este PDF e o dos 3 roteiros abertos no celular', 'Logo amarela e as 5 artes no celular, pra mostrar ao Ed']
 
 NA_HORA = ['Há quantos anos ele corta e onde começou (V1)', 'Um corte que deu errado e o que mudou (V1)',
@@ -55,6 +55,18 @@ WHATSAPP = ['Prazos da arte “tempo de corte” (degradê 15 dias, social 30, b
             'Como o app mostra que é o 1º corte (pra conferir o 50%)?', 'O que são os destaques G10 e Barberdy?',
             'A vaga é seg a sáb, 9h às 19h? Divulga salário ou comissão?',
             'Bio: corrigir “9h ás 19h” para “9h às 19h”', 'Dá pra trocar o link do Netlify por um nome da ED?']
+
+# horários calculados a partir das 13h, somando os minutos de cada bloco
+_t = 13 * 60
+for _i, _b in enumerate(BLOCOS):
+    BLOCOS[_i] = (f'{_t // 60}:{_t % 60:02d}', f'{(_t + _b[2]) // 60}:{(_t + _b[2]) % 60:02d}') + _b[2:]
+    _t += _b[2]
+
+
+def fim(atraso):
+    t = _t + atraso
+    return f'{t // 60}h{t % 60:02d}'
+
 
 pages = []
 
@@ -68,12 +80,12 @@ linhas = ''.join(f'<tr class="{"g" if g else ""}"><td class="h">{a}–{b}</td><t
                  for a, b, m, at, _, _, g in BLOCOS)
 P('Sexta, 13/11 · tarde na ED', f'''
 <h2>Minha tarde <span class="am">na ED.</span></h2>
-<p class="sub">Chegando 13h, saio às <b style="color:#f5cf4a">15h25</b>. Chegando 13h30, saio às <b style="color:#f5cf4a">15h55</b>. Antes das 16h nos dois casos.</p>
+<p class="sub">Chegando 13h, saio às <b style="color:#f5cf4a">{fim(0)}</b>. Chegando 13h30, saio às <b style="color:#f5cf4a">{fim(30)}</b>. Antes das 16h nos dois casos.</p>
 <table class="r">{linhas}
 <tr><td class="h">Total</td><td><b>Tudo</b></td><td class="m"><b>{tot // 60}h{tot % 60:02d}</b></td></tr></table>
 <p class="nota" style="font-size:11.5px;color:#a9a69e;margin-top:8px">Linhas em destaque: gravação. Chegou 13h30? Soma 30 min em todos os horários.</p>
 <h3>Pra caber antes das 16h</h3>''' + '<ul>' + ''.join(f'<li>{x}</li>' for x in [
-    'Equipamento sai de casa montado e carregado.',
+    'Sem montar luz: usa a iluminação da ED.',
     'A equipe posta os stories, tu só passa o que é.',
     'Backup completo em casa. Lá, só confere os ganchos.',
     'Com o Ed, só o que precisa dele na hora. O resto vai por WhatsApp.',

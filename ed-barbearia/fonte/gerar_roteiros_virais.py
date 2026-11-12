@@ -164,9 +164,9 @@ P('Amanhã à tarde · plano de gravação', '''
 <tr><td style="padding:6px 4px;color:#f5cf4a;font-weight:700">40 min</td><td style="padding:6px 4px"><b>V2</b> com um cliente de degradê (pedir autorização)</td></tr>
 <tr><td style="padding:6px 4px;color:#f5cf4a;font-weight:700">30 min</td><td style="padding:6px 4px"><b>V3</b> no fim, quando a equipe tiver um respiro</td></tr>
 <tr><td style="padding:6px 4px;color:#f5cf4a;font-weight:700">10 min</td><td style="padding:6px 4px">Stories de bastidor</td></tr></table>
-<h3>Luz da tarde</h3>''' + ul([
-    'A fachada é de vidro: à tarde o sol pode bater de frente. Nunca grava com a janela atrás do Ed (ele fica escuro).',
-    'Ed de lado pra janela ou de frente pra ela. Se tiver ring light, usa no V1.',
+<h3>Luz</h3>''' + ul([
+    'Usa a iluminação da ED, sem montar nada. Ela já é boa.',
+    'A fachada é de vidro: à tarde o sol pode entrar forte. Nunca grava com a janela atrás do Ed (ele fica escuro).',
 ]) + '''<h3>Levar</h3>''' + ul([
     'Tripé, microfone de lapela e power bank',
     'Celular com espaço livre e no modo avião',
