@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PR Conecta</title>
-<meta name="description" content="PR Conecta: acessórios, eletrônicos, iPhone, variedades e produtos de limpeza com o melhor preço da Zona Sul. Candeias, Esquina Rosa. Fazemos entregas.">
+<meta name="description" content="PR Conecta: produtos de limpeza, desinfetante 5 litros, amaciante, essências, acessórios, eletrônicos e iPhone com o melhor preço da Zona Sul. Candeias, Esquina Rosa. Fazemos entregas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&display=swap">
@@ -145,13 +145,11 @@ section{padding-block:clamp(72px,10vw,120px);position:relative}
 .cat:hover{transform:translateY(-6px);border-color:var(--ceu)}
 .cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
 .cat:hover img{transform:scale(1.06)}
-.cat.foto::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,26,.96) 8%,rgba(5,11,26,.55) 45%,rgba(5,11,26,0) 75%);z-index:1}
+.cat.foto::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,26,.97) 12%,rgba(5,11,26,.82) 48%,rgba(5,11,26,.15) 85%);z-index:1}
 .cat > *:not(img){position:relative;z-index:2}
 .cat .ico{font-size:34px;line-height:1;margin-bottom:auto}
 .cat p{color:var(--nevoa);font-size:14.5px}
-.cat .add{align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;gap:6px;background:rgba(143,198,245,.12);border:1px solid rgba(143,198,245,.3);color:var(--gelo);font:800 13px var(--f-txt);padding:9px 14px;border-radius:999px;cursor:pointer;transition:background .2s}
-.cat .add:hover{background:rgba(143,198,245,.25)}
-.cat .add.on{background:var(--zap);color:#04210f;border-color:var(--zap)}
+.cat .add{margin-top:8px}
 .a{grid-column:span 3;grid-row:span 2;min-height:440px}
 .b{grid-column:span 3}
 .c{grid-column:span 3}
@@ -162,6 +160,44 @@ section{padding-block:clamp(72px,10vw,120px);position:relative}
 .cat.limpeza{background:radial-gradient(circle at 100% 0%,rgba(143,198,245,.25),transparent 60%),var(--cartao)}
 @media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.a{grid-column:span 2;min-height:380px}.b,.c{grid-column:span 2;min-height:240px}.d,.e,.f{grid-column:span 1}}
 @media (max-width:520px){.d,.e,.f{grid-column:span 2;min-height:180px}}
+
+/* limpeza */
+.limpeza-sec{background:linear-gradient(180deg,var(--noite),#071a3a 25%,#071a3a 75%,var(--noite))}
+.limpeza-sec::before{content:"";position:absolute;right:-200px;top:80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(closest-side,rgba(143,198,245,.18),transparent 70%);pointer-events:none}
+.bolhas{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.bolhas i{position:absolute;bottom:-60px;border-radius:50%;border:1.5px solid rgba(143,198,245,.35);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.35),rgba(143,198,245,.05) 60%);animation:sobe linear infinite}
+@keyframes sobe{to{transform:translateY(-120vh) translateX(30px)}}
+.precos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+.preco-card{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--linha);background:var(--cartao);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.preco-card:hover{transform:translateY(-6px);border-color:var(--ceu)}
+.preco-card figure{margin:0;height:220px;overflow:hidden}
+.preco-card figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.preco-card:hover figure img{transform:scale(1.06)}
+.preco-card .corpo{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.preco-card .valor{font:900 34px/1 var(--f-tit);letter-spacing:-.03em;color:var(--ouro)}
+.preco-card .valor small{font-size:16px;margin-right:4px}
+.preco-card p{color:var(--nevoa);font-size:14.5px}
+.preco-card .add{margin-top:auto}
+.preco-card .selo-p{position:absolute;top:14px;left:14px;background:var(--rosa);color:#fff;font:800 12px var(--f-txt);letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px;z-index:2}
+.add{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;background:rgba(143,198,245,.12);border:1px solid rgba(143,198,245,.3);color:var(--gelo);font:800 13px var(--f-txt);padding:9px 14px;border-radius:999px;cursor:pointer;transition:background .2s}
+.add:hover{background:rgba(143,198,245,.25)}
+.add.on{background:var(--zap);color:#04210f;border-color:var(--zap)}
+.mosaico{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-template-rows:240px 240px;gap:16px;margin-top:16px}
+.mosaico figure{margin:0;position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--linha)}
+.mosaico figure:first-child{grid-row:span 2}
+.mosaico figure:nth-child(4){grid-column:span 2}
+.mosaico img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.mosaico figure:hover img{transform:scale(1.05)}
+.mosaico figcaption{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(5,11,26,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 12px;border-radius:12px;font:700 13.5px var(--f-txt)}
+.kit{margin-top:16px;border-radius:28px;padding:clamp(24px,4vw,40px);background:linear-gradient(135deg,var(--azul-2),var(--azul));display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:center;position:relative;overflow:hidden}
+.kit::after{content:"🫧";position:absolute;right:-20px;bottom:-40px;font-size:180px;opacity:.12;pointer-events:none}
+.kit h3{font-size:clamp(24px,3vw,34px);font-weight:900;line-height:1.05}
+.kit p{color:#dbe9ff;margin-top:12px}
+.kit .itens button{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
+.kit .itens button[aria-pressed="true"]{background:#fff;color:var(--azul-2);border-color:#fff}
+.kit .btn{margin-top:20px;background:#fff;color:var(--azul-2);box-shadow:none}
+.kit .btn::after{display:none}
+@media (max-width:900px){.precos{grid-template-columns:1fr}.preco-card figure{height:200px}.mosaico{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.mosaico figure:first-child{grid-row:span 1;grid-column:span 2}.mosaico figure:nth-child(4){grid-column:span 2}.kit{grid-template-columns:1fr}}
 
 /* iPhone */
 .iphone{background:linear-gradient(180deg,var(--noite),var(--fundo) 30%,var(--fundo) 70%,var(--noite))}
@@ -198,7 +234,10 @@ section{padding-block:clamp(72px,10vw,120px);position:relative}
 .relogio b{display:block;font:900 26px var(--f-tit);font-variant-numeric:tabular-nums}
 .relogio span{font:700 11px var(--f-txt);letter-spacing:.12em;text-transform:uppercase;color:var(--ouro)}
 .oferta .btn-escuro{background:#2a1d00;color:#fff;align-self:flex-start}
-.resma{position:relative;height:100%;min-height:340px;display:grid;place-items:center;padding:30px}
+.resma{position:relative;height:100%;min-height:340px;overflow:hidden}
+.resma > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.resma::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#ffc12b 0%,rgba(255,193,43,0) 22%)}
+.resma .estrela{z-index:2}
 .resma .pilha{position:relative;width:min(260px,70%);aspect-ratio:3/4;animation:flutua 5s ease-in-out infinite}
 .resma .folha{position:absolute;inset:0;border-radius:14px;background:linear-gradient(160deg,#0f6b3a,#16a35a);box-shadow:0 30px 60px -20px rgba(42,29,0,.55);display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:#fff}
 .resma .folha:nth-child(1){transform:rotate(-9deg) translate(-18px,10px);opacity:.55}
@@ -375,6 +414,7 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
     </a>
     <nav aria-label="Seções">
       <a href="#produtos">Produtos</a>
+      <a href="#limpeza">Limpeza</a>
       <a href="#iphone">iPhone</a>
       <a href="#oferta">Oferta</a>
       <a href="#pedido">Fazer pedido</a>
@@ -392,8 +432,8 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
   <div class="in">
     <div>
       <span class="selo rv"><i>🥇</i>O melhor preço da Zona Sul</span>
-      <h1 class="rv d1">Do carregador ao iPhone, tá tudo na <span class="rosa">Esquina Rosa<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 2, 200 2, 297 12" fill="none" stroke="#ff5fa8" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
-      <p class="sub rv d2">Acessórios, eletrônicos, iPhone, games, presentes e produtos de limpeza <b>num lugar só, em Candeias</b>. Não quer sair de casa? <b>A gente entrega.</b></p>
+      <h1 class="rv d1">Do desinfetante ao iPhone, tá tudo na <span class="rosa">Esquina Rosa<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 80 2, 200 2, 297 12" fill="none" stroke="#ff5fa8" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
+      <p class="sub rv d2">Produtos de limpeza, acessórios, eletrônicos, iPhone e utilidades <b>num lugar só, em Candeias</b>. Galão de 5 litros pesa? <b>A gente entrega.</b></p>
       <div class="cta rv d3">
         <a class="btn btn-zap js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero saber o preço de um produto."><svg aria-hidden="true"><use href="#zap"/></svg>Consultar preço no WhatsApp</a>
         <a class="btn btn-out" href="#produtos">Ver o que tem na loja ↓</a>
@@ -415,7 +455,7 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
       <svg class="robo"><use href="#robo"/></svg>
       <div class="chip c1"><i>🎧</i><span>Fones e caixas<small>com e sem fio</small></span></div>
       <div class="chip c2"><i>📱</i><span>iPhone<small>pergunte os modelos</small></span></div>
-      <div class="chip c3"><i>🧴</i><span>Limpeza<small>galões de 5 litros</small></span></div>
+      <div class="chip c3"><i>🧴</i><span>Desinfetante 5L<small>por R$ 10,99</small></span></div>
       <div class="chip c4"><i>🚚</i><span><b>Fazemos entregas</b><small>chama no zap</small></span></div>
     </div>
   </div>
@@ -423,8 +463,8 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
 
 <div class="letreiro" aria-hidden="true">
   <div class="trilho">
-    <span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Games</span><span>Utilidades</span><span>Limpeza</span><span>Papelaria</span><span>Presentes</span>
-    <span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Games</span><span>Utilidades</span><span>Limpeza</span><span>Papelaria</span><span>Presentes</span>
+    <span>Desinfetante 5L</span><span>Amaciante</span><span>Essências</span><span>Papel higiênico</span><span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Utilidades</span><span>Xerox</span>
+    <span>Desinfetante 5L</span><span>Amaciante</span><span>Essências</span><span>Papel higiênico</span><span>Eletrônicos</span><span>Acessórios</span><span>iPhone</span><span>Utilidades</span><span>Xerox</span>
   </div>
 </div>
 
@@ -455,35 +495,109 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
         <button class="add" data-item="iPhone">+ Quero esse</button>
       </article>
       <article class="cat foto b rv d1">
-        <img src="{{dono}}" alt="Atendente da PR Conecta em frente à parede de fones e caixas de som" loading="lazy" style="object-position:50% 20%">
+        <img src="{{loja-eletronicos}}" alt="Prateleira com fones, caixas de som, máquinas de cortar cabelo, suportes de celular e TV box" loading="lazy">
         <h3>Acessórios e eletrônicos</h3>
-        <p>Fones, caixas de som, carregadores, cabos, capinhas e películas.</p>
+        <p>Fones com e sem fio, caixas de som, carregadores, suportes, TV box e máquina de cortar cabelo.</p>
         <button class="add" data-item="Acessórios para celular">+ Quero esse</button>
       </article>
       <article class="cat foto c rv d2">
-        <img src="{{sabao}}" alt="Galão de 5 litros de sabão líquido" loading="lazy" style="object-position:50% 100%">
+        <img src="{{loja-desinfetantes}}" alt="Prateleira com galões de desinfetante de 5 litros coloridos e papel higiênico" loading="lazy" style="object-position:50% 55%">
         <h3>Produtos de limpeza</h3>
-        <p>Sabão líquido em galão de 5 litros, em várias fragrâncias. Rende o mês todo.</p>
-        <button class="add" data-item="Produtos de limpeza">+ Quero esse</button>
+        <p>Desinfetante 5 litros, amaciante, essências, papel higiênico e tudo pra faxina.</p>
+        <a class="add" href="#limpeza" style="text-decoration:none">Ver a limpeza ↓</a>
       </article>
       <article class="cat liso d rv">
-        <span class="ico" aria-hidden="true">🎮</span>
-        <h3>Games</h3>
-        <p>Controles e acessórios pra jogar.</p>
-        <button class="add" data-item="Games">+ Quero esse</button>
+        <span class="ico" aria-hidden="true">🍿</span>
+        <h3>Conveniência</h3>
+        <p>Salgadinho, bala, isqueiro, barbeador e cortador de unha.</p>
+        <button class="add" data-item="Itens de conveniência">+ Quero esse</button>
       </article>
       <article class="cat limpeza e rv d1">
         <span class="ico" aria-hidden="true">📄</span>
-        <h3>Papelaria</h3>
-        <p>Resma de papel A4 e o básico do escritório.</p>
+        <h3>Papelaria e xerox</h3>
+        <p>Resma de papel A4, o básico do escritório e xerox na hora.</p>
         <button class="add" data-item="Resma de papel A4">+ Quero esse</button>
       </article>
-      <article class="cat liso f rv d2">
-        <span class="ico" aria-hidden="true">🎁</span>
-        <h3>Presentes e utilidades</h3>
-        <p>Aquela lembrança de última hora, resolvida.</p>
+      <article class="cat foto f rv d2">
+        <img src="{{loja-utilidades}}" alt="Parede com utilidades: luvas, escovas, prendedores, guarda-chuva, cordas e cordões" loading="lazy">
+        <h3>Utilidades e presentes</h3>
+        <p>Garrafa térmica, pote, cadeado, guarda-chuva e lembrancinhas.</p>
         <button class="add" data-item="Presentes e utilidades">+ Quero esse</button>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- LIMPEZA -->
+<section id="limpeza" class="limpeza-sec">
+  <div class="bolhas" aria-hidden="true"><i style="left:6%;width:26px;height:26px;animation-duration:14s"></i><i style="left:22%;width:14px;height:14px;animation-duration:10s;animation-delay:-4s"></i><i style="left:48%;width:34px;height:34px;animation-duration:18s;animation-delay:-8s"></i><i style="left:71%;width:18px;height:18px;animation-duration:12s;animation-delay:-2s"></i><i style="left:88%;width:28px;height:28px;animation-duration:16s;animation-delay:-11s"></i></div>
+  <div class="in">
+    <div class="head rv">
+      <span class="eyebrow">Limpeza e casa</span>
+      <h2>Casa limpa e cheirosa <span class="grad">gastando pouco.</span></h2>
+      <p>Prateleira cheia de desinfetante, amaciante, essência, papel e tudo pra faxina, com preço na etiqueta. <b>Galão de 5 litros é pesado?</b> Pede no zap que a gente leva até a sua porta.</p>
+    </div>
+
+    <div class="precos">
+      <article class="preco-card rv">
+        <span class="selo-p">Mais vendido</span>
+        <figure><img src="{{oferta-desinfetante}}" alt="Galões de desinfetante Valença de 5 litros nas cores rosa, amarelo e roxo" loading="lazy"></figure>
+        <div class="corpo">
+          <h3>Desinfetante 5 litros</h3>
+          <div class="valor"><small>R$</small>10,99</div>
+          <p>Jasmim, capim-limão, floral, eucalipto e mais. Galão que dura o mês.</p>
+          <button class="add" data-item="Desinfetante 5 litros (R$ 10,99)">+ Adicionar</button>
+        </div>
+      </article>
+      <article class="preco-card rv d1">
+        <span class="selo-p">Promoção</span>
+        <figure><img src="{{loja-pano-promo}}" alt="Pilhas de pano de chão com a placa de promoção 3 por 10 reais" loading="lazy"></figure>
+        <div class="corpo">
+          <h3>Pano de chão</h3>
+          <div class="valor">3 por <small>R$</small>10</div>
+          <p>Leva três e paga dez reais. Pano de prato e flanela também.</p>
+          <button class="add" data-item="Pano de chão (3 por R$ 10)">+ Adicionar</button>
+        </div>
+      </article>
+      <article class="preco-card rv d2">
+        <figure><img src="{{loja-papel-panos}}" alt="Prateleira com papel higiênico, panos de prato e naftalina" loading="lazy" style="object-position:50% 30%"></figure>
+        <div class="corpo">
+          <h3>Naftalina</h3>
+          <div class="valor"><small>R$</small>2,50</div>
+          <p>Pro guarda-roupa sem mofo. E papel higiênico de várias marcas na prateleira ao lado.</p>
+          <button class="add" data-item="Naftalina (R$ 2,50)">+ Adicionar</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="mosaico">
+      <figure class="rv"><img src="{{loja-desinfetantes}}" alt="Estante de desinfetantes, alvejante e papel" loading="lazy"><figcaption>Desinfetante, alvejante e papel em fardo</figcaption></figure>
+      <figure class="rv d1"><img src="{{loja-amaciante-essencias}}" alt="Amaciante Downy e essências concentradas em prateleiras de vidro" loading="lazy" style="object-position:50% 35%"><figcaption>Amaciante e essências concentradas</figcaption></figure>
+      <figure class="rv d2"><img src="{{loja-faxina}}" alt="Palha de aço, esponjas, aromatizadores e galões" loading="lazy" style="object-position:50% 45%"><figcaption>Esponja, palha de aço e aromatizador</figcaption></figure>
+      <figure class="rv d1"><img src="{{loja-papel-panos}}" alt="Papel higiênico de várias marcas" loading="lazy" style="object-position:50% 15%"><figcaption>Papel higiênico e papel toalha</figcaption></figure>
+    </div>
+
+    <div class="kit rv">
+      <div>
+        <h3>Monte seu kit faxina</h3>
+        <p>Marque o que está faltando aí em casa. A lista vai pro seu pedido, e a gente confirma os preços no WhatsApp.</p>
+        <a class="btn js-zap" href="#" data-pedido="1"><svg aria-hidden="true"><use href="#zap"/></svg>Enviar meu kit</a>
+      </div>
+      <div class="itens">
+        <button type="button" data-item="Desinfetante 5 litros (R$ 10,99)" aria-pressed="false">Desinfetante 5L</button>
+        <button type="button" data-item="Alvejante" aria-pressed="false">Alvejante</button>
+        <button type="button" data-item="Sabão líquido em galão" aria-pressed="false">Sabão líquido</button>
+        <button type="button" data-item="Amaciante" aria-pressed="false">Amaciante</button>
+        <button type="button" data-item="Essência concentrada" aria-pressed="false">Essência</button>
+        <button type="button" data-item="Aromatizador de ambiente" aria-pressed="false">Aromatizador</button>
+        <button type="button" data-item="Papel higiênico" aria-pressed="false">Papel higiênico</button>
+        <button type="button" data-item="Papel toalha" aria-pressed="false">Papel toalha</button>
+        <button type="button" data-item="Pano de chão (3 por R$ 10)" aria-pressed="false">Pano de chão</button>
+        <button type="button" data-item="Esponja e palha de aço" aria-pressed="false">Esponja e palha de aço</button>
+        <button type="button" data-item="Luva de limpeza" aria-pressed="false">Luva</button>
+        <button type="button" data-item="Saco de lixo" aria-pressed="false">Saco de lixo</button>
+        <button type="button" data-item="Naftalina (R$ 2,50)" aria-pressed="false">Naftalina</button>
+      </div>
     </div>
   </div>
 </section>
@@ -521,9 +635,9 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
     <div class="oferta rv">
       <div class="txt">
         <span class="tag">Oferta da semana</span>
-        <h2>Resma de papel A4 Report</h2>
-        <div class="preco" aria-label="29 reais e 99 centavos"><small>R$</small><strong>29</strong><em>,99</em></div>
-        <p style="font-weight:700;max-width:40ch">Papel A4 Report de 75 g/m². Pra escola, escritório e impressão de casa, por um preço difícil de achar por aí.</p>
+        <h2>Desinfetante 5 litros</h2>
+        <div class="preco" aria-label="10 reais e 99 centavos"><small>R$</small><strong>10</strong><em>,99</em></div>
+        <p style="font-weight:700;max-width:40ch">Galão de 5 litros, em várias fragrâncias. Limpa e perfuma a casa inteira por um preço difícil de achar por aí.</p>
         <div>
           <p style="font:800 12px var(--f-txt);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px">As ofertas desta semana acabam em</p>
           <div class="relogio" id="relogio" aria-live="off">
@@ -533,15 +647,11 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
             <div><b data-u="s">00</b><span>seg</span></div>
           </div>
         </div>
-        <a class="btn btn-escuro js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero a resma de papel A4 por R$ 29,99. Ainda tem?"><svg aria-hidden="true"><use href="#zap"/></svg>Garantir a minha</a>
+        <a class="btn btn-escuro js-zap" href="#" data-msg="Olá, PR Conecta! Vim pelo site e quero o desinfetante 5 litros por R$ 10,99. Quais fragrâncias têm hoje?"><svg aria-hidden="true"><use href="#zap"/></svg>Garantir o meu</a>
       </div>
       <div class="resma" aria-hidden="true">
-        <div class="pilha">
-          <div class="folha"></div>
-          <div class="folha"></div>
-          <div class="folha"><span>Report</span><b>A4</b><small>210 × 297 mm · 75 g/m²</small></div>
-        </div>
-        <div class="estrela"><span>SÓ<br>R$ 29,99</span></div>
+        <img src="{{oferta-desinfetante}}" alt="" loading="lazy">
+        <div class="estrela"><span>SÓ<br>R$ 10,99</span></div>
       </div>
     </div>
   </div>
@@ -581,7 +691,8 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
       <div class="ruim">
         <h3>Ir pro shopping ou pro centro</h3>
         <ul>
-          <li>Ônibus, estacionamento e trânsito</li>
+          <li>Carregar galão de 5 litros no ônibus</li>
+          <li>Estacionamento e trânsito</li>
           <li>Uma loja pra cada coisa</li>
           <li>Preço de vitrine de shopping</li>
           <li>Atendente que você nunca mais vê</li>
@@ -590,7 +701,8 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
       <div class="bom">
         <h3>Comprar na PR Conecta</h3>
         <ul>
-          <li>Aqui em Candeias, ou entregue na sua porta</li>
+          <li>O galão chega na sua porta</li>
+          <li>Aqui em Candeias, pertinho de casa</li>
           <li>Tudo numa loja só</li>
           <li>O melhor preço da Zona Sul</li>
           <li>Gente do bairro, que você encontra de novo</li>
@@ -659,15 +771,17 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
           <button type="button" data-item="Acessórios para celular" aria-pressed="false">Acessórios para celular</button>
           <button type="button" data-item="Fone ou caixa de som" aria-pressed="false">Fone ou caixa de som</button>
           <button type="button" data-item="Carregador ou cabo" aria-pressed="false">Carregador ou cabo</button>
-          <button type="button" data-item="Produtos de limpeza" aria-pressed="false">Produtos de limpeza</button>
+          <button type="button" data-item="Desinfetante 5 litros (R$ 10,99)" aria-pressed="false">Desinfetante 5L</button>
+          <button type="button" data-item="Amaciante" aria-pressed="false">Amaciante</button>
+          <button type="button" data-item="Papel higiênico" aria-pressed="false">Papel higiênico</button>
+          <button type="button" data-item="Produtos de limpeza" aria-pressed="false">Outros de limpeza</button>
           <button type="button" data-item="Resma de papel A4" aria-pressed="false">Resma A4</button>
-          <button type="button" data-item="Games" aria-pressed="false">Games</button>
-          <button type="button" data-item="Presentes e utilidades" aria-pressed="false">Presentes</button>
+          <button type="button" data-item="Presentes e utilidades" aria-pressed="false">Utilidades</button>
         </div>
       </fieldset>
       <div>
         <label for="obs">Detalhes (modelo, cor, quantidade)</label>
-        <textarea id="obs" placeholder="Ex.: capinha pro iPhone 13 e 2 galões de sabão de lavanda"></textarea>
+        <textarea id="obs" placeholder="Ex.: 2 desinfetantes de jasmim e uma capinha pro iPhone 13"></textarea>
       </div>
       <fieldset>
         <legend>Como prefere?</legend>
@@ -730,6 +844,8 @@ footer a{text-decoration:none;font-weight:700;color:var(--gelo)}
     <div class="head rv"><span class="eyebrow">Dúvidas rápidas</span><h2>Antes de chamar no zap</h2></div>
     <details class="rv"><summary>Vocês entregam no meu bairro?</summary><p>Fazemos entregas, sim. Manda o seu bairro no WhatsApp que a gente confirma o prazo e a taxa na hora.</p></details>
     <details class="rv"><summary>Como sei o preço de um produto?</summary><p>Os preços estão nos posts do Instagram @pr_conecta e mudam com as ofertas da semana. Pra saber o valor de hoje, é só perguntar no WhatsApp com o nome ou a foto do produto.</p></details>
+    <details class="rv"><summary>Vocês entregam galão de 5 litros?</summary><p>Entregam, sim. Monte seu kit faxina aqui na página, escolha "Entrega" e mande o pedido. A gente confirma a taxa pro seu bairro no WhatsApp.</p></details>
+    <details class="rv"><summary>Aceitam Pix?</summary><p>Sim, tem QR Code do Pix no balcão. Pra pedido com entrega, combine a forma de pagamento no WhatsApp.</p></details>
     <details class="rv"><summary>Tem iPhone pra pronta entrega?</summary><p>Os modelos disponíveis mudam toda semana. Pergunte no WhatsApp quais chegaram e venha ver de perto, ou receba em casa.</p></details>
     <details class="rv"><summary>Posso separar um produto e buscar depois?</summary><p>Monte seu pedido aqui na página, escolha "Retirar na loja" e envie. A gente separa e te avisa quando estiver pronto.</p></details>
   </div>
@@ -786,7 +902,7 @@ function msgPedido() {
 function sincroniza() {
   $$("[data-item]").forEach(b => {
     const on = pedido.has(b.dataset.item);
-    if (b.classList.contains("add")) { b.classList.toggle("on", on); b.textContent = on ? "✓ Na sua lista" : "+ Quero esse"; }
+    if (b.classList.contains("add")) { b.dataset.rotulo ??= b.textContent; b.classList.toggle("on", on); b.textContent = on ? "✓ Na sua lista" : b.dataset.rotulo; }
     else b.setAttribute("aria-pressed", on);
   });
   const c = $("#cont"); c.textContent = pedido.size; c.classList.toggle("tem", pedido.size > 0);
