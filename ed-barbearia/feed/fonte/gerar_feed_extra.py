@@ -95,3 +95,30 @@ P['F5-dezembro'] = f'''<section class="p y">{hd('Dezembro')}
 for n, h in P.items():
     open(f'{n}.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="margin:0">{h}</body></html>')
 print(len(P), 'artes')
+
+# ---- mais 2 artes: enquete do degradê e combo cabelo + barba ----
+P2 = {}
+P2['F6-marcado-ou-sem-marca'] = f'''<section class="p k">{hd('Enquete')}
+<div class="c"><div class="lab am">Vota nos comentários</div>
+<div class="big" style="font-size:150px;line-height:1;margin-top:20px">Degradê<br><span class="am">qual é o teu?</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:50px">
+<div style="background:{Y};color:{K};border-radius:30px;padding:30px 28px;height:380px;display:flex;flex-direction:column;justify-content:space-between">
+<div class="big" style="font-size:150px">1</div><div><div class="big" style="font-size:70px">Marcado</div>
+<div style="font-size:24px;font-weight:600;margin-top:8px">Linha definida, contraste forte</div></div></div>
+<div style="background:{W};color:{K};border-radius:30px;padding:30px 28px;height:380px;display:flex;flex-direction:column;justify-content:space-between">
+<div class="big" style="font-size:150px">2</div><div><div class="big" style="font-size:70px">Sem marca</div>
+<div style="font-size:24px;font-weight:600;margin-top:8px">Transição esfumada, sem linha</div></div></div></div></div>
+{rod('Comenta 1 ou 2')}</section>'''
+
+P2['F7-combo-cabelo-barba'] = f'''<section class="p y">{hd('Combo')}
+<div class="c"><div class="lab">Os dois no mesmo horário</div>
+<div class="big" style="font-size:190px;line-height:1;margin-top:20px">Cabelo<br>+ barba</div>
+<div style="margin-top:40px;background:{K};color:{Y};border-radius:30px;padding:30px 40px;display:flex;justify-content:space-between;align-items:center">
+<div><div style="font-size:30px;font-weight:700;color:{W}">por</div><div class="big" style="font-size:190px;line-height:.9"><span style="font-size:60px;vertical-align:100px">R$</span>80</div></div>
+<div style="text-align:right;font-size:30px;font-weight:700;line-height:1.3;color:{W}">Separado<br>sai R$ 90.<br><span style="color:{Y}">Tu economiza<br>R$ 10.</span></div></div>
+<p class="txt" style="margin-top:36px">Cabelo R$ 50 · Barba R$ 40. No combo, tu sai pronto de uma vez.</p></div>
+{rod()}</section>'''
+
+for n, h in P2.items():
+    open(f'{n}.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="margin:0">{h}</body></html>')
+print(len(P2), 'artes novas')
