@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Folder · Fabiana Leite Advocacia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Pinyon+Script&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Folder tríptico A4 deitado (297 × 210 mm), 3 painéis de 99 mm.
+   Página 1 = lado de fora: [aba interna | verso | capa]. Página 2 = lado de dentro. */
+@page{size:297mm 210mm;margin:0}
+:root{
+  --preto:#0f0d0b;--preto-2:#1a1612;--creme:#f7f2ea;--creme-2:#efe6d8;--papel:#fffdf9;
+  --ouro:#c6a15b;--ouro-claro:#e4c98f;--ouro-escuro:#8f6f33;--cafe:#6b4a2f;--texto:#221c16;--suave:#5f5448;
+  --f-t:"Playfair Display",Georgia,serif;--f-s:"Pinyon Script",cursive;--f-c:"Jost",Arial,sans-serif;
+}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:#888}
+body{font-family:var(--f-c);color:var(--texto);font-size:8.6pt;line-height:1.5}
+.folha{width:297mm;height:210mm;display:grid;grid-template-columns:repeat(3,99mm);background:var(--papel);overflow:hidden;page-break-after:always;break-after:page;margin:0 auto}
+@media screen{.folha{margin:10mm auto;box-shadow:0 6px 30px rgba(0,0,0,.35)}}
+.painel{position:relative;height:210mm;padding:13mm 10mm 11mm;overflow:hidden;display:flex;flex-direction:column}
+.painel+.painel{border-left:.2mm dashed rgba(0,0,0,.06)}
+h1,h2,h3{font-family:var(--f-t);font-weight:600;margin:0;line-height:1.1}
+h2{font-size:19pt}
+h3{font-size:12.5pt}
+p{margin:0}
+em{font-style:italic}
+.k{display:flex;align-items:center;gap:3mm;font-size:6.6pt;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--ouro-escuro);margin-bottom:3.5mm}
+.k::before{content:"";width:7mm;height:.25mm;background:currentColor}
+.mono{font-family:var(--f-s);color:var(--ouro);line-height:1}
+.escuro{background:var(--preto);color:var(--creme)}
+.escuro .k{color:var(--ouro)}
+.ouro{color:var(--ouro-claro)}
+.fio{height:.3mm;background:linear-gradient(90deg,var(--ouro-escuro),var(--ouro-claro),var(--ouro-escuro));margin:5mm 0}
+
+/* CAPA */
+.capa{justify-content:space-between;text-align:center;padding:16mm 11mm 13mm}
+.capa .fundo{position:absolute;inset:0;z-index:0}
+.capa .fundo img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;opacity:.42}
+.capa::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,13,11,.88) 0%,rgba(15,13,11,.35) 45%,rgba(15,13,11,.95) 82%)}
+.capa::after{content:"";position:absolute;inset:6mm;border:.3mm solid rgba(198,161,91,.55);z-index:1;pointer-events:none}
+.capa>*{position:relative;z-index:2}
+.capa .mono{font-size:66pt;margin-top:2mm}
+.capa .nome{font-family:var(--f-t);font-size:17pt;letter-spacing:.2em;text-transform:uppercase;margin-top:1mm}
+.capa .sub{font-size:6.8pt;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-top:1.5mm}
+.capa h1{font-size:23pt;line-height:1.12}
+.capa h1 em{display:block;color:var(--ouro-claro);font-size:15pt;margin-top:2.5mm}
+.capa .areas{font-size:6.8pt;letter-spacing:.24em;text-transform:uppercase;color:rgba(247,242,234,.8)}
+.capa .areas b{display:block;color:var(--ouro);font-weight:500;margin-top:2mm;letter-spacing:.18em}
+
+/* VERSO (contato) */
+.verso{justify-content:space-between}
+.verso .topo{text-align:center}
+.verso .mono{font-size:44pt}
+.verso .topo b{display:block;font-family:var(--f-t);font-size:12pt;letter-spacing:.18em;text-transform:uppercase;margin-top:1mm}
+.verso .topo small{display:block;font-size:6.3pt;letter-spacing:.26em;text-transform:uppercase;color:var(--ouro)}
+.canais{display:grid;gap:3.2mm}
+.canal{display:flex;gap:3mm;align-items:center;padding:3mm 3.5mm;border:.25mm solid rgba(228,201,143,.28)}
+.canal svg{width:5mm;height:5mm;flex:none;color:var(--ouro)}
+.canal span{font-size:6.3pt;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,234,.6);display:block}
+.canal b{font-size:9.2pt;font-weight:500;color:var(--creme)}
+.emerg{border-top:.25mm solid rgba(228,201,143,.28);padding-top:4mm;font-size:7.4pt;color:rgba(247,242,234,.72)}
+.emerg strong{display:block;font-family:var(--f-t);font-size:10pt;color:var(--ouro-claro);font-weight:600;margin-bottom:1.5mm}
+.emerg .tels{display:flex;gap:5mm;margin-top:2mm}
+.emerg .tels b{font-family:var(--f-t);font-size:15pt;color:var(--creme);display:block;line-height:1}
+.legal{font-size:5.9pt;color:rgba(247,242,234,.42);line-height:1.45}
+
+/* ABA INTERNA (você sabia) */
+.aba{background:var(--creme)}
+.aba h2{margin-bottom:5mm}
+.fatos{display:grid;gap:3.6mm}
+.fato{padding:3.6mm 4mm;background:var(--papel);border-left:.8mm solid var(--ouro)}
+.fato b{display:block;font-family:var(--f-t);font-size:9.6pt;line-height:1.25;margin-bottom:1.2mm}
+.fato p{font-size:7.6pt;color:var(--suave)}
+.aba .rodape{margin-top:auto;font-size:6.4pt;color:var(--suave);font-style:italic}
+
+/* LADO DE DENTRO */
+.foto{overflow:hidden;background:var(--creme-2)}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.sobre .foto{height:62mm;margin:-13mm -10mm 7mm}
+.sobre blockquote{margin:0;font-family:var(--f-t);font-size:11.8pt;line-height:1.3}
+.sobre blockquote strong{color:var(--cafe);text-transform:uppercase;letter-spacing:.02em}
+.sobre p.t{font-size:8.2pt;color:var(--suave);margin-top:3.5mm}
+.numeros{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:auto;border-top:.25mm solid rgba(34,28,22,.15);padding-top:4mm;text-align:center}
+.numeros b{display:block;font-family:var(--f-t);font-size:15pt;color:var(--cafe);line-height:1}
+.numeros span{font-size:6.2pt;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.numeros div+div{border-left:.25mm solid rgba(34,28,22,.12)}
+
+.area{margin-bottom:6mm}
+.area .cab{display:flex;align-items:center;gap:3mm;margin-bottom:2mm}
+.area .cab i{font-family:var(--f-t);font-style:italic;color:var(--ouro-escuro);font-size:11pt}
+.area p{font-size:8pt;color:var(--suave)}
+.area ul{list-style:none;padding:0;margin:2.6mm 0 0;display:flex;flex-wrap:wrap;gap:1.6mm}
+.area li{font-size:6.8pt;padding:1mm 2.4mm;border:.25mm solid rgba(143,111,51,.45);color:var(--cafe)}
+.mini{height:30mm;margin-bottom:5mm}
+
+.passos{display:grid;gap:2.6mm;counter-reset:p;margin-top:1mm}
+.passo{display:grid;grid-template-columns:9mm 1fr;gap:2mm;counter-increment:p;align-items:start}
+.passo::before{content:"0" counter(p);font-family:var(--f-t);font-style:italic;font-size:14pt;color:var(--ouro);line-height:1}
+.passo b{display:block;font-family:var(--f-t);font-size:9.2pt}
+.passo span{font-size:7.4pt;color:rgba(247,242,234,.72)}
+.cta{margin-top:auto;padding:4.5mm;text-align:center;background:linear-gradient(135deg,var(--ouro-claro),var(--ouro) 55%,var(--ouro-escuro));color:var(--preto)}
+.cta b{display:block;font-size:7pt;letter-spacing:.24em;text-transform:uppercase}
+.cta span{display:block;font-family:var(--f-t);font-size:11.5pt;margin-top:1mm}
+.modos{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm;margin:5mm 0}
+.modos div{border:.25mm solid rgba(228,201,143,.28);padding:2.6mm 3mm;font-size:7.2pt;color:rgba(247,242,234,.75)}
+.modos b{display:block;font-family:var(--f-t);font-size:9pt;color:var(--ouro-claro);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ LADO DE FORA ============ -->
+<div class="folha">
+
+  <!-- Aba interna: primeira coisa que se vê ao abrir a capa -->
+  <section class="painel aba">
+    <div class="k">Você sabia?</div>
+    <h2>O que muita gente <em>só descobre tarde demais</em>.</h2>
+    <div class="fatos">
+      <div class="fato"><b>Separação total de bens não impede o cônjuge de herdar.</b><p>Quem quer proteger o patrimônio precisa de planejamento sucessório.</p></div>
+      <div class="fato"><b>Guarda compartilhada divide responsabilidades, não o calendário.</b><p>Consultas, escola e despesas também fazem parte da parentalidade.</p></div>
+      <div class="fato"><b>Pensão alimentícia não é favor. É direito do filho.</b><p>Criar um filho não é obrigação exclusiva de quem mora com ele.</p></div>
+      <div class="fato"><b>Acordo de divórcio mal elaborado pode gerar anos de brigas.</b><p>Partilha, guarda e pensão precisam estar claras no papel.</p></div>
+      <div class="fato"><b>Compartilhar foto íntima sem consentimento pode ser crime.</b><p>A vítima tem direito de agir, e quanto antes, melhor.</p></div>
+    </div>
+    <p class="rodape">Conteúdo informativo. Cada caso exige análise individual.</p>
+  </section>
+
+  <!-- Verso: contato -->
+  <section class="painel verso escuro">
+    <div class="topo">
+      <span class="mono">FL</span>
+      <b>Fabiana Leite</b>
+      <small>Advocacia &amp; Consultoria Jurídica</small>
+    </div>
+    <div>
+      <div class="k">Fale com a advogada</div>
+      <div class="canais">
+        <div class="canal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".8" fill="currentColor"/></svg><div><span>Instagram do escritório</span><b>@fabianaleiteadvocacia</b></div></div>
+        <div class="canal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".8" fill="currentColor"/></svg><div><span>Instagram pessoal</span><b>@fabianaleite.pe</b></div></div>
+        <div class="canal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><span>Todos os canais</span><b>linktr.ee/fabianaleiteadv</b></div></div>
+        <div class="canal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><span>Escritório</span><b>Recife/PE · Atendimento Brasil</b></div></div>
+      </div>
+    </div>
+    <div class="emerg">
+      <strong>Se você está em perigo agora</strong>
+      Ligue de graça, 24 horas:
+      <div class="tels"><div><b>190</b>Polícia Militar</div><div><b>180</b>Central de Atendimento à Mulher</div></div>
+    </div>
+    <p class="legal">Fabiana Leite · Advogada · OAB/PE nº ______. Material de caráter exclusivamente informativo (Provimento 205/2021 do CFOAB). Fotos ilustrativas.</p>
+  </section>
+
+  <!-- Capa -->
+  <section class="painel capa escuro">
+    <div class="fundo"><img src="https://images.pexels.com/photos/6077123/pexels-photo-6077123.jpeg?auto=compress&cs=tinysrgb&w=1400" alt=""></div>
+    <div>
+      <span class="mono">FL</span>
+      <div class="nome">Fabiana Leite</div>
+      <div class="sub">Advocacia &amp; Consultoria Jurídica</div>
+    </div>
+    <h1>Recomeçar é possível.<em>E você não precisa enfrentar isso sem apoio.</em></h1>
+    <div class="areas">Família · Sucessões · Saúde · Cível<b>+25 anos de advocacia · Recife/PE</b></div>
+  </section>
+</div>
+
+<!-- ============ LADO DE DENTRO ============ -->
+<div class="folha">
+
+  <!-- Painel 1: sobre -->
+  <section class="painel sobre">
+    <div class="foto"><img src="https://images.pexels.com/photos/7879508/pexels-photo-7879508.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div>
+    <div class="k">Advocacia de família</div>
+    <blockquote>Muita gente acha que o trabalho da advogada de família começa depois que tudo desmorona. <strong>Mas não é bem assim.</strong></blockquote>
+    <p class="t">Advogar em Direito de Família não é só ajuizar ações. É escutar histórias difíceis, orientar antes que o problema cresça e mostrar que recomeçar é possível.</p>
+    <p class="t">Há mais de 25 anos, a Dra. Fabiana Leite conduz pessoalmente cada caso, do primeiro atendimento à audiência.</p>
+    <div class="numeros">
+      <div><b>+25</b><span>anos</span></div>
+      <div><b>4</b><span>áreas</span></div>
+      <div><b>BR</b><span>online</span></div>
+    </div>
+  </section>
+
+  <!-- Painel 2: Família e Sucessões -->
+  <section class="painel">
+    <div class="k">Áreas de atuação</div>
+    <h2 style="margin-bottom:6mm">Do primeiro conflito ao <em>planejamento do futuro</em>.</h2>
+    <div class="foto mini"><img src="https://images.pexels.com/photos/4098213/pexels-photo-4098213.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div>
+    <div class="area">
+      <div class="cab"><i>I.</i><h3>Direito de Família</h3></div>
+      <p>Separações, filhos e reorganização da vida familiar, com acordos bem feitos para evitar anos de briga na justiça.</p>
+      <ul><li>Divórcio</li><li>Pensão alimentícia</li><li>Guarda e convivência</li><li>Alienação parental</li><li>Medidas protetivas</li></ul>
+    </div>
+    <div class="foto mini"><img src="https://images.pexels.com/photos/7641904/pexels-photo-7641904.jpeg?auto=compress&cs=tinysrgb&w=900" alt=""></div>
+    <div class="area" style="margin-bottom:0">
+      <div class="cab"><i>II.</i><h3>Sucessões</h3></div>
+      <p>Herança, partilha e proteção do patrimônio da família, inclusive bens recebidos por doação e ativos digitais.</p>
+      <ul><li>Inventário</li><li>Partilha</li><li>Testamento</li><li>Planejamento sucessório</li></ul>
+    </div>
+  </section>
+
+  <!-- Painel 3: Saúde, Cível e atendimento -->
+  <section class="painel escuro">
+    <div class="area">
+      <div class="cab"><i class="ouro">III.</i><h3>Direito à Saúde</h3></div>
+      <p style="color:rgba(247,242,234,.72)">Negativas de cobertura, reajustes abusivos e planos “empresariais” que, na prática, só cobrem a família.</p>
+    </div>
+    <div class="area">
+      <div class="cab"><i class="ouro">IV.</i><h3>Cível e Consumidor</h3></div>
+      <p style="color:rgba(247,242,234,.72)">Contratos, indenizações e a defesa de quem teve direitos violados.</p>
+    </div>
+    <div class="fio"></div>
+    <div class="k">Como funciona</div>
+    <div class="passos">
+      <div class="passo"><div><b>Primeiro contato</b><span>Você conta, em poucas palavras, o que está vivendo.</span></div></div>
+      <div class="passo"><div><b>Consulta</b><span>Conversa reservada e sigilosa sobre a sua história.</span></div></div>
+      <div class="passo"><div><b>Estratégia</b><span>Os caminhos possíveis: acordo, cartório ou processo.</span></div></div>
+      <div class="passo"><div><b>Acompanhamento</b><span>Cada etapa explicada com clareza até a solução.</span></div></div>
+    </div>
+    <div class="modos">
+      <div><b>Presencial</b>Escritório em Recife/PE</div>
+      <div><b>Online</b>Atendimento em todo o Brasil</div>
+    </div>
+    <div class="cta"><b>Agende sua consulta</b><span>linktr.ee/fabianaleiteadv</span></div>
+  </section>
+</div>
+
+</body>
+</html>
