@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laryssa Farias | Estética Avançada</title>
+<meta name="description" content="Laryssa Farias, estética e cosmética avançada: preenchimento, botox, laser e protocolos corporais com BCAA. Mais de 5 mil atendimentos. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Paleta tirada do feed: madeira clara, nude, café e um dourado discreto. */
+:root{
+  --linho:#f6f0e8; --areia:#ece2d4; --nude:#d9c3ab; --caramelo:#b08a63;
+  --cafe:#2b201a; --cafe-2:#3a2c24; --texto:#2b201a; --suave:#6f5d50;
+  --ouro:#b8925a; --zap:#1fae55; --linha:rgba(43,32,26,.14);
+  --f-titulo:"Cormorant Garamond",Georgia,serif;
+  --f-corpo:"Manrope","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--linho);color:var(--texto);font-family:var(--f-corpo);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f-titulo);font-weight:600;line-height:1.02;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,7.4vw,92px);letter-spacing:-.01em}
+h2{font-size:clamp(36px,5.2vw,62px)}
+h3{font-size:28px}
+em{font-style:italic;color:var(--caramelo)}
+p{margin:0}
+.in{max-width:1180px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+@media (min-width:700px){.in{padding-inline:32px}}
+section{padding-block:clamp(72px,10vw,120px)}
+.k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--suave);max-width:58ch}
+.head{display:grid;gap:16px;margin-bottom:48px;max-width:720px}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15.5px;letter-spacing:.01em;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;border:0}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-zap{background:var(--cafe);color:var(--linho);box-shadow:0 10px 30px -10px rgba(43,32,26,.55)}
+.btn-zap:hover{transform:translateY(-2px);background:#1c1410}
+.btn-claro{background:transparent;color:var(--cafe);box-shadow:inset 0 0 0 1.5px var(--cafe)}
+.btn-claro:hover{background:var(--cafe);color:var(--linho)}
+.btn-ouro{background:var(--linho);color:var(--cafe)}
+.btn-ouro:hover{transform:translateY(-2px)}
+
+/* Topo */
+.topo{position:sticky;top:0;z-index:40;background:rgba(246,240,232,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linha)}
+.topo .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{font-family:var(--f-titulo);font-size:24px;font-weight:600;line-height:1}
+.marca small{display:block;font-family:var(--f-corpo);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro);margin-top:4px}
+.topo nav{display:none;gap:28px;font-size:14px;font-weight:600;color:var(--suave)}
+.topo nav a:hover{color:var(--cafe)}
+.topo .btn{min-height:44px;padding:0 20px;font-size:14px}
+@media (min-width:900px){.topo nav{display:flex}}
+
+/* Hero */
+.hero{padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(56px,8vw,96px)}
+.hero .in{display:grid;gap:44px;align-items:center}
+@media (min-width:960px){.hero .in{grid-template-columns:1.05fr .95fr;gap:64px}}
+.hero h1 em{display:block}
+.hero .lead{margin-top:22px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.selo{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:14px;color:var(--suave)}
+.selo b{font-family:var(--f-titulo);font-size:40px;line-height:1;color:var(--cafe);font-weight:600}
+.hero-foto{position:relative;border-radius:240px 240px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:var(--nude)}
+.hero-foto img{width:100%;height:100%;object-fit:cover}
+.tag-flut{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(246,240,232,.94);border-radius:18px;padding:16px 18px;display:flex;gap:14px;align-items:center;font-size:14px;line-height:1.4}
+.tag-flut .dot{width:42px;height:42px;border-radius:50%;background:var(--cafe);color:var(--linho);display:grid;place-items:center;flex:none;font-family:var(--f-titulo);font-size:22px}
+@media (min-width:960px){.tag-flut{left:-28px;right:auto;max-width:300px}}
+
+/* Faixa de números */
+.faixa{background:var(--cafe);color:var(--linho);padding-block:40px}
+.faixa .in{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px}
+@media (min-width:800px){.faixa .in{grid-template-columns:repeat(4,1fr)}}
+.faixa b{display:block;font-family:var(--f-titulo);font-size:clamp(34px,4vw,48px);font-weight:600;line-height:1;color:var(--nude)}
+.faixa span{font-size:13.5px;color:rgba(246,240,232,.72)}
+
+/* Segredinho */
+.segredo{background:var(--areia)}
+.segredo .in{display:grid;gap:40px}
+@media (min-width:900px){.segredo .in{grid-template-columns:1fr 1fr;gap:72px;align-items:center}}
+.citacao{font-family:var(--f-titulo);font-size:clamp(28px,3.4vw,40px);line-height:1.18;font-style:italic;color:var(--cafe)}
+.citacao::before{content:"“";display:block;font-size:90px;line-height:.6;color:var(--caramelo);margin-bottom:6px}
+.citacao cite{display:block;font-family:var(--f-corpo);font-style:normal;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);margin-top:20px}
+.segredo ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.segredo li{display:flex;gap:14px;align-items:flex-start}
+.segredo li::before{content:"";width:22px;height:22px;flex:none;margin-top:3px;border-radius:50%;background:var(--cafe) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f6f0e8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+
+/* Procedimentos */
+.grade{display:grid;gap:20px}
+@media (min-width:700px){.grade{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.grade{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--linha);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(43,32,26,.45)}
+.card .ft{aspect-ratio:4/3;background:var(--nude);overflow:hidden}
+.card .ft img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .ft img{transform:scale(1.04)}
+.card .tx{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--ouro)}
+.card p{color:var(--suave);font-size:15px}
+.card .mais{margin-top:auto;padding-top:12px;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;color:var(--cafe)}
+.card .mais::after{content:"→";transition:transform .2s}
+.card:hover .mais::after{transform:translateX(4px)}
+
+/* Corporal */
+.corpo{background:var(--cafe);color:var(--linho)}
+.corpo .in{display:grid;gap:48px;align-items:center}
+@media (min-width:960px){.corpo .in{grid-template-columns:.9fr 1.1fr;gap:72px}}
+.corpo .k{color:var(--nude)}
+.corpo .lead{color:rgba(246,240,232,.75)}
+.corpo h2 em{color:var(--nude)}
+.corpo-foto{border-radius:24px 24px 240px 240px;overflow:hidden;aspect-ratio:4/5;background:var(--cafe-2)}
+.corpo-foto img{width:100%;height:100%;object-fit:cover}
+.pilares{display:grid;gap:16px;margin:32px 0 36px}
+@media (min-width:600px){.pilares{grid-template-columns:repeat(3,1fr)}}
+.pilares div{border:1px solid rgba(246,240,232,.18);border-radius:18px;padding:18px}
+.pilares b{display:block;font-family:var(--f-titulo);font-size:24px;font-weight:600;color:var(--nude);margin-bottom:4px}
+.pilares span{font-size:14px;color:rgba(246,240,232,.72)}
+.frase-corpo{font-family:var(--f-titulo);font-style:italic;font-size:clamp(24px,2.6vw,30px);line-height:1.25;border-left:2px solid var(--nude);padding-left:20px;margin-top:8px}
+
+/* Passos */
+.passos{display:grid;gap:18px;counter-reset:p}
+@media (min-width:800px){.passos{grid-template-columns:repeat(4,1fr)}}
+.passo{padding:28px 24px;border-radius:22px;background:#fff;border:1px solid var(--linha);counter-increment:p}
+.passo::before{content:"0" counter(p);display:block;font-family:var(--f-titulo);font-size:46px;line-height:1;color:var(--caramelo);margin-bottom:16px}
+.passo h3{font-size:24px;margin-bottom:8px}
+.passo p{font-size:15px;color:var(--suave)}
+
+/* Sobre */
+.sobre{background:var(--areia)}
+.sobre .in{display:grid;gap:40px}
+@media (min-width:900px){.sobre .in{grid-template-columns:1fr 1fr;gap:72px;align-items:center}}
+.monograma{aspect-ratio:1;max-width:440px;width:100%;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff 0,var(--areia) 55%,var(--nude) 100%);display:grid;place-items:center;border:1px solid var(--linha);margin-inline:auto}
+.monograma span{font-family:var(--f-titulo);font-size:clamp(120px,18vw,190px);line-height:1;color:var(--cafe);font-style:italic}
+.monograma small{display:block;text-align:center;font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-top:-6px}
+.sobre p+p{margin-top:16px}
+.sobre .lead{max-width:none}
+
+/* Feedback */
+.feedback .in{display:grid;gap:20px}
+@media (min-width:900px){.feedback .in{grid-template-columns:repeat(3,1fr)}}
+.fala{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;gap:18px}
+.fala q{font-family:var(--f-titulo);font-size:24px;line-height:1.25;font-style:italic;quotes:"“" "”"}
+.fala span{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);margin-top:auto}
+.feedback-cta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;border-radius:22px;background:var(--areia);padding:28px}
+.feedback-cta p{max-width:52ch;color:var(--suave)}
+
+/* FAQ */
+.faq-lista{max-width:820px;display:grid;gap:12px}
+details{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:0 24px}
+summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-titulo);font-size:30px;line-height:1;color:var(--caramelo);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding-bottom:22px;color:var(--suave)}
+
+/* CTA final */
+.final{background:var(--cafe);color:var(--linho);text-align:center}
+.final h2 em{color:var(--nude)}
+.final .lead{color:rgba(246,240,232,.75);margin:22px auto 34px}
+.final .fone{display:block;margin-top:22px;font-size:14px;color:rgba(246,240,232,.6)}
+
+footer{background:#1d1612;color:rgba(246,240,232,.6);font-size:13.5px;padding:36px 0 110px}
+footer .in{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{color:var(--nude)}
+.aviso{width:100%;font-size:12px;color:rgba(246,240,232,.42)}
+
+/* Botão flutuante */
+.flut{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:10px;background:var(--zap);color:#fff;border-radius:999px;padding:14px 20px 14px 16px;font-weight:700;font-size:15px;box-shadow:0 14px 34px -10px rgba(0,0,0,.45);transition:transform .2s}
+.flut:hover{transform:translateY(-2px)}
+.flut svg{width:24px;height:24px}
+
+/* Entrada suave */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rev.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="in">
+    <a href="#inicio" class="marca">Laryssa Farias<small>Estética avançada</small></a>
+    <nav aria-label="Seções">
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#corporal">Corporal</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-zap js-zap" data-msg="Olá, Laryssa! Vim pelo site e quero agendar uma avaliação." href="#">Agendar</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="in">
+    <div>
+      <span class="k">Estética e cosmética avançada</span>
+      <h1 style="margin-top:18px">Resultados reais.<em>Do jeito que é seu.</em></h1>
+      <p class="lead">Preenchimento, botox, laser e protocolos corporais com quem já fez mais de 5 mil atendimentos. Um atendimento sem pressa, que começa ouvindo o que você quer mudar e o que quer manter.</p>
+      <div class="hero-cta">
+        <a class="btn btn-zap js-zap" data-msg="Olá, Laryssa! Vim pelo site e quero agendar minha avaliação." href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Agendar avaliação
+        </a>
+        <a class="btn btn-claro" href="#procedimentos">Ver procedimentos</a>
+      </div>
+      <div class="selo"><b>+5 mil</b><span>atendimentos transformando<br>autoestima</span></div>
+    </div>
+    <div class="hero-foto rev">
+      <img src="https://images.pexels.com/photos/9157201/pexels-photo-9157201.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Aplicação de preenchimento labial com seringa" loading="eager">
+      <div class="tag-flut"><span class="dot">L</span><span><b>Especialista em BCAA, laser e corporal</b><br>Avaliação individual antes de qualquer procedimento</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<div class="faixa">
+  <div class="in">
+    <div><b>+5.000</b><span>atendimentos realizados</span></div>
+    <div><b>3.6 mil</b><span>seguidoras no Instagram</span></div>
+    <div><b>Rosto</b><span>preenchimento e botox</span></div>
+    <div><b>Corpo</b><span>BCAA, laser e corporal</span></div>
+  </div>
+</div>
+
+<!-- SEGREDINHO -->
+<section class="segredo">
+  <div class="in">
+    <blockquote class="citacao rev" style="margin:0">
+      Ela posta e marca o personal, a academia, o salão, a loja de roupa, o restaurante. Mas eu não, porque eu sou o segredinho dela.
+      <cite>Laryssa Farias, no Instagram</cite>
+    </blockquote>
+    <div class="rev">
+      <span class="k">Por que tanta gente volta</span>
+      <h2 style="margin-top:14px">Natural a ponto de ninguém <em>saber</em>.</h2>
+      <p class="lead" style="margin-top:18px">O melhor elogio que um procedimento pode receber é “você está ótima”, e não “o que você fez?”. É esse o resultado que a Laryssa busca: você mais você, e o segredo fica entre vocês duas.</p>
+      <ul>
+        <li>Avaliação antes de qualquer agulha: o plano é feito para o seu rosto e o seu corpo</li>
+        <li>Marcação e técnica para um resultado harmônico, sem exagero</li>
+        <li>Acompanhamento depois: o inchaço passa, e ela explica cada fase</li>
+        <li>Um ambiente leve, com conversa, desabafo e risada no meio</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section id="procedimentos">
+  <div class="in">
+    <div class="head">
+      <span class="k">Procedimentos</span>
+      <h2>Rosto e corpo, <em>no mesmo lugar</em>.</h2>
+      <p class="lead">Toque no procedimento que te interessa e a mensagem já vai pronta para o WhatsApp.</p>
+    </div>
+    <div class="grade">
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre preenchimento labial." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Procedimento estético facial com seringa" loading="lazy"></div>
+        <div class="tx"><span class="num">01 · ROSTO</span><h3>Preenchimento labial</h3><p>Volume, contorno e hidratação na medida do seu rosto. Do sutil ao marcado, sempre com proporção.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre botox." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/7581590/pexels-photo-7581590.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aplicação de toxina botulínica na testa" loading="lazy"></div>
+        <div class="tx"><span class="num">02 · ROSTO</span><h3>Botox</h3><p>Suaviza linhas de expressão da testa, da glabela e dos olhos sem congelar o rosto. Você continua com a sua expressão.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre preenchimento facial (bigode chinês, olheiras, contorno)." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/7581583/pexels-photo-7581583.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Profissional fazendo marcação e aplicação no rosto" loading="lazy"></div>
+        <div class="tx"><span class="num">03 · ROSTO</span><h3>Preenchimento facial</h3><p>Marcação precisa para tratar o bigode chinês, devolver sustentação e harmonizar o rosto que mudou com o tempo.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre o protocolo com BCAA." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/6551424/pexels-photo-6551424.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mulher medindo a cintura com fita métrica" loading="lazy"></div>
+        <div class="tx"><span class="num">04 · CORPO</span><h3>Protocolo BCAA</h3><p>Aliado do emagrecimento e da definição para quem já está em movimento e quer acelerar a evolução.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre os tratamentos a laser." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/5619448/pexels-photo-5619448.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sessão de tratamento a laser em clínica" loading="lazy"></div>
+        <div class="tx"><span class="num">05 · CORPO E ROSTO</span><h3>Laser</h3><p>Tecnologia a favor da pele: protocolos a laser indicados na avaliação conforme o seu tipo de pele e objetivo.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+      <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre os tratamentos corporais." href="#">
+        <div class="ft"><img src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tratamento estético em cabine" loading="lazy"></div>
+        <div class="tx"><span class="num">06 · CORPO</span><h3>Estética corporal</h3><p>Protocolos para gordura localizada, flacidez e contorno, combinados de acordo com a sua fase.</p><span class="mais">Quero saber mais</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORAL -->
+<section class="corpo" id="corporal">
+  <div class="in">
+    <div class="corpo-foto rev"><img src="https://images.pexels.com/photos/7991942/pexels-photo-7991942.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mulher medindo a cintura em ambiente de academia" loading="lazy"></div>
+    <div class="rev">
+      <span class="k">Especialidade corporal</span>
+      <h2 style="margin-top:14px">Não é só perder peso. É <em>viver em um corpo novo</em>.</h2>
+      <p class="lead" style="margin-top:18px">As pacientes da Laryssa aparecem no feed dela de top e shortinho, na academia, no carnaval, de antes e depois lado a lado. Cada uma no seu ritmo, e todas evoluindo. O protocolo corporal entra como parceiro da sua rotina, não como milagre.</p>
+      <div class="pilares">
+        <div><b>BCAA</b><span>protocolo aliado do emagrecimento e da definição</span></div>
+        <div><b>Laser</b><span>tecnologia para pele e contorno</span></div>
+        <div><b>Corporal</b><span>gordura localizada e flacidez</span></div>
+      </div>
+      <p class="frase-corpo">“Emagrecer não resolve tudo, mas muda sua vida.”</p>
+      <div style="margin-top:34px"><a class="btn btn-ouro js-zap" data-msg="Olá, Laryssa! Quero começar meu protocolo corporal. Como funciona a avaliação?" href="#">Quero começar meu protocolo</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="in">
+    <div class="head">
+      <span class="k">Como funciona</span>
+      <h2>Do primeiro “oi” ao <em>resultado</em>.</h2>
+    </div>
+    <div class="passos">
+      <div class="passo rev"><h3>Conversa</h3><p>Você chama no WhatsApp, conta o que te incomoda e marca o melhor horário.</p></div>
+      <div class="passo rev"><h3>Avaliação</h3><p>A Laryssa analisa seu rosto ou corpo, explica as opções e monta o plano com você.</p></div>
+      <div class="passo rev"><h3>Procedimento</h3><p>Marcação, técnica e cuidado em cada etapa, num ambiente tranquilo.</p></div>
+      <div class="passo rev"><h3>Acompanhamento</h3><p>Orientações de pós e retorno para ver a evolução até o resultado final.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="in">
+    <div class="rev"><div class="monograma"><div><span>LF</span><small>Estética avançada</small></div></div></div>
+    <div class="rev">
+      <span class="k">Quem cuida de você</span>
+      <h2 style="margin-top:14px">Laryssa <em>Farias</em></h2>
+      <p class="lead" style="margin-top:20px">Profissional de estética e cosmética, especialista em BCAA, laser e corporal. São mais de 5 mil atendimentos e uma rotina que ela mesma resume assim:</p>
+      <p class="citacao" style="font-size:clamp(24px,2.6vw,30px);margin-top:20px">Mulheres incríveis, conversas de garotas, desabafos, risadas, e no fim ainda vão embora mais lindas.</p>
+      <p class="lead" style="margin-top:20px">É empreendedora, está à frente de cada atendimento e acredita que autoestima se constrói com resultado de verdade, sem promessa fácil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="feedback">
+  <div class="in">
+    <div class="head" style="grid-column:1/-1;margin-bottom:28px">
+      <span class="k">O que aparece no consultório</span>
+      <h2>Momentos reais, <em>direto do feed</em>.</h2>
+    </div>
+    <div class="fala rev"><q>Você com 31 nunca mais vai ter a mesma carinha dos 20.</q><span>Sobre prevenção e botox</span></div>
+    <div class="fala rev"><q>Nesse momento, só uma coisa passa na minha cabeça: ela vai voltar dizendo que queria o volume de quando ainda estava inchado.</q><span>Sobre preenchimento labial</span></div>
+    <div class="fala rev"><q>Não é só perder peso, é aprender a viver em um corpo novo.</q><span>Sobre o corporal</span></div>
+    <div class="feedback-cta rev">
+      <p>Os depoimentos das pacientes estão no destaque <b>Feedback</b> do Instagram, junto com os destaques de <b>Preenchimento</b> e <b>Botox</b>. Dá uma olhada antes de agendar.</p>
+      <a class="btn btn-claro" href="https://www.instagram.com/lfariasesteticaavancada/" target="_blank" rel="noopener">Ver no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="duvidas" style="padding-top:0">
+  <div class="in">
+    <div class="head">
+      <span class="k">Dúvidas frequentes</span>
+      <h2>Antes de <em>agendar</em>.</h2>
+    </div>
+    <div class="faq-lista">
+      <details><summary>O resultado do preenchimento labial fica artificial?</summary><p>A proposta é o contrário: volume proporcional ao seu rosto, com marcação feita na avaliação. Nos primeiros dias é normal ficar mais inchado; o resultado final aparece depois que o inchaço baixa.</p></details>
+      <details><summary>O botox deixa o rosto parado?</summary><p>Não quando a dose e os pontos são bem planejados. O objetivo é suavizar as linhas de expressão mantendo os seus movimentos naturais.</p></details>
+      <details><summary>O protocolo com BCAA emagrece sozinho?</summary><p>Ele é um aliado. Os melhores resultados vêm junto com alimentação e treino, e é por isso que a avaliação considera a sua rotina antes de indicar o protocolo.</p></details>
+      <details><summary>Preciso fazer avaliação antes?</summary><p>Sim. É nela que a Laryssa entende o que você quer, verifica se o procedimento é indicado para você e define o plano. Agende pelo WhatsApp.</p></details>
+      <details><summary>Quais os valores e formas de pagamento?</summary><p>Os valores dependem do procedimento e do plano montado na avaliação. Chame no WhatsApp para receber as informações atualizadas. O atendimento aceita Pix.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="in">
+    <span class="k" style="color:var(--nude)">Agendamentos abertos</span>
+    <h2 style="margin-top:16px">Seu próximo elogio <em>começa aqui</em>.</h2>
+    <p class="lead">Mande uma mensagem, conte o que você quer mudar e garanta seu horário de avaliação com a Laryssa.</p>
+    <a class="btn btn-ouro js-zap" data-msg="Olá, Laryssa! Vim pelo site e quero garantir meu horário de avaliação." href="#">Agendar pelo WhatsApp</a>
+    <span class="fone">+55 81 99776-5979 · Agendamentos ✨</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="in">
+    <span>© <span id="ano">2026</span> Laryssa Farias · Estética e Cosmética</span>
+    <span><a href="https://www.instagram.com/lfariasesteticaavancada/" target="_blank" rel="noopener">@lfariasesteticaavancada</a> · <a class="js-zap" data-msg="Olá, Laryssa! Vim pelo site." href="#">WhatsApp</a></span>
+    <span class="aviso">Resultados variam de pessoa para pessoa. Todo procedimento depende de avaliação individual. Fotos de procedimentos ilustrativas (Pexels).</span>
+  </div>
+</footer>
+
+<a class="flut js-zap" data-msg="Olá, Laryssa! Vim pelo site e quero agendar uma avaliação." href="#" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  <span>Agendar</span>
+</a>
+
+<script>
+(function(){
+  var FONE = "5581997765979";
+  document.querySelectorAll(".js-zap").forEach(function(a){
+    var msg = a.getAttribute("data-msg") || "Olá, Laryssa! Vim pelo site.";
+    a.href = "https://wa.me/" + FONE + "?text=" + encodeURIComponent(msg);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.getElementById("ano").textContent = new Date().getFullYear();
+  // Se uma foto não carregar, o bloco fica com o fundo nude em vez de ícone quebrado.
+  document.querySelectorAll("img").forEach(function(img){
+    img.addEventListener("error", function(){ img.style.visibility = "hidden"; });
+  });
+  var els = document.querySelectorAll(".rev");
+  if (!("IntersectionObserver" in window)) { els.forEach(function(e){e.classList.add("on")}); return; }
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
