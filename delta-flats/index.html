@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delta Flats · Paiva Home Stay</title>
+<meta name="description" content="Flats completos no Paiva Home Stay, em Candeias. Vista para o rio e o mar, piscina de borda infinita e tudo o que você precisa. Consulte disponibilidade pelo WhatsApp.">
+<meta property="og:title" content="Delta Flats · Paiva Home Stay">
+<meta property="og:description" content="A vista dos sonhos, equipado com o que você precisa. Reserve pelo WhatsApp.">
+<meta property="og:image" content="img/piscina-borda.jpg">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14; --bg2:#0c1322; --card:#111a2c; --line:rgba(255,255,255,.09);
+  --text:#eef2f8; --muted:#9aa6bb; --gold:#e3b866; --gold2:#b8862f; --blue:#3f8cff; --wa:#25d366;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --r:22px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.gold{background:linear-gradient(100deg,#f7deA0,var(--gold) 40%,var(--gold2) 70%,#f7dea0);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700;display:inline-flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(38px,6vw,72px)}
+h2 em,h1 em{font-style:italic;font-weight:500}
+p.lead{color:var(--muted);font-size:clamp(16px,1.6vw,19px);max-width:560px}
+
+/* ---------- botões ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;border:0;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:#04210f;box-shadow:0 10px 40px -10px rgba(37,211,102,.7)}
+.btn-wa:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.2s ease-in-out infinite}
+@keyframes sweep{60%,100%{transform:translateX(120%)}}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(10px)}
+.btn:hover{transform:translateY(-3px)}
+.btn-wa:hover{box-shadow:0 18px 50px -10px rgba(37,211,102,.9)}
+
+/* ---------- intro ---------- */
+#intro{position:fixed;inset:0;z-index:100;background:var(--bg);display:grid;place-items:center;transition:clip-path 1s cubic-bezier(.8,0,.2,1) .1s;clip-path:inset(0 0 0 0)}
+#intro.out{clip-path:inset(0 0 100% 0)}
+#intro img{width:120px;animation:pop 1s cubic-bezier(.2,.8,.2,1) both}
+#intro .bar{position:absolute;bottom:28%;width:140px;height:2px;background:var(--line);overflow:hidden;border-radius:2px}
+#intro .bar i{display:block;height:100%;background:var(--gold);animation:load 1.1s ease forwards}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes load{from{width:0}to{width:100%}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,padding .4s,border-color .4s;padding:18px 0;border-bottom:1px solid transparent}
+nav.solid{background:rgba(7,11,20,.78);backdrop-filter:blur(16px);padding:10px 0;border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.18em;font-size:13px}
+.brand img{width:42px;height:42px;border-radius:50%}
+.brand small{display:block;font-weight:500;letter-spacing:.1em;color:var(--muted);font-size:11px}
+nav .links{display:flex;gap:28px;font-size:14px;color:var(--muted);font-weight:600}
+nav .links a:hover{color:#fff}
+nav .btn{padding:11px 18px;font-size:14px}
+@media(max-width:860px){nav .links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(60px,10vh,120px)}
+.hero-bg{position:absolute;inset:-6%;background:url(img/piscina-borda.jpg) center 60%/cover;animation:kenburns 22s ease-in-out infinite alternate;filter:saturate(1.15) contrast(1.05)}
+@keyframes kenburns{from{transform:scale(1.05) translate3d(0,0,0)}to{transform:scale(1.18) translate3d(-2%,-3%,0)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,20,.55) 0%,rgba(7,11,20,.15) 35%,rgba(7,11,20,.75) 72%,var(--bg) 100%),radial-gradient(ellipse at 20% 80%,rgba(7,11,20,.7),transparent 60%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(50px,9.5vw,128px);max-width:11ch;margin:18px 0 22px}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln span{display:inline-block;transform:translateY(110%);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero h1 .ln span{transform:none}
+body.ready .hero h1 .ln:nth-child(2) span{transition-delay:.12s}
+body.ready .hero h1 .ln:nth-child(3) span{transition-delay:.24s}
+.hero .fade{opacity:0;transform:translateY(24px);transition:1s cubic-bezier(.2,.8,.2,1)}
+body.ready .hero .fade{opacity:1;transform:none}
+body.ready .hero .fade.d1{transition-delay:.45s} body.ready .hero .fade.d2{transition-delay:.6s} body.ready .hero .fade.d3{transition-delay:.75s}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .loc{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);font-size:13px;font-weight:600}
+.hero .loc i{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(37,211,102,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.scroll-cue{position:absolute;right:var(--pad);bottom:40px;z-index:2;writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;color:var(--muted);display:flex;align-items:center;gap:12px}
+.scroll-cue:after{content:"";width:1px;height:60px;background:linear-gradient(var(--gold),transparent);animation:drip 2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero{padding-top:110px}
+.hero h1{font-size:clamp(50px,7vw,104px)}
+.hero-pic{display:none}
+@media(min-width:900px){
+  .hero{align-items:center;padding-bottom:80px}
+  .hero-bg{filter:blur(28px) saturate(1.3) brightness(.7);inset:-10%}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .hero-pic{display:block;position:relative;aspect-ratio:4/5;max-height:72vh;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.12);opacity:0;transform:translateY(40px) rotate(2deg);transition:1.4s cubic-bezier(.2,.8,.2,1) .3s}
+  body.ready .hero-pic{opacity:1;transform:rotate(2deg)}
+  .hero-pic img{width:100%;height:100%;object-fit:cover;animation:kenburns 18s ease-in-out infinite alternate}
+  .hero-pic .chip{position:absolute;left:16px;bottom:16px;padding:10px 14px;border-radius:12px;background:rgba(7,11,20,.6);backdrop-filter:blur(10px);font-size:13px;font-weight:700;border:1px solid rgba(255,255,255,.15)}
+}
+@media(max-width:700px){.scroll-cue{display:none}.hero .ctas .btn{flex:1 1 100%;justify-content:center}}
+
+/* ---------- marquee ---------- */
+.marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:20px 0}
+.marquee .track{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite}
+.marquee span{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-style:italic;white-space:nowrap;display:flex;align-items:center;gap:48px;color:#cfd7e6}
+.marquee span:after{content:"✦";font-style:normal;color:var(--gold);font-size:.6em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv-img{clip-path:inset(12% 12% 12% 12% round var(--r));transition:clip-path 1.3s cubic-bezier(.7,0,.2,1)}
+.rv-img.in{clip-path:inset(0 0 0 0 round var(--r))}
+section{padding:clamp(80px,12vw,150px) 0}
+
+/* ---------- vista ---------- */
+.vista{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.vista .pic{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.vista .pic img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.vista .badge{position:absolute;left:18px;bottom:18px;right:18px;padding:16px 18px;border-radius:16px;background:rgba(7,11,20,.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.12);display:flex;gap:14px;align-items:center;font-size:14px}
+.vista .badge b{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+.vista h2{margin:18px 0 22px}
+.feat-list{list-style:none;margin-top:32px;display:grid;gap:14px}
+.feat-list li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);transition:border-color .3s,transform .3s}
+.feat-list li:hover{border-color:rgba(227,184,102,.45);transform:translateX(6px)}
+.feat-list .ic{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(227,184,102,.12);color:var(--gold)}
+.feat-list .ic svg{width:20px;height:20px}
+.feat-list b{display:block;font-size:15px}
+.feat-list small{color:var(--muted);font-size:14px}
+@media(max-width:860px){.vista{grid-template-columns:1fr}.vista .pic{aspect-ratio:4/4.4}}
+
+/* ---------- flats ---------- */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.head h2{margin-top:16px}
+.flats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.flat{position:relative;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.flat:hover{box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 1px rgba(227,184,102,.35)}
+.flat .ph{aspect-ratio:4/4.3;overflow:hidden;position:relative}
+.flat .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.flat:hover .ph img{transform:scale(1.08)}
+.flat .tag{position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(7,11,20,.65);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15)}
+.flat .bd{padding:22px 22px 24px}
+.flat h3{font-size:30px;margin-bottom:8px}
+.flat p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips span{font-size:12px;font-weight:600;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#cfd7e6}
+.flat .ask{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px dashed var(--line);font-size:14px;font-weight:700;color:var(--wa)}
+.flat .ask svg{width:22px;height:22px;transition:transform .3s}
+.flat:hover .ask svg{transform:translateX(5px)}
+@media(max-width:960px){.flats{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.flats{grid-template-columns:1fr}}
+
+/* ---------- estrutura (galeria) ---------- */
+.estrutura{background:var(--bg2);border-block:1px solid var(--line)}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,19vw,250px);gap:14px}
+.bento figure{position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in}
+.bento figure img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .6s}
+.bento figure:hover img{transform:scale(1.07);filter:brightness(1.08)}
+.bento figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(7,11,20,.85));font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.bento figcaption i{font-style:normal;font-size:20px;opacity:0;transform:translate(-6px,6px);transition:.4s}
+.bento figure:hover figcaption i{opacity:1;transform:none}
+.b1{grid-column:span 2;grid-row:span 2}.b2{grid-row:span 2}.b5{grid-column:span 2}
+@media(max-width:760px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.b1{grid-column:span 2}.b2{grid-row:span 2}.b5{grid-column:span 2}}
+
+/* ---------- equipado ---------- */
+.amen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.am{padding:26px 22px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.04),transparent 60%);position:relative;overflow:hidden;transition:border-color .4s}
+.am:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(rgba(227,184,102,.22),transparent 70%);left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s;pointer-events:none}
+.am:hover:before{opacity:1}
+.am:hover{border-color:rgba(227,184,102,.35)}
+.am svg{width:30px;height:30px;color:var(--gold);margin-bottom:18px}
+.am b{display:block;font-size:16px;margin-bottom:4px}
+.am small{color:var(--muted);font-size:13.5px}
+@media(max-width:900px){.amen{grid-template-columns:1fr 1fr}}
+
+/* ---------- passos ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{padding:30px 26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);position:relative}
+.step .n{font-family:var(--serif);font-size:72px;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(227,184,102,.6);display:block;margin-bottom:20px}
+.step h3{font-size:28px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* ---------- prova social ---------- */
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.stack{position:relative;height:clamp(360px,42vw,520px)}
+.stack img{position:absolute;border-radius:18px;object-fit:cover;box-shadow:0 30px 60px -20px rgba(0,0,0,.9);border:4px solid #fff;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.stack img:nth-child(1){width:58%;height:70%;left:0;top:8%;transform:rotate(-6deg)}
+.stack img:nth-child(2){width:52%;height:62%;right:2%;top:0;transform:rotate(5deg)}
+.stack img:nth-child(3){width:50%;height:58%;left:24%;bottom:0;transform:rotate(-1deg)}
+.stack:hover img:nth-child(1){transform:rotate(-10deg) translate(-14px,6px)}
+.stack:hover img:nth-child(2){transform:rotate(9deg) translate(14px,-6px)}
+.stack:hover img:nth-child(3){transform:rotate(0) translateY(10px)}
+.stars{color:var(--gold);font-size:22px;letter-spacing:4px;margin:20px 0 8px}
+@media(max-width:860px){.proof{grid-template-columns:1fr}}
+
+/* ---------- cta final ---------- */
+.final{position:relative;overflow:hidden;border-radius:clamp(22px,3vw,36px);padding:clamp(48px,8vw,110px) clamp(22px,6vw,90px);isolation:isolate;text-align:center}
+.final:before{content:"";position:absolute;inset:0;background:url(img/piscina-borda.jpg) center/cover;z-index:-2;transform:scale(1.1);filter:blur(2px) saturate(1.2)}
+.final:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(7,11,20,.92),rgba(12,30,60,.78))}
+.final h2{max-width:14ch;margin:18px auto 18px}
+.final p.lead{margin:0 auto}
+.contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.contact{display:flex;align-items:center;gap:14px;padding:14px 22px 14px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);transition:transform .3s,background .3s,border-color .3s;text-align:left}
+.contact:hover{transform:translateY(-4px);background:rgba(37,211,102,.15);border-color:var(--wa)}
+.contact .ico{width:46px;height:46px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#04210f}
+.contact .ico svg{width:24px;height:24px}
+.contact small{display:block;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.contact b{font-size:18px;letter-spacing:.02em}
+.urg{margin-top:26px;font-size:13px;color:var(--muted)}
+
+footer{padding:50px 0 110px;border-top:1px solid var(--line);margin-top:clamp(80px,10vw,120px);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a:hover{color:#fff}
+
+/* ---------- whatsapp flutuante ---------- */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;transform:translateY(140%);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fab.on{transform:none}
+.fab .bubble{background:#fff;color:#0b1220;font-weight:700;font-size:13.5px;padding:10px 14px;border-radius:14px 14px 4px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);white-space:nowrap}
+.fab .circ{width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.5);position:relative}
+.fab .circ:before,.fab .circ:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.4s ease-out infinite}
+.fab .circ:after{animation-delay:1.2s}
+.fab svg{width:32px;height:32px}
+@keyframes ring{from{transform:scale(1);opacity:.8}to{transform:scale(1.8);opacity:0}}
+@media(max-width:520px){.fab .bubble{display:none}}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(4,7,13,.94);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .4s;padding:20px}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:min(92vw,900px);max-height:80vh;border-radius:16px;transform:scale(.92);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.lb.on img{transform:none}
+.lb p{margin-top:14px;text-align:center;font-weight:700}
+.lb button{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer}
+.lb .x{top:18px;right:18px}.lb .pv{left:14px;top:50%}.lb .nx{right:14px;top:50%}
+
+/* progresso de scroll */
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold2),var(--gold));z-index:70;width:0}
+
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.rv-img{clip-path:none}.hero h1 .ln span,.hero .fade{transform:none;opacity:1}}
+</style>
+</head>
+<body>
+
+<div id="intro"><img src="img/logo.png" alt=""><div class="bar"><i></i></div></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand"><img src="img/logo.png" alt="Delta Flats"><span>DELTA FLATS<small>Paiva Home Stay</small></span></a>
+    <div class="links"><a href="#vista">A vista</a><a href="#flats">Os flats</a><a href="#estrutura">Estrutura</a><a href="#reservar">Como reservar</a></div>
+    <a class="btn btn-wa" data-wa="Olá! Vi o site da Delta Flats e quero consultar disponibilidade.">${WA}Reservar</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="wrap">
+    <div>
+    <span class="loc fade d1"><i></i>Paiva Home Stay · Candeias</span>
+    <h1><span class="ln"><span>Acorde onde</span></span><span class="ln"><span>o rio encontra</span></span><span class="ln"><span><em class="gold">o mar.</em></span></span></h1>
+    <p class="lead fade d2">Flats completos, prontos para você chegar e viver a vista dos sonhos. Piscina de borda infinita, restaurante no prédio e tudo o que você precisa dentro do flat.</p>
+    <div class="ctas fade d3">
+      <a class="btn btn-wa" data-wa="Olá! Quero consultar disponibilidade e valores dos flats da Delta Flats.">${WA}Consultar disponibilidade</a>
+      <a class="btn btn-ghost" href="#flats">Conhecer os flats ↓</a>
+    </div>
+    </div>
+    <div class="hero-pic"><img src="img/piscina-borda.jpg" alt="Piscina de borda infinita com vista para o rio e o mar"><span class="chip">✦ Piscina de borda infinita</span></div>
+  </div>
+  <div class="scroll-cue">ROLE PARA VER</div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="mq">
+  <span>Vista para o rio e o mar</span><span>Piscina de borda infinita</span><span>Restaurante no prédio</span><span>Cozinha equipada</span><span>Ar-condicionado</span><span>Smart TV</span><span>Fechadura digital</span><span>Deck com solário</span>
+</div></div>
+
+<!-- A VISTA -->
+<section id="vista">
+  <div class="wrap vista">
+    <div class="pic rv-img"><img src="img/quarto-vista.jpg" alt="Quarto com janelão de frente para o rio e o mar" data-par="0.12">
+      <div class="badge"><b>∞</b><span>Janelas do chão ao teto, com o verde do mangue e o azul do mar logo à frente.</span></div>
+    </div>
+    <div>
+      <span class="eyebrow rv">A vista</span>
+      <h2 class="rv">Uma janela que <em class="gold">vale a viagem.</em></h2>
+      <p class="lead rv">Abra a cortina e o dia já começa diferente. Os flats ficam no alto, com vista aberta para o rio, o mangue e o mar do Paiva. É o tipo de paisagem que vira foto, vira story e vira vontade de voltar.</p>
+      <ul class="feat-list">
+        <li class="rv"><span class="ic">${I.sun}</span><span><b>Vista panorâmica</b><small>Rio, mangue e mar no mesmo enquadramento.</small></span></li>
+        <li class="rv"><span class="ic">${I.key}</span><span><b>Chegou, entrou</b><small>Flat montado e equipado. Você só traz a mala.</small></span></li>
+        <li class="rv"><span class="ic">${I.pin}</span><span><b>No Paiva, perto de tudo</b><small>Em Candeias, pertinho das praias da região.</small></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FLATS -->
+<section id="flats" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Os flats</span><h2 class="rv">Escolha o seu <em class="gold">canto.</em></h2></div>
+      <p class="lead rv" style="max-width:420px">Opções para casal, família ou turma de amigos. Fale com a gente e receba disponibilidade e valores na hora.</p>
+    </div>
+    <div class="flats">
+      <article class="flat rv tilt">
+        <div class="ph"><img src="img/sala.jpg" alt="Flat com sala de estar, sofá e TV"><span class="tag">Com sala</span></div>
+        <div class="bd"><h3>Flat Sala & Vista</h3><p>Sala de estar com sofá, Smart TV e ar-condicionado, mesa de jantar e janela para a paisagem.</p>
+          <div class="chips"><span>Sala de estar</span><span>Ar-condicionado</span><span>Smart TV</span><span>Mesa de jantar</span></div>
+          <a class="ask" data-wa="Olá! Tenho interesse no Flat Sala & Vista. Pode me passar disponibilidade e valores?">Consultar disponibilidade ${ARROW}</a></div>
+      </article>
+      <article class="flat rv tilt">
+        <div class="ph"><img src="img/quarto-mesa.jpg" alt="Flat panorâmico com cama de casal, solteiro e mesa"><span class="tag">Panorâmico</span></div>
+        <div class="bd"><h3>Flat Panorâmico</h3><p>Ambiente integrado e iluminado, cama de casal, cama de solteiro, sofá e mesa redonda de frente para o janelão.</p>
+          <div class="chips"><span>Casal + solteiro</span><span>Sofá</span><span>Mesa para refeições</span><span>TV</span></div>
+          <a class="ask" data-wa="Olá! Tenho interesse no Flat Panorâmico. Pode me passar disponibilidade e valores?">Consultar disponibilidade ${ARROW}</a></div>
+      </article>
+      <article class="flat rv tilt">
+        <div class="ph"><img src="img/quarto-solteiro.jpg" alt="Flat com duas camas e vista para o rio"><span class="tag">Família & amigos</span></div>
+        <div class="bd"><h3>Flat Família</h3><p>Camas para acomodar a turma, enxoval organizado e a mesma vista que faz todo mundo acordar cedo.</p>
+          <div class="chips"><span>Várias camas</span><span>Enxoval</span><span>TV</span><span>Vista para o rio</span></div>
+          <a class="ask" data-wa="Olá! Tenho interesse no Flat Família. Pode me passar disponibilidade e valores?">Consultar disponibilidade ${ARROW}</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA -->
+<section class="estrutura" id="estrutura">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">O prédio</span><h2 class="rv">Estrutura de <em class="gold">resort.</em></h2></div>
+      <p class="lead rv" style="max-width:420px">Fora do flat, o dia continua: piscina de borda infinita com cascata, deck, piscina no jardim e restaurante no térreo. Toque nas fotos para ampliar.</p>
+    </div>
+    <div class="bento">
+      <figure class="b1 rv"><img src="img/piscina-borda.jpg" alt="Piscina de borda infinita com vista para o rio e o mar"><figcaption>Piscina de borda infinita <i>↗</i></figcaption></figure>
+      <figure class="b2 rv"><img src="img/deck.jpg" alt="Deck da piscina com vista para o mar"><figcaption>Deck & solário <i>↗</i></figcaption></figure>
+      <figure class="rv"><img src="img/piscina-jardim.jpg" alt="Piscina do jardim"><figcaption>Piscina do jardim <i>↗</i></figcaption></figure>
+      <figure class="rv"><img src="img/quarto-cozinha.jpg" alt="Bancada com air fryer, cooktop e frigobar"><figcaption>Cozinha equipada <i>↗</i></figcaption></figure>
+      <figure class="b5 rv"><img src="img/restaurante.jpg" alt="Restaurante do prédio" style="object-position:center 60%"><figcaption>Restaurante no prédio <i>↗</i></figcaption></figure>
+      <figure class="b5 rv"><img src="img/quarto-vista.jpg" alt="Quarto com vista panorâmica" style="object-position:center 30%"><figcaption>Quartos com vista <i>↗</i></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPADO -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow rv">Equipado</span><h2 class="rv">Tudo o que <em class="gold">você precisa.</em></h2></div>
+      <p class="lead rv" style="max-width:420px">Pensado para quem quer conforto de casa com cara de férias.</p>
+    </div>
+    <div class="amen">
+      <div class="am rv">${I.snow}<b>Ar-condicionado</b><small>Clima gostoso a qualquer hora.</small></div>
+      <div class="am rv">${I.tv}<b>Smart TV</b><small>Filme e série depois da praia.</small></div>
+      <div class="am rv">${I.pot}<b>Cozinha prática</b><small>Air fryer, cooktop e frigobar.</small></div>
+      <div class="am rv">${I.lock}<b>Fechadura digital</b><small>Entrada prática e segura.</small></div>
+      <div class="am rv">${I.bed}<b>Enxoval completo</b><small>Cama arrumada esperando você.</small></div>
+      <div class="am rv">${I.wave}<b>Piscinas</b><small>Borda infinita e jardim.</small></div>
+      <div class="am rv">${I.cup}<b>Restaurante</b><small>No próprio prédio.</small></div>
+      <div class="am rv">${I.sun}<b>Vista dos sonhos</b><small>Rio, mangue e mar.</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section style="padding-top:0">
+  <div class="wrap proof">
+    <div class="stack rv"><img src="img/piscina-jardim.jpg" alt=""><img src="img/quarto-cozinha.jpg" alt=""><img src="img/piscina-borda.jpg" alt=""></div>
+    <div>
+      <span class="eyebrow rv">Hóspedes</span>
+      <h2 class="rv">Quem vem, <em class="gold">volta.</em></h2>
+      <div class="stars rv">★★★★★</div>
+      <p class="lead rv">Os hóspedes contam como foi a estadia nos destaques "Hóspedes" e "Avaliações" do nosso Instagram. Dá uma olhada e veja com os próprios olhos.</p>
+      <div class="ctas rv" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-ghost" href="https://www.instagram.com/deltaflats.phs/" target="_blank" rel="noopener">${IG}Ver avaliações no Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSOS -->
+<section id="reservar" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow rv">Como reservar</span><h2 class="rv">Simples assim, <em class="gold">em 3 passos.</em></h2></div></div>
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><h3>Chame no WhatsApp</h3><p>Diga as datas e quantas pessoas vão. A resposta é rápida.</p></div>
+      <div class="step rv"><span class="n">02</span><h3>Receba as opções</h3><p>A gente envia os flats disponíveis, fotos e valores para o seu período.</p></div>
+      <div class="step rv"><span class="n">03</span><h3>Garanta sua data</h3><p>Confirmou, está reservado. Depois é só chegar e aproveitar a vista.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="wrap">
+  <div class="final rv" id="contato">
+    <span class="eyebrow">Reserve agora</span>
+    <h2>Sua vista dos sonhos está <em class="gold">a uma mensagem.</em></h2>
+    <p class="lead">Fins de semana e feriados costumam lotar primeiro. Chame agora e garanta a melhor data para você.</p>
+    <div class="contacts" id="contacts"></div>
+    <p class="urg">Atendimento pelo WhatsApp · Valores e disponibilidade enviados na hora</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="img/logo.png" alt=""><span>DELTA FLATS<small>Flats no Paiva Home Stay · Candeias</small></span></div>
+    <div style="display:flex;gap:22px"><a href="https://www.instagram.com/deltaflats.phs/" target="_blank" rel="noopener">@deltaflats.phs</a><a href="#topo">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" data-wa="Olá! Vi o site da Delta Flats e quero consultar disponibilidade."><span class="bubble">Consulte datas e valores 👋</span><span class="circ">${WA}</span></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Fechar">×</button><button class="pv" aria-label="Anterior">‹</button><div><img alt=""><p></p></div><button class="nx" aria-label="Próxima">›</button></div>
+
+<script>
+/* =====================================================
+   CONTATOS — edite aqui os números (somente dígitos, com 55 + DDD)
+   ===================================================== */
+const CONTATOS = [
+  { nome: "Reservas", numero: "5581992443128" },
+  // { nome: "Atendimento 2", numero: "5581900000000" },
+];
+
+const WA='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.9 1.9 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.1 5.5.1 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.3z"/></svg>';
+const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const IG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+const s=(d)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const I={
+  sun:s('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+  key:s('<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 21 2M17 6l3 3M14 9l2 2"/>'),
+  pin:s('<path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>'),
+  snow:s('<path d="M12 2v20M4 7l16 10M4 17 20 7M9 4l3 2 3-2M9 20l3-2 3 2"/>'),
+  tv:s('<rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 22h8M12 18v4"/>'),
+  pot:s('<path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2 10h20M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/>'),
+  lock:s('<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.5"/>'),
+  bed:s('<path d="M2 18V7M2 13h20v5M22 18v-3a3 3 0 0 0-3-3h-8v1"/><circle cx="6.5" cy="10.5" r="1.5"/>'),
+  wave:s('<path d="M2 15c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M8 11V4a2 2 0 0 1 4 0M14 11V4a2 2 0 0 1 4 0"/>'),
+  cup:s('<path d="M3 8h14v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M7 2v3M11 2v3"/>'),
+};
+
+/* injeta os ícones nos placeholders ${...} do HTML */
+document.body.innerHTML=document.body.innerHTML
+  .replace(/\$\{WA\}/g,WA).replace(/\$\{ARROW\}/g,ARROW).replace(/\$\{IG\}/g,IG)
+  .replace(/\$\{I\.(\w+)\}/g,(_,k)=>I[k]||'');
+
+const waLink=(num,msg)=>`https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+const fmt=n=>{const d=n.replace(/^55/,'');return `(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}`};
+
+document.querySelectorAll('[data-wa]').forEach(a=>{
+  a.href=waLink(CONTATOS[0].numero,a.dataset.wa);a.target='_blank';a.rel='noopener';
+});
+document.getElementById('contacts').innerHTML=CONTATOS.map(c=>
+  `<a class="contact" target="_blank" rel="noopener" href="${waLink(c.numero,'Olá! Quero consultar disponibilidade e valores dos flats da Delta Flats.')}"><span class="ico">${WA}</span><span><small>${c.nome}</small><b>${fmt(c.numero)}</b></span></a>`).join('');
+
+/* marquee duplicado para loop infinito */
+const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;
+
+/* intro */
+window.addEventListener('load',()=>setTimeout(()=>{
+  document.getElementById('intro').classList.add('out');document.body.classList.add('ready');
+},1100));
+setTimeout(()=>{document.getElementById('intro').classList.add('out');document.body.classList.add('ready')},3000);
+
+/* revelar ao rolar */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv,.rv-img').forEach(el=>{
+  const sib=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));
+  const i=sib.indexOf(el);if(i>0)el.style.transitionDelay=(Math.min(i,6)*90)+'ms';
+  io.observe(el);
+});
+
+/* scroll: nav, progresso, parallax, botão flutuante */
+const nav=document.getElementById('nav'),prog=document.getElementById('prog'),fab=document.getElementById('fab'),heroBg=document.getElementById('heroBg');
+const pars=[...document.querySelectorAll('[data-par]')];
+let tk=false;
+function onScroll(){
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  nav.classList.toggle('solid',y>40);
+  prog.style.width=(y/h*100)+'%';
+  fab.classList.toggle('on',y>innerHeight*.6);
+  if(y<innerHeight)heroBg.style.translate=`0 ${y*.3}px`;
+  pars.forEach(el=>{const r=el.parentElement.getBoundingClientRect();const p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.transform=`translateY(${-10+p*-el.dataset.par*100}%)`});
+  tk=false;
+}
+addEventListener('scroll',()=>{if(!tk){requestAnimationFrame(onScroll);tk=true}},{passive:true});onScroll();
+
+/* tilt 3D nos cards (desktop) */
+if(matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.tilt').forEach(c=>{
+    c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`});
+    c.addEventListener('mouseleave',()=>c.style.transform='');
+  });
+  document.querySelectorAll('.am').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+}
+
+/* lightbox */
+const figs=[...document.querySelectorAll('.bento figure')],lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbp=lb.querySelector('p');let cur=0;
+const show=i=>{cur=(i+figs.length)%figs.length;const im=figs[cur].querySelector('img');lbi.src=im.src;lbi.alt=im.alt;lbp.textContent=figs[cur].querySelector('figcaption').firstChild.textContent.trim()};
+figs.forEach((f,i)=>f.addEventListener('click',()=>{show(i);lb.classList.add('on')}));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
+lb.querySelector('.pv').onclick=e=>{e.stopPropagation();show(cur-1)};
+lb.querySelector('.nx').onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+</script>
+</body>
+</html>
