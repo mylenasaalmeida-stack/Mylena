@@ -18,7 +18,8 @@
   --f-corpo:"Manrope","Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{margin:0;background:var(--linho);color:var(--texto);font-family:var(--f-corpo);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
@@ -77,6 +78,7 @@ section{padding-block:clamp(72px,10vw,120px)}
 @media (min-width:800px){.faixa .in{grid-template-columns:repeat(4,1fr)}}
 .faixa b{display:block;font-family:var(--f-titulo);font-size:clamp(34px,4vw,48px);font-weight:600;line-height:1;color:var(--nude)}
 .faixa span{font-size:13.5px;color:rgba(246,240,232,.72)}
+.faixa b span{font:inherit;color:inherit}
 
 /* Segredinho */
 .segredo{background:var(--areia)}
@@ -173,13 +175,93 @@ footer a{color:var(--nude)}
 .flut:hover{transform:translateY(-2px)}
 .flut svg{width:24px;height:24px}
 
-/* Entrada suave */
-.rev{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+/* ================= ANIMAÇÕES ================= */
+/* Entrada suave ao rolar, com atraso em cascata (--d) */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rev.on{opacity:1;transform:none}
+/* Fotos que "abrem" como cortina */
+.wipe{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1);transition-delay:var(--d,0s)}
+.wipe.on{clip-path:inset(0 0 0 0)}
+.wipe img{transform:scale(1.18);transition:transform 2.2s cubic-bezier(.2,.7,.2,1)}
+.wipe.on img{transform:scale(1)}
+
+/* Barra de progresso de leitura */
+.progresso{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--caramelo),var(--ouro));transform-origin:0 50%;transform:scaleX(0);z-index:60}
+
+/* Título do hero palavra por palavra */
+.palavra{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.palavra>span{display:inline-block;transform:translateY(110%);animation:sobe 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.09s + .15s)}
+@keyframes sobe{to{transform:none}}
+.hero .fade-in{opacity:0;animation:aparece 1s ease forwards;animation-delay:var(--d,.8s)}
+@keyframes aparece{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* Foto do hero com zoom lento contínuo */
+.hero-foto img{animation:kenburns 18s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-2%,-2%)}}
+.tag-flut{animation:flutua 5s ease-in-out infinite}
+@keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Brilho girando atrás da foto do hero */
+.hero-foto-wrap{position:relative;isolation:isolate}
+.hero-foto-wrap::before{content:"";position:absolute;inset:-18px;border-radius:260px 260px 36px 36px;background:conic-gradient(from 0deg,var(--nude),transparent 30%,var(--ouro) 50%,transparent 70%,var(--nude));opacity:.55;filter:blur(18px);animation:gira 14s linear infinite;z-index:-1}
+@keyframes gira{to{transform:rotate(360deg)}}
+
+/* Letreiro infinito */
+.letreiro{background:var(--caramelo);color:var(--linho);overflow:hidden;padding:18px 0;white-space:nowrap}
+.letreiro .trilho{display:inline-flex;gap:48px;animation:rola 32s linear infinite;padding-left:48px}
+.letreiro span{font-family:var(--f-titulo);font-size:clamp(26px,3vw,38px);font-style:italic;display:inline-flex;align-items:center;gap:48px}
+.letreiro span::after{content:"✦";font-style:normal;font-size:18px;color:var(--cafe)}
+@keyframes rola{to{transform:translateX(-50%)}}
+
+/* Galeria em carrossel infinito */
+.galeria{padding-block:clamp(64px,8vw,96px);overflow:hidden;background:var(--linho)}
+.galeria .faixa-fotos{display:flex;gap:18px;width:max-content;animation:rola 55s linear infinite}
+.galeria .faixa-fotos.inv{animation-direction:reverse;margin-top:18px;animation-duration:65s}
+.galeria:hover .faixa-fotos{animation-play-state:paused}
+.galeria figure{margin:0;width:clamp(220px,26vw,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--nude);position:relative;flex:none}
+.galeria .faixa-fotos.inv figure{aspect-ratio:5/4;width:clamp(260px,30vw,380px)}
+.galeria figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.galeria figure:hover img{transform:scale(1.07)}
+.galeria figcaption{position:absolute;left:12px;bottom:12px;background:rgba(246,240,232,.92);color:var(--cafe);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+
+/* Cards com inclinação 3D leve no mouse */
+.card{transform-style:preserve-3d;will-change:transform}
+.card .tx h3{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s;display:inline;padding-bottom:2px}
+.card:hover .tx h3{background-size:100% 1px}
+
+/* Sublinhado que se desenha nos destaques em itálico dos títulos */
+h2 em{background:linear-gradient(var(--nude),var(--nude)) 0 92%/0 .14em no-repeat;transition:background-size 1.2s cubic-bezier(.2,.7,.2,1) .35s}
+.on h2 em,h2.on em,.head.on h2 em{background-size:100% .14em}
+.corpo h2 em,.final h2 em{background-image:linear-gradient(var(--caramelo),var(--caramelo))}
+
+/* Passos acendendo em sequência */
+.passo{position:relative;overflow:hidden}
+.passo::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--caramelo);transform:scaleX(0);transform-origin:0 50%;transition:transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0s) + .3s)}
+.passo.on::after{transform:scaleX(1)}
+
+/* Monograma com anel girando */
+.monograma{position:relative}
+.monograma::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px dashed var(--caramelo);animation:gira 40s linear infinite}
+
+/* Botão flutuante com pulso */
+.flut::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--zap);z-index:-1;animation:pulso 2.4s ease-out infinite}
+@keyframes pulso{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.35,1.6);opacity:0}}
+.btn-zap,.btn-ouro{position:relative;overflow:hidden}
+.btn-zap::after,.btn-ouro::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:brilho 4.5s ease-in-out infinite}
+@keyframes brilho{0%,60%{left:-60%}100%{left:130%}}
+
+.card.rev.on{transition:transform .25s ease,box-shadow .25s ease,opacity .9s ease}
+
+@media (prefers-reduced-motion:reduce){
+  .rev,.wipe,.wipe img{opacity:1!important;transform:none!important;clip-path:none!important}
+  .palavra>span{transform:none}.hero .fade-in{opacity:1}
+  .letreiro .trilho,.galeria .faixa-fotos{animation:none!important}
+}
 </style>
 </head>
 <body>
 
+<div class="progresso" aria-hidden="true"></div>
 <header class="topo">
   <div class="in">
     <a href="#inicio" class="marca">Laryssa Farias<small>Estética avançada</small></a>
@@ -199,20 +281,22 @@ footer a{color:var(--nude)}
 <section class="hero">
   <div class="in">
     <div>
-      <span class="k">Estética e cosmética avançada</span>
-      <h1 style="margin-top:18px">Resultados reais.<em>Do jeito que é seu.</em></h1>
-      <p class="lead">Preenchimento, botox, laser e protocolos corporais com quem já fez mais de 5 mil atendimentos. Um atendimento sem pressa, que começa ouvindo o que você quer mudar e o que quer manter.</p>
-      <div class="hero-cta">
+      <span class="k fade-in" style="--d:0s">Estética e cosmética avançada</span>
+      <h1 style="margin-top:18px" class="js-palavras">Resultados reais.<em>Do jeito que é seu.</em></h1>
+      <p class="lead fade-in" style="--d:.9s">Preenchimento, botox, laser e protocolos corporais com quem já fez mais de 5 mil atendimentos. Um atendimento sem pressa, que começa ouvindo o que você quer mudar e o que quer manter.</p>
+      <div class="hero-cta fade-in" style="--d:1.1s">
         <a class="btn btn-zap js-zap" data-msg="Olá, Laryssa! Vim pelo site e quero agendar minha avaliação." href="#">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
           Agendar avaliação
         </a>
         <a class="btn btn-claro" href="#procedimentos">Ver procedimentos</a>
       </div>
-      <div class="selo"><b>+5 mil</b><span>atendimentos transformando<br>autoestima</span></div>
+      <div class="selo fade-in" style="--d:1.3s"><b>+<span class="js-conta" data-alvo="5000">5.000</span></b><span>atendimentos transformando<br>autoestima</span></div>
     </div>
-    <div class="hero-foto rev">
-      <img src="https://images.pexels.com/photos/9157201/pexels-photo-9157201.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Aplicação de preenchimento labial com seringa" loading="eager">
+    <div class="hero-foto-wrap">
+      <div class="hero-foto wipe js-parallax" data-vel="0.06">
+        <img src="https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Procedimento estético facial com seringa" loading="eager">
+      </div>
       <div class="tag-flut"><span class="dot">L</span><span><b>Especialista em BCAA, laser e corporal</b><br>Avaliação individual antes de qualquer procedimento</span></div>
     </div>
   </div>
@@ -221,10 +305,18 @@ footer a{color:var(--nude)}
 <!-- NÚMEROS -->
 <div class="faixa">
   <div class="in">
-    <div><b>+5.000</b><span>atendimentos realizados</span></div>
-    <div><b>3.6 mil</b><span>seguidoras no Instagram</span></div>
+    <div><b>+<span class="js-conta" data-alvo="5000">5.000</span></b><span>atendimentos realizados</span></div>
+    <div><b><span class="js-conta" data-alvo="3655">3.655</span></b><span>seguidores no Instagram</span></div>
     <div><b>Rosto</b><span>preenchimento e botox</span></div>
     <div><b>Corpo</b><span>BCAA, laser e corporal</span></div>
+  </div>
+</div>
+
+<!-- LETREIRO -->
+<div class="letreiro" aria-hidden="true">
+  <div class="trilho">
+    <span>Preenchimento labial</span><span>Botox</span><span>Protocolo BCAA</span><span>Laser</span><span>Estética corporal</span><span>Preenchimento facial</span><span>Resultados reais</span>
+    <span>Preenchimento labial</span><span>Botox</span><span>Protocolo BCAA</span><span>Laser</span><span>Estética corporal</span><span>Preenchimento facial</span><span>Resultados reais</span>
   </div>
 </div>
 
@@ -259,7 +351,7 @@ footer a{color:var(--nude)}
     </div>
     <div class="grade">
       <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre preenchimento labial." href="#">
-        <div class="ft"><img src="https://images.pexels.com/photos/3985311/pexels-photo-3985311.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Procedimento estético facial com seringa" loading="lazy"></div>
+        <div class="ft"><img src="https://images.pexels.com/photos/9157201/pexels-photo-9157201.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aplicação de preenchimento labial com seringa" loading="lazy"></div>
         <div class="tx"><span class="num">01 · ROSTO</span><h3>Preenchimento labial</h3><p>Volume, contorno e hidratação na medida do seu rosto. Do sutil ao marcado, sempre com proporção.</p><span class="mais">Quero saber mais</span></div>
       </a>
       <a class="card rev js-zap" data-msg="Olá, Laryssa! Quero saber mais sobre botox." href="#">
@@ -286,10 +378,31 @@ footer a{color:var(--nude)}
   </div>
 </section>
 
+<!-- GALERIA -->
+<section class="galeria" aria-label="Galeria de procedimentos">
+  <div class="in"><div class="head rev" style="margin-bottom:36px">
+    <span class="k">Galeria</span>
+    <h2>O cuidado em <em>cada detalhe</em>.</h2>
+  </div></div>
+  <div class="faixa-fotos">
+    <figure><img src="https://images.pexels.com/photos/7581584/pexels-photo-7581584.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Aplicação de botox na testa" loading="lazy"><figcaption>Botox</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/4586713/pexels-photo-4586713.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Tratamento facial em cabine" loading="lazy"><figcaption>Facial</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/6551072/pexels-photo-6551072.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Mulher medindo a cintura" loading="lazy"><figcaption>Corporal</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/7581581/pexels-photo-7581581.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Mãos com luvas avaliando o rosto da paciente" loading="lazy"><figcaption>Avaliação</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Procedimento facial com equipamento" loading="lazy"><figcaption>Tecnologia</figcaption></figure>
+  </div>
+  <div class="faixa-fotos inv">
+    <figure><img src="https://images.pexels.com/photos/7446671/pexels-photo-7446671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tratamento facial" loading="lazy"><figcaption>Pele</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/7581577/pexels-photo-7581577.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aplicação de toxina na testa" loading="lazy"><figcaption>Linhas de expressão</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/5629206/pexels-photo-5629206.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mãos medindo a cintura" loading="lazy"><figcaption>Contorno</figcaption></figure>
+    <figure><img src="https://images.pexels.com/photos/6516066/pexels-photo-6516066.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fita métrica na cintura de uma mulher" loading="lazy"><figcaption>Evolução</figcaption></figure>
+  </div>
+</section>
+
 <!-- CORPORAL -->
 <section class="corpo" id="corporal">
   <div class="in">
-    <div class="corpo-foto rev"><img src="https://images.pexels.com/photos/7991942/pexels-photo-7991942.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mulher medindo a cintura em ambiente de academia" loading="lazy"></div>
+    <div class="corpo-foto wipe js-parallax" data-vel="0.08"><img src="https://images.pexels.com/photos/7991942/pexels-photo-7991942.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Mulher medindo a cintura em ambiente de academia" loading="lazy"></div>
     <div class="rev">
       <span class="k">Especialidade corporal</span>
       <h2 style="margin-top:14px">Não é só perder peso. É <em>viver em um corpo novo</em>.</h2>
@@ -408,12 +521,97 @@ footer a{color:var(--nude)}
   document.querySelectorAll("img").forEach(function(img){
     img.addEventListener("error", function(){ img.style.visibility = "hidden"; });
   });
-  var els = document.querySelectorAll(".rev");
-  if (!("IntersectionObserver" in window)) { els.forEach(function(e){e.classList.add("on")}); return; }
-  var io = new IntersectionObserver(function(ents){
-    ents.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
-  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
-  els.forEach(function(e){ io.observe(e); });
+
+  var calmo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Galeria: duplica as fotos para o carrossel girar sem emenda
+  document.querySelectorAll(".faixa-fotos").forEach(function(f){
+    f.innerHTML += f.innerHTML;
+    f.querySelectorAll("figure").forEach(function(fig,i){ if(i >= f.children.length/2) fig.setAttribute("aria-hidden","true"); });
+  });
+
+  // Título do hero palavra por palavra
+  document.querySelectorAll(".js-palavras").forEach(function(h){
+    var i = 0;
+    (function quebra(no){
+      Array.prototype.slice.call(no.childNodes).forEach(function(n){
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(p){
+            if (!p) return;
+            if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(" ")); return; }
+            var w = document.createElement("span"); w.className = "palavra";
+            var s = document.createElement("span"); s.textContent = p; s.style.setProperty("--i", i++);
+            w.appendChild(s); frag.appendChild(w);
+          });
+          no.replaceChild(frag, n);
+        } else if (n.nodeType === 1) { quebra(n); }
+      });
+    })(h);
+  });
+
+  // Cascata: itens irmãos entram um depois do outro
+  document.querySelectorAll(".grade,.passos,.feedback .in,.pilares").forEach(function(g){
+    Array.prototype.forEach.call(g.children, function(c,i){ c.style.setProperty("--d", (i*0.12)+"s"); });
+  });
+  document.querySelectorAll(".card .ft").forEach(function(ft){ ft.classList.add("wipe"); });
+  document.querySelectorAll(".head").forEach(function(h){ if(!h.classList.contains("rev")) h.classList.add("rev"); });
+
+  // Contadores
+  function conta(el){
+    var alvo = +el.getAttribute("data-alvo"), t0 = null, dur = 1800;
+    function passo(t){ if(!t0) t0 = t; var p = Math.min((t-t0)/dur,1); p = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(alvo*p).toLocaleString("pt-BR"); if(p<1) requestAnimationFrame(passo); }
+    if (calmo) return; el.textContent = "0"; requestAnimationFrame(passo);
+  }
+
+  var els = document.querySelectorAll(".rev,.wipe,.js-conta");
+  if (!("IntersectionObserver" in window)) { els.forEach(function(e){e.classList.add("on")}); }
+  else {
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var t = e.target;
+        if (t.classList.contains("js-conta")) conta(t);
+        else if (t.classList.contains("rev") || !t._wipe) t.classList.add("on");
+        if (t._wipe) t._wipe.classList.add("on");
+        io.unobserve(e.target);
+      });
+    }, {threshold:.15, rootMargin:"0px 0px -40px 0px"});
+    // Elemento recortado (clip-path) não "aparece" para o observer: observa o pai no lugar.
+    els.forEach(function(e){
+      if (e.classList.contains("wipe")) { var pai = e.parentElement; pai._wipe = e; io.observe(pai); }
+      else io.observe(e);
+    });
+  }
+
+  if (calmo) return;
+
+  // Barra de progresso + parallax
+  var barra = document.querySelector(".progresso"), par = document.querySelectorAll(".js-parallax"), tick = false;
+  function rolar(){
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    barra.style.transform = "scaleX(" + (max > 0 ? h.scrollTop/max : 0) + ")";
+    par.forEach(function(el){
+      var r = el.getBoundingClientRect(), centro = r.top + r.height/2 - innerHeight/2;
+      var d = -centro * (+el.getAttribute("data-vel"));
+      el.style.translate = "0 " + Math.max(-40, Math.min(40, d)) + "px";
+    });
+    tick = false;
+  }
+  addEventListener("scroll", function(){ if(!tick){ tick = true; requestAnimationFrame(rolar); } }, {passive:true});
+  rolar();
+
+  // Inclinação 3D nos cards (só com mouse)
+  if (matchMedia("(hover:hover)").matches) {
+    document.querySelectorAll(".card").forEach(function(c){
+      c.addEventListener("mousemove", function(ev){
+        var r = c.getBoundingClientRect(), x = (ev.clientX-r.left)/r.width-.5, y = (ev.clientY-r.top)/r.height-.5;
+        c.style.transform = "perspective(900px) rotateY("+(x*6)+"deg) rotateX("+(-y*6)+"deg) translateY(-4px)";
+      });
+      c.addEventListener("mouseleave", function(){ c.style.transform = ""; });
+    });
+  }
 })();
 </script>
 </body>
