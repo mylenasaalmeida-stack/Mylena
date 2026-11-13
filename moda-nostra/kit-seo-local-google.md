@@ -146,6 +146,6 @@ E mais **5 fotos novas por semana**: fachada, salão, equipe e pizzas com boa lu
 
 ## 8. Como medir
 
-No painel do Perfil, acompanhe todo mês: **pesquisas**, **visualizações**, **cliques em "Como chegar"**, **ligações** e **cliques no site**. Ponto de partida: 4,4 com 218 avaliações. Meta para 90 dias: chegar a 300 avaliações e nota ≥ 4,6 e crescimento das buscas por "pizzaria".
+No painel do Perfil, acompanhe todo mês: **pesquisas**, **visualizações**, **cliques em "Como chegar"**, **ligações** e **cliques no site**. Ponto de partida: 4,4 com 218 avaliações. Meta para 90 dias: cerca de 110 avaliações novas de 5 estrelas, o que leva a nota de 4,4 para 4,6 (umas 9 por semana) e crescimento das buscas por "pizzaria".
 
 Resultados aparecem em **4 a 12 semanas** de trabalho constante.
