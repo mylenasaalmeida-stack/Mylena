@@ -2,7 +2,25 @@
 
 Objetivo: fazer a Moda Nostra aparecer no topo das buscas "pizzaria em Candeias", "pizza perto de mim", "pizza delivery Candeias" no Google e no Google Maps.
 
-> Campos entre [colchetes] precisam ser preenchidos com os dados reais da pizzaria.
+> Campos entre [colchetes] ainda precisam ser preenchidos (telefone, link de avaliação etc.).
+
+## 0. Diagnóstico do perfil atual (busca "moda nostra candeias", 13/11/2026)
+
+| Item | Situação hoje | Ação |
+|---|---|---|
+| Nome no perfil | `MODA NOSTRA PIZZA DELIVERY - CANDEIAS`, tudo em maiúsculas e com palavras extras | Usar o nome da fachada, por exemplo `Moda Nostra Pizzaria`. Nome com palavra-chave pode causar suspensão se um concorrente denunciar. Mude só se a fachada não traz essas palavras. |
+| Nota | 4,4 com 218 avaliações | A meta é 4,7 ou mais. Os concorrentes do topo costumam ter 4,6 ou mais. |
+| Categoria | Pizzaria ✅ | Adicionar as categorias secundárias da seção 2. |
+| Opções de serviço | Só aparece **"Mesas externas"** ❌ | **Prioridade:** marcar *Entrega*, *Retirada*, *Consumo no local* e *Entrega sem contato*. Hoje o Google não sabe que vocês fazem delivery. |
+| Fotos | A capa parece de Street View, com fachada escura | Subir foto de capa da pizza e foto atual da fachada iluminada à noite. |
+| Faixa de preço | R$ 20–40 | Confirmar se bate com o cardápio. |
+| Instagram | 5,4 mil seguidores, bio boa ✅ | Colocar o link de avaliação nos destaques. |
+| iFood | Aparece "Nenhuma informação disponível" | Normal (o iFood bloqueia o Google), não precisa fazer nada. |
+| Anota AI | Endereço certo, mas o link é `loja/rafael-moda` | Se der, trocar o slug para `moda-nostra-candeias`. |
+| TripAdvisor | Listado como **"Recife"** ❌ | Corrigir a cidade para **Jaboatão dos Guararapes**. Dados divergentes enfraquecem o ranking. |
+
+**Dados oficiais (usar igual em todo lugar):**
+Moda Nostra Pizzaria · Av. Pres. Castelo Branco, 6505, Candeias, Jaboatão dos Guararapes - PE, 54450-015 · Terça a domingo, 18:00 às 23:15 · [telefone/WhatsApp]
 
 ---
 
@@ -39,7 +57,7 @@ Acesse business.google.com com a conta do dono.
 
 ## 3. Descrição do perfil (até 750 caracteres, pronta para colar)
 
-> A Moda Nostra é a pizzaria de Candeias para quem não abre mão de uma pizza bem feita. Massa de fermentação lenta, molho de tomate da casa e ingredientes selecionados, assados em [forno a lenha / forno de pedra] até a borda ficar no ponto. No cardápio: pizzas tradicionais, especiais da casa, doces e opções de [calzone / esfiha / bebidas]. Fazemos delivery em Candeias, Piedade e região, retirada no balcão e atendimento no salão. Peça pelo WhatsApp [número] ou pelo iFood. Aberto de [dia] a [dia], das [hora] às [hora]. Moda Nostra: pizza de verdade, feita aqui em Candeias.
+> Moda Nostra é pizzaria paulista autêntica em Candeias, Jaboatão dos Guararapes. Tradição e sabor de São Paulo em Pernambuco: massa bem trabalhada, recheio generoso e borda no ponto certo. No cardápio tem pizzas tradicionais, especiais da casa e doces. Fazemos delivery em Candeias, Piedade e região, retirada no balcão e mesas externas na Av. Presidente Castelo Branco, 6505. Dia de jogo é na Moda Nostra! Peça pelo nosso cardápio online, pelo iFood ou pelo WhatsApp [número]. Aberto de terça a domingo, das 18h às 23h15.
 
 As palavras **pizzaria, pizza, Candeias, delivery, Piedade** aparecem de forma natural. É isso que ajuda na relevância.
 
@@ -84,7 +102,7 @@ As palavras **pizzaria, pizza, Candeias, delivery, Piedade** aparecem de forma n
 | 1 | Novidade | Foto da pizza mais vendida: "A favorita de Candeias" |
 | 2 | Oferta | Promoção de terça/quarta (dias fracos) |
 | 3 | Bastidor | Vídeo curto da massa sendo aberta ou da pizza saindo do forno |
-| 4 | Evento | Combo para jogo de futebol / fim de semana |
+| 4 | Evento | "Hoje tem jogo na Moda Nostra": combo para jogo (já é o tema que funciona no Instagram) |
 
 E mais **5 fotos novas por semana**: fachada, salão, equipe e pizzas com boa luz. Perfis com fotos recentes recebem mais cliques.
 
@@ -108,17 +126,17 @@ E mais **5 fotos novas por semana**: fachada, salão, equipe e pizzas com boa lu
   "servesCuisine": ["Pizza", "Italiana"],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "[Rua, número]",
+    "streetAddress": "Av. Pres. Castelo Branco, 6505",
     "addressLocality": "Jaboatão dos Guararapes",
     "addressRegion": "PE",
-    "postalCode": "[CEP]",
+    "postalCode": "54450-015",
     "addressCountry": "BR"
   },
   "telephone": "[+55 81 XXXXX-XXXX]",
   "url": "[https://site]",
-  "menu": "[https://link-do-cardapio]",
+  "menu": "https://pedido.anota.ai/loja/rafael-moda",
   "hasMap": "[link do Google Maps]",
-  "openingHours": "[Tu-Su 18:00-23:30]",
+  "openingHours": "Tu-Su 18:00-23:15",
   "priceRange": "$$"
 }
 </script>
@@ -128,6 +146,6 @@ E mais **5 fotos novas por semana**: fachada, salão, equipe e pizzas com boa lu
 
 ## 8. Como medir
 
-No painel do Perfil, acompanhe todo mês: **pesquisas**, **visualizações**, **cliques em "Como chegar"**, **ligações** e **cliques no site**. Meta para 90 dias: +30 avaliações novas, nota ≥ 4,7 e crescimento das buscas por "pizzaria".
+No painel do Perfil, acompanhe todo mês: **pesquisas**, **visualizações**, **cliques em "Como chegar"**, **ligações** e **cliques no site**. Ponto de partida: 4,4 com 218 avaliações. Meta para 90 dias: chegar a 300 avaliações e nota ≥ 4,6 e crescimento das buscas por "pizzaria".
 
 Resultados aparecem em **4 a 12 semanas** de trabalho constante.
