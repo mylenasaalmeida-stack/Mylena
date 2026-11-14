@@ -101,6 +101,23 @@ h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-heigh
 .book small{font-family:var(--mono);font-size:18px;letter-spacing:.1em;opacity:.8}
 .book i{font-style:normal;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:52px;background:var(--amarelo);color:var(--grafite);align-self:flex-start;padding:4px 14px;border-radius:10px}
 
+
+/* livro */
+.livro .tt{position:absolute;left:72px;right:72px;top:175px;z-index:2}
+.livro .tt small{display:block;font-family:var(--mono);font-size:27px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px;opacity:.85;max-width:30ch;line-height:1.3}
+.livro .tt h1{font-size:108px;line-height:.92}
+.livro .tt h1 em{font-style:normal;color:var(--amarelo)}
+.capa-livro{position:absolute;left:66px;bottom:160px;width:500px;height:700px;border-radius:26px;overflow:hidden;border:5px solid var(--grafite);background:#fff;transform:rotate(-3deg);box-shadow:16px 16px 0 rgba(22,24,29,.28);z-index:2}
+.bg-d .capa-livro,.bg-g .capa-livro{border-color:var(--branco);box-shadow:16px 16px 0 rgba(0,0,0,.45)}
+.capa-livro img{width:100%;height:100%;object-fit:cover}
+.bens{position:absolute;left:620px;right:56px;top:610px;list-style:none;display:grid;gap:26px;z-index:2}
+.bens li{display:grid;grid-template-columns:48px 1fr;gap:18px;font-size:31px;line-height:1.25;font-weight:600;align-items:start}
+.bens li::before{content:"✓";width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:800;background:var(--grafite);color:var(--amarelo)}
+.bg-d .bens li::before,.bg-g .bens li::before{background:var(--amarelo);color:var(--grafite)}
+.livro .price{right:58px;bottom:150px;min-width:0}
+.bg-d .price,.bg-g .price{border-color:var(--branco);box-shadow:14px 14px 0 rgba(0,0,0,.45)}
+.bg-d .price em,.bg-g .price em{background:var(--grafite)}
+.pill.red{background:var(--pressao);border-color:var(--pressao);color:#fff}
 .bg-y{background:var(--amarelo)}
 .bg-d{background:var(--grafite);color:var(--branco)}
 .bg-d h1,.bg-d h2{color:var(--branco)}
@@ -170,6 +187,13 @@ const T = {
     ${ECG(1040, d.bg==='bg-d'?'#FFFFFF':'#16181D', .18)}
     <div class="tx"><h1>${d.titulo}</h1><p>${d.desc}</p><span class="zap">${ZAP} Chama no WhatsApp</span></div>
     ${FOOT('(81) 98295-5372 · <b>LINK NA BIO</b>')}</div>`,
+  livro: d => `<div class="art livro ${d.bg}">
+    ${topo(`<span class="pill ${d.pillCls||''}">${d.pill}</span>`)}
+    <div class="tt"><small>${d.eyebrow}</small><h1>${d.titulo}</h1></div>
+    <div class="capa-livro"><img src="livros/${d.img}"></div>
+    <ul class="bens">${d.bens.map(b=>`<li>${b}</li>`).join('')}</ul>
+    <div class="price">${d.de?`<s>de R$ ${d.de}</s>`:''}<div class="v"><small>R$</small>${d.v}<sup>,${d.c}</sup></div><em>${d.parc}</em></div>
+    ${FOOT(d.foot)}</div>`,
   livros: d => `<div class="art cover bg-n">
     ${topo('<span class="pill">LIVROS DE BOLSO</span>')}
     <div class="tx" style="top:230px"><small>Martinari · consulta rápida</small><h1 style="font-size:110px">PRA LEVAR NO JALECO</h1></div>
@@ -227,6 +251,11 @@ const ARTES = [
   ['post-foto-primeiro-plantao', 'full', {img:'estudante-coracao.jpg', pos:'50% 25%', pill:'MONTE SEU KIT', titulo:'O KIT DO SEU <mark>PRIMEIRO PLANTÃO.</mark>', desc:'Separado por quem atende estudante de saúde há 20 anos.'}],
   ['post-foto-turma', 'full', {img:'estudante-aprovada.jpg', pos:'50% 40%', pill:'TURMAS', titulo:'COMPRA DA TURMA? <mark>CONDIÇÃO ESPECIAL.</mark>', desc:'Um kit por aluno, com nome, entregue na faculdade.', foot:'REPRESENTANTE DE SALA? <b>CHAMA NO WHATSAPP</b>'}],
   ['post-foto-estudo', 'full', {img:'estudante-estudando.jpg', pos:'38% 50%', pill:'LIVROS', titulo:'ESTUDA COM O <mark>LIVRO CERTO.</mark>', desc:'Manual do Técnico de R$ 339 por R$ 99.'}],
+  // --- Livros (refeitos no padrão; preços dos posts atuais)
+  ['post-livro-manual-do-tecnico', 'livro', {bg:'bg-y', pill:'MARTINARI · 4ª ED.', img:'manual-tecnico.jpg', eyebrow:'Manual do Técnico e Auxiliar de Enfermagem', titulo:'A BÍBLIA DO TÉCNICO.', bens:['As 23 disciplinas do curso','Ilustrado, colorido e com QR code','Para o curso, o concurso e o plantão'], de:'339,00', v:'99', c:'00', parc:'4x sem juros · R$ 90 à vista'}],
+  ['post-livro-manual-de-procedimentos', 'livro', {bg:'bg-g', pill:'MARTINARI', img:'manual-procedimentos.jpg', eyebrow:'Manual de Procedimentos para Estágio em Enfermagem', titulo:'O ESTÁGIO NO <em>BOLSO.</em>', bens:['29 capítulos para o dia a dia','Siglas, prontuário, admissão e alta','Matemática para farmacologia'], de:'59,00', v:'35', c:'00', parc:'livro de bolso'}],
+  ['post-livro-terminologia', 'livro', {bg:'bg-d', pill:'MARTINARI · 4ª ED.', img:'terminologia.jpg', eyebrow:'Terminologia em Enfermagem', titulo:'FALE A LÍNGUA DO <em>PLANTÃO.</em>', bens:['Os termos da equipe multiprofissional','Prefixo, raiz e sufixo de cada palavra','Para estudante e profissional'], de:'53,00', v:'35', c:'00', parc:'livro de bolso'}],
+  ['post-livro-vade-mecum-black-friday', 'livro', {bg:'bg-d', pill:'BLACK FRIDAY', pillCls:'red', img:'vade-mecum-2026.jpg', eyebrow:'Vade Mecum Saraiva 2026 · 42ª edição', titulo:'BLACK <em>FRIDAY.</em>', bens:['Edição do 2º semestre de 2026','Atualizado com a Reforma Tributária','Produto original, compra segura'], de:'309,00', v:'189', c:'00', parc:'oferta Black Friday', foot:'BLACK FRIDAY · <b>ATÉ ACABAR O ESTOQUE</b>'}],
 ];
 
 document.getElementById('out').innerHTML = ARTES.map(([out, t, d]) => T[t](d).replace('<div class="art', `<div data-out="${out}" class="art`)).join('');
