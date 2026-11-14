@@ -194,6 +194,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 .livro{display:grid;gap:12px;align-content:start}
 .capa{aspect-ratio:3/4;max-width:100%;border-radius:6px 12px 12px 6px;padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;box-shadow:inset 8px 0 0 rgba(0,0,0,.18),0 10px 24px -14px rgba(22,24,29,.6);font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.15}
 .capa small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;opacity:.8}
+.capa-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px 10px 10px 4px;box-shadow:inset 8px 0 0 rgba(0,0,0,.18),0 14px 26px -14px rgba(22,24,29,.6)}
 .livro h3{font-family:var(--body);font-stretch:100%;font-size:16px;font-weight:700;letter-spacing:0}
 .livro .p{display:flex;gap:10px;align-items:baseline}
 .livro .p s{font-family:var(--mono);font-size:13px;color:var(--muted)}
@@ -589,14 +590,14 @@ document.getElementById('vitrineGrid').innerHTML = PRODUTOS.map(p => `
 
 // Livros (preços dos posts atuais)
 const LIVROS = [
-  {t:'Manual do Técnico e Auxiliar de Enfermagem', de:'339,00', por:'99,00', bg:'#8E1B24'},
-  {t:'Terminologia em Enfermagem', de:'53,00', por:'35,00', bg:'#20325E'},
-  {t:'Manual de Procedimentos para Estágio', de:'59,00', por:'35,00', bg:'#1F4E4A'},
-  {t:'Diário Técnico de Enfermagem', de:'50,00', por:'25,00', bg:'#4B2C6B'}
+  {t:'Manual do Técnico e Auxiliar de Enfermagem', de:'339,00', por:'99,00', img:'livro-manual-tecnico.jpg'},
+  {t:'Terminologia em Enfermagem', de:'53,00', por:'35,00', img:'livro-terminologia.jpg'},
+  {t:'Manual de Procedimentos para Estágio', de:'59,00', por:'35,00', img:'livro-manual-procedimentos.jpg'},
+  {t:'Diário Técnico de Enfermagem', de:'50,00', por:'25,00', img:'livro-diario-tecnico.jpg'}
 ];
 document.getElementById('livrosGrid').innerHTML = LIVROS.map(l => `
   <div class="livro">
-    <div class="capa" style="background:${l.bg}"><small>MARTINARI</small><span>${l.t}</span><small>BOLSO</small></div>
+    <img class="capa-img" src="img/${l.img}" alt="Capa do livro ${l.t}" width="600" height="800" loading="lazy">
     <h3>${l.t}</h3>
     <div class="p"><s>R$ ${l.de}</s><b>R$ ${l.por}</b></div>
     <a data-wa="Oi! Quero o livro ${l.t}. Ainda tem?" href="#">Pedir no WhatsApp →</a>

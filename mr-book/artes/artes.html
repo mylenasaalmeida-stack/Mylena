@@ -196,8 +196,8 @@ const T = {
     ${FOOT(d.foot)}</div>`,
   livros: d => `<div class="art cover bg-n">
     ${topo('<span class="pill">LIVROS DE BOLSO</span>')}
-    <div class="tx" style="top:230px"><small>Martinari · consulta rápida</small><h1 style="font-size:110px">PRA LEVAR NO JALECO</h1></div>
-    <div class="books">${d.livros.map(l=>`<div class="book" style="background:${l.bg}"><small>MARTINARI</small><span>${l.t}</span><i>R$ ${l.p}</i></div>`).join('')}</div>
+    <div class="tx" style="top:230px"><small>Martinari · consulta rápida</small><h1 style="font-size:110px">PRA LEVAR NO JALECO.</h1></div>
+    <div class="books">${d.livros.map(l=>`<div class="book" style="background:#fff url(livros/${l.img}) center/cover no-repeat"><span></span><span></span><i>R$ ${l.p}</i></div>`).join('')}</div>
     ${FOOT()}</div>`
 };
 
@@ -245,7 +245,7 @@ const ARTES = [
   ['post-produto-rappaport', 'produto', {linha:'P.A.MED', img:'pamed-rappaport-preto.jpg', marca:'Estetoscópio Rappaport', titulo:'RAPPAPORT P.A.MED', de:'89,00', v:'76', c:'00', parc:'ou 4x de R$ 19,00'}],
   ['post-produto-oximetro', 'produto', {linha:'G-TECH', img:'gtech-oximetro.jpg', marca:'Acompanha case, cordão, 2 pilhas e capa', titulo:'OXÍMETRO OLED', v:'109', c:'90', parc:'ou 4x de R$ 27,47'}],
   ['post-produto-esfigmo', 'produto', {linha:'P.A.MED', img:'pamed-aparelho-preto.jpg', marca:'Esfigmomanômetro aneroide', titulo:'APARELHO DE PRESSÃO', v:'109', c:'00', parc:'ou 4x de R$ 27,25'}],
-  ['post-livros-de-bolso', 'livros', {livros:[{t:'Terminologia em Enfermagem',p:'35',bg:'#20325E'},{t:'Manual de Procedimentos para Estágio',p:'35',bg:'#1F4E4A'},{t:'Diário Técnico de Enfermagem',p:'25',bg:'#4B2C6B'}]}],
+  ['post-livros-de-bolso', 'livros', {livros:[{t:'Terminologia em Enfermagem',p:'35',img:'terminologia.jpg'},{t:'Manual de Procedimentos para Estágio',p:'35',img:'manual-procedimentos.jpg'},{t:'Diário Técnico de Enfermagem',p:'25',img:'diario-tecnico.jpg'}]}],
 
   // --- Posts com foto
   ['post-foto-primeiro-plantao', 'full', {img:'estudante-coracao.jpg', pos:'50% 25%', pill:'MONTE SEU KIT', titulo:'O KIT DO SEU <mark>PRIMEIRO PLANTÃO.</mark>', desc:'Separado por quem atende estudante de saúde há 20 anos.'}],
