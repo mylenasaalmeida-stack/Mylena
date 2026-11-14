@@ -811,3 +811,5 @@ footer{margin-top:96px;border-radius:var(--r-xl) var(--r-xl) 0 0;padding:0 0 120
 .cats-nav .mega-btn{background:var(--ink);color:#fff}
 .cats-nav .mega-btn:hover{background:var(--ink-3);color:#fff}
 .cats-nav .mega-btn[aria-expanded="true"]{background:var(--blue)}
+.subcats .dchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.subcats button.dchip{font-family:inherit}

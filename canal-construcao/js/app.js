@@ -9,7 +9,7 @@ const brl = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" 
 const waLink = m => `https://wa.me/${LOJA.whatsapp}?text=${encodeURIComponent(m)}`;
 const store = { get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d } catch { return d } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch { } } };
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const norm = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/['\u2019`]/g, "").toLowerCase();
 const byId = id => P.find(p => p.id === id);
 const catById = id => CATS.find(c => c.id === id);
 const off = p => p.de && p.preco ? Math.floor((1 - p.preco / p.de) * 100) : 0;
@@ -94,6 +94,11 @@ function viewHome() {
     shelf("Ofertas que acabam rápido", P.filter(p => p.de), "#/c/ofertas", "Descontos reais em todos os departamentos") +
     shelf("Básicos para Construção", by("basicos"), "#/c/basicos", "Quartzolit, do Mestre, Brasilit e mais") +
     shelf("Materiais Elétricos", by("eletricos"), "#/c/eletricos", "Tomadas, interruptores, cabos e disjuntores") +
+    shelf("Hidráulica", by("hidraulica"), "#/c/hidraulica", "Caixas d'água Fortlev, grelhas Tigre e chuveiros") +
+    shelf("Louças e Metais", [...by("loucas"), ...by("metais")], "#/c/loucas", "Bacias, cubas, pias e torneiras") +
+    shelf("Iluminação", by("iluminacao"), "#/c/iluminacao", "Lâmpadas, painéis e refletores Avant") +
+    shelf("Ferramentas", by("ferramentas"), "#/c/ferramentas", "Atlas, Tramontina, Norton") +
+    shelf("Limpeza", by("limpeza"), "#/c/limpeza", "Desincrustantes, vaselina e pós-obra") +
     shelf("Portas e Janelas", by("portas"), "#/c/portas") +
     shelf("EPI", by("epi"), "#/c/epi", "Segurança para quem está na obra") +
     shelf("Cadeados e Correntes", [...by("cadeados"), ...by("fechaduras")], "#/c/cadeados") +
@@ -113,7 +118,7 @@ function listFor(st) {
 }
 function applyFilters(list, st) {
   let l = list.filter(p =>
-    (!st.brands.size || st.brands.has(p.marca || "—")) &&
+    (!st.sub || p.sub === st.sub) && (!st.brands.size || st.brands.has(p.marca || "—")) &&
     (!st.price || (() => { const r = PRICE_R.find(x => x[0] === st.price); return p.preco != null && p.preco >= r[2] && p.preco < r[3] })()) &&
     (!st.oferta || p.de) && (!st.disp || (canBuy(p) && p.preco != null)));
   const s = st.sort;
@@ -124,18 +129,20 @@ function applyFilters(list, st) {
   if (s === "rel") l.sort((a, b) => (a.esgotado - b.esgotado) || ((a.preco == null) - (b.preco == null)) || (!!b.img - !!a.img) || a.ordem - b.ordem);
   return l;
 }
-function filtersHTML(base, st) {
+function filtersHTML(base, st, g = "") {
   const brands = [...new Set(base.map(p => p.marca || "—"))].sort((a, b) => a === "—" ? 1 : b === "—" ? -1 : a.localeCompare(b));
   const cnt = m => base.filter(p => (p.marca || "—") === m).length;
+  const subs = [...new Set(base.map(p => p.sub).filter(Boolean))];
   return `<div class="flt">
+    ${subs.length ? `<fieldset><legend>Subcategoria</legend><label class="fck"><input type="radio" name="fs${g}" data-fs="" ${!st.sub ? "checked" : ""}><span>Todas</span><small>${base.length}</small></label>${subs.map(x => `<label class="fck"><input type="radio" name="fs${g}" data-fs="${esc(x)}" ${st.sub === x ? "checked" : ""}><span>${esc(x)}</span><small>${base.filter(p => p.sub === x).length}</small></label>`).join("")}</fieldset>` : ""}
     ${brands.length > 1 ? `<fieldset><legend>Marca</legend>${brands.map(m => `<label class="fck"><input type="checkbox" data-fb="${esc(m)}" ${st.brands.has(m) ? "checked" : ""}><span>${m === "—" ? "Outras" : esc(m)}</span><small>${cnt(m)}</small></label>`).join("")}</fieldset>` : ""}
-    <fieldset><legend>Preço</legend>${PRICE_R.map(r => `<label class="fck"><input type="radio" name="fp" data-fp="${r[0]}" ${st.price === r[0] ? "checked" : ""}><span>${r[1]}</span></label>`).join("")}${st.price ? `<button class="lnk" data-fp="">Limpar preço</button>` : ""}</fieldset>
+    <fieldset><legend>Preço</legend>${PRICE_R.map(r => `<label class="fck"><input type="radio" name="fp${g}" data-fp="${r[0]}" ${st.price === r[0] ? "checked" : ""}><span>${r[1]}</span></label>`).join("")}${st.price ? `<button class="lnk" data-fp="">Limpar preço</button>` : ""}</fieldset>
     <fieldset><legend>Mostrar</legend><label class="sw"><input type="checkbox" data-fo ${st.oferta ? "checked" : ""}><span>Só ofertas</span></label><label class="sw"><input type="checkbox" data-fd ${st.disp ? "checked" : ""}><span>Com preço e em estoque</span></label></fieldset>
   </div>`;
 }
 function viewList({ cat, q, page }) {
   const key = q ? "q:" + q : "c:" + cat;
-  if (!catState || catState.key !== key) catState = { key, cat, q, brands: new Set(), price: "", oferta: false, disp: false, sort: "rel", page: 1 };
+  if (!catState || catState.key !== key) catState = { key, cat, q, brands: new Set(), sub: "", price: "", oferta: false, disp: false, sort: "rel", page: 1 };
   catState.page = page;
   const c = cat === "ofertas" ? { id: "ofertas", nome: "Ofertas", sub: "Descontos reais em todos os departamentos" } : catById(cat);
   if (!q && !c) return viewNotFound();
@@ -148,7 +155,7 @@ function renderList() {
   const slice = list.slice((st.page - 1) * PER_PAGE, st.page * PER_PAGE);
   const c = st.q ? null : st.cat === "ofertas" ? { nome: "Ofertas", sub: "Descontos reais em todos os departamentos" } : catById(st.cat);
   const title = st.q ? `Resultados para “${esc(st.q)}”` : esc(c.nome);
-  const active = st.brands.size + (st.price ? 1 : 0) + st.oferta + st.disp;
+  const active = st.brands.size + (st.price ? 1 : 0) + (st.sub ? 1 : 0) + st.oferta + st.disp;
   const hrefP = n => st.q ? `#/busca/${encodeURIComponent(st.q)}/${n}` : `#/c/${st.cat}/${n}`;
   const empty = !base.length;
   VIEW.innerHTML = `<div class="wrap page">
@@ -157,18 +164,18 @@ function renderList() {
       ${empty ? "" : `<div class="list-tools"><button class="btn btn-line btn-sm mob-only" data-open="flt"><svg class="ico"><use href="#i-filter"/></svg>Filtrar${active ? ` (${active})` : ""}</button>
       <label class="sort"><span>Ordenar</span><select id="sort"><option value="rel">Relevância</option><option value="low">Menor preço</option><option value="high">Maior preço</option><option value="off">Maior desconto</option><option value="az">A–Z</option></select></label></div>`}
     </header>
-    ${!st.q && !empty ? `<div class="subcats">${CATS.filter(x => x.id !== st.cat && countCat(x.id)).slice(0, 10).map(x => `<a href="#/c/${x.id}" class="dchip sm"><svg><use href="#c-${x.ic}"/></svg>${x.nome}</a>`).join("")}</div>` : ""}
+    ${!st.q && !empty ? `<div class="subcats">${[...new Set(base.map(p => p.sub).filter(Boolean))].map(x => `<button class="dchip sm ${st.sub === x ? "on" : ""}" data-fs="${esc(x)}" data-pick><svg><use href="#c-${c.ic || "box"}"/></svg>${esc(x)}</button>`).join("")}${CATS.filter(x => x.id !== st.cat && countCat(x.id)).slice(0, 10).map(x => `<a href="#/c/${x.id}" class="dchip sm"><svg><use href="#c-${x.ic}"/></svg>${x.nome}</a>`).join("")}</div>` : ""}
     ${empty ? emptyList(st, c) : `<div class="list-l">
       <aside class="list-side">${filtersHTML(base, st)}</aside>
       <div>
-        ${active ? `<div class="chips-on">${[...st.brands].map(m => `<button data-fb="${esc(m)}" class="on-chip">${m === "—" ? "Outras" : esc(m)} ✕</button>`).join("")}${st.price ? `<button data-fp="" class="on-chip">${PRICE_R.find(r => r[0] === st.price)[1]} ✕</button>` : ""}${st.oferta ? `<button data-fo class="on-chip">Só ofertas ✕</button>` : ""}${st.disp ? `<button data-fd class="on-chip">Em estoque ✕</button>` : ""}<button class="lnk" data-fclear>Limpar tudo</button></div>` : ""}
+        ${active ? `<div class="chips-on">${st.sub ? `<button data-fs="" class="on-chip">${esc(st.sub)} ✕</button>` : ""}${[...st.brands].map(m => `<button data-fb="${esc(m)}" class="on-chip">${m === "—" ? "Outras" : esc(m)} ✕</button>`).join("")}${st.price ? `<button data-fp="" class="on-chip">${PRICE_R.find(r => r[0] === st.price)[1]} ✕</button>` : ""}${st.oferta ? `<button data-fo class="on-chip">Só ofertas ✕</button>` : ""}${st.disp ? `<button data-fd class="on-chip">Em estoque ✕</button>` : ""}<button class="lnk" data-fclear>Limpar tudo</button></div>` : ""}
         <p class="shown">Mostrando ${slice.length ? (st.page - 1) * PER_PAGE + 1 : 0}–${(st.page - 1) * PER_PAGE + slice.length} de ${list.length}</p>
         <div class="grid">${slice.length ? slice.map(card).join("") : `<div class="empty"><h3>Nenhum produto com esses filtros</h3><p>Tente remover algum filtro.</p><button class="btn btn-ink btn-sm" data-fclear>Limpar filtros</button></div>`}</div>
         ${pages > 1 ? `<nav class="pager" aria-label="Páginas"><a class="pg ${st.page === 1 ? "dis" : ""}" href="${hrefP(Math.max(1, st.page - 1))}" aria-label="Anterior">‹</a>${Array.from({ length: pages }, (_, i) => i + 1).map(n => `<a class="pg ${n === st.page ? "on" : ""}" href="${hrefP(n)}">${n}</a>`).join("")}<a class="pg ${st.page === pages ? "dis" : ""}" href="${hrefP(Math.min(pages, st.page + 1))}" aria-label="Próxima">›</a></nav>` : ""}
       </div></div>`}
   </div>`;
   const so = $("#sort"); if (so) so.value = st.sort;
-  $("#fltBody").innerHTML = empty ? "" : filtersHTML(base, st) + `<button class="btn btn-ink btn-block" data-close style="margin-top:14px">Ver ${list.length} produtos</button>`;
+  $("#fltBody").innerHTML = empty ? "" : filtersHTML(base, st, "m") + `<button class="btn btn-ink btn-block" data-close style="margin-top:14px">Ver ${list.length} produtos</button>`;
   wireWa(VIEW); observeReveal();
 }
 function emptyList(st, c) {
@@ -590,11 +597,13 @@ document.addEventListener("click", e => {
   if (d.reorder) { const o = orders.find(x => x.num === d.reorder); o.itens.forEach(i => { if (!byId(i.id)) return; const c = cart.find(x => x.id === i.id); c ? c.qty += i.qty : cart.push({ ...i }) }); saveCart(); openLayer("cart"); return }
   if (d.sh) { const tr = t.closest(".shelf").querySelector(".track"); tr.scrollBy({ left: +d.sh * tr.clientWidth * .85, behavior: "smooth" }); return }
   if (d.share) { const p = byId(d.share), url = location.href; if (navigator.share) navigator.share({ title: p.nome, url }).catch(() => { }); else navigator.clipboard?.writeText(url).then(() => toast("<span>Link copiado ✓</span>")); return }
+  if (d.pick !== undefined) { catState.sub = catState.sub === d.fs ? "" : d.fs; catState.page = 1; renderList(); return }
+  if (d.fs !== undefined && t.tagName === "BUTTON") { catState.sub = ""; catState.page = 1; renderList(); return }
   if (d.fp !== undefined && t.tagName === "BUTTON") { catState.price = ""; catState.page = 1; renderList(); return }
   if (d.fb !== undefined && t.tagName === "BUTTON") { catState.brands.delete(d.fb); catState.page = 1; renderList(); return }
   if (d.fo !== undefined && t.tagName === "BUTTON") { catState.oferta = false; renderList(); return }
   if (d.fd !== undefined && t.tagName === "BUTTON") { catState.disp = false; renderList(); return }
-  if (d.fclear !== undefined) { Object.assign(catState, { brands: new Set(), price: "", oferta: false, disp: false, page: 1 }); renderList(); return }
+  if (d.fclear !== undefined) { Object.assign(catState, { brands: new Set(), sub: "", price: "", oferta: false, disp: false, page: 1 }); renderList(); return }
   if (t.id === "checkout") { openCheckout(); return }
   if (d.ckClose !== undefined) { closeCk(); return }
   if (d.ckGo) { ck.step = +d.ckGo; renderCk(); return }
@@ -612,6 +621,7 @@ document.addEventListener("change", e => {
   if (t.closest && t.closest("#ck") && $("#ck-err")) $("#ck-err").textContent = "";
   if (t.id === "sort") { catState.sort = t.value; catState.page = 1; renderList(); return }
   if (d.fb !== undefined) { t.checked ? catState.brands.add(d.fb) : catState.brands.delete(d.fb); catState.page = 1; renderListKeep(); return }
+  if (d.fs !== undefined) { catState.sub = d.fs; catState.page = 1; renderListKeep(); return }
   if (d.fp !== undefined) { catState.price = d.fp; catState.page = 1; renderListKeep(); return }
   if (d.fo !== undefined) { catState.oferta = t.checked; catState.page = 1; renderListKeep(); return }
   if (d.fd !== undefined) { catState.disp = t.checked; catState.page = 1; renderListKeep(); return }
