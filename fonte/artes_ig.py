@@ -32,7 +32,7 @@ arts = []
 arts.append(('00_foto_perfil', 'sq', f'<img class="ph" src="{P}close-sorrindo_ed.jpg" style="object-position:52% 20%;transform:scale(1.45);transform-origin:52% 24%">'))
 
 # FIXADO 1 · quem sou (foto + gancho)
-arts.append(('01_fixado_1_quem_sou', 'p', f'''<img class="ph" src="{P}feira-sorrindo_ed.jpg" style="object-position:60% 25%"><div class="shade"></div>
+arts.append(('01_fixado_1_quem_sou', 'p', f'''<img class="ph" src="{P}feira-nova.jpg" style="object-position:50% 20%"><div class="shade"></div>
 <div style="position:absolute;left:80px;right:80px;bottom:110px">
 <div class="sm" style="margin-bottom:22px">Prazer, sou a Mylena.</div>
 <div class="hook" style="font-size:84px">Restaurante cheio<br>não é restaurante<br>com <span class="it" style="font-size:92px">lucro.</span></div></div>'''))
