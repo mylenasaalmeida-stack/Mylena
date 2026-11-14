@@ -1,8 +1,21 @@
 # Santino Barber Studio · cartão de visita e panfleto
 
-## Arquivos para a gráfica
-- `cartao_grafica.pdf`: cartão 90×50 mm, 2 páginas (frente e verso), com 3 mm de sangria.
-- `panfleto_grafica.pdf`: panfleto A5 (148×210 mm), 2 páginas (frente e verso), com 3 mm de sangria.
+## Arquivos para a gráfica (CMYK): pasta `impressao_CMYK/`
+| Arquivo | Formato final | Com sangria |
+|---|---|---|
+| `Santino_Cartao_FRENTE_CMYK.pdf` | 90×50 mm | 96×56 mm |
+| `Santino_Cartao_VERSO_CMYK.pdf` | 90×50 mm | 96×56 mm |
+| `Santino_Panfleto_A5_FRENTE_CMYK.pdf` | 148×210 mm | 154×216 mm |
+| `Santino_Panfleto_A5_VERSO_CMYK.pdf` | 148×210 mm | 154×216 mm |
+
+- Perfil de cor: Coated FOGRA39 (ISO 12647-2), embutido no PDF como OutputIntent.
+- Sangria de 3 mm em todos os lados; TrimBox marca o corte final.
+- Logo, QR code e título do panfleto em 100% K (preto puro, não borra em letra pequena).
+- Fundo preto em preto rico C60 M40 Y40 K100.
+- Carga máxima de tinta: 248% nos vetores, até 300% nas fotos (dentro do limite de couché).
+- Fontes embutidas.
+
+Os PDFs `cartao_grafica.pdf` e `panfleto_grafica.pdf` da raiz são as versões RGB (para tela).
 
 ## Prévias
 - `previa/mockup_cartao.jpg`: mockup do cartão para apresentar ao cliente.
@@ -23,4 +36,4 @@ O espelho orgânico com LED do estúdio vira a assinatura visual da marca. No ve
 - As descrições dos serviços foram escritas a partir do feed. Confirme com o cliente.
 
 ## Editar
-Os arquivos-fonte ficam em `fonte/` (HTML/CSS). Para gerar de novo: `cd fonte && node render.js cartao panfleto`.
+Os arquivos-fonte ficam em `fonte/` (HTML/CSS). Para gerar de novo: `cd fonte && node render.js cartao panfleto && python3 cmyk.py` (precisa de Ghostscript).
