@@ -102,15 +102,16 @@ p4 = page(4, f'''<div class="k">03 · Posts fixados</div><h2>Três posts <span>f
 <div class="lg" style="margin-top:5mm"><b>Legenda · fixado 1</b>Lucro no restaurante: o problema quase nunca é vender pouco.
 É não saber quanto sobra de cada venda.
 
-Prazer, sou Mylena 👋
-Aqui em Recife, eu ajudo restaurantes, bares e delivery a lucrar com o que já vendem, em três frentes:
+Ajudo restaurantes, bares e delivery a lucrar com o que já vendem, em três frentes:
 
 1. Custo certo: quanto custa cada prato e quanto sobra de verdade.
 2. Cardápio que vende: preço e destaque para o que dá lucro.
-3. Marca que atrai: imagem e Instagram que trazem cliente.
+3. Marca que atrai: imagem e Instagram que trazem clientes.
+
+Tudo adaptado à realidade do seu negócio, e esse é só o começo.
 
 Antes de pensar em vender mais, vale descobrir quanto você já ganha.
-Faço um diagnóstico de lucro gratuito de 30 minutos: calculamos juntos o custo e a margem de 1 produto do seu cardápio.
+Ficou curioso? Faço um diagnóstico de lucro gratuito e te mostro onde dá para ganhar mais e organizar melhor o dia a dia.
 
 👉 Me chama no WhatsApp pelo link da bio.
 
