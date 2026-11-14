@@ -61,5 +61,16 @@ const fs = require('fs'), path = require('path');
     await e.screenshot({path: f, omitBackground: o.includes('transparente')});
   }
   console.log(els.length, 'arquivos');
+
+  // mockup do perfil do Instagram em alta resolução (celular inteiro)
+  const ctx = await b.newContext({viewport: {width: 1200, height: 1400}, deviceScaleFactor: 3});
+  const m = await ctx.newPage();
+  await m.goto('file://' + path.resolve(process.argv[2]));
+  await m.evaluate(() => document.fonts.ready);
+  await m.waitForTimeout(1500);
+  const phone = await m.$('.phone');
+  fs.mkdirSync(path.join(OUT, 'perfil'), {recursive: true});
+  await phone.screenshot({path: path.join(OUT, 'perfil/mockup-perfil-instagram.png')});
+  console.log('mockup do perfil');
   await b.close();
 })();
