@@ -1,0 +1,791 @@
+<title>Rebrand Mr.Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: documento de proposta em folha clara, blocos de marca em amarelo/grafite; mockups com cores fixas da marca */
+:root{
+  --amarelo:#FFCE1B; --amarelo-2:#FFE27A;
+  --grafite:#16181D; --grafite-2:#23262D; --grafite-3:#3A3E47;
+  --papel:#F2F3EF; --branco:#FFFFFF; --linha:#D9DBD3; --muted:#5E626B;
+  --verde:#14634F; --pressao:#E2412B;
+  --ig-bg:#0B0C0E; --ig-fg:#F5F5F5; --ig-mut:#A8A8A8; --ig-btn:#25282D; --ig-link:#93B4FF;
+  --display:"Archivo","Arial Black",Impact,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+body{background:var(--papel);color:var(--grafite);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px;border-top:1px solid var(--linha)}
+h1,h2,h3{font-family:var(--display);font-stretch:115%;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.6vw,52px);font-weight:900}
+h3{font-size:22px;font-weight:800}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
+.eyebrow b{color:var(--grafite);font-weight:600}
+.lede{font-size:19px;max-width:62ch;color:var(--grafite-3)}
+.head{display:grid;gap:16px;margin-bottom:40px}
+.small{font-size:14px;color:var(--muted)}
+.mono{font-family:var(--mono)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--grafite);color:var(--papel)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--grafite)}
+.nav .wrap{display:flex;gap:4px;align-items:center;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.nav a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:#C9CBD1;text-decoration:none;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.nav a:hover,.nav a:focus-visible{background:var(--grafite-3);color:#fff;outline:none}
+.nav .wm{font-size:20px;color:var(--amarelo);margin-right:12px}
+
+/* capa */
+.capa{background:var(--amarelo);border:0;padding-block:56px 110px;overflow:hidden;position:relative}
+.capa .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+.capa h1{font-size:clamp(44px,8vw,104px);font-weight:900;font-stretch:125%;line-height:.92}
+.capa .lede{color:var(--grafite);margin-top:22px}
+.capa .ecg{position:absolute;left:0;right:0;bottom:22px;width:100%;height:60px;opacity:.9}
+.capa .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-family:var(--mono);font-size:12px;border:1.5px solid var(--grafite);border-radius:999px;padding:5px 12px}
+
+/* wordmark */
+.wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:baseline;white-space:nowrap}
+.wm .oo{height:.535em;width:1.24em;margin:0 .01em;vertical-align:baseline;overflow:visible;flex:none;transform:translateY(.012em)}
+.lockup{display:inline-grid;gap:.18em;justify-items:start}
+.lockup .sub{font-family:var(--mono);font-weight:500;font-size:.13em;letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;padding-left:.15em}
+.lockup .sub i{display:block;width:3.6em;height:1px;background:currentColor}
+
+/* diagnóstico */
+.diag{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha)}
+.diag div{background:var(--branco);padding:24px;display:grid;gap:10px;align-content:start}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;justify-self:start}
+.tag.bad{background:#FBE3DE;color:#9A2414}
+.tag.ok{background:#DCEFE8;color:var(--verde)}
+.diag p{font-size:15px;color:var(--grafite-3)}
+
+/* posicionamento */
+.pos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.box{background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:28px;display:grid;gap:14px;align-content:start}
+.box.dark{background:var(--grafite);color:var(--papel);border-color:var(--grafite)}
+.box.dark .small{color:#A9ADB6}
+.box .big{font-family:var(--display);font-weight:900;font-stretch:120%;font-size:clamp(26px,3.4vw,38px);line-height:1}
+.box.dark .big{color:var(--amarelo)}
+.cal{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:6px}
+.cal span{font-family:var(--mono);font-size:10px;text-align:center;padding:30px 0 6px;border-radius:4px;background:var(--grafite-2);color:#A9ADB6;position:relative}
+.cal span.hot{background:var(--amarelo);color:var(--grafite);font-weight:600}
+.cal span.warm{background:#6B5A13;color:#FFE9A0}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#C9CBD1}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.pillars .box{gap:8px}
+.pillars .pct{font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+/* logo */
+.logo-stage{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.tile{min-width:0;overflow:hidden;border-radius:14px;display:grid;place-items:center;padding:40px 24px;min-height:240px;position:relative}
+.tile .cap{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.t-y{background:var(--amarelo);color:var(--grafite)}
+.t-d{background:var(--grafite);color:var(--amarelo)}
+.t-w{background:var(--branco);color:var(--grafite);border:1px solid var(--linha)}
+.t-g{background:var(--verde);color:#fff}
+.logo-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px}
+.logo-row .tile{min-height:200px}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;color:var(--grafite)}
+.avatar svg{width:72%;height:72%}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:32px;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:24px}
+.ba .old{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1;display:flex;gap:10px;align-items:center}
+.ba .arrow{font-family:var(--mono);color:var(--muted)}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.notes div{display:grid;gap:6px;align-content:start}
+.notes h3{font-size:17px}
+.notes p{font-size:15px;color:var(--grafite-3)}
+
+/* paleta & tipo */
+.pal{display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 1fr;gap:10px}
+.sw{border-radius:12px;min-height:170px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font-size:13px}
+.sw b{font-family:var(--display);font-stretch:110%;font-size:17px}
+.sw span{font-family:var(--mono);font-size:11px;opacity:.8}
+.type{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:16px}
+.spec{background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:28px;display:grid;gap:12px;align-content:start;min-width:0}
+.spec .sample{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(40px,6vw,76px);line-height:.9;letter-spacing:-.02em}
+.devices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.devices .spec svg{width:100%;height:auto}
+.price{display:flex;align-items:flex-start;gap:4px;font-family:var(--display);font-weight:900;font-stretch:110%;line-height:.85}
+.price small{font-size:.32em;margin-top:.15em}
+.price sup{font-size:.36em;margin-top:.08em}
+
+/* instagram */
+.ig-layout{display:grid;grid-template-columns:390px minmax(0,1fr);gap:48px;align-items:start}
+.phone{width:min(390px,100%);background:var(--ig-bg);color:var(--ig-fg);border-radius:46px;padding:14px 0 20px;border:10px solid #1D1F23;box-shadow:0 30px 60px -30px rgba(22,24,29,.6);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
+.ph-status{display:flex;justify-content:space-between;padding:4px 26px 8px;font-size:14px;font-weight:600}
+.ph-top{display:flex;align-items:center;gap:14px;padding:6px 16px 12px;font-size:19px;font-weight:700}
+.ph-top .sp{flex:1}
+.ph-prof{display:grid;grid-template-columns:86px 1fr;gap:18px;align-items:center;padding:0 16px}
+.ph-av{width:86px;height:86px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;color:var(--grafite);box-shadow:0 0 0 2px var(--ig-bg),0 0 0 4px #3A3D44}
+.ph-av svg{width:70%;height:70%}
+.ph-name{font-size:14px;font-weight:600;margin-bottom:6px}
+.ph-stats{display:flex;gap:18px;font-size:13px;line-height:1.2}
+.ph-stats b{display:block;font-size:16px}
+.ph-bio{padding:10px 16px 0;font-size:13.5px;line-height:1.38}
+.ph-bio .cat{color:var(--ig-mut)}
+.ph-bio .lnk{color:var(--ig-link);display:flex;gap:6px;align-items:center;margin-top:3px}
+.ph-btns{display:grid;grid-template-columns:1fr 1fr 1fr 36px;gap:6px;padding:12px 16px}
+.ph-btns span{background:var(--ig-btn);border-radius:8px;text-align:center;font-size:13px;font-weight:600;padding:7px 0}
+.ph-hl{display:flex;gap:14px;padding:6px 16px 14px;overflow-x:auto;scrollbar-width:none}
+.hl{display:grid;justify-items:center;gap:5px;flex:none;width:64px;cursor:pointer;background:none;border:0;color:inherit;font:inherit;padding:0}
+.hl .ring{width:62px;height:62px;border-radius:50%;padding:3px;box-shadow:inset 0 0 0 1.5px #3A3D44;display:grid;place-items:center}
+.hl .cov{width:54px;height:54px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;color:var(--grafite)}
+.hl .cov svg{width:26px;height:26px}
+.hl small{font-size:11.5px;white-space:nowrap;max-width:68px;overflow:hidden;text-overflow:ellipsis}
+.hl[aria-pressed="true"] .ring{box-shadow:inset 0 0 0 2px var(--amarelo)}
+.ph-tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #26282C;padding-top:4px}
+.ph-tabs span{display:grid;place-items:center;padding:10px 0;color:var(--ig-mut)}
+.ph-tabs span:first-child{color:#fff;box-shadow:inset 0 -1.5px 0 #fff}
+.ph-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px}
+.cell{aspect-ratio:3/4;position:relative;overflow:hidden;max-width:100%}
+.cell > svg.full{display:block;width:100%;height:100%}
+.pin{position:absolute;top:6px;right:6px;width:14px;height:14px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.ig-side{display:grid;gap:28px;min-width:0}
+.bio-card{background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:24px;display:grid;gap:14px}
+.bio-card pre{font-family:var(--mono);font-size:14px;background:var(--papel);border-radius:10px;padding:16px;margin:0;white-space:pre-wrap;line-height:1.6}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:8px 16px;font-size:15px}
+.kv dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv dd{margin:0}
+.copy{justify-self:start;font-family:var(--mono);font-size:12px;background:var(--grafite);color:var(--papel);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.copy:focus-visible{outline:2px solid var(--amarelo);outline-offset:2px}
+.count{font-family:var(--mono);font-size:12px;color:var(--verde)}
+
+/* destaques */
+.hl-list{display:grid;gap:12px}
+.hl-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:16px 20px}
+.hl-row .who{display:flex;gap:14px;align-items:center}
+.hl-row .cov{width:58px;height:58px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;flex:none;box-shadow:0 0 0 3px var(--branco),0 0 0 4.5px var(--linha)}
+.hl-row .cov svg{width:28px;height:28px}
+.hl-row h3{font-size:17px}
+.hl-row .small{font-size:12.5px}
+.stories{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;min-width:0}
+.story{flex:none;width:118px;aspect-ratio:9/16;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;font-size:11px;line-height:1.25;position:relative;overflow:hidden}
+.story .bars{display:flex;gap:2px}
+.story .bars i{flex:1;height:2px;border-radius:2px;background:currentColor;opacity:.35}
+.story .bars i.on{opacity:1}
+.story b{font-family:var(--display);font-stretch:100%;font-weight:900;font-size:14px;overflow-wrap:anywhere;line-height:1;display:block;margin-bottom:6px}
+.story .cta{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;border:1px solid currentColor;border-radius:999px;padding:3px 7px;align-self:flex-start}
+.st-y{background:var(--amarelo);color:var(--grafite)}
+.st-d{background:var(--grafite);color:#fff}
+.st-d b{color:var(--amarelo)}
+.st-p{background:var(--branco);color:var(--grafite);border:1px solid var(--linha)}
+.st-g{background:var(--verde);color:#fff}
+.hl-row.active{border-color:var(--grafite);box-shadow:0 0 0 1px var(--grafite)}
+
+/* fixados */
+.tri-wrap{overflow-x:auto;border-radius:14px}
+.tri{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:6px;min-width:672px}
+.tri .cell{border-radius:4px}
+.tri-split{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-family:var(--mono);font-size:12px;color:var(--muted);min-width:672px}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.caps .box{gap:10px}
+.caps pre{font-family:var(--body);font-size:14px;white-space:pre-wrap;margin:0;color:var(--grafite-3);line-height:1.5}
+.caps .n{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* landing */
+.lp-cta{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch}
+.lp-open{display:grid;align-content:space-between;gap:24px;background:var(--grafite);color:var(--papel);border-radius:14px;padding:32px}
+.lp-open a.btn{display:inline-flex;gap:10px;align-items:center;justify-self:start;background:var(--amarelo);color:var(--grafite);font-family:var(--display);font-weight:800;font-stretch:110%;font-size:18px;padding:14px 22px;border-radius:999px;text-decoration:none}
+.lp-open a.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.lp-open ol{margin:0;padding-left:20px;display:grid;gap:8px;color:#C9CBD1;font-size:15px}
+.lp-open ol b{color:#fff}
+
+/* próximos passos */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.qs{display:grid;gap:0;counter-reset:q;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:8px 24px}
+.qs li{list-style:none;padding:14px 0;border-bottom:1px solid var(--linha);font-size:15px;display:grid;grid-template-columns:28px 1fr;gap:10px}
+.qs li:last-child{border:0}
+.qs li::before{counter-increment:q;content:counter(q,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px}
+.qs li span{color:var(--muted);display:block;font-size:13.5px}
+.plan{display:grid;gap:10px}
+.plan div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 20px;background:var(--branco);border:1px solid var(--linha);border-radius:12px;font-size:15px}
+.plan div b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid var(--linha)}
+
+@media (max-width:900px){
+  .capa .grid,.pos,.logo-stage,.type,.ig-layout,.lp-cta,.steps{grid-template-columns:1fr}
+  .diag,.pillars,.notes,.caps,.devices{grid-template-columns:1fr}
+  .logo-row{grid-template-columns:1fr 1fr}
+  .ig-layout{grid-template-columns:minmax(0,1fr)}
+  .pal{grid-template-columns:1fr 1fr}
+  .pal .sw:first-child{grid-column:1/-1}
+  .phone{margin:0 auto}
+  .hl-row{grid-template-columns:1fr}
+  .ba{grid-template-columns:1fr;text-align:left}
+  .ba .arrow{transform:rotate(90deg);justify-self:start}
+}
+@media (max-width:520px){
+  section{padding-block:52px}
+  .kv{grid-template-columns:1fr}
+  .cal span{padding-top:18px;font-size:9px}
+  .logo-row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ecg path{stroke-dasharray:2400;stroke-dashoffset:2400;animation:ecg 3.2s ease-out .2s forwards}
+  @keyframes ecg{to{stroke-dashoffset:0}}
+}
+</style>
+
+<!-- símbolos reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- o "oo" do wordmark: auscultador de duas faces -->
+    <symbol id="oo" viewBox="0 0 124 53.5">
+      <circle cx="26.75" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
+      <circle cx="97.25" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
+      <rect x="44" y="21.75" width="36" height="10" fill="currentColor"/>
+      <circle cx="97.25" cy="26.75" r="5.2" fill="currentColor"/>
+    </symbol>
+    <!-- boneco redesenhado: monolinha, carregando o livro -->
+    <symbol id="boneco" viewBox="0 0 100 100">
+      <g transform="rotate(-9 51 21)">
+        <rect x="27" y="12" width="48" height="15" rx="2.5" fill="currentColor"/>
+        <rect x="31" y="17.6" width="40" height="3.2" rx="1.6" fill="var(--amarelo)"/>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M47 47 L41 65"/>
+        <path d="M47 48 L35 31"/>
+        <path d="M47 48 L57 29"/>
+        <path d="M41 65 L54 73 L61 87"/>
+        <path d="M41 65 L35 79 L24 83"/>
+      </g>
+      <circle cx="62" cy="43" r="6.8" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 2.5l6 6-2.2.7-3.6 3.6.4 4.1-1.7 1.7-4.2-4.2-5.4 5.4-1.3-1.3 5.4-5.4-4.2-4.2 1.7-1.7 4.1.4 3.6-3.6z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.2v7.6l6-3.8z" fill="currentColor"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="15" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <!-- ícones dos destaques: traço 2, grade 24 -->
+    <symbol id="h-kit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12.5" rx="2.5"/><path d="M8.5 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v2"/><path d="M12 10.8v5.4M9.3 13.5h5.4" stroke-linecap="round"/></g></symbol>
+    <symbol id="h-esteto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3v5a4 4 0 0 0 8 0V3"/><path d="M9 12v2.5a5 5 0 0 0 10 0V12"/></g><circle cx="19" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="h-curso" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/><path d="M22 9v6"/></g></symbol>
+    <symbol id="h-livro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M4 17a3 3 0 0 1 3-3h11"/><path d="M8 8h6" stroke-linecap="round"/></g></symbol>
+    <symbol id="h-clientes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H10l-4 3.5V16H4z"/><path d="M12 13.2l-2.6-2.5a1.6 1.6 0 0 1 2.6-1.9 1.6 1.6 0 0 1 2.6 1.9z" fill="currentColor" stroke-width="1"/></g></symbol>
+    <symbol id="h-comprar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 10.5h10L20 7.5H6.3"/><circle cx="9" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></g></symbol>
+    <symbol id="h-loja" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></g></symbol>
+    <symbol id="h-turma" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0M13.5 15.2a4.5 4.5 0 0 1 8 3.8"/></g></symbol>
+
+    <!-- tríptico dos 3 fixados: 3240×1440 (3 posts 1080×1440, formato 3:4) -->
+    <g id="tri">
+      <rect width="3240" height="1440" fill="#FFCE1B"/>
+      <!-- linha de ECG ao fundo, atravessando os três -->
+      <path d="M0 1330 H520 l30 -60 l40 120 l40 -190 l40 230 l34 -100 H1700 l30 -60 l40 120 l40 -190 l40 230 l34 -100 H3240" fill="none" stroke="#16181D" stroke-opacity=".14" stroke-width="10" stroke-linejoin="round"/>
+      <!-- POST 1 -->
+      <text x="90" y="150" font-family="IBM Plex Mono, monospace" font-size="34" letter-spacing="6" fill="#16181D">01 · QUEM SOMOS</text>
+      <text x="80" y="520" font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="330" letter-spacing="-12" fill="#16181D">20</text>
+      <text x="90" y="640" font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="120" letter-spacing="-3" fill="#16181D">ANOS</text>
+      <text font-family="Instrument Sans, sans-serif" font-weight="600" font-size="62" fill="#16181D"><tspan x="90" y="790">equipando quem</tspan><tspan x="90" y="866">estuda e trabalha</tspan><tspan x="90" y="942">com saúde.</tspan></text>
+      <g transform="translate(70 1020) scale(2.3)" color="#16181D"><use href="#boneco"/></g>
+      <text x="320" y="1180" font-family="IBM Plex Mono, monospace" font-size="30" fill="#16181D">Recife · desde 2006*</text>
+      <!-- estetoscópio contínuo: olivas no post 1, tubo cruzando o 2, auscultador no 3 -->
+      <g fill="none" stroke="#16181D" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M800 170 C 780 330 860 470 890 560" stroke-width="20"/>
+        <path d="M985 170 C 1005 330 920 470 890 560" stroke-width="20"/>
+        <path d="M890 560 C 890 900 900 1180 1150 1235 C 1450 1300 1700 1040 1960 1090 C 2210 1140 2330 1260 2520 1120" stroke-width="36"/>
+      </g>
+      <circle cx="800" cy="152" r="26" fill="#16181D"/>
+      <circle cx="985" cy="152" r="26" fill="#16181D"/>
+      <circle cx="890" cy="560" r="16" fill="#16181D"/>
+      <!-- POST 2 -->
+      <text x="1170" y="150" font-family="IBM Plex Mono, monospace" font-size="34" letter-spacing="6" fill="#16181D">02 · KITS POR CURSO</text>
+      <text font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="150" letter-spacing="-4" fill="#16181D"><tspan x="1160" y="380">MONTE</tspan><tspan x="1160" y="520">SEU KIT</tspan></text>
+      <text x="1170" y="610" font-family="Instrument Sans, sans-serif" font-weight="600" font-size="52" fill="#16181D">Escolha o curso, a gente separa tudo.</text>
+      <g font-family="Instrument Sans, sans-serif" font-weight="700" font-size="44">
+        <rect x="1170" y="680" width="380" height="84" rx="42" fill="#16181D"/><text x="1360" y="736" text-anchor="middle" fill="#FFCE1B">Enfermagem</text>
+        <rect x="1570" y="680" width="420" height="84" rx="42" fill="none" stroke="#16181D" stroke-width="5"/><text x="1780" y="736" text-anchor="middle" fill="#16181D">Téc. Enfermagem</text>
+        <rect x="1170" y="784" width="370" height="84" rx="42" fill="none" stroke="#16181D" stroke-width="5"/><text x="1355" y="840" text-anchor="middle" fill="#16181D">Fisioterapia</text>
+        <rect x="1560" y="784" width="300" height="84" rx="42" fill="none" stroke="#16181D" stroke-width="5"/><text x="1710" y="840" text-anchor="middle" fill="#16181D">Medicina</text>
+        <rect x="1170" y="888" width="340" height="84" rx="42" fill="none" stroke="#16181D" stroke-width="5"/><text x="1340" y="944" text-anchor="middle" fill="#16181D">Odontologia</text>
+      </g>
+      <!-- POST 3 -->
+      <text x="2250" y="150" font-family="IBM Plex Mono, monospace" font-size="34" letter-spacing="6" fill="#16181D">03 · COMO COMPRAR</text>
+      <text font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="130" letter-spacing="-4" fill="#16181D"><tspan x="2240" y="360">PEÇA NO</tspan><tspan x="2240" y="490">WHATSAPP</tspan></text>
+      <g font-family="Instrument Sans, sans-serif" font-weight="600" font-size="50" fill="#16181D">
+        <text x="2250" y="610">✓ até 4x sem juros</text>
+        <text x="2250" y="690">✓ envio para todo o Brasil</text>
+        <text x="2250" y="770">✓ produto original, com nota</text>
+      </g>
+      <rect x="2250" y="830" width="560" height="96" rx="48" fill="#16181D"/>
+      <text x="2530" y="892" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-stretch="110%" font-size="44" fill="#FFCE1B">LINK NA BIO →</text>
+      <!-- auscultador -->
+      <rect x="2500" y="1100" width="80" height="40" rx="10" fill="#16181D"/>
+      <circle cx="2760" cy="1120" r="196" fill="#16181D"/>
+      <circle cx="2760" cy="1120" r="150" fill="none" stroke="#FFCE1B" stroke-width="10"/>
+      <circle cx="2760" cy="1120" r="36" fill="#FFCE1B"/>
+    </g>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Seções">
+  <div class="wrap">
+    <span class="wm" aria-label="mr.book">mr.b<svg class="oo"><use href="#oo"/></svg>k</span>
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#posicionamento">Posicionamento</a>
+    <a href="#logo">Logo</a>
+    <a href="#identidade">Identidade</a>
+    <a href="#perfil">Perfil</a>
+    <a href="#destaques">Destaques</a>
+    <a href="#fixados">Fixados</a>
+    <a href="#landing">Landing page</a>
+    <a href="#proximos">Próximos passos</a>
+  </div>
+</nav>
+
+<header class="capa">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow"><b>Proposta de rebrand</b> · Mr.Book Essencial · nov 2026</div>
+      <h1 style="margin-top:18px">O kit de quem entra na saúde.</h1>
+      <p class="lede">A Mr.Book deixa de parecer uma livraria com promoções soltas e passa a ser a loja que equipa o estudante de saúde do primeiro semestre ao primeiro plantão. Mesma marca, mesmo amarelo, mesmo boneco. Mais clara, mais confiável e mais fácil de comprar.</p>
+      <div class="meta"><span class="chip">Logo</span><span class="chip">Perfil + bio</span><span class="chip">8 destaques</span><span class="chip">3 fixados conectados</span><span class="chip">Landing page</span></div>
+    </div>
+    <div style="justify-self:end;font-size:clamp(64px,11vw,132px)" class="lockup" aria-label="mr.book essencial">
+      <span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span>
+      <span class="sub">essencial <i></i></span>
+    </div>
+  </div>
+  <svg class="ecg" viewBox="0 0 1600 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 H700 l12 -18 l14 34 l16 -52 l16 58 l12 -22 H1600" fill="none" stroke="#16181D" stroke-width="2.5" stroke-linejoin="round"/></svg>
+</header>
+
+<main>
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>01</b> Diagnóstico do perfil atual</div>
+      <h2>O que o feed diz hoje</h2>
+      <p class="lede">Olhei os prints do @mrbookessencial. A loja tem coisa boa (produto, preço, rosto do dono), mas cada post parece de uma marca diferente.</p>
+    </div>
+    <div class="diag">
+      <div><span class="tag bad">Problema</span><h3>Cada post tem um layout</h3><p>Amarelo com preto, laranja degradê, vermelho com branco, roxo, fotos de banco. Ninguém reconhece a marca rolando o feed sem ler o @.</p></div>
+      <div><span class="tag bad">Problema</span><h3>Três WhatsApps diferentes</h3><p>A bio leva para (81) 98295-5372. Os posts mostram (81) 98738-9167 e um mostra (81) 98355-4583. Cliente que fica em dúvida não compra.</p></div>
+      <div><span class="tag bad">Problema</span><h3>Seguindo 9.159, seguidores 5.946</h3><p>Seguir mais do que é seguido passa cara de perfil de "sigo e deixo de seguir". Vale limpar aos poucos e ficar abaixo de 1.000.</p></div>
+      <div><span class="tag bad">Problema</span><h3>Livro com cara de capa de editora</h3><p>Os posts de livro repetem a arte da Martinari. Preço de R$35 fica pequeno perto do texto da capa. Livro deveria ser o "complemento do kit", não a vitrine.</p></div>
+      <div><span class="tag ok">Ativo</span><h3>O André na câmera</h3><p>Os vídeos dele abrindo caixa, na frente da prateleira cheia de kits, são o conteúdo mais forte do perfil. 20 anos de balcão viram confiança. Isso precisa aparecer mais.</p></div>
+      <div><span class="tag ok">Ativo</span><h3>Os carrosséis BIC novos</h3><p>"Preto no preto", "Efeito espelhado", "Qual é a sua cor?": já é o caminho certo. Foto boa, título curto, faixa preta. O rebrand parte daqui.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="posicionamento">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>02</b> Posicionamento</div>
+      <h2>De livraria para loja do kit</h2>
+      <p class="lede">O livro técnico está perdendo espaço para PDF e app. O kit não: toda turma nova precisa de esteto, esfigmo e oxímetro, todo semestre. A marca passa a vender a solução completa por curso e usa o livro como item que entra junto.</p>
+    </div>
+    <div class="pos">
+      <div class="box">
+        <span class="small mono">ANTES</span>
+        <div class="big">"Livros e material hospitalar"</div>
+        <p class="small">Catálogo. O cliente precisa saber o que quer, procurar o preço e perguntar se tem.</p>
+      </div>
+      <div class="box dark">
+        <span class="small mono">DEPOIS</span>
+        <div class="big">"O kit de quem entra na saúde."</div>
+        <p class="small">Solução por curso. O cliente diz "faço fisio, 2º período" e sai com tudo, parcelado, de quem vende isso há 20 anos.</p>
+      </div>
+    </div>
+    <div class="box dark" style="margin-top:24px">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:baseline">
+        <h3 style="color:#fff">Quando a turma compra</h3>
+        <div class="legend"><span><i style="background:var(--amarelo)"></i>pico (início de semestre)</span><span><i style="background:#6B5A13"></i>estágio e formatura</span></div>
+      </div>
+      <div class="cal" aria-label="Calendário de demanda estimada">
+        <span class="hot">JAN</span><span class="hot">FEV</span><span class="hot">MAR</span><span>ABR</span><span class="warm">MAI</span><span>JUN</span><span class="hot">JUL</span><span class="hot">AGO</span><span>SET</span><span class="warm">OUT</span><span class="warm">NOV</span><span class="warm">DEZ</span>
+      </div>
+      <p class="small">Estimativa pelo calendário acadêmico. Confirmar com o histórico de vendas do seu pai: é isso que define quando investir em anúncio e quando postar só conteúdo.</p>
+    </div>
+    <div class="pillars">
+      <div class="box"><span class="pct">≈ 40% do feed</span><h3>Kit &amp; produto</h3><p class="small">Esteto, esfigmo, oxímetro, kits por curso. Foto real, preço grande, parcela.</p></div>
+      <div class="box"><span class="pct">≈ 35% do feed</span><h3>O André ensina</h3><p class="small">"Como escolher seu esteto", "o que levar pro 1º estágio", "original × réplica". Rosto e autoridade.</p></div>
+      <div class="box"><span class="pct">≈ 25% do feed</span><h3>Turma &amp; cliente</h3><p class="small">Turma retirando kit, depoimento, aluno formado, bastidor da loja em Afogados.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="logo">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>03</b> Logo</div>
+      <h2>O boneco fica. A letra muda.</h2>
+      <p class="lede">O "oo" de book virou o auscultador de um estetoscópio de duas faces: campânula de um lado, diafragma do outro, ligados pela haste. Quem é da área enxerga; quem não é, lê "book" normalmente. O boneco foi redesenhado em traço único para funcionar pequeno, no avatar e nos destaques.</p>
+    </div>
+    <div class="logo-stage">
+      <div class="tile t-y" style="min-height:320px">
+        <div class="lockup" style="font-size:clamp(58px,9vw,112px)"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="sub">essencial <i></i></span></div>
+        <span class="cap">Assinatura principal</span>
+      </div>
+      <div class="tile t-d" style="min-height:320px">
+        <svg width="190" height="190" aria-label="Boneco redesenhado"><use href="#boneco"/></svg>
+        <span class="cap">Símbolo · o boneco</span>
+      </div>
+    </div>
+    <div class="logo-row">
+      <div class="tile t-w"><span class="wm" style="font-size:54px">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="cap">Fundo claro</span></div>
+      <div class="tile t-d"><span class="wm" style="font-size:54px">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="cap">Fundo escuro</span></div>
+      <div class="tile t-g"><svg width="96" height="42" aria-label="Símbolo oo"><use href="#oo"/></svg><span class="cap">Selo "oo" · favicon</span></div>
+      <div class="tile t-w"><div class="avatar"><svg><use href="#boneco"/></svg></div><span class="cap">Foto de perfil</span></div>
+    </div>
+    <div class="ba">
+      <div class="old"><svg width="44" height="44" style="color:#16181D"><use href="#boneco"/></svg><span>Mr.Book<br><span style="font-size:.8em">Essencial</span></span></div>
+      <div class="arrow mono">→</div>
+      <div style="font-size:52px"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span></div>
+    </div>
+    <div class="notes">
+      <div><h3>Por que minúsculo</h3><p>Fica mais próximo, lê como @ e encaixa melhor no círculo do avatar. "Mr." continua ali, só sem pose de livraria antiga.</p></div>
+      <div><h3>Por que "essencial" pequeno</h3><p>O @ continua mrbookessencial, então a palavra não some. Ela vira assinatura secundária, com a linha de ECG ao lado.</p></div>
+      <div><h3>Próximo passo do logo</h3><p>Esta é a direção. Para a versão final, vetorizo em Illustrator/Figma com ajuste fino de espaçamento e exporto PNG, SVG e PDF.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="identidade">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>04</b> Identidade</div>
+      <h2>Amarelo continua dono do feed</h2>
+      <p class="lede">O amarelo já é da marca, então ele fica, só que um tom mais quente e sempre com grafite. Saem o laranja, o roxo, o vermelho e o degradê. Entram um verde de centro cirúrgico para conteúdo educativo e o vermelho só para preço e ECG.</p>
+    </div>
+    <div class="pal">
+      <div class="sw" style="background:var(--amarelo)"><b>Amarelo Mr.Book</b><span>#FFCE1B · fundo principal</span></div>
+      <div class="sw" style="background:var(--grafite);color:#fff"><b>Grafite</b><span>#16181D · texto e faixas</span></div>
+      <div class="sw" style="background:var(--branco);border:1px solid var(--linha)"><b>Branco</b><span>#FFFFFF · foto de produto</span></div>
+      <div class="sw" style="background:var(--verde);color:#fff"><b>Verde cirúrgico</b><span>#14634F · posts educativos</span></div>
+      <div class="sw" style="background:var(--pressao);color:#fff"><b>Pressão</b><span>#E2412B · só preço e ECG</span></div>
+    </div>
+    <div class="type">
+      <div class="spec">
+        <span class="eyebrow">Títulos · Archivo Expanded Black</span>
+        <div class="sample">QUAL É A<br>SUA COR?</div>
+        <p class="small">Larga, pesada, lê de longe no feed. Sempre em caixa alta nos posts, no máximo 6 palavras.</p>
+      </div>
+      <div class="spec">
+        <span class="eyebrow">Texto · Instrument Sans</span>
+        <p style="font-size:20px;font-weight:600;line-height:1.3">Diafragma de dupla face, tubo em PVC atóxico e olivas de silicone.</p>
+        <span class="eyebrow" style="margin-top:8px">Dados e etiquetas · IBM Plex Mono</span>
+        <p class="mono" style="font-size:15px">KIT ENF-01 · 120/80 mmHg · 4x sem juros</p>
+      </div>
+    </div>
+    <div class="devices">
+      <div class="spec">
+        <span class="eyebrow">Preço sempre assim</span>
+        <div style="display:grid;gap:4px">
+          <span class="small mono" style="text-decoration:line-through">de R$ 89,00</span>
+          <div class="price" style="font-size:84px"><small>R$</small>76<sup>,00</sup></div>
+          <span class="mono" style="font-size:13px;background:var(--grafite);color:var(--amarelo);padding:4px 8px;border-radius:4px;justify-self:start">ou 4x de R$ 19,00</span>
+        </div>
+      </div>
+      <div class="spec">
+        <span class="eyebrow">Grafismo · linha de ECG</span>
+        <svg viewBox="0 0 300 80" aria-hidden="true"><path d="M0 50 H110 l8 -14 l10 28 l12 -46 l12 52 l8 -20 H300" fill="none" stroke="var(--pressao)" stroke-width="3" stroke-linejoin="round"/></svg>
+        <p class="small">Separador de seções, rodapé dos posts e a linha que atravessa os 3 fixados.</p>
+      </div>
+      <div class="spec">
+        <span class="eyebrow">Grafismo · mostrador do esfigmo</span>
+        <svg viewBox="0 0 300 120" aria-hidden="true">
+          <g transform="translate(150 112)">
+            <path d="M-100 0 A100 100 0 0 1 100 0" fill="none" stroke="var(--grafite)" stroke-width="3"/>
+            <g stroke="var(--grafite)" stroke-width="2">
+              <line x1="-100" y1="0" x2="-88" y2="0"/><line x1="-86.6" y1="-50" x2="-76.2" y2="-44"/><line x1="-50" y1="-86.6" x2="-44" y2="-76.2"/><line x1="0" y1="-100" x2="0" y2="-88"/><line x1="50" y1="-86.6" x2="44" y2="-76.2"/><line x1="86.6" y1="-50" x2="76.2" y2="-44"/><line x1="100" y1="0" x2="88" y2="0"/>
+            </g>
+            <line x1="0" y1="0" x2="44" y2="-62" stroke="var(--pressao)" stroke-width="4" stroke-linecap="round"/>
+            <circle r="7" fill="var(--grafite)"/>
+          </g>
+          <text x="150" y="70" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" fill="var(--grafite)">120/80</text>
+        </svg>
+        <p class="small">Vira selo de preço e ícone de "aferição" nos posts de esfigmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="perfil">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>05</b> Perfil do Instagram</div>
+      <h2>Como o perfil fica</h2>
+      <p class="lede">Em três segundos a pessoa tem que entender o que é, para quem é e onde clica. Toque nos destaques do celular para ver o que tem dentro de cada um.</p>
+    </div>
+    <div class="ig-layout">
+      <div class="phone" aria-label="Mockup do perfil no Instagram">
+        <div class="ph-status"><span>09:41</span><span>●●● 5G ▮</span></div>
+        <div class="ph-top">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 4l-8 8 8 8"/></svg>
+          <span>mrbookessencial</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-label="verificado"><circle cx="12" cy="12" r="10" fill="#3897F0"/><path d="M7.5 12.3l3 3 6-6.3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="sp"></span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 7H4c0-1 2-2 2-7zM10 19.5a2 2 0 0 0 4 0"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
+        </div>
+        <div class="ph-prof">
+          <div class="ph-av"><svg><use href="#boneco"/></svg></div>
+          <div>
+            <div class="ph-name">Mr.Book · Estetoscópios e Kits de Saúde</div>
+            <div class="ph-stats"><span><b>371</b>posts</span><span><b>5.946</b>seguidores</span><span><b>812</b>seguindo</span></div>
+          </div>
+        </div>
+        <div class="ph-bio" id="phBio">
+          <div class="cat">Artigos médicos</div>
+          <div id="bioText"></div>
+          <div class="lnk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>mrbook.com.br/kit e mais 1</div>
+          <div class="cat" style="margin-top:3px">R. Santa Edwirges, 456 · Afogados, Recife</div>
+        </div>
+        <div class="ph-btns"><span>Seguindo ▾</span><span>Mensagem</span><span>WhatsApp</span><span>+</span></div>
+        <div class="ph-hl" id="phHl" role="group" aria-label="Destaques"></div>
+        <div class="ph-tabs" aria-hidden="true">
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="5"/><rect x="9.5" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="9.5" width="5" height="5"/><rect x="9.5" y="9.5" width="5" height="5"/><rect x="16" y="9.5" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><rect x="9.5" y="16" width="5" height="5"/><rect x="16" y="16" width="5" height="5"/></svg></span>
+          <span><svg width="20" height="20"><use href="#i-play"/></svg></span>
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h13l-3-3M20 15H7l3 3"/></svg></span>
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="12" cy="11" r="3"/><path d="M7 20a5 5 0 0 1 10 0"/></svg></span>
+        </div>
+        <div class="ph-grid" id="phGrid"></div>
+      </div>
+
+      <div class="ig-side">
+        <div class="bio-card">
+          <div class="eyebrow"><b>Bio nova</b></div>
+          <pre id="bioCopy"></pre>
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><button class="copy" id="btnBio" type="button">Copiar bio</button><span class="count" id="bioCount"></span></div>
+        </div>
+        <div class="bio-card">
+          <div class="eyebrow"><b>Campos do perfil</b></div>
+          <dl class="kv">
+            <dt>Nome</dt><dd><b>Mr.Book · Estetoscópios e Kits de Saúde</b><br><span class="small">O campo nome entra na busca do Instagram. Quem digita "estetoscópio" ou "kit saúde" passa a achar o perfil.</span></dd>
+            <dt>Categoria</dt><dd>Artigos médicos <span class="small">(sai "Compras e varejo")</span></dd>
+            <dt>Link 1</dt><dd>mrbook.com.br/kit <span class="small">→ a landing page</span></dd>
+            <dt>Link 2</dt><dd>WhatsApp único da loja</dd>
+            <dt>Botões</dt><dd>Ativar botão de WhatsApp no perfil comercial</dd>
+            <dt>Endereço</dt><dd>Mostrar o endereço da loja. Retirada em Recife é argumento de venda.</dd>
+            <dt>Seguindo</dt><dd>Deixar de seguir aos poucos (≈150 por dia) até ficar abaixo de 1.000.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="destaques">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>06</b> Destaques</div>
+      <h2>8 destaques, cada um com sua função</h2>
+      <p class="lede">A ordem segue a jornada: escolher, confiar, comprar. Capas iguais, amarelo com ícone em traço, para o perfil ficar organizado. Cada destaque abre com no mínimo 2 stories fixos. Abaixo, o roteiro de cada um.</p>
+    </div>
+    <div class="hl-list" id="hlList"></div>
+  </div>
+</section>
+
+<section id="fixados">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>07</b> Os 3 posts fixados</div>
+      <h2>Três posts, um estetoscópio</h2>
+      <p class="lede">As olivas começam no post 1, o tubo atravessa o 2 e o auscultador fecha no 3. No perfil eles formam uma peça só; separados, cada um responde uma pergunta: quem é, o que vende, como compra. Cada um é a capa de um carrossel.</p>
+    </div>
+    <div class="tri-wrap">
+      <div class="tri" id="triBig"></div>
+      <div class="tri-split"><span>Post 1 · capa do carrossel "Quem somos"</span><span>Post 2 · capa do carrossel "Kits por curso"</span><span>Post 3 · capa do carrossel "Como comprar"</span></div>
+    </div>
+    <p class="small" style="margin-top:12px">Formato 1080×1440 (3:4), que é o recorte atual da grade do Instagram. Publicar na ordem 3 → 2 → 1 e fixar os três.</p>
+    <div class="caps">
+      <div class="box"><span class="n">POST 1 · QUEM SOMOS</span><pre>Há 20 anos a gente equipa quem estuda e trabalha com saúde em Recife.
+
+Começou com livro técnico. Hoje é estetoscópio, esfigmo, oxímetro e o kit completo do seu curso, separado à mão pelo André, que atende você pessoalmente.
+
+Arrasta pra conhecer a loja →</pre></div>
+      <div class="box"><span class="n">POST 2 · KITS POR CURSO</span><pre>Não sabe o que comprar pro seu curso? A gente já sabe.
+
+Enfermagem, Técnico, Fisioterapia, Medicina e Odontologia: cada curso tem um kit montado com o que o professor pede na lista.
+
+Arrasta e ache o seu →</pre></div>
+      <div class="box"><span class="n">POST 3 · COMO COMPRAR</span><pre>Comprar com a Mr.Book é assim:
+
+1. Escolhe o kit no link da bio
+2. Chama no WhatsApp
+3. Recebe em casa ou retira na loja em Afogados
+
+Até 4x sem juros. Produto original, com nota.</pre></div>
+    </div>
+  </div>
+</section>
+
+<section id="landing">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>08</b> Landing page</div>
+      <h2>O link da bio vira uma vitrine que vende</h2>
+      <p class="lede">Hoje o link da bio cai direto num WhatsApp, sem contexto. A landing page faz o trabalho de vendedor antes da conversa: a pessoa escolhe o curso, vê o kit e o preço, e chega no WhatsApp com a mensagem pronta.</p>
+    </div>
+    <div class="lp-cta">
+      <div class="lp-open">
+        <ol>
+          <li><b>Abertura</b> com a promessa e o botão de WhatsApp</li>
+          <li><b>Escolha seu curso</b>: o kit muda conforme o curso, com preço e parcela</li>
+          <li><b>Escolha a cor do esteto</b>, interativo</li>
+          <li><b>Como comprar</b> em 3 passos</li>
+          <li><b>Compra em turma</b> para representante de sala</li>
+          <li><b>Livros de bolso</b> como complemento</li>
+          <li><b>Clientes, perguntas frequentes e loja física</b></li>
+        </ol>
+        <a class="btn" href="landing.html">Abrir a landing page →</a>
+      </div>
+      <div class="box">
+        <h3>Por que ela converte</h3>
+        <p class="small">Cada botão abre o WhatsApp com uma mensagem já escrita, tipo "Oi! Quero o Kit Fisioterapia". O André sabe na hora o que a pessoa quer e quanto ela viu de preço.</p>
+        <p class="small">A seção de turma mira o representante de sala: uma conversa vende 30 kits. É a maior alavanca de recorrência que a loja tem.</p>
+        <p class="small">O endereço em Afogados e os 20 anos aparecem cedo para quebrar o medo de golpe, que é o maior freio de compra pelo Instagram.</p>
+        <p class="small mono" style="color:var(--pressao)">Preços tirados dos posts atuais. Confirmar todos antes de publicar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proximos">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow"><b>09</b> Próximos passos</div>
+      <h2>O que perguntar pro seu pai</h2>
+      <p class="lede">Para sair da direção e ir para a versão final, preciso destas respostas. Dá para fazer numa conversa de 20 minutos.</p>
+    </div>
+    <div class="steps">
+      <ol class="qs">
+        <li><div>Qual é o WhatsApp oficial?<span>Hoje aparecem três números. Fica um só em tudo.</span></div></li>
+        <li><div>Quais os 5 produtos que mais vendem e os 5 que dão mais margem?<span>Define o que vai para os kits e para os anúncios.</span></div></li>
+        <li><div>Os kits por curso já existem montados ou são montados na hora?<span>Se for na hora, fechamos uma composição fixa por curso.</span></div></li>
+        <li><div>Em que meses vende mais?<span>Confirma o calendário de semestre e onde investir.</span></div></li>
+        <li><div>Já vende para turma ou representante de sala? Com que desconto?</div></li>
+        <li><div>Envia para fora de Recife? Por qual transportadora e quanto custa?</div></li>
+        <li><div>Qual parcelamento ele aceita e em qual maquininha?<span>Os posts dizem "4x sem juros"; precisa valer para tudo.</span></div></li>
+        <li><div>Em que ano a loja abriu?<span>Usei "desde 2006" nos mockups por conta dos 20 anos. Confirmar.</span></div></li>
+        <li><div>Tem domínio próprio? Usa Shopee, Mercado Livre ou loja virtual?</div></li>
+        <li><div>Ele topa gravar 1 vídeo curto por semana?<span>É o conteúdo que mais funciona hoje no perfil.</span></div></li>
+      </ol>
+      <div class="plan">
+        <div><b>Semana 1</b><span>Respostas do seu pai, logo final vetorizado, bio e nome trocados, número de WhatsApp unificado.</span></div>
+        <div><b>Semana 2</b><span>Capas dos 8 destaques e os stories de cada um. Arquivar destaques antigos.</span></div>
+        <div><b>Semana 3</b><span>Publicar os 3 fixados e os carrosséis. Landing page no ar com domínio.</span></div>
+        <div><b>Semana 4</b><span>Primeiros vídeos do André, primeira ação para representantes de turma.</span></div>
+        <div><b>Depois</b><span>Arquivar os posts antigos fora do padrão aos poucos e manter 3 a 4 posts por semana nos 3 pilares.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Proposta de rebrand · Mr.Book Essencial · Mockups ilustrativos. Fotos reais dos produtos entram na produção final.</div></footer>
+
+<script>
+const BIO = `🩺 Equipando quem estuda saúde há 20 anos
+Estetos, kits por curso e livros técnicos
+📦 Recife e todo o Brasil · 4x sem juros
+👇 Monte seu kit aqui`;
+
+const HL = [
+  {id:'kit', name:'Monte seu kit', icon:'h-kit', job:'Porta de entrada. Leva para a landing page.', st:[
+    ['st-y','Qual é o seu curso?','Enfermagem, Técnico, Fisio, Medicina ou Odonto','Toque no link'],
+    ['st-d','Kit Enfermagem','Esteto + esfigmo + oxímetro + estojo · R$ 220','Pedir no Whats'],
+    ['st-p','Kit Fisioterapia','Esteto, esfigmo, martelo, goniômetro e fita · a partir de R$ 259','Pedir no Whats']]},
+  {id:'esteto', name:'Estetos', icon:'h-esteto', job:'Linha completa por cor e modelo.', st:[
+    ['st-d','Qual é a sua cor?','BIC em 6 acabamentos','Arrasta'],
+    ['st-y','Rainbow','O acabamento espelhado que todo mundo pergunta','Ver preço'],
+    ['st-p','Rappaport P.A Med','De R$ 89 por R$ 76','Pedir no Whats']]},
+  {id:'curso', name:'Por curso', icon:'h-curso', job:'Lista de material de cada curso, salva e reaproveitada todo semestre.', st:[
+    ['st-g','Lista do 1º estágio','O que o professor vai pedir, item por item',''],
+    ['st-y','Enfermagem','Esteto, esfigmo, oxímetro, relógio de lapela, garrote',''],
+    ['st-y','Fisioterapia','Martelo de reflexo, goniômetro, fita antropométrica','']]},
+  {id:'turma', name:'Turmas', icon:'h-turma', job:'Venda para representante de sala. Maior alavanca de recorrência.', st:[
+    ['st-d','Representante de sala?','Condição especial para pedido da turma toda',''],
+    ['st-y','Turma Enf. 2026.1','Foto da turma retirando os kits',''],
+    ['st-p','Como funciona','Junta os pedidos, chama a gente, entregamos na faculdade','Falar com André']]},
+  {id:'clientes', name:'Clientes', icon:'h-clientes', job:'Prova social. Substitui o "Feedback" atual.', st:[
+    ['st-p','Print de cliente','Conversa real com o kit recebido',''],
+    ['st-y','Formados com a gente','Foto de aluno de jaleco com o esteto',''],
+    ['st-d','20 anos','Mais de 20 anos de clientes em Recife','']]},
+  {id:'comprar', name:'Como comprar', icon:'h-comprar', job:'Tira dúvida de pagamento e entrega antes de chegar no WhatsApp.', st:[
+    ['st-y','1. Escolha','Pelo link da bio ou pelos destaques',''],
+    ['st-y','2. Chame','WhatsApp (81) 98295-5372',''],
+    ['st-d','3. Receba','Envio p/ todo Brasil ou retirada na loja · até 4x','']]},
+  {id:'livros', name:'Livros', icon:'h-livro', job:'Livros técnicos como complemento do kit.', st:[
+    ['st-p','Livros de bolso','A partir de R$ 35',''],
+    ['st-y','Manual do Técnico','De R$ 339 por R$ 99','Pedir no Whats'],
+    ['st-d','Vade Mecum 2026','R$ 189 à vista','']]},
+  {id:'loja', name:'A loja', icon:'h-loja', job:'Endereço, horário e o André. Quebra o medo de golpe.', st:[
+    ['st-d','Quem atende','André, há 20 anos no balcão',''],
+    ['st-y','Onde fica','R. Santa Edwirges, 456 · Afogados, Recife','Abrir no mapa']]}
+];
+
+const GRID = [
+  {type:'tri', i:0},{type:'tri', i:1},{type:'tri', i:2},
+  {bg:'#16181D', fg:'#FFCE1B', t:'QUAL ESTETO PRO SEU CURSO?', s:'Guia rápido · 3 perguntas', kind:'car'},
+  {bg:'#FFFFFF', fg:'#16181D', t:'RAINBOW', s:'BIC · R$ 454', kind:'car', steth:'#5B7CFA'},
+  {bg:'#14634F', fg:'#FFFFFF', t:'O QUE LEVAR PRO 1º ESTÁGIO', s:'Checklist · salva esse', kind:'car'},
+  {bg:'#2B2F36', fg:'#FFFFFF', t:'SEPARANDO 40 KITS', s:'Turma de Enfermagem', kind:'play', face:true},
+  {bg:'#FFCE1B', fg:'#16181D', t:'ORIGINAL × RÉPLICA', s:'O André mostra a diferença', kind:'play', face:true},
+  {bg:'#FFFFFF', fg:'#16181D', t:'MANUAL DO TÉCNICO', s:'de R$ 339 por R$ 99', kind:'car', book:true}
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+// bio
+$('#bioText').innerHTML = esc(BIO).replace(/\n/g,'<br>');
+$('#bioCopy').textContent = BIO;
+$('#bioCount').textContent = [...BIO].length + ' / 150 caracteres';
+$('#btnBio').addEventListener('click', e => {
+  const b = e.currentTarget;
+  navigator.clipboard.writeText(BIO).then(() => { b.textContent = 'Bio copiada'; setTimeout(()=>b.textContent='Copiar bio',1800); })
+    .catch(() => { const r = document.createRange(); r.selectNodeContents($('#bioCopy')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selecionada, copie com Ctrl+C'; });
+});
+
+// destaques (celular)
+$('#phHl').innerHTML = HL.map(h => `<button class="hl" type="button" data-id="${h.id}" aria-pressed="false"><span class="ring"><span class="cov"><svg><use href="#${h.icon}"/></svg></span></span><small>${h.name}</small></button>`).join('');
+
+// destaques (lista)
+$('#hlList').innerHTML = HL.map(h => `
+  <div class="hl-row" id="hl-${h.id}">
+    <div class="who"><span class="cov"><svg><use href="#${h.icon}"/></svg></span><div><h3>${h.name}</h3><p class="small">${h.job}</p></div></div>
+    <div class="stories">${h.st.map((s,k) => `
+      <div class="story ${s[0]}">
+        <div class="bars">${h.st.map((_,j)=>`<i class="${j<=k?'on':''}"></i>`).join('')}</div>
+        <div><b>${s[1]}</b>${s[2]}</div>
+        ${s[3] ? `<span class="cta">${s[3]}</span>` : '<span></span>'}
+      </div>`).join('')}
+    </div>
+  </div>`).join('');
+
+document.querySelectorAll('.hl').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.hl').forEach(x => x.setAttribute('aria-pressed','false'));
+  document.querySelectorAll('.hl-row').forEach(x => x.classList.remove('active'));
+  b.setAttribute('aria-pressed','true');
+  const row = document.getElementById('hl-' + b.dataset.id);
+  row.classList.add('active');
+  row.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
+}));
+
+// tiles
+const triTile = i => `<div class="cell"><svg class="full" viewBox="${i*1080} 0 1080 1440" preserveAspectRatio="xMidYMid slice" aria-label="Post fixado ${i+1}"><use href="#tri"/></svg><svg class="pin"><use href="#i-pin"/></svg></div>`;
+
+function postTile(p){
+  const icon = p.kind === 'play' ? 'i-play' : 'i-car';
+  let art = '';
+  if (p.steth) art = `<g transform="translate(540 980)" fill="none" stroke-linecap="round"><path d="M-260 -160 C -260 120 260 120 260 -160" stroke="${p.steth}" stroke-width="34"/><circle cx="260" cy="-160" r="120" fill="#16181D"/><circle cx="260" cy="-160" r="90" stroke="#C9D3FF" stroke-width="12"/><circle cx="-260" cy="-180" r="28" fill="#16181D"/></g>`;
+  else if (p.face) art = `<g transform="translate(540 1000)"><circle cy="-150" r="150" fill="${p.fg}" opacity=".18"/><path d="M-300 340 C -300 60 300 60 300 340 Z" fill="${p.fg}" opacity=".18"/></g>`;
+  else if (p.book) art = `<g transform="translate(540 960) rotate(-6)"><rect x="-210" y="-280" width="420" height="560" rx="14" fill="#8E1B24"/><rect x="-170" y="-220" width="340" height="80" fill="#fff" opacity=".9"/><rect x="-210" y="180" width="420" height="40" fill="#5E1018"/></g>`;
+  else art = `<path d="M0 1240 H380 l24 -48 l30 96 l34 -150 l34 180 l26 -78 H1080" fill="none" stroke="${p.fg}" stroke-width="10" stroke-linejoin="round" opacity=".55"/>`;
+  const words = p.t.split(' '); const lines = []; let cur = '';
+  words.forEach(w => { if ((cur + ' ' + w).trim().length > 10) { lines.push(cur.trim()); cur = w; } else cur += ' ' + w; }); lines.push(cur.trim());
+  const ty = 210;
+  return `<div class="cell"><svg class="full" viewBox="0 0 1080 1440" preserveAspectRatio="xMidYMid slice" aria-label="${p.t}">
+    <rect width="1080" height="1440" fill="${p.bg}"/>${art}
+    <text x="80" y="130" font-family="IBM Plex Mono, monospace" font-size="34" letter-spacing="5" fill="${p.fg}" opacity=".75">MR.BOOK</text>
+    <text font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="96" letter-spacing="-2" fill="${p.fg}">${lines.map((l,k)=>`<tspan x="76" y="${ty + 130 + k*100}">${l}</tspan>`).join('')}</text>
+    <text x="80" y="${ty + 130 + lines.length*100 + 40}" font-family="Instrument Sans, sans-serif" font-weight="600" font-size="52" fill="${p.fg}">${p.s}</text>
+  </svg><svg class="pin"><use href="#${icon}"/></svg></div>`;
+}
+$('#phGrid').innerHTML = GRID.map(p => p.type === 'tri' ? triTile(p.i) : postTile(p)).join('');
+$('#triBig').innerHTML = [0,1,2].map(triTile).join('');
+</script>

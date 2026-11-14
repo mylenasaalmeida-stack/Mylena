@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mr.Book · Kits de Saúde</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Estetoscópios, esfigmomanômetros e kits por curso para estudantes de Enfermagem, Fisioterapia, Medicina e Odontologia. 20 anos em Recife. Até 4x sem juros.">
+<meta name="theme-color" content="#FFCE1B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: vitrine de uma coluna, faixas alternando amarelo / branco / grafite; um estetoscópio que muda de cor guia a página */
+:root{
+  --amarelo:#FFCE1B; --amarelo-2:#FFE68A;
+  --grafite:#16181D; --grafite-2:#22252B; --grafite-3:#3A3E47;
+  --branco:#FFFFFF; --nevoa:#F2F3EF; --linha:#DCDED6; --muted:#60646D;
+  --verde:#14634F; --pressao:#E2412B;
+  --display:"Archivo","Arial Black",Impact,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --tubo:#16181D;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--branco);color:var(--grafite);font-family:var(--body);font-size:17px;line-height:1.55}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-stretch:118%;font-weight:900;line-height:1;margin:0;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0}
+.in{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.band{padding-block:84px}
+.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;gap:10px;align-items:center}
+.label::before{content:"";width:22px;height:2px;background:currentColor}
+h2{font-size:clamp(32px,5vw,58px)}
+.sub{font-size:19px;max-width:58ch;color:var(--grafite-3)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:108%;font-weight:800;font-size:17px;padding:16px 24px;border-radius:999px;text-decoration:none;border:2px solid var(--grafite);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--pressao);outline-offset:3px}
+.btn.solid{background:var(--grafite);color:var(--amarelo)}
+.btn.ghost{background:transparent;color:var(--grafite)}
+.btn.yellow{background:var(--amarelo);color:var(--grafite);border-color:var(--amarelo)}
+.btn svg{width:20px;height:20px}
+
+/* wordmark */
+.wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:baseline;white-space:nowrap}
+.wm .oo{height:.535em;width:1.24em;margin:0 .01em;overflow:visible;flex:none;transform:translateY(.012em)}
+
+/* topo */
+.top{position:sticky;top:0;z-index:30;background:var(--amarelo);border-bottom:2px solid var(--grafite)}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.top .wm{font-size:28px;text-decoration:none;color:var(--grafite)}
+.top .btn{padding:10px 16px;font-size:14px}
+
+/* hero */
+.hero{background:var(--amarelo);padding-block:56px 0;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:end}
+.hero h1{font-size:clamp(42px,7.4vw,92px);font-stretch:125%;line-height:.94;margin-top:18px}
+.hero .sub{color:var(--grafite);margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .proof{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;padding-bottom:56px;font-family:var(--mono);font-size:13px}
+.hero .proof span{display:flex;gap:8px;align-items:center}
+.hero .proof span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--grafite)}
+.hero-art{position:relative;align-self:stretch;min-height:420px}
+.hero-art svg.steth{position:absolute;inset:auto 0 0 0;width:100%;height:auto}
+.gauge{position:absolute;top:0;right:0;background:var(--grafite);color:var(--branco);border-radius:18px;padding:16px 18px;display:grid;gap:2px;transform:rotate(3deg);box-shadow:8px 8px 0 rgba(22,24,29,.18)}
+.gauge small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#A9ADB6}
+.gauge b{font-family:var(--display);font-stretch:120%;font-size:34px;color:var(--amarelo);line-height:1}
+.gauge span{font-family:var(--mono);font-size:12px}
+
+/* fatos */
+.facts{background:var(--grafite);color:var(--branco)}
+.facts .in{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.facts .in > div{padding:26px 20px;border-left:1px solid var(--grafite-3);display:grid;gap:4px}
+.facts .in > div:first-child{border-left:0;padding-left:0}
+.facts b{font-family:var(--display);font-stretch:120%;font-size:30px;color:var(--amarelo);line-height:1}
+.facts span{font-size:14px;color:#C9CBD1}
+
+/* cursos */
+.cursos{background:var(--nevoa)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.tab{font-family:var(--body);font-weight:700;font-size:15px;padding:11px 18px;border-radius:999px;border:2px solid var(--grafite);background:transparent;color:var(--grafite);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--grafite);color:var(--amarelo)}
+.tab:focus-visible{outline:3px solid var(--pressao);outline-offset:2px}
+.kit{margin-top:22px;background:var(--branco);border:2px solid var(--grafite);border-radius:22px;display:grid;grid-template-columns:1.2fr .8fr;overflow:hidden}
+.kit .info{padding:34px;display:grid;gap:18px;align-content:start;min-width:0}
+.kit h3{font-size:clamp(28px,3.6vw,40px)}
+.kit .for{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.kit ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.kit li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+.kit li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--amarelo) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.3l2.6 2.5L13 6.4' fill='none' stroke='%2316181D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.kit .buy{background:var(--amarelo);padding:34px;display:grid;gap:14px;align-content:center;border-left:2px solid var(--grafite)}
+.price{display:flex;align-items:flex-start;gap:4px;font-family:var(--display);font-weight:900;font-stretch:112%;line-height:.85;font-size:clamp(64px,8vw,92px)}
+.price small{font-size:.3em;margin-top:.18em}
+.price sup{font-size:.34em;margin-top:.08em}
+.from{font-family:var(--mono);font-size:13px}
+.parc{font-family:var(--mono);font-size:13px;background:var(--grafite);color:var(--amarelo);padding:5px 10px;border-radius:6px;justify-self:start}
+.kit .note{font-size:13px;color:var(--grafite-3)}
+
+/* cores */
+.cores .in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.swatches{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.swatch{width:54px;height:54px;border-radius:50%;border:3px solid var(--branco);box-shadow:0 0 0 2px var(--linha);cursor:pointer;padding:0}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 3px var(--grafite)}
+.swatch:focus-visible{outline:3px solid var(--pressao);outline-offset:3px}
+.cor-nome{margin-top:18px;font-family:var(--display);font-stretch:118%;font-size:26px;font-weight:800}
+.cor-nome span{display:block;font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);letter-spacing:0;margin-top:6px}
+.steth-box{background:var(--nevoa);border-radius:28px;padding:24px;aspect-ratio:1/1;max-width:100%;display:grid;place-items:center}
+.steth-box svg{width:100%;height:100%}
+#tubo,#tubo2{transition:stroke .35s ease}
+
+/* passos */
+.passos{background:var(--grafite);color:var(--branco)}
+.passos .sub{color:#C9CBD1}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;counter-reset:s}
+.step{border:1.5px solid var(--grafite-3);border-radius:20px;padding:28px;display:grid;gap:12px;align-content:start}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--display);font-stretch:125%;font-size:64px;line-height:.9;color:var(--amarelo)}
+.step h3{font-size:24px}
+.step p{color:#C9CBD1;font-size:15.5px}
+
+/* turma */
+.turma{background:var(--verde);color:var(--branco)}
+.turma .in{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.turma .sub{color:#D7EAE3}
+.turma .card{background:var(--branco);color:var(--grafite);border-radius:22px;padding:28px;display:grid;gap:12px}
+.turma .card .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--linha);padding-bottom:10px;font-size:15px}
+.turma .card .row:last-of-type{border:0}
+.turma .card b{font-family:var(--mono);font-weight:500}
+
+/* livros */
+.livros .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.livro{display:grid;gap:12px;align-content:start}
+.capa{aspect-ratio:3/4;max-width:100%;border-radius:6px 12px 12px 6px;padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;box-shadow:inset 8px 0 0 rgba(0,0,0,.18),0 10px 24px -14px rgba(22,24,29,.6);font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.15}
+.capa small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;opacity:.8}
+.livro h3{font-family:var(--body);font-stretch:100%;font-size:16px;font-weight:700;letter-spacing:0}
+.livro .p{display:flex;gap:10px;align-items:baseline}
+.livro .p s{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.livro .p b{font-family:var(--display);font-stretch:112%;font-size:24px}
+.livro a{font-size:14px;font-weight:600}
+
+/* clientes */
+.clientes{background:var(--nevoa)}
+.depo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.slot{border:2px dashed #B9BCB3;border-radius:20px;aspect-ratio:9/12;max-width:100%;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-family:var(--mono);font-size:13px}
+
+/* faq */
+.faq .list{margin-top:32px;border-top:2px solid var(--grafite)}
+details{border-bottom:1.5px solid var(--linha)}
+summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);font-size:22px;line-height:1}
+details[open] summary::after{content:"−"}
+summary:focus-visible{outline:3px solid var(--pressao);outline-offset:4px}
+details p{padding:0 0 22px;color:var(--grafite-3);max-width:68ch}
+
+/* final */
+.final{background:var(--amarelo)}
+.final .in{display:grid;gap:26px;justify-items:start}
+.final h2{font-size:clamp(38px,6.4vw,80px);font-stretch:125%;max-width:14ch}
+.loja{display:grid;grid-template-columns:repeat(3,auto);gap:12px 40px;font-size:15px;margin-top:10px}
+.loja b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:4px}
+footer{background:var(--grafite);color:#A9ADB6;font-size:13px}
+footer .in{padding-block:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer .wm{font-size:24px;color:var(--amarelo)}
+
+/* botão flutuante */
+.float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:none;background:#1FA855;color:#fff;border:0;border-radius:999px;padding:14px 18px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px -8px rgba(0,0,0,.4);align-items:center;gap:8px}
+.float svg{width:20px;height:20px}
+
+@media (max-width:880px){
+  .hero .in,.cores .in,.turma .in,.kit{grid-template-columns:1fr}
+  .hero-art{min-height:300px;order:-1}
+  .kit .buy{border-left:0;border-top:2px solid var(--grafite)}
+  .facts .in{grid-template-columns:1fr 1fr}
+  .facts .in > div:nth-child(3){border-left:0;padding-left:0}
+  .facts .in > div{padding:20px 14px}
+  .steps,.depo{grid-template-columns:1fr}
+  .slot{aspect-ratio:auto;min-height:140px}
+  .livros .grid{grid-template-columns:1fr 1fr}
+  .loja{grid-template-columns:1fr}
+  .float.on{display:inline-flex}
+  .hero .ctas .btn{width:100%;justify-content:center;font-size:16px}
+  .top .btn span{display:none}
+}
+@media (max-width:520px){
+  .band{padding-block:60px}
+  .kit .info,.kit .buy{padding:24px}
+  .kit ul{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,#tubo,#tubo2{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="oo" viewBox="0 0 124 53.5">
+      <circle cx="26.75" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
+      <circle cx="97.25" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
+      <rect x="44" y="21.75" width="36" height="10" fill="currentColor"/>
+      <circle cx="97.25" cy="26.75" r="5.2" fill="currentColor"/>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="in">
+    <a class="wm" href="#inicio" aria-label="mr.book, início">mr.b<svg class="oo"><use href="#oo"/></svg>k</a>
+    <a class="btn solid" data-wa="Oi! Vim pelo site e quero montar meu kit." href="#"><svg><use href="#wa"/></svg><span>Falar no WhatsApp</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="in">
+    <div>
+      <span class="label">Recife · 20 anos no mercado</span>
+      <h1>O kit do seu primeiro plantão.</h1>
+      <p class="sub">Estetoscópio, esfigmomanômetro, oxímetro e tudo que a lista do seu curso pede. Separado por quem atende estudante de saúde há 20 anos, em até 4x sem juros.</p>
+      <div class="ctas">
+        <a class="btn solid" data-wa="Oi! Quero montar meu kit. Faço o curso de: " href="#"><svg><use href="#wa"/></svg>Montar meu kit no WhatsApp</a>
+        <a class="btn ghost" href="#cursos">Ver kits por curso</a>
+      </div>
+      <div class="proof"><span>Produto original, com nota</span><span>Envio para todo o Brasil</span><span>Retirada em Afogados</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="gauge"><small>AFERIÇÃO</small><b>120/80</b><span>mmHg · tudo certo</span></div>
+      <svg class="steth" viewBox="0 0 520 460">
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M150 30 C 140 120 190 190 215 230" stroke="#16181D" stroke-width="12"/>
+          <path d="M280 30 C 290 120 240 190 215 230" stroke="#16181D" stroke-width="12"/>
+          <path id="tubo2" d="M215 230 C 215 340 230 420 320 430 C 400 438 430 380 420 330" stroke="var(--tubo)" stroke-width="24"/>
+        </g>
+        <circle cx="150" cy="22" r="14" fill="#16181D"/><circle cx="280" cy="22" r="14" fill="#16181D"/>
+        <rect x="402" y="300" width="36" height="34" rx="6" fill="#16181D"/>
+        <circle cx="420" cy="250" r="64" fill="#16181D"/>
+        <circle cx="420" cy="250" r="48" fill="none" stroke="#FFCE1B" stroke-width="5"/>
+        <circle cx="420" cy="250" r="12" fill="#FFCE1B"/>
+        <path d="M0 455 H70 l10 -16 l12 30 l14 -44 l14 50 l10 -20 H520" fill="none" stroke="#16181D" stroke-opacity=".25" stroke-width="4" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="facts" aria-label="Por que a Mr.Book">
+  <div class="in">
+    <div><b>20 anos</b><span>atendendo estudante e profissional de saúde</span></div>
+    <div><b>4x</b><span>sem juros no cartão</span></div>
+    <div><b>Original</b><span>todo produto com nota fiscal</span></div>
+    <div><b>Brasil</b><span>enviamos para todo o país</span></div>
+  </div>
+</section>
+
+<section class="cursos band" id="cursos">
+  <div class="in">
+    <span class="label">Kits por curso</span>
+    <h2 style="margin-top:14px">Escolha seu curso. A gente separa o resto.</h2>
+    <p class="sub" style="margin-top:14px">Cada kit segue o que os professores pedem na lista de material. Quer trocar um item ou a cor do esteto? É só pedir no WhatsApp.</p>
+    <div class="tabs" role="tablist" aria-label="Cursos" id="tabs"></div>
+    <div class="kit" role="tabpanel" id="kit" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="cores band" id="estetos">
+  <div class="in">
+    <div>
+      <span class="label">Estetoscópios</span>
+      <h2 style="margin-top:14px">Qual é a sua cor?</h2>
+      <p class="sub" style="margin-top:14px">Do clássico preto ao espelhado rainbow. Toque nas cores para ver como fica.</p>
+      <div class="swatches" id="swatches" role="group" aria-label="Cores do estetoscópio"></div>
+      <div class="cor-nome" id="corNome"></div>
+      <a class="btn solid" style="margin-top:24px" id="corBtn" href="#"><svg><use href="#wa"/></svg>Quero nessa cor</a>
+    </div>
+    <div class="steth-box" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3FD0C9"/><stop offset=".35" stop-color="#5B7CFA"/><stop offset=".65" stop-color="#C05BE0"/><stop offset="1" stop-color="#F2B33D"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M120 40 C 110 110 150 160 170 190" stroke="#9AA0AA" stroke-width="9"/>
+          <path d="M220 40 C 230 110 190 160 170 190" stroke="#9AA0AA" stroke-width="9"/>
+          <path id="tubo" d="M170 190 C 170 280 190 350 260 350 C 330 350 340 290 320 255" stroke="#16181D" stroke-width="20"/>
+        </g>
+        <circle cx="120" cy="34" r="11" fill="#16181D"/><circle cx="220" cy="34" r="11" fill="#16181D"/>
+        <circle cx="170" cy="190" r="9" fill="#9AA0AA"/>
+        <rect x="306" y="232" width="28" height="26" rx="5" fill="#9AA0AA"/>
+        <circle id="peca" cx="320" cy="190" r="52" fill="#16181D"/>
+        <circle cx="320" cy="190" r="38" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="4"/>
+        <circle cx="320" cy="190" r="9" fill="#FFFFFF" fill-opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="passos band" id="como">
+  <div class="in">
+    <span class="label" style="color:var(--amarelo)">Como comprar</span>
+    <h2 style="margin-top:14px">Três passos e o kit está com você.</h2>
+    <div class="steps">
+      <div class="step"><h3>Escolha</h3><p>Escolha o kit do seu curso aqui na página ou nos destaques do Instagram.</p></div>
+      <div class="step"><h3>Chame no WhatsApp</h3><p>A mensagem já vai pronta. O André confirma o estoque, a cor e o valor do frete.</p></div>
+      <div class="step"><h3>Receba ou retire</h3><p>Enviamos para todo o Brasil ou você retira na loja em Afogados, Recife. Até 4x sem juros.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="turma band" id="turma">
+  <div class="in">
+    <div>
+      <span class="label">Para representantes de sala</span>
+      <h2 style="margin-top:14px">Compra da turma toda? Condição especial.</h2>
+      <p class="sub" style="margin-top:14px">Junte os pedidos da sala, mande a lista e a gente separa um kit por aluno, com nome, e entrega na faculdade em Recife e região metropolitana.</p>
+      <a class="btn yellow" style="margin-top:28px" data-wa="Oi! Sou representante de turma e quero cotar kits para a sala. Curso: , quantidade de alunos: " href="#"><svg><use href="#wa"/></svg>Cotar para minha turma</a>
+    </div>
+    <div class="card" aria-label="Exemplo de pedido de turma">
+      <span class="label" style="color:var(--muted)">Exemplo de pedido</span>
+      <div class="row"><span>Curso</span><b>Enfermagem · 3º período</b></div>
+      <div class="row"><span>Alunos</span><b>32 kits</b></div>
+      <div class="row"><span>Entrega</span><b>na faculdade</b></div>
+      <div class="row"><span>Embalagem</span><b>um kit por aluno, com nome</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="livros band" id="livros">
+  <div class="in">
+    <span class="label">Livros técnicos</span>
+    <h2 style="margin-top:14px">Para levar no bolso do jaleco.</h2>
+    <p class="sub" style="margin-top:14px">Os livros de consulta rápida que mais saem na loja. Dá para incluir no seu kit.</p>
+    <div class="grid" id="livrosGrid"></div>
+  </div>
+</section>
+
+<section class="clientes band" id="clientes">
+  <div class="in">
+    <span class="label">Quem já comprou</span>
+    <h2 style="margin-top:14px">20 anos de turma formada.</h2>
+    <div class="depo">
+      <div class="slot">Espaço para print real de cliente<br>(do destaque Feedback)</div>
+      <div class="slot">Espaço para foto de turma<br>retirando os kits</div>
+      <div class="slot">Espaço para print real de cliente<br>(do destaque Feedback)</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq band" id="faq">
+  <div class="in">
+    <span class="label">Perguntas frequentes</span>
+    <h2 style="margin-top:14px">Antes de chamar no WhatsApp</h2>
+    <div class="list">
+      <details><summary>Os produtos são originais?</summary><p>Sim. Trabalhamos com marcas como BIC, P.A Med, G-Tech, Incoterm e Bioland, e todo pedido sai com nota fiscal.</p></details>
+      <details><summary>Como funciona o parcelamento?</summary><p>Em até 4x sem juros no cartão de crédito. No Pix, consulte o valor à vista.</p></details>
+      <details><summary>Vocês enviam para fora de Recife?</summary><p>Enviamos para todo o Brasil. O valor e o prazo do frete são calculados no WhatsApp com o seu CEP.</p></details>
+      <details><summary>Posso trocar um item do kit?</summary><p>Pode. Os kits são montados a partir da lista do seu curso, então dá para trocar a cor do esteto, tirar um item que você já tem ou acrescentar um livro.</p></details>
+      <details><summary>Posso retirar na loja?</summary><p>Sim. A loja fica na Rua Santa Edwirges, 456, em Afogados, Recife. Avise no WhatsApp antes de ir que o André separa o seu pedido.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final band">
+  <div class="in">
+    <span class="label">Pronto para o primeiro plantão?</span>
+    <h2>Monte seu kit agora.</h2>
+    <a class="btn solid" data-wa="Oi! Vim pelo site e quero montar meu kit. Faço o curso de: " href="#"><svg><use href="#wa"/></svg>Falar com o André no WhatsApp</a>
+    <div class="loja">
+      <div><b>Loja</b>Rua Santa Edwirges, 456<br>Afogados, Recife · PE</div>
+      <div><b>WhatsApp</b><span class="mono" id="numero">(81) 98295-5372</span></div>
+      <div><b>Instagram</b>@mrbookessencial</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span>Mr.Book Essencial · Material hospitalar e livros de saúde · Recife</span></div>
+</footer>
+
+<a class="float" data-wa="Oi! Vim pelo site e quero montar meu kit." href="#"><svg><use href="#wa"/></svg>WhatsApp</a>
+
+<script>
+const WA = '5581982955372';
+const waLink = msg => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+function bindWa(root){ root.querySelectorAll('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; }); }
+
+// Preços de referência tirados dos posts atuais do perfil. Confirmar antes de publicar.
+const KITS = [
+  {id:'enf', curso:'Enfermagem', nome:'Kit Acadêmico Enfermagem', para:'Graduação · do 1º período ao estágio',
+   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro de pulso G-Tech','Termômetro digital','Óculos de proteção','Estojo com zíper'],
+   preco:'220', cent:',00', de:null, parc:'ou 4x de R$ 55,00'},
+  {id:'tec', curso:'Técnico em Enfermagem', nome:'Kit Completo Técnico', para:'Curso técnico · lista do estágio',
+   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro','Glicosímetro com tiras','Garrote automático e tradicional','Óculos de proteção'],
+   preco:'349', cent:',00', de:null, parc:'ou 4x de R$ 87,25'},
+  {id:'fisio', curso:'Fisioterapia', nome:'Kit Fisioterapia', para:'Graduação · avaliação física',
+   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro','Martelo de reflexo','Goniômetro acrílico','Fita antropométrica'],
+   preco:'259', cent:',00', de:null, parc:'à vista · a partir de', from:true},
+  {id:'med', curso:'Medicina', nome:'Kit BIC Eternity', para:'Medicina e Fisioterapia · semiologia',
+   itens:['Estetoscópio BIC Eternity','Esfigmomanômetro','Goniômetro','Martelo de reflexo','Estojo de transporte','Escolha a cor do esteto'],
+   preco:'454', cent:',00', de:'478,00', parc:'ou 4x de R$ 113,50'},
+  {id:'odonto', curso:'Odontologia', nome:'Kit Odonto + Livros', para:'Graduação · clínica e prótese',
+   itens:['Manual de instrumentais odontológicos','Prótese Total (Nakagomi · Mukai)','Implantes Dentários','Óculos de proteção','Avental e bolsa bordada','Consulte outros itens'],
+   preco:'129', cent:',90', de:null, parc:'por livro · a partir de', from:true}
+];
+
+const tabs = document.getElementById('tabs'), kit = document.getElementById('kit');
+tabs.innerHTML = KITS.map((k,i) => `<button class="tab" role="tab" id="tab-${k.id}" aria-controls="kit" aria-selected="${i===0}" data-i="${i}" type="button">${k.curso}</button>`).join('');
+function showKit(i){
+  const k = KITS[i];
+  tabs.querySelectorAll('.tab').forEach((t,j) => { t.setAttribute('aria-selected', j===i); t.tabIndex = j===i ? 0 : -1; });
+  kit.setAttribute('aria-labelledby', 'tab-' + k.id);
+  kit.innerHTML = `
+    <div class="info">
+      <span class="for">${k.para}</span>
+      <h3>${k.nome}</h3>
+      <ul>${k.itens.map(x => `<li>${x}</li>`).join('')}</ul>
+      <p class="note">Itens e marcas podem variar conforme estoque. A cor do estetoscópio você escolhe.</p>
+    </div>
+    <div class="buy">
+      ${k.de ? `<span class="from"><s>de R$ ${k.de}</s> por</span>` : (k.from ? `<span class="from">a partir de</span>` : '<span class="from">kit completo</span>')}
+      <div class="price"><small>R$</small>${k.preco}<sup>${k.cent}</sup></div>
+      <span class="parc">${k.from ? k.parc.replace(' · a partir de','') : k.parc}</span>
+      <a class="btn solid" data-wa="Oi! Vim pelo site e quero o ${k.nome}. Ainda tem?" href="#"><svg><use href="#wa"/></svg>Pedir este kit</a>
+    </div>`;
+  bindWa(kit);
+}
+tabs.addEventListener('click', e => { const t = e.target.closest('.tab'); if (t) showKit(+t.dataset.i); });
+tabs.addEventListener('keydown', e => {
+  if (!['ArrowRight','ArrowLeft'].includes(e.key)) return;
+  const cur = [...tabs.children].findIndex(t => t.getAttribute('aria-selected') === 'true');
+  const n = (cur + (e.key === 'ArrowRight' ? 1 : -1) + KITS.length) % KITS.length;
+  showKit(n); tabs.children[n].focus();
+});
+showKit(0);
+
+// cores
+const CORES = [
+  {nome:'All Black', det:'Preto no preto, combina com qualquer jaleco', c:'#16181D', peca:'#16181D'},
+  {nome:'Rainbow', det:'Auscultador espelhado, o mais pedido', c:'#2A2D33', peca:'url(#rainbow)'},
+  {nome:'Rosa', det:'Tubo rosa com auscultador grafite', c:'#E2649A', peca:'#2A2D33'},
+  {nome:'Vinho', det:'Tubo vinho, acabamento clássico', c:'#7A1F33', peca:'#2A2D33'},
+  {nome:'Azul Royal', det:'Tubo azul com auscultador grafite', c:'#2F55C9', peca:'#2A2D33'},
+  {nome:'Verde Cirúrgico', det:'Tubo verde, a cor do centro cirúrgico', c:'#14634F', peca:'#2A2D33'}
+];
+const sw = document.getElementById('swatches');
+sw.innerHTML = CORES.map((c,i) => `<button class="swatch" type="button" aria-label="${c.nome}" aria-pressed="${i===0}" data-i="${i}" style="background:${c.nome==='Rainbow' ? 'conic-gradient(#3FD0C9,#5B7CFA,#C05BE0,#F2B33D,#3FD0C9)' : c.c}"></button>`).join('');
+function setCor(i){
+  const c = CORES[i];
+  sw.querySelectorAll('.swatch').forEach((b,j) => b.setAttribute('aria-pressed', j===i));
+  document.getElementById('tubo').setAttribute('stroke', c.c);
+  document.getElementById('peca').setAttribute('fill', c.peca);
+  document.documentElement.style.setProperty('--tubo', c.nome === 'Rainbow' ? '#16181D' : c.c);
+  document.getElementById('corNome').innerHTML = `${c.nome}<span>${c.det}</span>`;
+  const b = document.getElementById('corBtn'); b.dataset.wa = `Oi! Quero um estetoscópio na cor ${c.nome}. Quais modelos vocês têm?`; bindWa(b.parentNode);
+}
+sw.addEventListener('click', e => { const b = e.target.closest('.swatch'); if (b) setCor(+b.dataset.i); });
+setCor(0);
+
+// livros (preços dos posts atuais)
+const LIVROS = [
+  {t:'Manual do Técnico e Auxiliar de Enfermagem', de:'339,00', por:'99,00', bg:'#8E1B24'},
+  {t:'Terminologia em Enfermagem', de:'53,00', por:'35,00', bg:'#20325E'},
+  {t:'Manual de Procedimentos para Estágio', de:'59,00', por:'35,00', bg:'#1F4E4A'},
+  {t:'Diário Técnico de Enfermagem', de:'50,00', por:'25,00', bg:'#4B2C6B'}
+];
+document.getElementById('livrosGrid').innerHTML = LIVROS.map(l => `
+  <div class="livro">
+    <div class="capa" style="background:${l.bg}"><small>MARTINARI</small><span>${l.t}</span><small>BOLSO</small></div>
+    <h3>${l.t}</h3>
+    <div class="p"><s>R$ ${l.de}</s><b>R$ ${l.por}</b></div>
+    <a data-wa="Oi! Quero o livro ${l.t}. Ainda tem?" href="#">Pedir no WhatsApp →</a>
+  </div>`).join('');
+
+bindWa(document);
+const fl=document.querySelector('.float');
+addEventListener('scroll',()=>fl.classList.toggle('on',scrollY>700),{passive:true});
+</script>
+</body>
+</html>
