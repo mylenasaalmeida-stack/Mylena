@@ -29,7 +29,12 @@ h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-heigh
 .ecg{position:absolute;left:0;right:0;height:120px;z-index:1}
 
 /* produto */
-.prod .photo{position:absolute;left:90px;right:90px;top:150px;height:620px;display:grid;place-items:center}
+.prod .photo{position:absolute;left:72px;right:72px;top:150px;height:640px;display:grid;place-items:center;background:var(--branco);border:5px solid var(--grafite);border-radius:40px;padding:34px}
+.prod.bg-d .photo{border-color:var(--branco)}
+.prod.bg-d .tx h2{color:var(--branco)}
+.prod.bg-d .det{color:#C9CBD1}
+.prod.bg-d .price{border-color:var(--branco);box-shadow:14px 14px 0 rgba(0,0,0,.45)}
+.prod.bg-y .det{color:var(--grafite)}
 .prod .photo img{width:100%;height:100%;object-fit:contain;min-height:0}
 .prod .tx{position:absolute;left:72px;right:72px;bottom:450px;z-index:2}
 .prod .tx small{display:block;font-family:var(--mono);font-size:24px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
@@ -97,6 +102,7 @@ h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-heigh
 
 /* livros */
 .books{position:absolute;left:72px;right:72px;top:720px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.bg-d .book{outline:4px solid var(--branco)}
 .book{aspect-ratio:3/4;border-radius:10px 22px 22px 10px;padding:30px 26px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;font-family:Georgia,serif;font-size:38px;line-height:1.1;box-shadow:inset 16px 0 0 rgba(0,0,0,.2),0 30px 40px -24px rgba(0,0,0,.6)}
 .book small{font-family:var(--mono);font-size:18px;letter-spacing:.1em;opacity:.8}
 .book i{font-style:normal;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:52px;background:var(--amarelo);color:var(--grafite);align-self:flex-start;padding:4px 14px;border-radius:10px}
@@ -118,6 +124,8 @@ h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-heigh
 .bg-d .price,.bg-g .price{border-color:var(--branco);box-shadow:14px 14px 0 rgba(0,0,0,.45)}
 .bg-d .price em,.bg-g .price em{background:var(--grafite)}
 .pill.red{background:var(--pressao);border-color:var(--pressao);color:#fff}
+.bg-y .livro .tt h1 em,.bg-y.livro .tt h1 em{color:var(--amarelo);background:var(--grafite);padding:0 12px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.bg-y .check li::before{background-color:var(--grafite);border-color:var(--grafite)}
 .bg-y{background:var(--amarelo)}
 .bg-d{background:var(--grafite);color:var(--branco)}
 .bg-d h1,.bg-d h2{color:var(--branco)}
@@ -194,7 +202,7 @@ const T = {
     <ul class="bens">${d.bens.map(b=>`<li>${b}</li>`).join('')}</ul>
     <div class="price">${d.de?`<s>de R$ ${d.de}</s>`:''}<div class="v"><small>R$</small>${d.v}<sup>,${d.c}</sup></div><em>${d.parc}</em></div>
     ${FOOT(d.foot)}</div>`,
-  livros: d => `<div class="art cover bg-n">
+  livros: d => `<div class="art cover bg-d">
     ${topo('<span class="pill">LIVROS DE BOLSO</span>')}
     <div class="tx" style="top:230px"><small>Martinari · consulta rápida</small><h1 style="font-size:110px">PRA LEVAR NO JALECO.</h1></div>
     <div class="books">${d.livros.map(l=>`<div class="book" style="background:#fff url(livros/${l.img}) center/cover no-repeat"><span></span><span></span><i>R$ ${l.p}</i></div>`).join('')}</div>
@@ -204,47 +212,47 @@ const T = {
 // ===== Conteúdo (preços dos posts atuais) =====
 const ARTES = [
   // --- Fixado 1 · Quem somos (slides 2 a 5; a capa é o tríptico)
-  ['fixado-1-quem-somos/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Quem somos', titulo:'COMEÇOU COM LIVRO TÉCNICO.', desc:'Há 20 anos, a Mr.Book vendia os livros que todo estudante de Enfermagem levava para a sala de aula.'}],
-  ['fixado-1-quem-somos/03', 'slide', {bg:'bg-d', i:3, n:5, eyebrow:'Hoje', titulo:'VIROU A LOJA DO KIT.', desc:'Estetoscópio, esfigmo, oxímetro e o kit completo de cada curso, nas linhas BIC Eternity, BIC e P.A.MED.', img:'bic-eternity-vinho-rainbow.jpg'}],
-  ['fixado-1-quem-somos/04', 'slide', {bg:'bg-n', i:4, n:5, eyebrow:'Quem atende', titulo:'É O ANDRÉ QUE SEPARA O SEU PEDIDO.', desc:'Sem robô e sem central. Você fala direto com quem conhece cada produto da prateleira.', chip:'20 anos de balcão'}],
+  ['fixado-1-quem-somos/02', 'slide', {bg:'bg-d', i:2, n:5, eyebrow:'Quem somos', titulo:'COMEÇOU COM LIVRO TÉCNICO.', desc:'Há 20 anos, a Mr.Book vendia os livros que todo estudante de Enfermagem levava para a sala de aula.'}],
+  ['fixado-1-quem-somos/03', 'slide', {bg:'bg-y', i:3, n:5, eyebrow:'Hoje', titulo:'VIROU A LOJA DO KIT.', desc:'Estetoscópio, esfigmo, oxímetro e o kit completo de cada curso, nas linhas BIC Eternity, BIC e P.A.MED.', img:'bic-eternity-vinho-rainbow.jpg'}],
+  ['fixado-1-quem-somos/04', 'slide', {bg:'bg-d', i:4, n:5, eyebrow:'Quem atende', titulo:'É O ANDRÉ QUE SEPARA O SEU PEDIDO.', desc:'Sem robô e sem central. Você fala direto com quem conhece cada produto da prateleira.', chip:'20 anos de balcão'}],
   ['fixado-1-quem-somos/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'PASSA NA LOJA.', desc:'R. Santa Edwirges, 456 · Afogados, Recife. Ou pede pelo WhatsApp e recebe em casa.'}],
   // --- Fixado 2 · Kits por curso
-  ['fixado-2-kits-por-curso/02', 'slide', {bg:'bg-y', i:2, n:6, num:'ENF', eyebrow:'Kit Enfermagem · R$ 220', titulo:'ENFERMAGEM', check:['Estetoscópio','Esfigmomanômetro','Óculos de proteção','Garrote tipo soro','Garrote automático','Necessaire do kit'], img:'bic-kit-rosa.jpg'}],
-  ['fixado-2-kits-por-curso/03', 'slide', {bg:'bg-d', i:3, n:6, num:'TÉC', eyebrow:'Kit Completo · 4x de R$ 87,25', titulo:'TÉCNICO EM ENFERMAGEM', desc:'Esteto, esfigmo, oxímetro, glicosímetro, termômetro, garrotes, óculos e necessaire.', img:'pamed-aparelho-preto.jpg'}],
-  ['fixado-2-kits-por-curso/04', 'slide', {bg:'bg-g', i:4, n:6, num:'FISIO', eyebrow:'A partir de R$ 259 à vista', titulo:'FISIOTERAPIA', desc:'Esteto, esfigmo, oxímetro, martelo de reflexo, goniômetro e fita antropométrica.', img:'bic-kit-azul-royal.jpg'}],
-  ['fixado-2-kits-por-curso/05', 'slide', {bg:'bg-n', i:5, n:6, num:'MED', eyebrow:'Kit BIC Eternity · de R$ 478 por R$ 454', titulo:'MEDICINA', desc:'BIC Eternity III, esfigmo, goniômetro, martelo de reflexo e necessaire da linha.', img:'bic-eternity-all-azul-estojo.jpg'}],
-  ['fixado-2-kits-por-curso/06', 'cta', {bg:'bg-y', i:6, n:6, titulo:'NÃO ACHOU SEU CURSO?', desc:'Manda a lista do seu professor que a gente monta o kit pra você.'}],
+  ['fixado-2-kits-por-curso/02', 'slide', {bg:'bg-d', i:2, n:6, num:'ENF', eyebrow:'Kit Enfermagem · R$ 220', titulo:'ENFERMAGEM', check:['Estetoscópio','Esfigmomanômetro','Óculos de proteção','Garrote tipo soro','Garrote automático','Necessaire do kit'], img:'bic-kit-rosa.jpg'}],
+  ['fixado-2-kits-por-curso/03', 'slide', {bg:'bg-y', i:3, n:6, num:'TÉC', eyebrow:'Kit Completo · 4x de R$ 87,25', titulo:'TÉCNICO EM ENFERMAGEM', desc:'Esteto, esfigmo, oxímetro, glicosímetro, termômetro, garrotes, óculos e necessaire.', img:'pamed-aparelho-preto.jpg'}],
+  ['fixado-2-kits-por-curso/04', 'slide', {bg:'bg-d', i:4, n:6, num:'FISIO', eyebrow:'A partir de R$ 259 à vista', titulo:'FISIOTERAPIA', desc:'Esteto, esfigmo, oxímetro, martelo de reflexo, goniômetro e fita antropométrica.', img:'bic-kit-azul-royal.jpg'}],
+  ['fixado-2-kits-por-curso/05', 'slide', {bg:'bg-y', i:5, n:6, num:'MED', eyebrow:'Kit BIC Eternity · de R$ 478 por R$ 454', titulo:'MEDICINA', desc:'BIC Eternity III, esfigmo, goniômetro, martelo de reflexo e necessaire da linha.', img:'bic-eternity-all-azul-estojo.jpg'}],
+  ['fixado-2-kits-por-curso/06', 'cta', {bg:'bg-d', i:6, n:6, titulo:'NÃO ACHOU SEU CURSO?', desc:'Manda a lista do seu professor que a gente monta o kit pra você.'}],
   // --- Fixado 3 · Como comprar
-  ['fixado-3-como-comprar/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Passo 1', titulo:'ESCOLHA O KIT.', desc:'Pelo link da bio ou pelo destaque "Monte seu kit". Escolha o curso e a linha: BIC Eternity, BIC ou P.A.MED.'}],
-  ['fixado-3-como-comprar/03', 'slide', {bg:'bg-d', i:3, n:5, eyebrow:'Passo 2', titulo:'CHAMA NO WHATSAPP.', desc:'A mensagem já vai pronta. O André confirma estoque, cor do esteto e frete.', chip:'(81) 98295-5372'}],
-  ['fixado-3-como-comprar/04', 'slide', {bg:'bg-g', i:4, n:5, eyebrow:'Passo 3', titulo:'RECEBE OU RETIRA.', desc:'Enviamos para todo o Brasil ou você retira na loja em Afogados.', chip:'até 4x sem juros'}],
+  ['fixado-3-como-comprar/02', 'slide', {bg:'bg-d', i:2, n:5, eyebrow:'Passo 1', titulo:'ESCOLHA O KIT.', desc:'Pelo link da bio ou pelo destaque "Monte seu kit". Escolha o curso e a linha: BIC Eternity, BIC ou P.A.MED.'}],
+  ['fixado-3-como-comprar/03', 'slide', {bg:'bg-y', i:3, n:5, eyebrow:'Passo 2', titulo:'CHAMA NO WHATSAPP.', desc:'A mensagem já vai pronta. O André confirma estoque, cor do esteto e frete.', chip:'(81) 98295-5372'}],
+  ['fixado-3-como-comprar/04', 'slide', {bg:'bg-d', i:4, n:5, eyebrow:'Passo 3', titulo:'RECEBE OU RETIRA.', desc:'Enviamos para todo o Brasil ou você retira na loja em Afogados.', chip:'até 4x sem juros'}],
   ['fixado-3-como-comprar/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'PRODUTO ORIGINAL, COM NOTA.', desc:'Trabalhamos com BIC, P.A.MED, Incoterm, G-Tech e Martinari.'}],
 
   // --- Carrossel · Qual esteto pro seu curso?
-  ['carrossel-qual-esteto/01', 'cover', {bg:'bg-d', pill:'GUIA RÁPIDO', eyebrow:'Antes de comprar', titulo:'QUAL ESTETO PRO SEU CURSO?', desc:'3 perguntas que o André faz no balcão.', img:'bic-eternity-azul-marinho.jpg'}],
-  ['carrossel-qual-esteto/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Pergunta 1', titulo:'SIMPLES OU DUPLO?', desc:'O duplo tem diafragma e campânula: escuta som grave e agudo. Para estágio, vá de duplo.', img:'pamed-rappaport-preto.jpg'}],
-  ['carrossel-qual-esteto/03', 'slide', {bg:'bg-n', i:3, n:5, eyebrow:'Pergunta 2', titulo:'QUANTO TEMPO VAI USAR?', desc:'Só a faculdade: P.A.MED ou BIC resolvem. Vai levar pra vida profissional: BIC Eternity, com 5 anos de garantia.', img:'bic-eternity-vinho-rainbow-caixa.jpg'}],
+  ['carrossel-qual-esteto/01', 'cover', {bg:'bg-y', pill:'GUIA RÁPIDO', eyebrow:'Antes de comprar', titulo:'QUAL ESTETO PRO SEU CURSO?', desc:'3 perguntas que o André faz no balcão.', img:'bic-eternity-azul-marinho.jpg'}],
+  ['carrossel-qual-esteto/02', 'slide', {bg:'bg-d', i:2, n:5, eyebrow:'Pergunta 1', titulo:'SIMPLES OU DUPLO?', desc:'O duplo tem diafragma e campânula: escuta som grave e agudo. Para estágio, vá de duplo.', img:'pamed-rappaport-preto.jpg'}],
+  ['carrossel-qual-esteto/03', 'slide', {bg:'bg-y', i:3, n:5, eyebrow:'Pergunta 2', titulo:'QUANTO TEMPO VAI USAR?', desc:'Só a faculdade: P.A.MED ou BIC resolvem. Vai levar pra vida profissional: BIC Eternity, com 5 anos de garantia.', img:'bic-eternity-vinho-rainbow-caixa.jpg'}],
   ['carrossel-qual-esteto/04', 'slide', {bg:'bg-d', i:4, n:5, eyebrow:'Pergunta 3', titulo:'QUAL É A SUA COR?', desc:'All Black, Rainbow, Rosa, Vinho, Azul. A cor é sua, a qualidade é a mesma.', img:'pamed-rappaport-rosa.jpg'}],
   ['carrossel-qual-esteto/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'NA DÚVIDA, PERGUNTA.', desc:'Fala o seu curso e o seu orçamento que o André indica o esteto certo.'}],
 
   // --- Carrossel · O que levar pro 1º estágio
-  ['carrossel-1o-estagio/01', 'cover', {bg:'bg-g', pill:'SALVA ESSE', eyebrow:'Checklist', titulo:'O QUE LEVAR PRO 1º ESTÁGIO', desc:'A lista que ninguém te passa no primeiro dia.'}],
-  ['carrossel-1o-estagio/02', 'slide', {bg:'bg-y', i:2, n:4, eyebrow:'No bolso do jaleco', titulo:'O BÁSICO', check:['Estetoscópio','Garrote','Relógio de lapela','Caneta e bloquinho']}],
-  ['carrossel-1o-estagio/03', 'slide', {bg:'bg-d', i:3, n:4, eyebrow:'Na necessaire', titulo:'PRA AFERIR', check:['Esfigmomanômetro','Oxímetro de pulso','Termômetro digital','Óculos de proteção']}],
-  ['carrossel-1o-estagio/04', 'cta', {bg:'bg-y', i:4, n:4, titulo:'JÁ VEM TUDO NO KIT.', desc:'Kit Enfermagem a partir de R$ 220, em até 4x sem juros.'}],
+  ['carrossel-1o-estagio/01', 'cover', {bg:'bg-y', pill:'SALVA ESSE', eyebrow:'Checklist', titulo:'O QUE LEVAR PRO 1º ESTÁGIO', desc:'A lista que ninguém te passa no primeiro dia.'}],
+  ['carrossel-1o-estagio/02', 'slide', {bg:'bg-d', i:2, n:4, eyebrow:'No bolso do jaleco', titulo:'O BÁSICO', check:['Estetoscópio','Garrote','Relógio de lapela','Caneta e bloquinho']}],
+  ['carrossel-1o-estagio/03', 'slide', {bg:'bg-y', i:3, n:4, eyebrow:'Na necessaire', titulo:'PRA AFERIR', check:['Esfigmomanômetro','Oxímetro de pulso','Termômetro digital','Óculos de proteção']}],
+  ['carrossel-1o-estagio/04', 'cta', {bg:'bg-d', i:4, n:4, titulo:'JÁ VEM TUDO NO KIT.', desc:'Kit Enfermagem a partir de R$ 220, em até 4x sem juros.'}],
 
   // --- Carrossel · Linhas
   ['carrossel-linhas/01', 'cover', {bg:'bg-y', pill:'COMPARA', eyebrow:'Linhas do kit', titulo:'QUAL LINHA É A SUA?', ecg:false, trio:[{img:'bic-eternity-vinho-rainbow-caixa.jpg',nome:'BIC Eternity',sub:'top de linha'},{img:'bic-kit-azul-royal.jpg',nome:'BIC',sub:'custo-benefício'},{img:'pamed-aparelho-preto.jpg',nome:'P.A.MED',sub:'clássico do estágio'}]}],
   ['carrossel-linhas/02', 'slide', {bg:'bg-d', i:2, n:4, eyebrow:'Top de linha', titulo:'BIC ETERNITY', desc:'Auscultador duplo em aço inox, acabamento espelhado e 5 anos de garantia.', img:'bic-eternity-vinho-rainbow.jpg'}],
-  ['carrossel-linhas/03', 'slide', {bg:'bg-n', i:3, n:4, eyebrow:'Custo-benefício e clássico', titulo:'BIC E P.A.MED', desc:'Esfigmo e esteto confiáveis para a rotina do estágio. A necessaire vem da marca ou é a personalizada Mr.Book.', img:'bic-kit-preto.jpg'}],
-  ['carrossel-linhas/04', 'cta', {bg:'bg-y', i:4, n:4, titulo:'ESCOLHE E CHAMA.', desc:'Todas as linhas em até 4x sem juros.'}],
+  ['carrossel-linhas/03', 'slide', {bg:'bg-y', i:3, n:4, eyebrow:'Custo-benefício e clássico', titulo:'BIC E P.A.MED', desc:'Esfigmo e esteto confiáveis para a rotina do estágio. A necessaire vem da marca ou é a personalizada Mr.Book.', img:'bic-kit-preto.jpg'}],
+  ['carrossel-linhas/04', 'cta', {bg:'bg-d', i:4, n:4, titulo:'ESCOLHE E CHAMA.', desc:'Todas as linhas em até 4x sem juros.'}],
 
   // --- Posts de produto
-  ['post-produto-bic-eternity-rainbow', 'produto', {linha:'BIC ETERNITY', pillFill:true, img:'bic-eternity-vinho-rainbow.jpg', marca:'Estetoscópio duplo inox', titulo:'ETERNITY III RAINBOW', de:'478,00', v:'454', c:'00', parc:'ou 4x de R$ 113,50'}],
-  ['post-produto-kit-enfermagem', 'produto', {linha:'KIT ENFERMAGEM', pillFill:true, img:'bic-kit-rosa.jpg', marca:'Esteto · esfigmo · garrotes · óculos', titulo:'KIT COMPLETO', v:'220', c:'00', parc:'ou 4x de R$ 55,00'}],
-  ['post-produto-rappaport', 'produto', {linha:'P.A.MED', img:'pamed-rappaport-preto.jpg', marca:'Estetoscópio Rappaport', titulo:'RAPPAPORT P.A.MED', de:'89,00', v:'76', c:'00', parc:'ou 4x de R$ 19,00'}],
-  ['post-produto-oximetro', 'produto', {linha:'G-TECH', img:'gtech-oximetro.jpg', marca:'Acompanha case, cordão, 2 pilhas e capa', titulo:'OXÍMETRO OLED', v:'109', c:'90', parc:'ou 4x de R$ 27,47'}],
-  ['post-produto-esfigmo', 'produto', {linha:'P.A.MED', img:'pamed-aparelho-preto.jpg', marca:'Esfigmomanômetro aneroide', titulo:'APARELHO DE PRESSÃO', v:'109', c:'00', parc:'ou 4x de R$ 27,25'}],
+  ['post-produto-bic-eternity-rainbow', 'produto', {bg:'bg-y', linha:'BIC ETERNITY', pillFill:true, img:'bic-eternity-vinho-rainbow.jpg', marca:'Estetoscópio duplo inox', titulo:'ETERNITY III RAINBOW', de:'478,00', v:'454', c:'00', parc:'ou 4x de R$ 113,50'}],
+  ['post-produto-kit-enfermagem', 'produto', {bg:'bg-d', linha:'KIT ENFERMAGEM', pillFill:true, img:'bic-kit-rosa.jpg', marca:'Esteto · esfigmo · garrotes · óculos', titulo:'KIT COMPLETO', v:'220', c:'00', parc:'ou 4x de R$ 55,00'}],
+  ['post-produto-rappaport', 'produto', {bg:'bg-y', linha:'P.A.MED', img:'pamed-rappaport-preto.jpg', marca:'Estetoscópio Rappaport', titulo:'RAPPAPORT P.A.MED', de:'89,00', v:'76', c:'00', parc:'ou 4x de R$ 19,00'}],
+  ['post-produto-oximetro', 'produto', {bg:'bg-d', linha:'G-TECH', img:'gtech-oximetro.jpg', marca:'Acompanha case, cordão, 2 pilhas e capa', titulo:'OXÍMETRO OLED', v:'109', c:'90', parc:'ou 4x de R$ 27,47'}],
+  ['post-produto-esfigmo', 'produto', {bg:'bg-y', linha:'P.A.MED', img:'pamed-aparelho-preto.jpg', marca:'Esfigmomanômetro aneroide', titulo:'APARELHO DE PRESSÃO', v:'109', c:'00', parc:'ou 4x de R$ 27,25'}],
   ['post-livros-de-bolso', 'livros', {livros:[{t:'Terminologia em Enfermagem',p:'35',img:'terminologia.jpg'},{t:'Manual de Procedimentos para Estágio',p:'35',img:'manual-procedimentos.jpg'},{t:'Diário Técnico de Enfermagem',p:'25',img:'diario-tecnico.jpg'}]}],
 
   // --- Posts com foto
@@ -253,8 +261,8 @@ const ARTES = [
   ['post-foto-estudo', 'full', {img:'estudante-estudando.jpg', pos:'38% 50%', pill:'LIVROS', titulo:'ESTUDA COM O <mark>LIVRO CERTO.</mark>', desc:'Manual do Técnico de R$ 339 por R$ 99.'}],
   // --- Livros (refeitos no padrão; preços dos posts atuais)
   ['post-livro-manual-do-tecnico', 'livro', {bg:'bg-y', pill:'MARTINARI · 4ª ED.', img:'manual-tecnico.jpg', eyebrow:'Manual do Técnico e Auxiliar de Enfermagem', titulo:'A BÍBLIA DO TÉCNICO.', bens:['As 23 disciplinas do curso','Ilustrado, colorido e com QR code','Para o curso, o concurso e o plantão'], de:'339,00', v:'99', c:'00', parc:'4x sem juros · R$ 90 à vista'}],
-  ['post-livro-manual-de-procedimentos', 'livro', {bg:'bg-g', pill:'MARTINARI', img:'manual-procedimentos.jpg', eyebrow:'Manual de Procedimentos para Estágio em Enfermagem', titulo:'O ESTÁGIO NO <em>BOLSO.</em>', bens:['29 capítulos para o dia a dia','Siglas, prontuário, admissão e alta','Matemática para farmacologia'], de:'59,00', v:'35', c:'00', parc:'livro de bolso'}],
-  ['post-livro-terminologia', 'livro', {bg:'bg-d', pill:'MARTINARI · 4ª ED.', img:'terminologia.jpg', eyebrow:'Terminologia em Enfermagem', titulo:'FALE A LÍNGUA DO <em>PLANTÃO.</em>', bens:['Os termos da equipe multiprofissional','Prefixo, raiz e sufixo de cada palavra','Para estudante e profissional'], de:'53,00', v:'35', c:'00', parc:'livro de bolso'}],
+  ['post-livro-manual-de-procedimentos', 'livro', {bg:'bg-d', pill:'MARTINARI', img:'manual-procedimentos.jpg', eyebrow:'Manual de Procedimentos para Estágio em Enfermagem', titulo:'O ESTÁGIO NO <em>BOLSO.</em>', bens:['29 capítulos para o dia a dia','Siglas, prontuário, admissão e alta','Matemática para farmacologia'], de:'59,00', v:'35', c:'00', parc:'livro de bolso'}],
+  ['post-livro-terminologia', 'livro', {bg:'bg-y', pill:'MARTINARI · 4ª ED.', img:'terminologia.jpg', eyebrow:'Terminologia em Enfermagem', titulo:'FALE A LÍNGUA DO <em>PLANTÃO.</em>', bens:['Os termos da equipe multiprofissional','Prefixo, raiz e sufixo de cada palavra','Para estudante e profissional'], de:'53,00', v:'35', c:'00', parc:'livro de bolso'}],
   ['post-livro-vade-mecum-black-friday', 'livro', {bg:'bg-d', pill:'BLACK FRIDAY', pillCls:'red', img:'vade-mecum-2026.jpg', eyebrow:'Vade Mecum Saraiva 2026 · 42ª edição', titulo:'BLACK <em>FRIDAY.</em>', bens:['Edição do 2º semestre de 2026','Atualizado com a Reforma Tributária','Produto original, compra segura'], de:'309,00', v:'189', c:'00', parc:'oferta Black Friday', foot:'BLACK FRIDAY · <b>ATÉ ACABAR O ESTOQUE</b>'}],
 ];
 

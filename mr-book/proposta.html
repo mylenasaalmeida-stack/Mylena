@@ -101,7 +101,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .notes p{font-size:15px;color:var(--grafite-3)}
 
 /* paleta & tipo */
-.pal{display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 1fr;gap:10px}
+.pal{display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr;gap:10px}
 .sw{border-radius:12px;min-height:170px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font-size:13px}
 .sw b{font-family:var(--display);font-stretch:110%;font-size:17px}
 .sw span{font-family:var(--mono);font-size:11px;opacity:.8}
@@ -417,7 +417,7 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
     <div class="logo-row">
       <div class="tile t-w"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span class="cap">Fundo claro</span></div>
       <div class="tile t-d"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span class="cap">Fundo escuro</span></div>
-      <div class="tile t-g"><span class="wm" style="font-size:clamp(30px,3.2vw,40px);color:#fff">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="cap">Fundo verde · educativos</span></div>
+      <div class="tile t-y"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="cap">Fundo amarelo</span></div>
       <div class="tile t-w"><div class="avatar"><span class="wm" style="font-size:19px">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span></div><span class="cap">Foto de perfil</span></div>
     </div>
     <div class="ba">
@@ -438,13 +438,12 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
     <div class="head">
       <div class="eyebrow"><b>04</b> Identidade</div>
       <h2>Amarelo continua dono do feed</h2>
-      <p class="lede">O amarelo já é da marca, então ele fica, só que um tom mais quente e sempre com grafite. Saem o laranja, o roxo, o vermelho e o degradê. Entram um verde de centro cirúrgico para conteúdo educativo e o vermelho só para preço e ECG.</p>
+      <p class="lede">O amarelo já é da marca, então ele fica, sempre com o preto (grafite). Saem o laranja, o roxo, o verde e o degradê. Fundo de arte é sempre amarelo ou grafite; o branco aparece só no cartão da foto de produto e o vermelho só em selo de oferta e ECG.</p>
     </div>
     <div class="pal">
       <div class="sw" style="background:var(--amarelo)"><b>Amarelo Mr.Book</b><span>#FFCE1B · fundo principal</span></div>
       <div class="sw" style="background:var(--grafite);color:#fff"><b>Grafite</b><span>#16181D · texto e faixas</span></div>
       <div class="sw" style="background:var(--branco);border:1px solid var(--linha)"><b>Branco</b><span>#FFFFFF · foto de produto</span></div>
-      <div class="sw" style="background:var(--verde);color:#fff"><b>Verde cirúrgico</b><span>#14634F · posts educativos</span></div>
       <div class="sw" style="background:var(--pressao);color:#fff"><b>Pressão</b><span>#E2412B · só preço e ECG</span></div>
     </div>
     <div class="type">
@@ -679,44 +678,44 @@ const HL = [
     ['st-y','Qual é o seu curso?','Enfermagem, Técnico, Fisio, Medicina ou Odonto','Toque no link'],
     ['st-d','Kit Enfermagem','Esteto, esfigmo, óculos, garrote tipo soro, garrote automático e necessaire · R$ 220','Pedir no Whats'],
     ['st-y','Escolha a linha','BIC Eternity, BIC ou P.A.MED. A necessaire vem da marca ou personalizada Mr.Book',''],
-    ['st-p','Kit Fisioterapia','Esteto, esfigmo, martelo, goniômetro e fita · a partir de R$ 259','Pedir no Whats']]},
+    ['st-d','Kit Fisioterapia','Esteto, esfigmo, martelo, goniômetro e fita · a partir de R$ 259','Pedir no Whats']]},
   {id:'esteto', name:'Estetos', icon:'h-esteto', job:'Linha completa por cor e modelo.', st:[
-    ['st-d','Qual é a sua cor?','BIC em 6 acabamentos','Arrasta'],
-    ['st-y','Rainbow','O acabamento espelhado que todo mundo pergunta','Ver preço'],
-    ['st-p','Rappaport P.A Med','De R$ 89 por R$ 76','Pedir no Whats']]},
+    ['st-y','Qual é a sua cor?','BIC em 6 acabamentos','Arrasta'],
+    ['st-d','Rainbow','O acabamento espelhado que todo mundo pergunta','Ver preço'],
+    ['st-y','Rappaport P.A Med','De R$ 89 por R$ 76','Pedir no Whats']]},
   {id:'curso', name:'Por curso', icon:'h-curso', job:'Lista de material de cada curso, salva e reaproveitada todo semestre.', st:[
-    ['st-g','Lista do 1º estágio','O que o professor vai pedir, item por item',''],
-    ['st-y','Enfermagem','Esteto, esfigmo, oxímetro, relógio de lapela, garrote',''],
+    ['st-y','Lista do 1º estágio','O que o professor vai pedir, item por item',''],
+    ['st-d','Enfermagem','Esteto, esfigmo, oxímetro, relógio de lapela, garrote',''],
     ['st-y','Fisioterapia','Martelo de reflexo, goniômetro, fita antropométrica','']]},
   {id:'turma', name:'Turmas', icon:'h-turma', job:'Venda para representante de sala. Maior alavanca de recorrência.', st:[
-    ['st-d','Representante de sala?','Condição especial para pedido da turma toda',''],
-    ['st-y','Turma Enf. 2026.1','Foto da turma retirando os kits',''],
-    ['st-p','Como funciona','Junta os pedidos, chama a gente, entregamos na faculdade','Falar com André']]},
+    ['st-y','Representante de sala?','Condição especial para pedido da turma toda',''],
+    ['st-d','Turma Enf. 2026.1','Foto da turma retirando os kits',''],
+    ['st-y','Como funciona','Junta os pedidos, chama a gente, entregamos na faculdade','Falar com André']]},
   {id:'clientes', name:'Clientes', icon:'h-clientes', job:'Prova social. Substitui o "Feedback" atual.', st:[
-    ['st-p','Print de cliente','Conversa real com o kit recebido',''],
-    ['st-y','Formados com a gente','Foto de aluno de jaleco com o esteto',''],
-    ['st-d','20 anos','Mais de 20 anos de clientes em Recife','']]},
+    ['st-y','Print de cliente','Conversa real com o kit recebido',''],
+    ['st-d','Formados com a gente','Foto de aluno de jaleco com o esteto',''],
+    ['st-y','20 anos','Mais de 20 anos de clientes em Recife','']]},
   {id:'comprar', name:'Como comprar', icon:'h-comprar', job:'Tira dúvida de pagamento e entrega antes de chegar no WhatsApp.', st:[
     ['st-y','1. Escolha','Pelo link da bio ou pelos destaques',''],
-    ['st-y','2. Chame','WhatsApp (81) 98295-5372',''],
-    ['st-d','3. Receba','Envio p/ todo Brasil ou retirada na loja · até 4x','']]},
+    ['st-d','2. Chame','WhatsApp (81) 98295-5372',''],
+    ['st-y','3. Receba','Envio p/ todo Brasil ou retirada na loja · até 4x','']]},
   {id:'livros', name:'Livros', icon:'h-livro', job:'Livros técnicos como complemento do kit.', st:[
-    ['st-p','Livros de bolso','A partir de R$ 35',''],
-    ['st-y','Manual do Técnico','De R$ 339 por R$ 99','Pedir no Whats'],
-    ['st-d','Vade Mecum 2026','R$ 189 à vista','']]},
+    ['st-y','Livros de bolso','A partir de R$ 35',''],
+    ['st-d','Manual do Técnico','De R$ 339 por R$ 99','Pedir no Whats'],
+    ['st-y','Vade Mecum 2026','R$ 189 à vista','']]},
   {id:'loja', name:'A loja', icon:'h-loja', job:'Endereço, horário e o André. Quebra o medo de golpe.', st:[
-    ['st-d','Quem atende','André, há 20 anos no balcão',''],
-    ['st-y','Onde fica','R. Santa Edwirges, 456 · Afogados, Recife','Abrir no mapa']]}
+    ['st-y','Quem atende','André, há 20 anos no balcão',''],
+    ['st-d','Onde fica','R. Santa Edwirges, 456 · Afogados, Recife','Abrir no mapa']]}
 ];
 
 const GRID = [
   {type:'tri', i:0},{type:'tri', i:1},{type:'tri', i:2},
   {bg:'#16181D', fg:'#FFCE1B', t:'QUAL ESTETO PRO SEU CURSO?', s:'Guia rápido · 3 perguntas', kind:'car'},
-  {bg:'#FFFFFF', fg:'#16181D', t:'RAINBOW', s:'BIC · R$ 454', kind:'car', steth:'#5B7CFA'},
-  {bg:'#14634F', fg:'#FFFFFF', t:'O QUE LEVAR PRO 1º ESTÁGIO', s:'Checklist · salva esse', kind:'car'},
-  {bg:'#2B2F36', fg:'#FFFFFF', t:'SEPARANDO 40 KITS', s:'Turma de Enfermagem', kind:'play', face:true},
+  {bg:'#FFCE1B', fg:'#16181D', t:'RAINBOW', s:'BIC · R$ 454', kind:'car', steth:'#5B7CFA'},
+  {bg:'#FFCE1B', fg:'#16181D', t:'O QUE LEVAR PRO 1º ESTÁGIO', s:'Checklist · salva esse', kind:'car'},
+  {bg:'#16181D', fg:'#FFFFFF', t:'SEPARANDO 40 KITS', s:'Turma de Enfermagem', kind:'play', face:true},
   {bg:'#FFCE1B', fg:'#16181D', t:'ORIGINAL × RÉPLICA', s:'O André mostra a diferença', kind:'play', face:true},
-  {bg:'#FFFFFF', fg:'#16181D', t:'MANUAL DO TÉCNICO', s:'de R$ 339 por R$ 99', kind:'car', book:true}
+  {bg:'#16181D', fg:'#FFCE1B', t:'MANUAL DO TÉCNICO', s:'de R$ 339 por R$ 99', kind:'car', book:true}
 ];
 
 const $ = s => document.querySelector(s);
