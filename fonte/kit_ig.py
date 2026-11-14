@@ -4,7 +4,7 @@ from proposta_v2 import CSS as PCSS
 AT = '@mylena.cozinhaestrategica'
 NOME = 'Mylena | Cozinha Estratégica para Restaurantes'
 BIO = ['Cozinha estratégica: restaurante que lucra', '✔ Custo certo', '✔ Cardápio que vende', '✔ Marca que atrai', '👇 Diagnóstico de lucro gratuito']
-T = 9
+T = 8
 A = 'web/artes/'
 P = 'web/mylena/'
 
@@ -73,8 +73,8 @@ p2 = page(2, f'''<div class="k">01 · Perfil</div><h2>O perfil <span>pronto</spa
 <div style="display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-size:5.8pt;flex:1"><div><b style="display:block;font-size:7.6pt">6</b>posts</div><div><b style="display:block;font-size:7.6pt">—</b>seguidores</div><div><b style="display:block;font-size:7.6pt">—</b>seguindo</div></div></div>
 <div style="font-weight:700;margin-top:2.5mm">{NOME}</div><div style="margin-top:.8mm">{bio_html}</div>
 <div style="color:#1f5fa8;font-weight:600;margin-top:1mm">wa.me/55… · Quero meu diagnóstico</div>
-<div class="g9"><img src="{A}03_bastidor_feira.jpg"><img src="{A}02_carrossel_1_capa.jpg"><img src="{A}01_fixado_1_capa.jpg">
-<img src="{A}02_carrossel_2_erro1.jpg"><img src="{A}01_fixado_2_o_que_faco.jpg"><img src="{A}02_carrossel_5_cta.jpg"></div></div></div>
+<div class="g9"><img src="{A}03_bastidor_feira.jpg"><img src="{A}02_carrossel_1_capa.jpg"><img src="{A}01_fixado_1_quem_sou.jpg">
+<img src="{A}02_carrossel_2_erro1.jpg"><img src="{A}01_fixado_2_case.jpg"><img src="{A}02_carrossel_5_cta.jpg"></div></div></div>
 <p class="small" style="text-align:center;margin-top:2mm">Simulação: como o perfil fica após os primeiros posts.</p></div></div>''')
 
 fotos = [('close-sorrindo_ed', 'Perfil', 'ok', 'Foto 3 · close sorrindo', 'Foto do perfil e post de bastidor.'),
@@ -85,7 +85,7 @@ fotos = [('close-sorrindo_ed', 'Perfil', 'ok', 'Foto 3 · close sorrindo', 'Foto
          ('selfie-ai', 'Evitar', 'no', 'Foto 8 · editada por IA', 'Marca “Meta AI”: no começo, autenticidade pesa.'),
          ('jaleco-1', 'Não usar', 'no', 'Fotos 4 e 6 · jaleco', 'Bordado “Nutricionista” sem CRN: risco com o conselho.'),
          ('jaleco-ai', 'Não usar', 'no', 'Foto 5 · jaleco, IA', 'Mesmo risco, e editada por IA.')]
-p3 = page(4, '''<div class="k">03 · Fotos</div><h2>Qual foto <span>usar onde</span></h2>
+p3 = page(3, '''<div class="k">02 · Fotos</div><h2>Qual foto <span>usar onde</span></h2>
 <div class="grid3" style="gap:4mm 5mm;grid-template-columns:repeat(4,1fr)">''' + ''.join(
     th(P + f + '.jpg', 52, l, c, f'<div class="cap"><b>{t}</b>{d}</div>') for f, l, c, t, d in fotos) + '''</div>
 <div class="warn" style="margin-top:5mm"><b>Fotos de jaleco:</b> o bordado “Mylena Almeida · Nutricionista” apresenta uma profissão que ainda não pode ser exercida sem o CRN. Guarde para depois do registro.</div>
@@ -96,9 +96,9 @@ p3 = page(4, '''<div class="k">03 · Fotos</div><h2>Qual foto <span>usar onde</s
 <li>Detalhe das mãos: pesando ingrediente, marcando o cardápio, apontando um número.</li></ul>
 <p class="small">Mesma roupa da feira (blazer preto e blusa clara) para manter a identidade com a paleta preta e verde.</p>''')
 
-p4 = page(5, f'''<div class="k">04 · Post fixado</div><h2>“Prazer, sou <span>a Mylena”</span></h2>
-<p class="lead" style="margin-bottom:3mm">Carrossel de 3 imagens (1080 × 1350 px): foto com apresentação, os 3 pilares como um índice de relatório e o diagnóstico com o número “30 min” como protagonista. Fixar no topo do perfil.</p>
-<div class="grid3" style="gap:4mm">{th(A + "01_fixado_1_capa.jpg", 70)}{th(A + "01_fixado_2_o_que_faco.jpg", 70)}{th(A + "01_fixado_3_diagnostico.jpg", 70)}</div>
+p4 = page(4, f'''<div class="k">03 · Posts fixados</div><h2>Três posts <span>fixados</span></h2>
+<p class="lead" style="margin-bottom:3mm">Três posts fixados: quem sou (foto + gancho “Restaurante cheio não é restaurante com lucro”), case da pizzaria (só com autorização da casa) e a oferta em formato de nota.</p>
+<div class="grid3" style="gap:4mm">{th(A + "01_fixado_1_quem_sou.jpg", 70)}{th(A + "01_fixado_2_case.jpg", 70)}{th(A + "01_fixado_3_diagnostico.jpg", 70)}</div>
 <div class="lg" style="margin-top:5mm"><b>Legenda</b>Gestão de restaurante sem complicação: prazer, sou a Mylena 👋
 Eu ajudo restaurantes, bares e delivery de Recife a lucrar com o que já vendem.
 
@@ -111,7 +111,7 @@ Quer começar? Faço um diagnóstico de lucro gratuito de 30 minutos. É só cha
 
 #gestaoderestaurantes #cmv #cardapio #gastronomiarecife #foodservice</div>''')
 
-p5 = page(6, f'''<div class="k">05 · Carrossel de autoridade</div><h2>3 erros que fazem <span>vender e não lucrar</span></h2><p class="lead" style="margin-bottom:3mm">Capa com o número 3 como protagonista. Cada erro em uma página, com o problema em cima e “como resolver” embaixo, separados por uma linha fina.</p>
+p5 = page(5, f'''<div class="k">04 · Carrossel de autoridade</div><h2>3 erros que fazem <span>vender e não lucrar</span></h2><p class="lead" style="margin-bottom:3mm">Capa com foto e gancho; um erro por slide em card claro; slide final com foto e “Comente CMV”.</p>
 <div class="grid3" style="gap:3mm;grid-template-columns:repeat(5,1fr)">''' + ''.join(th(A + f + '.jpg', 42) for f in ['02_carrossel_1_capa', '02_carrossel_2_erro1', '02_carrossel_3_erro2', '02_carrossel_4_erro3', '02_carrossel_5_cta']) + '''</div>
 <div class="lg" style="margin-top:5mm"><b>Legenda</b>Restaurante sem lucro: estes são os 3 erros que mais aparecem quando o caixa enche e o dinheiro não sobra.
 
@@ -124,7 +124,7 @@ Qual desses acontece aí? Comente CMV que eu te mando o passo a passo para calcu
 #cmv #precificacao #gestaoderestaurantes #restaurantesrecife #foodservice</div>
 <p class="small" style="margin-top:2mm">Antes de publicar: preparar o material da isca “CMV” (1 página).</p>''')
 
-p6 = page(7, f'''<div class="k">06 · Bastidor e Reels</div><h2>Mais duas <span>artes</span></h2>
+p6 = page(6, f'''<div class="k">05 · Bastidor e Reels</div><h2>Mais duas <span>artes</span></h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm">
 <div>{th(A + "03_bastidor_feira.jpg", 100)}<div class="lg" style="margin-top:3mm"><b>Legenda · post de bastidor</b>Food service em Recife: estive na [nome da feira] e trouxe o que dá para aplicar no seu restaurante.
 
@@ -138,21 +138,21 @@ Qual novidade você quer que eu traga na próxima?
 3–20 s: os 3 erros, um por frase.
 21–30 s: “Comente CMV que eu te mando o passo a passo.”</div></div></div>''')
 
-p7 = page(9, '''<div class="k">08 · Lançamento</div><h2>Ordem de <span>publicação</span></h2>''' + '''
+p7 = page(8, '''<div class="k">07 · Lançamento</div><h2>Ordem de <span>publicação</span></h2>''' + '''
 <table class="tb" style="font-size:8.6pt"><thead><tr><th>Quando</th><th>O que publicar</th><th>Arte</th></tr></thead><tbody>
 <tr><td><b>Dia 1</b></td><td>Trocar foto, nome, @, bio e link. Criar destaques.</td><td>Foto do perfil</td></tr>
 <tr><td><b>Dia 1</b></td><td>Post de bastidor (abre o feed com você no mercado).</td><td>Bastidor</td></tr>
 <tr><td><b>Dia 2</b></td><td>Carrossel “3 erros” com a isca CMV.</td><td>Carrossel</td></tr>
-<tr><td><b>Dia 3</b></td><td>Post fixado “Prazer, sou a Mylena” e fixar no topo.</td><td>Fixado</td></tr>
+<tr><td><b>Dia 3</b></td><td>Os 3 posts fixados (quem sou, case, diagnóstico) e fixar no topo.</td><td>Fixado</td></tr>
 <tr><td><b>Dia 4</b></td><td>Reels “vende muito e lucra pouco?”.</td><td>Capa de Reels</td></tr>
 <tr><td><b>Dias 1 a 7</b></td><td>Stories todo dia: bastidores, enquete “qual o seu maior problema: custo, cardápio ou marca?”.</td><td>Fotos 7 e 9</td></tr>
 </tbody></table>
 <p class="small" style="margin-top:2mm">Publicar o fixado por último faz ele aparecer como o post mais recente e já fixado no topo. A partir da semana 2, seguir a rotina do plano de ação.</p>
 <div class="h3x">Arquivos</div><ul class="list">
-<li>As 11 artes estão em PNG, prontas para postar, na pasta <b>artes-instagram</b> do repositório.</li>
+<li>As 14 artes e a prévia do grid estão em PNG, prontas para postar, na pasta <b>artes-instagram</b> do repositório.</li>
 <li>Formato: posts 1080 × 1350 px (4:5), foto do perfil 1080 × 1080 px, capa de Reels 1080 × 1920 px.</li>
 <li><b>Tratamento das fotos:</b> fundo da feira escurecido, dessaturado e desfocado para destacar você; pele com leve correção de contraste e temperatura. Sem alterar rosto ou corpo.</li>
-<li><b>Identidade:</b> direção “Relatório”: off-white e preto, verde só nos números; títulos em Playfair Display e textos em Poppins; sem ícones, texturas ou efeitos.</li></ul>
+<li><b>Identidade:</b> direção “Bastidor com autoridade”: foto com rosto e gancho em Poppins branco, 1 palavra em itálico verde (Playfair Display); cards de texto em off-white; capas de Reels com caixas brancas.</li></ul>
 <div class="box" style="margin-top:5mm"><h4>Antes de publicar</h4><ul>
 <li>Confirmar se o @ está disponível.</li>
 <li>Preparar o material da isca CMV.</li>
@@ -172,7 +172,7 @@ pdir = page(3, f'''<div class="k">02 · Direção de arte</div><h2>Três caminho
 <li>Escala bem: qualquer post novo se monta com título, número, uma frase e uma linha.</li></ul>
 <div class="h3x">Grade fixa (1080 × 1350 px)</div>''' + tbl_spec())
 
-GRID = [('01_fixado_1_capa', 'Fixado'), ('04_capa_reels', 'Reels'), ('02_carrossel_1_capa', 'Carrossel'),
+GRID = [('01_fixado_1_quem_sou', 'Fixado'), ('04_capa_reels', 'Reels'), ('02_carrossel_1_capa', 'Carrossel'),
         ('03_bastidor_feira', 'Bastidor'), (None, 'Carrossel tipográfico<br>“Como calcular o CMV”'), (None, 'Foto<br>na cozinha de um cliente'),
         (None, 'Preto · número grande<br>“1 produto, 30 min”'), (None, 'Foto<br>notebook com a planilha'), (None, 'Carrossel tipográfico<br>“Preço de venda”')]
 def tile(src, lab):
@@ -181,20 +181,19 @@ def tile(src, lab):
         return f'<div style="aspect-ratio:4/5;overflow:hidden"><img src="{A}{src}.jpg" style="width:100%;height:100%;object-fit:cover;object-position:{pos}"></div>'
     dark = 'Preto' in lab
     return f'<div style="aspect-ratio:4/5;background:{"#0C0E0D" if dark else ("#d9d4c9" if "Foto" in lab else "#F4F1EA")};color:{"#F4F1EA" if dark else "#0C0E0D"};display:flex;align-items:center;justify-content:center;text-align:center;font-size:7pt;padding:3mm;border:1px dashed #b9b2a5">{lab}</div>'
-pgrid = page(8, '''<div class="k">07 · Feed</div><h2>O grid como <span>coleção</span></h2>
-<div style="display:grid;grid-template-columns:96mm 1fr;gap:8mm;margin-top:3mm">
-<div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1mm;background:#fff;padding:1mm">''' + ''.join(tile(s_, l_) for s_, l_ in GRID) + '''</div>
-<p class="small" style="margin-top:2mm">Visão do perfil: 4 artes prontas + 5 próximos posts planejados (tracejados).</p></div>
-<div><div class="h3x" style="margin-top:0">Ritmo</div><ul class="list">
-<li>Alternar sempre: <b>foto → tipografia → foto</b>. Nunca duas fotos lado a lado.</li>
-<li>Uma arte preta a cada 3 ou 4 posts, para criar pausa.</li>
-<li>O fixado fica sempre no canto superior esquerdo.</li></ul>
-<div class="h3x">5 regras para manter o padrão</div><ol class="list">
-<li>Uma ideia por post: título de até 10 palavras.</li>
-<li>Verde só em números ou em uma palavra-chave.</li>
-<li>Título, frase de apoio e @ sempre na mesma posição.</li>
-<li>Foto sempre em bloco com margem de 80 px (exceto Reels e perfil), nunca texto sobre o rosto.</li>
-<li>Na dúvida, tire um elemento.</li></ol></div></div>''')
-
+pgrid = page(7, f'''<div class="k">06 · Feed</div><h2>Direção de arte <span>e grid</span></h2>
+<div style="display:grid;grid-template-columns:92mm 1fr;gap:8mm;margin-top:3mm">
+<div><img src="web/artes/99_previa_grid.jpg" style="width:100%;display:block"></div>
+<div><div class="h3x" style="margin-top:0">O que os feeds de referência têm em comum</div><ul class="list">
+<li><b>Rosto em quase todo post</b>, em contexto real (palco, evento, casa, cozinha).</li>
+<li><b>Gancho escrito na foto</b>: frase curta que provoca, fora do rosto.</li>
+<li><b>Cards de texto simples</b> (fundo claro, frase forte) intercalados com as fotos.</li>
+<li><b>Prova de autoridade</b>: eventos, cases, parcerias.</li></ul>
+<div class="h3x">Regras da direção</div><ol class="list">
+<li>60% foto ou vídeo com rosto e gancho; 25% cards de texto; 15% prova (case, evento).</li>
+<li>Gancho em até 12 palavras, com 1 palavra em itálico verde.</li>
+<li>Gancho sempre no terço inferior, nunca sobre o rosto.</li>
+<li>Nunca duas fotos iguais lado a lado.</li>
+<li>Fotos reais da cozinha dos clientes são prioridade de produção.</li></ol></div></div>''')
 open('kit_ig.html', 'w').write(
-    f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Kit de lançamento do Instagram</title>{PCSS}{EXTRA}</head><body>{capa}{p2}{pdir}{p3}{p4}{p5}{p6}{pgrid}{p7}</body></html>')
+    f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Kit de lançamento do Instagram</title>{PCSS}{EXTRA}</head><body>{capa}{p2}{p3}{p4}{p5}{p6}{pgrid}{p7}</body></html>')
