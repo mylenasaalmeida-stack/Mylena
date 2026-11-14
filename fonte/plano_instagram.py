@@ -2,8 +2,8 @@
 from proposta_v2 import CSS as PCSS
 from digital import EXTRA as DEXTRA
 
-NOME = '[Seu nome] | Consultoria Food Service Recife'
-BIO = ['Consultoria em gestão para Food Service', 'CMV • Ficha técnica • Cardápio', 'Vou à sua cozinha e entrego tudo pronto', '📍 Recife · 👇 Diagnóstico gratuito']
+NOME = '[Seu nome] | Consultoria para Restaurantes Recife'
+BIO = ['Gestão para restaurantes, bares e delivery', 'CMV • Ficha técnica • Cardápio', 'Vou à sua cozinha e entrego tudo pronto', '📍 Recife · 👇 Diagnóstico gratuito']
 BIO_LEN = len('\n'.join(BIO))
 T = 8
 
@@ -109,7 +109,7 @@ p4 = page(4, '''<div class="k">02 · Palavras-chave</div><h2>Grupos B e C · <sp
 
 bio_html = '<br>'.join(BIO)
 prof = f'''<div class="prof"><div class="s">
-<div style="font-weight:700;font-size:7.4pt;text-align:center;margin-bottom:3mm">[seunome].foodservice</div>
+<div style="font-weight:700;font-size:7.4pt;text-align:center;margin-bottom:3mm">[seunome].consultoria</div>
 <div style="display:flex;align-items:center;gap:3mm"><div class="av">CF</div><div class="st"><div><b>—</b>posts</div><div><b>—</b>seguidores</div><div><b>—</b>seguindo</div></div></div>
 <div style="font-weight:700;margin-top:2.5mm">{NOME}</div>
 <div style="color:#666;font-size:6pt">Consultor(a) empresarial</div>
@@ -122,7 +122,7 @@ p5 = page(5, f'''<div class="k">03 · Perfil</div><h2>Nome e bio <span>finais</s
 <div style="display:grid;grid-template-columns:1fr 78mm;gap:7mm;margin-top:3mm">
 <div><div class="h3x" style="margin-top:0">Nome do perfil (campo de busca)</div>
 <div class="box" style="margin:0"><b style="font-family:'Roboto Condensed';font-size:12.5pt">{NOME}</b></div>
-<p class="small" style="margin-top:1.5mm">Junta as 3 palavras que mais pesam: consultoria, food service e Recife. Alternativas: “[Seu nome] • Gestão de Restaurantes Recife” ou “[Seu nome] | CMV e Ficha Técnica”.</p>
+<p class="small" style="margin-top:1.5mm">Validado no Instagram: #consultoriarestaurante tem 5.000+ posts, contra 1.000+ de #consultoriafoodservice. O nome usa o termo em português que o mercado mais adota, mais Recife. Alternativa: “[Seu nome] • Gestão de Restaurantes Recife”.</p>
 <div class="h3x">Bio (para pessoas, em 3 segundos)</div>
 <div class="box" style="margin:0;font-size:9.6pt;line-height:1.6">{bio_html}</div>
 <p class="small" style="margin-top:1.5mm">{BIO_LEN} caracteres com quebras de linha (limite: 150; cada emoji pode contar 2).</p>
@@ -132,7 +132,8 @@ p5 = page(5, f'''<div class="k">03 · Perfil</div><h2>Nome e bio <span>finais</s
 <li><b>Linha 3:</b> o diferencial que nenhum concorrente local mostra.</li>
 <li><b>Linha 4:</b> cidade e ação.</li></ul>
 <div class="h3x">Complementos</div><ul class="list">
-<li><b>@:</b> curto, sem números, ex.: [seunome].foodservice</li>
+<li><b>@:</b> curto, sem números, ex.: [seunome].consultoria</li>
+<li><b>Hashtags fixas:</b> #consultoriarestaurante · #consultoriafoodservice · #gastronomiarecife</li>
 <li><b>Link:</b> WhatsApp com mensagem pronta “Quero meu diagnóstico”.</li>
 <li><b>Categoria:</b> Consultor(a) empresarial.</li>
 <li><b>Destaques:</b> CMV · Ficha · Cardápio · Cases · Como funciona.</li></ul></div>
@@ -179,6 +180,7 @@ p8 = page(8, '''<div class="k">06 · Validação e fontes</div><h2>Como validar 
 <li><b>Grupo B:</b> buscar “[termo] Recife” e ver quanto conteúdo local existe.</li>
 <li><b>Grupo C:</b> abrir cada hashtag e ver o total de posts e se as publicações recentes são de estabelecimentos.</li>
 <li><b>Depois de 30 dias:</b> no painel profissional, ver o alcance vindo de busca e hashtags; manter os termos dos 3 melhores posts.</li></ul>
+<div class="h3x">Primeira validação no Instagram (14/11/2026)</div>''' + tbl(['Hashtag', 'Posts', 'Decisão'], [['#consultoriarestaurante', '5.000+', 'Usar: alcance amplo'], ['#consultoriarestaurantes', '1.000+', 'Usar em rodízio'], ['#consultoriafoodservice', '1.000+', 'Usar: nicho com menos concorrência'], ['#gestãocozinha / #gestaocozinha', 'menos de 100', 'Descartar']], ['42%', '20%', '38%']) + '''<p class="small" style="margin-top:1.5mm">Posts indicam uso da hashtag, não volume de busca. Conclusão: nome e bio em português; “Food Service” fica como hashtag.</p>
 <div class="h3x">Fontes consultadas (14/11/2026)</div><ul class="src">
 <li>Diario de Pernambuco · Food service em PE inclui cerca de 100 mil estabelecimentos (2026): diariodepernambuco.com.br/economia/2026/03/11710315</li>
 <li>Movimento Econômico · Setor de alimentação fora do lar comemora volta do crescimento (dez/2025): movimentoeconomico.com.br/estados/pernambuco/2025/12/02</li>
