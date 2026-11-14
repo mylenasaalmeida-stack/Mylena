@@ -1,0 +1,155 @@
+"""Diagnóstico gratuito · Supreme Hamburgueria (cardápio digital + Instagram), A4, 5 páginas."""
+DATA = '14/11/2026'
+POR = 'Mylena · Cozinha Estratégica para Restaurantes'
+TOT = 5
+CSS = '''<style>@import url('fonts.css');
+:root{--ink:#121212;--muted:#6b6560;--line:#e6e0da;--paper:#f7f3ee;--acc:#e8711c;--red:#c8361f;--ok:#2f8a4a}
+@page{size:A4;margin:0}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--ink);font-size:9.3pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+.in{position:absolute;left:18mm;right:18mm;top:16mm;bottom:16mm}
+.ft{position:absolute;left:18mm;right:18mm;bottom:8mm;display:flex;justify-content:space-between;font-size:6.8pt;color:var(--muted)}
+.k{font-size:7.5pt;font-weight:600;color:var(--acc);letter-spacing:2px;text-transform:uppercase}
+h2{font-family:'Roboto Condensed';font-weight:800;font-size:27pt;line-height:.98;text-transform:uppercase;margin:1.5mm 0 3mm}
+h2 span{color:var(--acc)}
+h3{font-family:'Roboto Condensed';font-weight:800;font-size:12.5pt;text-transform:uppercase;line-height:1.05;margin-bottom:1.5mm}
+.lead{font-size:10.5pt;color:#333;max-width:165mm}
+.cover{background:var(--ink);color:#fff}
+.cover .in{top:22mm;bottom:20mm}
+.cover h1{font-family:'Roboto Condensed';font-weight:800;font-size:50pt;line-height:.92;text-transform:uppercase;margin-top:40mm}
+.cover h1 span{display:block;color:var(--acc)}
+.cover .sub{font-size:12.5pt;margin-top:8mm;max-width:150mm;color:#e9e3dc;line-height:1.5}
+.cover .meta{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:8.5pt;color:#bdb5ad;border-top:1px solid #3a3633;padding-top:5mm}
+.cover .meta b{color:#fff;font-weight:600}
+.bar{position:absolute;left:0;right:0;height:3mm;background:var(--acc)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:6mm}
+.stats div{background:var(--paper);border-radius:6px;padding:4mm}
+.stats b{font-family:'Roboto Condensed';font-weight:800;font-size:24pt;line-height:1;display:block}
+.stats b.bad{color:var(--red)}
+.stats small{font-size:7.6pt;color:var(--muted);display:block;margin-top:1mm;line-height:1.3}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:6mm}
+.box{border-radius:8px;padding:5mm 5.5mm;background:var(--paper)}
+.box.g{border-top:4px solid var(--ok)}.box.r{border-top:4px solid var(--red)}
+.box ul{padding-left:4.5mm;font-size:8.8pt}.box li{margin:1.3mm 0}
+.box.g li::marker{color:var(--ok)}.box.r li::marker{color:var(--red)}
+.quote{margin-top:6mm;background:var(--ink);color:#fff;border-radius:8px;padding:6mm 7mm;font-size:11.5pt;line-height:1.45}
+.quote b{color:#ffb27a}
+.f{display:grid;grid-template-columns:56mm 1fr;gap:5mm;padding:3mm 0;border-top:1px solid var(--line);align-items:start}
+.f img{width:100%;border:1px solid var(--line);border-radius:4px;display:block}
+.f img+img{margin-top:1.5mm}
+.f p{font-size:8.6pt;color:#333}.f p b{color:var(--ink)}
+.f .fix{margin-top:1.2mm;font-size:8.3pt;color:var(--ok);font-weight:600}
+.n{display:inline-block;background:var(--acc);color:#fff;font-family:'Roboto Condensed';font-weight:800;font-size:9pt;border-radius:3px;padding:0 5px;margin-right:4px}
+.ig{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:4mm}
+.ig figure{background:var(--paper);border-radius:6px;overflow:hidden}
+.ig img{width:100%;height:46mm;object-fit:cover;object-position:center 35%;display:block}
+.ig figcaption{padding:2mm 2.5mm;font-size:7.4pt;color:var(--muted)}
+.ig figcaption b{font-family:'Roboto Condensed';font-size:12pt;color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:8.6pt;margin-top:3mm}
+th{font-family:'Roboto Condensed';font-weight:700;text-transform:uppercase;font-size:7.8pt;text-align:left;padding:4px 7px;background:var(--ink);color:#fff}
+td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;white-space:nowrap}
+.tag{display:inline-block;font-size:6.6pt;font-weight:700;letter-spacing:.5px;padding:1px 6px;border-radius:3px;color:#fff;text-transform:uppercase;white-space:nowrap}
+.t1{background:var(--ok)}.t2{background:var(--acc)}.t3{background:var(--ink)}
+.note{font-size:7.5pt;color:var(--muted);margin-top:2mm}
+.side{display:grid;grid-template-columns:1fr 58mm;gap:6mm;margin-top:3mm}
+.side img{width:100%;border:1px solid var(--line);border-radius:6px}
+.cta{margin-top:6mm;border:2px solid var(--acc);border-radius:8px;padding:6mm}
+.cta h3{font-size:15pt}
+.cta ol{padding-left:5mm;margin-top:2mm;font-size:9pt}.cta li{margin:1.4mm 0}
+</style>'''
+
+
+def page(n, body):
+    return f'<section class="page"><div class="in">{body}</div><div class="ft"><span>Supreme Hamburgueria · Diagnóstico de cardápio digital e Instagram · {DATA}</span><span>{n} / {TOT}</span></div></section>'
+
+
+def f(imgs, num, title, text, fix):
+    im = ''.join(f'<img src="prints/{i}.jpg">' for i in imgs)
+    return f'<div class="f"><div>{im}</div><div><h3><span class="n">{num}</span>{title}</h3><p>{text}</p><div class="fix">→ {fix}</div></div></div>'
+
+
+cover = f'''<section class="page cover"><div class="bar" style="top:0"></div><div class="in">
+<div class="k">Diagnóstico gratuito</div>
+<h1>Supreme<span>Hamburgueria</span></h1>
+<p class="sub">Uma leitura do cardápio digital e do Instagram da casa, com o que já funciona, o que está deixando venda na mesa e um plano para os próximos 30 dias.</p>
+<div class="meta"><span>Para: <b>Supreme Hamburgueria · Jaboatão</b></span><span>Por: <b>{POR}</b></span><span>{DATA}</span></div>
+</div><div class="bar" style="bottom:0"></div></section>'''
+
+p2 = page(2, '''<div class="k">Resumo</div><h2>A comida já é <span>supreme.</span><br>A vitrine ainda não.</h2>
+<p class="lead">A Supreme tem produto forte, fotografia profissional e uma base de seguidores que muita hamburgueria de Recife queria ter. O que falta é fazer o cardápio e o perfil trabalharem a favor da venda.</p>
+<div class="stats">
+<div><b>25,9 mil</b><small>seguidores no Instagram, desde 2018</small></div>
+<div><b class="bad">≈ 14</b><small>curtidas, em média, nos 12 posts analisados (de 6 a 37)</small></div>
+<div><b>65</b><small>itens em 14 categorias no cardápio digital (Yooga)</small></div>
+<div><b class="bad">14 de 19</b><small>burgers com preço entre R$ 20 e R$ 24</small></div>
+</div>
+<div class="two">
+<div class="box g"><h3>O que já funciona</h3><ul>
+<li>Fotos de produto de nível profissional, com fundo, luz e marca d'água consistentes.</li>
+<li>Logo forte e reconhecível, e um topo de cardápio digital bem resolvido.</li>
+<li>Boas ideias de conteúdo: Hambúrguer do Mês, Maminha 2.0, reels de cozinha com humor.</li>
+<li>Linha Na Brasa (R$ 27 a R$ 32) puxando o ticket para cima.</li>
+<li>Cardápio digital com cupons, pedido e tempo de entrega.</li></ul></div>
+<div class="box r"><h3>O que está custando venda</h3><ul>
+<li>O engajamento não acompanha o tamanho do perfil: cerca de 0,05% de curtidas por seguidor.</li>
+<li>Legendas parecidas entre si, sem preço, sem nome do burger e sem chamada para pedir.</li>
+<li>Cardápio longo, com muitos burgers parecidos no mesmo preço e sem um carro-chefe claro.</li>
+<li>Erros de digitação, selos de “novo” vencidos e itens sem foto ou sem descrição.</li>
+<li>O que o Instagram promove (Maminha 2.0, American 2.0) não aparece com esse nome no cardápio.</li></ul></div>
+</div>
+<div class="quote">Nada aqui exige mudar receita ou investir em equipamento. <b>São ajustes de texto, organização e comunicação, e a maior parte pode ser feita em uma semana.</b></div>''')
+
+p3 = page(3, '<div class="k">Cardápio digital</div><h2>Seis ajustes que <span>vendem mais</span></h2>' +
+          f(['iorgut', 'antarica', 'coxinha'], 1, 'Erros de digitação',
+            '“IORGUT COM AMORA”, “Antarica 1L zero”, “Mine coxinha”, “Blend bovino 150,g”, “Capitaozinho”. Além disso, uns nomes estão em CAIXA ALTA e outros em minúsculas (“entradinhas”, “pepsi lata 350ML”). Para quem não conhece a casa, isso passa descuido.',
+            'Revisão completa dos textos e um padrão único de escrita.') +
+          f(['burgers'], 2, 'Muita opção, nenhuma estrela',
+            'São 19 burgers, e 14 deles custam entre R$ 20 e R$ 24, quase todos com “blend 150g + maionese da casa”. Diante de tanta coisa parecida, o cliente demora para decidir e acaba no mais barato. A seção <b>Destaques</b> está vazia, e o único produto em destaque é o combo de Black Friday.',
+            'Eleger 3 carros-chefe, destacar com selo e foto, e agrupar o resto por estilo (clássicos, frango, especiais).') +
+          f(['destaques'], 3, 'Molhos sem explicação',
+            'A “Djonese” custa R$ 2,00 e não tem descrição. Como o cliente não sabe o que é, não compra. Molho é o adicional de maior margem da casa.',
+            'Descrever cada molho e oferecê-lo como adicional dentro de cada burger.') +
+          f(['pepsi', 'casal'], 4, 'Fotos e combos',
+            'A Pepsi 1L e a Pepsi 1L zero usam a mesma foto da Pepsi Black. O <b>Combo Casal (R$ 69)</b> e a Vitamina de cupuaçu estão sem foto, e o combo não mostra quanto o casal economiza. Os fundos vermelhos das bebidas também fogem da paleta preto e laranja da marca.',
+            'Foto certa em cada item e um texto “economize R$ X” em cada combo.') +
+          '<div class="two" style="margin-top:3mm">' +
+          '<div class="box"><h3><span class="n">5</span>Textos vencidos</h3><p style="font-size:8.5pt">“hot-dog ESPECIAL (NOVO)”, “Capitaozinho ( NOVO)” e “Naquele modelo: o especial de outubro voltou…”. Quando o selo “novo” nunca sai, ele deixa de chamar a atenção.</p><div class="fix" style="color:var(--ok);font-weight:600;font-size:8.2pt;margin-top:1.2mm">→ Usar “novo” só por 30 dias e revisar o cardápio todo mês.</div></div>' +
+          '<div class="box"><h3><span class="n">6</span>Instagram e cardápio não se conversam</h3><p style="font-size:8.5pt">O perfil anuncia “Maminha 2.0” e “American 2.0”, mas no cardápio aparecem “MAMINHA” e “AMERICAN PRO”. O Hambúrguer do Mês não tem uma vaga própria no cardápio.</p><div class="fix" style="color:var(--ok);font-weight:600;font-size:8.2pt;margin-top:1.2mm">→ Criar a categoria “Hambúrguer do Mês” no topo, com o nome e a foto do post.</div></div></div>')
+
+p4 = page(4, '''<div class="k">Instagram</div><h2>Foto de restaurante grande,<br><span>resultado de perfil pequeno</span></h2>
+<div class="side"><div>
+<p class="lead" style="font-size:9.8pt">Os posts de produto são bonitos, mas são todos o mesmo post: um close do burger e uma legenda genérica (“Dá vontade de morder só de olhar…”, “Sabor que marca…”). Com 25,9 mil seguidores, cada post recebe de 6 a 37 curtidas e quase nenhum comentário.</p>
+<table><thead><tr><th>Ponto</th><th>Hoje</th><th>Sugestão</th></tr></thead><tbody>
+<tr><td>Bio</td><td>A primeira linha é “Trabalhe conosco”, e o horário aparece cortado.</td><td>Primeira linha: o que a casa é e o bairro. Depois horário, delivery e link.</td></tr>
+<tr><td>Link</td><td>Linktree, ou seja, mais um clique até o pedido.</td><td>Link direto para o cardápio da Yooga.</td></tr>
+<tr><td>Legendas</td><td>Adjetivos, sem nome, sem preço e sem chamada.</td><td>Nome + o que vem no burger + preço + “peça pelo link da bio”.</td></tr>
+<tr><td>Formato</td><td>Quase tudo é foto estática de produto.</td><td>Alternar entre produto, bastidor da chapa, cliente real e reels de montagem.</td></tr>
+<tr><td>Hashtags</td><td>#SupremeBurger #QuemResiste</td><td>Local: #jaboatao #hamburgueriajaboatao #recifefood</td></tr>
+</tbody></table></div>
+<img src="prints/perfil.jpg"></div>
+<div class="ig">
+<figure><img src="prints/ig_mes.jpg"><figcaption><b>37</b> curtidas · Hambúrguer do Mês, o melhor dos 12</figcaption></figure>
+<figure><img src="prints/ig_cremoso.jpg"><figcaption><b>24</b> curtidas · “Sabor que marca…”</figcaption></figure>
+<figure><img src="prints/ig_naquele.jpg"><figcaption><b>15</b> curtidas · Naquele Modelo</figcaption></figure>
+<figure><img src="prints/ig_frango.jpg"><figcaption><b>6</b> curtidas · “Suculento por dentro…”</figcaption></figure>
+</div>
+<p class="note">O post que mais engajou foi o único com uma ideia por trás: Hambúrguer do Mês, com nome e motivo para pedir. Esse é o caminho.</p>''')
+
+p5 = page(5, '''<div class="k">Plano de 30 dias</div><h2>Por onde <span>começar</span></h2>
+<table><thead><tr><th>Quando</th><th>O quê</th><th>Resultado esperado</th></tr></thead><tbody>
+<tr><td><span class="tag t1">Semana 1</span></td><td>Corrigir todos os textos do cardápio, tirar os selos “novo” vencidos, colocar foto nos itens sem foto e descrever os molhos.</td><td>Cardápio com cara de casa profissional. Custo zero.</td></tr>
+<tr><td><span class="tag t1">Semana 1</span></td><td>Reescrever a bio e trocar o Linktree pelo link direto do cardápio.</td><td>Menos cliques entre o post e o pedido.</td></tr>
+<tr><td><span class="tag t2">Semana 2</span></td><td>Reorganizar o cardápio: 3 carros-chefe no topo, Hambúrguer do Mês fixo, burgers agrupados por estilo e combos mostrando a economia.</td><td>Escolha mais rápida e ticket médio maior.</td></tr>
+<tr><td><span class="tag t2">Semana 2</span></td><td>Molho e batata como adicional sugerido em cada burger.</td><td>Mais itens por pedido, com a maior margem.</td></tr>
+<tr><td><span class="tag t3">Semanas 3 e 4</span></td><td>Calendário de posts com legenda que vende (nome, preço, chamada), reels de bastidor e conteúdo com clientes.</td><td>Mais alcance local e mais pedidos vindos do Instagram.</td></tr>
+<tr><td><span class="tag t3">Semanas 3 e 4</span></td><td>Análise de custo e margem dos burgers para decidir o que destacar, o que reajustar e o que sair do cardápio.</td><td>Destacar o que dá mais lucro, não só o que vende mais.</td></tr>
+</tbody></table>
+<div class="cta"><h3>Próximo passo</h3>
+<p style="font-size:9.4pt;margin-top:1mm">Uma conversa de 30 minutos para mostrar este diagnóstico e montar, junto com vocês, o plano da Supreme. Para a análise de lucro do cardápio, vou precisar de:</p>
+<ol><li>Relatório de vendas por item dos últimos 3 meses (a Yooga exporta).</li>
+<li>Preço de compra dos principais insumos: carne, pão, queijos, bacon e embalagem.</li>
+<li>Quais burgers vocês mais gostam de vender e quais dão mais trabalho na chapa.</li></ol></div>
+<p class="note">Diagnóstico feito a partir do cardápio público em supremehamburgueria01.com.br e do perfil @supreme_hamburgueria_, consultados em 14/11/2026. Curtidas contadas em 12 posts de produto de nov/2025 a mar/2026.</p>''')
+
+open('diagnostico_supreme.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Diagnóstico · Supreme Hamburgueria</title>{CSS}</head><body>{cover}{p2}{p3}{p4}{p5}</body></html>')
