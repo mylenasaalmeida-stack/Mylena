@@ -2,8 +2,8 @@
 from proposta_v2 import CSS as PCSS
 from digital import EXTRA as DEXTRA
 
-NOME = '[Seu nome] | Lucro e Marca para Restaurantes'
-BIO = ['Restaurantes, bares e delivery com mais lucro', 'Custos • CMV • Cardápio • Marca', 'Do preço ao Instagram, tudo pronto', '📍 Recife · 👇 Análise gratuita']
+NOME = 'Mylena | Cozinha Estratégica para Restaurantes'
+BIO = ['Cozinha estratégica: restaurante que lucra', '✔ Custo certo', '✔ Cardápio que vende', '✔ Marca que atrai', '👇 Diagnóstico de lucro gratuito']
 BIO_LEN = len('\n'.join(BIO))
 T = 10
 
@@ -72,7 +72,7 @@ p3 = page(3, '''<div class="k">02 · Mapa de risco</div><h2>O que dizer e <span>
 <div class="h3x">Troca de vocabulário</div>''' + tbl(['Em vez de', 'Use'], [
     ['Consultora / consultoria de gestão', '“Trabalho com custos, cardápio e marca para restaurantes”'],
     ['Ficha técnica de preparação', 'Ficha de custo · receita padronizada'],
-    ['Diagnóstico', 'Análise de lucro · análise de cardápio'],
+    ['Diagnóstico (solto)', 'Diagnóstico de lucro · diagnóstico de cardápio'],
     ['Organizo e supervisiono a sua cozinha', 'Coloco o seu custo e o seu cardápio em ordem'],
     ['Planejamento de cardápio', 'Cardápio que vende · organização do cardápio'],
     ['Padronização da produção', 'Mesma porção, mesmo custo, todo dia'],
@@ -88,12 +88,12 @@ p4 = page(4, f'''<div class="k">03 · Posicionamento</div><h2>Nome, bio <span>e 
 <div class="grid2" style="gap:6mm">
 <div><div class="h3x" style="margin-top:0">Nome do perfil (campo de busca)</div>
 <div class="box" style="margin:0"><b style="font-family:'Roboto Condensed';font-size:12.5pt">{NOME}</b></div>
-<p class="small" style="margin-top:1.5mm">Junta “restaurantes” (o termo que o dono usa) com o resultado que ele quer (lucro) e o seu diferencial (marca). Sem “consultoria” e sem “nutri”. O campo aceita até 64 caracteres.</p>
-<div class="h3x">Alternativas</div>{ul(['[Seu nome] | Custos e Cardápio para Restaurantes', '[Seu nome] · Restaurante com Lucro · Recife'])}
+<p class="small" style="margin-top:1.5mm">Seu nome + o conceito “Cozinha Estratégica” + “restaurantes”, o termo que o dono procura. Sem “consultoria” e sem “nutri”.</p>
+<div class="h3x">Alternativas</div>{ul(['Mylena | Custos e Cardápio para Restaurantes', 'Mylena · Restaurante com Lucro · Recife'])}
 <div class="h3x">Bio · {BIO_LEN} caracteres</div><div class="box" style="margin:0;font-size:9.6pt;line-height:1.6">{prof_bio}</div>
 <p class="small" style="margin-top:1.5mm">Limite: 150 caracteres (cada emoji pode contar 2).</p></div>
-<div><div class="h3x" style="margin-top:0">Por que funciona</div>{ul(['<b>Linha 1:</b> para quem e o resultado (lucro).', '<b>Linha 2:</b> os 4 assuntos, todos da zona livre.', '<b>Linha 3:</b> o diferencial: do preço ao Instagram, entregue pronto.', '<b>Linha 4:</b> cidade e oferta de entrada (análise gratuita).'])}
-<div class="h3x">Complementos</div>{ul(['<b>@:</b> curto, sem números e sem “nutri”, ex.: [seunome].restaurantes', '<b>Categoria:</b> uma categoria de negócios ou de marketing, sem “nutrição” e sem “consultor”.', '<b>Link:</b> WhatsApp com a mensagem pronta “Quero minha análise de lucro”.', '<b>Destaques:</b> Comece aqui · Custos · Cardápio · Marca · Antes e depois · Como funciona', '<b>Foto:</b> você, rosto visível, fundo neutro ou cozinha. Perfil de pessoa cresce mais rápido que logotipo.'])}</div></div>''')
+<div><div class="h3x" style="margin-top:0">Por que funciona</div>{ul(['<b>Linha 1:</b> o conceito e o resultado (lucro).', '<b>Linhas 2 a 4:</b> o método em 3 pilares, todos da zona livre.', '<b>Linha 5:</b> a oferta de entrada (diagnóstico de lucro gratuito).', 'Recife fica no campo Nome e na localização dos posts.'])}
+<div class="h3x">Complementos</div>{ul(['<b>@:</b> @mylena.cozinhaestrategica', '<b>Categoria:</b> uma categoria de negócios ou de marketing, sem “nutrição” e sem “consultor”.', '<b>Link:</b> WhatsApp com a mensagem pronta “Quero meu diagnóstico”.', '<b>Destaques:</b> Comece aqui · Custos · Cardápio · Marca · Antes e depois · Como funciona', '<b>Foto:</b> você, rosto visível, fundo neutro ou cozinha. Perfil de pessoa cresce mais rápido que logotipo.'])}</div></div>''')
 
 A = [('CMV / como calcular CMV', 'Aprender', 'Alta', 'Legenda, capa de Reels'),
      ('Preço de venda / precificação', 'Aprender', 'Alta', 'Legenda, capa de Reels'),
@@ -116,13 +116,13 @@ p5 = page(5, '''<div class="k">04 · Palavras-chave revisadas</div><h2>O que usa
               ['Descartada', '#gestãocozinha', 'Menos de 100 posts'],
           ], ['30%', '50%', '20%']))
 
-phases = [('Semana 0', 'Montar a base', ['Nome, @, bio, foto e link do WhatsApp (página 4).', 'Criar os 6 destaques, cada um com 1 a 3 stories.', 'Publicar 6 posts de base: “quem sou e o que faço”, “como funciona a análise de lucro”, 2 carrosséis de custo (CMV e preço de venda), 1 antes e depois da Speciale (com autorização) e 1 Reels de bastidor.', 'Preparar as 3 iscas (página 8).', 'Seguir 100 perfis do grupo C: restaurantes de Recife, Abrasel-PE, Sebrae PE e distribuidoras.']),
-          ('Semanas 1 a 4', 'Ser vista', ['Frequência: 3 Reels + 2 carrosséis + stories todos os dias.', 'Reels de até 30 segundos, com gancho nos 2 primeiros segundos e a palavra-chave escrita na tela.', 'Usar os Reels de teste do Instagram (quando disponíveis na sua conta) para mostrar o vídeo primeiro a quem não te segue.', 'Rotina de prospecção da página 9 todos os dias úteis.', 'Meta: 10 conversas iniciadas e 4 análises gratuitas (hipótese).']),
-          ('Semanas 5 a 8', 'Pegar emprestada a audiência', ['Fazer 2 posts em colaboração (recurso “Collab”) com restaurantes ou fornecedores de Recife: o post aparece para os seguidores dos dois.', 'Gravar “um dia na cozinha de [restaurante]” mostrando custo e cardápio, nunca orientação de higiene ou nutrição.', 'Comentar todo dia em perfis grandes do setor (Abrasel-PE, perfis de gastronomia de Recife) com comentários de valor.', 'Lançar a isca CMV em Reels.', 'Meta: 8 análises e 2 propostas (hipótese).']),
-          ('Semanas 9 a 12', 'Converter', ['Publicar resultados reais (antes e depois, depoimentos) de quem fez a análise ou contratou.', 'Uma semana temática: “Semana do cardápio que vende”, com stories diários e caixinha de perguntas.', 'Oferta com prazo: “5 análises de lucro gratuitas este mês”.', 'Recalcular a rotina com as taxas reais de resposta e de fechamento.', 'Meta: 30 análises no total e 5 clientes (hipótese da meta).'])]
+phases = [('Semana 0', 'Montar a base', ['Nome, @, bio, foto e link do WhatsApp (página 4).', 'Criar os 6 destaques, cada um com 1 a 3 stories.', 'Publicar 6 posts de base: “quem sou e o que faço”, “como funciona o diagnóstico de lucro”, 2 carrosséis de custo (CMV e preço de venda), 1 antes e depois da Speciale (com autorização) e 1 Reels de bastidor.', 'Preparar as 3 iscas (página 8).', 'Seguir 100 perfis do grupo C: restaurantes de Recife, Abrasel-PE, Sebrae PE e distribuidoras.']),
+          ('Semanas 1 a 4', 'Ser vista', ['Frequência: 3 Reels + 2 carrosséis + stories todos os dias.', 'Reels de até 30 segundos, com gancho nos 2 primeiros segundos e a palavra-chave escrita na tela.', 'Usar os Reels de teste do Instagram (quando disponíveis na sua conta) para mostrar o vídeo primeiro a quem não te segue.', 'Rotina de prospecção da página 9 todos os dias úteis.', 'Meta: 10 conversas iniciadas e 4 diagnósticos gratuitos (hipótese).']),
+          ('Semanas 5 a 8', 'Pegar emprestada a audiência', ['Fazer 2 posts em colaboração (recurso “Collab”) com restaurantes ou fornecedores de Recife: o post aparece para os seguidores dos dois.', 'Gravar “um dia na cozinha de [restaurante]” mostrando custo e cardápio, nunca orientação de higiene ou nutrição.', 'Comentar todo dia em perfis grandes do setor (Abrasel-PE, perfis de gastronomia de Recife) com comentários de valor.', 'Lançar a isca CMV em Reels.', 'Meta: 8 diagnósticos e 2 propostas (hipótese).']),
+          ('Semanas 9 a 12', 'Converter', ['Publicar resultados reais (antes e depois, depoimentos) de quem fez o diagnóstico ou contratou.', 'Uma semana temática: “Semana do cardápio que vende”, com stories diários e caixinha de perguntas.', 'Oferta com prazo: “5 diagnósticos de lucro gratuitos este mês”.', 'Recalcular a rotina com as taxas reais de resposta e de fechamento.', 'Meta: 30 diagnósticos no total e 5 clientes (hipótese da meta).'])]
 p6 = page(6, '<div class="k">05 · Plano de ação</div><h2>Do zero em <span>90 dias</span></h2>' + ''.join(
     f'<div class="phase"><div class="w">{w}<small>{t}</small></div><ul>' + ''.join(f'<li>{x}</li>' for x in xs) + '</ul></div>' for w, t, xs in phases) +
-    '<p class="small" style="margin-top:2.5mm">Metas são hipóteses derivadas da meta de 30 análises e 5 clientes. Ajuste após a semana 4 com os números reais.</p>')
+    '<p class="small" style="margin-top:2.5mm">Metas são hipóteses derivadas da meta de 30 diagnósticos e 5 clientes. Ajuste após a semana 4 com os números reais.</p>')
 
 pil = [('Lucro e custos', ['CMV alto? Os 3 erros que mais vejo em restaurantes de Recife.', 'Como calcular o CMV de um produto em 5 passos.', 'Vende bem e não sobra dinheiro? Olhe o CMV, não o faturamento.', 'Preço de venda: por que copiar o concorrente dá prejuízo.', 'Taxa do iFood: a conta do lucro no delivery.']),
        ('Cardápio que vende', ['Onde o cliente olha primeiro no cardápio.', 'Preço repetido em cada sabor atrasa o pedido.', 'Cardápio digital: o pedido chega pronto no WhatsApp.', 'Reforma ou cores novas? O cardápio muda junto.', 'Antes e depois: cardápio de uma pizzaria em Recife.*']),
@@ -144,20 +144,20 @@ p8 = page(8, '''<div class="k">07 · Iscas e oferta de entrada</div><h2>Como tra
 <div class="card"><h4>Comente CUSTO</h4><p>Modelo de ficha de custo pronto para preencher (sem informação nutricional).</p></div>
 <div class="card"><h4>Comente CMV</h4><p>Passo a passo de 1 página para calcular o CMV de 1 produto.</p></div>
 <div class="card"><h4>Comente CARDÁPIO</h4><p>Checklist dos erros que fazem o cliente demorar a pedir.</p></div></div>
-<div class="h3x">Oferta de entrada: análise de lucro gratuita</div>''' + ul([
+<div class="h3x">Oferta de entrada: diagnóstico de lucro gratuito</div>''' + ul([
     '<b>O que é:</b> 30 minutos, presencial ou online, para calcular com o dono o custo real e a margem de 1 produto e apontar 3 melhorias no cardápio.',
     '<b>Por que funciona:</b> o dono sai com um número concreto; você mostra o seu método sem prometer nada técnico de nutrição.',
     '<b>Como fechar:</b> no fim, apresentar a proposta curta (4 páginas) com o próximo passo: ficha de custo do cardápio inteiro, cardápio novo ou marca.']) +
     '<div class="h3x">Prova social desde o primeiro mês</div>' + ul([
         'Antes e depois do cardápio e das fichas da Speciale (com autorização).',
-        'Print (com permissão) de mensagens de quem fez a análise.',
+        'Print (com permissão) de mensagens de quem fez o diagnóstico.',
         'Números reais: “o CMV da pizza X caiu de __% para __%” só depois de medido.']))
 
 p9 = page(9, '''<div class="k">08 · Prospecção</div><h2>Rotina de <span>30 minutos</span></h2>
 <div class="grid3" style="gap:3mm">
 <div class="card"><div class="n">1</div><h4>Aproximação</h4><p><b>Dia 1.</b> Seguir e fazer 1 comentário útil num post recente. Ex.: “Esse combo ficou bom. Vale mostrar o preço por pessoa, ajuda quem está decidindo.”</p></div>
 <div class="card"><div class="n">2</div><h4>Mensagem de valor</h4><p><b>2 a 3 dias depois.</b> “Oi, [nome]! Trabalho com custos, cardápio e marca para restaurantes aqui em Recife. Reparei em [observação]. Vocês sabem quanto sobra de lucro na [produto mais vendido]?”</p></div>
-<div class="card hl"><div class="n">3</div><h4>Convite</h4><p><b>Se responder.</b> “Faço uma análise gratuita de 30 min: calculo com vocês o custo e a margem de 1 produto. Posso te chamar no WhatsApp?”</p></div></div>
+<div class="card hl"><div class="n">3</div><h4>Convite</h4><p><b>Se responder.</b> “Faço um diagnóstico gratuito de 30 min: calculo com vocês o custo e a margem de 1 produto. Posso te chamar no WhatsApp?”</p></div></div>
 <p class="small" style="margin-top:2mm">Sem resposta: no máximo 1 lembrete após 5 dias.</p>
 <div class="h3x">Semana tipo</div>''' + tbl(['Dia', 'Conteúdo', 'Prospecção (30 min)'], [
     ['<b>Seg</b>', 'Reels (pilar lucro e custos)', '10 comentários em 1 hashtag do grupo C'],
@@ -171,7 +171,7 @@ p9 = page(9, '''<div class="k">08 · Prospecção</div><h2>Rotina de <span>30 mi
         ['Alcance de não seguidores', 'Painel profissional', 'Crescer semana a semana'],
         ['Salvamentos e compartilhamentos', 'Painel profissional', 'Mostram quais temas dão autoridade'],
         ['Perfis abordados / conversas iniciadas', 'Planilha', '50 / acompanhar a taxa de resposta'],
-        ['Análises gratuitas feitas', 'Agenda', '2 a 3 por semana (30 em 90 dias)'],
+        ['Diagnósticos gratuitos feitas', 'Agenda', '2 a 3 por semana (30 em 90 dias)'],
         ['Propostas e clientes', 'Planilha', '5 clientes em 90 dias'],
     ], ['40%', '24%', '36%']))
 
