@@ -113,10 +113,78 @@ tr.fin td{background:var(--y);color:var(--ink);font-weight:700;font-size:9pt}
 .cta b{font-size:14pt;color:var(--y)}
 .who{display:flex;gap:30mm;margin-top:5mm;font-size:7.4pt;text-align:center}
 .who small{display:block;font-weight:700;font-size:6pt;text-transform:uppercase}
+
+/* capa com foto */
+.cover .hero{width:100%;height:66mm;border-radius:5mm;margin-top:9mm;position:relative;overflow:hidden;background:#ccc}
+.cover .hero img.f{width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block}
+.cover .hero .lg{position:absolute;right:5mm;top:50%;transform:translateY(-50%);height:17mm}
+.cover .for{display:flex;align-items:center;gap:5mm;text-align:left}
+.cover .for img{height:11mm}
+/* prévia */
+.pv{display:grid;grid-template-columns:76mm 1fr;gap:7mm;width:100%;margin-top:6mm;align-items:start}
+.cap2{font-size:6.6pt;color:var(--soft);margin-top:2mm;text-align:center}
+.cap2 b{color:var(--y)}
+.ph2{background:#000;border-radius:7mm;padding:2.2mm;border:1px solid #333}
+.sc{background:#fff;border-radius:5mm;overflow:hidden;color:#111;font-size:5.6pt;line-height:1.35}
+.igt{display:flex;justify-content:space-between;padding:2.5mm 3mm 1mm;font-weight:700;font-size:7pt}
+.igh{display:flex;align-items:center;gap:3mm;padding:1mm 3mm}
+.av{width:13mm;height:13mm;border-radius:50%;padding:.6mm;background:linear-gradient(45deg,#d8bcbc,#9a7070);flex:none}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:60% 25%;border:.6mm solid #fff;display:block}
+.st{display:flex;flex:1;justify-content:space-around;text-align:center}
+.st b{display:block;font-size:6.6pt}
+.bio2{padding:1.2mm 3mm 0}
+.bio2 b{font-size:6pt}
+.bio2 .ct{color:#888}
+.bio2 .lk{color:#9a7070;font-weight:600}
+.btn2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1mm;padding:2mm 3mm}
+.btn2 span{background:#efefef;border-radius:1.2mm;text-align:center;padding:1mm 0;font-weight:600}
+.btn2 span.on{background:#9a7070;color:#fff}
+.hl2{display:flex;justify-content:space-between;padding:1mm 3mm 2.5mm}
+.hl2 div{display:flex;flex-direction:column;align-items:center;gap:.8mm;width:10mm}
+.hl2 i{width:10mm;height:10mm;border-radius:50%;border:.35mm solid #d8bcbc;padding:.6mm;display:block}
+.hl2 i span{display:flex;width:100%;height:100%;border-radius:50%;background:#f5efe8;align-items:center;justify-content:center;font-family:'Playfair Display';font-style:italic;font-weight:700;color:#9a7070;font-size:6.5pt}
+.hl2 small{font-size:4.6pt;white-space:nowrap}
+.gr{display:grid;grid-template-columns:repeat(3,1fr);gap:.4mm;border-top:.3mm solid #eee}
+.t{aspect-ratio:4/5;position:relative;overflow:hidden;background:#f5efe8;font-family:'Playfair Display'}
+.t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,35,35,0) 45%,rgba(60,35,35,.75))}
+.t .tx{position:absolute;left:2mm;right:2mm;bottom:2mm;color:#fff;font-size:7pt;line-height:1.05;font-weight:600}
+.t .tx small{display:block;font-family:'Poppins';font-size:4pt;letter-spacing:.6px;text-transform:uppercase;font-weight:500;margin-bottom:.6mm;color:#f5efe8}
+.t.m{background:#9a7070;color:#fff;padding:2.5mm;display:flex;flex-direction:column;justify-content:center}
+.t.m b{font-size:7.5pt;line-height:1.05}
+.t.m ul{list-style:none;font-family:'Poppins';font-size:4.4pt;margin-top:1.5mm}
+.t.m li{border-top:.2mm solid rgba(255,255,255,.4);padding:.6mm 0}
+.t.c{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#9a7070;padding:2mm}
+.t.c img{position:static;width:13mm;height:auto}
+.t.c b{font-size:6.6pt;margin-top:1mm}
+.t.c small{font-family:'Poppins';font-size:4pt;color:#6d5050}
+.pin2{position:absolute;top:1mm;right:1mm;width:2.4mm;height:2.4mm;z-index:3}
+/* porta */
+.door2{height:118mm;border-radius:2.5mm;background:#3b3533;padding:2.2mm;position:relative}
+.gl{height:100%;border-radius:1mm;background:linear-gradient(160deg,#8e9aa0,#5d686e 55%,#79858b);position:relative;overflow:hidden}
+.gl:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.22) 0 18%,transparent 18% 40%,rgba(255,255,255,.12) 40% 47%,transparent 47%)}
+.vin{position:absolute;left:7mm;right:7mm;top:13mm;bottom:12mm;background:rgba(245,239,232,.93);border-radius:1mm;display:flex;flex-direction:column;align-items:center;padding:7mm 4mm 5mm;text-align:center;color:#9a7070;z-index:1}
+.vin img{width:46mm}
+.vin ul{list-style:none;font-size:5.8pt;letter-spacing:1.4px;text-transform:uppercase;margin-top:5mm;line-height:2;color:#6d5050}
+.vin .rd{margin-top:auto;border-top:.3mm solid #d8bcbc;padding-top:2.5mm;width:100%;font-size:5.8pt;color:#6d5050;line-height:1.6}
+.vin .rd b{color:#9a7070}
+.hd2{position:absolute;right:3.5mm;top:48%;width:1.5mm;height:18mm;background:#cfcfcf;border-radius:1mm;z-index:2}
+/* landing */
+.lp2{margin-top:5mm;background:#fff;border-radius:3mm;overflow:hidden;color:#3d2a2a}
+.lp2 .bar{background:#eee;height:4.5mm;display:flex;align-items:center;gap:1mm;padding:0 2mm;font-size:4.6pt;color:#888}
+.lp2 .bar i{width:1.4mm;height:1.4mm;border-radius:50%;background:#ccc;display:block}
+.lp2 .hr2{display:grid;grid-template-columns:1fr 38mm;background:#f5efe8;height:42mm}
+.lp2 .hr2 div{padding:4mm;display:flex;flex-direction:column;justify-content:center}
+.lp2 .hr2 img.lg{height:7mm;align-self:flex-start}
+.lp2 .hr2 b{font-family:'Playfair Display';font-size:10pt;line-height:1.08;margin-top:2.5mm;color:#6d4848}
+.lp2 .hr2 span{margin-top:2.5mm;background:#9a7070;color:#fff;font-size:5.2pt;font-weight:600;border-radius:5mm;padding:1.2mm 3mm;align-self:flex-start}
+.lp2 .hr2 img.f{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.pal{display:flex;gap:2mm;margin-top:4mm;align-items:center;font-size:6.4pt;color:var(--soft)}
+.pal i{width:5mm;height:5mm;border-radius:1.4mm;display:block;border:.3mm solid #333}
 </style>'''
 
 CLIENTE = 'Proposta · Débora Brasil Beauty'
-TOTAL = 7
+TOTAL = 8
 RAY = ('<svg class="ray {s}" viewBox="0 0 40 40"><g stroke="{c}" stroke-width="4.5" stroke-linecap="round">'
        '<line x1="{a}" y1="6" x2="{b}" y2="18"/><line x1="{d}" y1="22" x2="{e}" y2="28"/></g></svg>')
 
@@ -145,7 +213,8 @@ p1 = f'''<section class="page cover"><div class="in">
 <h1>{rays()}Teu trabalho já é lindo.<br>Agora o perfil <span>também.</span></h1>
 <p class="lead">Landing page, bio, destaques, os 6 primeiros posts e a arte da porta do estúdio, tudo no mesmo padrão, pra quem procura sobrancelha em Piedade e Candeias te achar e agendar.</p>
 <div class="chips"><span>Landing page</span><span>Bio + destaques</span><span>6 primeiros posts</span><span>Arte da porta</span></div>
-<div class="for"><b>Débora Brasil · @deborabrasilbeauty</b><small>Micropigmentação · Brow lamination · Lash lifting · Maquiagem</small></div>
+<div class="hero"><img class="f" src="img/debora/pinca.jpg"><img class="lg" src="img/debora/logo-horizontal.png"></div>
+<div class="for"><img src="img/debora/logo-circulo-branco.png"><div><b>Débora Brasil · @deborabrasilbeauty</b><small>Micropigmentação · Brow lamination · Lash lifting · Maquiagem</small></div></div>
 <div class="bot">Recife · Pernambuco · 14/11/2026<b>@housedocreator · (81) 98355-4583</b></div>
 </div></section>'''
 
@@ -194,7 +263,43 @@ def svc(key):
 p3 = page(3, f'<span class="pill">O que entra</span>{title("Um link que <span>agenda.</span>")}{svc("lp")}{svc("bio")}')
 p4 = page(4, f'<span class="pill">O que entra</span>{title("Uma vitrine que <span>vende.</span>")}{svc("posts")}{svc("porta")}')
 
-# 5 · pacotes
+PIN = '<svg class="pin2" viewBox="0 0 24 24" fill="#fff"><path d="M16 3l5 5-3 1-4 4 1 5-2 2-4-4-5 5-1-1 5-5-4-4 2-2 5 1 4-4z"/></svg>'
+p5 = page(5, f'''<span class="pill">Uma prévia</span>
+{title('Tua marca, do feed <span>à porta.</span>')}
+<p class="lead">Um esboço com a tua identidade, a paleta da marca e as fotos do teu ensaio, só pra tu visualizar. O material final é criado junto contigo depois da conversa.</p>
+<div class="pv">
+<div><div class="ph2"><div class="sc">
+<div class="igt"><span>deborabrasilbeauty</span><span>···</span></div>
+<div class="igh"><div class="av"><img src="img/debora/pinca.jpg"></div>
+<div class="st"><div><b>497</b>posts</div><div><b>2.582</b>seguidores</div><div><b>4.621</b>seguindo</div></div></div>
+<div class="bio2"><b>Débora Brasil Beauty</b><br><span class="ct">Estúdio de beleza</span><br>
+Sobrancelhas, micropigmentação e lash lifting<br>que valorizam o teu olhar.<br>
+Galeria Ponto Certo · Piedade, Jaboatão<br>Agende pelo link abaixo<br><span class="lk">deborabrasilbeauty.com.br</span></div>
+<div class="btn2"><span class="on">Seguir</span><span>Mensagem</span><span>WhatsApp</span></div>
+<div class="hl2">
+<div><i><span>Ag</span></i><small>Agende</small></div><div><i><span>Mf</span></i><small>Micro fio</small></div>
+<div><i><span>Bl</span></i><small>Brow</small></div><div><i><span>Ll</span></i><small>Lash</small></div>
+<div><i><span>Mq</span></i><small>Make</small></div><div><i><span>On</span></i><small>Onde</small></div></div>
+<div class="gr">
+<div class="t">{PIN}<img src="img/debora/sentada.jpg" style="object-position:50% 20%"><div class="sh"></div><div class="tx"><small>Prazer</small>Eu sou a Débora</div></div>
+<div class="t m">{PIN}<b>O que eu faço por você</b><ul><li>Design de sobrancelhas</li><li>Micro fio a fio</li><li>Brow lamination</li><li>Lash lifting</li><li>Maquiagem</li></ul></div>
+<div class="t">{PIN}<img src="img/debora/paquimetro.jpg" style="object-position:50% 25%"><div class="sh"></div><div class="tx"><small>Design</small>Medido pro teu rosto</div></div>
+<div class="t"><img src="img/debora/caneta.jpg" style="object-position:30% 50%"><div class="sh"></div><div class="tx"><small>Micropigmentação</small>Fio a fio natural</div></div>
+<div class="t c"><img src="img/debora/logo-circulo.png"><b>Onde estamos</b><small>Galeria Ponto Certo<br>Piedade · Jaboatão</small></div>
+<div class="t"><img src="img/debora/celular.jpg" style="object-position:55% 30%"><div class="sh"></div><div class="tx"><small>Agenda aberta</small>Chama no WhatsApp</div></div>
+</div></div></div>
+<p class="cap2"><b>Bio, destaques e os 6 primeiros posts</b> · 3 fixados no topo</p></div>
+<div><div class="door2"><div class="gl"><div class="vin"><img src="img/debora/logo-horizontal.png">
+<ul><li>Design de sobrancelhas</li><li>Micropigmentação</li><li>Brow lamination</li><li>Lash lifting</li><li>Maquiagem</li></ul>
+<div class="rd">Atendimento com hora marcada · <b>9h às 18h</b><br>@deborabrasilbeauty · Agende pelo WhatsApp</div></div></div><div class="hd2"></div></div>
+<p class="cap2"><b>Arte da porta</b> · medidas e informações a confirmar</p>
+<div class="lp2"><div class="bar"><i></i><i></i><i></i>&nbsp;deborabrasilbeauty.com.br</div>
+<div class="hr2"><div><img class="lg" src="img/debora/logo-horizontal.png"><b>Sobrancelhas que valorizam o teu olhar.</b><span>Agendar no WhatsApp</span></div><img class="f" src="img/debora/sentada-h.jpg"></div></div>
+<p class="cap2"><b>Landing page</b> · abertura da página no computador e no celular</p>
+<div class="pal">Paleta da marca: <i style="background:#f5efe8"></i>#F5EFE8 <i style="background:#9a7070"></i>#9A7070 <i style="background:#d8bcbc"></i>#D8BCBC</div>
+</div></div>''')
+
+# 6 · pacotes
 PK = [
     ('Proposta para ti', 'Vitrine', 'Perfil, link e porta trabalhando por ti.', 940, 500, True,
      [('Landing page', 0), ('Bio + capas dos destaques', 0), ('6 primeiros posts com legenda', 0), ('Arte da porta para impressão', 0)]),
@@ -213,7 +318,7 @@ def card(ph, nome, fr, av, pr, best, itens):
             f'<div class="old">avulso {brl(av)}</div><div class="pr">{brl(pr)}</div><div class="sv">economia de {brl(av - pr)}</div><ul>{lis}</ul></div>')
 
 
-p5 = page(5, f'''<span class="pill">Investimento</span>
+p6 = page(6, f'''<span class="pill">Investimento</span>
 {title('Junto sai <span>mais barato.</span>', True)}
 <p class="lead">Cada serviço pode ser contratado sozinho. No pacote, tudo é criado junto, com a mesma identidade, e o valor cai.</p>
 <div class="pk">{"".join(card(*x) for x in PK)}</div>
@@ -242,7 +347,7 @@ trs = ''.join(f'<tr><td>{n}</td><td class="r">{brl(v)}</td><td class="c">{mk(a)}
 trs += '<tr class="sum"><td>Soma avulsa</td><td></td><td class="c">R$ 940</td><td class="c">R$ 1.400</td><td class="c">R$ 2.110</td></tr>'
 trs += '<tr class="fin"><td>No pacote</td><td></td><td class="c">R$ 500</td><td class="c">R$ 700</td><td class="c">R$ 1.100</td></tr>'
 
-p6 = page(6, f'''<span class="pill">Valores e condições</span>
+p7 = page(7, f'''<span class="pill">Valores e condições</span>
 {title('Monta do teu <span>jeito.</span>')}
 <table><thead><tr><th>Serviço</th><th class="r">Avulso</th><th class="c">Vitrine</th><th class="c">+ Conteúdo</th><th class="c">Completa</th></tr></thead><tbody>{trs}</tbody></table>
 <div class="two">
@@ -253,7 +358,7 @@ p6 = page(6, f'''<span class="pill">Valores e condições</span>
 </div>''')
 
 # 7 · próximos passos
-p7 = page(7, f'''<span class="pill">Próximo passo</span>
+p8 = page(8, f'''<span class="pill">Próximo passo</span>
 {title('Bora deixar teu perfil<br>à altura do teu <span>trabalho?</span>', True)}
 <p class="lead">Marca o pacote, assina e manda pra gente no WhatsApp. Começamos na semana seguinte.</p>
 <div class="chk">
@@ -268,4 +373,4 @@ p7 = page(7, f'''<span class="pill">Próximo passo</span>
 
 open('proposta_debora.html', 'w').write(
     f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Proposta · Débora Brasil Beauty</title>{CSS}</head>'
-    f'<body>{p1}{p2}{p3}{p4}{p5}{p6}{p7}</body></html>')
+    f'<body>{p1}{p2}{p3}{p4}{p5}{p6}{p7}{p8}</body></html>')
