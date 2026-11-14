@@ -5,5 +5,5 @@
 - `fixados/` — os 3 posts fixados em 1080×1440 (3:4). Publicar na ordem 3 → 2 → 1 e fixar os três. `previa-os-tres.png` mostra a peça inteira.
 - `destaques/` — uma pasta por destaque, na ordem do perfil. `00-capa.png` é a capa (postar como story e usar como capa do destaque); os demais são os stories, na ordem.
 
-Antes de postar: confirmar preços, número de WhatsApp e o ano de fundação ("desde 2006").
+Preços: os dos posts atuais. Antes de postar: confirmar o número de WhatsApp e o ano de fundação ("desde 2006").
 Para regerar: `node fonte/mrbook_export.js <proposta.html embrulhada> mr-book/export`.

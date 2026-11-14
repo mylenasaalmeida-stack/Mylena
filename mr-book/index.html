@@ -97,6 +97,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 .price sup{font-size:.34em;margin-top:.08em}
 .from{font-family:var(--mono);font-size:13px}
 .parc{font-family:var(--mono);font-size:13px;background:var(--grafite);color:var(--amarelo);padding:5px 10px;border-radius:6px;justify-self:start}
+.linhas{display:grid;gap:8px}.linhas div{display:flex;flex-wrap:wrap;gap:8px}.linhas div span{font-family:var(--mono);font-size:13px;border:1.5px solid var(--grafite);border-radius:999px;padding:5px 12px}
 .kit .note{font-size:13px;color:var(--grafite-3)}
 
 /* cores */
@@ -399,19 +400,19 @@ const WA = '5581982955372';
 const waLink = msg => 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
 function bindWa(root){ root.querySelectorAll('[data-wa]').forEach(a => { a.href = waLink(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; }); }
 
-// Preços de referência tirados dos posts atuais do perfil. Confirmar antes de publicar.
+// Preços dos posts atuais do perfil.
 const KITS = [
   {id:'enf', curso:'Enfermagem', nome:'Kit Acadêmico Enfermagem', para:'Graduação · do 1º período ao estágio',
-   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro de pulso G-Tech','Termômetro digital','Óculos de proteção','Estojo com zíper'],
+   itens:['Estetoscópio','Esfigmomanômetro','Óculos de proteção','Garrote tipo soro','Garrote automático','Necessaire do kit'], linhas:true,
    preco:'220', cent:',00', de:null, parc:'ou 4x de R$ 55,00'},
   {id:'tec', curso:'Técnico em Enfermagem', nome:'Kit Completo Técnico', para:'Curso técnico · lista do estágio',
-   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro','Glicosímetro com tiras','Garrote automático e tradicional','Óculos de proteção'],
+   itens:['Estetoscópio','Esfigmomanômetro','Oxímetro','Glicosímetro','Termômetro digital','Garrote automático e tradicional','Óculos de proteção','Necessaire do kit'],
    preco:'349', cent:',00', de:null, parc:'ou 4x de R$ 87,25'},
   {id:'fisio', curso:'Fisioterapia', nome:'Kit Fisioterapia', para:'Graduação · avaliação física',
    itens:['Estetoscópio','Esfigmomanômetro','Oxímetro','Martelo de reflexo','Goniômetro acrílico','Fita antropométrica'],
    preco:'259', cent:',00', de:null, parc:'à vista · a partir de', from:true},
   {id:'med', curso:'Medicina', nome:'Kit BIC Eternity', para:'Medicina e Fisioterapia · semiologia',
-   itens:['Estetoscópio BIC Eternity','Esfigmomanômetro','Goniômetro','Martelo de reflexo','Estojo de transporte','Escolha a cor do esteto'],
+   itens:['Estetoscópio BIC Eternity','Esfigmomanômetro','Goniômetro','Martelo de reflexo','Necessaire da linha','Escolha a cor do esteto'],
    preco:'454', cent:',00', de:'478,00', parc:'ou 4x de R$ 113,50'},
   {id:'odonto', curso:'Odontologia', nome:'Kit Odonto + Livros', para:'Graduação · clínica e prótese',
    itens:['Manual de instrumentais odontológicos','Prótese Total (Nakagomi · Mukai)','Implantes Dentários','Óculos de proteção','Avental e bolsa bordada','Consulte outros itens'],
@@ -429,7 +430,8 @@ function showKit(i){
       <span class="for">${k.para}</span>
       <h3>${k.nome}</h3>
       <ul>${k.itens.map(x => `<li>${x}</li>`).join('')}</ul>
-      <p class="note">Itens e marcas podem variar conforme estoque. A cor do estetoscópio você escolhe.</p>
+      ${k.linhas ? `<div class="linhas"><span class="for">Escolha a linha</span><div>${['BIC Eternity','BIC','P.A.MED'].map(l=>`<span>${l}</span>`).join('')}</div></div>` : ''}
+      <p class="note">A necessaire acompanha a linha escolhida: da própria marca (BIC, P.A.MED) ou a necessaire personalizada Mr.Book. A cor do estetoscópio você escolhe.</p>
     </div>
     <div class="buy">
       ${k.de ? `<span class="from"><s>de R$ ${k.de}</s> por</span>` : (k.from ? `<span class="from">a partir de</span>` : '<span class="from">kit completo</span>')}
