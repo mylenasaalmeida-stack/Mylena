@@ -1,0 +1,32 @@
+LANDING PAGE · DÉBORA BRASIL BEAUTY
+===================================
+
+Arquivo para publicar: landing/index.html
+É um arquivo único: fotos e fontes já estão dentro dele. Dá para subir
+direto na Netlify, Vercel, Hostinger ou qualquer hospedagem.
+
+ANTES DE PUBLICAR, CONFIRMAR COM A DÉBORA
+1. WhatsApp: o número está como 5581900000000 (provisório).
+   Trocar em fonte/landing.html, na linha:  const WHATSAPP = '5581900000000';
+   Depois rodar:  python3 fonte/build.py
+2. Horário: a página diz "Seg a sáb · 9h às 18h". O 9h–18h veio do WhatsApp
+   Business dela; os dias foram suposição.
+3. Durações no FAQ (micro 1 a 2 anos, brow e lash 4 a 8 semanas) são médias
+   de mercado. Ela deve ajustar ao que ela pratica.
+4. "Material descartável e ambiente higienizado" (bloco Biossegurança):
+   confirmar que ela pode afirmar isso.
+5. "Mãe do Pietro" aparece no texto sobre ela (veio do nome do WhatsApp dela).
+   Confirmar se ela quer isso no site.
+6. Fotos de resultado: recortadas dos posts do Instagram dela. Se ela tiver
+   os arquivos originais, a qualidade melhora bastante.
+
+O QUE TEM NA PÁGINA
+Topo com agendamento · Faixa de serviços · "Cansou de desenhar a sobrancelha?"
+· 5 serviços com botão de WhatsApp · Galeria de resultados · Sobre a Débora
+· Como funciona (4 passos) · Agendamento (escolhe serviço, período e nome,
+e a mensagem já abre pronta no WhatsApp) · Dúvidas · Onde estamos com
+"Como chegar" no Google Maps · Chamada final · Botão flutuante de WhatsApp.
+
+PARA EDITAR
+fonte/landing.html e fonte/perfil.html são os arquivos de trabalho
+(com as fotos em fonte/img). fonte/build.py gera as versões finais.

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfil @deborabrasilbeauty · mockup</title>
+<style>
+@font-face{font-family:'Gilda';font-weight:400;src:url(fonts/Gilda.woff) format('woff')}
+@font-face{font-family:'Garamond';font-style:italic;src:url(fonts/EBG-i.woff) format('woff')}
+@font-face{font-family:'Jost';font-weight:400;src:url(fonts/Jost-1.woff) format('woff')}
+@font-face{font-family:'Jost';font-weight:500 600;src:url(fonts/Jost-2.woff) format('woff')}
+:root{--creme:#F5EFE8;--malva:#9A7070;--rose:#D8BCBC;--rose-claro:#EBDCD8;--tinta:#3E2C2C;--suave:#7A6262}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',Arial,sans-serif;background:var(--creme);color:var(--tinta);padding:48px 20px 70px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:400px 1fr;gap:64px;align-items:start}
+.kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--malva);font-weight:500}
+h1{font-family:'Gilda',serif;font-weight:400;font-size:52px;line-height:1.05;margin:12px 0 16px}
+h1 em,h2 em{font-family:'Garamond',serif;font-style:italic;color:var(--malva)}
+h2{font-family:'Gilda',serif;font-weight:400;font-size:28px;margin-bottom:14px}
+.lead{color:var(--suave);font-size:17px;line-height:1.6;max-width:36em}
+.bloco{margin-top:36px}
+.campo{background:#fff;border-radius:14px;padding:16px 18px;margin-bottom:10px;font-size:15px;line-height:1.55}
+.campo small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--malva);font-weight:500;margin-bottom:4px}
+.campo pre{font-family:inherit;white-space:pre-wrap}
+.campo .ct{float:right;color:var(--suave);font-size:12px;letter-spacing:0;text-transform:none}
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.posts div{background:#fff;border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.45;color:var(--suave)}
+.posts b{display:block;color:var(--tinta);font-weight:500;margin-bottom:2px}
+.posts b span{color:var(--malva);font-family:'Garamond',serif;font-style:italic;font-size:18px;margin-right:6px}
+
+/* celular */
+.phone{width:400px;background:#111;border-radius:52px;padding:12px;box-shadow:0 40px 80px -40px rgba(62,44,44,.6)}
+.sc{background:#fff;border-radius:41px;overflow:hidden;color:#111;font-size:13.5px;line-height:1.35}
+.status{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 4px;font-weight:600;font-size:14px}
+.status i{width:96px;height:26px;background:#111;border-radius:20px;display:block}
+.top{display:flex;align-items:center;gap:10px;padding:8px 14px 6px;font-weight:600;font-size:18px}
+.top svg{width:22px;height:22px}
+.top .sp{flex:1}
+.head{display:flex;align-items:center;gap:22px;padding:8px 16px 10px}
+.av{width:86px;height:86px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,var(--rose),var(--malva),var(--rose));flex:none}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:62% 22%;border:3px solid #fff;display:block}
+.stats{display:flex;flex:1;justify-content:space-between;text-align:center}
+.stats b{display:block;font-size:16.5px}
+.stats span{font-size:13px}
+.bio{padding:0 16px 10px}
+.bio .nm{font-weight:600}
+.bio .cat{color:#737373}
+.bio pre{font-family:inherit;white-space:pre-wrap}
+.bio .lk{color:#00376b;font-weight:600;display:flex;gap:5px;align-items:center;margin-top:2px}
+.bio .lk svg{width:14px;height:14px}
+.btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:4px 16px 14px}
+.btns span{background:#efefef;border-radius:8px;text-align:center;padding:7px 0;font-weight:600;font-size:13.5px}
+.btns span.on{background:#0095f6;color:#fff}
+.hl{display:flex;gap:13px;padding:2px 14px 14px;overflow:hidden}
+.hl figure{display:flex;flex-direction:column;align-items:center;gap:5px;width:62px;flex:none}
+.hl .ring{width:64px;height:64px;border-radius:50%;border:1px solid #dbdbdb;padding:3px}
+.hl .cv{width:100%;height:100%;border-radius:50%;background:var(--creme);display:grid;place-items:center}
+.hl .cv svg{width:27px;height:27px;stroke:var(--malva);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.hl figcaption{font-size:11.5px;white-space:nowrap}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #efefef}
+.tabs span{display:grid;place-items:center;padding:9px 0}
+.tabs span.on{border-bottom:1.5px solid #111}
+.tabs svg{width:22px;height:22px;stroke:#111;fill:none;stroke-width:1.7}
+.tabs span:not(.on) svg{stroke:#9a9a9a}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5px}
+.t{aspect-ratio:3/4;min-width:0;position:relative;overflow:hidden;background:var(--creme);container-type:inline-size}
+.t>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ico{position:absolute;top:6px;right:6px;width:15px;height:15px;fill:#fff;z-index:4;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+/* artes */
+.p1 img{object-position:50% 18%}
+.p1 .band{position:absolute;left:0;right:0;bottom:0;background:var(--creme);padding:6cqw 7cqw 7cqw;text-align:center}
+.p1 .band small{font-size:4.6cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--malva)}
+.p1 .band b{display:block;font-family:'Gilda';font-weight:400;font-size:11cqw;line-height:1;color:var(--tinta);margin-top:1.5cqw}
+.p1 .band b em{font-family:'Garamond';font-style:italic;color:var(--malva)}
+.p2{background:var(--malva)!important;color:var(--creme);padding:9% 8%;display:flex;flex-direction:column}
+.p2 .lg{width:34cqw;align-self:center;opacity:.95}
+.p2 b{font-family:'Gilda';font-weight:400;font-size:10.5cqw;line-height:1.05;margin-top:5cqw;text-align:center}
+.p2 b em{font-family:'Garamond';font-style:italic}
+.p2 ul{list-style:none;margin-top:5cqw;font-size:5.6cqw;text-align:center;line-height:1.95}
+.p2 li{border-top:.3cqw solid rgba(245,239,232,.35)}
+.p3 img{object-position:58% 30%}
+.p3 .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,44,44,0) 40%,rgba(62,44,44,.82))}
+.p3 .tx{position:absolute;left:7cqw;right:7cqw;bottom:7cqw;color:#fff}
+.p3 .tx small{font-size:4.6cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+.p3 .tx b{display:block;font-family:'Gilda';font-weight:400;font-size:11cqw;line-height:1.02;margin:1.5cqw 0 2.5cqw}
+.p3 .tx span{display:inline-block;background:var(--creme);color:var(--malva);font-size:4.8cqw;font-weight:600;padding:1.8cqw 4cqw;border-radius:9cqw}
+.p4 .lab{position:absolute;left:5cqw;top:5cqw;background:rgba(245,239,232,.92);color:var(--malva);font-size:4.4cqw;letter-spacing:.14em;text-transform:uppercase;padding:1.6cqw 3.5cqw;border-radius:6cqw;font-weight:500}
+.p4 .ft{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(62,44,44,.8));padding:14cqw 6cqw 6cqw;color:#fff;font-family:'Gilda';font-size:9cqw;line-height:1.05}
+.p5{padding:8% 7%;display:flex;flex-direction:column}
+.p5 small{font-size:4.6cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--malva)}
+.p5 b{font-family:'Gilda';font-weight:400;font-size:11.5cqw;line-height:1.02;margin-top:3cqw}
+.p5 b em{font-family:'Garamond';font-style:italic;color:var(--malva)}
+.p5 .ft{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between}
+.p5 .ft img{width:44cqw;height:44cqw;object-fit:cover;border-radius:50% 50% 6cqw 6cqw;object-position:30% 40%}
+.p5 .ft span{font-size:4.6cqw;color:var(--suave)}
+.p6 .lab{position:absolute;left:5cqw;top:5cqw;background:var(--malva);color:#fff;font-size:4.4cqw;letter-spacing:.14em;text-transform:uppercase;padding:1.6cqw 3.5cqw;border-radius:6cqw;font-weight:500}
+.p6 .ft{position:absolute;left:0;right:0;bottom:0;background:var(--creme);padding:5cqw 6cqw;font-family:'Gilda';font-size:8.6cqw;line-height:1.05;color:var(--tinta)}
+.p6 .ft em{font-family:'Garamond';font-style:italic;color:var(--malva)}
+.nova{position:absolute;inset:0;border:2.5px solid #0095f6;z-index:5;pointer-events:none}
+.leg{font-size:13.5px;color:var(--suave);margin-top:14px;text-align:center}
+.leg i{display:inline-block;width:12px;height:12px;border:2px solid #0095f6;vertical-align:-1px;margin-right:4px}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}.phone{margin:0 auto;width:min(400px,100%)}.posts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div>
+<div class="phone" id="celular"><div class="sc">
+  <div class="status"><span>9:41</span><i></i><span>●●● ▮</span></div>
+  <div class="top"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg><span class="sp">deborabrasilbeauty</span><svg viewBox="0 0 24 24" fill="#111"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></div>
+  <div class="head"><div class="av"><img src="img/jaleco-sorrindo.jpg" alt=""></div>
+    <div class="stats"><div><b>497</b><span>posts</span></div><div><b>2.582</b><span>seguidores</span></div><div><b>4.621</b><span>seguindo</span></div></div></div>
+  <div class="bio"><div class="nm">Débora Brasil | Sobrancelhas e Micro</div><div class="cat">Estúdio de beleza</div>
+<pre>Micropigmentação fio a fio • Brow • Lash lifting
+✨ Sobrancelha natural, medida pro seu rosto
+📍 Galeria Ponto Certo · Piedade
+👇 Agende pelo link</pre>
+    <div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="#00376b" stroke-width="2.2"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>deborabrasilbeauty.com.br</div></div>
+  <div class="btns"><span class="on">Seguir</span><span>Mensagem</span><span>WhatsApp</span></div>
+  <div class="hl">
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16M8 3v4M16 3v4M9 14l2 2 4-4"/></svg></div></div><figcaption>Agende</figcaption></figure>
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><path d="M3 13c3-5 8-7 13-6 2 .4 3.6 1.3 5 2.5"/><path d="M6 12.5l1-2.3M9 11l.8-2.6M12 10.3l.5-2.7M15 10.2l.2-2.6"/></svg></div></div><figcaption>Micro fio</figcaption></figure>
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><path d="M3 12c3-4 8-6 13-5 2 .4 3.6 1.3 5 2.5"/><path d="M4 15c3-3 7-4.5 11-4 2 .3 3.8 1 5.5 2"/></svg></div></div><figcaption>Brow</figcaption></figure>
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><path d="M3 11c4 4 14 4 18 0"/><path d="M6 13l-1.5 3M9.5 14.3l-.7 3.2M14.5 14.3l.7 3.2M18 13l1.5 3M12 14.6v3.4"/></svg></div></div><figcaption>Lash lifting</figcaption></figure>
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><path d="M9 3h6v5H9zM8 8h8l-1 13H9z"/><path d="M10 13h4"/></svg></div></div><figcaption>Make</figcaption></figure>
+    <figure><div class="ring"><div class="cv"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11.5a7 7 0 1 0-14 0C5 15 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div></div><figcaption>Onde</figcaption></figure>
+  </div>
+  <div class="tabs"><span class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></span><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5v7l6-3.5z"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M4 9h13l-3-3M20 15H7l3 3"/></svg></span><span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 19c1.5-3 3.5-4 6-4s4.5 1 6 4"/></svg></span></div>
+  <div class="grid">
+    <div class="t p1"><svg class="ico" viewBox="0 0 24 24"><path d="M16 3l5 5-3 1-4 4 1 5-2 2-4-4-5 5-1-1 5-5-4-4 2-2 5 1 4-4z"/></svg><img src="img/blusa-sorrindo.jpg" alt=""><div class="band"><small>Prazer</small><b>Eu sou a <em>Débora</em></b></div><div class="nova"></div></div>
+    <div class="t p2"><svg class="ico" viewBox="0 0 24 24"><path d="M16 3l5 5-3 1-4 4 1 5-2 2-4-4-5 5-1-1 5-5-4-4 2-2 5 1 4-4z"/></svg><img class="lg" src="img/logo-circulo-branco.png" alt="" style="position:static;width:34cqw;height:auto"><b>O que eu faço <em>por você</em></b><ul><li>Design de sobrancelhas</li><li>Micropigmentação fio a fio</li><li>Brow lamination</li><li>Lash lifting · Maquiagem</li></ul><div class="nova"></div></div>
+    <div class="t p3"><svg class="ico" viewBox="0 0 24 24"><path d="M16 3l5 5-3 1-4 4 1 5-2 2-4-4-5 5-1-1 5-5-4-4 2-2 5 1 4-4z"/></svg><img src="img/celular.jpg" alt=""><div class="sh"></div><div class="tx"><small>Agenda aberta</small><b>Como agendar seu horário</b><span>Link na bio</span></div><div class="nova"></div></div>
+    <div class="t p4"><svg class="ico" viewBox="0 0 24 24"><path d="M3 5h4l2-2h6l2 2h4v15H3z" fill="none" stroke="#fff" stroke-width="2"/><rect x="7" y="8" width="10" height="9" fill="#fff"/></svg><img src="img/res-07.jpg" alt=""><span class="lab">Resultado real</span><div class="ft">Micro fio a fio, natural de perto</div><div class="nova"></div></div>
+    <div class="t p5"><svg class="ico" viewBox="0 0 24 24" fill="#9A7070"><rect x="3" y="3" width="13" height="13" rx="2"/><rect x="8" y="8" width="13" height="13" rx="2" fill="#D8BCBC"/></svg><small>Micropigmentação</small><b>3 sinais de que ela <em>é pra você</em></b><div class="ft"><span>arrasta pro lado →</span><img src="img/caneta.jpg" alt=""></div><div class="nova"></div></div>
+    <div class="t p6"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#fff" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg><img src="img/res-11.jpg" alt=""><span class="lab">Brow lamination</span><div class="ft">Fios alinhados, <em>sobrancelha cheia</em></div><div class="nova"></div></div>
+    <div class="t"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#fff" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg><img src="img/res-08.jpg" alt=""></div>
+    <div class="t"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#fff" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg><img src="img/res-05.jpg" alt=""></div>
+    <div class="t"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="#fff" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="#fff"/></svg><img src="img/res-03.jpg" alt=""></div>
+  </div>
+</div></div>
+<p class="leg"><i></i>os 6 primeiros posts novos · os 3 de cima ficam fixados</p>
+</div>
+
+<div>
+  <span class="kicker">Mockup do perfil · @deborabrasilbeauty</span>
+  <h1>O perfil <em>depois</em> do trabalho</h1>
+  <p class="lead">Como o Instagram da Débora fica com bio nova, destaques organizados e os 6 primeiros posts na identidade da marca: creme, rosé e malva, com as fotos do ensaio e resultados reais do feed.</p>
+
+  <div class="bloco"><h2>Bio</h2>
+    <div class="campo"><small>Nome (aparece na busca)</small>Débora Brasil | Sobrancelhas e Micro</div>
+    <div class="campo"><small>Categoria</small>Estúdio de beleza</div>
+    <div class="campo"><small>Bio <span class="ct" id="cont"></span></small><pre id="biotxt">Micropigmentação fio a fio • Brow • Lash lifting
+✨ Sobrancelha natural, medida pro seu rosto
+📍 Galeria Ponto Certo · Piedade
+👇 Agende pelo link</pre></div>
+    <div class="campo"><small>Link</small>deborabrasilbeauty.com.br, a landing page com serviços, resultados e agendamento pelo WhatsApp</div>
+  </div>
+
+  <div class="bloco"><h2>Destaques</h2>
+    <div class="campo">Agende · Micro fio · Brow · Lash lifting · Make · Onde<br><span style="color:var(--suave);font-size:14px">Capas creme com ícone de traço fino em malva, no lugar das fotos. Nomes curtos para não cortar no celular.</span></div>
+  </div>
+
+  <div class="bloco"><h2>Os 6 primeiros posts</h2>
+    <div class="posts">
+      <div><b><span>01</span>Prazer, eu sou a Débora</b>Fixado. Apresenta quem ela é e o jeito de atender.</div>
+      <div><b><span>02</span>O que eu faço por você</b>Fixado. Todos os serviços num lugar só.</div>
+      <div><b><span>03</span>Como agendar</b>Fixado. Passo a passo e link da bio.</div>
+      <div><b><span>04</span>Resultado real</b>Micro fio a fio de perto, mostrando a naturalidade.</div>
+      <div><b><span>05</span>3 sinais de que a micro é pra você</b>Carrossel educativo que gera salvamento e compartilhamento.</div>
+      <div><b><span>06</span>Brow lamination</b>Reels de resultado, para alcançar quem ainda não segue.</div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+const t=document.getElementById('biotxt').textContent;
+document.getElementById('cont').textContent=[...t].length+'/150 caracteres';
+</script>
+</body>
+</html>
