@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Santino · Cartão de visita</title>
+<link rel="stylesheet" href="base.css">
+<style>
+/* 90x50mm + 3mm de sangria em cada lado */
+@page{size:96mm 56mm;margin:0}
+.page{width:96mm;height:56mm}
+
+/* ---------- FRENTE: respiro ---------- */
+.frente{background:var(--papel)}
+.frente .logo{position:absolute;left:50%;top:24.5mm;transform:translate(-50%,-50%);width:37mm}
+.frente .fio{position:absolute;left:50%;bottom:9.5mm;width:5mm;height:.25mm;background:var(--ouro);transform:translateX(-50%)}
+
+/* ---------- VERSO: o espelho ---------- */
+.verso{background:var(--tinta);color:var(--papel)}
+.verso .txt{position:absolute;left:10mm;top:50%;transform:translateY(-50%);width:48mm}
+.verso .tag{font-size:4.6pt;color:var(--brilho);letter-spacing:.34em}
+.verso h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:15.5pt;line-height:1;margin:2.6mm 0 0;letter-spacing:.01em}
+.verso h2 i{font-weight:400}
+.verso ul{list-style:none;margin-top:4.6mm;font-size:6.1pt;font-weight:300;line-height:1.75;letter-spacing:.03em;color:#d9d4cb}
+.verso ul b{font-weight:500;color:var(--papel)}
+.verso ul span{display:inline-block;width:3.6mm;color:var(--brilho);font-size:5.4pt}
+.verso .estrelas{color:var(--brilho);letter-spacing:.1em}
+.verso .mono{position:absolute;left:10mm;bottom:8.6mm;width:4.2mm;opacity:.9}
+.verso .assin{position:absolute;left:16mm;bottom:9.4mm;font-size:4.4pt;letter-spacing:.38em;color:var(--cinza)}
+.verso svg.espelho{position:absolute;right:11mm;top:8.5mm;width:24mm;height:38.4mm;overflow:visible}
+.verso .aponte{position:absolute;right:11mm;width:24mm;bottom:5.6mm;text-align:center;font-size:3.8pt;letter-spacing:.3em;color:var(--cinza)}
+</style></head><body>
+
+<section class="page frente">
+  <img class="logo" src="img/logo_full.png" alt="Santino Barber Studio">
+  <div class="fio"></div>
+</section>
+
+<section class="page verso">
+  <div class="txt">
+    <div class="tag caps">Estilo · Cuidado · Exclusividade</div>
+    <h2>Agende<br><i>seu horário.</i></h2>
+    <ul>
+      <li><span>@</span><b>santinobarbearia</b></li>
+      <li><span>↗</span>Agendamento online pelo Booksy</li>
+      <li><span>⌖</span>Piedade · Jaboatão dos Guararapes · PE</li>
+      <li><span>★</span><span class="estrelas" style="width:auto">5,0</span> no Google</li>
+    </ul>
+  </div>
+
+  <!-- o espelho orgânico com LED do estúdio vira a moldura do QR -->
+  <svg class="espelho" viewBox="0 0 100 160" preserveAspectRatio="none">
+    <defs>
+      <path id="b" d="M50,4 C70,2 84,10 82,26 C80,38 93,45 93,63 C93,82 81,92 85,110 C89,131 76,156 52,156 C28,156 13,142 15,120 C17,102 7,92 7,72 C7,52 20,42 18,28 C16,12 30,5 50,4 Z"/>
+      <filter id="g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+    </defs>
+    <use href="#b" fill="none" stroke="#E8A64E" stroke-width="7" filter="url(#g)" opacity=".75"/>
+    <use href="#b" fill="#F6F3EE" stroke="#F3D49A" stroke-width="1.2"/>
+    <image href="img/qr_dark.svg" x="21" y="51" width="58" height="58" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
+  <div class="aponte caps">Aponte a câmera</div>
+</section>
+
+</body></html>

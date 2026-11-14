@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Santino · Panfleto A5</title>
+<link rel="stylesheet" href="base.css">
+<style>
+/* A5 148x210mm + 3mm de sangria */
+@page{size:154mm 216mm;margin:0}
+.page{width:154mm;height:216mm}
+svg.blob{position:absolute;overflow:visible}
+
+/* ---------- FRENTE ---------- */
+.frente{background:var(--papel)}
+.frente .topo{position:absolute;left:17mm;right:17mm;top:15mm;display:flex;justify-content:space-between;font-size:5.6pt;color:var(--cinza)}
+.frente .logo{position:absolute;left:50%;top:24mm;width:34mm;transform:translateX(-50%)}
+.frente svg.blob{left:41mm;top:49mm;width:72mm;height:115.2mm}
+.frente h1{position:absolute;left:0;right:0;top:174mm;text-align:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25pt;line-height:1;letter-spacing:-.005em}
+.frente .sub{position:absolute;left:0;right:0;top:185.5mm;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13pt;color:var(--ouro)}
+.frente .pe{position:absolute;left:17mm;right:17mm;bottom:12mm;display:flex;justify-content:space-between;font-size:5.4pt;color:var(--cinza)}
+
+/* ---------- VERSO ---------- */
+.verso{background:var(--tinta);color:var(--papel)}
+.verso .cab{position:absolute;left:18mm;top:19mm;width:118mm}
+.verso .tag{font-size:5.6pt;color:var(--brilho)}
+.verso h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:25pt;line-height:1.02;margin-top:4mm}
+.verso h2 i{color:var(--brilho)}
+.verso ol{position:absolute;left:18mm;top:58mm;width:62mm;list-style:none}
+.verso li{display:grid;grid-template-columns:8mm 1fr;padding:3.1mm 0;border-top:.2mm solid #3a3732}
+.verso li:last-child{border-bottom:.2mm solid #3a3732}
+.verso li .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10pt;color:var(--brilho);line-height:1.2}
+.verso li b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:13pt;line-height:1.15}
+.verso li span{display:block;font-size:6.6pt;font-weight:300;color:#bdb7ad;margin-top:.8mm;line-height:1.45}
+.verso .foto{position:absolute;right:18mm;top:58mm;width:44mm;height:78mm;border-radius:22mm 22mm 1.2mm 1.2mm;overflow:hidden}
+.verso .foto img{width:100%;height:100%;object-fit:cover;object-position:62% 60%}
+.verso .legenda{position:absolute;right:18mm;width:44mm;top:139mm;font-size:5pt;color:var(--cinza);text-align:center}
+.verso .nota{position:absolute;left:18mm;top:146mm;width:62mm}
+.verso .nota .g{display:flex;align-items:baseline;gap:2.4mm}
+.verso .nota .num{font-family:'Cormorant Garamond',serif;font-size:30pt;line-height:.9;font-weight:500}
+.verso .nota .st{color:var(--brilho);font-size:9pt;letter-spacing:.12em}
+.verso .nota .q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10.5pt;line-height:1.25;color:#e3ded5;margin-top:2.6mm}
+.verso .nota .a{font-size:5.4pt;color:var(--cinza);margin-top:1.6mm}
+.verso .rodape{position:absolute;left:18mm;right:50mm;bottom:15mm;height:26mm;border-top:.2mm solid #3a3732;padding-top:6mm}
+.verso .cta{font-family:'Cormorant Garamond',serif;font-size:17pt;line-height:1}
+.verso .cta i{color:var(--brilho)}
+.verso .info{font-size:6.2pt;font-weight:300;color:#bdb7ad;margin-top:2.6mm;line-height:1.6}
+.verso .info b{color:var(--papel);font-weight:500}
+.verso svg.blob{right:18mm;bottom:12mm;width:23mm;height:36.8mm}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <path id="b" d="M50,4 C70,2 84,10 82,26 C80,38 93,45 93,63 C93,82 81,92 85,110 C89,131 76,156 52,156 C28,156 13,142 15,120 C17,102 7,92 7,72 C7,52 20,42 18,28 C16,12 30,5 50,4 Z"/>
+    <clipPath id="clip"><use href="#b"/></clipPath>
+    <filter id="g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4.5"/></filter>
+  </defs>
+</svg>
+
+<!-- FRENTE: o espelho do estúdio como janela da foto -->
+<section class="page frente">
+  <div class="topo caps"><span>Estética &amp; cuidados masculinos</span><span>Piedade · PE</span></div>
+  <img class="logo" src="img/logo_full.png" alt="Santino Barber Studio">
+  <svg class="blob" viewBox="0 0 100 160" preserveAspectRatio="none">
+    <use href="#b" fill="none" stroke="#E8A64E" stroke-width="5" filter="url(#g)" opacity=".85"/>
+    <image href="img/foto_cadeira.jpg" x="-8" y="0" width="116" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <use href="#b" fill="none" stroke="#F3D49A" stroke-width=".9"/>
+  </svg>
+  <h1>Não é só cortar o cabelo.</h1>
+  <div class="sub">É sair daqui se sentindo bem cuidado.</div>
+  <div class="pe caps"><span>@santinobarbearia</span><span>Agende pelo Booksy</span></div>
+</section>
+
+<!-- VERSO -->
+<section class="page verso">
+  <div class="cab">
+    <div class="tag caps">Estilo · Cuidado · Exclusividade</div>
+    <h2>O cuidado completo,<br><i>em um só lugar.</i></h2>
+  </div>
+
+  <ol>
+    <li><div class="n">01</div><div><b>Corte</b><span>Do clássico ao degradê, no seu estilo.</span></div></li>
+    <li><div class="n">02</div><div><b>Barba</b><span>Toalha quente, navalha e acabamento.</span></div></li>
+    <li><div class="n">03</div><div><b>Corte + Barba</b><span>O ritual completo, sem pressa.</span></div></li>
+    <li><div class="n">04</div><div><b>Limpeza de pele</b><span>Higienização profunda e hidratação.</span></div></li>
+    <li><div class="n">05</div><div><b>Máscara de LED</b><span>Fototerapia que revitaliza a pele.</span></div></li>
+  </ol>
+
+  <div class="foto"><img src="img/foto_estetica.jpg" alt=""></div>
+  <div class="legenda caps">Sala de estética</div>
+
+  <div class="nota">
+    <div class="g"><span class="num">5,0</span><span class="st">★★★★★</span></div>
+    <div class="q">“Atendimento diferenciado, ambiente de qualidade.”</div>
+    <div class="a caps">Danilo Santos · Avaliação no Google</div>
+  </div>
+
+  <div class="rodape">
+    <div class="cta">Agende <i>seu horário.</i></div>
+    <div class="info"><b>@santinobarbearia</b> · horários e valores no Booksy<br>Piedade · Jaboatão dos Guararapes · PE</div>
+  </div>
+  <svg class="blob" viewBox="0 0 100 160" preserveAspectRatio="none">
+    <use href="#b" fill="none" stroke="#E8A64E" stroke-width="7" filter="url(#g)" opacity=".7"/>
+    <use href="#b" fill="#F6F3EE" stroke="#F3D49A" stroke-width="1.2"/>
+    <image href="img/qr_dark.svg" x="21" y="51" width="58" height="58"/>
+  </svg>
+</section>
+</body></html>

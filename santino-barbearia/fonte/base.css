@@ -1,0 +1,16 @@
+@import url('fonts.css');
+:root{
+  --papel:#F6F3EE;   /* off-white quente: o "respiro" */
+  --tinta:#141414;   /* preto do logo */
+  --carvao:#1B1B1B;
+  --ouro:#B8935A;    /* dourado do LED, versão impressa */
+  --brilho:#E8BE78;  /* brilho do espelho */
+  --cinza:#8A857D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#fff}
+body{font-family:'Jost',sans-serif;color:var(--tinta);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{position:relative;overflow:hidden;page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto;break-after:auto}
+.serif{font-family:'Cormorant Garamond',serif}
+.caps{text-transform:uppercase;letter-spacing:.32em;font-weight:400}
