@@ -97,19 +97,24 @@ p3 = page(3, '''<div class="k">02 · Fotos</div><h2>Qual foto <span>usar onde</s
 <p class="small">Mesma roupa da feira (blazer preto e blusa clara) para manter a identidade com a paleta preta e verde.</p>''')
 
 p4 = page(4, f'''<div class="k">03 · Posts fixados</div><h2>Três posts <span>fixados</span></h2>
-<p class="lead" style="margin-bottom:3mm">Três posts fixados: quem sou (foto + gancho “Restaurante cheio não é restaurante com lucro”), case da pizzaria (só com autorização da casa) e a oferta em formato de nota.</p>
+<p class="lead" style="margin-bottom:3mm">Três posts fixados: quem sou (foto + gancho “Seu restaurante não precisa vender mais. Precisa lucrar com o que já vende.”), case da pizzaria (só com autorização da casa) e a oferta em formato de nota.</p>
 <div class="grid3" style="gap:4mm">{th(A + "01_fixado_1_quem_sou.jpg", 70)}{th(A + "01_fixado_2_case.jpg", 70)}{th(A + "01_fixado_3_diagnostico.jpg", 70)}</div>
-<div class="lg" style="margin-top:5mm"><b>Legenda</b>Gestão de restaurante sem complicação: prazer, sou a Mylena 👋
-Eu ajudo restaurantes, bares e delivery de Recife a lucrar com o que já vendem.
+<div class="lg" style="margin-top:5mm"><b>Legenda · fixado 1</b>Lucro no restaurante: o problema quase nunca é vender pouco.
+É não saber quanto sobra de cada venda.
 
-Trabalho com três frentes:
+Prazer, sou a Mylena 👋
+Aqui em Recife, eu ajudo restaurantes, bares e delivery a lucrar com o que já vendem, em três frentes:
+
 1. Custo certo: quanto custa cada prato e quanto sobra de verdade.
-2. Cardápio que vende: organização, preço e destaque para o que dá lucro.
-3. Marca que atrai: identidade visual e Instagram que trazem cliente.
+2. Cardápio que vende: preço e destaque para o que dá lucro.
+3. Marca que atrai: imagem e Instagram que trazem cliente.
 
-Quer começar? Faço um diagnóstico de lucro gratuito de 30 minutos. É só chamar no WhatsApp (link na bio).
+Antes de pensar em vender mais, vale descobrir quanto você já ganha.
+Faço um diagnóstico de lucro gratuito de 30 minutos: calculamos juntos o custo e a margem de 1 produto do seu cardápio.
 
-#gestaoderestaurantes #cmv #cardapio #gastronomiarecife #foodservice</div>''')
+👉 Me chama no WhatsApp pelo link da bio.
+
+#gestaoderestaurantes #lucro #cmv #gastronomiarecife #foodservice</div>''')
 
 p5 = page(5, f'''<div class="k">04 · Carrossel de autoridade</div><h2>3 erros que fazem <span>vender e não lucrar</span></h2><p class="lead" style="margin-bottom:3mm">Capa com foto e gancho; um erro por slide em card claro; slide final com foto e “Comente CMV”.</p>
 <div class="grid3" style="gap:3mm;grid-template-columns:repeat(5,1fr)">''' + ''.join(th(A + f + '.jpg', 42) for f in ['02_carrossel_1_capa', '02_carrossel_2_erro1', '02_carrossel_3_erro2', '02_carrossel_4_erro3', '02_carrossel_5_cta']) + '''</div>
