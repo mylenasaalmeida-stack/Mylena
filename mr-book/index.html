@@ -46,7 +46,7 @@ h2{font-size:clamp(32px,5vw,58px)}
 
 /* wordmark */
 .wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:baseline;white-space:nowrap}
-.wm .oo{height:.535em;width:1.24em;margin:0 .01em;overflow:visible;flex:none;transform:translateY(.012em)}
+.wm .ook{height:.83em;width:2.72em;margin-left:-.02em;overflow:visible;flex:none;transform:translateY(.02em)}
 
 /* topo */
 .top{position:sticky;top:0;z-index:30;background:var(--amarelo);border-bottom:2px solid var(--grafite)}
@@ -198,11 +198,21 @@ footer .wm{font-size:24px;color:var(--amarelo)}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="oo" viewBox="0 0 124 53.5">
-      <circle cx="26.75" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
-      <circle cx="97.25" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
-      <rect x="44" y="21.75" width="36" height="10" fill="currentColor"/>
-      <circle cx="97.25" cy="26.75" r="5.2" fill="currentColor"/>
+    <!-- "ook" desenhado como estetoscópio: o = auscultador, tubo esticado, o = volta do tubo, k = olivas -->
+    <symbol id="ook" viewBox="0 0 272 83">
+      <clipPath id="ookBase"><rect x="0" y="0" width="272" height="81"/></clipPath>
+      <ellipse cx="38.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <rect x="74" y="47" width="12" height="16" rx="2.5" fill="currentColor"/>
+      <path d="M85 55 H118" stroke="currentColor" stroke-width="9" fill="none"/>
+      <ellipse cx="153.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <path d="M189 55 H206" stroke="currentColor" stroke-width="9" fill="none"/>
+      <g clip-path="url(#ookBase)" stroke="currentColor" stroke-width="20" fill="none">
+        <path d="M214 14 V82"/>
+        <path d="M220 60 L256 22"/>
+        <path d="M219 50 L262 93"/>
+      </g>
+      <circle cx="214" cy="10.5" r="11.5" fill="currentColor"/>
+      <circle cx="258.5" cy="17" r="11.5" fill="currentColor"/>
     </symbol>
     <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></symbol>
   </defs>
@@ -210,7 +220,7 @@ footer .wm{font-size:24px;color:var(--amarelo)}
 
 <header class="top">
   <div class="in">
-    <a class="wm" href="#inicio" aria-label="mr.book, início">mr.b<svg class="oo"><use href="#oo"/></svg>k</a>
+    <a class="wm" href="#inicio" aria-label="mr.book, início">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></a>
     <a class="btn solid" data-wa="Oi! Vim pelo site e quero montar meu kit." href="#"><svg><use href="#wa"/></svg><span>Falar no WhatsApp</span></a>
   </div>
 </header>
@@ -379,7 +389,7 @@ footer .wm{font-size:24px;color:var(--amarelo)}
 </main>
 
 <footer>
-  <div class="in"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span>Mr.Book Essencial · Material hospitalar e livros de saúde · Recife</span></div>
+  <div class="in"><span class="wm">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span>Mr.Book Essencial · Material hospitalar e livros de saúde · Recife</span></div>
 </footer>
 
 <a class="float" data-wa="Oi! Vim pelo site e quero montar meu kit." href="#"><svg><use href="#wa"/></svg>WhatsApp</a>

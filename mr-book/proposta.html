@@ -50,7 +50,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* wordmark */
 .wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-flex;align-items:baseline;white-space:nowrap}
-.wm .oo{height:.535em;width:1.24em;margin:0 .01em;vertical-align:baseline;overflow:visible;flex:none;transform:translateY(.012em)}
+.wm .ook{height:.83em;width:2.72em;margin-left:-.02em;overflow:visible;flex:none;transform:translateY(.02em)}
 .lockup{display:inline-grid;gap:.18em;justify-items:start}
 .lockup .sub{font-family:var(--mono);font-weight:500;font-size:.13em;letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;padding-left:.15em}
 .lockup .sub i{display:block;width:3.6em;height:1px;background:currentColor}
@@ -91,7 +91,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .logo-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px}
 .logo-row .tile{min-height:200px}
 .avatar{width:120px;height:120px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;color:var(--grafite)}
-.avatar svg{width:72%;height:72%}
+
 .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:32px;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:24px}
 .ba .old{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1;display:flex;gap:10px;align-items:center}
 .ba .arrow{font-family:var(--mono);color:var(--muted)}
@@ -122,7 +122,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ph-top .sp{flex:1}
 .ph-prof{display:grid;grid-template-columns:86px 1fr;gap:18px;align-items:center;padding:0 16px}
 .ph-av{width:86px;height:86px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;color:var(--grafite);box-shadow:0 0 0 2px var(--ig-bg),0 0 0 4px #3A3D44}
-.ph-av svg{width:70%;height:70%}
+
 .ph-name{font-size:14px;font-weight:600;margin-bottom:6px}
 .ph-stats{display:flex;gap:18px;font-size:13px;line-height:1.2}
 .ph-stats b{display:block;font-size:16px}
@@ -234,27 +234,21 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
 <!-- símbolos reutilizáveis -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- o "oo" do wordmark: auscultador de duas faces -->
-    <symbol id="oo" viewBox="0 0 124 53.5">
-      <circle cx="26.75" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
-      <circle cx="97.25" cy="26.75" r="19.5" fill="none" stroke="currentColor" stroke-width="14.5"/>
-      <rect x="44" y="21.75" width="36" height="10" fill="currentColor"/>
-      <circle cx="97.25" cy="26.75" r="5.2" fill="currentColor"/>
-    </symbol>
-    <!-- equilibrista redesenhado: livro na cabeça, corda bamba vira ECG -->
-    <symbol id="boneco" viewBox="0 0 100 100">
-      <g transform="rotate(38 37 22)">
-        <rect x="25" y="13" width="24" height="18" rx="2" fill="currentColor"/>
+    <!-- "ook" desenhado como estetoscópio: o = auscultador, tubo esticado, o = volta do tubo, k = olivas -->
+    <symbol id="ook" viewBox="0 0 272 83">
+      <clipPath id="ookBase"><rect x="0" y="0" width="272" height="81"/></clipPath>
+      <ellipse cx="38.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <rect x="74" y="47" width="12" height="16" rx="2.5" fill="currentColor"/>
+      <path d="M85 55 H118" stroke="currentColor" stroke-width="9" fill="none"/>
+      <ellipse cx="153.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <path d="M189 55 H206" stroke="currentColor" stroke-width="9" fill="none"/>
+      <g clip-path="url(#ookBase)" stroke="currentColor" stroke-width="20" fill="none">
+        <path d="M214 14 V82"/>
+        <path d="M220 60 L256 22"/>
+        <path d="M219 50 L262 93"/>
       </g>
-      <path d="M5 88 H58 l3 -5 l4 9 l4 -15 l4 17 l3 -6 H95" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
-      <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M43 49 L45 67"/>
-        <path d="M43 51 L35 41 L37 33"/>
-        <path d="M44 52 L58 50 L73 47"/>
-        <path d="M45 67 L38 78 L32 86"/>
-        <path d="M45 67 L53 77 L58 86"/>
-      </g>
-      <circle cx="42" cy="41" r="6.5" fill="currentColor"/>
+      <circle cx="214" cy="10.5" r="11.5" fill="currentColor"/>
+      <circle cx="258.5" cy="17" r="11.5" fill="currentColor"/>
     </symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 2.5l6 6-2.2.7-3.6 3.6.4 4.1-1.7 1.7-4.2-4.2-5.4 5.4-1.3-1.3 5.4-5.4-4.2-4.2 1.7-1.7 4.1.4 3.6-3.6z"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.2v7.6l6-3.8z" fill="currentColor"/></symbol>
@@ -279,8 +273,7 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
       <text x="80" y="520" font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="330" letter-spacing="-12" fill="#16181D">20</text>
       <text x="90" y="640" font-family="Archivo, sans-serif" font-weight="900" font-stretch="125%" font-size="120" letter-spacing="-3" fill="#16181D">ANOS</text>
       <text font-family="Instrument Sans, sans-serif" font-weight="600" font-size="62" fill="#16181D"><tspan x="90" y="790">equipando quem</tspan><tspan x="90" y="866">estuda e trabalha</tspan><tspan x="90" y="942">com saúde.</tspan></text>
-      <g transform="translate(70 1020) scale(2.3)" color="#16181D"><use href="#boneco"/></g>
-      <text x="320" y="1180" font-family="IBM Plex Mono, monospace" font-size="30" fill="#16181D">Recife · desde 2006*</text>
+            <text x="90" y="1180" font-family="IBM Plex Mono, monospace" font-size="34" fill="#16181D">Recife · desde 2006* · @mrbookessencial</text>
       <!-- estetoscópio contínuo: olivas no post 1, tubo cruzando o 2, auscultador no 3 -->
       <g fill="none" stroke="#16181D" stroke-linecap="round" stroke-linejoin="round">
         <path d="M800 170 C 780 330 860 470 890 560" stroke-width="20"/>
@@ -322,7 +315,7 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
 
 <nav class="nav" aria-label="Seções">
   <div class="wrap">
-    <span class="wm" aria-label="mr.book">mr.b<svg class="oo"><use href="#oo"/></svg>k</span>
+    <span class="wm" aria-label="mr.book">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span>
     <a href="#diagnostico">Diagnóstico</a>
     <a href="#posicionamento">Posicionamento</a>
     <a href="#logo">Logo</a>
@@ -340,11 +333,11 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
     <div>
       <div class="eyebrow"><b>Proposta de rebrand</b> · Mr.Book Essencial · nov 2026</div>
       <h1 style="margin-top:18px">O kit de quem entra na saúde.</h1>
-      <p class="lede">A Mr.Book deixa de parecer uma livraria com promoções soltas e passa a ser a loja que equipa o estudante de saúde do primeiro semestre ao primeiro plantão. Mesma marca, mesmo amarelo, mesmo equilibrista. Mais clara, mais confiável e mais fácil de comprar.</p>
+      <p class="lede">A Mr.Book deixa de parecer uma livraria com promoções soltas e passa a ser a loja que equipa o estudante de saúde do primeiro semestre ao primeiro plantão. Mesmo nome, mesmo amarelo, com um logo que já diz o que a loja vende. Mais clara, mais confiável e mais fácil de comprar.</p>
       <div class="meta"><span class="chip">Logo</span><span class="chip">Perfil + bio</span><span class="chip">8 destaques</span><span class="chip">3 fixados conectados</span><span class="chip">Landing page</span></div>
     </div>
     <div style="justify-self:end;font-size:clamp(64px,11vw,132px)" class="lockup" aria-label="mr.book essencial">
-      <span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span>
+      <span class="wm">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span>
       <span class="sub">essencial <i></i></span>
     </div>
   </div>
@@ -411,33 +404,33 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
   <div class="wrap">
     <div class="head">
       <div class="eyebrow"><b>03</b> Logo</div>
-      <h2>O equilibrista fica. A letra muda.</h2>
-      <p class="lede">O "oo" de book virou o auscultador de um estetoscópio de duas faces: campânula de um lado, diafragma do outro, ligados pela haste. Quem é da área enxerga; quem não é, lê "book" normalmente. O equilibrista continua: livro na cabeça, braço esticado, andando na corda bamba. Só que agora em traço único, para funcionar pequeno no avatar, e a corda virou uma linha de ECG. Equilíbrio entre estudo e plantão.</p>
+      <h2>O nome vira o estetoscópio.</h2>
+      <p class="lede">O boneco sai e o próprio nome faz o trabalho. Em "book", o primeiro o é o auscultador, o tubo estica até o segundo o e o k vira as hastes com as olivas, a parte que vai no ouvido. Quem é da área enxerga o estetoscópio; quem não é, lê "mr.book" normalmente. Um logo só, sem símbolo à parte, que funciona do avatar ao jaleco bordado.</p>
     </div>
     <div class="logo-stage">
       <div class="tile t-y" style="min-height:320px">
-        <div class="lockup" style="font-size:clamp(58px,9vw,112px)"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="sub">essencial <i></i></span></div>
+        <div class="lockup" style="font-size:clamp(58px,9vw,112px)"><span class="wm">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span class="sub">essencial <i></i></span></div>
         <span class="cap">Assinatura principal</span>
       </div>
       <div class="tile t-d" style="min-height:320px">
-        <svg width="190" height="190" aria-label="Equilibrista redesenhado"><use href="#boneco"/></svg>
-        <span class="cap">Símbolo · o equilibrista</span>
+        <svg width="300" height="92" aria-label="Símbolo ook"><use href="#ook"/></svg>
+        <span class="cap">Símbolo · o "ook" estetoscópio</span>
       </div>
     </div>
     <div class="logo-row">
-      <div class="tile t-w"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="cap">Fundo claro</span></div>
-      <div class="tile t-d"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="oo"><use href="#oo"/></svg>k</span><span class="cap">Fundo escuro</span></div>
-      <div class="tile t-g"><svg width="96" height="42" aria-label="Símbolo oo"><use href="#oo"/></svg><span class="cap">Selo "oo" · favicon</span></div>
-      <div class="tile t-w"><div class="avatar"><svg><use href="#boneco"/></svg></div><span class="cap">Foto de perfil</span></div>
+      <div class="tile t-w"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span class="cap">Fundo claro</span></div>
+      <div class="tile t-d"><span class="wm" style="font-size:clamp(30px,3.2vw,40px)">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span><span class="cap">Fundo escuro</span></div>
+      <div class="tile t-g"><span class="wm" style="font-size:clamp(30px,3.2vw,40px);color:#fff">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="cap">Fundo verde · educativos</span></div>
+      <div class="tile t-w"><div class="avatar"><span class="wm" style="font-size:19px">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span></div><span class="cap">Foto de perfil</span></div>
     </div>
     <div class="ba">
-      <div class="old"><svg width="44" height="44" style="color:#16181D"><use href="#boneco"/></svg><span>Mr.Book<br><span style="font-size:.8em">Essencial</span></span></div>
+      <div class="old"><img src="data:image/jpeg;base64,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" width="110" height="110" alt="Logo atual da Mr.Book Essencial" style="border-radius:50%"><span class="small mono">ATUAL</span></div>
       <div class="arrow mono">→</div>
-      <div style="font-size:52px"><span class="wm">mr.b<svg class="oo"><use href="#oo"/></svg>k</span></div>
+      <div style="font-size:52px"><span class="wm">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span></div>
     </div>
     <div class="notes">
       <div><h3>Por que minúsculo</h3><p>Fica mais próximo, lê como @ e encaixa melhor no círculo do avatar. "Mr." continua ali, só sem pose de livraria antiga.</p></div>
-      <div><h3>Por que "essencial" pequeno</h3><p>O @ continua mrbookessencial, então a palavra não some. Ela vira assinatura secundária, com a linha de ECG ao lado.</p></div>
+      <div><h3>Por que sem boneco</h3><p>Boneco e nome disputavam espaço no avatar e nenhum dos dois aparecia. Agora é uma peça só. "essencial" vira assinatura pequena, já que o @ continua mrbookessencial.</p></div>
       <div><h3>Próximo passo do logo</h3><p>Esta é a direção. Para a versão final, vetorizo em Illustrator/Figma com ajuste fino de espaçamento e exporto PNG, SVG e PDF.</p></div>
     </div>
   </div>
@@ -522,7 +515,7 @@ footer{padding-block:40px;font-size:13px;color:var(--muted);border-top:1px solid
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
         </div>
         <div class="ph-prof">
-          <div class="ph-av"><svg><use href="#boneco"/></svg></div>
+          <div class="ph-av"><span class="wm" style="font-size:13.5px">mr.b<svg class="ook" role="img" aria-label="ook"><use href="#ook"/></svg></span></div>
           <div>
             <div class="ph-name">Mr.Book · Estetoscópios e Kits de Saúde</div>
             <div class="ph-stats"><span><b>371</b>posts</span><span><b>5.946</b>seguidores</span><span><b>812</b>seguindo</span></div>
