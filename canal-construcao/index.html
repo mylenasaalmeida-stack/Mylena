@@ -178,6 +178,19 @@ section{position:relative}
 @media (max-width:1000px){.deps{grid-template-columns:repeat(2,1fr)}.dep.big{min-height:380px}}
 @media (max-width:560px){.deps,.deps-2{grid-template-columns:1fr}.bubble{left:auto;right:4%;bottom:auto;top:-4%}.floor-card{bottom:4%}.dep.big{grid-column:auto;grid-row:auto}.dep{min-height:220px}}
 
+/* ---------- all categories ---------- */
+.allcats{margin-top:48px;background:#fff;border:2px solid var(--line);border-radius:26px;padding:30px}
+.allcats-top{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.allcats-top h3{font-weight:900;font-style:italic;text-transform:uppercase;color:var(--navy);font-size:1.35rem}
+.allcats-top p{color:var(--muted);font-weight:600;font-size:.92rem}
+.allcats-top .btn{background:var(--navy);color:#fff;padding:12px 20px;font-size:.9rem}
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat-i{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:18px 10px;border-radius:18px;background:var(--paper);border:2px solid transparent;font-weight:800;font-size:.86rem;color:var(--navy);transition:border-color .2s,transform .2s,background .2s}
+.cat-i:hover{border-color:var(--yellow);background:#FFFBEA;transform:translateY(-3px)}
+.cat-i .e{width:54px;height:54px;border-radius:16px;background:var(--blue);display:grid;place-items:center;font-size:1.6rem;box-shadow:0 8px 0 -2px var(--yellow)}
+@media (max-width:1000px){.cats{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:560px){.cats{grid-template-columns:repeat(2,1fr)}.allcats{padding:20px}}
+
 /* ---------- why ---------- */
 .why{background:var(--blue);color:#fff;overflow:hidden}
 .why::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,200,20,.12)}
@@ -328,6 +341,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding
         <a href="#ofertas" class="btn btn-y">Ver ofertas da Pré-Black <svg class="ico"><use href="#arrow"/></svg></a>
         <a href="#" class="btn btn-o" data-wa="Olá! Quero fazer um orçamento para minha obra."><svg class="ico"><use href="#wa"/></svg> Mandar minha lista</a>
       </div>
+      <p style="margin:-14px 0 26px;font-size:.9rem;color:#C6CCF5;font-weight:600">Prefere comprar online? <a href="https://www.canalconstrucao.com.br" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:underline">Acesse nossa loja virtual →</a></p>
       <div class="stats">
         <div class="stat"><b>+20 mil</b><span>itens em estoque</span></div>
         <div class="stat"><b>2 lojas</b><span>no Recife</span></div>
@@ -465,6 +479,27 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding
         <h3>Condomínios</h3><p>Manutenção, pintura e reforma de áreas comuns com orçamento sob medida.</p>
         <span class="go">Pedir orçamento <svg class="ico"><use href="#arrow"/></svg></span>
       </a>
+    </div>
+
+    <div class="allcats reveal">
+      <div class="allcats-top">
+        <div><h3>Todos os departamentos</h3><p>Escolha a categoria e receba as opções e preços no WhatsApp.</p></div>
+        <a class="btn" href="https://www.canalconstrucao.com.br" target="_blank" rel="noopener">🛒 Comprar pela loja online</a>
+      </div>
+      <div class="cats">
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Iluminação."><span class="e">💡</span>Iluminação</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Limpeza."><span class="e">🧽</span>Limpeza</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Metais."><span class="e">🚿</span>Metais</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Louças."><span class="e">🚽</span>Louças</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Móveis para Banheiro."><span class="e">🪞</span>Móveis para Banheiro</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Pisos e Revestimentos."><span class="e">🧱</span>Pisos e Revestimentos</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Portas e Fechaduras."><span class="e">🔐</span>Portas e Fechaduras</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Portas e Janelas."><span class="e">🪟</span>Portas e Janelas</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de PVC."><span class="e">🔩</span>PVC</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Tintas."><span class="e">🎨</span>Tintas</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Tubos e Conexões."><span class="e">🚰</span>Tubos e Conexões</a>
+      <a href="#" class="cat-i" data-wa="Olá! Quero ver produtos de Utilidades do Lar."><span class="e">🏠</span>Utilidades do Lar</a>
+      </div>
     </div>
   </div>
 </section>
@@ -615,7 +650,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding
       <h5>Fale com a gente</h5>
       <a href="#" data-wa="Olá! Vim pelo site.">WhatsApp</a>
       <a href="https://www.instagram.com/canalconstrucao/" target="_blank" rel="noopener">Instagram @canalconstrucao</a>
-      <a href="https://www.canalconstrucao.com.br" target="_blank" rel="noopener">canalconstrucao.com.br</a>
+      <a href="https://www.canalconstrucao.com.br" target="_blank" rel="noopener">Loja online · canalconstrucao.com.br</a>
     </div>
     <p class="legal">© <span data-year></span> Canal da Construção &amp; Condomínios. Imagens meramente ilustrativas. Preços e condições sujeitos a alteração sem aviso e válidos enquanto durar o estoque.</p>
   </div>
