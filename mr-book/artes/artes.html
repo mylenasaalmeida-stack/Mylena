@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Mr.Book · Artes do feed</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Prancheta de artes 1080×1440 (3:4). Cada .art vira um PNG. */
+:root{
+  --amarelo:#FFCE1B; --grafite:#16181D; --grafite-3:#3A3E47; --branco:#FFFFFF; --nevoa:#F2F3EF;
+  --verde:#14634F; --pressao:#E2412B; --muted:#60646D;
+  --display:"Archivo","Arial Black",sans-serif; --body:"Instrument Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#999;display:flex;flex-wrap:wrap;gap:40px;padding:40px;font-family:var(--body)}
+.art{width:1080px;height:1440px;position:relative;overflow:hidden;flex:none;color:var(--grafite);background:var(--branco)}
+.wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-block;white-space:nowrap}
+.wm .ook{display:inline-block;height:1.22em;width:2.16em;margin-left:-.02em;vertical-align:-.41em;overflow:visible}
+h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-height:.95;letter-spacing:-.02em}
+
+/* moldura comum */
+.top{position:absolute;left:72px;right:72px;top:64px;display:flex;justify-content:space-between;align-items:center;z-index:3}
+.top .wm{font-size:44px}
+.pill{font-family:var(--mono);font-size:26px;letter-spacing:.08em;text-transform:uppercase;border:3px solid currentColor;border-radius:999px;padding:10px 22px}
+.pill.fill{background:var(--grafite);color:var(--amarelo);border-color:var(--grafite)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:104px;background:var(--grafite);color:var(--branco);display:flex;align-items:center;justify-content:space-between;padding:0 72px;font-family:var(--mono);font-size:26px;letter-spacing:.04em;z-index:3}
+.foot b{color:var(--amarelo);font-weight:600}
+.pag{font-family:var(--mono);font-size:26px;letter-spacing:.1em}
+.ecg{position:absolute;left:0;right:0;height:120px;z-index:1}
+
+/* produto */
+.prod .photo{position:absolute;left:90px;right:90px;top:150px;height:620px;display:grid;place-items:center}
+.prod .photo img{width:100%;height:100%;object-fit:contain;min-height:0}
+.prod .tx{position:absolute;left:72px;right:72px;bottom:450px;z-index:2}
+.prod .tx small{display:block;font-family:var(--mono);font-size:24px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.prod .tx h2{font-size:84px}
+.prod .tx p{font-size:32px;line-height:1.3;margin-top:16px;color:var(--grafite-3)}
+.price{position:absolute;right:64px;bottom:160px;background:var(--amarelo);border:5px solid var(--grafite);border-radius:36px;padding:26px 34px 30px;transform:rotate(-3deg);box-shadow:14px 14px 0 var(--grafite);z-index:2;display:grid;gap:6px;min-width:300px}
+.det{position:absolute;left:72px;bottom:170px;width:440px;font-family:var(--mono);font-size:28px;line-height:1.35;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);z-index:2}
+.price s{font-family:var(--mono);font-size:28px}
+.price .v{display:flex;align-items:flex-start;gap:6px;font-family:var(--display);font-weight:900;font-stretch:112%;font-size:124px;line-height:.82}
+.price .v small{font-size:44px;margin-top:10px}
+.price .v sup{font-size:52px;margin-top:4px}
+.price em{font-style:normal;font-family:var(--mono);font-size:26px;background:var(--grafite);color:var(--amarelo);padding:6px 14px;border-radius:8px;justify-self:start}
+
+/* foto cheia */
+.full img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.full .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,24,29,.15) 0%,rgba(22,24,29,0) 30%,rgba(22,24,29,.75) 70%,rgba(22,24,29,.92) 100%)}
+.full .tx{position:absolute;left:72px;right:72px;bottom:150px;color:var(--branco);z-index:2}
+.full .tx h2{font-size:110px}
+.full .tx h2 mark{background:var(--amarelo);color:var(--grafite);padding:0 14px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.full .tx p{font-size:36px;line-height:1.3;margin-top:26px;max-width:22ch}
+.full .top{color:var(--branco)}
+
+/* capa de carrossel */
+.cover .tx{position:absolute;left:72px;right:72px;top:250px}
+.cover .tx small{display:block;font-family:var(--mono);font-size:30px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:30px}
+.cover .tx h1{font-size:120px;line-height:.92}
+.cover .tx p{font-size:38px;line-height:1.3;margin-top:32px;max-width:13ch;font-weight:600}
+.swipe{position:absolute;right:72px;bottom:150px;font-family:var(--display);font-stretch:112%;font-weight:800;font-size:38px;display:flex;gap:16px;align-items:center;z-index:2}
+.swipe i{display:inline-block;width:90px;height:90px;border-radius:50%;background:currentColor;position:relative}
+.swipe i::after{content:"→";position:absolute;inset:0;display:grid;place-items:center;font-style:normal;color:var(--amarelo);font-size:46px}
+.bg-d .swipe i::after{color:var(--grafite)}
+.cover .img{position:absolute;right:30px;bottom:250px;width:400px;height:400px;z-index:1;background:var(--branco);border-radius:40px;padding:20px}
+.cover .img img{width:100%;height:100%;object-fit:contain}
+
+/* slide de conteúdo */
+.slide .n{position:absolute;left:72px;top:190px;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:220px;line-height:.8;opacity:.18}
+.slide .tx{position:absolute;left:72px;right:72px;top:380px}
+.slide .tx small{display:block;font-family:var(--mono);font-size:28px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px;opacity:.8}
+.slide .tx h2{font-size:88px}
+.slide .tx p{font-size:35px;line-height:1.35;margin-top:26px;max-width:21ch}
+.slide .img{position:absolute;right:60px;bottom:140px;width:440px;height:440px;background:var(--branco);border-radius:40px;border:5px solid var(--grafite);display:grid;place-items:center;overflow:hidden;z-index:2}
+.slide .img img{width:88%;height:88%;object-fit:contain}
+.slide .chip{display:inline-block;margin-top:30px;font-family:var(--mono);font-size:28px;background:var(--grafite);color:var(--amarelo);padding:10px 20px;border-radius:10px}
+.bg-d .slide .chip,.bg-d .chip{background:var(--amarelo);color:var(--grafite)}
+
+/* checklist */
+.check{list-style:none;margin-top:40px;display:grid;gap:26px}
+.check li{display:flex;gap:26px;align-items:center;font-size:44px;font-weight:600}
+.check li::before{content:"";flex:none;width:60px;height:60px;border-radius:14px;border:5px solid currentColor;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4L18 8' fill='none' stroke='%23FFCE1B' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/80% no-repeat}
+
+/* comparativo de linhas */
+.trio{position:absolute;left:60px;right:60px;top:720px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;z-index:2}
+.trio div{background:var(--branco);border:5px solid var(--grafite);border-radius:32px;overflow:hidden;color:var(--grafite)}
+.trio img{width:100%;aspect-ratio:1/1;object-fit:contain;padding:14px}
+.trio b{display:block;font-family:var(--display);font-stretch:118%;font-size:40px;padding:6px 20px 0}
+.trio span{display:block;font-family:var(--mono);font-size:22px;padding:6px 20px 22px;color:var(--muted)}
+
+/* cta */
+.cta .tx{position:absolute;left:72px;right:72px;top:300px}
+.cta .tx h1{font-size:112px;line-height:.92;overflow-wrap:anywhere}
+.cta .tx p{font-size:42px;line-height:1.3;margin-top:36px;font-weight:600;max-width:20ch}
+.zap{display:inline-flex;align-items:center;gap:22px;margin-top:56px;background:var(--grafite);color:var(--amarelo);font-family:var(--display);font-stretch:110%;font-weight:800;font-size:46px;padding:30px 46px;border-radius:999px}
+.bg-d .zap{background:var(--amarelo);color:var(--grafite)}
+.cta .big{position:absolute;right:72px;bottom:190px;font-size:96px}
+
+/* livros */
+.books{position:absolute;left:72px;right:72px;top:720px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.book{aspect-ratio:3/4;border-radius:10px 22px 22px 10px;padding:30px 26px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;font-family:Georgia,serif;font-size:38px;line-height:1.1;box-shadow:inset 16px 0 0 rgba(0,0,0,.2),0 30px 40px -24px rgba(0,0,0,.6)}
+.book small{font-family:var(--mono);font-size:18px;letter-spacing:.1em;opacity:.8}
+.book i{font-style:normal;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:52px;background:var(--amarelo);color:var(--grafite);align-self:flex-start;padding:4px 14px;border-radius:10px}
+
+.bg-y{background:var(--amarelo)}
+.bg-d{background:var(--grafite);color:var(--branco)}
+.bg-d h1,.bg-d h2{color:var(--branco)}
+.bg-d .top .wm{color:var(--amarelo)}
+.bg-g{background:var(--verde);color:var(--branco)}
+.bg-g .top .wm{color:var(--amarelo)}
+.bg-n{background:var(--nevoa)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="ook" viewBox="0 0 216 122">
+      <clipPath id="ookBase"><rect x="0" y="0" width="216" height="81"/></clipPath>
+      <ellipse cx="38.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <ellipse cx="112.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+      <rect x="32" y="80" width="13" height="11" rx="2.5" fill="currentColor"/>
+      <path d="M38.5 89 C38.5 109 52 113 76 113 H140 C158 113 164 104 164 84" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
+      <g clip-path="url(#ookBase)" stroke="currentColor" stroke-width="20" fill="none">
+        <path d="M164 8 V82"/>
+        <path d="M170 60 L205 26"/>
+        <path d="M169 50 L210 93"/>
+      </g>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></symbol>
+</defs></svg>
+
+<div id="out"></div>
+
+<script>
+const IMG = '../landing/img/';
+const WM = '<span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span>';
+const ZAP = '<svg width="54" height="54"><use href="#wa"/></svg>';
+const FOOT = (txt='PEÇA PELO <b>WHATSAPP</b> · ATÉ 4X SEM JUROS') => `<div class="foot"><span>${txt}</span><span>@mrbookessencial</span></div>`;
+const ECG = (y, color='#16181D', op=.14) => `<svg class="ecg" style="top:${y}px" viewBox="0 0 1080 120" preserveAspectRatio="none"><path d="M0 70 H430 l26 -50 l34 100 l36 -110 l36 120 l26 -60 H1080" fill="none" stroke="${color}" stroke-opacity="${op}" stroke-width="8" stroke-linejoin="round"/></svg>`;
+const topo = (right='') => `<div class="top">${WM}${right}</div>`;
+const pag = (i,n) => `<span class="pag">${String(i).padStart(2,'0')} / ${String(n).padStart(2,'0')}</span>`;
+
+const T = {
+  produto: d => `<div class="art prod ${d.bg||''}">
+    ${topo(`<span class="pill ${d.pillFill?'fill':''}">${d.linha}</span>`)}
+    <div class="photo"><img src="${IMG+d.img}"></div>
+    <div class="tx"><h2>${d.titulo}</h2></div>
+    <div class="det">${d.marca}</div>
+    <div class="price">${d.de?`<s>de R$ ${d.de}</s>`:''}<div class="v"><small>R$</small>${d.v}<sup>,${d.c}</sup></div><em>${d.parc}</em></div>
+    ${FOOT()}</div>`,
+  full: d => `<div class="art full">
+    <img class="bg" src="${IMG+d.img}" style="object-position:${d.pos||'50% 30%'}"><div class="shade"></div>
+    ${topo(d.pill?`<span class="pill">${d.pill}</span>`:'')}
+    <div class="tx"><h2>${d.titulo}</h2>${d.desc?`<p>${d.desc}</p>`:''}</div>
+    ${FOOT(d.foot)}</div>`,
+  cover: d => `<div class="art cover ${d.bg}">
+    ${topo(`<span class="pill">${d.pill}</span>`)}
+    ${d.ecg!==false?ECG(1090, d.bg==='bg-y'?'#16181D':'#FFFFFF', .18):''}
+    <div class="tx"><small>${d.eyebrow}</small><h1>${d.titulo}</h1>${d.desc?`<p>${d.desc}</p>`:''}</div>
+    ${d.img?`<div class="img"><img src="${IMG+d.img}"></div>`:''}
+    ${d.trio?`<div class="trio">${d.trio.map(t=>`<div><img src="${IMG+t.img}"><b>${t.nome}</b><span>${t.sub}</span></div>`).join('')}</div>`:''}
+    <div class="swipe">ARRASTA <i></i></div>
+    ${FOOT(d.foot||'MR.BOOK · <b>20 ANOS</b> EM RECIFE')}</div>`,
+  slide: d => `<div class="art ${d.bg}"><div class="slide" style="position:absolute;inset:0">
+    ${topo(pag(d.i,d.n))}
+    <div class="n">${d.num||String(d.i).padStart(2,'0')}</div>
+    <div class="tx"><small>${d.eyebrow}</small><h2>${d.titulo}</h2>${d.desc?`<p>${d.desc}</p>`:''}${d.chip?`<span class="chip">${d.chip}</span>`:''}${d.check?`<ul class="check">${d.check.map(c=>`<li>${c}</li>`).join('')}</ul>`:''}</div>
+    ${d.img?`<div class="img"><img src="${IMG+d.img}"></div>`:''}
+    </div>${FOOT(d.foot||'MR.BOOK · <b>20 ANOS</b> EM RECIFE')}</div>`,
+  cta: d => `<div class="art cta ${d.bg||'bg-y'}">
+    ${topo(d.i?pag(d.i,d.n):'')}
+    ${ECG(1040, d.bg==='bg-d'?'#FFFFFF':'#16181D', .18)}
+    <div class="tx"><h1>${d.titulo}</h1><p>${d.desc}</p><span class="zap">${ZAP} Chama no WhatsApp</span></div>
+    ${FOOT('(81) 98295-5372 · <b>LINK NA BIO</b>')}</div>`,
+  livros: d => `<div class="art cover bg-n">
+    ${topo('<span class="pill">LIVROS DE BOLSO</span>')}
+    <div class="tx" style="top:230px"><small>Martinari · consulta rápida</small><h1 style="font-size:110px">PRA LEVAR NO JALECO</h1></div>
+    <div class="books">${d.livros.map(l=>`<div class="book" style="background:${l.bg}"><small>MARTINARI</small><span>${l.t}</span><i>R$ ${l.p}</i></div>`).join('')}</div>
+    ${FOOT()}</div>`
+};
+
+// ===== Conteúdo (preços dos posts atuais) =====
+const ARTES = [
+  // --- Fixado 1 · Quem somos (slides 2 a 5; a capa é o tríptico)
+  ['fixado-1-quem-somos/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Quem somos', titulo:'COMEÇOU COM LIVRO TÉCNICO.', desc:'Há 20 anos, a Mr.Book vendia os livros que todo estudante de Enfermagem levava para a sala de aula.'}],
+  ['fixado-1-quem-somos/03', 'slide', {bg:'bg-d', i:3, n:5, eyebrow:'Hoje', titulo:'VIROU A LOJA DO KIT.', desc:'Estetoscópio, esfigmo, oxímetro e o kit completo de cada curso, nas linhas BIC Eternity, BIC e P.A.MED.', img:'bic-eternity-vinho-rainbow.jpg'}],
+  ['fixado-1-quem-somos/04', 'slide', {bg:'bg-n', i:4, n:5, eyebrow:'Quem atende', titulo:'É O ANDRÉ QUE SEPARA O SEU PEDIDO.', desc:'Sem robô e sem central. Você fala direto com quem conhece cada produto da prateleira.', chip:'20 anos de balcão'}],
+  ['fixado-1-quem-somos/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'PASSA NA LOJA.', desc:'R. Santa Edwirges, 456 · Afogados, Recife. Ou pede pelo WhatsApp e recebe em casa.'}],
+  // --- Fixado 2 · Kits por curso
+  ['fixado-2-kits-por-curso/02', 'slide', {bg:'bg-y', i:2, n:6, num:'ENF', eyebrow:'Kit Enfermagem · R$ 220', titulo:'ENFERMAGEM', check:['Estetoscópio','Esfigmomanômetro','Óculos de proteção','Garrote tipo soro','Garrote automático','Necessaire do kit'], img:'bic-kit-rosa.jpg'}],
+  ['fixado-2-kits-por-curso/03', 'slide', {bg:'bg-d', i:3, n:6, num:'TÉC', eyebrow:'Kit Completo · 4x de R$ 87,25', titulo:'TÉCNICO EM ENFERMAGEM', desc:'Esteto, esfigmo, oxímetro, glicosímetro, termômetro, garrotes, óculos e necessaire.', img:'pamed-aparelho-preto.jpg'}],
+  ['fixado-2-kits-por-curso/04', 'slide', {bg:'bg-g', i:4, n:6, num:'FISIO', eyebrow:'A partir de R$ 259 à vista', titulo:'FISIOTERAPIA', desc:'Esteto, esfigmo, oxímetro, martelo de reflexo, goniômetro e fita antropométrica.', img:'bic-kit-azul-royal.jpg'}],
+  ['fixado-2-kits-por-curso/05', 'slide', {bg:'bg-n', i:5, n:6, num:'MED', eyebrow:'Kit BIC Eternity · de R$ 478 por R$ 454', titulo:'MEDICINA', desc:'BIC Eternity III, esfigmo, goniômetro, martelo de reflexo e necessaire da linha.', img:'bic-eternity-all-azul-estojo.jpg'}],
+  ['fixado-2-kits-por-curso/06', 'cta', {bg:'bg-y', i:6, n:6, titulo:'NÃO ACHOU SEU CURSO?', desc:'Manda a lista do seu professor que a gente monta o kit pra você.'}],
+  // --- Fixado 3 · Como comprar
+  ['fixado-3-como-comprar/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Passo 1', titulo:'ESCOLHA O KIT.', desc:'Pelo link da bio ou pelo destaque "Monte seu kit". Escolha o curso e a linha: BIC Eternity, BIC ou P.A.MED.'}],
+  ['fixado-3-como-comprar/03', 'slide', {bg:'bg-d', i:3, n:5, eyebrow:'Passo 2', titulo:'CHAMA NO WHATSAPP.', desc:'A mensagem já vai pronta. O André confirma estoque, cor do esteto e frete.', chip:'(81) 98295-5372'}],
+  ['fixado-3-como-comprar/04', 'slide', {bg:'bg-g', i:4, n:5, eyebrow:'Passo 3', titulo:'RECEBE OU RETIRA.', desc:'Enviamos para todo o Brasil ou você retira na loja em Afogados.', chip:'até 4x sem juros'}],
+  ['fixado-3-como-comprar/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'PRODUTO ORIGINAL, COM NOTA.', desc:'Trabalhamos com BIC, P.A.MED, Incoterm, G-Tech e Martinari.'}],
+
+  // --- Carrossel · Qual esteto pro seu curso?
+  ['carrossel-qual-esteto/01', 'cover', {bg:'bg-d', pill:'GUIA RÁPIDO', eyebrow:'Antes de comprar', titulo:'QUAL ESTETO PRO SEU CURSO?', desc:'3 perguntas que o André faz no balcão.', img:'bic-eternity-azul-marinho.jpg'}],
+  ['carrossel-qual-esteto/02', 'slide', {bg:'bg-y', i:2, n:5, eyebrow:'Pergunta 1', titulo:'SIMPLES OU DUPLO?', desc:'O duplo tem diafragma e campânula: escuta som grave e agudo. Para estágio, vá de duplo.', img:'pamed-rappaport-preto.jpg'}],
+  ['carrossel-qual-esteto/03', 'slide', {bg:'bg-n', i:3, n:5, eyebrow:'Pergunta 2', titulo:'QUANTO TEMPO VAI USAR?', desc:'Só a faculdade: P.A.MED ou BIC resolvem. Vai levar pra vida profissional: BIC Eternity, com 5 anos de garantia.', img:'bic-eternity-vinho-rainbow-caixa.jpg'}],
+  ['carrossel-qual-esteto/04', 'slide', {bg:'bg-d', i:4, n:5, eyebrow:'Pergunta 3', titulo:'QUAL É A SUA COR?', desc:'All Black, Rainbow, Rosa, Vinho, Azul. A cor é sua, a qualidade é a mesma.', img:'pamed-rappaport-rosa.jpg'}],
+  ['carrossel-qual-esteto/05', 'cta', {bg:'bg-y', i:5, n:5, titulo:'NA DÚVIDA, PERGUNTA.', desc:'Fala o seu curso e o seu orçamento que o André indica o esteto certo.'}],
+
+  // --- Carrossel · O que levar pro 1º estágio
+  ['carrossel-1o-estagio/01', 'cover', {bg:'bg-g', pill:'SALVA ESSE', eyebrow:'Checklist', titulo:'O QUE LEVAR PRO 1º ESTÁGIO', desc:'A lista que ninguém te passa no primeiro dia.'}],
+  ['carrossel-1o-estagio/02', 'slide', {bg:'bg-y', i:2, n:4, eyebrow:'No bolso do jaleco', titulo:'O BÁSICO', check:['Estetoscópio','Garrote','Relógio de lapela','Caneta e bloquinho']}],
+  ['carrossel-1o-estagio/03', 'slide', {bg:'bg-d', i:3, n:4, eyebrow:'Na necessaire', titulo:'PRA AFERIR', check:['Esfigmomanômetro','Oxímetro de pulso','Termômetro digital','Óculos de proteção']}],
+  ['carrossel-1o-estagio/04', 'cta', {bg:'bg-y', i:4, n:4, titulo:'JÁ VEM TUDO NO KIT.', desc:'Kit Enfermagem a partir de R$ 220, em até 4x sem juros.'}],
+
+  // --- Carrossel · Linhas
+  ['carrossel-linhas/01', 'cover', {bg:'bg-y', pill:'COMPARA', eyebrow:'Linhas do kit', titulo:'QUAL LINHA É A SUA?', ecg:false, trio:[{img:'bic-eternity-vinho-rainbow-caixa.jpg',nome:'BIC Eternity',sub:'top de linha'},{img:'bic-kit-azul-royal.jpg',nome:'BIC',sub:'custo-benefício'},{img:'pamed-aparelho-preto.jpg',nome:'P.A.MED',sub:'clássico do estágio'}]}],
+  ['carrossel-linhas/02', 'slide', {bg:'bg-d', i:2, n:4, eyebrow:'Top de linha', titulo:'BIC ETERNITY', desc:'Auscultador duplo em aço inox, acabamento espelhado e 5 anos de garantia.', img:'bic-eternity-vinho-rainbow.jpg'}],
+  ['carrossel-linhas/03', 'slide', {bg:'bg-n', i:3, n:4, eyebrow:'Custo-benefício e clássico', titulo:'BIC E P.A.MED', desc:'Esfigmo e esteto confiáveis para a rotina do estágio. A necessaire vem da marca ou é a personalizada Mr.Book.', img:'bic-kit-preto.jpg'}],
+  ['carrossel-linhas/04', 'cta', {bg:'bg-y', i:4, n:4, titulo:'ESCOLHE E CHAMA.', desc:'Todas as linhas em até 4x sem juros.'}],
+
+  // --- Posts de produto
+  ['post-produto-bic-eternity-rainbow', 'produto', {linha:'BIC ETERNITY', pillFill:true, img:'bic-eternity-vinho-rainbow.jpg', marca:'Estetoscópio duplo inox', titulo:'ETERNITY III RAINBOW', de:'478,00', v:'454', c:'00', parc:'ou 4x de R$ 113,50'}],
+  ['post-produto-kit-enfermagem', 'produto', {linha:'KIT ENFERMAGEM', pillFill:true, img:'bic-kit-rosa.jpg', marca:'Esteto · esfigmo · garrotes · óculos', titulo:'KIT COMPLETO', v:'220', c:'00', parc:'ou 4x de R$ 55,00'}],
+  ['post-produto-rappaport', 'produto', {linha:'P.A.MED', img:'pamed-rappaport-preto.jpg', marca:'Estetoscópio Rappaport', titulo:'RAPPAPORT P.A.MED', de:'89,00', v:'76', c:'00', parc:'ou 4x de R$ 19,00'}],
+  ['post-produto-oximetro', 'produto', {linha:'G-TECH', img:'gtech-oximetro.jpg', marca:'Acompanha case, cordão, 2 pilhas e capa', titulo:'OXÍMETRO OLED', v:'109', c:'90', parc:'ou 4x de R$ 27,47'}],
+  ['post-produto-esfigmo', 'produto', {linha:'P.A.MED', img:'pamed-aparelho-preto.jpg', marca:'Esfigmomanômetro aneroide', titulo:'APARELHO DE PRESSÃO', v:'109', c:'00', parc:'ou 4x de R$ 27,25'}],
+  ['post-livros-de-bolso', 'livros', {livros:[{t:'Terminologia em Enfermagem',p:'35',bg:'#20325E'},{t:'Manual de Procedimentos para Estágio',p:'35',bg:'#1F4E4A'},{t:'Diário Técnico de Enfermagem',p:'25',bg:'#4B2C6B'}]}],
+
+  // --- Posts com foto
+  ['post-foto-primeiro-plantao', 'full', {img:'estudante-coracao.jpg', pos:'50% 25%', pill:'MONTE SEU KIT', titulo:'O KIT DO SEU <mark>PRIMEIRO PLANTÃO.</mark>', desc:'Separado por quem atende estudante de saúde há 20 anos.'}],
+  ['post-foto-turma', 'full', {img:'estudante-aprovada.jpg', pos:'50% 40%', pill:'TURMAS', titulo:'COMPRA DA TURMA? <mark>CONDIÇÃO ESPECIAL.</mark>', desc:'Um kit por aluno, com nome, entregue na faculdade.', foot:'REPRESENTANTE DE SALA? <b>CHAMA NO WHATSAPP</b>'}],
+  ['post-foto-estudo', 'full', {img:'estudante-estudando.jpg', pos:'38% 50%', pill:'LIVROS', titulo:'ESTUDA COM O <mark>LIVRO CERTO.</mark>', desc:'Manual do Técnico de R$ 339 por R$ 99.'}],
+];
+
+document.getElementById('out').innerHTML = ARTES.map(([out, t, d]) => T[t](d).replace('<div class="art', `<div data-out="${out}" class="art`)).join('');
+</script>
+</body>
+</html>

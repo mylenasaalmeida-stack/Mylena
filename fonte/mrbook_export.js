@@ -70,7 +70,7 @@ const fs = require('fs'), path = require('path');
   await m.waitForTimeout(1500);
   const phone = await m.$('.phone');
   fs.mkdirSync(path.join(OUT, 'perfil'), {recursive: true});
-  await phone.screenshot({path: path.join(OUT, 'perfil/mockup-perfil-instagram.png')});
+  await phone.screenshot({path: path.join(OUT, 'perfil/mockup-perfil-proposta.png')});
   console.log('mockup do perfil');
   await b.close();
 })();

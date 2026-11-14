@@ -8,3 +8,5 @@
 
 Preços: os dos posts atuais. Antes de postar: confirmar o número de WhatsApp e o ano de fundação ("desde 2006").
 Para regerar: `node fonte/mrbook_export.js <proposta.html embrulhada> mr-book/export`.
+- `perfil/mockup-perfil-instagram.png` e `mockup-perfil-instagram-grade.png` — mockup realista (1170×2532) do perfil com bio e da grade.
+- `feed/` — slides internos dos 3 fixados, 3 carrosséis educativos, 6 posts de produto e 3 posts com foto (1080×1440). Gerados de `mr-book/artes/artes.html` com `node fonte/mrbook_artes.js mr-book/artes/artes.html mr-book/export/feed`.
