@@ -444,6 +444,103 @@ footer{margin-top:14px;background:var(--ink);color:#B5B9DD;border-radius:var(--r
 .qv-actions .btn{flex:1}
 @media (max-width:760px){.modal{place-items:end center;padding:0}.modal .box{grid-template-columns:1fr;border-radius:28px 28px 0 0;max-height:92dvh}.qv-img{min-height:300px}.qv-in{padding:22px 20px 28px}}
 
+/* ===== checkout ===== */
+.ck{position:fixed;inset:0;z-index:120;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(24px);transition:opacity .35s,transform .45s var(--ease),visibility 0s .45s}
+.ck.on{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .45s var(--ease)}
+.ck-top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.ck-top .wrap{display:flex;align-items:center;gap:18px;height:70px}
+.ck-top img{height:40px;border-radius:8px}
+.ck-back{display:flex;align-items:center;gap:6px;font-weight:800;font-size:.85rem;color:var(--muted);margin-right:auto;height:40px;padding:0 12px;border-radius:999px}
+.ck-back:hover{background:var(--soft);color:var(--ink)}
+.ck-back svg{transform:rotate(180deg);width:18px;height:18px}
+.secure{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.9rem}
+.secure svg{color:var(--green)}
+.ck-prog{display:flex;gap:6px;list-style:none;padding:20px 0 4px;max-width:760px}
+.ck-prog li{flex:1;font-size:.74rem;font-weight:800;color:var(--muted)}
+.ck-prog li::before{content:"";display:block;height:5px;border-radius:9px;background:var(--line);margin-bottom:8px;transition:background .4s}
+.ck-prog li.done::before{background:var(--green)}
+.ck-prog li.cur::before{background:var(--ink)}
+.ck-prog li.cur{color:var(--ink)}
+.ck-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:start;padding:14px 0 60px}
+.ck-side{position:sticky;top:90px}
+.ck-grid>*{min-width:0}
+.stp .field input,.stp .field select{width:100%;min-width:0}
+.stp{background:#fff;border:2px solid var(--line);border-radius:26px;padding:22px 24px;margin-bottom:14px;transition:border-color .3s,box-shadow .3s}
+.stp.cur{border-color:var(--ink);box-shadow:var(--sh-2)}
+.stp.done{border-color:var(--green)}
+.stp.next{opacity:.5}
+.stp-h{display:flex;align-items:center;gap:14px}
+.stp-h h3{font-family:var(--display);font-weight:800;font-size:1.4rem;letter-spacing:-.03em;flex:1;line-height:1.1}
+.stp .num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--soft);color:var(--muted);flex:none}
+.stp.cur .num{background:var(--ink);color:#fff}
+.stp.done .num{background:var(--green);color:#fff}
+.stp-b{margin-top:20px;animation:in .4s var(--ease)}
+.stp-s{margin-top:14px;font-size:.92rem;color:var(--ink-3);line-height:1.55}
+.lnk{font-weight:800;font-size:.85rem;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.lnk.center{display:block;margin:16px auto 0}
+.kv{display:grid;gap:12px;margin-bottom:12px}
+.kv.two{grid-template-columns:1fr 1fr}
+.kv small{display:block;font-size:.76rem;color:var(--muted);font-weight:700}
+.kv b{font-weight:700;word-break:break-word}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field i{color:var(--red);font-style:normal}
+.field input.bad,.field select.bad{border-color:var(--red);background:#FFF6F6}
+.cep-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cep-row input{flex:1 1 150px;max-width:240px}
+.hint{font-size:.78rem;font-weight:700;color:var(--muted)}
+.hint:empty{display:none}
+.hint.ok{color:var(--green)}.hint.bad{color:var(--red)}
+.err{color:var(--red);font-weight:700;font-size:.82rem;margin:4px 0 12px}
+.err:empty{display:none}
+.opt label em{margin-left:auto;font-style:normal;font-weight:800;font-size:.8rem;color:var(--green);white-space:nowrap}
+.opt label em.ac{color:var(--blue)}
+.opt .pi{width:40px;height:40px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:1.2rem;flex:none}
+.chk2{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;font-weight:600;color:var(--muted);margin:12px 0}
+.chk2 input{width:18px;height:18px;accent-color:var(--ink);margin-top:2px;flex:none}
+.saved{display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;padding-bottom:4px}
+.chip-a{flex:none;text-align:left;border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;background:var(--soft);font-size:.8rem}
+.chip-a b{display:block}
+.chip-a span{color:var(--muted);font-weight:600}
+.chip-a.on{border-color:var(--ink);background:#fff}
+.ck-sum{background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px}
+.ck-sum h4{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.03em;margin-bottom:16px;display:flex;justify-content:space-between;align-items:baseline}
+.ck-sum h4 small{font-family:var(--body);font-size:.8rem;color:var(--muted);letter-spacing:0}
+.ck-items{max-height:320px;overflow:auto;margin-bottom:14px;border-bottom:1px solid var(--line);padding:6px 6px 6px 0}
+.ck-it{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;margin-bottom:12px;font-size:.84rem}
+.ck-it .im{position:relative}
+.ck-it img{width:56px;height:56px;border-radius:12px;object-fit:cover}
+.ck-it i{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;border-radius:999px;background:var(--ink);color:#fff;font-style:normal;font-size:.66rem;font-weight:800;display:grid;place-items:center;padding:0 5px}
+.ck-it b{font-weight:700;display:block;line-height:1.25}
+.ck-it small{color:var(--muted);font-weight:600}
+.ck-it>span{font-weight:800;white-space:nowrap}
+.seal{display:flex;gap:12px;align-items:center;margin-top:16px;background:#E7F8EE;border-radius:16px;padding:12px 14px;font-size:.78rem;color:#145C33;font-weight:600}
+.seal b{display:block;font-size:.88rem}
+.ck-mob{display:none}
+@media (max-width:900px){
+  .ck-grid{grid-template-columns:1fr}.ck-side{display:none}
+  .ck-mob{display:block;background:#fff;border:1px solid var(--line);border-radius:20px;margin:14px 0 0}
+  .ck-mob summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;font-size:.9rem}
+  .ck-mob summary::-webkit-details-marker{display:none}
+  .ck-mob summary span{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+  .ck-mob .ck-sum{border:0;padding-top:4px}
+}
+@media (max-width:560px){.stp{padding:18px;border-radius:22px}.stp-h h3{font-size:1.2rem}.secure span,.ck-back span{display:none}.ck-top img{height:34px}.kv.two{grid-template-columns:1fr}}
+.ck-ok{max-width:640px;margin:40px auto 90px;text-align:center}
+.ck-ok .big{width:96px;height:96px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 22px;box-shadow:0 0 0 12px #E7F8EE;animation:pop2 .6s var(--ease)}
+@keyframes pop2{from{transform:scale(.4);opacity:0}}
+.ck-ok h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.045em;line-height:.95;margin:10px 0 12px}
+.ck-ok>p{color:var(--muted);font-weight:500;max-width:460px;margin:0 auto}
+.tl{list-style:none;text-align:left;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 24px;margin:28px 0}
+.tl li{position:relative;padding:0 0 18px 36px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);background:#fff}
+.tl li::after{content:"";position:absolute;left:10px;top:24px;bottom:0;width:2px;background:var(--line)}
+.tl li:last-child::after{display:none}
+.tl li.done::before{background:var(--green);border-color:var(--green)}
+.tl b{display:block;font-size:.95rem}
+.tl span{color:var(--muted);font-size:.84rem;font-weight:600}
+.ck-ok .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
 /* ===== toast & fly ===== */
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,160%);z-index:130;background:var(--ink);color:#fff;border-radius:18px;padding:10px 10px 10px 12px;display:flex;align-items:center;gap:12px;box-shadow:var(--sh-2);transition:transform .5s var(--ease),opacity .3s;max-width:calc(100% - 24px);font-weight:700;font-size:.88rem;white-space:nowrap}
 .toast{opacity:0;pointer-events:none}
@@ -492,6 +589,7 @@ footer{margin-top:14px;background:var(--ink);color:#B5B9DD;border-radius:var(--r
   <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></g></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5" stroke-linecap="round"/></g></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9.3 8 11 4.5-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></g></symbol>
 </svg>
 
 <!-- ANNOUNCEMENT -->
@@ -740,6 +838,16 @@ footer{margin-top:14px;background:var(--ink);color:#B5B9DD;border-radius:var(--r
 <!-- QUICK VIEW -->
 <div class="modal" id="qv"><div class="box" role="dialog" aria-modal="true" aria-label="Detalhes do produto" id="qvBox"></div></div>
 
+<!-- CHECKOUT -->
+<div class="ck" id="ck" role="dialog" aria-modal="true" aria-label="Finalizar compra">
+  <div class="ck-top"><div class="wrap">
+    <img src="img/logo.png" alt="Canal da Construção">
+    <button class="ck-back" data-ck-close><svg class="ico"><use href="#i-arrow"/></svg><span>Voltar à loja</span></button>
+    <div class="secure"><svg class="ico"><use href="#i-lock"/></svg><span>Compra segura</span></div>
+  </div></div>
+  <div class="wrap" id="ckWrap"></div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -876,29 +984,135 @@ function renderCart(){
     foot.innerHTML="";foot.style.display="none";return;
   }
   foot.style.display="";
-  const t=totals(), ent=($('input[name="ent"]:checked')||{}).value||"Retirar na loja Arruda";
+  const t=totals();
   $("#cartBody").innerHTML=(t.eco>0?`<div class="progress">🎉 Você está economizando <span style="color:var(--green)">${brl(t.eco)}</span> com a Pré-Black<div class="bar"><i style="width:${Math.min(100,25+t.eco/4)}%"></i></div></div>`:"")+
-  cart.map(c=>{const p=byId(c.id);return `<div class="ci"><img src="img/${p.img}" alt=""><div><h4>${esc(p.nome)}</h4><div class="pp">${p.preco==null?"Sob consulta":`<b>${brl(p.preco*c.qty)}</b> · ${brl(p.preco)}/${p.un}`}</div></div><div class="ctl"><span class="step"><button data-dec="${p.id}" aria-label="Diminuir">−</button><input value="${c.qty}" inputmode="numeric" data-qty="${p.id}" aria-label="Quantidade"><span class="un">${p.un}</span><button data-inc="${p.id}" aria-label="Aumentar">+</button></span><button class="rm" data-rm="${p.id}">Remover</button></div></div>`}).join("")+
-  `<div style="margin-top:18px"><div style="font-weight:800;font-size:.9rem">Como você quer receber?</div>
-   <div class="opt">${[["Retirar na loja Arruda","Av. Beberibe, 1501"],["Retirar na loja Boa Viagem","Boa Viagem, Recife"],["Receber em casa","Frete calculado no atendimento"]].map(([v,s])=>`<label><input type="radio" name="ent" value="${v}" ${v===ent?"checked":""}><span>${v}<small>${s}</small></span></label>`).join("")}</div></div>`;
+  cart.map(c=>{const p=byId(c.id);return `<div class="ci"><img src="img/${p.img}" alt=""><div><h4>${esc(p.nome)}</h4><div class="pp">${p.preco==null?"Sob consulta":`<b>${brl(p.preco*c.qty)}</b> · ${brl(p.preco)}/${p.un}`}</div></div><div class="ctl"><span class="step"><button data-dec="${p.id}" aria-label="Diminuir">−</button><input value="${c.qty}" inputmode="numeric" data-qty="${p.id}" aria-label="Quantidade"><span class="un">${p.un}</span><button data-inc="${p.id}" aria-label="Aumentar">+</button></span><button class="rm" data-rm="${p.id}">Remover</button></div></div>`}).join("");
   foot.innerHTML=`${t.sub?`<div class="tot"><span>Subtotal</span><span>${brl(t.sub+t.eco)}</span></div>`:""}${t.eco>0?`<div class="tot" style="color:var(--green)"><span>Desconto Pré-Black</span><span>− ${brl(t.eco)}</span></div>`:""}
     ${t.cons?`<div class="tot"><span>Itens para orçamento</span><span>${t.cons}</span></div>`:""}
     <div class="tot big"><span>Total</span><b>${t.sub?brl(t.sub):"A orçar"}</b></div>
     ${t.sub&&t.cons?`<div class="tot" style="justify-content:flex-end;font-size:.76rem;padding:0">+ itens sob consulta</div>`:""}
-    <p class="note">Ao finalizar, o pedido chega pronto no WhatsApp da loja. A equipe confirma estoque, valores e pagamento.</p>
-    <button class="btn btn-wa btn-block" id="checkout"><svg class="ico"><use href="#i-wa"/></svg> Finalizar pedido no WhatsApp</button>`;
+    <p class="note">Frete e itens sob consulta são confirmados pelo atendente antes do pagamento.</p>
+    <button class="btn btn-ink btn-block" id="checkout"><svg class="ico"><use href="#i-lock"/></svg> Finalizar compra</button>`;
 }
-function checkout(){
-  const ent=($('input[name="ent"]:checked')||{}).value||"";
-  const t=totals(); const num="CC"+Date.now().toString().slice(-6);
-  const linhas=cart.map(c=>{const p=byId(c.id);return `• ${c.qty} ${p.un} — ${p.nome}${p.preco!=null?` (${brl(p.preco)}/${p.un} = ${brl(p.preco*c.qty)})`:" (sob consulta)"}`});
-  const msg=`Olá, Canal da Construção! Quero fazer este pedido pelo site:\n\n*Pedido ${num}*\n${linhas.join("\n")}\n\n${t.sub?`Total dos itens com preço: ${brl(t.sub)}\n`:""}${t.cons?`Itens para orçamento: ${t.cons}\n`:""}Recebimento: ${ent}${user?`\n\nNome: ${user.nome}\nWhatsApp: ${user.tel}${user.bairro?`\nBairro: ${user.bairro}`:""}`:""}`;
-  orders.unshift({num,data:new Date().toISOString(),itens:cart.map(c=>({...c})),sub:t.sub,ent});
-  orders=orders.slice(0,20); store.set("cc_orders",orders);
-  window.open(waLink(msg),"_blank","noopener");
-  cart=[];saveCart();
-  $("#cartBody").innerHTML=`<div class="empty-d"><div style="width:76px;height:76px;border-radius:50%;background:#E7F8EE;color:var(--green);display:grid;place-items:center;margin:0 auto 16px"><svg class="ico" style="width:38px;height:38px"><use href="#i-check"/></svg></div><h4>Pedido ${num} enviado!</h4><p>Continue a conversa no WhatsApp para confirmar pagamento e ${ent.startsWith("Retirar")?"retirada":"entrega"}.${user?"":" Entre na sua conta para acompanhar seus pedidos."}</p><button class="btn btn-ink" data-open="acc" data-tab="ped">Ver meus pedidos</button></div>`;
-  $("#cartFoot").style.display="none";$("[data-cart-label]").textContent="";
+/* ---------- checkout ---------- */
+const UFS="AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split(" ");
+const ENVIOS=[
+  {id:"entrega",t:"Entrega no endereço",s:"Frete calculado pelo atendente conforme o bairro",need:true},
+  {id:"arruda",t:"Retirar na loja Arruda",s:"Av. Beberibe, 1501 – Arruda"},
+  {id:"bv",t:"Retirar na loja Boa Viagem",s:"Boa Viagem, Recife"}];
+const PAGS=[
+  {id:"pix",t:"Pix",s:"Chave enviada pelo atendente após confirmar o pedido",ic:"⚡"},
+  {id:"cartao",t:"Cartão de crédito",s:"Link de pagamento enviado pelo WhatsApp",ic:"💳"},
+  {id:"loja",t:"Pagar na loja",s:"Dinheiro, débito ou crédito na retirada",ic:"🏬",pickup:true}];
+const onlyD=v=>String(v||"").replace(/\D/g,"");
+const maskCep=v=>{v=onlyD(v).slice(0,8);return v.length>5?v.slice(0,5)+"-"+v.slice(5):v};
+const maskTel=v=>{v=onlyD(v).slice(0,11);if(!v)return"";if(v.length<=2)return"("+v;if(v.length<=6)return`(${v.slice(0,2)}) ${v.slice(2)}`;if(v.length<=10)return`(${v.slice(0,2)}) ${v.slice(2,6)}-${v.slice(6)}`;return`(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`};
+const emptyEnd=()=>({cep:"",rua:"",num:"",comp:"",bairro:"",cidade:"Recife",uf:"PE",ident:""});
+let ck=null;
+const ckOpen=()=>$("#ck").classList.contains("on");
+
+function openCheckout(){
+  if(!cart.length)return;
+  const saved=(user&&user.enderecos)||[];
+  ck={step:user&&user.email?2:1,dados:{email:user?.email||"",nome:user?.nome||"",tel:user?.tel||""},end:saved[0]?{...saved[0]}:emptyEnd(),semEnd:false,envio:"",pag:"",done:null};
+  closeLayer(); renderCk();
+  $("#ck").classList.add("on"); document.body.classList.add("lock"); $("#ck").scrollTop=0;
+}
+function closeCk(){$("#ck").classList.remove("on");if(!openId)document.body.classList.remove("lock")}
+
+function ckSummary(){
+  const t=totals(), fr=ck.envio==="entrega"?"A combinar":ck.envio?"Grátis":"—";
+  return `<div class="ck-sum"><h4>Resumo do pedido <small>${cart.length} ${cart.length===1?"item":"itens"}</small></h4>
+  <div class="ck-items">${cart.map(c=>{const p=byId(c.id);return `<div class="ck-it"><span class="im"><img src="img/${p.img}" alt=""><i>${c.qty}</i></span><div><b>${esc(p.nome)}</b><small>${c.qty} ${p.un}${p.preco!=null?" · "+brl(p.preco)+"/"+p.un:""}</small></div><span>${p.preco==null?"Consultar":brl(p.preco*c.qty)}</span></div>`}).join("")}</div>
+  ${t.sub?`<div class="tot"><span>Subtotal</span><span>${brl(t.sub+t.eco)}</span></div>`:""}
+  ${t.eco>0?`<div class="tot" style="color:var(--green)"><span>Desconto Pré-Black</span><span>− ${brl(t.eco)}</span></div>`:""}
+  <div class="tot"><span>Frete</span><span>${fr}</span></div>
+  ${t.cons?`<div class="tot"><span>Itens sob consulta</span><span>${t.cons}</span></div>`:""}
+  <div class="tot big"><span>Total</span><b>${t.sub?brl(t.sub):"A orçar"}</b></div>
+  ${t.cons||ck.envio==="entrega"?`<p class="note">${[t.cons?"Itens sob consulta":"",ck.envio==="entrega"?"frete":""].filter(Boolean).join(" e ")} confirmados pelo atendente antes do pagamento.</p>`:""}
+  <div class="seal"><svg class="ico"><use href="#i-lock"/></svg><span><b>Compra segura</b>Você só paga depois que a loja confirmar seu pedido.</span></div></div>`;
+}
+function stepCard(n,title,sum,body){
+  const st=ck.step===n?"cur":ck.step>n?"done":"next";
+  return `<section class="stp ${st}" id="stp${n}"><div class="stp-h"><span class="num">${st==="done"?'<svg class="ico" style="width:18px;height:18px"><use href="#i-check"/></svg>':n}</span><h3>${title}</h3>${st==="done"?`<button class="lnk" data-ck-go="${n}">Editar</button>`:""}</div>${st==="cur"?`<div class="stp-b">${body()}</div>`:st==="done"?`<div class="stp-s">${sum()}</div>`:""}</section>`;
+}
+function renderCk(){
+  const W=$("#ckWrap");
+  if(ck.done){const o=ck.done, pick=o.envio!=="entrega";
+    W.innerHTML=`<div class="ck-ok"><div class="big"><svg class="ico" style="width:46px;height:46px"><use href="#i-check"/></svg></div><span class="eyebrow" style="color:var(--blue)">Pedido ${o.num}</span><h2>Pedido feito! 🎉</h2><p>Abrimos o WhatsApp com seu pedido completo. É só enviar a mensagem — o atendente responde por lá.</p>
+    <ol class="tl"><li class="done"><b>Pedido enviado</b><span>${esc(o.itens)} ${o.itens==1?"item":"itens"} · ${o.sub?brl(o.sub):"orçamento"}</span></li><li><b>Confirmação</b><span>Atendente confirma estoque${pick?"":" e frete"}${o.cons?" e itens sob consulta":""}</span></li><li><b>Pagamento</b><span>${esc(o.pag)}</span></li><li><b>${pick?"Retirada":"Entrega"}</b><span>${esc(o.envioT)}</span></li></ol>
+    <div class="acts"><a class="btn btn-wa" href="${o.link}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg> Abrir WhatsApp de novo</a><button class="btn btn-line" data-open="acc" data-tab="ped">Meus pedidos</button><button class="btn btn-ink" data-ck-close>Voltar à loja</button></div></div>`;
+    return}
+  const d=ck.dados,e=ck.end,saved=(user&&user.enderecos)||[],pickup=ck.envio&&ck.envio!=="entrega";
+  const steps=[
+    stepCard(1,"Dados pessoais",
+      ()=>`<div class="kv"><div><small>E-mail</small><b>${esc(d.email)}</b></div></div><div class="kv two"><div><small>Nome</small><b>${esc(d.nome)}</b></div><div><small>Telefone</small><b>${esc(d.tel)}</b></div></div><button class="lnk" data-ck-logout>Não é você? Sair</button>`,
+      ()=>`<form data-ck-form="1" novalidate><div class="field"><label for="c-email">E-mail <i>*</i></label><input id="c-email" type="email" autocomplete="email" value="${esc(d.email)}" placeholder="seu@email.com"></div><div class="g2"><div class="field"><label for="c-nome">Nome completo <i>*</i></label><input id="c-nome" autocomplete="name" value="${esc(d.nome)}" placeholder="Seu nome"></div><div class="field"><label for="c-tel">Telefone <i>*</i></label><input id="c-tel" inputmode="tel" autocomplete="tel" data-mask="tel" value="${esc(d.tel)}" placeholder="(81) 90000-0000"></div></div><p class="err" id="ck-err"></p><button class="btn btn-ink btn-block" type="submit">Continuar para entrega</button></form>`),
+    stepCard(2,"Endereço de entrega",
+      ()=>ck.semEnd?`<b>Sem entrega</b> — vou retirar na loja`:`<b>${esc(e.ident||"Endereço")}</b><br>${esc(e.rua)}, ${esc(e.num)}${e.comp?" – "+esc(e.comp):""}<br>${esc(e.bairro)} · ${esc(e.cidade)}/${esc(e.uf)} · CEP ${esc(e.cep)}`,
+      ()=>`${saved.length?`<div class="saved">${saved.map((a,i)=>`<button type="button" class="chip-a ${a.cep===e.cep&&a.num===e.num?"on":""}" data-use-end="${i}"><b>${esc(a.ident||"Endereço "+(i+1))}</b><span>${esc(a.rua)}, ${esc(a.num)}</span></button>`).join("")}<button type="button" class="chip-a" data-use-end="-1"><b>+ Novo</b><span>endereço</span></button></div>`:""}
+      <form data-ck-form="2" novalidate>
+      <div class="field"><label for="c-cep">CEP <i>*</i></label><div class="cep-row"><input id="c-cep" inputmode="numeric" autocomplete="postal-code" data-mask="cep" value="${esc(e.cep)}" placeholder="00000-000"><a class="lnk" href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener">Não sei meu CEP</a></div><small class="hint" id="cep-st"></small></div>
+      <div class="field"><label for="c-rua">Endereço <i>*</i></label><input id="c-rua" autocomplete="address-line1" value="${esc(e.rua)}" placeholder="Rua, avenida..."></div>
+      <div class="g2"><div class="field"><label for="c-num">Número <i>*</i></label><input id="c-num" value="${esc(e.num)}" placeholder="Nº"></div><div class="field"><label for="c-comp">Complemento</label><input id="c-comp" value="${esc(e.comp)}" placeholder="Apto, sala..."></div></div>
+      <div class="field"><label for="c-bairro">Bairro <i>*</i></label><input id="c-bairro" value="${esc(e.bairro)}" placeholder="Bairro"></div>
+      <div class="g2"><div class="field"><label for="c-cidade">Cidade <i>*</i></label><input id="c-cidade" autocomplete="address-level2" value="${esc(e.cidade)}" placeholder="Cidade"></div><div class="field"><label for="c-uf">Estado <i>*</i></label><select id="c-uf"><option value="">UF</option>${UFS.map(u=>`<option ${u===e.uf?"selected":""}>${u}</option>`).join("")}</select></div></div>
+      <div class="field"><label for="c-ident">Identificação do endereço</label><input id="c-ident" value="${esc(e.ident)}" placeholder="Ex: Casa, Trabalho, Obra..."></div>
+      <p class="err" id="ck-err"></p><button class="btn btn-ink btn-block" type="submit">Escolher modo de envio</button>
+      <button type="button" class="lnk center" data-ck-pickup>Vou retirar na loja — pular endereço</button></form>`),
+    stepCard(3,"Modo de envio",
+      ()=>`<b>${esc((ENVIOS.find(x=>x.id===ck.envio)||{}).t||"")}</b><br>${esc((ENVIOS.find(x=>x.id===ck.envio)||{}).s||"")}`,
+      ()=>`<form data-ck-form="3" novalidate><div class="opt">${ENVIOS.filter(x=>!(x.need&&ck.semEnd)).map(x=>`<label><input type="radio" name="envio" value="${x.id}" ${ck.envio===x.id?"checked":""}><span>${x.t}<small>${x.s}</small></span><em class="${x.need?"ac":""}">${x.need?"A combinar":"Grátis"}</em></label>`).join("")}</div><p class="err" id="ck-err"></p><button class="btn btn-ink btn-block" type="submit">Escolher pagamento</button></form>`),
+    stepCard(4,"Pagamento",()=>"",
+      ()=>`<form data-ck-form="4" novalidate><div class="opt">${PAGS.filter(x=>!x.pickup||pickup).map(x=>`<label><input type="radio" name="pag" value="${x.id}" ${ck.pag===x.id?"checked":""}><span class="pi">${x.ic}</span><span>${x.t}<small>${x.s}</small></span></label>`).join("")}</div>
+      <p class="note">Nenhum dado de cartão é digitado aqui. Ao finalizar, seu pedido vai para o WhatsApp da loja, que confirma estoque${pickup?"":" e frete"} e envia o pagamento.</p>
+      <label class="chk2"><input type="checkbox" id="c-ok"> Entendo que valores sob consulta${pickup?"":" e frete"} serão confirmados pelo atendente.</label>
+      <p class="err" id="ck-err"></p><button class="btn btn-wa btn-block" type="submit"><svg class="ico"><use href="#i-wa"/></svg> Finalizar pedido</button></form>`)];
+  const t=totals();
+  W.innerHTML=`<ol class="ck-prog">${["Dados","Entrega","Envio","Pagamento"].map((l,i)=>`<li class="${i+1<ck.step?"done":i+1===ck.step?"cur":""}">${l}</li>`).join("")}</ol>
+  <details class="ck-mob"><summary>Resumo do pedido · ${t.sub?brl(t.sub):"A orçar"}<span>Ver itens</span></summary>${ckSummary()}</details>
+  <div class="ck-grid"><div>${steps.join("")}</div><aside class="ck-side">${ckSummary()}</aside></div>`;
+  requestAnimationFrame(()=>{const cur=$("#ck .stp.cur");if(!cur)return;const top=cur.getBoundingClientRect().top+$("#ck").scrollTop-90;if(ck.step>1)$("#ck").scrollTo({top,behavior:"smooth"});const f=$("input:not([type=radio]):not([type=checkbox]),select",cur);f&&!f.value&&f.focus({preventScroll:true})});
+}
+function ckErr(msg,ids=[]){$$("#ck .bad").forEach(x=>x.classList.remove("bad"));ids.forEach(i=>$("#"+i)?.classList.add("bad"));$("#ck-err").textContent=msg;if(ids[0])$("#"+ids[0]).focus()}
+function ckSubmit(n){
+  if(n===1){
+    const email=$("#c-email").value.trim(),nome=$("#c-nome").value.trim(),tel=$("#c-tel").value.trim(),bad=[];
+    if(!/^\S+@\S+\.\S{2,}$/.test(email))bad.push("c-email"); if(nome.length<3)bad.push("c-nome"); if(onlyD(tel).length<10)bad.push("c-tel");
+    if(bad.length)return ckErr("Confira os campos destacados.",bad);
+    ck.dados={email,nome,tel};
+    user={...(user||{perfil:"Cliente final",enderecos:[]}),email,nome,tel}; store.set("cc_user",user); renderHeaderUser();
+    ck.step=2;
+  }
+  if(n===2){
+    const v=id=>$("#c-"+id).value.trim();
+    const e={cep:maskCep(v("cep")),rua:v("rua"),num:v("num"),comp:v("comp"),bairro:v("bairro"),cidade:v("cidade"),uf:$("#c-uf").value,ident:v("ident")};
+    const bad=[]; if(onlyD(e.cep).length!==8)bad.push("c-cep"); ["rua","num","bairro","cidade"].forEach(k=>!e[k]&&bad.push("c-"+k)); if(!e.uf)bad.push("c-uf");
+    if(bad.length)return ckErr("Preencha os campos obrigatórios.",bad);
+    ck.end=e; ck.semEnd=false; if(!ck.envio)ck.envio="entrega";
+    const list=(user.enderecos||[]).filter(a=>!(a.cep===e.cep&&a.num===e.num)); list.unshift(e); user.enderecos=list.slice(0,5); store.set("cc_user",user);
+    ck.step=3;
+  }
+  if(n===3){const r=$('#ck input[name="envio"]:checked');if(!r)return ckErr("Escolha como quer receber.");ck.envio=r.value;if(ck.envio==="entrega"&&ck.pag==="loja")ck.pag="";ck.step=4}
+  if(n===4){const r=$('#ck input[name="pag"]:checked');if(!r)return ckErr("Escolha a forma de pagamento.");if(!$("#c-ok").checked)return ckErr("Marque a confirmação para continuar.",["c-ok"]);ck.pag=r.value;return finalize()}
+  renderCk();
+}
+function finalize(){
+  const t=totals(),num="CC"+Date.now().toString().slice(-6),env=ENVIOS.find(x=>x.id===ck.envio),pag=PAGS.find(x=>x.id===ck.pag),e=ck.end,d=ck.dados;
+  const linhas=cart.map(c=>{const p=byId(c.id);return `• ${c.qty} ${p.un} — ${p.nome}${p.preco!=null?` (${brl(p.preco)}/${p.un} = ${brl(p.preco*c.qty)})`:" (sob consulta)"}`}).join("\n");
+  const msg=`Olá, Canal da Construção! Acabei de fazer um pedido pelo site 🛒\n\n*Pedido ${num}*\n${linhas}\n\n${t.sub?`Total dos itens com preço: ${brl(t.sub)}\n`:""}${t.eco>0?`Desconto Pré-Black: ${brl(t.eco)}\n`:""}${t.cons?`Itens para orçamento: ${t.cons}\n`:""}\n*Cliente*\n${d.nome}\n${d.tel}\n${d.email}\n\n*Envio:* ${env.t}${ck.envio==="entrega"?`\n${e.rua}, ${e.num}${e.comp?" – "+e.comp:""}\n${e.bairro} – ${e.cidade}/${e.uf}\nCEP ${e.cep}`:""}\n*Pagamento:* ${pag.t}`;
+  const link=waLink(msg);
+  orders.unshift({num,data:new Date().toISOString(),itens:cart.map(c=>({...c})),sub:t.sub,ent:env.t,pag:pag.t}); orders=orders.slice(0,20); store.set("cc_orders",orders);
+  window.open(link,"_blank","noopener");
+  ck.done={num,link,envio:ck.envio,envioT:env.t+(ck.envio==="entrega"?` · ${e.bairro}`:""),pag:pag.t,sub:t.sub,cons:t.cons,itens:cart.length};
+  cart=[];saveCart();renderCk();$("#ck").scrollTop=0;
+}
+async function buscaCep(v){
+  const st=$("#cep-st"); if(!st)return; st.className="hint"; st.textContent="Buscando endereço…";
+  try{const r=await fetch(`https://viacep.com.br/ws/${v}/json/`);const j=await r.json();if(j.erro)throw 0;
+    if(j.logradouro)$("#c-rua").value=j.logradouro; if(j.bairro)$("#c-bairro").value=j.bairro; $("#c-cidade").value=j.localidade||""; $("#c-uf").value=j.uf||"";
+    st.className="hint ok"; st.textContent="✓ Endereço encontrado"; $("#c-num").focus();
+  }catch{st.className="hint bad";st.textContent="Não encontramos esse CEP automaticamente. Preencha o endereço abaixo."}
 }
 
 /* ---------- account ---------- */
@@ -919,6 +1133,7 @@ function renderAcc(){
     b.innerHTML=`<div class="prof-h"><div class="av"><svg class="ico"><use href="#i-user"/></svg></div><div><b>Entre ou crie sua conta</b><small>Leva 10 segundos.</small></div></div>
     <div class="perk"><div><b>📦</b>Acompanhe pedidos</div><div><b>❤️</b>Salve favoritos</div><div><b>⚡</b>Checkout rápido</div></div>
     <form id="loginForm"><div class="field"><label for="f-nome">Nome completo</label><input id="f-nome" required autocomplete="name" placeholder="Como podemos te chamar?"></div>
+    <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" required autocomplete="email" placeholder="seu@email.com"></div>
     <div class="field"><label for="f-tel">WhatsApp</label><input id="f-tel" required inputmode="tel" autocomplete="tel" placeholder="(81) 9 0000-0000"></div>
     <div class="field"><label for="f-bairro">Bairro</label><input id="f-bairro" autocomplete="address-level3" placeholder="Ex.: Boa Viagem"></div>
     <div class="field"><label for="f-perfil">Você é…</label><select id="f-perfil"><option>Cliente final</option><option>Pedreiro / profissional de obra</option><option>Arquiteto(a) / designer</option><option>Síndico(a) / condomínio</option></select></div>
@@ -926,11 +1141,12 @@ function renderAcc(){
     ${accTab==="fav"?`<div style="margin-top:24px"><div style="font-weight:800;margin-bottom:10px">Seus favoritos</div>${favList()}</div>`:""}`;
     return;
   }
-  const tabs=`<div class="tabs" role="tablist">${[["ped","Pedidos"],["fav","Favoritos"],["dados","Dados"]].map(([k,l])=>`<button data-tabb="${k}" class="${accTab===k?"on":""}" role="tab" aria-selected="${accTab===k}">${l}</button>`).join("")}</div>`;
+  const tabs=`<div class="tabs" role="tablist">${[["ped","Pedidos"],["fav","Favoritos"],["end","Endereços"],["dados","Dados"]].map(([k,l])=>`<button data-tabb="${k}" class="${accTab===k?"on":""}" role="tab" aria-selected="${accTab===k}">${l}</button>`).join("")}</div>`;
   let content="";
-  if(accTab==="ped") content=orders.length?orders.map(o=>`<div class="ord"><div class="top"><span>Pedido ${o.num}</span><span>${o.sub?brl(o.sub):"Orçamento"}</span></div><span class="stt">Enviado ao WhatsApp</span><p>${new Date(o.data).toLocaleDateString("pt-BR",{day:"2-digit",month:"short",year:"numeric"})} · ${o.itens.length} ${o.itens.length===1?"item":"itens"} · ${esc(o.ent)}</p><button data-reorder="${o.num}">Comprar de novo</button></div>`).join(""):`<div class="empty-d"><img src="img/mascote.png" alt=""><h4>Nenhum pedido ainda</h4><p>Seus pedidos feitos pelo site aparecem aqui.</p><button class="btn btn-y" data-filter-go="todos">Ir para a loja</button></div>`;
+  if(accTab==="ped") content=orders.length?orders.map(o=>`<div class="ord"><div class="top"><span>Pedido ${o.num}</span><span>${o.sub?brl(o.sub):"Orçamento"}</span></div><span class="stt">Enviado ao WhatsApp</span><p>${new Date(o.data).toLocaleDateString("pt-BR",{day:"2-digit",month:"short",year:"numeric"})} · ${o.itens.length} ${o.itens.length===1?"item":"itens"} · ${esc(o.ent)}${o.pag?" · "+esc(o.pag):""}</p><button data-reorder="${o.num}">Comprar de novo</button></div>`).join(""):`<div class="empty-d"><img src="img/mascote.png" alt=""><h4>Nenhum pedido ainda</h4><p>Seus pedidos feitos pelo site aparecem aqui.</p><button class="btn btn-y" data-filter-go="todos">Ir para a loja</button></div>`;
   if(accTab==="fav") content=favList();
-  if(accTab==="dados") content=`<form id="dadosForm"><div class="field"><label for="d-nome">Nome</label><input id="d-nome" value="${esc(user.nome)}" required></div><div class="field"><label for="d-tel">WhatsApp</label><input id="d-tel" value="${esc(user.tel)}" required></div><div class="field"><label for="d-bairro">Bairro</label><input id="d-bairro" value="${esc(user.bairro||"")}"></div><button class="btn btn-ink btn-block" type="submit">Salvar alterações</button></form><button class="btn btn-line btn-block" style="margin-top:10px" id="logout">Sair da conta</button>`;
+  if(accTab==="end") content=(user.enderecos||[]).length?user.enderecos.map((a,i)=>`<div class="ord"><div class="top"><span>${esc(a.ident||"Endereço "+(i+1))}</span><button data-rm-end="${i}" style="margin:0;color:var(--muted)">Remover</button></div><p style="margin-top:6px">${esc(a.rua)}, ${esc(a.num)}${a.comp?" – "+esc(a.comp):""}<br>${esc(a.bairro)} · ${esc(a.cidade)}/${esc(a.uf)} · CEP ${esc(a.cep)}</p></div>`).join(""):`<div class="empty-d"><img src="img/mascote.png" alt=""><h4>Nenhum endereço</h4><p>Os endereços que você usar na finalização da compra ficam salvos aqui.</p></div>`;
+  if(accTab==="dados") content=`<form id="dadosForm"><div class="field"><label for="d-nome">Nome</label><input id="d-nome" value="${esc(user.nome)}" required></div><div class="field"><label for="d-email">E-mail</label><input id="d-email" type="email" value="${esc(user.email||"")}"></div><div class="field"><label for="d-tel">WhatsApp</label><input id="d-tel" value="${esc(user.tel)}" required></div><div class="field"><label for="d-bairro">Bairro</label><input id="d-bairro" value="${esc(user.bairro||"")}"></div><button class="btn btn-ink btn-block" type="submit">Salvar alterações</button></form><button class="btn btn-line btn-block" style="margin-top:10px" id="logout">Sair da conta</button>`;
   b.innerHTML=`<div class="prof-h"><div class="av">${esc(initials(user.nome))}</div><div><b>${esc(user.nome)}</b><small>${esc(user.tel)}${user.bairro?" · "+esc(user.bairro):""}</small><br><span class="lvl">${esc(user.perfil||"Cliente Canal")}</span></div></div>${tabs}${content}`;
 }
 
@@ -960,6 +1176,7 @@ function calcQV(){
 /* ---------- layers ---------- */
 let openId=null, lastFocus=null;
 function openLayer(id,tab){
+  if(ckOpen())closeCk();
   if(openId)closeLayer(true); else lastFocus=document.activeElement;
   if(id==="fav"){id="acc";tab="fav"}
   if(id==="acc"){accTab=tab||accTab;renderAcc()}
@@ -1026,27 +1243,38 @@ document.addEventListener("click",e=>{
   if(d.m2){const i=$("#qv-n");i.value=Math.max(1,(parseFloat(String(i.value).replace(",","."))||0)+(+d.m2));calcQV();return}
   if(d.tabb){accTab=d.tabb;renderAcc();return}
   if(d.reorder){const o=orders.find(x=>x.num===d.reorder);o.itens.forEach(i=>{if(!byId(i.id))return;const c=cart.find(x=>x.id===i.id);c?c.qty+=i.qty:cart.push({...i})});saveCart();openLayer("cart");return}
-  if(t.id==="checkout"){checkout();return}
+  if(t.id==="checkout"){openCheckout();return}
+  if(d.ckClose!==undefined){closeCk();return}
+  if(d.ckGo){ck.step=+d.ckGo;renderCk();return}
+  if(d.ckLogout!==undefined){user=null;store.set("cc_user",null);renderHeaderUser();ck.dados={email:"",nome:"",tel:""};ck.end=emptyEnd();ck.step=1;renderCk();return}
+  if(d.ckPickup!==undefined){ck.semEnd=true;if(!ck.envio||ck.envio==="entrega")ck.envio="arruda";ck.step=3;renderCk();return}
+  if(d.useEnd){ck.end=d.useEnd==="-1"?emptyEnd():{...user.enderecos[+d.useEnd]};renderCk();return}
+  if(d.rmEnd){user.enderecos.splice(+d.rmEnd,1);store.set("cc_user",user);renderAcc();return}
   if(t.id==="logout"){user=null;store.set("cc_user",null);accTab="ped";renderAcc();toast("<span>Você saiu da conta</span>");return}
   if(d.nav){e.preventDefault();if(d.nav==="top")scrollTo({top:0,behavior:"smooth"});else goFilter(filter);$$(".bnav button").forEach(b=>b.classList.toggle("on",b===t));return}
 });
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape")closeLayer();
+  if(e.key==="Escape"){if(openId)closeLayer();else if(ckOpen())closeCk()}
   if(e.key==="/"&&!/input|textarea|select/i.test(document.activeElement.tagName)){e.preventDefault();$("#q").focus()}
   if((e.key==="Enter"||e.key===" ")&&e.target.matches("[data-quick][role=button]")){e.preventDefault();openQuick(e.target.dataset.quick)}
 });
 document.addEventListener("submit",e=>{
   e.preventDefault();
-  if(e.target.id==="loginForm"){user={nome:$("#f-nome").value.trim(),tel:$("#f-tel").value.trim(),bairro:$("#f-bairro").value.trim(),perfil:$("#f-perfil").value};store.set("cc_user",user);accTab="ped";renderAcc();toast(`<span>Bem-vindo(a), ${esc(user.nome.split(" ")[0])}! 👷</span>`)}
-  if(e.target.id==="dadosForm"){user={...user,nome:$("#d-nome").value.trim(),tel:$("#d-tel").value.trim(),bairro:$("#d-bairro").value.trim()};store.set("cc_user",user);renderAcc();toast("<span>Dados salvos ✓</span>")}
+  if(e.target.dataset.ckForm){ckSubmit(+e.target.dataset.ckForm);return}
+  if(e.target.id==="loginForm"){user={nome:$("#f-nome").value.trim(),email:$("#f-email").value.trim(),tel:$("#f-tel").value.trim(),bairro:$("#f-bairro").value.trim(),perfil:$("#f-perfil").value,enderecos:[]};store.set("cc_user",user);accTab="ped";renderAcc();toast(`<span>Bem-vindo(a), ${esc(user.nome.split(" ")[0])}! 👷</span>`)}
+  if(e.target.id==="dadosForm"){user={...user,email:$("#d-email").value.trim(),nome:$("#d-nome").value.trim(),tel:$("#d-tel").value.trim(),bairro:$("#d-bairro").value.trim()};store.set("cc_user",user);renderAcc();toast("<span>Dados salvos ✓</span>")}
 });
 let qTimer;
 document.addEventListener("input",e=>{
   if(e.target.id==="q"){query=e.target.value.trim();filter="todos";renderGrid()}
   if(e.target.id==="qv-n")calcQV();
+  if(e.target.dataset.mask==="tel")e.target.value=maskTel(e.target.value);
+  if(e.target.dataset.mask==="cep"){e.target.value=maskCep(e.target.value);const v=onlyD(e.target.value);if(v.length===8&&v!==e.target._last){e.target._last=v;buscaCep(v)}}
+  if(e.target.closest&&e.target.closest("#ck")&&e.target.classList.contains("bad"))e.target.classList.remove("bad");
   if(e.target.dataset.qty){const v=parseInt(e.target.value);if(v>0){const c=cart.find(x=>x.id===e.target.dataset.qty);c.qty=Math.min(9999,v);saveCart();clearTimeout(qTimer);qTimer=setTimeout(renderCart,700)}}
 });
 document.addEventListener("change",e=>{
+  if(e.target.closest&&e.target.closest("#ck")&&$("#ck-err"))$("#ck-err").textContent="";
   if(e.target.id==="sort"){sort=e.target.value;renderGrid()}
   if(e.target.id==="qv-mg")calcQV();
 });
