@@ -34,7 +34,7 @@ arts.append(('00_foto_perfil', 'sq', f'<img class="ph" src="{P}close-sorrindo_ed
 # FIXADO 1 · quem sou (foto + gancho)
 arts.append(('01_fixado_1_quem_sou', 'p', f'''<img class="ph" src="{P}feira-nova.jpg" style="object-position:50% 20%"><div class="shade"></div>
 <div style="position:absolute;left:80px;right:80px;bottom:110px">
-<div class="sm" style="margin-bottom:22px">Prazer, sou a Mylena.</div>
+<div class="sm" style="margin-bottom:22px">Prazer, sou Mylena.</div>
 <div class="hook" style="font-size:66px">Seu restaurante não<br>precisa vender mais.</div>
 <div class="hook" style="font-size:66px;margin-top:14px">Precisa <span class="it" style="font-size:74px">lucrar</span> com<br>o que já vende.</div></div>'''))
 

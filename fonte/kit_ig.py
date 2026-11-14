@@ -78,7 +78,7 @@ p2 = page(2, f'''<div class="k">01 · Perfil</div><h2>O perfil <span>pronto</spa
 <p class="small" style="text-align:center;margin-top:2mm">Simulação: como o perfil fica após os primeiros posts.</p></div></div>''')
 
 fotos = [('close-sorrindo_ed', 'Perfil', 'ok', 'Foto 3 · close sorrindo', 'Foto do perfil e post de bastidor.'),
-         ('feira-sorrindo_ed', 'Feed', 'ok', 'Foto 1 · feira, sorrindo', 'Capa do post fixado “Prazer, sou a Mylena”.'),
+         ('feira-sorrindo_ed', 'Feed', 'ok', 'Foto 1 · feira, sorrindo', 'Capa do post fixado “Prazer, sou Mylena”.'),
          ('feira-seria_ed', 'Feed', 'ok', 'Foto 2 · feira, séria', 'Capa de carrossel de autoridade.'),
          ('selfie-preta_ed', 'Stories', 'mid', 'Foto 9 · blusa preta', 'Capa de Reels e stories com texto.'),
          ('selfie-tatuagem', 'Stories', 'mid', 'Foto 7 · blusa preta, pose', 'Stories do dia a dia; tom mais pessoal.'),
@@ -102,7 +102,7 @@ p4 = page(4, f'''<div class="k">03 · Posts fixados</div><h2>Três posts <span>f
 <div class="lg" style="margin-top:5mm"><b>Legenda · fixado 1</b>Lucro no restaurante: o problema quase nunca é vender pouco.
 É não saber quanto sobra de cada venda.
 
-Prazer, sou a Mylena 👋
+Prazer, sou Mylena 👋
 Aqui em Recife, eu ajudo restaurantes, bares e delivery a lucrar com o que já vendem, em três frentes:
 
 1. Custo certo: quanto custa cada prato e quanto sobra de verdade.
@@ -165,7 +165,7 @@ p7 = page(8, '''<div class="k">07 · Lançamento</div><h2>Ordem de <span>publica
 
 
 DIRS = [('Relatório', 'Recomendada', 'Off-white com tipografia serifada e números grandes, como um relatório anual. Fotos em blocos com margem, linhas finas separando as informações.', 'Off-white · preto · verde nos números', 'Playfair Display + Poppins', 'Número “3” verde ocupando o terço superior; abaixo, “erros que fazem o restaurante vender e não lucrar” em serifa preta; @ pequeno no rodapé.'),
-        ('Preto editorial', '', 'Fundo preto, fotos com pouca cor e título em sans condensada clara. Visual premium e dramático.', 'Preto · off-white · verde mínimo', 'Roboto Condensed + Poppins', 'Foto em close ocupando 60% da altura; título “Prazer, sou a Mylena.” em off-white embaixo; nenhum outro elemento.'),
+        ('Preto editorial', '', 'Fundo preto, fotos com pouca cor e título em sans condensada clara. Visual premium e dramático.', 'Preto · off-white · verde mínimo', 'Roboto Condensed + Poppins', 'Foto em close ocupando 60% da altura; título “Prazer, sou Mylena.” em off-white embaixo; nenhum outro elemento.'),
         ('Tabela de custos', '', 'Composições em grade, como uma planilha bonita: colunas, números alinhados e rótulos pequenos.', 'Off-white · preto · verde em um dado por arte', 'Roboto Condensed + Poppins', 'Tabela “Custo · Preço · Margem” com 1 linha preenchida e o rótulo “Margem: ?” em verde.')]
 dcards = ''.join(f'''<div class="card{" hl" if r else ""}" style="padding:4mm"><h4>{n} {('<span class="tag">' + r + '</span>') if r else ''}</h4><p>{d}</p>
 <p style="margin-top:1.5mm"><b>Paleta:</b> {pa}<br><b>Fontes:</b> {fo}<br><b>Exemplo de capa:</b> {ex}</p></div>''' for n, r, d, pa, fo, ex in DIRS)
