@@ -547,9 +547,19 @@ function finalize() {
   const msg = `Olá, Canal da Construção! Acabei de fazer um pedido pelo site 🛒\n\n*Pedido ${num}*\n${linhas}\n\n${t.sub ? `Total dos itens com preço: ${brl(t.sub)}\n` : ""}${t.eco > 0 ? `Descontos: ${brl(t.eco)}\n` : ""}${t.cons ? `Itens para orçamento: ${t.cons}\n` : ""}\n*Cliente*\n${d.nome}\n${d.tel}\n${d.email}\n\n*Envio:* ${env.t}${ck.envio === "entrega" ? `\n${e.rua}, ${e.num}${e.comp ? " – " + e.comp : ""}\n${e.bairro} – ${e.cidade}/${e.uf}\nCEP ${e.cep}` : ""}\n*Pagamento:* ${pag.t}`;
   const link = waLink(msg);
   orders.unshift({ num, data: new Date().toISOString(), itens: cart.map(c => ({ ...c })), sub: t.sub, ent: env.t, pag: pag.t }); orders = orders.slice(0, 20); store.set("cc_orders", orders);
+  salvarPedido({ numero: num, cliente: d, entrega: { modo: env.t, ...(ck.envio === "entrega" ? e : {}) }, pagamento: pag.t,
+    itens: cart.map(c => { const p = byId(c.id); return { id: p.id, nome: p.nome, qtd: c.qty, un: p.un, preco: p.preco } }), total: t.sub || null });
   window.open(link, "_blank", "noopener");
   ck.done = { num, link, envio: ck.envio, envioT: env.t + (ck.envio === "entrega" ? ` · ${e.bairro}` : ""), pag: pag.t, sub: t.sub, cons: t.cons, itens: cart.length };
   cart = []; saveCart(); renderCk(); $("#ck").scrollTop = 0;
+}
+function salvarPedido(row) {
+  if (typeof SUPABASE === "undefined" || !SUPABASE.url || !SUPABASE.anonKey) return;
+  fetch(`${SUPABASE.url.replace(/\/$/, "")}/rest/v1/pedidos`, {
+    method: "POST", keepalive: true,
+    headers: { apikey: SUPABASE.anonKey, Authorization: `Bearer ${SUPABASE.anonKey}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+    body: JSON.stringify(row)
+  }).catch(() => { /* o pedido já foi para o WhatsApp; o banco é só um registro extra */ });
 }
 async function buscaCep(v) {
   const st = $("#cep-st"); if (!st) return; st.className = "hint"; st.textContent = "Buscando endereço…";

@@ -813,3 +813,37 @@ footer{margin-top:96px;border-radius:var(--r-xl) var(--r-xl) 0 0;padding:0 0 120
 .cats-nav .mega-btn[aria-expanded="true"]{background:var(--blue)}
 .subcats .dchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .subcats button.dchip{font-family:inherit}
+
+/* ===== responsividade fina ===== */
+.ann .wrap{overflow:hidden}
+.inst>*,.list-l>*,.pdp>*,.ck-grid>*,.ft>*{min-width:0}
+.inst{grid-template-columns:260px minmax(0,1fr)}
+.contact-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.inst{grid-template-columns:minmax(0,1fr)}.contact-g{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){
+  .ann{font-size:.72rem}
+  .hide-xs{display:none}
+  .ann .l::after{content:""}
+  .cd i{padding:2px 4px}
+  .g2{grid-template-columns:1fr}
+  .wrap{width:calc(100% - 24px)}
+  .t-main h1{font-size:clamp(2.4rem,13vw,3rem)}
+  .hero-mascot{width:120px}
+  .pdp-price .price b{font-size:2.2rem}
+  .list-h h1{font-size:2rem}
+  .shelf-h h3{font-size:1.5rem}
+  .dchip{height:42px;font-size:.8rem}
+  .st .acts .btn{flex:1}
+}
+@media (max-width:360px){
+  .grid,.list-l .grid{grid-template-columns:1fr 1fr;gap:8px}
+  .pc .body{padding:10px}
+  .pc .nm{font-size:.8rem}
+  .pc .price b{font-size:1.15rem}
+  .parc{font-size:.68rem}
+  .acc-btn{display:none}
+  .brand img{height:34px}
+}
+html{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@media (max-width:1100px){.ann .r{display:none}.ann .wrap{justify-content:center}}
