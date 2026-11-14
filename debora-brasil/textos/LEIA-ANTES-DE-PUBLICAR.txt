@@ -30,3 +30,13 @@ e a mensagem já abre pronta no WhatsApp) · Dúvidas · Onde estamos com
 PARA EDITAR
 fonte/landing.html e fonte/perfil.html são os arquivos de trabalho
 (com as fotos em fonte/img). fonte/build.py gera as versões finais.
+
+IMPRESSOS (pasta impressao/)
+vela.pdf ....... bandeira vela (wind banner), tecido 75 x 250 cm + 2 cm de sangria.
+                 Encaixar no gabarito da gráfica. Pedir dupla face.
+porta.pdf ...... painel da porta, 60 x 90 cm + 5 mm de sangria. Vinil impresso e laminado.
+Os dois estão com o WhatsApp provisório (81) 9 0000-0000.
+Trocar em fonte/impressos.py (linha WHATS = ...) e rodar:
+  python3 fonte/impressos.py && node fonte/render_impressos.js
+Logo vetorizada (SVG) em fonte/vetor/. Se a Débora tiver o arquivo original
+da logo (AI, PDF ou SVG), melhor usar o dela.
