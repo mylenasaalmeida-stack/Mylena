@@ -65,13 +65,13 @@ p2 = page(2, f'''<div class="k">01 · Perfil</div><h2>O perfil <span>pronto</spa
 <div style="font-weight:700;margin-top:2.5mm">{NOME}</div><div style="margin-top:.8mm">{bio_html}</div>
 <div style="color:#1f5fa8;font-weight:600;margin-top:1mm">wa.me/55… · Quero meu diagnóstico</div>
 <div class="g9"><img src="{A}03_bastidor_feira.jpg"><img src="{A}02_carrossel_1_capa.jpg"><img src="{A}01_fixado_1_capa.jpg">
-<img src="{A}02_carrossel_2_erro1.jpg"><img src="{A}01_fixado_2_o_que_faco.jpg"><img src="{A}02_carrossel_5_cta.jpg"></div></div></div>
+<img src="{A}02_carrossel_2_erro1.jpg"><img src="{A}01_fixado_2_cardapio.jpg"><img src="{A}02_carrossel_5_cta.jpg"></div></div></div>
 <p class="small" style="text-align:center;margin-top:2mm">Simulação: como o perfil fica após os primeiros posts.</p></div></div>''')
 
-fotos = [('close-sorrindo', 'Perfil', 'ok', 'Foto 3 · close sorrindo', 'Foto do perfil e post de bastidor.'),
-         ('feira-sorrindo', 'Feed', 'ok', 'Foto 1 · feira, sorrindo', 'Capa do post fixado “Prazer, sou a Mylena”.'),
-         ('feira-seria', 'Feed', 'ok', 'Foto 2 · feira, séria', 'Capa de carrossel de autoridade.'),
-         ('selfie-preta', 'Stories', 'mid', 'Foto 9 · blusa preta', 'Capa de Reels e stories com texto.'),
+fotos = [('close-sorrindo_ed', 'Perfil', 'ok', 'Foto 3 · close sorrindo', 'Foto do perfil e post de bastidor.'),
+         ('feira-sorrindo_ed', 'Feed', 'ok', 'Foto 1 · feira, sorrindo', 'Capa do post fixado “Prazer, sou a Mylena”.'),
+         ('feira-seria_ed', 'Feed', 'ok', 'Foto 2 · feira, séria', 'Capa de carrossel de autoridade.'),
+         ('selfie-preta_ed', 'Stories', 'mid', 'Foto 9 · blusa preta', 'Capa de Reels e stories com texto.'),
          ('selfie-tatuagem', 'Stories', 'mid', 'Foto 7 · blusa preta, pose', 'Stories do dia a dia; tom mais pessoal.'),
          ('selfie-ai', 'Evitar', 'no', 'Foto 8 · editada por IA', 'Marca “Meta AI”: no começo, autenticidade pesa.'),
          ('jaleco-1', 'Não usar', 'no', 'Fotos 4 e 6 · jaleco', 'Bordado “Nutricionista” sem CRN: risco com o conselho.'),
@@ -88,8 +88,8 @@ p3 = page(3, '''<div class="k">02 · Fotos</div><h2>Qual foto <span>usar onde</s
 <p class="small">Mesma roupa da feira (blazer preto e blusa clara) para manter a identidade com a paleta preta e verde.</p>''')
 
 p4 = page(4, f'''<div class="k">03 · Post fixado</div><h2>“Prazer, sou <span>a Mylena”</span></h2>
-<p class="lead" style="margin-bottom:3mm">Carrossel de 3 imagens (1080 × 1350 px). Fixar no topo do perfil.</p>
-<div class="grid3" style="gap:4mm">{th(A + "01_fixado_1_capa.jpg", 70)}{th(A + "01_fixado_2_o_que_faco.jpg", 70)}{th(A + "01_fixado_3_comece.jpg", 70)}</div>
+<p class="lead" style="margin-bottom:3mm">Carrossel de 3 imagens (1080 × 1350 px), em linguagem de restaurante: capa de revista, “Menu da casa” com os 3 pilares e uma “reserva” do diagnóstico. Fixar no topo do perfil.</p>
+<div class="grid3" style="gap:4mm">{th(A + "01_fixado_1_capa.jpg", 70)}{th(A + "01_fixado_2_cardapio.jpg", 70)}{th(A + "01_fixado_3_reserva.jpg", 70)}</div>
 <div class="lg" style="margin-top:5mm"><b>Legenda</b>Gestão de restaurante sem complicação: prazer, sou a Mylena 👋
 Eu ajudo restaurantes, bares e delivery de Recife a lucrar com o que já vendem.
 
@@ -102,7 +102,7 @@ Quer começar? Faço um diagnóstico de lucro gratuito de 30 minutos. É só cha
 
 #gestaoderestaurantes #cmv #cardapio #gastronomiarecife #foodservice</div>''')
 
-p5 = page(5, f'''<div class="k">04 · Carrossel de autoridade</div><h2>3 erros que fazem <span>vender e não lucrar</span></h2>
+p5 = page(5, f'''<div class="k">04 · Carrossel de autoridade</div><h2>3 erros que fazem <span>vender e não lucrar</span></h2><p class="lead" style="margin-bottom:3mm">Cada erro vira uma comanda de restaurante, com a solução em destaque. O formato faz o dono se reconhecer na hora.</p>
 <div class="grid3" style="gap:3mm;grid-template-columns:repeat(5,1fr)">''' + ''.join(th(A + f + '.jpg', 42) for f in ['02_carrossel_1_capa', '02_carrossel_2_erro1', '02_carrossel_3_erro2', '02_carrossel_4_erro3', '02_carrossel_5_cta']) + '''</div>
 <div class="lg" style="margin-top:5mm"><b>Legenda</b>Restaurante sem lucro: estes são os 3 erros que mais aparecem quando o caixa enche e o dinheiro não sobra.
 
@@ -141,7 +141,9 @@ p7 = page(7, '''<div class="k">06 · Lançamento</div><h2>Ordem de <span>publica
 <p class="small" style="margin-top:2mm">Publicar o fixado por último faz ele aparecer como o post mais recente e já fixado no topo. A partir da semana 2, seguir a rotina do plano de ação.</p>
 <div class="h3x">Arquivos</div><ul class="list">
 <li>As 11 artes estão em PNG, prontas para postar, na pasta <b>artes-instagram</b> do repositório.</li>
-<li>Formato: posts 1080 × 1350 px (4:5), foto do perfil 1080 × 1080 px, capa de Reels 1080 × 1920 px.</li></ul>
+<li>Formato: posts 1080 × 1350 px (4:5), foto do perfil 1080 × 1080 px, capa de Reels 1080 × 1920 px.</li>
+<li><b>Tratamento das fotos:</b> fundo da feira escurecido, dessaturado e desfocado para destacar você; pele com leve correção de contraste e temperatura; vinheta e granulação para unificar o visual. Sem alterar rosto ou corpo.</li>
+<li><b>Identidade:</b> preto, verde e off-white; títulos em Roboto Condensed, destaques em Playfair Display itálico e anotações à mão em Caveat; ícone de prato com seta de lucro.</li></ul>
 <div class="box" style="margin-top:5mm"><h4>Antes de publicar</h4><ul>
 <li>Confirmar se o @ está disponível.</li>
 <li>Preparar o material da isca CMV.</li>
