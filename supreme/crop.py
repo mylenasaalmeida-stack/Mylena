@@ -14,6 +14,8 @@ C={ # nome: (arquivo, x0,y0,x1,y1) em coordenadas de exibição
  'ig_naquele':('5eada429',221,217,1169,1660),
  'ig_frango':('869919e6',221,217,1169,1620),
  'ig_cremoso':('eb7887e0',221,217,1169,1590),
+ 'ig_shake':('1548399f',221,203,1169,1387),
+ 'ig_convoc':('71172690',221,217,1169,1401),
  'burgers':('461f16a2',187,370,1203,1090),
 }
 for n,(f,*b) in C.items():

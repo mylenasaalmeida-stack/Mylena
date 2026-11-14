@@ -80,7 +80,7 @@ p2 = page(2, '''<div class="k">Resumo</div><h2>A comida já é <span>supreme.</s
 <p class="lead">A Supreme tem produto forte, fotografia profissional e uma base de seguidores que muita hamburgueria de Recife queria ter. O que falta é fazer o cardápio e o perfil trabalharem a favor da venda.</p>
 <div class="stats">
 <div><b>25,9 mil</b><small>seguidores no Instagram, desde 2018</small></div>
-<div><b class="bad">≈ 14</b><small>curtidas, em média, nos 12 posts analisados (de 6 a 37)</small></div>
+<div><b class="bad">≈ 21</b><small>curtidas, em média, nos 19 posts analisados (de 6 a 70)</small></div>
 <div><b>65</b><small>itens em 14 categorias no cardápio digital (Yooga)</small></div>
 <div><b class="bad">14 de 19</b><small>burgers com preço entre R$ 20 e R$ 24</small></div>
 </div>
@@ -88,12 +88,12 @@ p2 = page(2, '''<div class="k">Resumo</div><h2>A comida já é <span>supreme.</s
 <div class="box g"><h3>O que já funciona</h3><ul>
 <li>Fotos de produto de nível profissional, com fundo, luz e marca d'água consistentes.</li>
 <li>Logo forte e reconhecível, e um topo de cardápio digital bem resolvido.</li>
-<li>Boas ideias de conteúdo: Hambúrguer do Mês, Maminha 2.0, reels de cozinha com humor.</li>
+<li>Quando o post convida a participar, o resultado aparece: o carrossel de milkshakes (“qual o seu favorito?”) teve 70 curtidas e a escalação da Copa, 47.</li><li>Boas campanhas: Hambúrguer do Mês, Hexa edição limitada, reels de cozinha com humor.</li>
 <li>Linha Na Brasa (R$ 27 a R$ 32) puxando o ticket para cima.</li>
 <li>Cardápio digital com cupons, pedido e tempo de entrega.</li></ul></div>
 <div class="box r"><h3>O que está custando venda</h3><ul>
-<li>O engajamento não acompanha o tamanho do perfil: cerca de 0,05% de curtidas por seguidor.</li>
-<li>Legendas parecidas entre si, sem preço, sem nome do burger e sem chamada para pedir.</li>
+<li>O engajamento não acompanha o tamanho do perfil: cerca de 0,08% de curtidas por seguidor.</li>
+<li>Na maioria dos posts de produto, a legenda é genérica, sem preço, sem nome do burger e sem chamada para pedir.</li>
 <li>Cardápio longo, com muitos burgers parecidos no mesmo preço e sem um carro-chefe claro.</li>
 <li>Erros de digitação, selos de “novo” vencidos e itens sem foto ou sem descrição.</li>
 <li>O que o Instagram promove (Maminha 2.0, American 2.0) não aparece com esse nome no cardápio.</li></ul></div>
@@ -119,22 +119,22 @@ p3 = page(3, '<div class="k">Cardápio digital</div><h2>Seis ajustes que <span>v
 
 p4 = page(4, '''<div class="k">Instagram</div><h2>Foto de restaurante grande,<br><span>resultado de perfil pequeno</span></h2>
 <div class="side"><div>
-<p class="lead" style="font-size:9.8pt">Os posts de produto são bonitos, mas são todos o mesmo post: um close do burger e uma legenda genérica (“Dá vontade de morder só de olhar…”, “Sabor que marca…”). Com 25,9 mil seguidores, cada post recebe de 6 a 37 curtidas e quase nenhum comentário.</p>
+<p class="lead" style="font-size:9.8pt">Os posts que pedem participação (votar, escolher um sabor) têm de 3 a 5 vezes mais curtidas que o close de burger com legenda genérica (“Dá vontade de morder só de olhar…”, “Sabor que marca…”). Esse close, que é a maior parte do feed, fica entre 6 e 24 curtidas para 25,9 mil seguidores.</p>
 <table><thead><tr><th>Ponto</th><th>Hoje</th><th>Sugestão</th></tr></thead><tbody>
 <tr><td>Bio</td><td>A primeira linha é “Trabalhe conosco”, e o horário aparece cortado.</td><td>Primeira linha: o que a casa é e o bairro. Depois horário, delivery e link.</td></tr>
 <tr><td>Link</td><td>Linktree, ou seja, mais um clique até o pedido.</td><td>Link direto para o cardápio da Yooga.</td></tr>
-<tr><td>Legendas</td><td>Adjetivos, sem nome, sem preço e sem chamada.</td><td>Nome + o que vem no burger + preço + “peça pelo link da bio”.</td></tr>
-<tr><td>Formato</td><td>Quase tudo é foto estática de produto.</td><td>Alternar entre produto, bastidor da chapa, cliente real e reels de montagem.</td></tr>
+<tr><td>Legendas</td><td>Quase sempre adjetivos, sem nome, preço e chamada. As exceções, como “20 mini coxinhas + refri por R$ 18,99”, mostram que dá para fazer.</td><td>Nome + o que vem no burger + preço + “peça pelo link da bio”.</td></tr>
+<tr><td>Formato</td><td>Maioria de foto estática de produto.</td><td>Mais carrosséis com enquete ou escolha, além de bastidor, cliente real e reels de montagem.</td></tr>
 <tr><td>Hashtags</td><td>#SupremeBurger #QuemResiste</td><td>Local: #jaboatao #hamburgueriajaboatao #recifefood</td></tr>
 </tbody></table></div>
 <img src="prints/perfil.jpg"></div>
 <div class="ig">
-<figure><img src="prints/ig_mes.jpg"><figcaption><b>37</b> curtidas · Hambúrguer do Mês, o melhor dos 12</figcaption></figure>
-<figure><img src="prints/ig_cremoso.jpg"><figcaption><b>24</b> curtidas · “Sabor que marca…”</figcaption></figure>
-<figure><img src="prints/ig_naquele.jpg"><figcaption><b>15</b> curtidas · Naquele Modelo</figcaption></figure>
+<figure><img src="prints/ig_shake.jpg"><figcaption><b style="color:var(--ok)">70</b> curtidas · carrossel “qual vai ser o seu sabor favorito?”</figcaption></figure>
+<figure><img src="prints/ig_convoc.jpg"><figcaption><b style="color:var(--ok)">47</b> curtidas · Convocados Supreme, votação</figcaption></figure>
+<figure><img src="prints/ig_mes.jpg"><figcaption><b style="color:var(--ok)">37</b> curtidas · Hambúrguer do Mês</figcaption></figure>
 <figure><img src="prints/ig_frango.jpg"><figcaption><b>6</b> curtidas · “Suculento por dentro…”</figcaption></figure>
 </div>
-<p class="note">O post que mais engajou foi o único com uma ideia por trás: Hambúrguer do Mês, com nome e motivo para pedir. Esse é o caminho.</p>''')
+<p class="note">Os três melhores posts têm uma ideia por trás (escolher, votar, novidade do mês). O pior é um close sem contexto. A Supreme já sabe fazer o post que funciona: falta torná-lo regra.</p>''')
 
 p5 = page(5, '''<div class="k">Plano de 30 dias</div><h2>Por onde <span>começar</span></h2>
 <table><thead><tr><th>Quando</th><th>O quê</th><th>Resultado esperado</th></tr></thead><tbody>
@@ -142,7 +142,7 @@ p5 = page(5, '''<div class="k">Plano de 30 dias</div><h2>Por onde <span>começar
 <tr><td><span class="tag t1">Semana 1</span></td><td>Reescrever a bio e trocar o Linktree pelo link direto do cardápio.</td><td>Menos cliques entre o post e o pedido.</td></tr>
 <tr><td><span class="tag t2">Semana 2</span></td><td>Reorganizar o cardápio: 3 carros-chefe no topo, Hambúrguer do Mês fixo, burgers agrupados por estilo e combos mostrando a economia.</td><td>Escolha mais rápida e ticket médio maior.</td></tr>
 <tr><td><span class="tag t2">Semana 2</span></td><td>Molho e batata como adicional sugerido em cada burger.</td><td>Mais itens por pedido, com a maior margem.</td></tr>
-<tr><td><span class="tag t3">Semanas 3 e 4</span></td><td>Calendário de posts com legenda que vende (nome, preço, chamada), reels de bastidor e conteúdo com clientes.</td><td>Mais alcance local e mais pedidos vindos do Instagram.</td></tr>
+<tr><td><span class="tag t3">Semanas 3 e 4</span></td><td>Calendário de posts com 1 carrossel interativo por semana, legenda que vende (nome, preço, chamada), reels de bastidor e conteúdo com clientes.</td><td>Mais alcance local e mais pedidos vindos do Instagram.</td></tr>
 <tr><td><span class="tag t3">Semanas 3 e 4</span></td><td>Análise de custo e margem dos burgers para decidir o que destacar, o que reajustar e o que sair do cardápio.</td><td>Destacar o que dá mais lucro, não só o que vende mais.</td></tr>
 </tbody></table>
 <div class="cta"><h3>Próximo passo</h3>
@@ -150,6 +150,6 @@ p5 = page(5, '''<div class="k">Plano de 30 dias</div><h2>Por onde <span>começar
 <ol><li>Relatório de vendas por item dos últimos 3 meses (a Yooga exporta).</li>
 <li>Preço de compra dos principais insumos: carne, pão, queijos, bacon e embalagem.</li>
 <li>Quais burgers vocês mais gostam de vender e quais dão mais trabalho na chapa.</li></ol></div>
-<p class="note">Diagnóstico feito a partir do cardápio público em supremehamburgueria01.com.br e do perfil @supreme_hamburgueria_, consultados em 14/11/2026. Curtidas contadas em 12 posts de produto de nov/2025 a mar/2026.</p>''')
+<p class="note">Diagnóstico feito a partir do cardápio público em supremehamburgueria01.com.br e do perfil @supreme_hamburgueria_, consultados em 14/11/2026. Curtidas contadas em 19 posts de nov/2025 a ago/2026.</p>''')
 
 open('diagnostico_supreme.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Diagnóstico · Supreme Hamburgueria</title>{CSS}</head><body>{cover}{p2}{p3}{p4}{p5}</body></html>')
