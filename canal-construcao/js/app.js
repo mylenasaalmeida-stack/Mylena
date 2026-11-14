@@ -94,6 +94,11 @@ function viewHome() {
     shelf("Ofertas que acabam rápido", P.filter(p => p.de), "#/c/ofertas", "Descontos reais em todos os departamentos") +
     shelf("Básicos para Construção", by("basicos"), "#/c/basicos", "Quartzolit, do Mestre, Brasilit e mais") +
     shelf("Materiais Elétricos", by("eletricos"), "#/c/eletricos", "Tomadas, interruptores, cabos e disjuntores") +
+    shelf("Pisos e Revestimentos", by("pisos"), "#/c/pisos", "Cerâmicas e porcelanatos Arielle, Pointer e mais") +
+    shelf("Tintas", by("tintas"), "#/c/tintas", "Iquine, Coral, Suvinil, Sherwin-Williams") +
+    shelf("Tubos e Conexões", by("tubos"), "#/c/tubos", "Linha Tigre: água fria, esgoto, Aquatherm") +
+    shelf("Assentos e Engates", by("pvc"), "#/c/pvc") +
+    shelf("Portas e Fechaduras", by("portasfech"), "#/c/portasfech", "Dobradiças e ferrolhos Silvana") +
     shelf("Hidráulica", by("hidraulica"), "#/c/hidraulica", "Caixas d'água Fortlev, grelhas Tigre e chuveiros") +
     shelf("Louças e Metais", [...by("loucas"), ...by("metais")], "#/c/loucas", "Bacias, cubas, pias e torneiras") +
     shelf("Iluminação", by("iluminacao"), "#/c/iluminacao", "Lâmpadas, painéis e refletores Avant") +
