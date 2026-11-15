@@ -12,6 +12,13 @@
 3. Orçar
 4. Investir e poupar
 
+### Slide: Educação Financeira – DIAGNOSTICAR
+1. Faça um levantamento dos seus rendimentos
+2. Observe seu comportamento financeiro no microscópio
+3. Registre todos os seus pequenos e grandes gastos
+4. Descubra qual é o seu padrão de vida
+5. Conheça o seu "eu" financeiro
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
