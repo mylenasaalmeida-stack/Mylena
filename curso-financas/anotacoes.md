@@ -45,6 +45,13 @@ Atenção especial para quem tem renda variável:
 - O que não for regular (renda variável, extras, comissões) → **tirar a média**.
 - Usar o dinheiro dos **meses em que recebe mais** para cobrir os **meses em que recebe menos** ou os **meses em que gasta mais**: há períodos do ano com mais gastos que outros. Planejar isso na planilha.
 
+### Slide: 2 – Observe seu comportamento financeiro no microscópio
+A maioria das pessoas não tem um controle preciso sobre seus gastos; na maioria das vezes, só controla as despesas maiores. Acredite: é nas pequenas despesas que reside o germe do desequilíbrio financeiro.
+
+Pode ser que você, de fato, esteja ganhando menos do que merece, mas isso nada tem a ver com o fato de estar sem dinheiro. Afinal, se você ganhasse 30% a mais, provavelmente gastaria 30% a mais.
+
+> O equilíbrio financeiro depende diretamente da visão detalhada que você tem de suas receitas e despesas.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
