@@ -70,6 +70,15 @@ Saiba que todos nós temos um pouco de medo de entrar em contato com a verdade.
 - Quanto gastei de verdade: _a preencher no fim da semana_
 - Diferença: _a calcular_
 
+### Slide: 4 – Descubra qual é o seu padrão de vida
+A ideia de padrão de vida, em geral, está associada a outro termo: classe social.
+
+Precisamos aprender a viver de acordo com o que ganhamos, manter um padrão de vida sustentável, que permita estar sempre na posição de **poupador** e não na de **devedor**.
+
+Para ser sustentável financeiramente, é preciso viver dentro da sua realidade e, assim, realizar sonhos mais consistentes.
+
+> Se você está atolado em dívidas, é provável que viva fora do seu padrão de vida. Isso acontece com milhões de pessoas.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
