@@ -56,6 +56,8 @@ Pode ser que você, de fato, esteja ganhando menos do que merece, mas isso nada 
 - Anotar as pequenas despesas do dia a dia para ter controle financeiro.
 - Exemplo do professor (análise no quartel): os que **ganhavam menos** eram os **mais equilibrados** financeiramente, enquanto os que **mais ganhavam** tinham **menos controle**. Ganhar mais não garante equilíbrio; o que importa é o controle.
 
+### 3 – Registre todos os seus pequenos e grandes gastos
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
