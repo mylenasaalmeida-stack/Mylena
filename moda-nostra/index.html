@@ -169,6 +169,8 @@ h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1}
 .bseg{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:5px;background:var(--paper);border-radius:18px}
 .bseg input{position:absolute;opacity:0;pointer-events:none}
 .bseg label{min-height:48px;display:grid;place-items:center;border-radius:14px;font-weight:700;cursor:pointer;color:var(--ink-2);transition:all .2s}
+.bseg label span{display:grid;justify-items:center;line-height:1.15}
+.bseg .pr{font-size:.78rem;font-weight:600;opacity:.8}
 .bseg input:checked + label{background:var(--red);color:#fff;box-shadow:0 4px 12px rgba(201,31,37,.3)}
 .bseg input:focus-visible + label{outline:3px solid var(--cheese);outline-offset:2px}
 .summary{display:grid;gap:4px;padding:18px 20px;border-radius:18px;border:2px dashed rgba(42,30,24,.2)}
@@ -432,9 +434,9 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
         <div class="ring">
           <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
             <circle cx="100" cy="100" r="98" fill="#F3B623"/>
-            <text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="19" letter-spacing="3.2" fill="#3A2200"><textPath href="#circ">CHEDDAR OU CATUPIRY • + R$ 18 • </textPath></text>
+            <text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="19" letter-spacing="3.2" fill="#3A2200"><textPath href="#circ">CHEDDAR R$ 20 • CATUPIRY R$ 18 • </textPath></text>
           </svg>
-          <span class="core">Borda<br>recheada<small style="display:block;font-size:.8em;margin-top:2px">+ R$ 18</small></span>
+          <span class="core">Borda<br>recheada<small style="display:block;font-size:.8em;margin-top:2px">a partir de R$ 18</small></span>
         </div>
       </div>
     </div>
@@ -455,7 +457,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
       <div class="sec-head rv">
         <p class="eyebrow">Monte a sua</p>
         <h2>Não consegue escolher? <span class="hand" style="color:var(--red)">pede meia a meia</span></h2>
-        <p class="lead">Um sabor para cada metade, borda recheada de cheddar ou catupiry (+ R$ 18) se quiser, e o pedido vai pronto pro WhatsApp.</p>
+        <p class="lead">Um sabor para cada metade, borda recheada de cheddar (+ R$ 20) ou catupiry (+ R$ 18) se quiser, e o pedido vai pronto pro WhatsApp.</p>
       </div>
       <div class="half-grid">
         <div class="pie-wrap rv">
@@ -475,11 +477,11 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
             <div class="flavors" data-side="b"></div>
           </fieldset>
           <fieldset class="side">
-            <legend>Borda recheada <span class="plus">+ R$ 18</span></legend>
+            <legend>Borda recheada</legend>
             <div class="bseg" id="borda">
               <input type="radio" name="borda" id="bd-0" value="" checked><label for="bd-0">Sem borda</label>
-              <input type="radio" name="borda" id="bd-1" value="cheddar"><label for="bd-1">Cheddar</label>
-              <input type="radio" name="borda" id="bd-2" value="catupiry"><label for="bd-2">Catupiry</label>
+              <input type="radio" name="borda" id="bd-1" value="cheddar"><label for="bd-1"><span>Cheddar<small class="pr">+ R$ 20</small></span></label>
+              <input type="radio" name="borda" id="bd-2" value="catupiry"><label for="bd-2"><span>Catupiry<small class="pr">+ R$ 18</small></span></label>
             </div>
           </fieldset>
           <div class="summary" aria-live="polite"><small>Seu pedido</small><b id="summary">Meia frango com bacon, meia calabresa</b></div>
@@ -534,7 +536,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
       <div class="collage rv">
         <figure class="c1"><img src="img/pizzaiolo-pizza.jpg" alt="Pizzaiolo tirando uma pizza de calabresa do forno" loading="lazy" width="1400" height="931"></figure>
         <figure class="c2"><img src="img/borda.jpg" alt="Borda recheada com cheddar escorrendo" loading="lazy" width="1400" height="931"></figure>
-        <span class="note">borda de cheddar<br>ou catupiry, + R$ 18</span>
+        <span class="note">borda de cheddar + R$ 20<br>ou catupiry + R$ 18</span>
       </div>
       <div class="house-copy rv">
         <p class="eyebrow">Pizzaria paulista autêntica</p>
@@ -734,7 +736,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
     if (changed !== 'a') swap(pb, B);
     pie.classList.toggle('whole', whole);
     pie.classList.toggle('borda', !!bordaVal());
-    const txt = (whole ? 'Pizza inteira de ' + A.name.toLowerCase() : 'Meia ' + A.name.toLowerCase() + ', meia ' + B.name.toLowerCase()) + (bordaVal() ? ', com borda recheada de ' + bordaVal() : '');
+    const txt = (whole ? 'Pizza inteira de ' + A.name.toLowerCase() : 'Meia ' + A.name.toLowerCase() + ', meia ' + B.name.toLowerCase()) + (bordaVal() ? ', com borda recheada de ' + bordaVal() + (bordaVal() === 'cheddar' ? ' (+ R$ 20)' : ' (+ R$ 18)') : '');
     $('#summary').textContent = txt;
     $('#pie-tag').textContent = whole ? 'Inteira' : 'Meia a meia';
     $('#send-half').href = wa('Olá, Moda Nostra! Quero pedir uma pizza: ' + txt + '. Qual o valor e os tamanhos?');
