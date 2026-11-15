@@ -97,6 +97,13 @@ Se você tem pouco tempo para seus filhos e se sente culpado, não compre presen
 
 > Toda vez que for comprar algo, procure observar o sentimento e a motivação por trás desse ato.
 
+### Slide: Dicas para resistir ao impulso
+- **Resista ao impulso:** deixe para o dia seguinte, pois, se esse item for realmente necessário, você retornará depois para comprá-lo.
+- Não compre nada que você não tenha certeza de que precisa e que realmente irá agregar algo à sua vida.
+- Se for possível, experimente o bem desejado para ter certeza de que lhe agrada.
+- Se não possuir dinheiro suficiente para comprar o que deseja, evite comprar a prazo.
+- Verifique se o gasto cabe em seu orçamento.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
