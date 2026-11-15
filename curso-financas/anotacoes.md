@@ -65,6 +65,11 @@ Saiba que todos nós temos um pouco de medo de entrar em contato com a verdade.
 
 **Exercício:** faça uma previsão de quanto você gastará durante os **próximos 7 dias** e compare, no final, as despesas previstas com as realizadas. Você terá uma grande surpresa.
 
+**Minha previsão (exercício de 7 dias):**
+- Quanto acho que gasto com pequenos gastos por semana: **R$ 400,00**
+- Quanto gastei de verdade: _a preencher no fim da semana_
+- Diferença: _a calcular_
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
