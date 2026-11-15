@@ -39,6 +39,11 @@ Atenção especial para quem tem renda variável:
 
 \* Colocar tudo em uma planilha.
 
+**Explicação em aula:**
+- Calcular o seu **salário real**: quanto você realmente ganha (o valor líquido, depois dos descontos).
+- Colocar tudo na planilha.
+- O que não for regular (renda variável, extras, comissões) → **tirar a média**.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
