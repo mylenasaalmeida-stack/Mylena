@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Mr.Book · Black Friday</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Black Friday: 1 post de feed (1080×1440) e 2 stories (1080×1920). Fundo só amarelo e preto. */
+:root{--amarelo:#FFCE1B;--grafite:#16181D;--grafite-2:#23262D;--branco:#FFFFFF;--pressao:#E2412B;--mut:#A9ADB6;
+  --display:"Archivo","Arial Black",sans-serif;--body:"Instrument Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;display:flex;gap:40px;padding:40px;align-items:flex-start;font-family:var(--body)}
+.art{position:relative;overflow:hidden;flex:none}
+.feed{width:1080px;height:1440px}
+.story{width:1080px;height:1920px}
+.y{background:var(--amarelo);color:var(--grafite)}
+.d{background:var(--grafite);color:var(--branco)}
+.wm{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:1;display:inline-block;white-space:nowrap}
+.wm .ook{display:inline-block;height:1.22em;width:2.16em;margin-left:-.02em;vertical-align:-.41em;overflow:visible}
+.d .wm{color:var(--amarelo)}
+h1,h2,h3{font-family:var(--display);font-weight:900;font-stretch:122%;line-height:.92;letter-spacing:-.02em}
+.top{position:absolute;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
+.top .wm{font-size:46px}
+.bf{font-family:var(--mono);font-size:26px;letter-spacing:.1em;background:var(--pressao);color:#fff;border-radius:999px;padding:10px 24px;font-weight:600}
+.foot{position:absolute;left:0;right:0;bottom:0;height:104px;background:var(--grafite);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 72px;font-family:var(--mono);font-size:26px;letter-spacing:.04em}
+.foot b{color:var(--amarelo);font-weight:600}
+.d .foot{background:#000}
+mark{background:var(--amarelo);color:var(--grafite);padding:0 14px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.y mark{background:var(--grafite);color:var(--amarelo)}
+.tag{display:inline-block;font-family:var(--mono);font-size:24px;letter-spacing:.06em;background:var(--grafite);color:var(--amarelo);padding:6px 14px;border-radius:8px}
+.d .tag{background:var(--amarelo);color:var(--grafite)}
+.price{display:flex;align-items:flex-start;gap:6px;font-family:var(--display);font-weight:900;font-stretch:112%;line-height:.82}
+.price small{font-size:.3em;margin-top:.14em}
+.price sup{font-size:.34em;margin-top:.06em}
+s.de{font-family:var(--mono);font-size:28px;opacity:.75}
+
+/* ===== FEED ===== */
+.feed .top{top:64px}
+.feed .tt{position:absolute;left:72px;right:72px;top:170px}
+.feed .tt small{display:block;font-family:var(--mono);font-size:28px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:18px}
+.feed .tt h1{font-size:150px}
+.feed .tt h1 em{font-style:normal;color:var(--amarelo)}
+.grid{position:absolute;left:60px;right:60px;top:560px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:400px 300px;gap:22px}
+.card{border-radius:30px;border:5px solid var(--branco);overflow:hidden;position:relative}
+.c-ox{grid-column:1/-1;background:var(--branco);color:var(--grafite);display:grid;grid-template-columns:1.15fr 1fr;align-items:center}
+.c-ox img{width:100%;height:100%;object-fit:contain;padding:26px}
+.c-ox .tx{padding:30px 36px 30px 10px;display:grid;gap:12px;align-content:center}
+.c-ox h3{font-size:46px;line-height:1}
+.c-ox .price{font-size:150px}
+.c-vade{background:var(--branco);color:var(--grafite);display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;padding:22px}
+.c-vade img{width:150px;height:222px;object-fit:cover;border-radius:6px;box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
+.c-vade h3,.c-rel h3{font-size:34px;line-height:1.02}
+.c-vade .price,.c-rel .price{font-size:96px;margin-top:10px}
+.c-rel{background:var(--amarelo);color:var(--grafite);border-color:var(--amarelo);padding:28px 30px;display:grid;align-content:space-between}
+.c-rel .cores{display:flex;gap:10px;margin-top:6px}
+.c-rel .cores i{width:30px;height:30px;border-radius:50%;border:3px solid var(--grafite)}
+.c-tag{position:absolute;top:18px;right:18px}
+
+/* ===== STORIES ===== */
+.story .top{top:150px}
+.safe{position:absolute;left:72px;right:72px}
+/* story 1: as 3 ofertas */
+.s1 h1{font-size:136px}
+.s1 .sub{font-size:44px;font-weight:600;margin-top:30px;max-width:18ch;line-height:1.2}
+.lista{list-style:none;display:grid;gap:0;border-top:5px solid var(--grafite)}
+.lista li{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:30px 0;border-bottom:3px solid var(--grafite)}
+.lista b{display:block;font-family:var(--display);font-stretch:112%;font-size:46px;line-height:1.05}
+.lista span{font-family:var(--mono);font-size:26px}
+.lista .price{font-size:110px}
+.sticker{border:5px dashed currentColor;border-radius:999px;height:120px;display:grid;place-items:center;font-family:var(--mono);font-size:26px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+.cta{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:50px;text-align:center}
+/* story 2: oxímetro */
+.s2 .foto{background:var(--branco);border-radius:44px;border:6px solid var(--amarelo);height:420px;display:grid;place-items:center;padding:30px;transform:rotate(-2deg)}
+.s2 .foto img{width:100%;height:100%;object-fit:contain}
+.s2 h1{font-size:118px}
+.s2 .price{font-size:220px;color:var(--amarelo)}
+.s2 .inc{font-size:38px;line-height:1.3;color:#D6D8DD;max-width:24ch}
+.selo{position:absolute;right:44px;top:650px;width:250px;height:250px;border-radius:50%;background:var(--pressao);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:64px;line-height:.9;transform:rotate(10deg);z-index:3}
+.selo small{display:block;font-family:var(--mono);font-size:22px;font-weight:500;letter-spacing:.08em;margin-top:8px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ook" viewBox="0 0 216 122">
+    <clipPath id="ookBase"><rect x="0" y="0" width="216" height="81"/></clipPath>
+    <ellipse cx="38.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+    <ellipse cx="112.5" cy="55" rx="28.5" ry="19" fill="none" stroke="currentColor" stroke-width="18"/>
+    <rect x="32" y="80" width="13" height="11" rx="2.5" fill="currentColor"/>
+    <path d="M38.5 89 C38.5 109 52 113 76 113 H140 C158 113 164 104 164 84" fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="round"/>
+    <g clip-path="url(#ookBase)" stroke="currentColor" stroke-width="20" fill="none">
+      <path d="M164 8 V82"/><path d="M170 60 L205 26"/><path d="M169 50 L210 93"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<!-- ============ FEED ============ -->
+<div class="art feed d" data-out="black-friday/feed-black-friday">
+  <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
+  <div class="tt"><small>Mr.Book · ofertas da semana</small><h1>BLACK <em>FRIDAY.</em></h1></div>
+  <div class="grid">
+    <div class="card c-ox">
+      <img src="produtos/dellamed-oximetro-kit.jpg" alt="Oxímetro Dellamed com estojo, cordão e pilhas">
+      <div class="tx">
+        <span class="tag">OXÍMETRO DELLAMED</span>
+        <s class="de">de R$ 149,99</s>
+        <div class="price"><small>R$</small>84<sup>,00</sup></div>
+        <span style="font-family:var(--mono);font-size:24px">até 4x sem juros</span>
+      </div>
+    </div>
+    <div class="card c-vade">
+      <img src="livros/vade-mecum-2026.jpg" alt="Vade Mecum Saraiva 2026">
+      <div>
+        <h3>Vade Mecum Saraiva 2026</h3>
+        <s class="de" style="display:block;margin-top:10px">de R$ 309</s>
+        <div class="price"><small>R$</small>189</div>
+      </div>
+    </div>
+    <div class="card c-rel">
+      <div>
+        <h3>Relógio de lapela</h3>
+        <div class="cores"><i style="background:#7A1F33"></i><i style="background:#2F55C9"></i><i style="background:#FFFFFF"></i><i style="background:#16181D"></i></div>
+      </div>
+      <div><s class="de">de R$ 35,99</s><div class="price"><small>R$</small>19<sup>,99</sup></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>BLACK FRIDAY · <b>ATÉ ACABAR O ESTOQUE</b></span><span>@mrbookessencial</span></div>
+</div>
+
+<!-- ============ STORY 1 · as ofertas ============ -->
+<div class="art story y s1" data-out="black-friday/story-1-ofertas">
+  <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
+  <div class="safe" style="top:300px"><h1>CHEGOU A <mark>BLACK</mark> <mark>FRIDAY.</mark></h1><p class="sub">Três ofertas pra você garantir antes de acabar.</p></div>
+  <div class="safe" style="top:960px">
+    <ul class="lista">
+      <li><div><b>Oxímetro Dellamed</b><span>de R$ 149,99 · até 4x</span></div><div class="price"><small>R$</small>84</div></li>
+      <li><div><b>Vade Mecum Saraiva 2026</b><span>de R$ 309</span></div><div class="price"><small>R$</small>189</div></li>
+      <li><div><b>Relógio de lapela</b><span>de R$ 35,99 · 4 cores</span></div><div class="price"><small>R$</small>19<sup>,99</sup></div></li>
+    </ul>
+  </div>
+  <div class="safe" style="top:1500px;display:grid;gap:22px">
+    <div class="cta">Toque no link e garante o seu ↓</div>
+  </div>
+</div>
+
+<!-- ============ STORY 2 · oxímetro ============ -->
+<div class="art story d s2" data-out="black-friday/story-2-oximetro">
+  <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
+  <div class="selo">-44%<small>DE DESCONTO</small></div>
+  <div class="safe" style="top:300px"><span class="tag">OXÍMETRO DELLAMED</span><h1 style="margin-top:26px">O MAIS<br>PEDIDO DO<br>ESTÁGIO.</h1></div>
+  <div class="safe foto" style="top:760px"><img src="produtos/dellamed-oximetro-kit.jpg" alt="Oxímetro Dellamed com estojo, cordão e pilhas"></div>
+  <div class="safe" style="top:1230px;display:grid;gap:12px">
+    <s class="de">de R$ 149,99</s>
+    <div class="price"><small>R$</small>84<sup>,00</sup></div>
+    <p class="inc">Com estojo, cordão, 2 pilhas e capa · até 4x sem juros</p>
+  </div>
+</div>
+</body>
+</html>
