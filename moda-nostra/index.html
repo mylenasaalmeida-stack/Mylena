@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Moda Nostra Candeias</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pizzaria paulista em Candeias, Jaboatão dos Guararapes. Pizzas e esfihas com tradição e sabor de SP e entrega própria. Peça pelo cardápio digital ou WhatsApp.">
+<meta name="theme-color" content="#16110E">
+<meta property="og:title" content="Moda Nostra · Pizza Delivery em Candeias">
+<meta property="og:description" content="Tradição e sabor de SP. Peça pelo cardápio digital ou WhatsApp. Terça a domingo, 18h às 23h15.">
+<meta property="og:image" content="img/pizza-calabresa.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: "forno aceso". Fundo de aço escuro do forno, vermelho da marca em faixas largas,
+   títulos condensados inclinados como o logo, faixa em grade imitando a esteira do forno. */
+:root{
+  --oven:#16110E;        /* aço queimado do forno */
+  --oven-2:#221A15;
+  --oven-3:#2E241D;
+  --red:#C91F25;         /* vermelho Moda Nostra */
+  --red-deep:#8F1217;
+  --cheese:#F3B623;      /* faixa amarela do logo */
+  --basil:#1F6B3A;       /* selo verde "pizza delivery" */
+  --wa:#25D366;
+  --flour:#F7EEDC;       /* farinha / creme */
+  --flour-dim:#CDBFA8;
+  --line:rgba(247,238,220,.14);
+  --display:"Barlow Condensed","Roboto Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--oven);color:var(--flour);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--oven)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cheese);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+
+/* ---------- tipografia ---------- */
+.eyebrow{font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;color:var(--cheese);margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h1{font-size:clamp(3rem,8.4vw,6.6rem)}
+h2{font-size:clamp(2.4rem,5.6vw,4.4rem)}
+h3{font-size:1.7rem;line-height:1}
+.hand{font-family:var(--hand);font-weight:700;color:var(--cheese);text-transform:none;font-style:normal;letter-spacing:0}
+.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--flour-dim);max-width:34em;margin:0}
+
+/* ---------- botões ---------- */
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;
+  font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:1.22rem;
+  text-decoration:none;border:2px solid transparent;transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease;cursor:pointer}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-menu{background:var(--cheese);color:#2A1700;box-shadow:0 6px 0 #A9780C}
+.btn-menu:hover{transform:translateY(-2px);box-shadow:0 8px 0 #A9780C}
+.btn-menu:active{transform:translateY(3px);box-shadow:0 3px 0 #A9780C}
+.btn-wa{background:var(--wa);color:#05290F;box-shadow:0 6px 0 #138A3F}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 0 #138A3F}
+.btn-wa:active{transform:translateY(3px);box-shadow:0 3px 0 #138A3F}
+.btn-ghost{border-color:var(--flour);color:var(--flour)}
+.btn-ghost:hover{background:var(--flour);color:var(--oven)}
+
+/* ---------- topo ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(22,17,14,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.top-logo img{height:44px;width:auto}
+.top nav{display:flex;align-items:center;gap:26px}
+.top nav a.link{text-decoration:none;font-weight:600;font-size:.98rem;color:var(--flour-dim)}
+.top nav a.link:hover{color:var(--flour)}
+.top .btn{min-height:44px;font-size:1.02rem;padding:0 18px;box-shadow:0 4px 0 #A9780C}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(60% 70% at 85% 40%, rgba(201,31,37,.35), transparent 70%),
+  radial-gradient(40% 50% at 10% 100%, rgba(243,182,35,.12), transparent 70%), var(--oven)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:40px;padding-block:56px 72px}
+.hero-copy{display:grid;gap:24px;min-width:0;position:relative;z-index:2}
+.hero h1 .hand{display:block;font-size:.5em;line-height:1;margin-bottom:.12em;transform:rotate(-3deg);transform-origin:left}
+.hero h1 .red{color:var(--red);-webkit-text-stroke:0}
+.status{display:inline-flex;align-items:center;gap:10px;align-self:start;justify-self:start;padding:8px 16px 8px 12px;border-radius:999px;background:var(--oven-2);border:1px solid var(--line);font-weight:600;font-size:.95rem}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--flour-dim);flex:none}
+.status.open .dot{background:#3BD16F;box-shadow:0 0 0 0 rgba(59,209,111,.6);animation:pulse 2s infinite}
+.status.closed .dot{background:#E2614B}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(59,209,111,0)}100%{box-shadow:0 0 0 0 rgba(59,209,111,0)}}
+.hero-note{font-size:.95rem;color:var(--flour-dim);margin:0}
+.hero-note b{color:var(--flour)}
+.hero-photo{position:relative;min-width:0}
+.hero-photo .frame{position:relative;border-radius:28px;overflow:hidden;transform:rotate(2deg);box-shadow:0 30px 80px rgba(0,0,0,.55);border:6px solid var(--flour);aspect-ratio:4/5}
+.hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;transform:scale(1.05)}
+.hero-photo .sticker{position:absolute;left:-22px;bottom:34px;z-index:2;background:var(--red);color:var(--flour);border-radius:16px;padding:14px 18px 12px;transform:rotate(-6deg);box-shadow:0 12px 30px rgba(0,0,0,.45);font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;font-size:1.45rem}
+.hero-photo .sticker small{display:block;font-family:var(--hand);text-transform:none;font-style:normal;font-weight:700;color:var(--cheese);font-size:1.3rem}
+.hero-photo .logo-badge{position:absolute;right:-14px;top:-30px;z-index:2;width:34%;max-width:190px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6));transform:rotate(-4deg)}
+
+/* ---------- esteira (marquee) ---------- */
+.belt{position:relative;background:var(--red);border-block:4px solid var(--oven);overflow:hidden}
+.belt::before,.belt::after{content:"";position:absolute;left:0;right:0;height:8px;background:
+  repeating-linear-gradient(90deg, rgba(0,0,0,.35) 0 2px, transparent 2px 14px);}
+.belt::before{top:0}.belt::after{bottom:0}
+.belt-track{display:flex;width:max-content;animation:belt 28s linear infinite}
+.belt-track span{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2rem);padding:18px 0;white-space:nowrap;display:flex;align-items:center}
+.belt-track span::after{content:"";width:12px;height:12px;margin:0 26px;background:var(--cheese);transform:rotate(45deg)}
+@keyframes belt{to{transform:translateX(-50%)}}
+
+/* ---------- seções ---------- */
+section{padding-block:88px}
+.sec-head{display:grid;gap:14px;margin-bottom:40px;max-width:760px}
+
+/* sabor de SP */
+.sp{background:var(--oven)}
+.sp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.sp-photo{position:relative;border-radius:24px;overflow:hidden;min-height:340px}
+.sp-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.sp-photo figcaption{position:absolute;left:16px;bottom:16px;background:rgba(22,17,14,.82);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.92rem}
+.sp-side{display:grid;gap:22px;grid-template-rows:auto 1fr}
+.sp-side .sp-photo{min-height:240px}
+.facts{display:grid;gap:0;background:var(--oven-2);border-radius:24px;padding:8px 26px;border:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:20px 0;border-bottom:1px dashed var(--line)}
+.fact:last-child{border-bottom:0}
+.fact .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--red);color:var(--flour)}
+.fact .ic svg{width:24px;height:24px}
+.fact h3{font-size:1.45rem;margin-bottom:4px}
+.fact p{margin:0;color:var(--flour-dim);font-size:.98rem}
+
+/* esfihas */
+.esf{background:var(--flour);color:var(--oven)}
+.esf .eyebrow{color:var(--red)}
+.esf .lead{color:#5A4A3C}
+.esf h2 .hand{color:var(--red)}
+.esf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.esf-card{position:relative;display:block;border-radius:22px;overflow:hidden;text-decoration:none;color:var(--flour);background:var(--oven);aspect-ratio:4/3;isolation:isolate}
+.esf-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.esf-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(22,17,14,.88));z-index:1}
+.esf-card .lbl{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;display:flex;align-items:end;justify-content:space-between;gap:12px}
+.esf-card .lbl strong{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.65rem;line-height:1}
+.esf-card .lbl span{font-size:.85rem;font-weight:600;color:var(--cheese);white-space:nowrap}
+.esf-card:hover img{transform:scale(1.06)}
+.esf-foot{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.esf-foot p{margin:0;font-weight:600;color:#5A4A3C}
+
+/* como pedir */
+.how{background:
+  linear-gradient(rgba(22,17,14,.86),rgba(22,17,14,.92)), url("img/forno-esfihas.jpg") center/cover no-repeat}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{position:relative;background:rgba(34,26,21,.9);border:1px solid var(--line);border-radius:22px;padding:28px 24px 26px;display:grid;gap:10px;align-content:start}
+.step .n{font-family:var(--display);font-weight:800;font-style:italic;font-size:4rem;line-height:.8;color:var(--red)}
+.step p{margin:0;color:var(--flour-dim)}
+.step a{color:var(--cheese);font-weight:600}
+.how .btns{margin-top:34px}
+
+/* entrega + horário */
+.deliv{background:var(--red);position:relative;overflow:hidden}
+.deliv::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,transparent 1px 42px);pointer-events:none}
+.deliv .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.deliv .eyebrow{color:var(--flour)}
+.deliv .lead{color:#FBE2DA}
+.deliv-copy{display:grid;gap:20px;min-width:0}
+.ticket{background:var(--flour);color:var(--oven);border-radius:6px;padding:26px 26px 22px;position:relative;transform:rotate(-1.5deg);box-shadow:0 24px 50px rgba(60,0,0,.45);min-width:0;
+  -webkit-mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x;
+          mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x}
+.ticket h3{text-align:center;color:var(--red);font-size:2rem}
+.ticket .sub{text-align:center;font-family:var(--hand);font-size:1.4rem;color:#6B5745;margin:2px 0 14px}
+.ticket table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.ticket td{padding:9px 2px;border-bottom:1px dashed #CDBFA8;font-weight:600}
+.ticket td:last-child{text-align:right}
+.ticket tr.today td{color:var(--red)}
+.ticket tr.off td{color:#9A8975;font-weight:500}
+.ticket .tfoot{margin-top:16px;display:grid;gap:4px;text-align:center;font-size:.95rem;color:#5A4A3C}
+.ticket .tfoot b{color:var(--oven);font-size:1.15rem;user-select:all}
+
+/* CTA final */
+.final{position:relative;text-align:center;background:linear-gradient(rgba(22,17,14,.55),rgba(22,17,14,.85)),url("img/bokeh.jpg") center/cover no-repeat;padding-block:110px}
+.final .wrap{display:grid;justify-items:center;gap:22px}
+.final h2{max-width:14ch}
+.final .btns{justify-content:center}
+
+/* rodapé */
+footer{background:#0E0A08;border-top:1px solid var(--line);padding-block:44px calc(44px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
+footer img{height:56px;width:auto}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px}
+footer a{text-decoration:none;color:var(--flour-dim);font-weight:500}
+footer a:hover{color:var(--flour)}
+footer small{display:block;width:100%;color:#7E6F60;font-size:.85rem}
+
+/* WhatsApp flutuante (desktop) e barra fixa (celular) */
+.fab{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:70;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .15s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:34px;height:34px}
+.dock{display:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:960px){
+  .top nav a.link{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:34px;padding-block:28px 56px}
+  .hero-photo{order:-1;max-width:520px;width:100%;justify-self:center;padding-inline:14px}
+  .hero-photo .frame{aspect-ratio:5/4}
+  .hero-photo .sticker{left:0}
+  .hero-photo .logo-badge{right:4px}
+  .sp-grid,.deliv .wrap{grid-template-columns:1fr}
+  .esf-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding-block:64px}
+  .top .btn{display:none}
+  .btns .btn{flex:1 1 100%}
+  .esf-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .esf-card{aspect-ratio:1/1;border-radius:16px}
+  .esf-card .lbl{left:12px;right:12px;bottom:10px;flex-direction:column;align-items:start;gap:2px}
+  .esf-card .lbl strong{font-size:1.3rem}
+  .fab{display:none}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(14,10,8,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);
+    padding:10px max(12px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px))}
+  .dock .btn{min-height:50px;font-size:1.05rem;padding:0 10px;box-shadow:none}
+  footer{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.33-1.99 1.38-.51.05-.99.24-3.33-.69-2.81-1.11-4.6-3.98-4.74-4.17-.14-.18-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.09.18-.14.3-.28.46-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.18.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.27.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 2 3 21l9-4 9 4L12 2Zm0 6.5v6M9.5 12.5h5"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22c4 0 7-2.8 7-6.8 0-3.3-2-5.6-3.6-7.4-.4 1.8-1.3 3-2.4 3.4C13.6 7.6 12 4.6 9.5 2c.3 3.5-1.6 5.6-3.1 7.6C5.4 11 5 12.6 5 15.2 5 19.2 8 22 12 22Z"/></symbol>
+  <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M8.5 17h6l3-6h-4M14 5h3l1.5 6M5.5 14l3-4h5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="top-logo" href="#inicio" aria-label="Moda Nostra, início"><img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="92" height="44"></a>
+    <nav aria-label="Principal">
+      <a class="link" href="#sabor">A casa</a>
+      <a class="link" href="#esfihas">Esfihas</a>
+      <a class="link" href="#como-pedir">Como pedir</a>
+      <a class="link" href="#horario">Horário</a>
+      <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener">Pedir agora</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero" style="padding-block:0">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="status" id="status" role="status"><span class="dot"></span><span id="status-txt">Terça a domingo, 18h às 23h15</span></p>
+        <h1><span class="hand">tradição e sabor de SP</span>A pizza paulista de <span class="red">Candeias</span></h1>
+        <p class="lead">Pizza no estilo paulista, com muito queijo e forno bem quente. Escolha no cardápio digital, finalize o pedido e o nosso próprio entregador leva até você.</p>
+        <div class="btns">
+          <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
+          <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+        </div>
+        <p class="hero-note">WhatsApp <b>(81) 98635-2086</b> · Candeias, Jaboatão dos Guararapes</p>
+      </div>
+      <div class="hero-photo">
+        <img class="logo-badge" src="img/logo.png" alt="" width="900" height="430">
+        <div class="frame"><img src="img/pizza-calabresa.jpg" alt="Pizza de calabresa com cebola saindo do forno da Moda Nostra" width="1600" height="1064" fetchpriority="high"></div>
+        <div class="sticker"><small>tem também</small>Borda<br>recheada</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="belt" aria-hidden="true">
+    <div class="belt-track">
+      <span>Pizza paulista</span><span>Esfihas</span><span>Borda recheada</span><span>Entrega própria</span><span>Terça a domingo</span>
+      <span>Pizza paulista</span><span>Esfihas</span><span>Borda recheada</span><span>Entrega própria</span><span>Terça a domingo</span>
+    </div>
+  </div>
+
+  <section class="sp" id="sabor">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pizzaria paulista autêntica</p>
+        <h2>São Paulo no forno, <span class="hand">Pernambuco na mesa</span></h2>
+        <p class="lead">A receita veio de SP e a casa fica em Candeias. A pizza sai da esteira do forno com o queijo ainda borbulhando e vai direto pra caixa.</p>
+      </div>
+      <div class="sp-grid">
+        <figure class="sp-photo" style="margin:0">
+          <img src="img/pizza-mussarela.jpg" alt="Pizza de mussarela com rodelas de tomate na grelha do forno" width="1600" height="1064" loading="lazy">
+          <figcaption>Mussarela com tomate, direto da esteira</figcaption>
+        </figure>
+        <div class="sp-side">
+          <figure class="sp-photo" style="margin:0">
+            <img src="img/forno-esfihas.jpg" alt="Esfihas abertas assando no forno" width="1600" height="1064" loading="lazy">
+            <figcaption>Esfihas saindo do forno</figcaption>
+          </figure>
+          <div class="facts">
+            <div class="fact">
+              <span class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
+              <div><h3>Receita de SP</h3><p>Pizza no estilo paulista, de borda dourada e cobertura generosa.</p></div>
+            </div>
+            <div class="fact">
+              <span class="ic"><svg aria-hidden="true"><use href="#i-fire"/></svg></span>
+              <div><h3>Forno quente</h3><p>Cada pedido assa na hora, quando ele chega.</p></div>
+            </div>
+            <div class="fact">
+              <span class="ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span>
+              <div><h3>Entrega própria</h3><p>Quem leva é o nosso entregador, não um aplicativo. Consulte taxa e região no WhatsApp.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="esf" id="esfihas">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Além da pizza</p>
+        <h2>Esfiha aberta, <span class="hand">uma não basta</span></h2>
+        <p class="lead">Massa macia, fundo crocante e recheio até a borda. Peça junto com a pizza ou monte um combo só de esfihas.</p>
+      </div>
+      <div class="esf-grid">
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-calabresa.jpg" alt="Esfiha de calabresa com limão" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Calabresa</strong><span>Ver no cardápio →</span></span></a>
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-frango.jpg" alt="Esfiha de frango com queijo" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Frango</strong><span>Ver no cardápio →</span></span></a>
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-queijo.jpg" alt="Esfiha de queijo gratinado" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Queijo</strong><span>Ver no cardápio →</span></span></a>
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-milho.jpg" alt="Esfiha de milho com queijo cremoso" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Milho</strong><span>Ver no cardápio →</span></span></a>
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-chocolate.jpg" alt="Esfiha doce de chocolate" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Chocolate</strong><span>Ver no cardápio →</span></span></a>
+        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfihas-variadas.jpg" alt="Esfihas de sabores variados no forno" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Mix de sabores</strong><span>Ver no cardápio →</span></span></a>
+      </div>
+      <div class="esf-foot">
+        <p>Sabores, tamanhos e preços atualizados ficam no cardápio digital.</p>
+        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Abrir cardápio</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-pedir">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Como pedir</p>
+        <h2>Do clique à sua porta em 3 passos</h2>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step"><span class="n">1</span><h3>Escolha no cardápio</h3><p>Abra o <a class="js-menu" href="#" target="_blank" rel="noopener">cardápio digital</a>, escolha pizzas, esfihas e bebidas e monte o carrinho.</p></li>
+        <li class="step"><span class="n">2</span><h3>Finalize o pedido</h3><p>Informe endereço e forma de pagamento. Preferir conversar? Chame a gente no <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>.</p></li>
+        <li class="step"><span class="n">3</span><h3>Receba quentinha</h3><p>A pizza sai do forno e o nosso entregador leva direto até você.</p></li>
+      </ol>
+      <div class="btns">
+        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Começar pelo cardápio</a>
+        <a class="btn btn-ghost js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="deliv" id="horario">
+    <div class="wrap">
+      <div class="deliv-copy">
+        <p class="eyebrow">Entrega própria</p>
+        <h2>O nosso entregador leva até você</h2>
+        <p class="lead">A Moda Nostra tem serviço de entrega próprio, com atendimento de quem conhece o bairro. A taxa e as áreas atendidas variam, então confirme pelo WhatsApp antes de pedir.</p>
+        <div class="btns">
+          <a class="btn btn-wa js-wa-area" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar taxa e região</a>
+        </div>
+      </div>
+      <div class="ticket" aria-label="Horário de funcionamento">
+        <h3>Forno aceso</h3>
+        <p class="sub">horário de funcionamento</p>
+        <table>
+          <tbody id="hours">
+            <tr data-d="1" class="off"><td>Segunda</td><td>Fechado</td></tr>
+            <tr data-d="2"><td>Terça</td><td>18:00 – 23:15</td></tr>
+            <tr data-d="3"><td>Quarta</td><td>18:00 – 23:15</td></tr>
+            <tr data-d="4"><td>Quinta</td><td>18:00 – 23:15</td></tr>
+            <tr data-d="5"><td>Sexta</td><td>18:00 – 23:15</td></tr>
+            <tr data-d="6"><td>Sábado</td><td>18:00 – 23:15</td></tr>
+            <tr data-d="0"><td>Domingo</td><td>18:00 – 23:15</td></tr>
+          </tbody>
+        </table>
+        <div class="tfoot">
+          <span>Pedidos e dúvidas</span>
+          <b>(81) 98635-2086</b>
+          <span>Candeias · Jaboatão dos Guararapes – PE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <p class="eyebrow">Bateu a fome?</p>
+      <h2>O forno já tá esquentando</h2>
+      <p class="lead">Peça agora pelo cardápio digital ou mande uma mensagem.</p>
+      <div class="btns">
+        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
+        <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="117" height="56" loading="lazy">
+    <ul>
+      <li><a class="js-menu" href="#" target="_blank" rel="noopener">Cardápio digital</a></li>
+      <li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp (81) 98635-2086</a></li>
+      <li><a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener">@modanostracandeias</a></li>
+    </ul>
+    <small>Moda Nostra Candeias · Pizzaria paulista autêntica · Terça a domingo, 18:00 às 23:15</small>
+  </div>
+</footer>
+
+<a class="fab js-wa" href="#" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<div class="dock">
+  <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Cardápio</a>
+  <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var MENU = "https://www.mestrecuka.com.br/mPedidos/m?id=modanostrapizza";
+  var PHONE = "5581986352086";
+  function wa(msg){ return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg); }
+  var waOrder = wa("Olá, Moda Nostra! Quero fazer um pedido 🍕");
+  var waArea  = wa("Olá, Moda Nostra! Vocês entregam no meu bairro? Qual a taxa de entrega?");
+  document.querySelectorAll(".js-menu").forEach(function(a){ a.href = MENU; });
+  document.querySelectorAll(".js-wa").forEach(function(a){ a.href = waOrder; });
+  document.querySelectorAll(".js-wa-area").forEach(function(a){ a.href = waArea; });
+
+  // Horário de Recife: terça (2) a domingo (0), 18:00–23:15
+  var OPEN = 18*60, CLOSE = 23*60+15;
+  var DAYS = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+  function recifeNow(){
+    try{
+      var p = new Intl.DateTimeFormat("en-US",{timeZone:"America/Recife",weekday:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date());
+      var o = {}; p.forEach(function(x){ o[x.type]=x.value; });
+      var wd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday);
+      return {d:wd, m:(+o.hour)*60 + (+o.minute)};
+    }catch(e){ var n=new Date(); return {d:n.getDay(), m:n.getHours()*60+n.getMinutes()}; }
+  }
+  function isOpenDay(d){ return d !== 1; }
+  function nextOpening(d, m){
+    for (var i=0;i<8;i++){
+      var dd=(d+i)%7;
+      if (isOpenDay(dd) && (i>0 || m < OPEN)) return i===0 ? "hoje às 18h" : (i===1 ? "amanhã às 18h" : DAYS[dd]+" às 18h");
+    }
+    return "terça às 18h";
+  }
+  function render(){
+    var n = recifeNow(), el = document.getElementById("status"), t = document.getElementById("status-txt");
+    var open = isOpenDay(n.d) && n.m >= OPEN && n.m < CLOSE;
+    el.classList.toggle("open", open); el.classList.toggle("closed", !open);
+    t.textContent = open ? "Aberto agora · pedidos até 23h15" : "Fechado agora · abre " + nextOpening(n.d, n.m);
+    document.querySelectorAll("#hours tr").forEach(function(tr){ tr.classList.toggle("today", +tr.dataset.d === n.d); });
+  }
+  render(); setInterval(render, 60000);
+})();
+</script>
+</body>
+</html>
