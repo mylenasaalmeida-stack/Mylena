@@ -77,6 +77,21 @@ s.de{font-family:var(--mono);font-size:28px;opacity:.75}
 .s2 .inc{font-size:38px;line-height:1.3;color:#D6D8DD;max-width:24ch}
 .selo{position:absolute;right:44px;top:650px;width:250px;height:250px;border-radius:50%;background:var(--pressao);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--display);font-stretch:112%;font-weight:900;font-size:64px;line-height:.9;transform:rotate(10deg);z-index:3}
 .selo small{display:block;font-family:var(--mono);font-size:22px;font-weight:500;letter-spacing:.08em;margin-top:8px}
+
+/* modelos (Pexels, uso livre) */
+.feed .disco{position:absolute;right:46px;top:150px;width:400px;height:400px;border-radius:50%;background:var(--amarelo);z-index:0}
+.feed .modelo{position:absolute;right:40px;top:96px;height:640px;z-index:1}
+.feed .tt,.feed .grid,.feed .top{z-index:2}
+.feed .tt h1{font-size:118px}
+.s1 .modelo{position:absolute;right:-30px;top:250px;height:760px;z-index:1}
+.s1 .safe,.s1 .top{z-index:2}
+.s1 .lista{background:var(--amarelo);position:relative}
+.s1 h1{font-size:120px}
+.s2 .bgfoto{position:absolute;left:0;right:0;top:0;height:1150px;background:url(modelos/oximetro-maos.jpg) 40% 35%/cover no-repeat;z-index:0}
+.s2 .bgfoto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,24,29,.35) 0%,rgba(22,24,29,0) 25%,rgba(22,24,29,.55) 60%,#16181D 100%)}
+.s2 .safe,.s2 .top,.s2 .selo{z-index:2}
+.s2 .kit{position:absolute;left:72px;top:1060px;width:440px;height:280px;background:var(--branco);border:6px solid var(--amarelo);border-radius:36px;padding:20px;transform:rotate(-3deg);z-index:2}
+.s2 .kit img{width:100%;height:100%;object-fit:contain}
 </style>
 </head>
 <body>
@@ -96,7 +111,8 @@ s.de{font-family:var(--mono);font-size:28px;opacity:.75}
 <!-- ============ FEED ============ -->
 <div class="art feed d" data-out="black-friday/feed-black-friday">
   <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
-  <div class="tt"><small>Mr.Book · ofertas da semana</small><h1>BLACK <em>FRIDAY.</em></h1></div>
+  <div class="disco"></div><img class="modelo" src="modelos/estudante-verde-agua.png" alt="">
+  <div class="tt"><small>Mr.Book · ofertas da semana</small><h1>BLACK<br><em>FRIDAY.</em></h1></div>
   <div class="grid">
     <div class="card c-ox">
       <img src="produtos/dellamed-oximetro-kit.jpg" alt="Oxímetro Dellamed com estojo, cordão e pilhas">
@@ -129,7 +145,8 @@ s.de{font-family:var(--mono);font-size:28px;opacity:.75}
 <!-- ============ STORY 1 · as ofertas ============ -->
 <div class="art story y s1" data-out="black-friday/story-1-ofertas">
   <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
-  <div class="safe" style="top:300px"><h1>CHEGOU A <mark>BLACK</mark> <mark>FRIDAY.</mark></h1><p class="sub">Três ofertas pra você garantir antes de acabar.</p></div>
+  <img class="modelo" src="modelos/estudante-livro.png" alt="">
+  <div class="safe" style="top:300px"><h1>CHEGOU<br>A <mark>BLACK</mark><br><mark>FRIDAY.</mark></h1><p class="sub" style="max-width:11ch">Três ofertas pra garantir antes de acabar.</p></div>
   <div class="safe" style="top:960px">
     <ul class="lista">
       <li><div><b>Oxímetro Dellamed</b><span>de R$ 149,99 · até 4x</span></div><div class="price"><small>R$</small>84</div></li>
@@ -144,15 +161,16 @@ s.de{font-family:var(--mono);font-size:28px;opacity:.75}
 
 <!-- ============ STORY 2 · oxímetro ============ -->
 <div class="art story d s2" data-out="black-friday/story-2-oximetro">
+  <div class="bgfoto"></div>
   <div class="top"><span class="wm">mr.b<svg class="ook"><use href="#ook"/></svg></span><span class="bf">BLACK FRIDAY</span></div>
-  <div class="selo">-44%<small>DE DESCONTO</small></div>
-  <div class="safe" style="top:300px"><span class="tag">OXÍMETRO DELLAMED</span><h1 style="margin-top:26px">O MAIS<br>PEDIDO DO<br>ESTÁGIO.</h1></div>
-  <div class="safe foto" style="top:760px"><img src="produtos/dellamed-oximetro-kit.jpg" alt="Oxímetro Dellamed com estojo, cordão e pilhas"></div>
-  <div class="safe" style="top:1230px;display:grid;gap:12px">
+  <div class="selo" style="top:330px">-44%<small>DE DESCONTO</small></div>
+  <div class="safe" style="top:640px"><span class="tag">OXÍMETRO DELLAMED</span><h1 style="margin-top:26px">O MAIS<br>PEDIDO DO<br>ESTÁGIO.</h1></div>
+  <div class="kit"><img src="produtos/dellamed-oximetro-kit.jpg" alt="Oxímetro Dellamed com estojo, cordão e pilhas"></div>
+  <div class="safe" style="top:1070px;left:560px;display:grid;gap:10px">
     <s class="de">de R$ 149,99</s>
-    <div class="price"><small>R$</small>84<sup>,00</sup></div>
-    <p class="inc">Com estojo, cordão, 2 pilhas e capa · até 4x sem juros</p>
+    <div class="price" style="font-size:170px"><small>R$</small>84<sup>,00</sup></div>
   </div>
+  <div class="safe" style="top:1390px"><p class="inc">Com estojo, cordão, 2 pilhas e capa · até 4x sem juros</p></div>
 </div>
 </body>
 </html>
