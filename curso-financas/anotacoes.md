@@ -79,6 +79,15 @@ Para ser sustentável financeiramente, é preciso viver dentro da sua realidade 
 
 > Se você está atolado em dívidas, é provável que viva fora do seu padrão de vida. Isso acontece com milhões de pessoas.
 
+### Slide: Padrão de vida (continuação)
+A saúde de suas finanças depende de sua disposição em assumir a própria realidade. Minha casa, meu carro, a escola dos meus filhos, a TV a cabo, vestuário e lazer são itens que cabem tranquilamente em meu orçamento?
+
+Talvez você queira viver um padrão que não corresponde a seus rendimentos.
+
+A maioria das pessoas está sempre na "corda bamba", tentando equilibrar os gastos para manter um padrão de vida que não pode custear.
+
+> É necessário aprender a viver dentro do padrão de vida que os nossos rendimentos permitem: **90% do que recebemos**.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
