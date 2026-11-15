@@ -5,226 +5,383 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Moda Nostra Candeias</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Pizzaria paulista em Candeias, Jaboatão dos Guararapes. Pizzas e esfihas com tradição e sabor de SP e entrega própria. Peça pelo cardápio digital ou WhatsApp.">
-<meta name="theme-color" content="#16110E">
+<meta name="description" content="Pizzaria paulista autêntica em Candeias, Jaboatão dos Guararapes. Pizzas, esfihas e borda recheada com entrega própria. Peça pelo cardápio digital ou WhatsApp.">
+<meta name="theme-color" content="#C91F25">
 <meta property="og:title" content="Moda Nostra · Pizza Delivery em Candeias">
-<meta property="og:description" content="Tradição e sabor de SP. Peça pelo cardápio digital ou WhatsApp. Terça a domingo, 18h às 23h15.">
+<meta property="og:description" content="Tradição e sabor de SP. Terça a domingo, 18h às 23h15. Peça pelo cardápio digital ou WhatsApp.">
 <meta property="og:image" content="img/pizza-calabresa.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,700;1,800&family=Barlow:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<script>
+  /* abertura "acendendo o forno": uma vez por sessão e nunca com movimento reduzido */
+  (function(){try{
+    var seen = sessionStorage.getItem('mn-intro') === '1';
+    if (!seen && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro');
+  }catch(e){}})();
+</script>
 <style>
-/* Layout: "forno aceso". Fundo de aço escuro do forno, vermelho da marca em faixas largas,
-   títulos condensados inclinados como o logo, faixa em grade imitando a esteira do forno. */
+/* Layout: identidade Moda Nostra. Vermelho da marca em faixas inteiras (hero e entrega),
+   creme de farinha nas seções de leitura, carvão do forno nas seções de produto.
+   Títulos condensados e inclinados como o logotipo; muito respiro entre blocos. */
 :root{
-  --oven:#16110E;        /* aço queimado do forno */
-  --oven-2:#221A15;
-  --oven-3:#2E241D;
-  --red:#C91F25;         /* vermelho Moda Nostra */
-  --red-deep:#8F1217;
-  --cheese:#F3B623;      /* faixa amarela do logo */
-  --basil:#1F6B3A;       /* selo verde "pizza delivery" */
-  --wa:#25D366;
-  --flour:#F7EEDC;       /* farinha / creme */
-  --flour-dim:#CDBFA8;
-  --line:rgba(247,238,220,.14);
+  --red:#C91F25;  --red-700:#A3161C; --red-900:#6E0E12;
+  --cream:#FBF4E6; --cream-2:#F3E8D2; --paper:#FFFDF8;
+  --coal:#1B1411; --coal-2:#261C17;
+  --cheese:#F3B623; --cheese-700:#B3810A;
+  --wa:#25D366; --wa-700:#128C3E;
+  --ink:#2A1E18; --ink-2:#6B5A4C; --on-dark:#F7EEDC; --on-dark-2:#CBBBA6; --on-red:#FFE3DC;
+  --line-dark:rgba(247,238,220,.14); --line-light:rgba(42,30,24,.12);
+
   --display:"Barlow Condensed","Roboto Condensed","Arial Narrow",Impact,sans-serif;
   --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
-  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
-  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
-  color-scheme:dark;
+
+  --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:112px;
+  --r-sm:12px; --r-md:20px; --r-lg:32px;
+  --gl:max(20px, env(safe-area-inset-left, 0px));
+  --gr:max(20px, env(safe-area-inset-right, 0px));
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--oven);color:var(--flour);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--oven)}
-img{display:block;max-width:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--red)}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--cheese);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cheese);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
 
 /* ---------- tipografia ---------- */
-.eyebrow{font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;color:var(--cheese);margin:0}
-h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin:0;text-wrap:balance}
-h1{font-size:clamp(3rem,8.4vw,6.6rem)}
-h2{font-size:clamp(2.4rem,5.6vw,4.4rem)}
-h3{font-size:1.7rem;line-height:1}
-.hand{font-family:var(--hand);font-weight:700;color:var(--cheese);text-transform:none;font-style:normal;letter-spacing:0}
-.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--flour-dim);max-width:34em;margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.92rem;color:var(--red)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:currentColor}
+h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92;letter-spacing:-.005em;margin:0;text-wrap:balance}
+h1{font-size:clamp(3.2rem,8vw,6.8rem)}
+h2{font-size:clamp(2.5rem,5.4vw,4.4rem)}
+h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1}
+.hand{font-family:var(--hand);font-weight:700;font-style:normal;text-transform:none;letter-spacing:0}
+.lead{font-size:clamp(1.06rem,1.5vw,1.2rem);color:var(--ink-2);max-width:36em;margin:0}
+.lead a{color:var(--red);font-weight:600}
+.sec{padding-block:var(--s-6)}
+.sec-head{display:grid;gap:var(--s-2);max-width:720px;margin-bottom:var(--s-5)}
+.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
 
 /* ---------- botões ---------- */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:999px;
-  font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:1.22rem;
-  text-decoration:none;border:2px solid transparent;transition:transform .15s ease, background-color .15s ease, box-shadow .15s ease;cursor:pointer}
+.btn{--sh:var(--cheese-700);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:2px solid transparent;
+  font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.04em;font-size:1.2rem;text-decoration:none;cursor:pointer;
+  transition:transform .18s var(--ease), box-shadow .18s var(--ease), background-color .18s, color .18s}
 .btn svg{width:22px;height:22px;flex:none}
-.btn-menu{background:var(--cheese);color:#2A1700;box-shadow:0 6px 0 #A9780C}
-.btn-menu:hover{transform:translateY(-2px);box-shadow:0 8px 0 #A9780C}
-.btn-menu:active{transform:translateY(3px);box-shadow:0 3px 0 #A9780C}
-.btn-wa{background:var(--wa);color:#05290F;box-shadow:0 6px 0 #138A3F}
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 0 #138A3F}
-.btn-wa:active{transform:translateY(3px);box-shadow:0 3px 0 #138A3F}
-.btn-ghost{border-color:var(--flour);color:var(--flour)}
-.btn-ghost:hover{background:var(--flour);color:var(--oven)}
+.btn-cheese{background:var(--cheese);color:#2A1700;box-shadow:0 6px 0 var(--sh)}
+.btn-wa{--sh:var(--wa-700);background:var(--wa);color:#04260E;box-shadow:0 6px 0 var(--sh)}
+.btn-cheese:hover,.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--sh)}
+.btn-cheese:active,.btn-wa:active{transform:translateY(4px);box-shadow:0 2px 0 var(--sh)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:1.02rem}
 
-/* ---------- topo ---------- */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(22,17,14,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-.top-logo img{height:44px;width:auto}
-.top nav{display:flex;align-items:center;gap:26px}
-.top nav a.link{text-decoration:none;font-weight:600;font-size:.98rem;color:var(--flour-dim)}
-.top nav a.link:hover{color:var(--flour)}
-.top .btn{min-height:44px;font-size:1.02rem;padding:0 18px;box-shadow:0 4px 0 #A9780C}
+/* ---------- abertura: acendendo o forno ---------- */
+.intro-ov{display:none}
+html.intro .intro-ov{display:grid;position:fixed;inset:0;z-index:200;place-items:center;background:radial-gradient(60% 50% at 50% 60%,#3a120f 0%,var(--coal) 70%);color:var(--on-dark);cursor:pointer;
+  animation:introOut .5s 4s forwards}
+html.intro body{overflow:hidden}
+.intro-ov.done{animation:introOut .6s var(--ease) forwards}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+.intro-box{display:grid;justify-items:center;gap:22px;padding:24px;text-align:center}
+.intro-box img{width:min(320px,70vw);animation:glow 1.6s var(--ease) forwards}
+@keyframes glow{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none;filter:drop-shadow(0 0 40px rgba(243,140,35,.45))}}
+.thermo{width:min(300px,70vw);display:grid;gap:8px}
+.thermo .bar{height:6px;border-radius:6px;background:rgba(247,238,220,.12);overflow:hidden}
+.thermo .bar i{display:block;height:100%;width:var(--p,0%);background:linear-gradient(90deg,var(--cheese),#F36B23,var(--red));border-radius:6px}
+.thermo .row{display:flex;justify-content:space-between;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--on-dark-2)}
+.thermo .row b{color:var(--cheese);font-variant-numeric:tabular-nums;letter-spacing:.04em;font-size:1rem}
+.intro-skip{font-size:.85rem;color:var(--on-dark-2);opacity:.7}
+
+/* ---------- navegação ---------- */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:80;transition:background-color .3s, box-shadow .3s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px;transition:min-height .3s}
+.nav.solid{background:rgba(201,31,37,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(80,0,0,.25)}
+.nav.solid .wrap{min-height:64px}
+.nav-logo img{height:46px;width:auto;transition:height .3s}
+.nav.solid .nav-logo img{height:40px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a.l{color:#fff;text-decoration:none;font-weight:600;font-size:.98rem;opacity:.85;position:relative;padding-block:6px}
+.nav-links a.l::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--cheese);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.nav-links a.l:hover,.nav-links a.l.on{opacity:1}
+.nav-links a.l:hover::after,.nav-links a.l.on::after{transform:scaleX(1)}
+.burger{display:none;width:48px;height:48px;border-radius:14px;border:0;background:rgba(0,0,0,.18);cursor:pointer;place-items:center;position:relative;z-index:2}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;position:relative;transition:background-color .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s, top .25s}
+.burger span::before{top:-7px}.burger span::after{top:7px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:75;background:var(--red);color:#fff;display:grid;align-content:center;gap:32px;
+  padding:110px var(--gr) calc(40px + env(safe-area-inset-bottom,0px)) var(--gl);transform:translateY(-100%);transition:transform .45s var(--ease), visibility .45s;visibility:hidden}
+.sheet.open{transform:none;visibility:visible}
+.sheet nav{display:grid;gap:4px}
+.sheet nav a{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(2.2rem,10vw,3rem);line-height:1.15;text-decoration:none}
+.sheet .btns .btn{flex:1 1 100%}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;background:
-  radial-gradient(60% 70% at 85% 40%, rgba(201,31,37,.35), transparent 70%),
-  radial-gradient(40% 50% at 10% 100%, rgba(243,182,35,.12), transparent 70%), var(--oven)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:40px;padding-block:56px 72px}
-.hero-copy{display:grid;gap:24px;min-width:0;position:relative;z-index:2}
-.hero h1 .hand{display:block;font-size:.5em;line-height:1;margin-bottom:.12em;transform:rotate(-3deg);transform-origin:left}
-.hero h1 .red{color:var(--red);-webkit-text-stroke:0}
-.status{display:inline-flex;align-items:center;gap:10px;align-self:start;justify-self:start;padding:8px 16px 8px 12px;border-radius:999px;background:var(--oven-2);border:1px solid var(--line);font-weight:600;font-size:.95rem}
-.status .dot{width:10px;height:10px;border-radius:50%;background:var(--flour-dim);flex:none}
-.status.open .dot{background:#3BD16F;box-shadow:0 0 0 0 rgba(59,209,111,.6);animation:pulse 2s infinite}
-.status.closed .dot{background:#E2614B}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(59,209,111,0)}100%{box-shadow:0 0 0 0 rgba(59,209,111,0)}}
-.hero-note{font-size:.95rem;color:var(--flour-dim);margin:0}
-.hero-note b{color:var(--flour)}
-.hero-photo{position:relative;min-width:0}
-.hero-photo .frame{position:relative;border-radius:28px;overflow:hidden;transform:rotate(2deg);box-shadow:0 30px 80px rgba(0,0,0,.55);border:6px solid var(--flour);aspect-ratio:4/5}
-.hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;transform:scale(1.05)}
-.hero-photo .sticker{position:absolute;left:-22px;bottom:34px;z-index:2;background:var(--red);color:var(--flour);border-radius:16px;padding:14px 18px 12px;transform:rotate(-6deg);box-shadow:0 12px 30px rgba(0,0,0,.45);font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;font-size:1.45rem}
-.hero-photo .sticker small{display:block;font-family:var(--hand);text-transform:none;font-style:normal;font-weight:700;color:var(--cheese);font-size:1.3rem}
-.hero-photo .logo-badge{position:absolute;right:-14px;top:-30px;z-index:2;width:34%;max-width:190px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.6));transform:rotate(-4deg)}
+.hero{position:relative;overflow:hidden;background:var(--red);color:#fff;padding-top:calc(76px + env(safe-area-inset-top,0px))}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px)}
+.hero::after{content:"";position:absolute;inset:auto -10% -40% 30%;height:80%;background:radial-gradient(closest-side,rgba(243,182,35,.28),transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:var(--s-5);padding-block:var(--s-5) var(--s-6)}
+.hero-copy{display:grid;gap:28px;min-width:0}
+.hero h1 .hand{display:block;color:var(--cheese);font-size:.42em;line-height:1;margin-bottom:.18em;transform:rotate(-3deg);transform-origin:left}
+.hero .lead{color:var(--on-red)}
+.status{display:inline-flex;align-items:center;gap:10px;justify-self:start;margin:0;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(0,0,0,.2);font-weight:600;font-size:.95rem;color:#fff}
+.status .dot{width:10px;height:10px;border-radius:50%;background:#ddd;flex:none}
+.status.open .dot{background:#3BD16F;animation:pulse 2s infinite}
+.status.closed .dot{background:var(--cheese)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(59,209,111,.7)}70%{box-shadow:0 0 0 10px rgba(59,209,111,0)}100%{box-shadow:0 0 0 0 rgba(59,209,111,0)}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0;padding:0;list-style:none;font-size:.95rem;color:var(--on-red)}
+.hero-meta b{color:#fff}
 
-/* ---------- esteira (marquee) ---------- */
-.belt{position:relative;background:var(--red);border-block:4px solid var(--oven);overflow:hidden}
-.belt::before,.belt::after{content:"";position:absolute;left:0;right:0;height:8px;background:
-  repeating-linear-gradient(90deg, rgba(0,0,0,.35) 0 2px, transparent 2px 14px);}
+/* pilha de fotos com parallax */
+.stack{position:relative;aspect-ratio:1/1;max-width:540px;width:100%;justify-self:end;--mx:0;--my:0}
+.stack .ph{position:absolute;border-radius:var(--r-md);overflow:hidden;border:6px solid var(--paper);box-shadow:0 26px 60px rgba(60,0,0,.45);background:var(--coal);transition:transform .5s var(--ease)}
+.stack .ph img{width:100%;height:100%;object-fit:cover}
+.stack .p1{inset:6% 4% 16% 10%;z-index:3;transform:rotate(2.5deg) translate(calc(var(--mx)*14px),calc(var(--my)*14px))}
+.stack .p2{width:46%;aspect-ratio:1;left:-4%;bottom:0;z-index:4;transform:rotate(-7deg) translate(calc(var(--mx)*26px),calc(var(--my)*26px))}
+.stack .p3{width:40%;aspect-ratio:1;right:-2%;top:-4%;z-index:2;transform:rotate(9deg) translate(calc(var(--mx)*-18px),calc(var(--my)*-18px))}
+.stack .seal{position:absolute;right:2%;bottom:6%;z-index:5;width:132px;height:132px;border-radius:50%;background:var(--cheese);color:#3A2200;display:grid;place-items:center;text-align:center;
+  font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;font-size:1.25rem;box-shadow:0 14px 30px rgba(60,0,0,.35);
+  transform:rotate(-10deg) translate(calc(var(--mx)*30px),calc(var(--my)*30px));transition:transform .5s var(--ease)}
+.stack .seal small{display:block;font-family:var(--hand);text-transform:none;font-style:normal;font-size:1.15rem;color:var(--red-700)}
+.stack .seal::before{content:"";position:absolute;inset:7px;border-radius:50%;border:2px dashed rgba(58,34,0,.35)}
+
+/* ---------- esteira ---------- */
+.belt{background:var(--coal);color:var(--on-dark);overflow:hidden;border-block:6px solid var(--coal);position:relative}
+.belt::before,.belt::after{content:"";position:absolute;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,rgba(247,238,220,.18) 0 2px,transparent 2px 14px)}
 .belt::before{top:0}.belt::after{bottom:0}
-.belt-track{display:flex;width:max-content;animation:belt 28s linear infinite}
-.belt-track span{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2rem);padding:18px 0;white-space:nowrap;display:flex;align-items:center}
-.belt-track span::after{content:"";width:12px;height:12px;margin:0 26px;background:var(--cheese);transform:rotate(45deg)}
+.belt-track{display:flex;width:max-content;animation:belt 34s linear infinite}
+.belt:hover .belt-track{animation-play-state:paused}
+.belt-track span{display:flex;align-items:center;white-space:nowrap;padding:20px 0;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,1.9rem)}
+.belt-track span::after{content:"";width:11px;height:11px;margin:0 28px;background:var(--red);transform:rotate(45deg)}
 @keyframes belt{to{transform:translateX(-50%)}}
 
-/* ---------- seções ---------- */
-section{padding-block:88px}
-.sec-head{display:grid;gap:14px;margin-bottom:40px;max-width:760px}
+/* ---------- história em rolagem ---------- */
+.story{position:relative;background:var(--cream)}
+.story-intro{padding-block:var(--s-6) 0}
+.story-run{height:420vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;display:grid;align-items:center;padding-top:64px}
+.pin .wrap{width:100%;display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s-5);align-items:center}
+.scenes{position:relative;min-height:380px}
+.scene .txt{position:absolute;inset:0 0 auto 0;display:grid;gap:18px;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease), transform .5s var(--ease);pointer-events:none}
+.scene.on .txt{opacity:1;transform:none;pointer-events:auto}
+.scene .num{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.1rem;color:var(--red);letter-spacing:.1em;text-transform:uppercase}
+.scene h3{font-size:clamp(2.2rem,3.8vw,3.2rem)}
+.scene .txt p{margin:0;color:var(--ink-2);max-width:30em;font-size:1.08rem}
+.scene .tag{justify-self:start;display:inline-flex;gap:6px;align-items:center;padding:7px 15px;border-radius:999px;background:var(--paper);border:1px solid var(--line-light);font-weight:600;font-size:.9rem}
+.scene .tag b{color:var(--red)}
+.shots{position:relative;aspect-ratio:4/3.2;border-radius:var(--r-lg);overflow:hidden;background:var(--coal);box-shadow:0 30px 70px rgba(42,30,24,.25)}
+.shot{border-radius:var(--r-lg);overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shots .shot{position:absolute;inset:0;border-radius:0;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease), transform 1.2s var(--ease)}
+.shots .shot.on{opacity:1;transform:none}
+.progress{display:flex;gap:8px;margin-top:24px}
+.progress button{flex:1;min-height:44px;border:0;background:none;padding:0;cursor:pointer;display:grid;gap:8px;align-content:center;text-align:left}
+.progress button i{display:block;height:4px;border-radius:4px;background:var(--line-light);overflow:hidden;position:relative}
+.progress button i::after{content:"";position:absolute;inset:0;background:var(--red);transform:scaleX(var(--p,0));transform-origin:left}
+.progress button span{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--ink-2)}
+.progress button.on span{color:var(--red)}
 
-/* sabor de SP */
-.sp{background:var(--oven)}
-.sp-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
-.sp-photo{position:relative;border-radius:24px;overflow:hidden;min-height:340px}
-.sp-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.sp-photo figcaption{position:absolute;left:16px;bottom:16px;background:rgba(22,17,14,.82);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.92rem}
-.sp-side{display:grid;gap:22px;grid-template-rows:auto 1fr}
-.sp-side .sp-photo{min-height:240px}
-.facts{display:grid;gap:0;background:var(--oven-2);border-radius:24px;padding:8px 26px;border:1px solid var(--line)}
-.fact{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:20px 0;border-bottom:1px dashed var(--line)}
-.fact:last-child{border-bottom:0}
-.fact .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--red);color:var(--flour)}
-.fact .ic svg{width:24px;height:24px}
-.fact h3{font-size:1.45rem;margin-bottom:4px}
-.fact p{margin:0;color:var(--flour-dim);font-size:.98rem}
+/* ---------- cardápio ---------- */
+.menu{background:var(--coal);color:var(--on-dark)}
+.menu .eyebrow{color:var(--cheese)}
+.menu .lead{color:var(--on-dark-2)}
+.menu-top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--s-3);margin-bottom:var(--s-4)}
+.menu-top .sec-head{margin-bottom:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line-dark);background:transparent;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--on-dark-2);transition:all .2s}
+.chip:hover{border-color:var(--on-dark);color:var(--on-dark)}
+.chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3)}
+.card{position:relative;display:grid;grid-template-rows:auto 1fr;background:var(--coal-2);border:1px solid var(--line-dark);border-radius:var(--r-md);overflow:hidden;
+  transition:transform .35s var(--ease), box-shadow .35s, opacity .8s var(--ease)}
+.card:hover{box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.card.hide{display:none}
+.card .pic{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.card:hover .pic img{transform:scale(1.06)}
+.card .cat{position:absolute;left:14px;top:14px;padding:5px 12px;border-radius:999px;background:rgba(27,20,17,.82);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card .body{display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:20px 20px 22px}
+.card .body p{margin:0;color:var(--on-dark-2);font-size:.95rem}
+.card .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px dashed var(--line-dark)}
+.card .foot small{color:var(--on-dark-2);font-size:.85rem}
+.card .go{display:inline-flex;align-items:center;gap:6px;color:var(--cheese);font-weight:700;text-decoration:none;font-size:.95rem;min-height:32px}
+.card .go:hover{text-decoration:underline}
+.card.more{background:var(--red);border-color:var(--red);grid-template-rows:none;align-content:center;justify-items:start;padding:30px 26px;gap:16px}
+.card.more h3{font-size:clamp(2rem,2.6vw,2.4rem)}
+.card.more p{margin:0;color:var(--on-red);font-size:.97rem}
+.menu-note{margin:var(--s-4) 0 0;color:var(--on-dark-2);font-size:.92rem}
 
-/* esfihas */
-.esf{background:var(--flour);color:var(--oven)}
-.esf .eyebrow{color:var(--red)}
-.esf .lead{color:#5A4A3C}
-.esf h2 .hand{color:var(--red)}
-.esf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.esf-card{position:relative;display:block;border-radius:22px;overflow:hidden;text-decoration:none;color:var(--flour);background:var(--oven);aspect-ratio:4/3;isolation:isolate}
-.esf-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.esf-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(22,17,14,.88));z-index:1}
-.esf-card .lbl{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;display:flex;align-items:end;justify-content:space-between;gap:12px}
-.esf-card .lbl strong{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.65rem;line-height:1}
-.esf-card .lbl span{font-size:.85rem;font-weight:600;color:var(--cheese);white-space:nowrap}
-.esf-card:hover img{transform:scale(1.06)}
-.esf-foot{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
-.esf-foot p{margin:0;font-weight:600;color:#5A4A3C}
+/* ---------- pedido rápido ---------- */
+.order{background:var(--cream)}
+.order-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s-5);align-items:start}
+.form{display:grid;gap:22px;background:var(--paper);border:1px solid var(--line-light);border-radius:var(--r-lg);padding:clamp(22px,4vw,40px);box-shadow:0 20px 50px rgba(42,30,24,.08);min-width:0}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field legend{font-weight:700;font-size:.95rem;padding:0}
+.field .hint{font-size:.85rem;color:var(--ink-2);font-weight:500}
+.field input,.field textarea{width:100%;min-height:52px;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line-light);background:var(--cream);font:inherit;font-size:1rem;color:var(--ink);transition:border-color .2s, background-color .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--red);background:#fff}
+.field.err input,.field.err textarea{border-color:var(--red);background:#FFF1EF}
+.field .msg{display:none;color:var(--red-700);font-size:.88rem;font-weight:600}
+.field.err .msg{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.quick{display:flex;flex-wrap:wrap;gap:8px}
+.quick button{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px dashed rgba(42,30,24,.25);background:transparent;cursor:pointer;font-weight:600;font-size:.9rem;color:var(--ink-2);transition:all .2s}
+.quick button:hover{border-color:var(--red);color:var(--red)}
+.quick button::before{content:"+ "}
+.seg{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:5px;background:var(--cream-2);border-radius:16px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{min-height:46px;display:grid;place-items:center;border-radius:12px;font-weight:700;cursor:pointer;color:var(--ink-2);transition:all .2s}
+.seg input:checked + label{background:var(--red);color:#fff;box-shadow:0 4px 12px rgba(201,31,37,.3)}
+.seg input:focus-visible + label{outline:3px solid var(--cheese);outline-offset:2px}
+.form .btn{width:100%}
+.form .fine{margin:0;font-size:.85rem;color:var(--ink-2);text-align:center}
 
-/* como pedir */
-.how{background:
-  linear-gradient(rgba(22,17,14,.86),rgba(22,17,14,.92)), url("img/forno-esfihas.jpg") center/cover no-repeat}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
-.step{position:relative;background:rgba(34,26,21,.9);border:1px solid var(--line);border-radius:22px;padding:28px 24px 26px;display:grid;gap:10px;align-content:start}
-.step .n{font-family:var(--display);font-weight:800;font-style:italic;font-size:4rem;line-height:.8;color:var(--red)}
-.step p{margin:0;color:var(--flour-dim)}
-.step a{color:var(--cheese);font-weight:600}
-.how .btns{margin-top:34px}
+/* celular com prévia da mensagem */
+.preview{position:sticky;top:96px;display:grid;justify-items:center;gap:18px}
+.phone{width:min(360px,100%);border-radius:40px;background:var(--coal);padding:12px;box-shadow:0 30px 70px rgba(42,30,24,.3)}
+.phone-in{border-radius:30px;overflow:hidden;background:#ECE5DD}
+.ph-top{display:flex;align-items:center;gap:12px;background:#075E54;color:#fff;padding:14px 16px}
+.ph-top .av{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center;overflow:hidden;flex:none}
+.ph-top .av img{width:34px}
+.ph-top b{display:block;font-size:.98rem;line-height:1.2}
+.ph-top small{font-size:.8rem;opacity:.85}
+.ph-chat{min-height:380px;padding:18px 14px;display:grid;align-content:end;gap:10px;background-color:#ECE5DD;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:14px 14px}
+.bub{max-width:88%;padding:9px 12px 22px;border-radius:12px;font-size:.92rem;line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.1);white-space:pre-wrap;overflow-wrap:anywhere;color:#111}
+.bub.them{background:#fff;justify-self:start;border-top-left-radius:2px}
+.bub.me{background:#DCF8C6;justify-self:end;border-top-right-radius:2px}
+.bub time{position:absolute;right:10px;bottom:4px;font-size:.7rem;color:#667}
+.preview p{margin:0;font-size:.9rem;color:var(--ink-2);text-align:center;max-width:30em}
 
-/* entrega + horário */
-.deliv{background:var(--red);position:relative;overflow:hidden}
-.deliv::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,transparent 1px 42px);pointer-events:none}
-.deliv .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.deliv .eyebrow{color:var(--flour)}
-.deliv .lead{color:#FBE2DA}
-.deliv-copy{display:grid;gap:20px;min-width:0}
-.ticket{background:var(--flour);color:var(--oven);border-radius:6px;padding:26px 26px 22px;position:relative;transform:rotate(-1.5deg);box-shadow:0 24px 50px rgba(60,0,0,.45);min-width:0;
+/* ---------- entrega + horário ---------- */
+.deliv{background:var(--red);color:#fff;position:relative;overflow:hidden}
+.deliv::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px)}
+.deliv .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);align-items:center}
+.deliv .eyebrow{color:var(--cheese)}
+.deliv .lead{color:var(--on-red)}
+.deliv-copy{display:grid;gap:26px;min-width:0}
+.perks{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.perks li{display:flex;gap:14px;align-items:flex-start}
+.perks svg{width:26px;height:26px;flex:none;color:var(--cheese);margin-top:2px}
+.perks b{display:block;font-size:1.05rem}
+.perks span{color:var(--on-red);font-size:.96rem}
+.ticket{background:var(--paper);color:var(--ink);border-radius:8px;padding:30px 28px 26px;transform:rotate(-1.5deg);box-shadow:0 26px 60px rgba(60,0,0,.4);min-width:0;transition:transform .4s var(--ease), opacity .8s var(--ease);
   -webkit-mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x;
           mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x}
-.ticket h3{text-align:center;color:var(--red);font-size:2rem}
-.ticket .sub{text-align:center;font-family:var(--hand);font-size:1.4rem;color:#6B5745;margin:2px 0 14px}
+.ticket:hover{transform:rotate(0deg) translateY(-4px)}
+.ticket h3{text-align:center;color:var(--red);font-size:2.2rem}
+.ticket .sub{text-align:center;font-family:var(--hand);font-size:1.4rem;color:var(--ink-2);margin:2px 0 6px}
+.clock{display:grid;justify-items:center;gap:2px;margin:10px 0 16px;padding:14px;border-radius:14px;background:var(--cream)}
+.clock small{font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.76rem;color:var(--ink-2);text-align:center}
+.clock b{font-family:var(--display);font-weight:800;font-style:italic;font-size:2.1rem;line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
 .ticket table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.ticket td{padding:9px 2px;border-bottom:1px dashed #CDBFA8;font-weight:600}
+.ticket td{padding:9px 2px;border-bottom:1px dashed #D8CAB2;font-weight:600}
 .ticket td:last-child{text-align:right}
 .ticket tr.today td{color:var(--red)}
-.ticket tr.off td{color:#9A8975;font-weight:500}
-.ticket .tfoot{margin-top:16px;display:grid;gap:4px;text-align:center;font-size:.95rem;color:#5A4A3C}
-.ticket .tfoot b{color:var(--oven);font-size:1.15rem;user-select:all}
+.ticket tr.today td:first-child::after{content:"hoje";margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--red);color:#fff;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;vertical-align:2px}
+.ticket tr.off td{color:#A0907C;font-weight:500}
+.ticket .tfoot{margin-top:18px;display:grid;gap:2px;text-align:center;font-size:.95rem;color:var(--ink-2)}
+.ticket .tfoot b{color:var(--ink);font-size:1.2rem;user-select:all}
 
-/* CTA final */
-.final{position:relative;text-align:center;background:linear-gradient(rgba(22,17,14,.55),rgba(22,17,14,.85)),url("img/bokeh.jpg") center/cover no-repeat;padding-block:110px}
-.final .wrap{display:grid;justify-items:center;gap:22px}
-.final h2{max-width:14ch}
+/* ---------- instagram ---------- */
+.insta{background:var(--cream)}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.insta-grid a{position:relative;display:block;aspect-ratio:1;border-radius:var(--r-sm);overflow:hidden;background:var(--coal)}
+.insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.insta-grid a::after{content:"";position:absolute;inset:0;background:var(--red);opacity:0;transition:opacity .3s;mix-blend-mode:multiply}
+.insta-grid a:hover img{transform:scale(1.08)}
+.insta-grid a:hover::after{opacity:.35}
+.insta-foot{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;margin-top:var(--s-4)}
+.insta-foot p{margin:0;font-weight:600}
+.insta-foot a.handle{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-style:italic;font-size:1.6rem;text-transform:uppercase;text-decoration:none;color:var(--red);overflow-wrap:anywhere}
+.insta-foot a.handle svg{width:28px;height:28px;flex:none}
+
+/* ---------- final ---------- */
+.final{position:relative;color:var(--on-dark);text-align:center;background:linear-gradient(rgba(27,20,17,.45),rgba(27,20,17,.9)),url("img/bokeh.jpg") center/cover no-repeat}
+.final .wrap{display:grid;justify-items:center;gap:26px}
+.final .eyebrow{color:var(--cheese)}
+.final .lead{color:var(--on-dark-2)}
 .final .btns{justify-content:center}
 
-/* rodapé */
-footer{background:#0E0A08;border-top:1px solid var(--line);padding-block:44px calc(44px + env(safe-area-inset-bottom,0px))}
-footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
-footer img{height:56px;width:auto}
-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px}
-footer a{text-decoration:none;color:var(--flour-dim);font-weight:500}
-footer a:hover{color:var(--flour)}
-footer small{display:block;width:100%;color:#7E6F60;font-size:.85rem}
+footer{background:#120D0B;color:var(--on-dark-2);padding-block:56px calc(56px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--s-4)}
+footer img{height:60px;width:auto}
+footer h4{margin:0 0 12px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:var(--on-dark)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--on-dark)}
+footer .brand{display:grid;gap:14px;align-content:start}
+footer .brand p{margin:0;max-width:26em;font-size:.95rem}
+footer .copy{grid-column:1/-1;margin:0;padding-top:24px;border-top:1px solid var(--line-dark);font-size:.85rem;color:#7E6F60}
 
-/* WhatsApp flutuante (desktop) e barra fixa (celular) */
-.fab{position:fixed;right:calc(22px + env(safe-area-inset-right,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:70;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .15s}
-.fab:hover{transform:scale(1.07)}
+/* ---------- flutuantes ---------- */
+.fab{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:70;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);transform:scale(0);transition:transform .35s var(--ease)}
+.fab.show{transform:scale(1)}
+.fab.show:hover{transform:scale(1.08)}
 .fab svg{width:34px;height:34px}
+.fab .tip{position:absolute;right:76px;white-space:nowrap;background:var(--coal);color:var(--on-dark);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.88rem;opacity:0;transform:translateX(8px);transition:all .25s;pointer-events:none}
+.fab:hover .tip{opacity:1;transform:none}
 .dock{display:none}
 
+/* ---------- revelar ao rolar (parte de um estado visível) ---------- */
+.rv{transition:opacity .8s var(--ease), transform .8s var(--ease)}
+html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
+
 /* ---------- responsivo ---------- */
-@media (max-width:960px){
-  .top nav a.link{display:none}
-  .hero .wrap{grid-template-columns:1fr;gap:34px;padding-block:28px 56px}
-  .hero-photo{order:-1;max-width:520px;width:100%;justify-self:center;padding-inline:14px}
-  .hero-photo .frame{aspect-ratio:5/4}
-  .hero-photo .sticker{left:0}
-  .hero-photo .logo-badge{right:4px}
-  .sp-grid,.deliv .wrap{grid-template-columns:1fr}
-  .esf-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr}
+@media (max-width:1100px){ .cards{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:1020px){
+  .nav-links a.l{display:none}
+  .burger{display:grid}
+  .hero .wrap{grid-template-columns:1fr;gap:var(--s-4);padding-block:var(--s-3) var(--s-5)}
+  .stack{justify-self:center;max-width:440px;order:-1}
+  .order-grid,.deliv .wrap{grid-template-columns:1fr}
+  .preview{position:static}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .insta-grid{grid-template-columns:repeat(3,1fr)}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  footer .brand{grid-column:1/-1}
+  /* história vira lista no tablet e no celular */
+  .story-run{height:auto}
+  .pin{position:static;height:auto;padding-block:var(--s-5) var(--s-6)}
+  .pin .wrap{grid-template-columns:1fr;gap:0}
+  .progress,.shots-col{display:none}
+  .scenes{display:grid;gap:var(--s-5);min-height:0}
+  .scene{display:grid;gap:var(--s-3)}
+  .scene .txt{position:static;opacity:1;transform:none;pointer-events:auto}
+  .scene .shot{order:-1;aspect-ratio:4/3;box-shadow:0 20px 50px rgba(42,30,24,.2)}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  section{padding-block:64px}
-  .top .btn{display:none}
+  :root{--s-6:84px;--s-5:44px}
+  .nav-cta{display:none}
   .btns .btn{flex:1 1 100%}
-  .esf-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .esf-card{aspect-ratio:1/1;border-radius:16px}
-  .esf-card .lbl{left:12px;right:12px;bottom:10px;flex-direction:column;align-items:start;gap:2px}
-  .esf-card .lbl strong{font-size:1.3rem}
+  .hero-meta{display:grid;gap:4px}
+  .stack .seal{width:104px;height:104px;font-size:1rem}
+  .stack .seal small{font-size:.95rem}
+  .cards{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .insta-grid{gap:6px}
+  footer .wrap{grid-template-columns:1fr}
   .fab{display:none}
-  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(14,10,8,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);
-    padding:10px max(12px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px))}
+  .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(18,13,11,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    padding:10px max(12px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px));transform:translateY(110%);transition:transform .35s var(--ease)}
+  .dock.show{transform:none}
   .dock .btn{min-height:50px;font-size:1.05rem;padding:0 10px;box-shadow:none}
-  footer{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  footer{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
 }
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  html.js .rv:not(.in){opacity:1;transform:none}
 }
 </style>
 </head>
@@ -233,143 +390,257 @@ footer small{display:block;width:100%;color:#7E6F60;font-size:.85rem}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.33-1.99 1.38-.51.05-.99.24-3.33-.69-2.81-1.11-4.6-3.98-4.74-4.17-.14-.18-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.09.18-.14.3-.28.46-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.18.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.27.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 2 3 21l9-4 9 4L12 2Zm0 6.5v6M9.5 12.5h5"/></symbol>
-  <symbol id="i-fire" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22c4 0 7-2.8 7-6.8 0-3.3-2-5.6-3.6-7.4-.4 1.8-1.3 3-2.4 3.4C13.6 7.6 12 4.6 9.5 2c.3 3.5-1.6 5.6-3.1 7.6C5.4 11 5 12.6 5 15.2 5 19.2 8 22 12 22Z"/></symbol>
   <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M8.5 17h6l3-6h-4M14 5h3l1.5 6M5.5 14l3-4h5"/></g></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></symbol>
-  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
 </svg>
 
-<header class="top">
+<!-- abertura -->
+<div class="intro-ov" id="intro" role="button" tabindex="0" aria-label="Pular abertura">
+  <div class="intro-box">
+    <img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="900" height="430">
+    <div class="thermo" aria-hidden="true">
+      <div class="row"><span>Acendendo o forno</span><b id="temp">0°C</b></div>
+      <div class="bar"><i id="tbar"></i></div>
+    </div>
+    <span class="intro-skip">toque para pular</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
   <div class="wrap">
-    <a class="top-logo" href="#inicio" aria-label="Moda Nostra, início"><img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="92" height="44"></a>
-    <nav aria-label="Principal">
-      <a class="link" href="#sabor">A casa</a>
-      <a class="link" href="#esfihas">Esfihas</a>
-      <a class="link" href="#como-pedir">Como pedir</a>
-      <a class="link" href="#horario">Horário</a>
-      <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener">Pedir agora</a>
+    <a class="nav-logo" href="#inicio" aria-label="Moda Nostra, início"><img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="96" height="46"></a>
+    <nav class="nav-links" aria-label="Seções">
+      <a class="l" href="#a-casa">A casa</a>
+      <a class="l" href="#cardapio">Cardápio</a>
+      <a class="l" href="#pedido">Pedido rápido</a>
+      <a class="l" href="#entrega">Entrega e horário</a>
+      <a class="btn btn-cheese btn-sm nav-cta js-menu" href="#" target="_blank" rel="noopener">Pedir agora</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Abrir menu"><span></span></button>
     </nav>
   </div>
 </header>
 
+<div class="sheet" id="sheet" aria-hidden="true">
+  <nav aria-label="Menu">
+    <a href="#a-casa">A casa</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#pedido">Pedido rápido</a>
+    <a href="#entrega">Entrega e horário</a>
+  </nav>
+  <div class="btns">
+    <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
+    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+  </div>
+</div>
+
 <main id="inicio">
 
-  <section class="hero" style="padding-block:0">
+  <!-- HERO -->
+  <section class="hero" id="hero">
     <div class="wrap">
       <div class="hero-copy">
         <p class="status" id="status" role="status"><span class="dot"></span><span id="status-txt">Terça a domingo, 18h às 23h15</span></p>
-        <h1><span class="hand">tradição e sabor de SP</span>A pizza paulista de <span class="red">Candeias</span></h1>
-        <p class="lead">Pizza no estilo paulista, com muito queijo e forno bem quente. Escolha no cardápio digital, finalize o pedido e o nosso próprio entregador leva até você.</p>
+        <h1><span class="hand">tradição e sabor de SP</span>A pizza paulista de Candeias</h1>
+        <p class="lead">Pizza no estilo paulista, esfihas abertas e borda recheada, saindo do forno quente direto para a sua casa com o nosso próprio entregador.</p>
         <div class="btns">
-          <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
+          <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
           <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
         </div>
-        <p class="hero-note">WhatsApp <b>(81) 98635-2086</b> · Candeias, Jaboatão dos Guararapes</p>
+        <ul class="hero-meta">
+          <li>WhatsApp <b>(81) 98635-2086</b></li>
+          <li>Terça a domingo · <b>18h às 23h15</b></li>
+        </ul>
       </div>
-      <div class="hero-photo">
-        <img class="logo-badge" src="img/logo.png" alt="" width="900" height="430">
-        <div class="frame"><img src="img/pizza-calabresa.jpg" alt="Pizza de calabresa com cebola saindo do forno da Moda Nostra" width="1600" height="1064" fetchpriority="high"></div>
-        <div class="sticker"><small>tem também</small>Borda<br>recheada</div>
+      <div class="stack" id="stack" aria-hidden="true">
+        <div class="ph p3"><img src="img/forno-esfihas.jpg" alt="" width="1600" height="1064"></div>
+        <div class="ph p1"><img src="img/pizza-calabresa.jpg" alt="" width="1600" height="1064" fetchpriority="high"></div>
+        <div class="ph p2"><img src="img/esfiha-frango.jpg" alt="" width="1000" height="665"></div>
+        <div class="seal"><span><small>peça com</small>Borda<br>recheada</span></div>
       </div>
     </div>
   </section>
 
-  <div class="belt" aria-hidden="true">
-    <div class="belt-track">
-      <span>Pizza paulista</span><span>Esfihas</span><span>Borda recheada</span><span>Entrega própria</span><span>Terça a domingo</span>
-      <span>Pizza paulista</span><span>Esfihas</span><span>Borda recheada</span><span>Entrega própria</span><span>Terça a domingo</span>
-    </div>
-  </div>
+  <div class="belt" aria-hidden="true"><div class="belt-track" id="track"></div></div>
 
-  <section class="sp" id="sabor">
-    <div class="wrap">
-      <div class="sec-head">
+  <!-- HISTÓRIA EM ROLAGEM -->
+  <section class="story" id="a-casa">
+    <div class="wrap story-intro">
+      <div class="sec-head rv" style="margin-bottom:0">
         <p class="eyebrow">Pizzaria paulista autêntica</p>
-        <h2>São Paulo no forno, <span class="hand">Pernambuco na mesa</span></h2>
-        <p class="lead">A receita veio de SP e a casa fica em Candeias. A pizza sai da esteira do forno com o queijo ainda borbulhando e vai direto pra caixa.</p>
+        <h2>Do forno à sua porta</h2>
+        <p class="lead">A receita veio de São Paulo e a casa fica em Candeias. Role a página e acompanhe o caminho de cada pedido.</p>
       </div>
-      <div class="sp-grid">
-        <figure class="sp-photo" style="margin:0">
-          <img src="img/pizza-mussarela.jpg" alt="Pizza de mussarela com rodelas de tomate na grelha do forno" width="1600" height="1064" loading="lazy">
-          <figcaption>Mussarela com tomate, direto da esteira</figcaption>
-        </figure>
-        <div class="sp-side">
-          <figure class="sp-photo" style="margin:0">
-            <img src="img/forno-esfihas.jpg" alt="Esfihas abertas assando no forno" width="1600" height="1064" loading="lazy">
-            <figcaption>Esfihas saindo do forno</figcaption>
-          </figure>
-          <div class="facts">
-            <div class="fact">
-              <span class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
-              <div><h3>Receita de SP</h3><p>Pizza no estilo paulista, de borda dourada e cobertura generosa.</p></div>
+    </div>
+    <div class="story-run" id="story">
+      <div class="pin">
+        <div class="wrap">
+          <div>
+            <div class="scenes">
+              <article class="scene on">
+                <div class="txt">
+                  <span class="num">Etapa 1 de 4</span>
+                  <h3>A receita de São Paulo</h3>
+                  <p>Massa no estilo paulista, borda dourada e cobertura generosa. É a pizza de SP, feita aqui em Pernambuco.</p>
+                  <span class="tag">Tradição e sabor de <b>SP</b></span>
+                </div>
+                <div class="shot"><img src="img/pizza-mussarela.jpg" alt="Pizza de mussarela com tomate" width="1600" height="1064" loading="lazy"></div>
+              </article>
+              <article class="scene">
+                <div class="txt">
+                  <span class="num">Etapa 2 de 4</span>
+                  <h3>Forno quente, esteira rodando</h3>
+                  <p>Pizzas e esfihas atravessam a esteira do forno e saem com o queijo borbulhando e o fundo crocante.</p>
+                  <span class="tag">Assa quando o pedido <b>chega</b></span>
+                </div>
+                <div class="shot"><img src="img/forno-esfihas.jpg" alt="Esfihas assando na esteira do forno" width="1600" height="1064" loading="lazy"></div>
+              </article>
+              <article class="scene">
+                <div class="txt">
+                  <span class="num">Etapa 3 de 4</span>
+                  <h3>Recheio até a borda</h3>
+                  <p>Calabresa com cebola, mussarela, frango, milho e chocolate pra fechar. Tem pizza pra dividir e esfiha pra pedir às dúzias.</p>
+                  <span class="tag">Pizza, esfiha e <b>borda recheada</b></span>
+                </div>
+                <div class="shot"><img src="img/pizza-calabresa.jpg" alt="Pizza de calabresa com cebola" width="1600" height="1064" loading="lazy"></div>
+              </article>
+              <article class="scene">
+                <div class="txt">
+                  <span class="num">Etapa 4 de 4</span>
+                  <h3>O nosso entregador leva</h3>
+                  <p>A Moda Nostra tem entrega própria. Quem chega na sua porta é da casa, e não de aplicativo.</p>
+                  <span class="tag">Entrega <b>própria</b></span>
+                </div>
+                <div class="shot"><img src="img/bokeh.jpg" alt="Luzes da rua à noite" width="1600" height="1064" loading="lazy"></div>
+              </article>
             </div>
-            <div class="fact">
-              <span class="ic"><svg aria-hidden="true"><use href="#i-fire"/></svg></span>
-              <div><h3>Forno quente</h3><p>Cada pedido assa na hora, quando ele chega.</p></div>
-            </div>
-            <div class="fact">
-              <span class="ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span>
-              <div><h3>Entrega própria</h3><p>Quem leva é o nosso entregador, não um aplicativo. Consulte taxa e região no WhatsApp.</p></div>
+            <div class="progress" id="progress" aria-label="Etapas">
+              <button type="button" class="on"><i></i><span>Receita</span></button>
+              <button type="button"><i></i><span>Forno</span></button>
+              <button type="button"><i></i><span>Sabores</span></button>
+              <button type="button"><i></i><span>Entrega</span></button>
             </div>
           </div>
+          <div class="shots-col"><div class="shots" id="shots"></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="esf" id="esfihas">
+  <!-- CARDÁPIO -->
+  <section class="sec menu" id="cardapio">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Além da pizza</p>
-        <h2>Esfiha aberta, <span class="hand">uma não basta</span></h2>
-        <p class="lead">Massa macia, fundo crocante e recheio até a borda. Peça junto com a pizza ou monte um combo só de esfihas.</p>
-      </div>
-      <div class="esf-grid">
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-calabresa.jpg" alt="Esfiha de calabresa com limão" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Calabresa</strong><span>Ver no cardápio →</span></span></a>
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-frango.jpg" alt="Esfiha de frango com queijo" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Frango</strong><span>Ver no cardápio →</span></span></a>
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-queijo.jpg" alt="Esfiha de queijo gratinado" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Queijo</strong><span>Ver no cardápio →</span></span></a>
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-milho.jpg" alt="Esfiha de milho com queijo cremoso" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Milho</strong><span>Ver no cardápio →</span></span></a>
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfiha-chocolate.jpg" alt="Esfiha doce de chocolate" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Chocolate</strong><span>Ver no cardápio →</span></span></a>
-        <a class="esf-card js-menu" href="#" target="_blank" rel="noopener"><img src="img/esfihas-variadas.jpg" alt="Esfihas de sabores variados no forno" width="1000" height="665" loading="lazy"><span class="lbl"><strong>Mix de sabores</strong><span>Ver no cardápio →</span></span></a>
-      </div>
-      <div class="esf-foot">
-        <p>Sabores, tamanhos e preços atualizados ficam no cardápio digital.</p>
-        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Abrir cardápio</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="how" id="como-pedir">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Como pedir</p>
-        <h2>Do clique à sua porta em 3 passos</h2>
-      </div>
-      <ol class="steps" style="list-style:none;margin:0;padding:0">
-        <li class="step"><span class="n">1</span><h3>Escolha no cardápio</h3><p>Abra o <a class="js-menu" href="#" target="_blank" rel="noopener">cardápio digital</a>, escolha pizzas, esfihas e bebidas e monte o carrinho.</p></li>
-        <li class="step"><span class="n">2</span><h3>Finalize o pedido</h3><p>Informe endereço e forma de pagamento. Preferir conversar? Chame a gente no <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>.</p></li>
-        <li class="step"><span class="n">3</span><h3>Receba quentinha</h3><p>A pizza sai do forno e o nosso entregador leva direto até você.</p></li>
-      </ol>
-      <div class="btns">
-        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Começar pelo cardápio</a>
-        <a class="btn btn-ghost js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="deliv" id="horario">
-    <div class="wrap">
-      <div class="deliv-copy">
-        <p class="eyebrow">Entrega própria</p>
-        <h2>O nosso entregador leva até você</h2>
-        <p class="lead">A Moda Nostra tem serviço de entrega próprio, com atendimento de quem conhece o bairro. A taxa e as áreas atendidas variam, então confirme pelo WhatsApp antes de pedir.</p>
-        <div class="btns">
-          <a class="btn btn-wa js-wa-area" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar taxa e região</a>
+      <div class="menu-top">
+        <div class="sec-head rv">
+          <p class="eyebrow">Cardápio</p>
+          <h2>Escolha pelo olho</h2>
+          <p class="lead">Alguns dos sabores que saem do nosso forno. Tamanhos, preços e a lista completa ficam no cardápio digital.</p>
+        </div>
+        <div class="chips" role="group" aria-label="Filtrar cardápio">
+          <button class="chip" type="button" data-f="all" aria-pressed="true">Tudo</button>
+          <button class="chip" type="button" data-f="pizza" aria-pressed="false">Pizzas</button>
+          <button class="chip" type="button" data-f="salgada" aria-pressed="false">Esfihas salgadas</button>
+          <button class="chip" type="button" data-f="doce" aria-pressed="false">Doces</button>
         </div>
       </div>
-      <div class="ticket" aria-label="Horário de funcionamento">
+      <div class="cards" id="cards"></div>
+      <p class="menu-note">Fotos reais dos nossos produtos. Sabores sujeitos à disponibilidade do dia.</p>
+    </div>
+  </section>
+
+  <!-- PEDIDO RÁPIDO -->
+  <section class="sec order" id="pedido">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Pedido rápido</p>
+        <h2>Monte a mensagem e mande pra gente</h2>
+        <p class="lead">Prefere pedir conversando? Preencha abaixo e a mensagem chega pronta no nosso WhatsApp. Para escolher vendo os preços, use o <a class="js-menu" href="#" target="_blank" rel="noopener">cardápio digital</a>.</p>
+      </div>
+      <div class="order-grid">
+        <form class="form" id="form" novalidate>
+          <div class="row2">
+            <div class="field" id="f-nome">
+              <label for="nome">Seu nome</label>
+              <input id="nome" name="nome" autocomplete="given-name" placeholder="Ex.: Ana">
+              <span class="msg">Diga seu nome para a gente te chamar.</span>
+            </div>
+            <div class="field" id="f-bairro">
+              <label for="bairro">Bairro</label>
+              <input id="bairro" name="bairro" autocomplete="address-level3" placeholder="Ex.: Candeias">
+              <span class="msg">Informe o bairro para confirmar a entrega.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="endereco">Endereço <span class="hint">(rua, número e referência)</span></label>
+            <input id="endereco" name="endereco" autocomplete="street-address" placeholder="Rua, número e ponto de referência">
+          </div>
+          <div class="field" id="f-pedido">
+            <label for="pedido-txt">O que vai querer?</label>
+            <textarea id="pedido-txt" name="pedido" placeholder="Ex.: 1 pizza de calabresa com borda recheada e 6 esfihas de frango"></textarea>
+            <div class="quick" role="group" aria-label="Adicionar ao pedido">
+              <button type="button" data-add="1 pizza de calabresa">Pizza calabresa</button>
+              <button type="button" data-add="1 pizza de mussarela">Pizza mussarela</button>
+              <button type="button" data-add="com borda recheada">Borda recheada</button>
+              <button type="button" data-add="6 esfihas de frango">6 esfihas de frango</button>
+              <button type="button" data-add="esfiha de chocolate">Esfiha de chocolate</button>
+              <button type="button" data-add="1 refrigerante">Refrigerante</button>
+            </div>
+            <span class="msg">Escreva o que você quer pedir.</span>
+          </div>
+          <fieldset class="field">
+            <legend>Pagamento</legend>
+            <div class="seg">
+              <input type="radio" name="pag" id="pg1" value="Pix" checked><label for="pg1">Pix</label>
+              <input type="radio" name="pag" id="pg2" value="Cartão"><label for="pg2">Cartão</label>
+              <input type="radio" name="pag" id="pg3" value="Dinheiro"><label for="pg3">Dinheiro</label>
+            </div>
+          </fieldset>
+          <div class="field" id="f-troco" hidden>
+            <label for="troco">Troco para quanto?</label>
+            <input id="troco" name="troco" inputmode="decimal" placeholder="Ex.: R$ 100">
+          </div>
+          <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a>
+          <p class="fine">O pedido fica confirmado quando a gente responder com o valor e o tempo de entrega.</p>
+        </form>
+        <div class="preview">
+          <div class="phone">
+            <div class="phone-in">
+              <div class="ph-top">
+                <span class="av"><img src="img/logo.png" alt="" width="900" height="430"></span>
+                <div><b>Moda Nostra Candeias</b><small>(81) 98635-2086</small></div>
+              </div>
+              <div class="ph-chat">
+                <div class="bub them">Oi! Aqui é a Moda Nostra 🍕 O que vai ser hoje?<time>18:02</time></div>
+                <div class="bub me"><span id="bubble">Olá, Moda Nostra! Quero fazer um pedido.</span><time id="btime">18:03</time></div>
+              </div>
+            </div>
+          </div>
+          <p>Prévia da mensagem que vai chegar no nosso WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREGA + HORÁRIO -->
+  <section class="sec deliv" id="entrega">
+    <div class="wrap">
+      <div class="deliv-copy rv">
+        <p class="eyebrow">Entrega e horário</p>
+        <h2>Entrega própria em Candeias e região</h2>
+        <p class="lead">A gente tem entregador próprio. A taxa e as áreas atendidas variam, então confirme pelo WhatsApp antes de pedir.</p>
+        <ul class="perks">
+          <li><svg aria-hidden="true"><use href="#i-moto"/></svg><div><b>Entregador da casa</b><span>Quem leva o seu pedido trabalha com a gente.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Candeias, Jaboatão dos Guararapes</b><span>Consulte se o seu bairro está na área de entrega.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><b>Terça a domingo, 18h às 23h15</b><span>Segunda o forno descansa.</span></div></li>
+        </ul>
+        <div class="btns"><a class="btn btn-cheese js-wa-area" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar taxa e bairro</a></div>
+      </div>
+      <div class="ticket rv" aria-label="Horário de funcionamento">
         <h3>Forno aceso</h3>
         <p class="sub">horário de funcionamento</p>
+        <div class="clock" aria-live="polite"><small id="clock-lbl">Abre em</small><b id="clock">--</b></div>
         <table>
           <tbody id="hours">
             <tr data-d="1" class="off"><td>Segunda</td><td>Fechado</td></tr>
@@ -381,22 +652,42 @@ footer small{display:block;width:100%;color:#7E6F60;font-size:.85rem}
             <tr data-d="0"><td>Domingo</td><td>18:00 – 23:15</td></tr>
           </tbody>
         </table>
-        <div class="tfoot">
-          <span>Pedidos e dúvidas</span>
-          <b>(81) 98635-2086</b>
-          <span>Candeias · Jaboatão dos Guararapes – PE</span>
-        </div>
+        <div class="tfoot"><span>Pedidos e dúvidas</span><b>(81) 98635-2086</b></div>
       </div>
     </div>
   </section>
 
-  <section class="final">
+  <!-- INSTAGRAM -->
+  <section class="sec insta" id="instagram">
     <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">No Instagram</p>
+        <h2>Bastidores, promoções e sorteios</h2>
+        <p class="lead">Lá a gente posta o forno funcionando, as promoções de datas especiais e os sorteios em dia de jogo.</p>
+      </div>
+      <div class="insta-grid rv">
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizza-calabresa.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-milho.jpg" alt="" loading="lazy" width="1000" height="665"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/forno-esfihas.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-chocolate.jpg" alt="" loading="lazy" width="1000" height="665"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizza-mussarela.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-calabresa.jpg" alt="" loading="lazy" width="1000" height="665"></a>
+      </div>
+      <div class="insta-foot">
+        <p>Segue a gente e ativa as notificações.</p>
+        <a class="handle" href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@modanostracandeias</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="sec final">
+    <div class="wrap rv">
       <p class="eyebrow">Bateu a fome?</p>
       <h2>O forno já tá esquentando</h2>
-      <p class="lead">Peça agora pelo cardápio digital ou mande uma mensagem.</p>
+      <p class="lead">Peça pelo cardápio digital ou chame a gente no WhatsApp.</p>
       <div class="btns">
-        <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
+        <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
         <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
       </div>
     </div>
@@ -405,60 +696,261 @@ footer small{display:block;width:100%;color:#7E6F60;font-size:.85rem}
 
 <footer>
   <div class="wrap">
-    <img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="117" height="56" loading="lazy">
-    <ul>
-      <li><a class="js-menu" href="#" target="_blank" rel="noopener">Cardápio digital</a></li>
-      <li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp (81) 98635-2086</a></li>
-      <li><a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener">@modanostracandeias</a></li>
-    </ul>
-    <small>Moda Nostra Candeias · Pizzaria paulista autêntica · Terça a domingo, 18:00 às 23:15</small>
+    <div class="brand">
+      <img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="126" height="60" loading="lazy">
+      <p>Pizzaria paulista autêntica em Candeias, Jaboatão dos Guararapes – PE. Tradição e sabor de SP.</p>
+    </div>
+    <div>
+      <h4>Peça</h4>
+      <ul>
+        <li><a class="js-menu" href="#" target="_blank" rel="noopener">Cardápio digital</a></li>
+        <li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp (81) 98635-2086</a></li>
+        <li><a href="#pedido">Pedido rápido</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Funcionamento</h4>
+      <ul>
+        <li>Terça a domingo</li>
+        <li>18:00 às 23:15</li>
+        <li><a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener">@modanostracandeias</a></li>
+      </ul>
+    </div>
+    <p class="copy">© <span id="y">2026</span> Moda Nostra Candeias · Pizza Delivery</p>
   </div>
 </footer>
 
-<a class="fab js-wa" href="#" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
-<div class="dock">
-  <a class="btn btn-menu js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Cardápio</a>
+<a class="fab js-wa" id="fab" href="#" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><span class="tip">Pedir no WhatsApp</span><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<div class="dock" id="dock">
+  <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Cardápio</a>
   <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
 </div>
 
 <script>
-(function(){
-  var MENU = "https://www.mestrecuka.com.br/mPedidos/m?id=modanostrapizza";
-  var PHONE = "5581986352086";
-  function wa(msg){ return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg); }
-  var waOrder = wa("Olá, Moda Nostra! Quero fazer um pedido 🍕");
-  var waArea  = wa("Olá, Moda Nostra! Vocês entregam no meu bairro? Qual a taxa de entrega?");
-  document.querySelectorAll(".js-menu").forEach(function(a){ a.href = MENU; });
-  document.querySelectorAll(".js-wa").forEach(function(a){ a.href = waOrder; });
-  document.querySelectorAll(".js-wa-area").forEach(function(a){ a.href = waArea; });
+(() => {
+  document.documentElement.classList.add('js');
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hover = matchMedia('(hover:hover)').matches;
 
-  // Horário de Recife: terça (2) a domingo (0), 18:00–23:15
-  var OPEN = 18*60, CLOSE = 23*60+15;
-  var DAYS = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
-  function recifeNow(){
-    try{
-      var p = new Intl.DateTimeFormat("en-US",{timeZone:"America/Recife",weekday:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date());
-      var o = {}; p.forEach(function(x){ o[x.type]=x.value; });
-      var wd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday);
-      return {d:wd, m:(+o.hour)*60 + (+o.minute)};
-    }catch(e){ var n=new Date(); return {d:n.getDay(), m:n.getHours()*60+n.getMinutes()}; }
+  /* ---------- links ---------- */
+  const MENU = 'https://www.mestrecuka.com.br/mPedidos/m?id=modanostrapizza';
+  const PHONE = '5581986352086';
+  const wa = msg => 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg);
+  const setLinks = () => {
+    $$('.js-menu').forEach(a => a.href = MENU);
+    $$('.js-wa').forEach(a => a.href = wa('Olá, Moda Nostra! Quero fazer um pedido 🍕'));
+    $$('.js-wa-area').forEach(a => a.href = wa('Olá, Moda Nostra! Vocês entregam no meu bairro? Qual a taxa de entrega?'));
+  };
+  setLinks();
+
+  /* ---------- abertura: termômetro do forno ---------- */
+  const root = document.documentElement, intro = $('#intro');
+  const endIntro = () => {
+    if (!root.classList.contains('intro') || intro.classList.contains('done')) return;
+    intro.classList.add('done');
+    setTimeout(() => root.classList.remove('intro'), 600);
+    try { sessionStorage.setItem('mn-intro', '1'); } catch (e) {}
+  };
+  if (root.classList.contains('intro')) {
+    const t0 = performance.now(), dur = 1700, temp = $('#temp'), bar = $('#tbar');
+    (function tick(t) {
+      if (intro.classList.contains('done')) return;
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      temp.textContent = Math.round(300 * e) + '°C';
+      bar.style.setProperty('--p', (e * 100) + '%');
+      if (k < 1) requestAnimationFrame(tick); else setTimeout(endIntro, 350);
+    })(t0);
+    intro.addEventListener('click', endIntro);
+    intro.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') && endIntro());
+    setTimeout(endIntro, 3800);
   }
-  function isOpenDay(d){ return d !== 1; }
-  function nextOpening(d, m){
-    for (var i=0;i<8;i++){
-      var dd=(d+i)%7;
-      if (isOpenDay(dd) && (i>0 || m < OPEN)) return i===0 ? "hoje às 18h" : (i===1 ? "amanhã às 18h" : DAYS[dd]+" às 18h");
+
+  /* ---------- esteira ---------- */
+  const words = ['Pizza paulista', 'Esfihas abertas', 'Borda recheada', 'Entrega própria', 'Candeias · PE', 'Terça a domingo', 'Tradição e sabor de SP'];
+  $('#track').innerHTML = [...words, ...words].map(w => `<span>${w}</span>`).join('');
+
+  /* ---------- menu mobile ---------- */
+  const burger = $('#burger'), sheet = $('#sheet');
+  const setSheet = open => {
+    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    sheet.classList.toggle('open', open); sheet.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) nav.classList.add('solid');
+  };
+  burger.addEventListener('click', () => setSheet(burger.getAttribute('aria-expanded') !== 'true'));
+  $$('a', sheet).forEach(a => a.addEventListener('click', () => setSheet(false)));
+  addEventListener('keydown', e => e.key === 'Escape' && setSheet(false));
+
+  /* ---------- parallax da pilha de fotos ---------- */
+  const stack = $('#stack'), hero = $('#hero');
+  if (!reduce && hover) {
+    hero.addEventListener('pointermove', e => {
+      const r = stack.getBoundingClientRect();
+      stack.style.setProperty('--mx', ((e.clientX - (r.left + r.width / 2)) / innerWidth).toFixed(3));
+      stack.style.setProperty('--my', ((e.clientY - (r.top + r.height / 2)) / innerHeight).toFixed(3));
+    });
+    hero.addEventListener('pointerleave', () => { stack.style.setProperty('--mx', 0); stack.style.setProperty('--my', 0); });
+  }
+
+  /* ---------- história em rolagem ---------- */
+  const story = $('#story'), scenes = $$('.scene'), steps = $$('#progress button'), shots = $('#shots');
+  const shotEls = scenes.map(s => $('.shot', s));
+  const desk = matchMedia('(min-width: 1021px)');
+  // no desktop as fotos vão para a coluna fixa da direita; no celular, cada uma fica na sua etapa
+  const placeShots = () => {
+    if (desk.matches) shotEls.forEach(sh => shots.appendChild(sh));
+    else shotEls.forEach((sh, i) => scenes[i].appendChild(sh));
+  };
+  let cur = -1;
+  const setScene = i => {
+    if (i === cur) return; cur = i;
+    scenes.forEach((s, k) => s.classList.toggle('on', k === i));
+    shotEls.forEach((s, k) => s.classList.toggle('on', k === i));
+    steps.forEach((b, k) => b.classList.toggle('on', k === i));
+  };
+  steps.forEach((b, i) => b.addEventListener('click', () => {
+    const top = story.getBoundingClientRect().top + scrollY, total = story.offsetHeight - innerHeight;
+    scrollTo({ top: top + total * (i + .5) / 4, behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- nav, botões flutuantes, link ativo ---------- */
+  const nav = $('#nav'), fab = $('#fab'), dock = $('#dock');
+  const secs = ['a-casa', 'cardapio', 'pedido', 'entrega'].map(id => document.getElementById(id));
+  const navLinks = $$('.nav-links a.l');
+  function onScroll() {
+    if (!sheet.classList.contains('open')) nav.classList.toggle('solid', scrollY > 40);
+    const past = scrollY > innerHeight * .6;
+    const nearEnd = innerHeight + scrollY > document.documentElement.scrollHeight - 420;
+    fab.classList.toggle('show', past); dock.classList.toggle('show', past && !nearEnd);
+    let act = -1; secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .4) act = i; });
+    navLinks.forEach((a, i) => a.classList.toggle('on', i === act));
+    if (desk.matches) {
+      const r = story.getBoundingClientRect(), total = story.offsetHeight - innerHeight;
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      steps.forEach((b, i) => $('i', b).style.setProperty('--p', Math.min(1, Math.max(0, p * 4 - i))));
+      setScene(Math.min(3, Math.floor(p * 4)));
     }
-    return "terça às 18h";
   }
-  function render(){
-    var n = recifeNow(), el = document.getElementById("status"), t = document.getElementById("status-txt");
-    var open = isOpenDay(n.d) && n.m >= OPEN && n.m < CLOSE;
-    el.classList.toggle("open", open); el.classList.toggle("closed", !open);
-    t.textContent = open ? "Aberto agora · pedidos até 23h15" : "Fechado agora · abre " + nextOpening(n.d, n.m);
-    document.querySelectorAll("#hours tr").forEach(function(tr){ tr.classList.toggle("today", +tr.dataset.d === n.d); });
+  placeShots(); setScene(0);
+  desk.addEventListener('change', () => { placeShots(); onScroll(); });
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---------- cardápio ---------- */
+  const items = [
+    { t:'pizza', cat:'Pizza', name:'Calabresa', img:'pizza-calabresa.jpg', w:1600, h:1064, desc:'Calabresa fatiada, cebola em rodelas e muito queijo gratinado.' },
+    { t:'pizza', cat:'Pizza', name:'Mussarela', img:'pizza-mussarela.jpg', w:1600, h:1064, desc:'Mussarela derretida com rodelas de tomate sobre o molho.' },
+    { t:'salgada', cat:'Esfiha', name:'Calabresa', img:'esfiha-calabresa.jpg', w:1000, h:665, desc:'Calabresa com cebola e tomate. Vai bem com limão.' },
+    { t:'salgada', cat:'Esfiha', name:'Frango', img:'esfiha-frango.jpg', w:1000, h:665, desc:'Frango desfiado temperado, coberto com queijo cremoso.' },
+    { t:'salgada', cat:'Esfiha', name:'Queijo', img:'esfiha-queijo.jpg', w:1000, h:665, desc:'Queijo gratinado com ervas, dourado por cima.' },
+    { t:'salgada', cat:'Esfiha', name:'Milho', img:'esfiha-milho.jpg', w:1000, h:665, desc:'Milho com queijo cremoso e massa macia.' },
+    { t:'doce', cat:'Doce', name:'Chocolate', img:'esfiha-chocolate.jpg', w:1000, h:665, desc:'Esfiha crocante coberta de creme de chocolate, pra fechar o pedido.' }
+  ];
+  $('#cards').innerHTML = items.map(m => `
+    <article class="card rv" data-t="${m.t}">
+      <div class="pic"><img src="img/${m.img}" alt="${m.cat} de ${m.name.toLowerCase()}" loading="lazy" width="${m.w}" height="${m.h}"><span class="cat">${m.cat}</span></div>
+      <div class="body">
+        <h3>${m.name}</h3>
+        <p>${m.desc}</p>
+        <div class="foot"><small>Preço no cardápio</small><a class="go js-menu" href="#" target="_blank" rel="noopener" aria-label="Pedir ${m.cat.toLowerCase()} de ${m.name.toLowerCase()} no cardápio">Pedir <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </article>`).join('') + `
+    <article class="card more rv" data-t="all">
+      <h3>Tem muito mais sabor</h3>
+      <p>Veja todas as pizzas, esfihas, bordas recheadas e bebidas com preço atualizado.</p>
+      <a class="btn btn-cheese btn-sm js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Abrir cardápio</a>
+    </article>`;
+  setLinks();
+  $$('.chip').forEach(c => c.addEventListener('click', () => {
+    $$('.chip').forEach(x => x.setAttribute('aria-pressed', x === c));
+    const f = c.dataset.f;
+    $$('.card').forEach(p => p.classList.toggle('hide', f !== 'all' && p.dataset.t !== f && p.dataset.t !== 'all'));
+  }));
+  if (!reduce && hover) {
+    $$('.card:not(.more)').forEach(p => {
+      p.addEventListener('pointermove', e => {
+        const r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        p.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
+      });
+      p.addEventListener('pointerleave', () => p.style.transform = '');
+    });
   }
-  render(); setInterval(render, 60000);
+
+  /* ---------- pedido rápido ---------- */
+  const form = $('#form'), send = $('#send'), bubble = $('#bubble'), btime = $('#btime');
+  const val = id => $('#' + id).value.trim();
+  const pay = () => $('input[name="pag"]:checked', form).value;
+  function message() {
+    const L = ['Olá, Moda Nostra! Quero fazer um pedido 🍕', ''];
+    if (val('nome')) L.push('Nome: ' + val('nome'));
+    if (val('pedido-txt')) L.push('Pedido: ' + val('pedido-txt'));
+    const end = [val('endereco'), val('bairro')].filter(Boolean).join(' – ');
+    if (end) L.push('Endereço: ' + end);
+    L.push('Pagamento: ' + pay() + (pay() === 'Dinheiro' && val('troco') ? ' (troco para ' + val('troco') + ')' : ''));
+    return L.join('\n');
+  }
+  function update() {
+    $('#f-troco').hidden = pay() !== 'Dinheiro';
+    const m = message();
+    bubble.textContent = m;
+    send.href = wa(m);
+  }
+  form.addEventListener('input', e => { update(); const f = e.target.closest('.field'); if (f) f.classList.remove('err'); });
+  form.addEventListener('change', update);
+  $$('.quick button').forEach(b => b.addEventListener('click', () => {
+    const ta = $('#pedido-txt'), add = b.dataset.add, cur = ta.value.trim().replace(/[,.]$/, '');
+    ta.value = cur ? (add.startsWith('com ') ? cur + ' ' + add : cur + ', ' + add) : add.charAt(0).toUpperCase() + add.slice(1);
+    $('#f-pedido').classList.remove('err'); update();
+    if (!reduce && b.animate) b.animate([{ transform: 'scale(.92)' }, { transform: 'scale(1)' }], { duration: 200 });
+  }));
+  send.addEventListener('click', e => {
+    const req = [['nome', 'f-nome'], ['bairro', 'f-bairro'], ['pedido-txt', 'f-pedido']];
+    let first = null;
+    req.forEach(([id, f]) => { const bad = !val(id); $('#' + f).classList.toggle('err', bad); if (bad && !first) first = $('#' + id); });
+    if (first) { e.preventDefault(); first.focus(); }
+  });
+  form.addEventListener('submit', e => e.preventDefault());
+  update();
+
+  /* ---------- horário de Recife ---------- */
+  const OPEN = 18 * 60, CLOSE = 23 * 60 + 15;
+  const DAYS = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+  function now() {
+    try {
+      const p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Recife', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+      const o = {}; p.forEach(x => o[x.type] = x.value);
+      return { d: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday), m: (+o.hour) * 60 + (+o.minute), hh: o.hour, mm: o.minute };
+    } catch (e) { const n = new Date(); return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes(), hh: String(n.getHours()).padStart(2, '0'), mm: String(n.getMinutes()).padStart(2, '0') }; }
+  }
+  const dur = min => { const h = Math.floor(min / 60), m = min % 60; return h ? `${h}h ${String(m).padStart(2, '0')}min` : `${m} min`; };
+  function hours() {
+    const n = now(), open = n.d !== 1 && n.m >= OPEN && n.m < CLOSE;
+    let wait = 0, label = '';
+    if (!open) {
+      for (let i = 0; i < 8; i++) {
+        const dd = (n.d + i) % 7;
+        if (dd !== 1 && (i > 0 || n.m < OPEN)) { wait = i * 1440 + OPEN - n.m; label = i === 0 ? 'hoje às 18h' : i === 1 ? 'amanhã às 18h' : DAYS[dd] + ' às 18h'; break; }
+      }
+    }
+    $('#status').classList.toggle('open', open); $('#status').classList.toggle('closed', !open);
+    $('#status-txt').textContent = open ? 'Aberto agora · pedidos até 23h15' : 'Fechado agora · abre ' + label;
+    $('#clock-lbl').textContent = open ? 'Aberto agora · fecha em' : 'Abre ' + label + ' · falta';
+    $('#clock').textContent = dur(open ? CLOSE - n.m : wait);
+    $$('#hours tr').forEach(tr => tr.classList.toggle('today', +tr.dataset.d === n.d));
+    btime.textContent = n.hh + ':' + n.mm;
+  }
+  hours(); setInterval(hours, 30000);
+
+  /* ---------- revelar ao rolar ---------- */
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+    $$('.rv').forEach(el => io.observe(el));
+  } else $$('.rv').forEach(el => el.classList.add('in'));
+
+  $('#y').textContent = new Date().getFullYear();
 })();
 </script>
 </body>
