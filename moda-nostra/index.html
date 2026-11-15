@@ -5,40 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Moda Nostra Candeias</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Pizzaria paulista autêntica em Candeias, Jaboatão dos Guararapes. Pizzas, esfihas e borda recheada com entrega própria. Peça pelo cardápio digital ou WhatsApp.">
+<meta name="description" content="Pizzaria paulista autêntica em Candeias, Jaboatão dos Guararapes. Monte sua pizza meia a meia, escolha suas esfihas e peça pelo cardápio digital ou WhatsApp.">
 <meta name="theme-color" content="#C91F25">
 <meta property="og:title" content="Moda Nostra · Pizza Delivery em Candeias">
 <meta property="og:description" content="Tradição e sabor de SP. Terça a domingo, 18h às 23h15. Peça pelo cardápio digital ou WhatsApp.">
-<meta property="og:image" content="img/pizza-calabresa.jpg">
+<meta property="og:image" content="img/pz-frango.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
-<script>
-  /* abertura "acendendo o forno": uma vez por sessão e nunca com movimento reduzido */
-  (function(){try{
-    var seen = sessionStorage.getItem('mn-intro') === '1';
-    if (!seen && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro');
-  }catch(e){}})();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Barlow:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
-/* Layout: identidade Moda Nostra. Vermelho da marca em faixas inteiras (hero e entrega),
-   creme de farinha nas seções de leitura, carvão do forno nas seções de produto.
-   Títulos condensados e inclinados como o logotipo; muito respiro entre blocos. */
+/* Layout: "a mesa da Moda Nostra". Vermelho da marca em faixas inteiras, creme de farinha nas
+   seções de leitura, carvão nas seções de produto. A pizza (vista de cima) é o elemento-assinatura:
+   gira no topo, divide-se ao meio no "meia a meia" e as esfihas aparecem na tábua real. */
 :root{
-  --red:#C91F25;  --red-700:#A3161C; --red-900:#6E0E12;
-  --cream:#FBF4E6; --cream-2:#F3E8D2; --paper:#FFFDF8;
+  --red:#C91F25; --red-700:#A3161C; --red-900:#6E0E12;
+  --cream:#FBF4E6; --cream-2:#F2E6CF; --paper:#FFFDF8;
   --coal:#1B1411; --coal-2:#261C17;
   --cheese:#F3B623; --cheese-700:#B3810A;
   --wa:#25D366; --wa-700:#128C3E;
-  --ink:#2A1E18; --ink-2:#6B5A4C; --on-dark:#F7EEDC; --on-dark-2:#CBBBA6; --on-red:#FFE3DC;
+  --ink:#2A1E18; --ink-2:#6B5A4C; --on-dark:#F7EEDC; --on-dark-2:#CBBBA6; --on-red:#FFE1D9;
   --line-dark:rgba(247,238,220,.14); --line-light:rgba(42,30,24,.12);
 
   --display:"Barlow Condensed","Roboto Condensed","Arial Narrow",Impact,sans-serif;
   --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
 
-  --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:112px;
-  --r-sm:12px; --r-md:20px; --r-lg:32px;
+  --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:120px;
+  --r-md:20px; --r-lg:32px;
   --gl:max(20px, env(safe-area-inset-left, 0px));
   --gr:max(20px, env(safe-area-inset-right, 0px));
   --ease:cubic-bezier(.2,.7,.2,1);
@@ -57,16 +50,15 @@ button{font:inherit;color:inherit}
 /* ---------- tipografia ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.92rem;color:var(--red)}
 .eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:currentColor}
-h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92;letter-spacing:-.005em;margin:0;text-wrap:balance}
-h1{font-size:clamp(3.2rem,8vw,6.8rem)}
-h2{font-size:clamp(2.5rem,5.4vw,4.4rem)}
+h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.9;letter-spacing:-.005em;margin:0;text-wrap:balance}
+h1{font-size:clamp(3.4rem,8.6vw,7.4rem);font-weight:900}
+h2{font-size:clamp(2.5rem,5.4vw,4.5rem)}
 h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1}
 .hand{font-family:var(--hand);font-weight:700;font-style:normal;text-transform:none;letter-spacing:0}
-.lead{font-size:clamp(1.06rem,1.5vw,1.2rem);color:var(--ink-2);max-width:36em;margin:0}
+.lead{font-size:clamp(1.06rem,1.5vw,1.2rem);color:var(--ink-2);max-width:34em;margin:0}
 .lead a{color:var(--red);font-weight:600}
 .sec{padding-block:var(--s-6)}
-.sec-head{display:grid;gap:var(--s-2);max-width:720px;margin-bottom:var(--s-5)}
-.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
+.sec-head{display:grid;gap:var(--s-2);max-width:700px;margin-bottom:var(--s-5)}
 
 /* ---------- botões ---------- */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
@@ -78,38 +70,23 @@ h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1}
 .btn-wa{--sh:var(--wa-700);background:var(--wa);color:#04260E;box-shadow:0 6px 0 var(--sh)}
 .btn-cheese:hover,.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--sh)}
 .btn-cheese:active,.btn-wa:active{transform:translateY(4px);box-shadow:0 2px 0 var(--sh)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .btn-sm{min-height:44px;padding:0 20px;font-size:1.02rem}
-
-/* ---------- abertura: acendendo o forno ---------- */
-.intro-ov{display:none}
-html.intro .intro-ov{display:grid;position:fixed;inset:0;z-index:200;place-items:center;background:radial-gradient(60% 50% at 50% 60%,#3a120f 0%,var(--coal) 70%);color:var(--on-dark);cursor:pointer;
-  animation:introOut .5s 4s forwards}
-html.intro body{overflow:hidden}
-.intro-ov.done{animation:introOut .6s var(--ease) forwards}
-@keyframes introOut{to{opacity:0;visibility:hidden}}
-.intro-box{display:grid;justify-items:center;gap:22px;padding:24px;text-align:center}
-.intro-box img{width:min(320px,70vw);animation:glow 1.6s var(--ease) forwards}
-@keyframes glow{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none;filter:drop-shadow(0 0 40px rgba(243,140,35,.45))}}
-.thermo{width:min(300px,70vw);display:grid;gap:8px}
-.thermo .bar{height:6px;border-radius:6px;background:rgba(247,238,220,.12);overflow:hidden}
-.thermo .bar i{display:block;height:100%;width:var(--p,0%);background:linear-gradient(90deg,var(--cheese),#F36B23,var(--red));border-radius:6px}
-.thermo .row{display:flex;justify-content:space-between;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;color:var(--on-dark-2)}
-.thermo .row b{color:var(--cheese);font-variant-numeric:tabular-nums;letter-spacing:.04em;font-size:1rem}
-.intro-skip{font-size:.85rem;color:var(--on-dark-2);opacity:.7}
 
 /* ---------- navegação ---------- */
 .nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:80;transition:background-color .3s, box-shadow .3s}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px;transition:min-height .3s}
-.nav.solid{background:rgba(201,31,37,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(80,0,0,.25)}
+.nav.solid{background:rgba(201,31,37,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(80,0,0,.22)}
 .nav.solid .wrap{min-height:64px}
 .nav-logo img{height:46px;width:auto;transition:height .3s}
 .nav.solid .nav-logo img{height:40px}
-.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a.l{color:#fff;text-decoration:none;font-weight:600;font-size:.98rem;opacity:.85;position:relative;padding-block:6px}
 .nav-links a.l::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--cheese);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .nav-links a.l:hover,.nav-links a.l.on{opacity:1}
 .nav-links a.l:hover::after,.nav-links a.l.on::after{transform:scaleX(1)}
-.burger{display:none;width:48px;height:48px;border-radius:14px;border:0;background:rgba(0,0,0,.18);cursor:pointer;place-items:center;position:relative;z-index:2}
+.burger{display:none;width:48px;height:48px;border-radius:14px;border:0;background:rgba(0,0,0,.18);cursor:pointer;place-items:center}
 .burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;position:relative;transition:background-color .25s}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s, top .25s}
 .burger span::before{top:-7px}.burger span::after{top:7px}
@@ -127,140 +104,149 @@ html.intro body{overflow:hidden}
 .hero{position:relative;overflow:hidden;background:var(--red);color:#fff;padding-top:calc(76px + env(safe-area-inset-top,0px))}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 46px)}
-.hero::after{content:"";position:absolute;inset:auto -10% -40% 30%;height:80%;background:radial-gradient(closest-side,rgba(243,182,35,.28),transparent);pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:var(--s-5);padding-block:var(--s-5) var(--s-6)}
+.hero > .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s-4);min-height:min(78vh,760px);padding-block:var(--s-4) var(--s-5)}
 .hero-copy{display:grid;gap:28px;min-width:0}
-.hero h1 .hand{display:block;color:var(--cheese);font-size:.42em;line-height:1;margin-bottom:.18em;transform:rotate(-3deg);transform-origin:left}
+.hero h1 .hand{display:block;color:var(--cheese);font-size:.38em;font-weight:700;line-height:1;margin-bottom:.2em;transform:rotate(-3deg);transform-origin:left}
 .hero .lead{color:var(--on-red)}
-.status{display:inline-flex;align-items:center;gap:10px;justify-self:start;margin:0;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(0,0,0,.2);font-weight:600;font-size:.95rem;color:#fff}
+.status{display:inline-flex;align-items:center;gap:10px;justify-self:start;margin:0;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(0,0,0,.2);font-weight:600;font-size:.95rem}
 .status .dot{width:10px;height:10px;border-radius:50%;background:#ddd;flex:none}
 .status.open .dot{background:#3BD16F;animation:pulse 2s infinite}
 .status.closed .dot{background:var(--cheese)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(59,209,111,.7)}70%{box-shadow:0 0 0 10px rgba(59,209,111,0)}100%{box-shadow:0 0 0 0 rgba(59,209,111,0)}}
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0;padding:0;list-style:none;font-size:.95rem;color:var(--on-red)}
-.hero-meta b{color:#fff}
 
-/* pilha de fotos com parallax */
-.stack{position:relative;aspect-ratio:1/1;max-width:540px;width:100%;justify-self:end;--mx:0;--my:0}
-.stack .ph{position:absolute;border-radius:var(--r-md);overflow:hidden;border:6px solid var(--paper);box-shadow:0 26px 60px rgba(60,0,0,.45);background:var(--coal);transition:transform .5s var(--ease)}
-.stack .ph img{width:100%;height:100%;object-fit:cover}
-.stack .p1{inset:6% 4% 16% 10%;z-index:3;transform:rotate(2.5deg) translate(calc(var(--mx)*14px),calc(var(--my)*14px))}
-.stack .p2{width:46%;aspect-ratio:1;left:-4%;bottom:0;z-index:4;transform:rotate(-7deg) translate(calc(var(--mx)*26px),calc(var(--my)*26px))}
-.stack .p3{width:40%;aspect-ratio:1;right:-2%;top:-4%;z-index:2;transform:rotate(9deg) translate(calc(var(--mx)*-18px),calc(var(--my)*-18px))}
-.stack .seal{position:absolute;right:2%;bottom:6%;z-index:5;width:132px;height:132px;border-radius:50%;background:var(--cheese);color:#3A2200;display:grid;place-items:center;text-align:center;
-  font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;font-size:1.25rem;box-shadow:0 14px 30px rgba(60,0,0,.35);
-  transform:rotate(-10deg) translate(calc(var(--mx)*30px),calc(var(--my)*30px));transition:transform .5s var(--ease)}
-.stack .seal small{display:block;font-family:var(--hand);text-transform:none;font-style:normal;font-size:1.15rem;color:var(--red-700)}
-.stack .seal::before{content:"";position:absolute;inset:7px;border-radius:50%;border:2px dashed rgba(58,34,0,.35)}
+/* pizza girando */
+.spin-stage{position:relative;justify-self:center;width:min(640px,46vw);aspect-ratio:1;margin-right:-12vw}
+.board{position:absolute;inset:-4%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a5a35,#5b3720 70%);box-shadow:0 40px 90px rgba(60,0,0,.5), inset 0 0 0 10px rgba(0,0,0,.12)}
+.spin{position:absolute;inset:3%;border-radius:50%;overflow:hidden;transform:rotate(var(--rot,0deg));box-shadow:0 12px 30px rgba(0,0,0,.35);animation:enter 1.2s var(--ease) both}
+.spin img{width:100%;height:100%;object-fit:cover}
+@keyframes enter{from{opacity:0;transform:rotate(-120deg) scale(.8)}}
+.ring{position:absolute;left:-6%;bottom:-2%;width:34%;aspect-ratio:1;z-index:3;color:#3A2200}
+.ring svg{width:100%;height:100%;animation:turn 22s linear infinite}
+.ring .core{position:absolute;inset:22%;border-radius:50%;background:var(--cheese);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;font-size:clamp(.85rem,1.4vw,1.15rem);box-shadow:0 10px 24px rgba(60,0,0,.35)}
+@keyframes turn{to{transform:rotate(360deg)}}
+.facts{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.12)}
+.facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.facts li{display:flex;align-items:center;gap:14px;padding:22px 0;font-weight:600;color:#fff}
+.facts li + li{padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
+.facts svg{width:26px;height:26px;color:var(--cheese);flex:none}
+.facts small{display:block;color:var(--on-red);font-weight:500;font-size:.88rem}
 
-/* ---------- esteira ---------- */
-.belt{background:var(--coal);color:var(--on-dark);overflow:hidden;border-block:6px solid var(--coal);position:relative}
-.belt::before,.belt::after{content:"";position:absolute;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,rgba(247,238,220,.18) 0 2px,transparent 2px 14px)}
-.belt::before{top:0}.belt::after{bottom:0}
-.belt-track{display:flex;width:max-content;animation:belt 34s linear infinite}
-.belt:hover .belt-track{animation-play-state:paused}
-.belt-track span{display:flex;align-items:center;white-space:nowrap;padding:20px 0;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,1.9rem)}
-.belt-track span::after{content:"";width:11px;height:11px;margin:0 28px;background:var(--red);transform:rotate(45deg)}
-@keyframes belt{to{transform:translateX(-50%)}}
+/* ---------- meia a meia ---------- */
+.half{background:var(--cream)}
+.half-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);align-items:center}
+.pie-wrap{position:relative;display:grid;place-items:center;padding:6%}
+.pie-wrap::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a5a35,#5b3720 70%);box-shadow:0 30px 70px rgba(42,30,24,.3)}
+.pie{position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;transition:box-shadow .4s var(--ease)}
+.pie.borda{box-shadow:0 0 0 10px var(--cheese), 0 0 40px 10px rgba(243,182,35,.55)}
+.pie img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease), opacity .4s}
+.pie .a{clip-path:inset(0 50% 0 0)}
+.pie .b{clip-path:inset(0 0 0 50%)}
+.pie .a.swap{transform:rotate(-30deg);opacity:0}
+.pie .b.swap{transform:rotate(30deg);opacity:0}
+.pie::after{content:"";position:absolute;left:calc(50% - 1.5px);top:0;bottom:0;width:3px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.95) 0 10px,transparent 10px 18px);transition:opacity .3s}
+.pie.whole::after{opacity:0}
+.pie-tag{position:absolute;z-index:2;bottom:2%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;white-space:nowrap}
+.builder{display:grid;gap:26px;min-width:0}
+.side{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
+.side legend{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.9rem;color:var(--ink-2);padding:0;margin-bottom:10px}
+.flavors{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.flavors input{position:absolute;opacity:0;pointer-events:none}
+.flavors label{display:grid;justify-items:center;gap:8px;padding:12px 6px;border-radius:18px;border:2px solid transparent;background:var(--paper);cursor:pointer;text-align:center;font-weight:600;font-size:.86rem;line-height:1.2;transition:all .2s}
+.flavors label img{width:64px;height:64px;border-radius:50%;object-fit:cover;transition:transform .3s var(--ease)}
+.flavors label:hover img{transform:rotate(25deg)}
+.flavors input:checked + label{border-color:var(--red);background:#fff;box-shadow:0 8px 20px rgba(201,31,37,.15)}
+.flavors input:focus-visible + label{outline:3px solid var(--cheese);outline-offset:2px}
+.switch{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border-radius:18px;background:var(--paper);cursor:pointer}
+.switch b{display:block}
+.switch small{color:var(--ink-2);font-size:.9rem}
+.switch input{position:absolute;opacity:0;pointer-events:none}
+.switch .tg{position:relative;width:54px;height:32px;border-radius:999px;background:var(--cream-2);flex:none;transition:background-color .2s}
+.switch .tg::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .25s var(--ease)}
+.switch input:checked + .tg{background:var(--red)}
+.switch input:checked + .tg::after{transform:translateX(22px)}
+.switch input:focus-visible + .tg{outline:3px solid var(--cheese);outline-offset:2px}
+.summary{display:grid;gap:4px;padding:18px 20px;border-radius:18px;border:2px dashed rgba(42,30,24,.2)}
+.summary small{font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;color:var(--ink-2)}
+.summary b{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.5rem;line-height:1.05}
+.builder .fine{margin:0;font-size:.9rem;color:var(--ink-2)}
 
-/* ---------- história em rolagem ---------- */
-.story{position:relative;background:var(--cream)}
-.story-intro{padding-block:var(--s-6) 0}
-.story-run{height:420vh;position:relative}
-.pin{position:sticky;top:0;height:100vh;height:100svh;display:grid;align-items:center;padding-top:64px}
-.pin .wrap{width:100%;display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s-5);align-items:center}
-.scenes{position:relative;min-height:380px}
-.scene .txt{position:absolute;inset:0 0 auto 0;display:grid;gap:18px;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease), transform .5s var(--ease);pointer-events:none}
-.scene.on .txt{opacity:1;transform:none;pointer-events:auto}
-.scene .num{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.1rem;color:var(--red);letter-spacing:.1em;text-transform:uppercase}
-.scene h3{font-size:clamp(2.2rem,3.8vw,3.2rem)}
-.scene .txt p{margin:0;color:var(--ink-2);max-width:30em;font-size:1.08rem}
-.scene .tag{justify-self:start;display:inline-flex;gap:6px;align-items:center;padding:7px 15px;border-radius:999px;background:var(--paper);border:1px solid var(--line-light);font-weight:600;font-size:.9rem}
-.scene .tag b{color:var(--red)}
-.shots{position:relative;aspect-ratio:4/3.2;border-radius:var(--r-lg);overflow:hidden;background:var(--coal);box-shadow:0 30px 70px rgba(42,30,24,.25)}
-.shot{border-radius:var(--r-lg);overflow:hidden}
-.shot img{width:100%;height:100%;object-fit:cover}
-.shots .shot{position:absolute;inset:0;border-radius:0;opacity:0;transform:scale(1.06);transition:opacity .7s var(--ease), transform 1.2s var(--ease)}
-.shots .shot.on{opacity:1;transform:none}
-.progress{display:flex;gap:8px;margin-top:24px}
-.progress button{flex:1;min-height:44px;border:0;background:none;padding:0;cursor:pointer;display:grid;gap:8px;align-content:center;text-align:left}
-.progress button i{display:block;height:4px;border-radius:4px;background:var(--line-light);overflow:hidden;position:relative}
-.progress button i::after{content:"";position:absolute;inset:0;background:var(--red);transform:scaleX(var(--p,0));transform-origin:left}
-.progress button span{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--ink-2)}
-.progress button.on span{color:var(--red)}
+/* ---------- passo a passo (trilho horizontal) ---------- */
+.steps-sec{background:var(--paper);overflow:hidden}
+.rail-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--s-3);margin-bottom:var(--s-4)}
+.rail-head .sec-head{margin-bottom:0}
+.arrows{display:flex;gap:10px}
+.arrows button{width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;transition:all .2s}
+.arrows button:hover{background:var(--ink);color:var(--paper)}
+.arrows button:disabled{opacity:.3;pointer-events:none}
+.arrows svg{width:22px;height:22px}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(260px,30vw,360px);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;scrollbar-width:none;
+  padding-left:max(var(--gl), calc((100vw - 1200px)/2 + 20px));padding-right:var(--gr);scroll-padding-left:max(var(--gl), calc((100vw - 1200px)/2 + 20px))}
+.rail::-webkit-scrollbar{display:none}
+.step{scroll-snap-align:start;display:grid;gap:16px;align-content:start}
+.step .ph{position:relative;aspect-ratio:4/5;border-radius:var(--r-md);overflow:hidden;background:var(--coal)}
+.step .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.step:hover .ph img{transform:scale(1.05)}
+.step .n{position:absolute;left:14px;top:12px;font-family:var(--display);font-weight:900;font-style:italic;font-size:3.4rem;line-height:1;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.45)}
+.step h3{font-size:1.6rem}
+.step p{margin:0;color:var(--ink-2);font-size:.97rem}
+.rail-bar{height:3px;background:var(--line-light);border-radius:3px;margin-top:22px;overflow:hidden}
+.rail-bar i{display:block;height:100%;width:var(--w,20%);background:var(--red);border-radius:3px;transform:translateX(var(--x,0));transition:transform .15s}
 
-/* ---------- cardápio ---------- */
-.menu{background:var(--coal);color:var(--on-dark)}
-.menu .eyebrow{color:var(--cheese)}
-.menu .lead{color:var(--on-dark-2)}
-.menu-top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--s-3);margin-bottom:var(--s-4)}
-.menu-top .sec-head{margin-bottom:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line-dark);background:transparent;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--on-dark-2);transition:all .2s}
-.chip:hover{border-color:var(--on-dark);color:var(--on-dark)}
-.chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3)}
-.card{position:relative;display:grid;grid-template-rows:auto 1fr;background:var(--coal-2);border:1px solid var(--line-dark);border-radius:var(--r-md);overflow:hidden;
-  transition:transform .35s var(--ease), box-shadow .35s, opacity .8s var(--ease)}
-.card:hover{box-shadow:0 24px 50px rgba(0,0,0,.45)}
-.card.hide{display:none}
-.card .pic{position:relative;aspect-ratio:4/3;overflow:hidden}
-.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.card:hover .pic img{transform:scale(1.06)}
-.card .cat{position:absolute;left:14px;top:14px;padding:5px 12px;border-radius:999px;background:rgba(27,20,17,.82);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.card .body{display:grid;grid-template-rows:auto 1fr auto;gap:10px;padding:20px 20px 22px}
-.card .body p{margin:0;color:var(--on-dark-2);font-size:.95rem}
-.card .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px dashed var(--line-dark)}
-.card .foot small{color:var(--on-dark-2);font-size:.85rem}
-.card .go{display:inline-flex;align-items:center;gap:6px;color:var(--cheese);font-weight:700;text-decoration:none;font-size:.95rem;min-height:32px}
-.card .go:hover{text-decoration:underline}
-.card.more{background:var(--red);border-color:var(--red);grid-template-rows:none;align-content:center;justify-items:start;padding:30px 26px;gap:16px}
-.card.more h3{font-size:clamp(2rem,2.6vw,2.4rem)}
-.card.more p{margin:0;color:var(--on-red);font-size:.97rem}
-.menu-note{margin:var(--s-4) 0 0;color:var(--on-dark-2);font-size:.92rem}
+/* ---------- faixa do forno ---------- */
+.oven{position:relative;overflow:hidden;color:#fff;min-height:min(80vh,680px);display:grid;align-items:end}
+.oven .bg{position:absolute;inset:-12% 0;will-change:transform}
+.oven .bg img{width:100%;height:100%;object-fit:cover}
+.oven::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,20,17,.1) 20%,rgba(27,20,17,.85))}
+.oven .wrap{position:relative;z-index:2;padding-block:var(--s-6) var(--s-5);display:grid;gap:18px}
+.oven h2{font-size:clamp(3rem,7.4vw,6.4rem);max-width:12ch}
+.oven h2 .hand{color:var(--cheese);font-size:.5em;display:block;transform:rotate(-2deg);transform-origin:left}
+.oven p{margin:0;max-width:32em;color:var(--on-dark)}
 
-/* ---------- pedido rápido ---------- */
-.order{background:var(--cream)}
-.order-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s-5);align-items:start}
-.form{display:grid;gap:22px;background:var(--paper);border:1px solid var(--line-light);border-radius:var(--r-lg);padding:clamp(22px,4vw,40px);box-shadow:0 20px 50px rgba(42,30,24,.08);min-width:0}
-.field{display:grid;gap:8px;min-width:0}
-.field label,.field legend{font-weight:700;font-size:.95rem;padding:0}
-.field .hint{font-size:.85rem;color:var(--ink-2);font-weight:500}
-.field input,.field textarea{width:100%;min-height:52px;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line-light);background:var(--cream);font:inherit;font-size:1rem;color:var(--ink);transition:border-color .2s, background-color .2s}
-.field textarea{min-height:110px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--red);background:#fff}
-.field.err input,.field.err textarea{border-color:var(--red);background:#FFF1EF}
-.field .msg{display:none;color:var(--red-700);font-size:.88rem;font-weight:600}
-.field.err .msg{display:block}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-fieldset{border:0;margin:0;padding:0;min-width:0}
-.quick{display:flex;flex-wrap:wrap;gap:8px}
-.quick button{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px dashed rgba(42,30,24,.25);background:transparent;cursor:pointer;font-weight:600;font-size:.9rem;color:var(--ink-2);transition:all .2s}
-.quick button:hover{border-color:var(--red);color:var(--red)}
-.quick button::before{content:"+ "}
-.seg{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:5px;background:var(--cream-2);border-radius:16px}
-.seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label{min-height:46px;display:grid;place-items:center;border-radius:12px;font-weight:700;cursor:pointer;color:var(--ink-2);transition:all .2s}
-.seg input:checked + label{background:var(--red);color:#fff;box-shadow:0 4px 12px rgba(201,31,37,.3)}
-.seg input:focus-visible + label{outline:3px solid var(--cheese);outline-offset:2px}
-.form .btn{width:100%}
-.form .fine{margin:0;font-size:.85rem;color:var(--ink-2);text-align:center}
+/* ---------- a casa ---------- */
+.house{background:var(--cream)}
+.house-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);align-items:center}
+.collage{position:relative;aspect-ratio:1/1.05}
+.collage figure{position:absolute;margin:0;border-radius:var(--r-md);overflow:hidden;box-shadow:0 26px 60px rgba(42,30,24,.25);border:6px solid var(--paper)}
+.collage figure img{width:100%;height:100%;object-fit:cover}
+.collage .c1{inset:0 22% 18% 0}
+.collage .c2{width:52%;aspect-ratio:1;right:0;bottom:0;transform:rotate(3deg)}
+.collage .note{position:absolute;left:4%;bottom:4%;z-index:2;background:var(--red);color:#fff;padding:12px 18px 14px;border-radius:14px;transform:rotate(-4deg);box-shadow:0 12px 28px rgba(60,0,0,.3);font-family:var(--hand);font-size:1.5rem;line-height:1.05}
+.house-copy{display:grid;gap:26px;min-width:0}
+.pillars{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line-light)}
+.pillars li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line-light)}
+.pillars .ic{width:52px;height:52px;border-radius:16px;background:var(--red);color:#fff;display:grid;place-items:center}
+.pillars .ic svg{width:26px;height:26px}
+.pillars b{display:block;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.4rem;line-height:1.05;margin-bottom:4px}
+.pillars span{color:var(--ink-2);font-size:.97rem}
 
-/* celular com prévia da mensagem */
-.preview{position:sticky;top:96px;display:grid;justify-items:center;gap:18px}
-.phone{width:min(360px,100%);border-radius:40px;background:var(--coal);padding:12px;box-shadow:0 30px 70px rgba(42,30,24,.3)}
-.phone-in{border-radius:30px;overflow:hidden;background:#ECE5DD}
-.ph-top{display:flex;align-items:center;gap:12px;background:#075E54;color:#fff;padding:14px 16px}
-.ph-top .av{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center;overflow:hidden;flex:none}
-.ph-top .av img{width:34px}
-.ph-top b{display:block;font-size:.98rem;line-height:1.2}
-.ph-top small{font-size:.8rem;opacity:.85}
-.ph-chat{min-height:380px;padding:18px 14px;display:grid;align-content:end;gap:10px;background-color:#ECE5DD;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:14px 14px}
-.bub{max-width:88%;padding:9px 12px 22px;border-radius:12px;font-size:.92rem;line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.1);white-space:pre-wrap;overflow-wrap:anywhere;color:#111}
-.bub.them{background:#fff;justify-self:start;border-top-left-radius:2px}
-.bub.me{background:#DCF8C6;justify-self:end;border-top-right-radius:2px}
-.bub time{position:absolute;right:10px;bottom:4px;font-size:.7rem;color:#667}
-.preview p{margin:0;font-size:.9rem;color:var(--ink-2);text-align:center;max-width:30em}
+/* ---------- esfihas na tábua ---------- */
+.esf{background:var(--coal);color:var(--on-dark)}
+.esf .eyebrow{color:var(--cheese)}
+.esf .lead{color:var(--on-dark-2)}
+.esf-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:var(--s-4);align-items:start}
+.tabua{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1600/1064;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.tabua > img{width:100%;height:100%;object-fit:cover}
+.spot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.spot::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #fff;animation:ping 2.4s var(--ease) infinite}
+.spot::after{content:"";width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.5);transition:all .25s}
+.spot[aria-pressed="true"]::after{width:22px;height:22px;background:var(--cheese)}
+.spot[aria-pressed="true"]::before{border-color:var(--cheese)}
+@keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.spot .lbl{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--paper);color:var(--ink);padding:5px 12px;border-radius:999px;font-weight:700;font-size:.82rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.spot:hover .lbl,.spot[aria-pressed="true"] .lbl{opacity:1}
+.esf-card{display:grid;gap:16px;background:var(--coal-2);border:1px solid var(--line-dark);border-radius:var(--r-lg);padding:16px 16px 22px;min-width:0}
+.esf-card .ph{aspect-ratio:4/3;border-radius:18px;overflow:hidden}
+.esf-card .ph img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.esf-card .txt{display:grid;gap:8px;padding-inline:8px}
+.esf-card small{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;color:var(--cheese)}
+.esf-card h3{font-size:2rem}
+.esf-card p{margin:0;color:var(--on-dark-2);font-size:.97rem}
+.esf-card .go{display:inline-flex;align-items:center;gap:6px;color:var(--cheese);font-weight:700;text-decoration:none;min-height:40px}
+.esf-card .go svg{width:18px;height:18px}
+.esf-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s-3)}
+.esf-chips button{min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line-dark);background:transparent;cursor:pointer;font-weight:600;font-size:.92rem;color:var(--on-dark-2);transition:all .2s}
+.esf-chips button:hover{color:var(--on-dark);border-color:var(--on-dark)}
+.esf-chips button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
 
 /* ---------- entrega + horário ---------- */
 .deliv{background:var(--red);color:#fff;position:relative;overflow:hidden}
@@ -269,11 +255,6 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .deliv .eyebrow{color:var(--cheese)}
 .deliv .lead{color:var(--on-red)}
 .deliv-copy{display:grid;gap:26px;min-width:0}
-.perks{display:grid;gap:16px;margin:0;padding:0;list-style:none}
-.perks li{display:flex;gap:14px;align-items:flex-start}
-.perks svg{width:26px;height:26px;flex:none;color:var(--cheese);margin-top:2px}
-.perks b{display:block;font-size:1.05rem}
-.perks span{color:var(--on-red);font-size:.96rem}
 .ticket{background:var(--paper);color:var(--ink);border-radius:8px;padding:30px 28px 26px;transform:rotate(-1.5deg);box-shadow:0 26px 60px rgba(60,0,0,.4);min-width:0;transition:transform .4s var(--ease), opacity .8s var(--ease);
   -webkit-mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x;
           mask:radial-gradient(circle 9px at 50% 0,#0000 98%,#000) 0 0/26px 51% repeat-x, radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 100%/26px 51% repeat-x}
@@ -291,22 +272,28 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .ticket tr.off td{color:#A0907C;font-weight:500}
 .ticket .tfoot{margin-top:18px;display:grid;gap:2px;text-align:center;font-size:.95rem;color:var(--ink-2)}
 .ticket .tfoot b{color:var(--ink);font-size:1.2rem;user-select:all}
+.perks{display:grid;gap:16px;margin:0;padding:0;list-style:none}
+.perks li{display:flex;gap:14px;align-items:flex-start}
+.perks svg{width:26px;height:26px;flex:none;color:var(--cheese);margin-top:2px}
+.perks b{display:block;font-size:1.05rem}
+.perks span{color:var(--on-red);font-size:.96rem}
 
 /* ---------- instagram ---------- */
 .insta{background:var(--cream)}
-.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.insta-grid a{position:relative;display:block;aspect-ratio:1;border-radius:var(--r-sm);overflow:hidden;background:var(--coal)}
+.insta-top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:var(--s-3);margin-bottom:var(--s-4)}
+.insta-top .sec-head{margin-bottom:0}
+.handle{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-style:italic;font-size:1.6rem;text-transform:uppercase;text-decoration:none;color:var(--red);overflow-wrap:anywhere}
+.handle svg{width:28px;height:28px;flex:none}
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(140px,16vw,220px);gap:10px}
+.insta-grid a{position:relative;display:block;border-radius:16px;overflow:hidden;background:var(--coal)}
+.insta-grid a:nth-child(1){grid-row:span 2;grid-column:span 2}
 .insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .insta-grid a::after{content:"";position:absolute;inset:0;background:var(--red);opacity:0;transition:opacity .3s;mix-blend-mode:multiply}
-.insta-grid a:hover img{transform:scale(1.08)}
+.insta-grid a:hover img{transform:scale(1.07)}
 .insta-grid a:hover::after{opacity:.35}
-.insta-foot{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;margin-top:var(--s-4)}
-.insta-foot p{margin:0;font-weight:600}
-.insta-foot a.handle{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-style:italic;font-size:1.6rem;text-transform:uppercase;text-decoration:none;color:var(--red);overflow-wrap:anywhere}
-.insta-foot a.handle svg{width:28px;height:28px;flex:none}
 
 /* ---------- final ---------- */
-.final{position:relative;color:var(--on-dark);text-align:center;background:linear-gradient(rgba(27,20,17,.45),rgba(27,20,17,.9)),url("img/bokeh.jpg") center/cover no-repeat}
+.final{position:relative;color:var(--on-dark);text-align:center;background:linear-gradient(rgba(27,20,17,.55),rgba(27,20,17,.88)),url("img/meia.jpg") center/cover no-repeat}
 .final .wrap{display:grid;justify-items:center;gap:26px}
 .final .eyebrow{color:var(--cheese)}
 .final .lead{color:var(--on-dark-2)}
@@ -324,53 +311,44 @@ footer .brand p{margin:0;max-width:26em;font-size:.95rem}
 footer .copy{grid-column:1/-1;margin:0;padding-top:24px;border-top:1px solid var(--line-dark);font-size:.85rem;color:#7E6F60}
 
 /* ---------- flutuantes ---------- */
-.fab{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:70;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;
-  box-shadow:0 12px 30px rgba(0,0,0,.35);transform:scale(0);transition:transform .35s var(--ease)}
+.fab{position:fixed;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:70;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.35);transform:scale(0);transition:transform .35s var(--ease)}
 .fab.show{transform:scale(1)}
 .fab.show:hover{transform:scale(1.08)}
 .fab svg{width:34px;height:34px}
-.fab .tip{position:absolute;right:76px;white-space:nowrap;background:var(--coal);color:var(--on-dark);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.88rem;opacity:0;transform:translateX(8px);transition:all .25s;pointer-events:none}
-.fab:hover .tip{opacity:1;transform:none}
 .dock{display:none}
 
-/* ---------- revelar ao rolar (parte de um estado visível) ---------- */
+/* ---------- revelar ao rolar (a partir de um estado visível) ---------- */
 .rv{transition:opacity .8s var(--ease), transform .8s var(--ease)}
 html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
 
 /* ---------- responsivo ---------- */
-@media (max-width:1100px){ .cards{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:1020px){
   .nav-links a.l{display:none}
   .burger{display:grid}
-  .hero .wrap{grid-template-columns:1fr;gap:var(--s-4);padding-block:var(--s-3) var(--s-5)}
-  .stack{justify-self:center;max-width:440px;order:-1}
-  .order-grid,.deliv .wrap{grid-template-columns:1fr}
-  .preview{position:static}
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .insta-grid{grid-template-columns:repeat(3,1fr)}
+  .hero > .wrap{grid-template-columns:1fr;min-height:0;padding-block:var(--s-3) var(--s-5)}
+  .spin-stage{order:-1;width:min(78vw,440px);margin:0 auto}
+  .half-grid,.house-grid,.esf-grid,.deliv .wrap{grid-template-columns:1fr}
+  .pie-wrap{max-width:480px;width:100%;justify-self:center}
+  .collage{max-width:520px;width:100%;justify-self:center}
   footer .wrap{grid-template-columns:1fr 1fr}
   footer .brand{grid-column:1/-1}
-  /* história vira lista no tablet e no celular */
-  .story-run{height:auto}
-  .pin{position:static;height:auto;padding-block:var(--s-5) var(--s-6)}
-  .pin .wrap{grid-template-columns:1fr;gap:0}
-  .progress,.shots-col{display:none}
-  .scenes{display:grid;gap:var(--s-5);min-height:0}
-  .scene{display:grid;gap:var(--s-3)}
-  .scene .txt{position:static;opacity:1;transform:none;pointer-events:auto}
-  .scene .shot{order:-1;aspect-ratio:4/3;box-shadow:0 20px 50px rgba(42,30,24,.2)}
 }
 @media (max-width:640px){
   body{font-size:16px}
   :root{--s-6:84px;--s-5:44px}
   .nav-cta{display:none}
   .btns .btn{flex:1 1 100%}
-  .hero-meta{display:grid;gap:4px}
-  .stack .seal{width:104px;height:104px;font-size:1rem}
-  .stack .seal small{font-size:.95rem}
-  .cards{grid-template-columns:1fr}
-  .row2{grid-template-columns:1fr}
-  .insta-grid{gap:6px}
+  .facts ul{grid-template-columns:1fr}
+  .facts li{padding:14px 0}
+  .facts li + li{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.18)}
+  .flavors{grid-template-columns:repeat(2,1fr)}
+  .flavors label{grid-template-columns:52px 1fr;justify-items:start;text-align:left;align-items:center;padding:10px}
+  .flavors label img{width:52px;height:52px}
+  .arrows{display:none}
+  .rail{grid-auto-columns:78vw}
+  .insta-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw}
+  .insta-grid a:nth-child(1){grid-row:span 1;grid-column:span 2}
+  .insta-grid a:nth-child(n+6){display:none}
   footer .wrap{grid-template-columns:1fr}
   .fab{display:none}
   .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(18,13,11,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
@@ -393,29 +371,20 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
   <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M8.5 17h6l3-6h-4M14 5h3l1.5 6M5.5 14l3-4h5"/></g></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22c4 0 7-2.8 7-6.8 0-3.3-2-5.6-3.6-7.4-.4 1.8-1.3 3-2.4 3.4C13.6 7.6 12 4.6 9.5 2c.3 3.5-1.6 5.6-3.1 7.6C5.4 11 5 12.6 5 15.2 5 19.2 8 22 12 22Z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></g></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6"/></symbol>
 </svg>
-
-<!-- abertura -->
-<div class="intro-ov" id="intro" role="button" tabindex="0" aria-label="Pular abertura">
-  <div class="intro-box">
-    <img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="900" height="430">
-    <div class="thermo" aria-hidden="true">
-      <div class="row"><span>Acendendo o forno</span><b id="temp">0°C</b></div>
-      <div class="bar"><i id="tbar"></i></div>
-    </div>
-    <span class="intro-skip">toque para pular</span>
-  </div>
-</div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="nav-logo" href="#inicio" aria-label="Moda Nostra, início"><img src="img/logo.png" alt="Moda Nostra Pizza Delivery" width="96" height="46"></a>
     <nav class="nav-links" aria-label="Seções">
-      <a class="l" href="#a-casa">A casa</a>
-      <a class="l" href="#cardapio">Cardápio</a>
-      <a class="l" href="#pedido">Pedido rápido</a>
+      <a class="l" href="#meia">Meia a meia</a>
+      <a class="l" href="#como-fazemos">Como fazemos</a>
+      <a class="l" href="#esfihas">Esfihas</a>
       <a class="l" href="#entrega">Entrega e horário</a>
       <a class="btn btn-cheese btn-sm nav-cta js-menu" href="#" target="_blank" rel="noopener">Pedir agora</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Abrir menu"><span></span></button>
@@ -425,9 +394,9 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
 
 <div class="sheet" id="sheet" aria-hidden="true">
   <nav aria-label="Menu">
-    <a href="#a-casa">A casa</a>
-    <a href="#cardapio">Cardápio</a>
-    <a href="#pedido">Pedido rápido</a>
+    <a href="#meia">Meia a meia</a>
+    <a href="#como-fazemos">Como fazemos</a>
+    <a href="#esfihas">Esfihas</a>
     <a href="#entrega">Entrega e horário</a>
   </nav>
   <div class="btns">
@@ -444,181 +413,153 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
       <div class="hero-copy">
         <p class="status" id="status" role="status"><span class="dot"></span><span id="status-txt">Terça a domingo, 18h às 23h15</span></p>
         <h1><span class="hand">tradição e sabor de SP</span>A pizza paulista de Candeias</h1>
-        <p class="lead">Pizza no estilo paulista, esfihas abertas e borda recheada, saindo do forno quente direto para a sua casa com o nosso próprio entregador.</p>
+        <p class="lead">Borda recheada, cobertura até a beirada e esfihas abertas saindo do forno. Escolha no cardápio digital e o nosso entregador leva até você.</p>
         <div class="btns">
           <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
           <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
         </div>
-        <ul class="hero-meta">
-          <li>WhatsApp <b>(81) 98635-2086</b></li>
-          <li>Terça a domingo · <b>18h às 23h15</b></li>
+      </div>
+      <div class="spin-stage" aria-hidden="true">
+        <div class="board"></div>
+        <div class="spin" id="spin"><img src="img/pz-frango.jpg" alt="" width="900" height="900" fetchpriority="high"></div>
+        <div class="ring">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <circle cx="100" cy="100" r="98" fill="#F3B623"/>
+            <text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="19" letter-spacing="3.2" fill="#3A2200"><textPath href="#circ">BORDA RECHEADA • TRADIÇÃO DE SP • </textPath></text>
+          </svg>
+          <span class="core">Borda<br>recheada</span>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="wrap">
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div>Terça a domingo<small>das 18h às 23h15</small></div></li>
+          <li><svg aria-hidden="true"><use href="#i-moto"/></svg><div>Entrega própria<small>com entregador da casa</small></div></li>
+          <li><svg aria-hidden="true"><use href="#i-wa"/></svg><div>(81) 98635-2086<small>pedidos pelo WhatsApp</small></div></li>
         </ul>
       </div>
-      <div class="stack" id="stack" aria-hidden="true">
-        <div class="ph p3"><img src="img/forno-esfihas.jpg" alt="" width="1600" height="1064"></div>
-        <div class="ph p1"><img src="img/pizza-calabresa.jpg" alt="" width="1600" height="1064" fetchpriority="high"></div>
-        <div class="ph p2"><img src="img/esfiha-frango.jpg" alt="" width="1000" height="665"></div>
-        <div class="seal"><span><small>peça com</small>Borda<br>recheada</span></div>
-      </div>
     </div>
   </section>
 
-  <div class="belt" aria-hidden="true"><div class="belt-track" id="track"></div></div>
-
-  <!-- HISTÓRIA EM ROLAGEM -->
-  <section class="story" id="a-casa">
-    <div class="wrap story-intro">
-      <div class="sec-head rv" style="margin-bottom:0">
-        <p class="eyebrow">Pizzaria paulista autêntica</p>
-        <h2>Do forno à sua porta</h2>
-        <p class="lead">A receita veio de São Paulo e a casa fica em Candeias. Role a página e acompanhe o caminho de cada pedido.</p>
-      </div>
-    </div>
-    <div class="story-run" id="story">
-      <div class="pin">
-        <div class="wrap">
-          <div>
-            <div class="scenes">
-              <article class="scene on">
-                <div class="txt">
-                  <span class="num">Etapa 1 de 4</span>
-                  <h3>A receita de São Paulo</h3>
-                  <p>Massa no estilo paulista, borda dourada e cobertura generosa. É a pizza de SP, feita aqui em Pernambuco.</p>
-                  <span class="tag">Tradição e sabor de <b>SP</b></span>
-                </div>
-                <div class="shot"><img src="img/pizza-mussarela.jpg" alt="Pizza de mussarela com tomate" width="1600" height="1064" loading="lazy"></div>
-              </article>
-              <article class="scene">
-                <div class="txt">
-                  <span class="num">Etapa 2 de 4</span>
-                  <h3>Forno quente, esteira rodando</h3>
-                  <p>Pizzas e esfihas atravessam a esteira do forno e saem com o queijo borbulhando e o fundo crocante.</p>
-                  <span class="tag">Assa quando o pedido <b>chega</b></span>
-                </div>
-                <div class="shot"><img src="img/forno-esfihas.jpg" alt="Esfihas assando na esteira do forno" width="1600" height="1064" loading="lazy"></div>
-              </article>
-              <article class="scene">
-                <div class="txt">
-                  <span class="num">Etapa 3 de 4</span>
-                  <h3>Recheio até a borda</h3>
-                  <p>Calabresa com cebola, mussarela, frango, milho e chocolate pra fechar. Tem pizza pra dividir e esfiha pra pedir às dúzias.</p>
-                  <span class="tag">Pizza, esfiha e <b>borda recheada</b></span>
-                </div>
-                <div class="shot"><img src="img/pizza-calabresa.jpg" alt="Pizza de calabresa com cebola" width="1600" height="1064" loading="lazy"></div>
-              </article>
-              <article class="scene">
-                <div class="txt">
-                  <span class="num">Etapa 4 de 4</span>
-                  <h3>O nosso entregador leva</h3>
-                  <p>A Moda Nostra tem entrega própria. Quem chega na sua porta é da casa, e não de aplicativo.</p>
-                  <span class="tag">Entrega <b>própria</b></span>
-                </div>
-                <div class="shot"><img src="img/bokeh.jpg" alt="Luzes da rua à noite" width="1600" height="1064" loading="lazy"></div>
-              </article>
-            </div>
-            <div class="progress" id="progress" aria-label="Etapas">
-              <button type="button" class="on"><i></i><span>Receita</span></button>
-              <button type="button"><i></i><span>Forno</span></button>
-              <button type="button"><i></i><span>Sabores</span></button>
-              <button type="button"><i></i><span>Entrega</span></button>
-            </div>
-          </div>
-          <div class="shots-col"><div class="shots" id="shots"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARDÁPIO -->
-  <section class="sec menu" id="cardapio">
-    <div class="wrap">
-      <div class="menu-top">
-        <div class="sec-head rv">
-          <p class="eyebrow">Cardápio</p>
-          <h2>Escolha pelo olho</h2>
-          <p class="lead">Alguns dos sabores que saem do nosso forno. Tamanhos, preços e a lista completa ficam no cardápio digital.</p>
-        </div>
-        <div class="chips" role="group" aria-label="Filtrar cardápio">
-          <button class="chip" type="button" data-f="all" aria-pressed="true">Tudo</button>
-          <button class="chip" type="button" data-f="pizza" aria-pressed="false">Pizzas</button>
-          <button class="chip" type="button" data-f="salgada" aria-pressed="false">Esfihas salgadas</button>
-          <button class="chip" type="button" data-f="doce" aria-pressed="false">Doces</button>
-        </div>
-      </div>
-      <div class="cards" id="cards"></div>
-      <p class="menu-note">Fotos reais dos nossos produtos. Sabores sujeitos à disponibilidade do dia.</p>
-    </div>
-  </section>
-
-  <!-- PEDIDO RÁPIDO -->
-  <section class="sec order" id="pedido">
+  <!-- MEIA A MEIA -->
+  <section class="sec half" id="meia">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="eyebrow">Pedido rápido</p>
-        <h2>Monte a mensagem e mande pra gente</h2>
-        <p class="lead">Prefere pedir conversando? Preencha abaixo e a mensagem chega pronta no nosso WhatsApp. Para escolher vendo os preços, use o <a class="js-menu" href="#" target="_blank" rel="noopener">cardápio digital</a>.</p>
+        <p class="eyebrow">Monte a sua</p>
+        <h2>Não consegue escolher? <span class="hand" style="color:var(--red)">pede meia a meia</span></h2>
+        <p class="lead">Escolha um sabor para cada metade, decida se quer borda recheada e mande o pedido pronto no WhatsApp.</p>
       </div>
-      <div class="order-grid">
-        <form class="form" id="form" novalidate>
-          <div class="row2">
-            <div class="field" id="f-nome">
-              <label for="nome">Seu nome</label>
-              <input id="nome" name="nome" autocomplete="given-name" placeholder="Ex.: Ana">
-              <span class="msg">Diga seu nome para a gente te chamar.</span>
-            </div>
-            <div class="field" id="f-bairro">
-              <label for="bairro">Bairro</label>
-              <input id="bairro" name="bairro" autocomplete="address-level3" placeholder="Ex.: Candeias">
-              <span class="msg">Informe o bairro para confirmar a entrega.</span>
-            </div>
+      <div class="half-grid">
+        <div class="pie-wrap rv">
+          <div class="pie" id="pie">
+            <img class="a" id="pie-a" src="img/pz-frango.jpg" alt="" width="900" height="900">
+            <img class="b" id="pie-b" src="img/pz-calabresa.jpg" alt="" width="900" height="900">
           </div>
-          <div class="field">
-            <label for="endereco">Endereço <span class="hint">(rua, número e referência)</span></label>
-            <input id="endereco" name="endereco" autocomplete="street-address" placeholder="Rua, número e ponto de referência">
-          </div>
-          <div class="field" id="f-pedido">
-            <label for="pedido-txt">O que vai querer?</label>
-            <textarea id="pedido-txt" name="pedido" placeholder="Ex.: 1 pizza de calabresa com borda recheada e 6 esfihas de frango"></textarea>
-            <div class="quick" role="group" aria-label="Adicionar ao pedido">
-              <button type="button" data-add="1 pizza de calabresa">Pizza calabresa</button>
-              <button type="button" data-add="1 pizza de mussarela">Pizza mussarela</button>
-              <button type="button" data-add="com borda recheada">Borda recheada</button>
-              <button type="button" data-add="6 esfihas de frango">6 esfihas de frango</button>
-              <button type="button" data-add="esfiha de chocolate">Esfiha de chocolate</button>
-              <button type="button" data-add="1 refrigerante">Refrigerante</button>
-            </div>
-            <span class="msg">Escreva o que você quer pedir.</span>
-          </div>
-          <fieldset class="field">
-            <legend>Pagamento</legend>
-            <div class="seg">
-              <input type="radio" name="pag" id="pg1" value="Pix" checked><label for="pg1">Pix</label>
-              <input type="radio" name="pag" id="pg2" value="Cartão"><label for="pg2">Cartão</label>
-              <input type="radio" name="pag" id="pg3" value="Dinheiro"><label for="pg3">Dinheiro</label>
-            </div>
-          </fieldset>
-          <div class="field" id="f-troco" hidden>
-            <label for="troco">Troco para quanto?</label>
-            <input id="troco" name="troco" inputmode="decimal" placeholder="Ex.: R$ 100">
-          </div>
-          <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a>
-          <p class="fine">O pedido fica confirmado quando a gente responder com o valor e o tempo de entrega.</p>
-        </form>
-        <div class="preview">
-          <div class="phone">
-            <div class="phone-in">
-              <div class="ph-top">
-                <span class="av"><img src="img/logo.png" alt="" width="900" height="430"></span>
-                <div><b>Moda Nostra Candeias</b><small>(81) 98635-2086</small></div>
-              </div>
-              <div class="ph-chat">
-                <div class="bub them">Oi! Aqui é a Moda Nostra 🍕 O que vai ser hoje?<time>18:02</time></div>
-                <div class="bub me"><span id="bubble">Olá, Moda Nostra! Quero fazer um pedido.</span><time id="btime">18:03</time></div>
-              </div>
-            </div>
-          </div>
-          <p>Prévia da mensagem que vai chegar no nosso WhatsApp.</p>
+          <span class="pie-tag" id="pie-tag">Meia a meia</span>
         </div>
+        <form class="builder" id="builder" onsubmit="return false">
+          <fieldset class="side">
+            <legend>Metade 1</legend>
+            <div class="flavors" data-side="a"></div>
+          </fieldset>
+          <fieldset class="side">
+            <legend>Metade 2</legend>
+            <div class="flavors" data-side="b"></div>
+          </fieldset>
+          <label class="switch">
+            <div><b>Borda recheada</b><small>Pergunte os recheios disponíveis</small></div>
+            <input type="checkbox" id="borda"><span class="tg" aria-hidden="true"></span>
+          </label>
+          <div class="summary" aria-live="polite"><small>Seu pedido</small><b id="summary">Meia frango com bacon, meia calabresa</b></div>
+          <div class="btns">
+            <a class="btn btn-wa" id="send-half" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir essa pizza</a>
+            <a class="btn btn-ghost js-menu" href="#" target="_blank" rel="noopener">Ver preços</a>
+          </div>
+          <p class="fine">Tamanhos, preços e todos os sabores estão no cardápio digital.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FAZEMOS -->
+  <section class="sec steps-sec" id="como-fazemos">
+    <div class="wrap rail-head">
+      <div class="sec-head rv">
+        <p class="eyebrow">Como fazemos</p>
+        <h2>Do molho à caixa</h2>
+        <p class="lead">Fotos reais da nossa cozinha. Arraste para acompanhar cada etapa.</p>
+      </div>
+      <div class="arrows">
+        <button type="button" id="prev" aria-label="Etapa anterior"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+        <button type="button" id="next" aria-label="Próxima etapa"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <ol class="rail" id="rail" style="list-style:none;margin:0" aria-label="Etapas do preparo">
+      <li class="step"><div class="ph"><img src="img/proc-molho.jpg" alt="Molho de tomate espalhado em espiral sobre a massa" loading="lazy" width="1400" height="931"><span class="n">1</span></div><h3>Molho na massa</h3><p>A massa aberta recebe o molho de tomate em espiral, do centro para a borda.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-queijo.jpg" alt="Queijo ralado coberto sobre a pizza crua" loading="lazy" width="1400" height="931"><span class="n">2</span></div><h3>Queijo por cima</h3><p>Uma camada generosa de queijo, cobrindo até perto da borda.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-catupiry.jpg" alt="Catupiry sendo aplicado em linhas sobre o frango" loading="lazy" width="1400" height="931"><span class="n">3</span></div><h3>Recheio e catupiry</h3><p>Entra o recheio do sabor e, nos que levam, o catupiry em linhas.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-forno.jpg" alt="Pizza passando pela esteira do forno" loading="lazy" width="1400" height="931"><span class="n">4</span></div><h3>Esteira do forno</h3><p>A pizza atravessa o forno na esteira e sai dourada, com o queijo borbulhando.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-corte.jpg" alt="Pizza sendo cortada com carretilha" loading="lazy" width="1400" height="931"><span class="n">5</span></div><h3>Corte na hora</h3><p>Cortada com carretilha logo que sai, ainda quente.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-caixa.jpg" alt="Pizza de calabresa com cebola dentro da caixa" loading="lazy" width="1400" height="931"><span class="n">6</span></div><h3>Direto pra caixa</h3><p>Vai para a caixa Moda Nostra e sai com o nosso entregador.</p></li>
+    </ol>
+    <div class="wrap"><div class="rail-bar"><i id="rail-bar"></i></div></div>
+  </section>
+
+  <!-- FORNO -->
+  <section class="oven" aria-label="Forno">
+    <div class="bg" id="oven-bg"><img src="img/forno-calabresa.jpg" alt="Pizza de calabresa fatiada saindo do forno" loading="lazy" width="1400" height="931"></div>
+    <div class="wrap">
+      <h2 class="rv"><span class="hand">saiu do forno,</span>foi pra sua mesa</h2>
+      <p class="rv">De terça a domingo, das 18h às 23h15, o forno da Moda Nostra não para.</p>
+    </div>
+  </section>
+
+  <!-- A CASA -->
+  <section class="sec house" id="a-casa">
+    <div class="wrap house-grid">
+      <div class="collage rv">
+        <figure class="c1"><img src="img/pizzaiolo-pizza.jpg" alt="Pizzaiolo tirando uma pizza de calabresa do forno" loading="lazy" width="1400" height="931"></figure>
+        <figure class="c2"><img src="img/borda.jpg" alt="Pizza de frango com bacon e borda recheada" loading="lazy" width="1400" height="931"></figure>
+        <span class="note">feita aqui,<br>com receita de SP</span>
+      </div>
+      <div class="house-copy rv">
+        <p class="eyebrow">Pizzaria paulista autêntica</p>
+        <h2>São Paulo no forno, Pernambuco na mesa</h2>
+        <p class="lead">A Moda Nostra trouxe a pizza do jeito paulista para Candeias: borda alta e dourada, recheio farto e massa que aguenta a cobertura.</p>
+        <ul class="pillars">
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></span><div><b>Receita de SP</b><span>O estilo das pizzarias paulistas, feito na nossa cozinha.</span></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-fire"/></svg></span><div><b>Assada na hora</b><span>Cada pizza entra no forno quando o pedido chega.</span></div></li>
+          <li><span class="ic"><svg aria-hidden="true"><use href="#i-moto"/></svg></span><div><b>Entrega própria</b><span>Quem leva o seu pedido é da casa, não de aplicativo.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESFIHAS -->
+  <section class="sec esf" id="esfihas">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Esfihas abertas</p>
+        <h2>Toque na tábua e conheça os sabores</h2>
+        <p class="lead">Massa macia, fundo crocante e recheio até a borda. Peça junto com a pizza ou monte uma tábua só de esfihas.</p>
+      </div>
+      <div class="esf-grid">
+        <div>
+          <div class="tabua rv" id="tabua">
+            <img src="img/esfihas-tabua.jpg" alt="Tábua com sete esfihas abertas de sabores diferentes e limões no centro" loading="lazy" width="1400" height="931">
+          </div>
+          <div class="esf-chips" id="esf-chips" role="group" aria-label="Sabores de esfiha"></div>
+        </div>
+        <article class="esf-card rv" aria-live="polite">
+          <div class="ph"><img id="esf-img" src="img/es-frango.jpg" alt="" width="800" height="532" loading="lazy"></div>
+          <div class="txt">
+            <small>Esfiha aberta</small>
+            <h3 id="esf-name">Frango com catupiry</h3>
+            <p id="esf-desc">Frango desfiado temperado com o "M" de catupiry por cima.</p>
+            <a class="go js-menu" href="#" target="_blank" rel="noopener">Pedir no cardápio <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -629,11 +570,10 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
       <div class="deliv-copy rv">
         <p class="eyebrow">Entrega e horário</p>
         <h2>Entrega própria em Candeias e região</h2>
-        <p class="lead">A gente tem entregador próprio. A taxa e as áreas atendidas variam, então confirme pelo WhatsApp antes de pedir.</p>
+        <p class="lead">A taxa e as áreas atendidas variam conforme o bairro. Confirme pelo WhatsApp antes de pedir.</p>
         <ul class="perks">
           <li><svg aria-hidden="true"><use href="#i-moto"/></svg><div><b>Entregador da casa</b><span>Quem leva o seu pedido trabalha com a gente.</span></div></li>
           <li><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Candeias, Jaboatão dos Guararapes</b><span>Consulte se o seu bairro está na área de entrega.</span></div></li>
-          <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><b>Terça a domingo, 18h às 23h15</b><span>Segunda o forno descansa.</span></div></li>
         </ul>
         <div class="btns"><a class="btn btn-cheese js-wa-area" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar taxa e bairro</a></div>
       </div>
@@ -660,22 +600,21 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
   <!-- INSTAGRAM -->
   <section class="sec insta" id="instagram">
     <div class="wrap">
-      <div class="sec-head center rv">
-        <p class="eyebrow">No Instagram</p>
-        <h2>Bastidores, promoções e sorteios</h2>
-        <p class="lead">Lá a gente posta o forno funcionando, as promoções de datas especiais e os sorteios em dia de jogo.</p>
+      <div class="insta-top">
+        <div class="sec-head rv">
+          <p class="eyebrow">No Instagram</p>
+          <h2>Bastidores, promoções e sorteios</h2>
+        </div>
+        <a class="handle" href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@modanostracandeias</a>
       </div>
       <div class="insta-grid rv">
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizza-calabresa.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-milho.jpg" alt="" loading="lazy" width="1000" height="665"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/forno-esfihas.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-chocolate.jpg" alt="" loading="lazy" width="1000" height="665"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizza-mussarela.jpg" alt="" loading="lazy" width="1600" height="1064"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/esfiha-calabresa.jpg" alt="" loading="lazy" width="1000" height="665"></a>
-      </div>
-      <div class="insta-foot">
-        <p>Segue a gente e ativa as notificações.</p>
-        <a class="handle" href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@modanostracandeias</a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-1.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-2.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-3.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-5.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizzaiolo.jpg" alt="" loading="lazy" width="1400" height="931"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-4.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-6.jpg" alt="" loading="lazy" width="800" height="532"></a>
       </div>
     </div>
   </section>
@@ -684,7 +623,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
   <section class="sec final">
     <div class="wrap rv">
       <p class="eyebrow">Bateu a fome?</p>
-      <h2>O forno já tá esquentando</h2>
+      <h2>Hoje tem pizza</h2>
       <p class="lead">Peça pelo cardápio digital ou chame a gente no WhatsApp.</p>
       <div class="btns">
         <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Ver cardápio e pedir</a>
@@ -705,7 +644,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
       <ul>
         <li><a class="js-menu" href="#" target="_blank" rel="noopener">Cardápio digital</a></li>
         <li><a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp (81) 98635-2086</a></li>
-        <li><a href="#pedido">Pedido rápido</a></li>
+        <li><a href="#meia">Monte sua meia a meia</a></li>
       </ul>
     </div>
     <div>
@@ -720,7 +659,7 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
   </div>
 </footer>
 
-<a class="fab js-wa" id="fab" href="#" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><span class="tip">Pedir no WhatsApp</span><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<a class="fab js-wa" id="fab" href="#" target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 <div class="dock" id="dock">
   <a class="btn btn-cheese js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Cardápio</a>
   <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
@@ -732,93 +671,117 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hover = matchMedia('(hover:hover)').matches;
 
   /* ---------- links ---------- */
   const MENU = 'https://www.mestrecuka.com.br/mPedidos/m?id=modanostrapizza';
   const PHONE = '5581986352086';
   const wa = msg => 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg);
-  const setLinks = () => {
-    $$('.js-menu').forEach(a => a.href = MENU);
-    $$('.js-wa').forEach(a => a.href = wa('Olá, Moda Nostra! Quero fazer um pedido 🍕'));
-    $$('.js-wa-area').forEach(a => a.href = wa('Olá, Moda Nostra! Vocês entregam no meu bairro? Qual a taxa de entrega?'));
-  };
-  setLinks();
-
-  /* ---------- abertura: termômetro do forno ---------- */
-  const root = document.documentElement, intro = $('#intro');
-  const endIntro = () => {
-    if (!root.classList.contains('intro') || intro.classList.contains('done')) return;
-    intro.classList.add('done');
-    setTimeout(() => root.classList.remove('intro'), 600);
-    try { sessionStorage.setItem('mn-intro', '1'); } catch (e) {}
-  };
-  if (root.classList.contains('intro')) {
-    const t0 = performance.now(), dur = 1700, temp = $('#temp'), bar = $('#tbar');
-    (function tick(t) {
-      if (intro.classList.contains('done')) return;
-      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      temp.textContent = Math.round(300 * e) + '°C';
-      bar.style.setProperty('--p', (e * 100) + '%');
-      if (k < 1) requestAnimationFrame(tick); else setTimeout(endIntro, 350);
-    })(t0);
-    intro.addEventListener('click', endIntro);
-    intro.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') && endIntro());
-    setTimeout(endIntro, 3800);
-  }
-
-  /* ---------- esteira ---------- */
-  const words = ['Pizza paulista', 'Esfihas abertas', 'Borda recheada', 'Entrega própria', 'Candeias · PE', 'Terça a domingo', 'Tradição e sabor de SP'];
-  $('#track').innerHTML = [...words, ...words].map(w => `<span>${w}</span>`).join('');
+  $$('.js-menu').forEach(a => a.href = MENU);
+  $$('.js-wa').forEach(a => a.href = wa('Olá, Moda Nostra! Quero fazer um pedido 🍕'));
+  $$('.js-wa-area').forEach(a => a.href = wa('Olá, Moda Nostra! Vocês entregam no meu bairro? Qual a taxa de entrega?'));
 
   /* ---------- menu mobile ---------- */
-  const burger = $('#burger'), sheet = $('#sheet');
+  const nav = $('#nav'), burger = $('#burger'), sheet = $('#sheet');
   const setSheet = open => {
     burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     sheet.classList.toggle('open', open); sheet.setAttribute('aria-hidden', !open);
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open) nav.classList.add('solid');
+    if (open) nav.classList.add('solid'); else onScroll();
   };
   burger.addEventListener('click', () => setSheet(burger.getAttribute('aria-expanded') !== 'true'));
   $$('a', sheet).forEach(a => a.addEventListener('click', () => setSheet(false)));
   addEventListener('keydown', e => e.key === 'Escape' && setSheet(false));
 
-  /* ---------- parallax da pilha de fotos ---------- */
-  const stack = $('#stack'), hero = $('#hero');
-  if (!reduce && hover) {
-    hero.addEventListener('pointermove', e => {
-      const r = stack.getBoundingClientRect();
-      stack.style.setProperty('--mx', ((e.clientX - (r.left + r.width / 2)) / innerWidth).toFixed(3));
-      stack.style.setProperty('--my', ((e.clientY - (r.top + r.height / 2)) / innerHeight).toFixed(3));
-    });
-    hero.addEventListener('pointerleave', () => { stack.style.setProperty('--mx', 0); stack.style.setProperty('--my', 0); });
+  /* ---------- meia a meia ---------- */
+  const FLAVORS = [
+    { id: 'frango', name: 'Frango com bacon', img: 'pz-frango.jpg' },
+    { id: 'calabresa', name: 'Calabresa', img: 'pz-calabresa.jpg' },
+    { id: 'marguerita', name: 'Marguerita', img: 'pz-marguerita.jpg' },
+    { id: 'queijos', name: 'Queijos com tomate', img: 'pz-queijos.jpg' }
+  ];
+  const state = { a: 'frango', b: 'calabresa' };
+  $$('.flavors').forEach(box => {
+    const side = box.dataset.side;
+    box.innerHTML = FLAVORS.map(f => `
+      <input type="radio" name="side-${side}" id="${side}-${f.id}" value="${f.id}" ${state[side] === f.id ? 'checked' : ''}>
+      <label for="${side}-${f.id}"><img src="img/${f.img}" alt="" width="64" height="64" loading="lazy">${f.name}</label>`).join('');
+  });
+  const pie = $('#pie'), pa = $('#pie-a'), pb = $('#pie-b'), borda = $('#borda');
+  const byId = id => FLAVORS.find(f => f.id === id);
+  function renderHalf(changed) {
+    const A = byId(state.a), B = byId(state.b), whole = A.id === B.id;
+    const swap = (img, f) => {
+      if (img.getAttribute('src') === 'img/' + f.img) return;
+      if (reduce) { img.src = 'img/' + f.img; return; }
+      img.classList.add('swap');
+      setTimeout(() => { img.src = 'img/' + f.img; img.classList.remove('swap'); }, 260);
+    };
+    if (changed !== 'b') swap(pa, A);
+    if (changed !== 'a') swap(pb, B);
+    pie.classList.toggle('whole', whole);
+    pie.classList.toggle('borda', borda.checked);
+    const txt = (whole ? 'Pizza inteira de ' + A.name.toLowerCase() : 'Meia ' + A.name.toLowerCase() + ', meia ' + B.name.toLowerCase()) + (borda.checked ? ', com borda recheada' : '');
+    $('#summary').textContent = txt;
+    $('#pie-tag').textContent = whole ? 'Inteira' : 'Meia a meia';
+    $('#send-half').href = wa('Olá, Moda Nostra! Quero pedir uma pizza: ' + txt + '. Qual o valor e os tamanhos?');
   }
+  $('#builder').addEventListener('change', e => {
+    if (e.target.name === 'side-a') { state.a = e.target.value; renderHalf('a'); }
+    else if (e.target.name === 'side-b') { state.b = e.target.value; renderHalf('b'); }
+    else renderHalf('borda');
+  });
+  renderHalf();
 
-  /* ---------- história em rolagem ---------- */
-  const story = $('#story'), scenes = $$('.scene'), steps = $$('#progress button'), shots = $('#shots');
-  const shotEls = scenes.map(s => $('.shot', s));
-  const desk = matchMedia('(min-width: 1021px)');
-  // no desktop as fotos vão para a coluna fixa da direita; no celular, cada uma fica na sua etapa
-  const placeShots = () => {
-    if (desk.matches) shotEls.forEach(sh => shots.appendChild(sh));
-    else shotEls.forEach((sh, i) => scenes[i].appendChild(sh));
-  };
-  let cur = -1;
-  const setScene = i => {
-    if (i === cur) return; cur = i;
-    scenes.forEach((s, k) => s.classList.toggle('on', k === i));
-    shotEls.forEach((s, k) => s.classList.toggle('on', k === i));
-    steps.forEach((b, k) => b.classList.toggle('on', k === i));
-  };
-  steps.forEach((b, i) => b.addEventListener('click', () => {
-    const top = story.getBoundingClientRect().top + scrollY, total = story.offsetHeight - innerHeight;
-    scrollTo({ top: top + total * (i + .5) / 4, behavior: reduce ? 'auto' : 'smooth' });
-  }));
+  /* ---------- trilho do passo a passo ---------- */
+  const rail = $('#rail'), bar = $('#rail-bar'), prev = $('#prev'), next = $('#next');
+  const stepW = () => rail.querySelector('.step').getBoundingClientRect().width + 22;
+  prev.addEventListener('click', () => rail.scrollBy({ left: -stepW(), behavior: reduce ? 'auto' : 'smooth' }));
+  next.addEventListener('click', () => rail.scrollBy({ left: stepW(), behavior: reduce ? 'auto' : 'smooth' }));
+  function railUpdate() {
+    const max = rail.scrollWidth - rail.clientWidth, p = max > 0 ? rail.scrollLeft / max : 0;
+    const w = Math.min(100, rail.clientWidth / rail.scrollWidth * 100);
+    bar.style.setProperty('--w', w + '%');
+    bar.style.setProperty('--x', (p * (100 - w) / w * 100) + '%');
+    prev.disabled = rail.scrollLeft < 4; next.disabled = rail.scrollLeft > max - 4;
+  }
+  rail.addEventListener('scroll', railUpdate, { passive: true });
+  // arrastar com o mouse
+  let drag = null;
+  rail.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, s: rail.scrollLeft }; rail.style.scrollSnapType = 'none'; });
+  addEventListener('pointermove', e => { if (drag) rail.scrollLeft = drag.s - (e.clientX - drag.x); });
+  addEventListener('pointerup', () => { if (drag) { drag = null; rail.style.scrollSnapType = ''; } });
 
-  /* ---------- nav, botões flutuantes, link ativo ---------- */
-  const nav = $('#nav'), fab = $('#fab'), dock = $('#dock');
-  const secs = ['a-casa', 'cardapio', 'pedido', 'entrega'].map(id => document.getElementById(id));
+  /* ---------- esfihas na tábua ---------- */
+  const ESF = [
+    { id: 'frango', name: 'Frango com catupiry', x: 32, y: 29, img: 'es-frango.jpg', desc: 'Frango desfiado temperado com o "M" de catupiry por cima.' },
+    { id: 'carne', name: 'Carne', x: 48, y: 18, img: 'es-carne.jpg', desc: 'Carne moída temperada com cebola e tomate.' },
+    { id: 'presunto', name: 'Presunto', x: 66, y: 31, img: 'es-presunto.jpg', desc: 'Presunto picado sobre a massa, com queijo.' },
+    { id: 'queijo', name: 'Queijo', x: 70, y: 55, img: 'es-queijo.jpg', desc: 'Queijo gratinado com ervas, dourado por cima.' },
+    { id: 'milho', name: 'Milho com catupiry', x: 61, y: 77, img: 'es-milho.jpg', desc: 'Milho e catupiry, com o "M" da casa.' },
+    { id: 'brocolis', name: 'Brócolis', x: 40, y: 77, img: 'es-brocolis.jpg', desc: 'Brócolis refogado sobre queijo derretido.' },
+    { id: 'chocolate', name: 'Chocolate', x: 29, y: 52, img: 'es-chocolate.jpg', desc: 'A doce da casa: creme de chocolate cobrindo a massa.' }
+  ];
+  const tabua = $('#tabua'), chips = $('#esf-chips');
+  tabua.insertAdjacentHTML('beforeend', ESF.map(e => `<button type="button" class="spot" data-id="${e.id}" style="left:${e.x}%;top:${e.y}%" aria-label="Esfiha de ${e.name.toLowerCase()}"><span class="lbl">${e.name}</span></button>`).join(''));
+  chips.innerHTML = ESF.map(e => `<button type="button" data-id="${e.id}">${e.name}</button>`).join('');
+  const eimg = $('#esf-img');
+  function pickEsf(id) {
+    const e = ESF.find(x => x.id === id);
+    $$('[data-id]', tabua).concat($$('[data-id]', chips)).forEach(b => b.setAttribute('aria-pressed', b.dataset.id === id));
+    $('#esf-name').textContent = e.name; $('#esf-desc').textContent = e.desc;
+    eimg.alt = 'Esfiha de ' + e.name.toLowerCase();
+    if (reduce) eimg.src = 'img/' + e.img;
+    else { eimg.style.opacity = 0; setTimeout(() => { eimg.src = 'img/' + e.img; eimg.onload = () => eimg.style.opacity = 1; }, 200); }
+  }
+  tabua.addEventListener('click', e => { const b = e.target.closest('.spot'); if (b) pickEsf(b.dataset.id); });
+  chips.addEventListener('click', e => { const b = e.target.closest('button'); if (b) pickEsf(b.dataset.id); });
+  $$('[data-id]', tabua).concat($$('[data-id]', chips)).forEach(b => b.setAttribute('aria-pressed', b.dataset.id === 'frango'));
+
+  /* ---------- rolagem: nav, pizza girando, forno, flutuantes ---------- */
+  const spin = $('#spin'), ovenBg = $('#oven-bg'), fab = $('#fab'), dock = $('#dock');
+  const secs = ['meia', 'como-fazemos', 'esfihas', 'entrega'].map(id => document.getElementById(id));
   const navLinks = $$('.nav-links a.l');
+  let ticking = false;
   function onScroll() {
     if (!sheet.classList.contains('open')) nav.classList.toggle('solid', scrollY > 40);
     const past = scrollY > innerHeight * .6;
@@ -826,94 +789,18 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
     fab.classList.toggle('show', past); dock.classList.toggle('show', past && !nearEnd);
     let act = -1; secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .4) act = i; });
     navLinks.forEach((a, i) => a.classList.toggle('on', i === act));
-    if (desk.matches) {
-      const r = story.getBoundingClientRect(), total = story.offsetHeight - innerHeight;
-      const p = Math.min(1, Math.max(0, -r.top / total));
-      steps.forEach((b, i) => $('i', b).style.setProperty('--p', Math.min(1, Math.max(0, p * 4 - i))));
-      setScene(Math.min(3, Math.floor(p * 4)));
+    if (!reduce) {
+      if (scrollY < innerHeight * 1.2) spin.style.setProperty('--rot', (scrollY * .18) + 'deg');
+      const r = ovenBg.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < innerHeight) ovenBg.style.transform = `translateY(${(r.top + r.height / 2 - innerHeight / 2) * -.12}px)`;
     }
+    ticking = false;
   }
-  placeShots(); setScene(0);
-  desk.addEventListener('change', () => { placeShots(); onScroll(); });
-  addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', onScroll);
-  onScroll();
-
-  /* ---------- cardápio ---------- */
-  const items = [
-    { t:'pizza', cat:'Pizza', name:'Calabresa', img:'pizza-calabresa.jpg', w:1600, h:1064, desc:'Calabresa fatiada, cebola em rodelas e muito queijo gratinado.' },
-    { t:'pizza', cat:'Pizza', name:'Mussarela', img:'pizza-mussarela.jpg', w:1600, h:1064, desc:'Mussarela derretida com rodelas de tomate sobre o molho.' },
-    { t:'salgada', cat:'Esfiha', name:'Calabresa', img:'esfiha-calabresa.jpg', w:1000, h:665, desc:'Calabresa com cebola e tomate. Vai bem com limão.' },
-    { t:'salgada', cat:'Esfiha', name:'Frango', img:'esfiha-frango.jpg', w:1000, h:665, desc:'Frango desfiado temperado, coberto com queijo cremoso.' },
-    { t:'salgada', cat:'Esfiha', name:'Queijo', img:'esfiha-queijo.jpg', w:1000, h:665, desc:'Queijo gratinado com ervas, dourado por cima.' },
-    { t:'salgada', cat:'Esfiha', name:'Milho', img:'esfiha-milho.jpg', w:1000, h:665, desc:'Milho com queijo cremoso e massa macia.' },
-    { t:'doce', cat:'Doce', name:'Chocolate', img:'esfiha-chocolate.jpg', w:1000, h:665, desc:'Esfiha crocante coberta de creme de chocolate, pra fechar o pedido.' }
-  ];
-  $('#cards').innerHTML = items.map(m => `
-    <article class="card rv" data-t="${m.t}">
-      <div class="pic"><img src="img/${m.img}" alt="${m.cat} de ${m.name.toLowerCase()}" loading="lazy" width="${m.w}" height="${m.h}"><span class="cat">${m.cat}</span></div>
-      <div class="body">
-        <h3>${m.name}</h3>
-        <p>${m.desc}</p>
-        <div class="foot"><small>Preço no cardápio</small><a class="go js-menu" href="#" target="_blank" rel="noopener" aria-label="Pedir ${m.cat.toLowerCase()} de ${m.name.toLowerCase()} no cardápio">Pedir <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      </div>
-    </article>`).join('') + `
-    <article class="card more rv" data-t="all">
-      <h3>Tem muito mais sabor</h3>
-      <p>Veja todas as pizzas, esfihas, bordas recheadas e bebidas com preço atualizado.</p>
-      <a class="btn btn-cheese btn-sm js-menu" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-menu"/></svg>Abrir cardápio</a>
-    </article>`;
-  setLinks();
-  $$('.chip').forEach(c => c.addEventListener('click', () => {
-    $$('.chip').forEach(x => x.setAttribute('aria-pressed', x === c));
-    const f = c.dataset.f;
-    $$('.card').forEach(p => p.classList.toggle('hide', f !== 'all' && p.dataset.t !== f && p.dataset.t !== 'all'));
-  }));
-  if (!reduce && hover) {
-    $$('.card:not(.more)').forEach(p => {
-      p.addEventListener('pointermove', e => {
-        const r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-        p.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
-      });
-      p.addEventListener('pointerleave', () => p.style.transform = '');
-    });
-  }
-
-  /* ---------- pedido rápido ---------- */
-  const form = $('#form'), send = $('#send'), bubble = $('#bubble'), btime = $('#btime');
-  const val = id => $('#' + id).value.trim();
-  const pay = () => $('input[name="pag"]:checked', form).value;
-  function message() {
-    const L = ['Olá, Moda Nostra! Quero fazer um pedido 🍕', ''];
-    if (val('nome')) L.push('Nome: ' + val('nome'));
-    if (val('pedido-txt')) L.push('Pedido: ' + val('pedido-txt'));
-    const end = [val('endereco'), val('bairro')].filter(Boolean).join(' – ');
-    if (end) L.push('Endereço: ' + end);
-    L.push('Pagamento: ' + pay() + (pay() === 'Dinheiro' && val('troco') ? ' (troco para ' + val('troco') + ')' : ''));
-    return L.join('\n');
-  }
-  function update() {
-    $('#f-troco').hidden = pay() !== 'Dinheiro';
-    const m = message();
-    bubble.textContent = m;
-    send.href = wa(m);
-  }
-  form.addEventListener('input', e => { update(); const f = e.target.closest('.field'); if (f) f.classList.remove('err'); });
-  form.addEventListener('change', update);
-  $$('.quick button').forEach(b => b.addEventListener('click', () => {
-    const ta = $('#pedido-txt'), add = b.dataset.add, cur = ta.value.trim().replace(/[,.]$/, '');
-    ta.value = cur ? (add.startsWith('com ') ? cur + ' ' + add : cur + ', ' + add) : add.charAt(0).toUpperCase() + add.slice(1);
-    $('#f-pedido').classList.remove('err'); update();
-    if (!reduce && b.animate) b.animate([{ transform: 'scale(.92)' }, { transform: 'scale(1)' }], { duration: 200 });
-  }));
-  send.addEventListener('click', e => {
-    const req = [['nome', 'f-nome'], ['bairro', 'f-bairro'], ['pedido-txt', 'f-pedido']];
-    let first = null;
-    req.forEach(([id, f]) => { const bad = !val(id); $('#' + f).classList.toggle('err', bad); if (bad && !first) first = $('#' + id); });
-    if (first) { e.preventDefault(); first.focus(); }
-  });
-  form.addEventListener('submit', e => e.preventDefault());
-  update();
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  addEventListener('resize', () => { onScroll(); railUpdate(); });
+  // a animação de entrada termina e a rotação passa a seguir a rolagem
+  spin.addEventListener('animationend', () => { spin.style.animation = 'none'; spin.style.transition = 'transform .2s linear'; });
+  onScroll(); railUpdate();
 
   /* ---------- horário de Recife ---------- */
   const OPEN = 18 * 60, CLOSE = 23 * 60 + 15;
@@ -922,25 +809,22 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
     try {
       const p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Recife', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
       const o = {}; p.forEach(x => o[x.type] = x.value);
-      return { d: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday), m: (+o.hour) * 60 + (+o.minute), hh: o.hour, mm: o.minute };
-    } catch (e) { const n = new Date(); return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes(), hh: String(n.getHours()).padStart(2, '0'), mm: String(n.getMinutes()).padStart(2, '0') }; }
+      return { d: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday), m: (+o.hour) * 60 + (+o.minute) };
+    } catch (e) { const n = new Date(); return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes() }; }
   }
   const dur = min => { const h = Math.floor(min / 60), m = min % 60; return h ? `${h}h ${String(m).padStart(2, '0')}min` : `${m} min`; };
   function hours() {
     const n = now(), open = n.d !== 1 && n.m >= OPEN && n.m < CLOSE;
     let wait = 0, label = '';
-    if (!open) {
-      for (let i = 0; i < 8; i++) {
-        const dd = (n.d + i) % 7;
-        if (dd !== 1 && (i > 0 || n.m < OPEN)) { wait = i * 1440 + OPEN - n.m; label = i === 0 ? 'hoje às 18h' : i === 1 ? 'amanhã às 18h' : DAYS[dd] + ' às 18h'; break; }
-      }
+    if (!open) for (let i = 0; i < 8; i++) {
+      const dd = (n.d + i) % 7;
+      if (dd !== 1 && (i > 0 || n.m < OPEN)) { wait = i * 1440 + OPEN - n.m; label = i === 0 ? 'hoje às 18h' : i === 1 ? 'amanhã às 18h' : DAYS[dd] + ' às 18h'; break; }
     }
     $('#status').classList.toggle('open', open); $('#status').classList.toggle('closed', !open);
     $('#status-txt').textContent = open ? 'Aberto agora · pedidos até 23h15' : 'Fechado agora · abre ' + label;
     $('#clock-lbl').textContent = open ? 'Aberto agora · fecha em' : 'Abre ' + label + ' · falta';
     $('#clock').textContent = dur(open ? CLOSE - n.m : wait);
     $$('#hours tr').forEach(tr => tr.classList.toggle('today', +tr.dataset.d === n.d));
-    btime.textContent = n.hh + ':' + n.mm;
   }
   hours(); setInterval(hours, 30000);
 
