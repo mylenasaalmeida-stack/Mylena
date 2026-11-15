@@ -19,6 +19,15 @@
 4. Descubra qual é o seu padrão de vida
 5. Conheça o seu "eu" financeiro
 
+### Slide: Entenda a doença do desequilíbrio financeiro
+O desequilíbrio financeiro é como uma doença que pode apresentar vários sintomas; cada um vai exigir um tratamento.
+
+- **Labirintite financeira:** vez ou outra ficam desequilibradas, gastam além da medida, mas rapidamente se recompõem.
+- **Mal das pernas:** não saem do lugar, como se as pernas estivessem atrofiadas; o que ganham é o que gastam, o que gastam é o que ganham.
+- **Quebrado:** falido, sem condições de arcar com as dívidas acumuladas, com restrição de crédito.
+
+> Quanto antes souber a dimensão do problema, mais rápido encontrará o caminho para se livrar dele.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
