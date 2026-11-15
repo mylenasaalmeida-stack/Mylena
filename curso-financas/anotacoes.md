@@ -56,7 +56,14 @@ Pode ser que você, de fato, esteja ganhando menos do que merece, mas isso nada 
 - Anotar as pequenas despesas do dia a dia para ter controle financeiro.
 - Exemplo do professor (análise no quartel): os que **ganhavam menos** eram os **mais equilibrados** financeiramente, enquanto os que **mais ganhavam** tinham **menos controle**. Ganhar mais não garante equilíbrio; o que importa é o controle.
 
-### 3 – Registre todos os seus pequenos e grandes gastos
+### Slide: 3 – Registre todos os seus pequenos e grandes gastos
+Se eu lhes perguntasse quanto vocês gastam por mês com lanche, cafezinho, pão para o café da manhã, flanelinhas, manicure, provavelmente teriam dificuldade de responder, certo?
+
+Registre todos os seus pequenos e grandes gastos **por 30 dias**, caso tenha rendimentos fixos, e **por 3 meses** se tiver renda variável.
+
+Saiba que todos nós temos um pouco de medo de entrar em contato com a verdade.
+
+**Exercício:** faça uma previsão de quanto você gastará durante os **próximos 7 dias** e compare, no final, as despesas previstas com as realizadas. Você terá uma grande surpresa.
 
 ### Ideias principais
 - Calcule seu padrão de vida.
