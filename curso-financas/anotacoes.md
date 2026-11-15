@@ -28,6 +28,17 @@ O desequilíbrio financeiro é como uma doença que pode apresentar vários sint
 
 > Quanto antes souber a dimensão do problema, mais rápido encontrará o caminho para se livrar dele.
 
+### Slide: 1 – Faça um levantamento dos seus rendimentos
+A maioria das pessoas não sabe exatamente quanto ganha (descontos de INSS, vale-transporte, vale-refeição etc.); esses valores são muito representativos.
+
+Atenção especial para quem tem renda variável:
+- Profissionais liberais
+- Comerciantes
+- Profissionais que ganham comissões
+- Trabalhos extras
+
+\* Colocar tudo em uma planilha.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
