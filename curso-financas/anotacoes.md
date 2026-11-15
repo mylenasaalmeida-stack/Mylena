@@ -88,6 +88,15 @@ A maioria das pessoas está sempre na "corda bamba", tentando equilibrar os gast
 
 > É necessário aprender a viver dentro do padrão de vida que os nossos rendimentos permitem: **90% do que recebemos**.
 
+### Slide: 5 – Conheça o seu "eu" financeiro
+O processo de conscientização é fundamental nessa etapa. No entanto, somente os números não bastam. Você precisa averiguar os padrões de comportamento que estão por trás dos números.
+
+Em diversos momentos, as compras são motivadas pela busca de satisfação emocional, e não pela real necessidade de determinado produto.
+
+Se você tem pouco tempo para seus filhos e se sente culpado, não compre presentes caros a fim de compensar a sua ausência.
+
+> Toda vez que for comprar algo, procure observar o sentimento e a motivação por trás desse ato.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
