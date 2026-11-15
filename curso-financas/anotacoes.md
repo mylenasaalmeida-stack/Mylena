@@ -52,6 +52,9 @@ Pode ser que você, de fato, esteja ganhando menos do que merece, mas isso nada 
 
 > O equilíbrio financeiro depende diretamente da visão detalhada que você tem de suas receitas e despesas.
 
+**Explicação em aula:**
+- Anotar as pequenas despesas do dia a dia para ter controle financeiro.
+
 ### Ideias principais
 - Calcule seu padrão de vida.
 - Conforto financeiro = tranquilidade mental.
