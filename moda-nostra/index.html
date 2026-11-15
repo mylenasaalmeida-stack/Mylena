@@ -287,6 +287,7 @@ h3{font-size:clamp(1.5rem,2.4vw,1.9rem);line-height:1}
 .insta-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(140px,16vw,220px);gap:10px}
 .insta-grid a{position:relative;display:block;border-radius:16px;overflow:hidden;background:var(--coal)}
 .insta-grid a:nth-child(1){grid-row:span 2;grid-column:span 2}
+.insta-grid a:nth-child(6),.insta-grid a:nth-child(7){grid-column:span 2}
 .insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
 .insta-grid a::after{content:"";position:absolute;inset:0;background:var(--red);opacity:0;transition:opacity .3s;mix-blend-mode:multiply}
 .insta-grid a:hover img{transform:scale(1.07)}
@@ -498,10 +499,11 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
     <ol class="rail" id="rail" style="list-style:none;margin:0" aria-label="Etapas do preparo">
       <li class="step"><div class="ph"><img src="img/proc-molho.jpg" alt="Molho de tomate espalhado em espiral sobre a massa" loading="lazy" width="1400" height="931"><span class="n">1</span></div><h3>Molho na massa</h3><p>A massa aberta recebe o molho de tomate em espiral, do centro para a borda.</p></li>
       <li class="step"><div class="ph"><img src="img/proc-queijo.jpg" alt="Queijo ralado coberto sobre a pizza crua" loading="lazy" width="1400" height="931"><span class="n">2</span></div><h3>Queijo por cima</h3><p>Uma camada generosa de queijo, cobrindo até perto da borda.</p></li>
-      <li class="step"><div class="ph"><img src="img/proc-catupiry.jpg" alt="Catupiry sendo aplicado em linhas sobre o frango" loading="lazy" width="1400" height="931"><span class="n">3</span></div><h3>Recheio e catupiry</h3><p>Entra o recheio do sabor e, nos que levam, o catupiry em linhas.</p></li>
-      <li class="step"><div class="ph"><img src="img/proc-forno.jpg" alt="Pizza passando pela esteira do forno" loading="lazy" width="1400" height="931"><span class="n">4</span></div><h3>Esteira do forno</h3><p>A pizza atravessa o forno na esteira e sai dourada, com o queijo borbulhando.</p></li>
-      <li class="step"><div class="ph"><img src="img/proc-corte.jpg" alt="Pizza sendo cortada com carretilha" loading="lazy" width="1400" height="931"><span class="n">5</span></div><h3>Corte na hora</h3><p>Cortada com carretilha logo que sai, ainda quente.</p></li>
-      <li class="step"><div class="ph"><img src="img/proc-caixa.jpg" alt="Pizza de calabresa com cebola dentro da caixa" loading="lazy" width="1400" height="931"><span class="n">6</span></div><h3>Direto pra caixa</h3><p>Vai para a caixa Moda Nostra e sai com o nosso entregador.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-catupiry.jpg" alt="Catupiry sendo aplicado com bisnaga sobre o frango" loading="lazy" width="1400" height="931"><span class="n">3</span></div><h3>Recheio e catupiry</h3><p>Entra o recheio do sabor e, nos que levam, o catupiry aplicado na bisnaga.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-pronta.jpg" alt="Pizza de frango com linhas de catupiry pronta para assar" loading="lazy" width="1400" height="931"><span class="n">4</span></div><h3>Pronta pro forno</h3><p>Montada e coberta até a borda, ela segue direto para a esteira.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-forno.jpg" alt="Pizza passando pela esteira do forno" loading="lazy" width="1400" height="931"><span class="n">5</span></div><h3>Esteira do forno</h3><p>A pizza atravessa o forno na esteira e sai dourada, com o queijo borbulhando.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-corte.jpg" alt="Pizza de frango com bacon sendo cortada com carretilha" loading="lazy" width="1400" height="931"><span class="n">6</span></div><h3>Corte na hora</h3><p>Cortada com carretilha logo que sai, ainda quente.</p></li>
+      <li class="step"><div class="ph"><img src="img/proc-caixa.jpg" alt="Pizza de calabresa com cebola dentro da caixa" loading="lazy" width="1400" height="931"><span class="n">7</span></div><h3>Direto pra caixa</h3><p>Vai para a caixa Moda Nostra e sai com o nosso entregador.</p></li>
     </ol>
     <div class="wrap"><div class="rail-bar"><i id="rail-bar"></i></div></div>
   </section>
@@ -608,13 +610,13 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
         <a class="handle" href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@modanostracandeias</a>
       </div>
       <div class="insta-grid rv">
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-1.jpg" alt="" loading="lazy" width="800" height="532"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-2.jpg" alt="" loading="lazy" width="800" height="532"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-3.jpg" alt="" loading="lazy" width="800" height="532"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-5.jpg" alt="" loading="lazy" width="800" height="532"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizzaiolo.jpg" alt="" loading="lazy" width="1400" height="931"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-4.jpg" alt="" loading="lazy" width="800" height="532"></a>
-        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-6.jpg" alt="" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-1.jpg" alt="Pizza marguerita com tomate e manjericão" loading="lazy" width="1000" height="665"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-2.jpg" alt="Esfiha de calabresa com limão" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-3.jpg" alt="Pizza de mussarela com tomate na esteira" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-4.jpg" alt="Marguerita em close" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/pizzaiolo.jpg" alt="Pizzaiolo da Moda Nostra" loading="lazy" width="1400" height="931"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/ig-5.jpg" alt="Esfiha de calabresa no prato" loading="lazy" width="800" height="532"></a>
+        <a href="https://www.instagram.com/modanostracandeias/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="img/meia.jpg" alt="Pizza meio calabresa, meio portuguesa na caixa" loading="lazy" width="1400" height="931"></a>
       </div>
     </div>
   </section>
@@ -759,10 +761,11 @@ html.js .rv:not(.in){opacity:.2;transform:translateY(28px)}
     { id: 'queijo', name: 'Queijo', x: 70, y: 55, img: 'es-queijo.jpg', desc: 'Queijo gratinado com ervas, dourado por cima.' },
     { id: 'milho', name: 'Milho com catupiry', x: 61, y: 77, img: 'es-milho.jpg', desc: 'Milho e catupiry, com o "M" da casa.' },
     { id: 'brocolis', name: 'Brócolis', x: 40, y: 77, img: 'es-brocolis.jpg', desc: 'Brócolis refogado sobre queijo derretido.' },
-    { id: 'chocolate', name: 'Chocolate', x: 29, y: 52, img: 'es-chocolate.jpg', desc: 'A doce da casa: creme de chocolate cobrindo a massa.' }
+    { id: 'chocolate', name: 'Chocolate', x: 29, y: 52, img: 'es-chocolate.jpg', desc: 'A doce da casa: creme de chocolate cobrindo a massa.' },
+    { id: 'calabresa', name: 'Calabresa', img: 'es-calabresa.jpg', desc: 'Calabresa com cebola picada. Vai bem com um limãozinho por cima.' }
   ];
   const tabua = $('#tabua'), chips = $('#esf-chips');
-  tabua.insertAdjacentHTML('beforeend', ESF.map(e => `<button type="button" class="spot" data-id="${e.id}" style="left:${e.x}%;top:${e.y}%" aria-label="Esfiha de ${e.name.toLowerCase()}"><span class="lbl">${e.name}</span></button>`).join(''));
+  tabua.insertAdjacentHTML('beforeend', ESF.filter(e => e.x).map(e => `<button type="button" class="spot" data-id="${e.id}" style="left:${e.x}%;top:${e.y}%" aria-label="Esfiha de ${e.name.toLowerCase()}"><span class="lbl">${e.name}</span></button>`).join(''));
   chips.innerHTML = ESF.map(e => `<button type="button" data-id="${e.id}">${e.name}</button>`).join('');
   const eimg = $('#esf-img');
   function pickEsf(id) {
