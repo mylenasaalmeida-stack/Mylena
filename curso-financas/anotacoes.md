@@ -43,6 +43,7 @@ Atenção especial para quem tem renda variável:
 - Calcular o seu **salário real**: quanto você realmente ganha (o valor líquido, depois dos descontos).
 - Colocar tudo na planilha.
 - O que não for regular (renda variável, extras, comissões) → **tirar a média**.
+- Usar o dinheiro dos **meses em que recebe mais** para cobrir os **meses em que recebe menos** ou os **meses em que gasta mais**: há períodos do ano com mais gastos que outros. Planejar isso na planilha.
 
 ### Ideias principais
 - Calcule seu padrão de vida.
