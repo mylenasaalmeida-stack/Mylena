@@ -3,249 +3,374 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zayra Ótica · Óculos de grau em João Pessoa</title>
-<meta name="description" content="Óculos de grau e multifocais no Centro de João Pessoa. Shopping Terceirão, Box 218, entrada pela Duque de Caxias. Atendimento também a domicílio.">
-<meta name="theme-color" content="#F5EFE6">
+<title>Zayra Ótica · Óculos de grau e multifocais em João Pessoa</title>
+<meta name="description" content="Óculos de grau, multifocais e atendimento a domicílio no Centro de João Pessoa. Shopping Terceirão, Box 218, entrada pela Duque de Caxias.">
+<meta name="theme-color" content="#16130F">
+<meta property="og:title" content="Zayra Ótica · João Pessoa">
+<meta property="og:description" content="Óculos de grau e multifocais. Shopping Terceirão, Box 218. Atendimento a domicílio.">
+<meta property="og:image" content="img/modelo-dourado.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#F5EFE6; --paper:#FBF8F3; --sand:#EADFCF; --sand-2:#DCCDB6;
-  --ink:#16130F; --ink-2:#2A251F; --muted:#6F655A; --line:rgba(22,19,15,.14);
-  --gold:#A9834B; --gold-2:#C6A56F; --gold-soft:#E8D6B4;
+  --cream:#F5EFE6; --paper:#FFFFFF; --off:#F8F5F0; --sand:#EADFCF; --sand-2:#DCCDB6;
+  --ink:#16130F; --ink-2:#2A251F; --muted:#6F655A; --line:#E6DED2;
+  --gold:#A9834B; --gold-2:#C6A56F;
   --wa:#1F8F4E;
   --serif:"Cormorant Garamond","Times New Roman",serif;
   --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  --wrap:1360px; --gut:clamp(16px,3.4vw,48px);
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden}
+body.lock{overflow:hidden}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
-.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold)}
-.eyebrow.line{display:inline-flex;align-items:center;gap:14px}
-.eyebrow.line::before{content:"";width:36px;height:1px;background:currentColor}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.01em}
-h2{font-size:clamp(2.3rem,5.2vw,4rem)}
-h2 em,h1 em{font-style:italic;color:var(--gold)}
-.lead{font-size:clamp(1rem,1.4vw,1.12rem);color:var(--muted);max-width:52ch;font-weight:300}
+.ico{width:22px;height:22px;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.over{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.h-sec{font-family:var(--sans);font-weight:500;font-size:clamp(1.6rem,2.6vw,2.2rem);letter-spacing:-.01em;line-height:1.1}
+em{font-style:italic}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:transform .25s,background .25s,color .25s,border-color .25s;white-space:nowrap}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-dark{background:var(--ink);color:var(--paper)}
-.btn-dark:hover{background:var(--gold);transform:translateY(-2px)}
-.btn-ghost{border:1px solid var(--ink);color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--paper)}
-.btn-gold{background:var(--gold);color:var(--paper)}
-.btn-gold:hover{background:var(--paper);color:var(--ink)}
-.link-u{border-bottom:1px solid var(--gold);padding-bottom:2px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:background .25s,color .25s,border-color .25s;white-space:nowrap;border:1px solid transparent}
+.btn svg{width:18px;height:18px}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--gold)}
+.btn-white{background:#fff;color:var(--ink)}.btn-white:hover{background:var(--ink);color:#fff}
+.btn-line{border-color:currentColor}.btn-line:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-wa{background:var(--wa);color:#fff}.btn-wa:hover{background:#17733e}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;border-bottom:1.5px solid currentColor;padding-bottom:4px;transition:gap .25s,color .25s}
+.tlink:hover{gap:14px;color:var(--gold)}
 
-/* announcement */
-.announce{background:var(--ink);color:var(--sand);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;padding:10px var(--gut)}
-.announce b{color:var(--gold-2);font-weight:500}
-.show-m{display:none}
-@media (max-width:640px){.hide-m{display:none}.show-m{display:inline}.announce{font-size:.64rem;letter-spacing:.16em}}
+/* ===== top bar ===== */
+.topbar{background:var(--ink);color:#EDE4D6;height:38px;overflow:hidden;position:relative;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+.topbar .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(100%);transition:.6s var(--ease);padding:0 16px;text-align:center}
+.topbar .msg.on{opacity:1;transform:none}
+.topbar .msg.out{opacity:0;transform:translateY(-100%)}
+.topbar b{color:var(--gold-2);font-weight:600}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav.scrolled{border-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:40px;height:40px}
-.brand .wm{display:flex;flex-direction:column;line-height:1}
-.brand .wm b{font-family:var(--sans);font-weight:400;letter-spacing:.42em;font-size:1rem}
-.brand .wm small{font-size:.55rem;letter-spacing:.6em;color:var(--muted);margin-top:4px}
-.nav ul{display:flex;gap:34px;list-style:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
-.nav ul a{position:relative;padding:6px 0}
-.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
-.nav ul a:hover::after{right:0}
-.nav .btn{padding:12px 20px}
-@media (max-width:900px){.nav ul{display:none}.nav .btn span{display:none}.nav .btn{padding:12px}}
+/* ===== header ===== */
+.hdr{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid var(--line)}
+.hdr>.wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo svg{width:42px;height:42px}
+.logo .wm{display:flex;flex-direction:column;line-height:1}
+.logo .wm b{font-weight:400;letter-spacing:.42em;font-size:1.05rem}
+.logo .wm small{font-size:.54rem;letter-spacing:.62em;color:var(--muted);margin-top:5px}
+.menu{display:flex;justify-content:center;list-style:none;height:100%}
+.menu>li{display:flex;align-items:center}
+.menu>li>a{display:flex;align-items:center;height:100%;padding:0 16px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;position:relative}
+.menu>li>a::after{content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:2px;background:var(--ink);transform:scaleX(0);transition:transform .3s var(--ease)}
+.menu>li:hover>a::after,.menu>li>a:focus-visible::after{transform:scaleX(1)}
+.tools{display:flex;align-items:center;gap:4px}
+.tools a,.tools button,.burger{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;transition:background .2s;position:relative}
+.tools a:hover,.tools button:hover{background:var(--off)}
+.tools .count{position:absolute;top:6px;right:5px;min-width:17px;height:17px;border-radius:9px;background:var(--gold);color:#fff;font-size:.62rem;font-weight:600;display:grid;place-items:center;padding:0 4px;transform:scale(0);transition:transform .3s}
+.tools .count.on{transform:scale(1)}
+.burger{display:none}
 
-/* hero */
-.hero{position:relative;padding:clamp(40px,7vw,90px) 0 clamp(60px,8vw,110px);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
-.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);margin:22px 0 26px}
-.hero h1 .thin{font-weight:400}
-.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.hero .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(18px,3.5vw,40px);margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
-@media (max-width:520px){.hero .facts{grid-template-columns:1fr 1fr}}
-.hero .facts div{font-size:.78rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
-.hero .facts b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--ink);letter-spacing:0;text-transform:none;line-height:1.1;margin-bottom:4px}
-.hero-art{position:relative;aspect-ratio:4/5}
-.hero-art .arc{position:absolute;inset:-6% -10% auto auto;width:115%;color:var(--gold);opacity:.9;pointer-events:none}
-.hero-art .main{position:absolute;inset:0 0 0 12%;border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--sand)}
-.hero-art .main img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:slowzoom 14s ease-in-out infinite alternate}
-@keyframes slowzoom{to{transform:scale(1.12)}}
-.hero-art .chip{position:absolute;left:0;bottom:8%;width:42%;aspect-ratio:3/4;border-radius:6px;overflow:hidden;border:6px solid var(--cream);box-shadow:0 30px 60px -30px rgba(22,19,15,.45)}
-.hero-art .chip img{width:100%;height:100%;object-fit:cover}
-.hero-art .stamp{position:absolute;right:-2%;bottom:-3%;width:118px;height:118px;color:var(--ink)}
-.hero-art .stamp .rot{animation:spin 22s linear infinite;transform-origin:50% 50%}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (max-width:900px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-art{max-width:460px;width:100%;margin:10px auto 0}
+/* mega */
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(22,19,15,.25);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s var(--ease)}
+.menu>li.has:hover .mega,.menu>li.has:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega .wrap{display:grid;grid-template-columns:repeat(3,1fr) 1.5fr;gap:40px;padding-top:36px;padding-bottom:40px}
+.mega h4{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:16px}
+.mega ul{list-style:none;display:grid;gap:10px}
+.mega ul a{font-size:.98rem;transition:color .2s}
+.mega ul a:hover{color:var(--gold)}
+.mega .promo{position:relative;overflow:hidden;aspect-ratio:16/9;display:block}
+.mega .promo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1s var(--ease)}
+.mega .promo:hover img{transform:scale(1.05)}
+.mega .promo span{position:absolute;left:20px;bottom:18px;color:#fff;font-family:var(--serif);font-size:1.7rem;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+
+@media (max-width:1080px){
+  .menu{display:none}.burger{display:grid}
+  .hdr>.wrap{height:64px;gap:8px}
+  .logo{justify-self:center}
+  .logo svg{width:36px;height:36px}
+  .tools .hide-s{display:none}
 }
 
-/* ribbon */
-.ribbon{background:var(--ink);color:var(--sand);overflow:hidden;padding:20px 0;border-block:1px solid var(--ink)}
-.ribbon .track{display:flex;width:max-content;animation:marq 38s linear infinite}
-.ribbon span{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
-.ribbon span::after{content:"";width:8px;height:8px;border:1px solid var(--gold-2);transform:rotate(45deg)}
-@keyframes marq{to{transform:translateX(-50%)}}
+/* drawer + search */
+.layer{position:fixed;inset:0;z-index:120;visibility:hidden}
+.layer .scrim{position:absolute;inset:0;background:rgba(22,19,15,.45);opacity:0;transition:.3s}
+.layer.open{visibility:visible}.layer.open .scrim{opacity:1}
+.drawer .panel{position:absolute;top:0;bottom:0;left:0;width:min(88vw,380px);background:#fff;transform:translateX(-100%);transition:transform .4s var(--ease);display:flex;flex-direction:column;overflow-y:auto}
+.drawer.open .panel{transform:none}
+.drawer .ph{display:flex;justify-content:space-between;align-items:center;padding:12px 14px 12px 20px;border-bottom:1px solid var(--line)}
+.drawer nav a{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line);font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.drawer .foot{margin-top:auto;padding:22px;display:grid;gap:12px;background:var(--off)}
+.search .box{position:absolute;left:0;right:0;top:0;background:#fff;padding:28px 0 36px;transform:translateY(-100%);transition:transform .4s var(--ease)}
+.search.open .box{transform:none}
+.search form{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.search input{flex:1;border:0;outline:0;font-size:clamp(1.15rem,3vw,1.8rem);background:none;min-width:0}
+.search input::-webkit-search-cancel-button{display:none}
+.search .sug{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.search .sug span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.chip{border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:.84rem;transition:.2s}
+.chip:hover{border-color:var(--ink)}
 
-/* sections */
-section{position:relative}
-.sec{padding:clamp(70px,10vw,140px) 0}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
-.sec-head h2{margin-top:16px;max-width:16ch}
+/* ===== hero slider ===== */
+.hero{position:relative;background:var(--cream);overflow:hidden}
+.slides{position:relative;height:clamp(560px,calc(100vh - 114px),780px)}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1.15fr;opacity:0;visibility:hidden;transition:opacity .9s var(--ease),visibility .9s}
+.slide.on{opacity:1;visibility:visible}
+.slide .txt{display:flex;flex-direction:column;justify-content:center;padding:40px clamp(24px,5vw,90px) 80px;position:relative;z-index:2}
+.slide .txt>*{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.slide.on .txt>*{opacity:1;transform:none}
+.slide.on .txt>*:nth-child(2){transition-delay:.12s}.slide.on .txt>*:nth-child(3){transition-delay:.24s}.slide.on .txt>*:nth-child(4){transition-delay:.36s}
+.slide h1,.slide h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.7rem,5.4vw,5.2rem);line-height:.98;letter-spacing:-.01em;margin:18px 0 20px}
+.slide h1 em,.slide h2 em{color:var(--gold)}
+.slide p{font-size:1.06rem;font-weight:300;color:var(--muted);max-width:42ch}
+.slide .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.slide .pic{position:relative;overflow:hidden}
+.slide .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 7s linear}
+.slide.on .pic img{transform:scale(1)}
+.slide.dark{background:var(--ink);color:#fff}
+.slide.dark p{color:#C9BFB1}
+.slide.dark h2 em,.slide.dark .over{color:var(--gold-2)}
+.slide.sand{background:var(--sand)}
+.hero-nav{position:absolute;left:clamp(24px,5vw,90px);bottom:34px;z-index:5;display:flex;gap:12px;align-items:center}
+.hero-nav .bar{width:56px;height:2px;background:rgba(22,19,15,.18);position:relative;overflow:visible;cursor:pointer;padding:0}
+.hero-nav .bar::before{content:"";position:absolute;inset:-14px 0}
+.hero-nav .bar i{position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left}
+.hero-nav .bar.done i{transform:scaleX(1)}
+.hero-nav .bar.on i{animation:fill 6s linear forwards}
+.hero.on-dark .hero-nav .bar{background:rgba(255,255,255,.25)}.hero.on-dark .hero-nav .bar i{background:#fff}
+@keyframes fill{to{transform:scaleX(1)}}
+.hero-arrows{position:absolute;right:24px;top:24px;z-index:5;display:flex;gap:8px}
+.hero-arrows button{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 20px -8px rgba(0,0,0,.3);transition:transform .2s}
+.hero-arrows button:hover{transform:scale(1.06)}
+@media (max-width:860px){
+  .slides{height:auto}
+  .slide{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .slide.on{position:relative}
+  .slide .pic{order:-1;height:56vh;min-height:340px}
+  .slide .txt{padding:28px 20px 96px}
+  .slide h1,.slide h2{margin:12px 0 14px}
+  .slide .cta{margin-top:22px}
+  .slide .cta .btn{flex:1 1 auto}
+  .hero-nav{left:20px;bottom:36px}
+  .hero-arrows{right:14px;top:14px}
+  .hero-arrows button{width:42px;height:42px}
+}
 
-/* style switch */
-.styles{background:var(--paper)}
-.switch{display:inline-flex;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px;position:relative}
-.switch button{position:relative;z-index:1;padding:12px 24px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-radius:999px;transition:color .35s}
-.switch button[aria-pressed="true"]{color:var(--paper)}
-.switch .pill{position:absolute;top:5px;bottom:5px;left:5px;border-radius:999px;background:var(--ink);transition:transform .45s cubic-bezier(.7,0,.2,1),width .45s}
-.style-stage{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
-.style-copy h3{font-size:clamp(2.2rem,4vw,3.4rem);margin:12px 0 18px}
-.style-copy ul{list-style:none;margin:26px 0 34px;display:grid;gap:12px}
-.style-copy li{display:flex;gap:14px;align-items:baseline;font-weight:300}
-.style-copy li::before{content:"";width:18px;height:1px;background:var(--gold);flex:none;transform:translateY(-4px)}
-.style-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.style-imgs figure{border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:var(--sand)}
-.style-imgs figure:nth-child(2){margin-top:48px}
-.style-imgs img{width:100%;height:100%;object-fit:cover;transition:opacity .45s,transform .8s}
-.fade-swap{opacity:0;transform:scale(1.03)}
-.style-copy>*{transition:opacity .35s,transform .35s}
-.style-copy.out>*{opacity:0;transform:translateY(8px)}
-@media (max-width:860px){.style-stage{grid-template-columns:1fr}}
+/* ===== benefits ===== */
+.benefits{border-bottom:1px solid var(--line)}
+.benefits .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.benefit{display:flex;align-items:center;gap:16px;padding:26px 20px;border-left:1px solid var(--line)}
+.benefit:first-child{border-left:0}
+.benefit svg{width:34px;height:34px;color:var(--gold);flex:none}
+.benefit b{display:block;font-weight:500;font-size:.95rem}
+.benefit span{font-size:.84rem;color:var(--muted);font-weight:300}
+@media (max-width:980px){.benefits .wrap{grid-template-columns:1fr 1fr;padding:0}.benefit:nth-child(3){border-left:0}.benefit{border-top:1px solid var(--line);padding:20px 16px}.benefit:nth-child(-n+2){border-top:0}}
+@media (max-width:520px){.benefit{flex-direction:column;align-items:flex-start;gap:10px}.benefit svg{width:28px;height:28px}}
 
-/* collection */
-.grid-col{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px)}
-.card{position:relative;display:block}
-.card figure{aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--sand)}
-.card img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
-.card:hover img{transform:scale(1.07)}
-.card .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;gap:10px}
-.card h3{font-size:1.5rem}
-.card .meta span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.card .ask{position:absolute;left:12px;right:12px;bottom:72px;background:rgba(251,248,243,.94);padding:12px 14px;border-radius:3px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;opacity:0;transform:translateY(10px);transition:.35s}
-.card:hover .ask{opacity:1;transform:none}
-@media (max-width:900px){.grid-col{grid-template-columns:repeat(2,1fr)}.card .ask{display:none}}
+/* ===== section base ===== */
+.sec{padding:clamp(60px,8vw,110px) 0}
+.sec-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(26px,3.5vw,44px)}
+.sec-top .over{display:block;margin-bottom:10px}
 
-/* face guide */
-.guide{background:var(--sand)}
-.guide .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,6vw,90px);align-items:start}
-.faces{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0 0}
-.face{border:1px solid var(--sand-2);background:var(--cream);border-radius:8px;padding:18px 8px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
-.face svg{width:44px;height:54px;color:var(--ink)}
-.face:hover{border-color:var(--gold)}
-.face[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* ===== categories ===== */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px)}
+.cat{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--sand);display:block}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.cat:hover img{transform:scale(1.06)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,19,15,.62),rgba(22,19,15,0) 48%)}
+.cat .lab{position:absolute;left:clamp(14px,2vw,22px);right:14px;bottom:clamp(14px,2vw,22px);z-index:1;color:#fff}
+.cat .lab b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1}
+.cat .lab span{display:inline-flex;gap:8px;align-items:center;margin-top:10px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:3px;transition:gap .25s}
+.cat .lab span svg{width:14px;height:14px}
+.cat:hover .lab span{gap:14px}
+@media (max-width:900px){.cats{grid-template-columns:1fr 1fr}}
+
+/* ===== products ===== */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{height:42px;padding:0 18px;border:1px solid var(--line);border-radius:999px;font-size:.8rem;letter-spacing:.06em;font-weight:500;transition:.25s}
+.tab:hover{border-color:var(--ink)}
+.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+@media (max-width:720px){.tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(var(--gut) * -1);padding:0 var(--gut);scrollbar-width:none;width:calc(100% + var(--gut) * 2)}.tabs::-webkit-scrollbar{display:none}.tab{flex:none}.sec-top>div:first-child{width:100%}}
+.searchnote{display:none;margin:-14px 0 24px;font-size:.92rem;color:var(--muted)}
+.searchnote.on{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.searchnote button{text-decoration:underline;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,2.4vw,36px) clamp(10px,1.4vw,20px)}
+.prod{position:relative;display:flex;flex-direction:column;animation:pin .5s var(--ease) both}
+@keyframes pin{from{opacity:0;transform:translateY(14px)}}
+.prod .img{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--off)}
+.prod .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 1s var(--ease)}
+.prod .img .alt{opacity:0}
+.prod:hover .img .alt{opacity:1}
+.prod:hover .img img:first-child{transform:scale(1.04)}
+.prod .badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;padding:5px 10px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.prod .badge.g{background:var(--ink);color:#fff}
+.prod .fav{position:absolute;top:8px;right:8px;z-index:2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);transition:transform .2s}
+.prod .fav:hover{transform:scale(1.08)}
+.prod .fav svg{width:19px;height:19px}
+.prod .fav[aria-pressed="true"]{color:var(--gold)}
+.prod .fav[aria-pressed="true"] svg path{fill:currentColor}
+.prod .quick{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;background:#fff;height:46px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;transform:translateY(calc(100% + 14px));transition:transform .35s var(--ease),background .2s,color .2s}
+.prod .quick svg{width:16px;height:16px}
+.prod:hover .quick,.prod .quick:focus-visible{transform:none}
+.prod .quick:hover{background:var(--ink);color:#fff}
+.prod .info{padding-top:14px}
+.prod .sw{display:flex;gap:6px;margin-bottom:10px}
+.prod .sw i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.prod h3{font-size:.98rem;font-weight:500;line-height:1.3}
+.prod .mat{font-size:.84rem;color:var(--muted);font-weight:300;margin-top:2px}
+.prod .price{margin-top:8px;font-size:.84rem;font-weight:500}
+.prod .price a{color:var(--wa);border-bottom:1px solid currentColor}
+.empty{grid-column:1/-1;padding:50px 0;text-align:center;color:var(--muted)}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.grid{grid-template-columns:1fr 1fr}.prod .quick{display:none}.prod .badge{font-size:.54rem;padding:4px 7px;top:8px;left:8px;letter-spacing:.12em}.prod .fav{width:34px;height:34px;top:6px;right:6px}.prod .fav svg{width:16px;height:16px}.prod h3{font-size:.92rem}.prod .price{font-size:.78rem}}
+.more{text-align:center;margin-top:48px}
+
+/* ===== campaign split ===== */
+.split-wrap{position:relative}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:clamp(480px,60vw,760px)}
+.split a{position:relative;overflow:hidden;display:block;background:var(--sand)}
+.split img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.split a:hover img{transform:scale(1.05)}
+.split a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,19,15,.6),transparent 55%)}
+.split .lab{position:absolute;left:clamp(20px,4vw,56px);bottom:clamp(24px,4vw,56px);right:20px;z-index:1;color:#fff}
+.split .lab .over{color:#fff;opacity:.85}
+.split .lab b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,4.4rem);line-height:.95;margin:10px 0 20px}
+.split-head{position:absolute;left:0;right:0;top:clamp(20px,3vw,40px);z-index:2;text-align:center;pointer-events:none}
+.split-head span{display:inline-block;background:#fff;padding:12px 22px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+@media (max-width:760px){.split{grid-template-columns:1fr}.split a{min-height:440px}}
+
+/* ===== face guide ===== */
+.guide{background:var(--off)}
+.guide .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.faces{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.face{border:1px solid var(--line);background:#fff;padding:18px 6px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:.25s}
+.face svg{width:40px;height:50px}
+.face:hover{border-color:var(--ink)}
+.face[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .face[aria-pressed="true"] svg{color:var(--gold-2)}
-.result{background:var(--paper);border-radius:10px;padding:clamp(24px,4vw,44px);position:relative;overflow:hidden;min-height:100%}
-.result .num{position:absolute;right:-10px;top:-40px;font-family:var(--serif);font-size:12rem;line-height:1;color:var(--sand);font-style:italic;pointer-events:none}
-.result h3{font-size:clamp(2rem,3.4vw,2.8rem);margin:12px 0 14px;position:relative}
-.result p{position:relative;color:var(--muted);font-weight:300;max-width:46ch}
-.result .frames{display:flex;gap:16px;margin:28px 0;position:relative;flex-wrap:wrap}
-.result .frames div{flex:1 1 0;min-width:0;border-top:1px solid var(--line);padding-top:14px}
-.result .frames svg{width:100%;max-width:150px;height:56px;color:var(--ink);margin-bottom:8px}
-.result .frames b{font-family:var(--serif);font-size:1.25rem;font-weight:500;display:block}
-.result .frames small{color:var(--muted);font-size:.8rem}
+.result{background:#fff;padding:clamp(24px,4vw,48px);border:1px solid var(--line)}
+.result h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.05;margin:10px 0 12px}
+.result h3 em{color:var(--gold)}
+.result p{color:var(--muted);font-weight:300;max-width:50ch}
+.frames{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 30px}
+.frames div{border-top:1px solid var(--line);padding-top:14px;min-width:0}
+.frames svg{width:100%;max-width:140px;height:52px;margin-bottom:8px}
+.frames b{display:block;font-weight:500;font-size:.95rem}
+.frames small{color:var(--muted);font-size:.8rem}
 @media (max-width:900px){.guide .wrap{grid-template-columns:1fr}}
-@media (max-width:420px){.faces{grid-template-columns:repeat(2,1fr)}}
 
-/* multifocal */
-.multi{background:var(--ink);color:var(--paper);overflow:hidden}
-.multi .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.multi h2 em{color:var(--gold-2)}
-.multi .lead{color:#BDB2A3}
-.multi-img{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden}
-.multi-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
-.multi-img .lens{position:absolute;left:8%;bottom:8%;right:8%;background:rgba(22,19,15,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px 20px;border-radius:4px;border:1px solid rgba(198,165,111,.4)}
-.lens .zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
-.lens .zones div{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#CFC4B4}
-.lens .zones b{display:block;font-family:var(--serif);font-size:1.25rem;letter-spacing:0;text-transform:none;color:var(--paper);font-weight:500}
-.lens .bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--gold-soft),var(--gold),#6d5330);margin-top:12px}
-.pains{list-style:none;margin:36px 0 40px;border-top:1px solid rgba(255,255,255,.12)}
-.pains li{display:grid;grid-template-columns:48px 1fr;gap:10px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-.pains .n{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold-2);line-height:1}
-.pains b{font-weight:500;display:block;margin-bottom:2px}
-.pains span{color:#BDB2A3;font-weight:300;font-size:.95rem}
-@media (max-width:900px){.multi .wrap{grid-template-columns:1fr}.multi-img{order:-1;max-width:520px}}
+/* ===== feature (multifocal) ===== */
+.feature{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr}
+.feature .pic{position:relative;min-height:600px;overflow:hidden}
+.feature .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.feature .txt{padding:clamp(48px,7vw,110px) clamp(24px,6vw,100px);display:flex;flex-direction:column;justify-content:center}
+.feature h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,4.6vw,4rem);line-height:1;margin:14px 0 18px}
+.feature h2 em{color:var(--gold-2)}
+.feature .over{color:var(--gold-2)}
+.feature p.lead{color:#C9BFB1;font-weight:300;max-width:46ch}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);margin:34px 0;border:1px solid rgba(255,255,255,.14)}
+.zones div{padding:18px 16px;border-left:1px solid rgba(255,255,255,.14)}
+.zones div:first-child{border-left:0}
+.zones b{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:500}
+.zones span{font-size:.8rem;color:#C9BFB1;font-weight:300}
+.checks{list-style:none;display:grid;gap:14px;margin-bottom:36px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-weight:300;color:#E6DDD0}
+.checks svg{width:20px;height:20px;color:var(--gold-2);flex:none;margin-top:3px}
+@media (max-width:900px){.feature{grid-template-columns:1fr}.feature .pic{min-height:420px}}
+@media (max-width:480px){.zones div{padding:14px 10px}.zones b{font-size:1.2rem}}
 
-/* home visit */
-.home .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.steps{list-style:none;margin-top:40px;display:grid;gap:0}
-.steps li{display:grid;grid-template-columns:70px 1fr;padding:24px 0;border-top:1px solid var(--line)}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps .k{font-family:var(--serif);font-size:2.6rem;line-height:.9;color:var(--gold)}
-.steps h3{font-size:1.6rem;margin-bottom:4px}
-.steps p{color:var(--muted);font-weight:300}
-.home-imgs{position:relative;aspect-ratio:1/1.08}
-.home-imgs figure{position:absolute;overflow:hidden;border-radius:4px;background:var(--sand)}
-.home-imgs figure img{width:100%;height:100%;object-fit:cover}
-.home-imgs .a{inset:0 22% 18% 0}
-.home-imgs .b{right:0;bottom:0;width:48%;aspect-ratio:3/4;border:6px solid var(--cream)}
-.home-imgs .tag{position:absolute;top:22px;left:22px;background:var(--paper);padding:10px 16px;border-radius:999px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:flex;gap:8px;align-items:center}
-.home-imgs .tag i{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(31,143,78,.5);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(31,143,78,0)}100%{box-shadow:0 0 0 0 rgba(31,143,78,0)}}
-@media (max-width:900px){.home .wrap{grid-template-columns:1fr}.home-imgs{max-width:520px;width:100%}}
+/* ===== home visit ===== */
+.home{background:var(--cream)}
+.home .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,80px);align-items:center}
+.home h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,4.6vw,4rem);line-height:1;margin:12px 0 16px}
+.home h2 em{color:var(--gold)}
+.home p.lead{color:var(--muted);font-weight:300;max-width:50ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0;counter-reset:s;list-style:none}
+.steps li{background:#fff;padding:22px 20px;counter-increment:s}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:1;margin-bottom:12px}
+.steps b{display:block;font-weight:500;margin-bottom:4px}
+.steps span{font-size:.88rem;color:var(--muted);font-weight:300}
+.home .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.home .pics figure{overflow:hidden;aspect-ratio:3/4;background:var(--sand)}
+.home .pics figure:last-child{margin-top:60px}
+.home .pics img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.home .wrap{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.home .btn{width:100%}}
 
-/* people */
-.people{background:var(--paper);padding-bottom:0}
-.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) clamp(70px,10vw,130px);scrollbar-width:none}
-.strip::-webkit-scrollbar{display:none}
-.strip figure{flex:0 0 clamp(220px,24vw,300px);scroll-snap-align:start;position:relative}
-.strip figure .ph{aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--sand)}
-.strip img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
-.strip figure:hover img{transform:scale(1.05)}
-.strip figcaption{margin-top:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.strip figcaption b{display:block;font-family:var(--serif);font-size:1.3rem;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500}
-.strip-ctrl{display:flex;gap:10px}
-.strip-ctrl button{width:50px;height:50px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:.25s}
-.strip-ctrl button:hover{background:var(--ink);color:var(--paper)}
-.strip-ctrl svg{width:18px;height:18px}
+/* ===== instagram ===== */
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.insta-grid a{position:relative;aspect-ratio:1/1;overflow:hidden;display:block;background:var(--sand)}
+.insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.insta-grid a::after{content:"";position:absolute;inset:0;background:rgba(22,19,15,0);transition:background .3s}
+.insta-grid a:hover::after{background:rgba(22,19,15,.3)}
+.insta-grid a:hover img{transform:scale(1.06)}
+.insta-grid svg{position:absolute;left:50%;top:50%;width:30px;height:30px;color:#fff;z-index:1;transform:translate(-50%,-50%) scale(.6);opacity:0;transition:.3s}
+.insta-grid a:hover svg{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media (max-width:760px){.insta-grid{grid-template-columns:repeat(3,1fr)}}
 
-/* visit */
-.visit .box{display:grid;grid-template-columns:1fr 1.15fr;background:var(--ink);color:var(--paper);border-radius:10px;overflow:hidden}
-.visit .info{padding:clamp(28px,5vw,60px)}
-.visit h2 em{color:var(--gold-2)}
-.visit dl{margin:34px 0 36px;display:grid;gap:22px}
-.visit dt{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);margin-bottom:4px}
-.visit dd{font-family:var(--serif);font-size:1.45rem;line-height:1.25}
-.visit dd small{display:block;font-family:var(--sans);font-size:.9rem;color:#BDB2A3;font-weight:300;margin-top:4px}
-.visit .cta{display:flex;gap:12px;flex-wrap:wrap}
-.visit .btn-ghost{border-color:rgba(255,255,255,.4);color:var(--paper)}
-.visit .btn-ghost:hover{background:var(--paper);color:var(--ink)}
-.map{position:relative;min-height:420px;background:#2a251f}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) sepia(.25) contrast(.95)}
-@media (max-width:900px){.visit .box{grid-template-columns:1fr}.map{min-height:320px}}
+/* ===== faq ===== */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-weight:500;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:14px;height:14px;position:relative;flex:none}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink);transition:transform .3s}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq details p{padding:0 0 22px;color:var(--muted);font-weight:300;max-width:62ch}
+@media (max-width:900px){.faq .wrap{grid-template-columns:1fr}}
 
-/* final */
-.final{text-align:center;padding:clamp(80px,12vw,160px) 0;overflow:hidden}
-.final .logo-big{width:clamp(90px,12vw,130px);margin:0 auto 30px;color:var(--ink)}
-.final h2{font-size:clamp(2.6rem,7vw,5.6rem);max-width:14ch;margin:0 auto 24px}
-.final .lead{margin:0 auto 38px}
+/* ===== store ===== */
+.store{background:var(--off)}
+.store .box{display:grid;grid-template-columns:1fr 1.3fr;background:#fff;border:1px solid var(--line)}
+.store .info{padding:clamp(28px,4vw,56px)}
+.store h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;margin:10px 0 26px}
+.store h2 em{color:var(--gold)}
+.store dl{display:grid;gap:20px;margin-bottom:30px}
+.store dt{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:500}
+.store dd{font-size:1.05rem}
+.store dd small{display:block;color:var(--muted);font-weight:300;font-size:.92rem}
+.store .cta{display:flex;flex-wrap:wrap;gap:10px}
+.map{position:relative;min-height:440px;background:var(--sand)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.6) sepia(.15)}
+@media (max-width:900px){.store .box{grid-template-columns:1fr}.map{min-height:320px}}
 
-footer{border-top:1px solid var(--line);padding:40px 0 100px;font-size:.82rem;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
-footer nav{display:flex;gap:24px;flex-wrap:wrap}
-footer a:hover{color:var(--gold)}
+/* ===== footer ===== */
+.pre-foot{background:var(--gold);color:#fff}
+.pre-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:34px;padding-bottom:34px}
+.pre-foot b{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.05}
+footer{background:var(--ink);color:#C9BFB1;padding:70px 0 0}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px}
+footer h4{color:#fff;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;margin-bottom:18px}
+footer ul{list-style:none;display:grid;gap:10px;font-size:.94rem;font-weight:300}
+footer a:hover{color:#fff}
+footer .logo{color:#fff;margin-bottom:18px}
+footer .logo .wm small{color:#9D9284}
+footer .about{font-weight:300;font-size:.94rem;max-width:34ch}
+footer .social{display:flex;gap:10px;margin-top:22px}
+footer .social a{width:42px;height:42px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;transition:.25s}
+footer .social a:hover{background:#fff;color:var(--ink)}
+footer .social svg{width:18px;height:18px}
+footer .legal{border-top:1px solid rgba(255,255,255,.12);padding:22px 0 100px;font-size:.8rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#8F8577}
+@media (max-width:900px){footer .cols{grid-template-columns:1fr 1fr}footer .cols>div:first-child{grid-column:1/-1}}
 
-/* floating wa */
-.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border-radius:999px;padding:14px 20px 14px 16px;box-shadow:0 18px 40px -14px rgba(31,143,78,.7);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transform:translateY(120px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.fab.show{transform:none}
-.fab svg{width:22px;height:22px}
+/* floating */
+.fab{position:fixed;right:18px;bottom:18px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 16px 36px -12px rgba(31,143,78,.75);transition:transform .3s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.4s infinite}
+@keyframes ring{from{transform:scale(1);opacity:.7}to{transform:scale(1.5);opacity:0}}
+.fab .tip{position:absolute;right:72px;background:#fff;color:var(--ink);white-space:nowrap;padding:10px 14px;font-size:.84rem;box-shadow:0 10px 30px -10px rgba(0,0,0,.3);opacity:0;transform:translateX(8px);transition:.3s;pointer-events:none}
+.fab:hover .tip{opacity:1;transform:none}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.toast{position:fixed;left:50%;bottom:24px;z-index:140;background:var(--ink);color:#fff;padding:14px 22px;font-size:.88rem;transform:translate(-50%,180%);transition:transform .4s var(--ease),visibility .4s;white-space:nowrap;visibility:hidden}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -260,318 +385,449 @@ footer a:hover{color:var(--gold)}
       <path d="M26 76 H80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
     </symbol>
     <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 6.9 3.8Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></symbol>
-    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
-    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10C19.5 15.4 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m8 12.2 2.7 2.7L16.2 9.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="b-home" viewBox="0 0 40 40"><path d="M6 19 20 7l14 12M10 16v16h20V16" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="25" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="25" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M19 25h2" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="b-ruler" viewBox="0 0 40 40"><circle cx="13" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="27" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 32h14M13 30v4M27 30v4M20 30v4" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="b-tool" viewBox="0 0 40 40"><path d="M6 20c3-5 7-7 14-7s11 2 14 7" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="13" cy="22" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="27" cy="22" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 8l3 3-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="b-chat" viewBox="0 0 40 40"><path d="M7 9h26v17H17l-7 6v-6H7Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M13 16h14M13 20h9" stroke="currentColor" stroke-width="1.5"/></symbol>
   </defs>
 </svg>
 
-<div class="announce"><span class="hide-m">Atendimento a domicílio em João Pessoa · </span><b>chame no WhatsApp</b><span class="hide-m"> e a Zayra vai até você</span><span class="show-m"> · a Zayra vai até você</span></div>
+<div class="topbar" id="topbar">
+  <div class="msg on"><span>Atendimento <b>a domicílio</b> em João Pessoa</span></div>
+  <div class="msg"><span>Shopping Terceirão · <b>Box 218</b> · Centro</span></div>
+  <div class="msg"><span>Multifocais com <b>medição no rosto</b></span></div>
+</div>
 
-<header class="nav" id="nav">
+<header class="hdr" id="hdr">
   <div class="wrap">
-    <a href="#topo" class="brand" aria-label="Zayra Ótica, início">
+    <button class="burger" aria-label="Abrir menu" id="openMenu"><svg class="ico"><use href="#i-menu"/></svg></button>
+    <a href="#topo" class="logo" aria-label="Zayra Ótica, início">
       <svg><use href="#logo"/></svg>
       <span class="wm"><b>ZAYRA</b><small>ÓTICA</small></span>
     </a>
-    <ul>
-      <li><a href="#estilos">Estilos</a></li>
-      <li><a href="#colecao">Armações</a></li>
+    <ul class="menu">
+      <li class="has">
+        <a href="#produtos">Óculos de grau</a>
+        <div class="mega">
+          <div class="wrap">
+            <div><h4>Para quem</h4><ul>
+              <li><a href="#produtos" data-filter="feminino">Feminino</a></li>
+              <li><a href="#produtos" data-filter="masculino">Masculino</a></li>
+              <li><a href="#produtos" data-filter="todos">Ver todos</a></li>
+            </ul></div>
+            <div><h4>Material</h4><ul>
+              <li><a href="#produtos" data-filter="metal">Metal</a></li>
+              <li><a href="#produtos" data-filter="acetato">Acetato</a></li>
+              <li><a href="#produtos" data-filter="transparente">Transparente</a></li>
+            </ul></div>
+            <div><h4>Formato</h4><ul>
+              <li><a href="#produtos" data-q="redond">Redondo</a></li>
+              <li><a href="#produtos" data-q="quadrad">Quadrado</a></li>
+              <li><a href="#produtos" data-q="oval">Oval</a></li>
+              <li><a href="#guia">Qual combina comigo?</a></li>
+            </ul></div>
+            <a class="promo" href="#estilos"><img src="img/modelo-aro-redondo.jpg" alt="" loading="lazy"><span>Discreta<br><em>ou marcante?</em></span></a>
+          </div>
+        </div>
+      </li>
       <li><a href="#multifocais">Multifocais</a></li>
-      <li><a href="#domicilio">Domicílio</a></li>
-      <li><a href="#visita">Visite</a></li>
+      <li><a href="#domicilio">Atendimento em casa</a></li>
+      <li><a href="#guia">Guia de rosto</a></li>
+      <li><a href="#loja">A loja</a></li>
     </ul>
-    <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span>WhatsApp</span></a>
+    <div class="tools">
+      <button aria-label="Buscar" id="openSearch"><svg class="ico"><use href="#i-search"/></svg></button>
+      <a href="#produtos" aria-label="Favoritos" class="hide-s"><svg class="ico"><use href="#i-heart"/></svg><span class="count" id="favCount">0</span></a>
+      <a href="#loja" aria-label="Como chegar" class="hide-s"><svg class="ico"><use href="#i-pin"/></svg></a>
+      <a href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#wa"/></svg></a>
+    </div>
   </div>
 </header>
 
-<main id="topo">
-
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow line rv">Ótica no Centro de João Pessoa</span>
-      <h1 class="rv d1"><span class="thin">Seus óculos</span><br>também fazem<br><em>parte do look.</em></h1>
-      <p class="lead rv d2">Óculos de grau e multifocais escolhidos com calma, provados no rosto e ajustados por quem entende. Um detalhe que muda como você enxerga e como você é vista.</p>
-      <div class="cta rv d3">
-        <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Ver modelos no WhatsApp</a>
-        <a class="btn btn-ghost" href="#visita">Como chegar</a>
-      </div>
-      <div class="facts rv d3">
-        <div><b>Grau &amp; multifocal</b>do simples ao progressivo</div>
-        <div><b>Box 218</b>Shopping Terceirão</div>
-        <div><b>Em casa</b>atendimento a domicílio</div>
-      </div>
+<div class="layer drawer" id="drawer" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-label="Menu">
+    <div class="ph"><a class="logo" href="#topo" data-close><svg style="width:36px;height:36px"><use href="#logo"/></svg><span class="wm"><b style="font-size:.9rem">ZAYRA</b><small>ÓTICA</small></span></a><button aria-label="Fechar menu" data-close style="width:44px;height:44px;display:grid;place-items:center"><svg class="ico"><use href="#i-x"/></svg></button></div>
+    <nav>
+      <a href="#produtos" data-close data-filter="feminino">Feminino <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#produtos" data-close data-filter="masculino">Masculino <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#produtos" data-close data-filter="todos">Todas as armações <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#multifocais" data-close>Multifocais <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#domicilio" data-close>Atendimento em casa <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#guia" data-close>Guia de rosto <svg class="ico"><use href="#i-right"/></svg></a>
+      <a href="#loja" data-close>A loja <svg class="ico"><use href="#i-right"/></svg></a>
+    </nav>
+    <div class="foot">
+      <a class="btn btn-wa" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar no WhatsApp</a>
+      <small style="color:var(--muted)">Shopping Terceirão · Box 218 · Centro de João Pessoa</small>
     </div>
-
-    <div class="hero-art rv d1">
-      <svg class="arc" viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M60 120 A170 170 0 0 1 360 170" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      <div class="main"><img src="img/modelo-dourado.jpg" alt="Modelo usando óculos de metal dourado com corrente"></div>
-      <div class="chip"><img src="img/aro-dourado-redondo.jpg" alt="Armação redonda dourada sobre fundo bege"></div>
-      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
-        <circle cx="60" cy="60" r="58" fill="#FBF8F3"/>
-        <g class="rot">
-          <defs><path id="circ" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
-          <text font-family="Jost, sans-serif" font-size="9.5" letter-spacing="3.2" fill="currentColor"><textPath href="#circ">ZAYRA ÓTICA · JOÃO PESSOA · BOX 218 ·</textPath></text>
-        </g>
-        <use href="#logo" x="38" y="38" width="44" height="44"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<div class="ribbon" aria-hidden="true">
-  <div class="track">
-    <span>Óculos de grau</span><span>Multifocais</span><span>Prova no rosto</span><span>Ajuste na hora</span><span>Atendimento a domicílio</span><span>Centro de João Pessoa</span>
-    <span>Óculos de grau</span><span>Multifocais</span><span>Prova no rosto</span><span>Ajuste na hora</span><span>Atendimento a domicílio</span><span>Centro de João Pessoa</span>
   </div>
 </div>
 
-<!-- ESTILOS -->
-<section class="sec styles" id="estilos">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow line rv">Qual é a sua?</span>
-        <h2 class="rv d1">Discreta <em>ou</em> marcante?</h2>
-      </div>
-      <div class="switch rv d2" role="group" aria-label="Escolha um estilo">
-        <span class="pill" id="pill"></span>
-        <button aria-pressed="true" data-style="discreta">Discreta</button>
-        <button aria-pressed="false" data-style="marcante">Marcante</button>
+<div class="layer search" id="search" aria-hidden="true">
+  <div class="scrim" data-close></div>
+  <div class="box" role="dialog" aria-label="Buscar armações">
+    <div class="wrap">
+      <form id="searchForm">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <label for="q" class="sr">Buscar</label>
+        <input id="q" type="search" placeholder="Buscar: redonda, dourada, preta…" autocomplete="off">
+        <button type="button" aria-label="Fechar busca" data-close style="width:40px;height:40px;display:grid;place-items:center"><svg class="ico"><use href="#i-x"/></svg></button>
+      </form>
+      <div class="sug"><span>Mais buscados</span>
+        <button class="chip" data-s="dourad">Dourada</button>
+        <button class="chip" data-s="redond">Redonda</button>
+        <button class="chip" data-s="tartaruga">Tartaruga</button>
+        <button class="chip" data-s="transparente">Transparente</button>
+        <button class="chip" data-s="pret">Preta</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="style-stage">
-      <div class="style-copy" id="styleCopy">
-        <span class="eyebrow" id="sEyebrow">Estilo 01 · Discreta</span>
-        <h3 id="sTitle">Leve, fina, quase <em>invisível.</em></h3>
-        <p class="lead" id="sText">Metal dourado, aros finos ou sem aro. Para quem quer enxergar bem sem que os óculos roubem a cena do rosto.</p>
-        <ul id="sList"><li>Metal dourado e titânio</li><li>Aro fino, fio de nylon ou sem aro</li><li>Combina com trabalho, festa e dia a dia</li></ul>
-        <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span id="sCta">Quero ver as discretas</span></a>
+<main id="topo">
+
+<section class="hero" id="hero" aria-roledescription="carrossel" aria-label="Destaques">
+  <div class="slides">
+    <article class="slide on" aria-label="1 de 3">
+      <div class="txt">
+        <span class="over">Nova seleção · Metal dourado</span>
+        <h1>Seus óculos também fazem <em>parte do look.</em></h1>
+        <p>Armações escolhidas a dedo, provadas no rosto e ajustadas por quem entende. No Centro de João Pessoa.</p>
+        <div class="cta"><a class="btn btn-ink" href="#produtos">Ver armações</a><a class="btn btn-line" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">Pedir fotos</a></div>
       </div>
-      <div class="style-imgs">
-        <figure><img id="sImg1" src="img/modelo-aro-redondo.jpg" alt="Modelo com óculos redondo de metal fino"></figure>
-        <figure><img id="sImg2" src="img/oval-dourado-fundo-branco.jpg" alt="Armação oval dourada"></figure>
+      <div class="pic"><img src="img/modelo-dourado.jpg" alt="Modelo usando óculos de metal dourado com corrente" style="object-position:50% 30%"></div>
+    </article>
+    <article class="slide dark" aria-label="2 de 3">
+      <div class="txt">
+        <span class="over">Multifocais</span>
+        <h2>Perto, meio e longe <em>num óculos só.</em></h2>
+        <p>Medição feita no seu rosto, com a armação que você escolheu. Sem chute e sem compra errada pela internet.</p>
+        <div class="cta"><a class="btn btn-white" href="#multifocais">Como funciona</a></div>
       </div>
+      <div class="pic"><img src="img/modelo-senior.jpg" alt="Senhora sorrindo com óculos de acetato" style="object-position:50% 28%"></div>
+    </article>
+    <article class="slide sand" aria-label="3 de 3">
+      <div class="txt">
+        <span class="over">Zayra em casa</span>
+        <h2>Não pode vir? <em>A ótica vai até você.</em></h2>
+        <p>Levamos uma seleção de armações até a sua casa, em João Pessoa. É só combinar pelo WhatsApp.</p>
+        <div class="cta"><a class="btn btn-wa" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar visita</a></div>
+      </div>
+      <div class="pic"><img src="img/equipe-mostruario.jpg" alt="Atendente da Zayra com o mostruário de armações" style="object-position:50% 30%"></div>
+    </article>
+  </div>
+  <div class="hero-nav" id="heroNav"></div>
+  <div class="hero-arrows">
+    <button aria-label="Slide anterior" data-d="-1"><svg class="ico"><use href="#i-left"/></svg></button>
+    <button aria-label="Próximo slide" data-d="1"><svg class="ico"><use href="#i-right"/></svg></button>
+  </div>
+</section>
+
+<section class="benefits" aria-label="Diferenciais">
+  <div class="wrap">
+    <div class="benefit"><svg><use href="#b-home"/></svg><div><b>Atendimento em casa</b><span>Levamos o mostruário até você</span></div></div>
+    <div class="benefit"><svg><use href="#b-ruler"/></svg><div><b>Medição no rosto</b><span>Essencial para multifocal</span></div></div>
+    <div class="benefit"><svg><use href="#b-tool"/></svg><div><b>Ajuste da armação</b><span>Firme e confortável</span></div></div>
+    <div class="benefit"><svg><use href="#b-chat"/></svg><div><b>Modelos no WhatsApp</b><span>Veja antes de sair de casa</span></div></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-top rv"><div><span class="over">Compre por categoria</span><h2 class="h-sec">Encontre o seu par</h2></div></div>
+    <div class="cats">
+      <a class="cat rv" href="#produtos" data-filter="feminino"><img src="img/modelo-aro-redondo.jpg" alt="Óculos femininos" loading="lazy" style="object-position:50% 20%"><div class="lab"><b>Feminino</b><span>Ver modelos <svg><use href="#i-arrow"/></svg></span></div></a>
+      <a class="cat rv" href="#produtos" data-filter="masculino"><img src="img/modelo-masculino.jpg" alt="Óculos masculinos" loading="lazy" style="object-position:50% 20%"><div class="lab"><b>Masculino</b><span>Ver modelos <svg><use href="#i-arrow"/></svg></span></div></a>
+      <a class="cat rv" href="#multifocais"><img src="img/modelo-senior.jpg" alt="Óculos multifocais" loading="lazy" style="object-position:50% 25%"><div class="lab"><b>Multifocais</b><span>Saiba mais <svg><use href="#i-arrow"/></svg></span></div></a>
+      <a class="cat rv" href="#produtos" data-filter="metal"><img src="img/cliente-aro-fino.jpg" alt="Óculos de metal e sem aro" loading="lazy"><div class="lab"><b>Metal &amp; sem aro</b><span>Ver modelos <svg><use href="#i-arrow"/></svg></span></div></a>
     </div>
   </div>
 </section>
 
-<!-- COLEÇÃO -->
-<section class="sec" id="colecao">
+<section class="sec" id="produtos" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow line rv">No mostruário</span>
-        <h2 class="rv d1">Armações para <em>cada rosto.</em></h2>
+    <div class="sec-top rv">
+      <div><span class="over">No mostruário</span><h2 class="h-sec">Mais procurados</h2></div>
+      <div class="tabs" role="group" aria-label="Filtrar armações" id="tabs">
+        <button class="tab" aria-pressed="true" data-f="todos">Todos</button>
+        <button class="tab" aria-pressed="false" data-f="feminino">Feminino</button>
+        <button class="tab" aria-pressed="false" data-f="masculino">Masculino</button>
+        <button class="tab" aria-pressed="false" data-f="metal">Metal</button>
+        <button class="tab" aria-pressed="false" data-f="acetato">Acetato</button>
+        <button class="tab" aria-pressed="false" data-f="transparente">Transparente</button>
       </div>
-      <p class="lead rv d2">Do acetato tartaruga ao metal dourado. Modelos nacionais e importados: peça fotos pelo WhatsApp ou venha provar no Box 218.</p>
     </div>
-    <div class="grid-col">
-      <a class="card rv" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
-        <figure><img src="img/aro-dourado-redondo.jpg" alt="Armação redonda de metal dourado" loading="lazy"></figure>
-        <span class="ask">Pedir fotos deste estilo</span>
-        <div class="meta"><h3>Metal redondo</h3><span>Dourado</span></div>
-      </a>
-      <a class="card rv d1" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
-        <figure><img src="img/aro-tartaruga.jpg" alt="Armação redonda de acetato tartaruga" loading="lazy"></figure>
-        <span class="ask">Pedir fotos deste estilo</span>
-        <div class="meta"><h3>Tartaruga</h3><span>Acetato</span></div>
-      </a>
-      <a class="card rv d2" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
-        <figure><img src="img/aro-preto.jpg" alt="Armação quadrada de acetato preto" loading="lazy"></figure>
-        <span class="ask">Pedir fotos deste estilo</span>
-        <div class="meta"><h3>Preto clássico</h3><span>Quadrado</span></div>
-      </a>
-      <a class="card rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
-        <figure><img src="img/aro-transparente.jpg" alt="Armação transparente com hastes nude" loading="lazy"></figure>
-        <span class="ask">Pedir fotos deste estilo</span>
-        <div class="meta"><h3>Cristal</h3><span>Transparente</span></div>
-      </a>
-    </div>
+    <div class="searchnote" id="searchNote"><span>Resultados para <b id="searchTerm"></b></span><button id="clearSearch">limpar busca</button></div>
+    <div class="grid" id="grid"></div>
+    <div class="more rv"><a class="btn btn-line" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">Ver mais modelos no WhatsApp</a></div>
   </div>
 </section>
 
-<!-- GUIA DE ROSTO -->
+<section class="split-wrap" id="estilos">
+  <div class="split-head"><span>Qual é a sua?</span></div>
+  <div class="split">
+    <a href="#produtos" data-filter="metal"><img src="img/modelo-aro-redondo.jpg" alt="Modelo com óculos discreto de metal fino" loading="lazy" style="object-position:50% 18%">
+      <div class="lab"><span class="over">Estilo 01</span><b>Discreta</b><span class="btn btn-white">Ver metal</span></div></a>
+    <a href="#produtos" data-filter="acetato"><img src="img/modelo-bege.jpg" alt="Modelo segurando óculos marcante de acetato preto" loading="lazy" style="object-position:50% 12%">
+      <div class="lab"><span class="over">Estilo 02</span><b>Marcante</b><span class="btn btn-white">Ver acetato</span></div></a>
+  </div>
+</section>
+
 <section class="sec guide" id="guia">
   <div class="wrap">
-    <div>
-      <span class="eyebrow line rv">Guia rápido</span>
-      <h2 class="rv d1">Qual armação <em>combina</em> com você?</h2>
-      <p class="lead rv d2" style="margin-top:18px">Toque no formato que mais parece com o seu rosto. Na loja, a gente confirma provando: o espelho sempre tem a palavra final.</p>
-      <div class="faces rv d3" role="group" aria-label="Formato do rosto">
+    <div class="rv">
+      <span class="over">Guia rápido</span>
+      <h2 class="h-sec" style="margin-top:10px">Qual armação combina com o seu rosto?</h2>
+      <p style="color:var(--muted);font-weight:300;margin-top:14px;max-width:46ch">Toque no formato mais parecido com o seu. Na loja a gente confirma provando: o espelho sempre tem a palavra final.</p>
+      <div class="faces" role="group" aria-label="Formato do rosto">
         <button class="face" aria-pressed="true" data-face="oval"><svg viewBox="0 0 44 54"><ellipse cx="22" cy="27" rx="16" ry="23" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Oval</button>
         <button class="face" aria-pressed="false" data-face="redondo"><svg viewBox="0 0 44 54"><circle cx="22" cy="27" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Redondo</button>
         <button class="face" aria-pressed="false" data-face="quadrado"><svg viewBox="0 0 44 54"><rect x="5" y="6" width="34" height="42" rx="7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Quadrado</button>
         <button class="face" aria-pressed="false" data-face="coracao"><svg viewBox="0 0 44 54"><path d="M4 12 Q22 2 40 12 Q40 34 22 50 Q4 34 4 12Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Coração</button>
       </div>
     </div>
-    <div class="result rv d2" aria-live="polite">
-      <span class="num" id="fNum">01</span>
-      <span class="eyebrow" id="fEyebrow">Rosto oval</span>
-      <h3 id="fTitle">Sorte sua: <em>quase tudo cai bem.</em></h3>
-      <p id="fText">O rosto oval é equilibrado, então dá pra brincar. Aposte em armações um pouco mais largas que o rosto para manter a proporção.</p>
+    <div class="result rv" aria-live="polite">
+      <span class="over" id="fEyebrow">Rosto oval</span>
+      <h3 id="fTitle"></h3>
+      <p id="fText"></p>
       <div class="frames" id="fFrames"></div>
-      <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Pedir sugestões</a>
+      <a class="btn btn-ink" href="#produtos" id="fBtn">Ver armações indicadas</a>
     </div>
   </div>
 </section>
 
-<!-- MULTIFOCAIS -->
-<section class="sec multi" id="multifocais">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow line rv" style="color:var(--gold-2)">Multifocais</span>
-      <h2 class="rv d1">Perto, meio e longe <em>num óculos só.</em></h2>
-      <p class="lead rv d2" style="margin-top:20px">Multifocal comprado pela internet costuma dar errado porque depende de medida no rosto. Aqui ela é feita olhando para você, com a armação que você vai usar.</p>
-      <ul class="pains rv d2">
-        <li><span class="n">i</span><div><b>Medição no seu rosto</b><span>Altura e distância das pupilas tiradas com a armação escolhida, não por estimativa.</span></div></li>
-        <li><span class="n">ii</span><div><b>Armação certa para a lente</b><span>Nem toda armação aceita multifocal bem. A gente orienta antes de você se apaixonar.</span></div></li>
-        <li><span class="n">iii</span><div><b>Ajuste depois da entrega</b><span>Hastes, plaquetas e encaixe ajustados para o óculos ficar firme e confortável.</span></div></li>
-      </ul>
-      <a class="btn btn-gold rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Tirar dúvidas sobre multifocal</a>
-    </div>
-    <div class="multi-img rv d1">
-      <img src="img/ajuste-otica.jpg" alt="Óculos sendo ajustado no rosto de uma cliente" loading="lazy">
-      <div class="lens">
-        <span class="eyebrow" style="color:var(--gold-2)">Como a lente trabalha</span>
-        <div class="zones"><div><b>Longe</b>topo</div><div><b>Meio</b>corredor</div><div><b>Perto</b>base</div></div>
-        <div class="bar"></div>
-      </div>
-    </div>
+<section class="feature" id="multifocais">
+  <div class="pic"><img src="img/ajuste-otica.jpg" alt="Óculos sendo ajustado no rosto da cliente" loading="lazy"></div>
+  <div class="txt rv">
+    <span class="over">Multifocais</span>
+    <h2>Enxergar bem em <em>todas as distâncias.</em></h2>
+    <p class="lead">Multifocal comprado pela internet costuma dar errado porque depende de medida no rosto. Na Zayra, ela é feita olhando para você.</p>
+    <div class="zones"><div><b>Longe</b><span>topo da lente</span></div><div><b>Meio</b><span>corredor</span></div><div><b>Perto</b><span>base da lente</span></div></div>
+    <ul class="checks">
+      <li><svg><use href="#i-check"/></svg>Altura e distância das pupilas medidas com a armação escolhida</li>
+      <li><svg><use href="#i-check"/></svg>Orientação sobre qual armação funciona melhor para a lente</li>
+      <li><svg><use href="#i-check"/></svg>Ajuste de hastes e plaquetas na entrega</li>
+    </ul>
+    <div><a class="btn btn-white" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Tirar dúvidas</a></div>
   </div>
 </section>
 
-<!-- DOMICÍLIO -->
 <section class="sec home" id="domicilio">
   <div class="wrap">
-    <div>
-      <span class="eyebrow line rv">Zayra em casa</span>
-      <h2 class="rv d1">Não pode vir? <em>A ótica vai até você.</em></h2>
-      <p class="lead rv d2" style="margin-top:20px">Ideal para quem tem rotina corrida, para idosos e para quem prefere escolher com calma, no sofá de casa.</p>
+    <div class="rv">
+      <span class="over">Zayra em casa</span>
+      <h2>A ótica vai <em>até você.</em></h2>
+      <p class="lead">Para quem tem a rotina corrida, para quem tem dificuldade de se deslocar e para quem gosta de escolher com calma.</p>
       <ol class="steps">
-        <li class="rv"><span class="k">1</span><div><h3>Chame no WhatsApp</h3><p>Conte o que procura e mande sua receita, se já tiver.</p></div></li>
-        <li class="rv d1"><span class="k">2</span><div><h3>Combine dia e horário</h3><p>A gente leva uma seleção de armações pensada para você.</p></div></li>
-        <li class="rv d2"><span class="k">3</span><div><h3>Prove e escolha em casa</h3><p>Medição e escolha ali mesmo. Depois é só esperar seus óculos prontos.</p></div></li>
+        <li><b>Chame no WhatsApp</b><span>Conte o que procura e mande sua receita.</span></li>
+        <li><b>Combine o horário</b><span>Separamos armações pensadas para você.</span></li>
+        <li><b>Escolha em casa</b><span>Prova e medição ali mesmo, sem pressa.</span></li>
       </ol>
-      <div style="margin-top:34px" class="rv d3"><a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar visita em casa</a></div>
+      <a class="btn btn-wa" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar atendimento em casa</a>
     </div>
-    <div class="home-imgs rv d1">
-      <figure class="a"><img src="img/equipe-mostruario.jpg" alt="Atendente da Zayra organizando o mostruário de armações" loading="lazy"></figure>
-      <figure class="b"><img src="img/mostruario-mao.jpg" alt="Mão escolhendo armação transparente no mostruário" loading="lazy"></figure>
-      <span class="tag"><i></i>Agenda aberta</span>
+    <div class="pics rv">
+      <figure><img src="img/equipe-camisa.jpg" alt="Equipe Zayra mostrando uma armação" loading="lazy"></figure>
+      <figure><img src="img/mostruario-mao.jpg" alt="Mostruário de armações" loading="lazy"></figure>
     </div>
   </div>
 </section>
 
-<!-- CLIENTES -->
-<section class="sec people" id="clientes">
+<section class="sec" style="padding-bottom:0">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow line rv">Inspiração</span>
-        <h2 class="rv d1">Como fica <em>no rosto.</em></h2>
-      </div>
-      <div class="strip-ctrl rv d2">
-        <button aria-label="Anterior" data-dir="-1"><svg style="transform:rotate(180deg)"><use href="#arrow"/></svg></button>
-        <button aria-label="Próximo" data-dir="1"><svg><use href="#arrow"/></svg></button>
-      </div>
+    <div class="sec-top rv">
+      <div><span class="over">Siga a gente</span><h2 class="h-sec">@zayraotica</h2></div>
+      <a class="tlink" href="https://instagram.com/zayraotica" target="_blank" rel="noopener">Ver no Instagram <svg class="ico" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
-  <div class="strip" id="strip">
-    <figure><div class="ph"><img src="img/cliente-sorriso.jpg" alt="Cliente sorrindo com óculos novos" loading="lazy"></div><figcaption><b>Gatinho suave</b>Acetato nude</figcaption></figure>
-    <figure><div class="ph"><img src="img/modelo-cidade.jpg" alt="Mulher sorrindo com óculos de acetato preto" loading="lazy"></div><figcaption><b>Acetato preto</b>Clássico do dia a dia</figcaption></figure>
-    <figure><div class="ph"><img src="img/cliente-carro.jpg" alt="Cliente com óculos oval de metal" loading="lazy"></div><figcaption><b>Oval de metal</b>Detalhe nas hastes</figcaption></figure>
-    <figure><div class="ph"><img src="img/cliente-oval-dourado.jpg" alt="Cliente com óculos oval dourado" loading="lazy"></div><figcaption><b>Oval dourado</b>Estilo discreto</figcaption></figure>
-    <figure><div class="ph"><img src="img/modelo-sorriso.jpg" alt="Mulher sorrindo com óculos redondo de metal dourado" loading="lazy"></div><figcaption><b>Redondo dourado</b>Leve e alegre</figcaption></figure>
-    <figure><div class="ph"><img src="img/cliente-ajuste.jpg" alt="Cliente ajustando os óculos no rosto" loading="lazy"></div><figcaption><b>Meio aro</b>Leve no rosto</figcaption></figure>
-    <figure><div class="ph"><img src="img/cliente-aro-fino.jpg" alt="Cliente com óculos sem aro" loading="lazy"></div><figcaption><b>Sem aro</b>Quase invisível</figcaption></figure>
-    <figure><div class="ph"><img src="img/equipe-camisa.jpg" alt="Atendente da Zayra segurando uma armação" loading="lazy"></div><figcaption><b>Feito com cuidado</b>Equipe Zayra</figcaption></figure>
+  <div class="insta-grid">
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/cliente-sorriso.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/aro-tartaruga.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/cliente-carro.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/aro-dourado-redondo.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/cliente-oval-dourado.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
+    <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram da Zayra"><img src="img/equipe-mostruario.jpg" alt="" loading="lazy"><svg><use href="#i-insta"/></svg></a>
   </div>
 </section>
 
-<!-- VISITA -->
-<section class="sec visit" id="visita">
+<section class="sec faq">
+  <div class="wrap">
+    <div class="rv"><span class="over">Dúvidas</span><h2 class="h-sec" style="margin-top:10px">Perguntas frequentes</h2><p style="color:var(--muted);font-weight:300;margin:14px 0 24px">Não achou sua resposta? Chama a gente.</p><a class="btn btn-wa" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Perguntar no WhatsApp</a></div>
+    <div class="rv">
+      <details open><summary>Onde fica a loja?<i></i></summary><p>No Shopping Terceirão, Box 218, no Centro de João Pessoa. A entrada mais próxima é pela Avenida Duque de Caxias.</p></details>
+      <details><summary>Como funciona o atendimento a domicílio?<i></i></summary><p>Você chama no WhatsApp, conta o que procura e combina dia e horário. A Zayra leva uma seleção de armações até você para provar e escolher em casa.</p></details>
+      <details><summary>Vocês fazem óculos multifocais?<i></i></summary><p>Sim. A medição é feita no seu rosto, com a armação escolhida, que é o que garante a adaptação da lente multifocal.</p></details>
+      <details><summary>Posso ver os modelos antes de ir até a loja?<i></i></summary><p>Pode. Peça pelo WhatsApp e a gente envia fotos dos modelos que combinam com o que você procura.</p></details>
+      <details><summary>Qual o valor dos óculos?<i></i></summary><p>Depende da armação e da lente indicada na sua receita. Mande sua receita pelo WhatsApp para receber um orçamento.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec store" id="loja">
   <div class="wrap">
     <div class="box rv">
       <div class="info">
-        <span class="eyebrow line" style="color:var(--gold-2)">Visite a loja</span>
-        <h2 style="margin-top:16px">Experimente <em>no Terceirão.</em></h2>
+        <span class="over">Visite a loja</span>
+        <h2>Experimente <em>no Terceirão.</em></h2>
         <dl>
-          <div><dt>Endereço</dt><dd>Shopping Terceirão, Box 218<small>Centro de João Pessoa, PB · entrada pela Av. Duque de Caxias</small></dd></div>
-          <div><dt>Atendimento</dt><dd>Na loja ou a domicílio<small>Consulte horários e disponibilidade pelo WhatsApp</small></dd></div>
+          <div><dt>Endereço</dt><dd>Shopping Terceirão, Box 218<small>Centro, João Pessoa · PB · entrada pela Av. Duque de Caxias</small></dd></div>
+          <div><dt>Atendimento</dt><dd>Na loja ou a domicílio<small>Consulte horários pelo WhatsApp</small></dd></div>
           <div><dt>Instagram</dt><dd><a href="https://instagram.com/zayraotica" target="_blank" rel="noopener">@zayraotica</a></dd></div>
         </dl>
         <div class="cta">
-          <a class="btn btn-gold" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Combinar visita</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Shopping+Terceir%C3%A3o+Jo%C3%A3o+Pessoa" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Abrir no mapa</a>
+          <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&query=Shopping+Terceir%C3%A3o+Jo%C3%A3o+Pessoa" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Como chegar</a>
+          <a class="btn btn-line" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>WhatsApp</a>
         </div>
       </div>
-      <div class="map">
-        <iframe title="Mapa do Shopping Terceirão, João Pessoa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Shopping+Terceir%C3%A3o,+Jo%C3%A3o+Pessoa+-+PB&output=embed"></iframe>
-      </div>
+      <div class="map"><iframe title="Mapa do Shopping Terceirão, João Pessoa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Shopping+Terceir%C3%A3o,+Jo%C3%A3o+Pessoa+-+PB&output=embed"></iframe></div>
     </div>
-  </div>
-</section>
-
-<!-- FINAL -->
-<section class="final">
-  <div class="wrap">
-    <svg class="logo-big rv" viewBox="0 0 100 100"><use href="#logo"/></svg>
-    <h2 class="rv d1">Olhar com mais estilo, <em>conforto e confiança.</em></h2>
-    <p class="lead rv d2">Mande uma mensagem e receba fotos dos modelos que combinam com você, antes mesmo de sair de casa.</p>
-    <a class="btn btn-dark rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar com a Zayra</a>
   </div>
 </section>
 </main>
 
+<div class="pre-foot">
+  <div class="wrap"><b>Receba fotos dos modelos<br>antes de sair de casa.</b><a class="btn btn-white" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Chamar no WhatsApp</a></div>
+</div>
+
 <footer>
   <div class="wrap">
-    <a href="#topo" class="brand"><svg style="width:34px;height:34px"><use href="#logo"/></svg><span class="wm"><b style="font-size:.85rem">ZAYRA</b><small>ÓTICA</small></span></a>
-    <nav><a href="#colecao">Armações</a><a href="#multifocais">Multifocais</a><a href="#domicilio">Domicílio</a><a href="https://instagram.com/zayraotica" target="_blank" rel="noopener">Instagram</a></nav>
-    <span>Shopping Terceirão · Box 218 · Centro, João Pessoa · PB</span>
+    <div class="cols">
+      <div>
+        <a href="#topo" class="logo"><svg><use href="#logo"/></svg><span class="wm"><b>ZAYRA</b><small>ÓTICA</small></span></a>
+        <p class="about">Óculos de grau e multifocais no Centro de João Pessoa, com atendimento na loja e a domicílio.</p>
+        <div class="social">
+          <a href="https://instagram.com/zayraotica" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+          <a href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Óculos</h4><ul>
+        <li><a href="#produtos" data-filter="feminino">Feminino</a></li>
+        <li><a href="#produtos" data-filter="masculino">Masculino</a></li>
+        <li><a href="#multifocais">Multifocais</a></li>
+        <li><a href="#guia">Guia de rosto</a></li>
+      </ul></div>
+      <div><h4>Atendimento</h4><ul>
+        <li><a href="#domicilio">Atendimento em casa</a></li>
+        <li><a href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="#loja">Como chegar</a></li>
+      </ul></div>
+      <div><h4>Loja</h4><ul>
+        <li>Shopping Terceirão</li>
+        <li>Box 218</li>
+        <li>Entrada pela Duque de Caxias</li>
+        <li>Centro · João Pessoa · PB</li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Zayra Ótica · João Pessoa, PB</span><span>Imagens ilustrativas. Consulte os modelos disponíveis.</span></div>
   </div>
 </footer>
 
-<a class="fab" id="fab" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg>Fale conosco</a>
+<a class="fab" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg><span class="tip">Fale com a Zayra</span></a>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
 (() => {
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const WA = 'https://wa.me/message/Y6SNEQ7AV47CN1';
+  const store = { get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d } catch(e){ return d } }, set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)) } catch(e){} } };
+  $('#yr').textContent = new Date().getFullYear();
 
-  // nav + fab
-  const nav = $('#nav'), fab = $('#fab');
-  const onScroll = () => { const y = scrollY; nav.classList.toggle('scrolled', y > 10); fab.classList.toggle('show', y > 600); };
-  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  /* top bar */
+  const msgs = $$('#topbar .msg'); let mi = 0;
+  setInterval(() => { const cur = msgs[mi]; cur.classList.remove('on'); cur.classList.add('out'); setTimeout(() => cur.classList.remove('out'), 650); mi = (mi + 1) % msgs.length; msgs[mi].classList.add('on'); }, 4200);
 
-  // reveal
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -40px'});
-  $$('.rv').forEach(el => io.observe(el));
+  /* layers */
+  const openLayer = el => { el.classList.add('open'); el.setAttribute('aria-hidden','false'); document.body.classList.add('lock'); };
+  const closeLayer = el => { el.classList.remove('open'); el.setAttribute('aria-hidden','true'); document.body.classList.remove('lock'); };
+  const drawer = $('#drawer'), search = $('#search');
+  $('#openMenu').onclick = () => openLayer(drawer);
+  $('#openSearch').onclick = () => { openLayer(search); setTimeout(() => $('#q').focus(), 300); };
+  [drawer, search].forEach(L => L.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeLayer(L); }));
+  addEventListener('keydown', e => { if (e.key === 'Escape') { closeLayer(drawer); closeLayer(search); } });
 
-  // style switch
-  const styles = {
-    discreta: {eb:'Estilo 01 · Discreta', t:'Leve, fina, quase <em>invisível.</em>', p:'Metal dourado, aros finos ou sem aro. Para quem quer enxergar bem sem que os óculos roubem a cena do rosto.', l:['Metal dourado e titânio','Aro fino, fio de nylon ou sem aro','Combina com trabalho, festa e dia a dia'], c:'Quero ver as discretas', i1:['img/modelo-aro-redondo.jpg','Modelo com óculos redondo de metal fino'], i2:['img/oval-dourado-fundo-branco.jpg','Armação oval dourada']},
-    marcante: {eb:'Estilo 02 · Marcante', t:'Presença de quem <em>chega e é notada.</em>', p:'Acetato encorpado, tartaruga e preto. A armação vira o acessório principal e dá personalidade ao rosto inteiro.', l:['Acetato preto, tartaruga e cores','Formas quadradas, redondas e gatinho','Assume o protagonismo do look'], c:'Quero ver as marcantes', i1:['img/modelo-bege.jpg','Modelo segurando óculos de acetato preto'], i2:['img/aro-tartaruga.jpg','Armação de acetato tartaruga']}
-  };
-  const pill = $('#pill'), btns = $$('.switch button'), copy = $('#styleCopy');
-  const placePill = b => { pill.style.width = b.offsetWidth + 'px'; pill.style.transform = `translateX(${b.offsetLeft - 5}px)`; };
-  const setStyle = (key, b) => {
-    btns.forEach(x => x.setAttribute('aria-pressed', x === b)); placePill(b);
-    const s = styles[key]; copy.classList.add('out');
-    const imgs = [$('#sImg1'), $('#sImg2')]; imgs.forEach(i => i.classList.add('fade-swap'));
-    setTimeout(() => {
-      $('#sEyebrow').textContent = s.eb; $('#sTitle').innerHTML = s.t; $('#sText').textContent = s.p;
-      $('#sList').innerHTML = s.l.map(x => `<li>${x}</li>`).join(''); $('#sCta').textContent = s.c;
-      [[imgs[0], s.i1], [imgs[1], s.i2]].forEach(([el, [src, alt]]) => { el.onload = () => el.classList.remove('fade-swap'); el.src = src; el.alt = alt; if (el.complete) el.classList.remove('fade-swap'); });
-      copy.classList.remove('out');
-    }, 320);
-  };
-  btns.forEach(b => b.addEventListener('click', () => setStyle(b.dataset.style, b)));
-  const initPill = () => placePill(btns.find(b => b.getAttribute('aria-pressed') === 'true'));
-  addEventListener('resize', initPill); (document.fonts ? document.fonts.ready : Promise.resolve()).then(initPill); initPill();
+  /* hero slider */
+  const hero = $('#hero'), slides = $$('.slide'), nav = $('#heroNav'); let si = 0, timer;
+  slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'bar'; b.setAttribute('aria-label', 'Ir para o destaque ' + (i + 1)); b.innerHTML = '<i></i>'; b.onclick = () => go(i); nav.appendChild(b); });
+  const bars = $$('.hero-nav .bar');
+  function go(i){
+    si = (i + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === si));
+    bars.forEach((b, k) => { b.classList.remove('on'); b.classList.toggle('done', k < si); void b.offsetWidth; if (k === si) b.classList.add('on'); });
+    hero.classList.toggle('on-dark', slides[si].classList.contains('dark'));
+    clearTimeout(timer); timer = setTimeout(() => go(si + 1), 6000);
+  }
+  $$('.hero-arrows button').forEach(b => b.onclick = () => go(si + +b.dataset.d));
+  let tx = 0; hero.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+  hero.addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) go(si + (d < 0 ? 1 : -1)); });
+  go(0);
 
-  // face guide
+  /* products */
+  const P = [
+    {n:'Redonda Metal Dourada', m:'Metal · aro fino', t:['feminino','metal'], img:'aro-dourado-redondo', alt:'modelo-aro-redondo', b:'Mais procurado', sw:['#C9A15E','#1b1b1b'], k:'redonda dourada metal fina'},
+    {n:'Redonda Tartaruga', m:'Acetato · tartaruga', t:['feminino','acetato'], img:'aro-tartaruga', b:'Tendência', sw:['#6B3A1E','#1b1b1b'], k:'redonda tartaruga marrom acetato'},
+    {n:'Quadrada Preta Clássica', m:'Acetato · preto', t:['feminino','acetato'], img:'aro-preto', alt:'modelo-cidade', sw:['#111','#6B3A1E'], k:'quadrada preta preto acetato classica'},
+    {n:'Gatinho Cristal Nude', m:'Acetato · transparente', t:['feminino','acetato','transparente'], img:'aro-transparente', alt:'cliente-sorriso', b:'Novo', sw:['#EAD9C6','#F1EEE9'], k:'gatinho transparente cristal nude'},
+    {n:'Retangular Preta', m:'Acetato · preto', t:['masculino','acetato'], img:'produto-preto-retangular', alt:'modelo-masculino', sw:['#111'], k:'retangular quadrada preta preto masculino'},
+    {n:'Oval Dourada Fina', m:'Metal · dourado', t:['feminino','metal'], img:'oval-dourado-fundo-branco', alt:'cliente-oval-dourado', b:'Discreta', sw:['#C9A15E'], k:'oval dourada metal fina discreta'},
+    {n:'Hexagonal Metal Bicolor', m:'Metal · dourado e lilás', t:['feminino','metal'], img:'aro-gatinho', alt:'cliente-ajuste', sw:['#C9A15E','#8F86A8'], k:'hexagonal metal dourada bicolor'},
+    {n:'Redonda Metal Unissex', m:'Metal · preto e dourado', t:['masculino','feminino','metal'], img:'produto-metal-mesa', sw:['#1b1b1b','#C9A15E'], k:'redonda metal preta dourada unissex masculino'}
+  ];
+  let filter = 'todos', query = '';
+  const favs = new Set(store.get('zayra-favs', []));
+  const grid = $('#grid'), favCount = $('#favCount');
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const updFav = () => { favCount.textContent = favs.size; favCount.classList.toggle('on', favs.size > 0); };
+  function render(){
+    const q = norm(query);
+    const list = P.filter(p => (filter === 'todos' || p.t.includes(filter)) && (!q || norm(p.n + ' ' + p.m + ' ' + p.k).includes(q)));
+    grid.innerHTML = list.length ? list.map((p, i) => `
+      <article class="prod" style="animation-delay:${i * 50}ms">
+        <div class="img">
+          <img src="img/${p.img}.jpg" alt="${p.n}" loading="lazy">
+          ${p.alt ? `<img class="alt" src="img/${p.alt}.jpg" alt="" loading="lazy">` : ''}
+          ${p.b ? `<span class="badge ${p.b === 'Mais procurado' ? 'g' : ''}">${p.b}</span>` : ''}
+          <button class="fav" aria-label="Favoritar ${p.n}" aria-pressed="${favs.has(p.n)}" data-n="${p.n}"><svg><use href="#i-heart"/></svg></button>
+          <a class="quick" href="${WA}" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Consultar este modelo</a>
+        </div>
+        <div class="info">
+          <div class="sw">${p.sw.map(c => `<i style="background:${c}"></i>`).join('')}</div>
+          <h3>${p.n}</h3>
+          <div class="mat">${p.m}</div>
+          <div class="price">Valor sob consulta · <a href="${WA}" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+      </article>`).join('') : '<p class="empty">Nenhum modelo com esse filtro por aqui. Peça pelo WhatsApp: tem muito mais no mostruário.</p>';
+    $('#searchNote').classList.toggle('on', !!query); $('#searchTerm').textContent = query;
+  }
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('.fav'); if (!b) return;
+    const n = b.dataset.n; favs.has(n) ? favs.delete(n) : favs.add(n);
+    b.setAttribute('aria-pressed', favs.has(n)); store.set('zayra-favs', [...favs]); updFav();
+    toast(favs.has(n) ? 'Salvo nos favoritos. Mostre na loja!' : 'Removido dos favoritos');
+  });
+  const setFilter = f => { filter = f; $$('#tabs .tab').forEach(t => t.setAttribute('aria-pressed', t.dataset.f === f)); render(); };
+  $$('#tabs .tab').forEach(t => t.onclick = () => { query = ''; setFilter(t.dataset.f); });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-filter],a[data-q]'); if (!a) return;
+    if (a.dataset.filter) { query = ''; setFilter(a.dataset.filter); }
+    if (a.dataset.q) { query = a.dataset.q; setFilter('todos'); }
+  });
+  $('#clearSearch').onclick = () => { query = ''; render(); };
+  const doSearch = v => { query = v.trim(); setFilter('todos'); closeLayer(search); document.getElementById('produtos').scrollIntoView({behavior:'smooth'}); };
+  $('#searchForm').onsubmit = e => { e.preventDefault(); doSearch($('#q').value); };
+  $$('.sug .chip').forEach(c => c.onclick = () => { $('#q').value = c.textContent; doSearch(c.dataset.s); });
+  updFav(); render();
+
+  /* face guide */
   const F = {
     round:'<rect x="8" y="12" width="56" height="34" rx="17" fill="none" stroke="currentColor" stroke-width="3"/><rect x="86" y="12" width="56" height="34" rx="17" fill="none" stroke="currentColor" stroke-width="3"/>',
     circle:'<circle cx="38" cy="29" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="112" cy="29" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/>',
@@ -582,22 +838,23 @@ footer a:hover{color:var(--gold)}
   };
   const bridge = '<path d="M64 24 Q75 16 86 24" fill="none" stroke="currentColor" stroke-width="2.2"/>';
   const faces = {
-    oval:{n:'01', eb:'Rosto oval', t:'Sorte sua: <em>quase tudo cai bem.</em>', p:'O rosto oval é equilibrado, então dá pra brincar. Aposte em armações um pouco mais largas que o rosto para manter a proporção.', f:[['square','Quadrada','dá estrutura'],['cat','Gatinho','levanta o olhar'],['aviator','Aviador','clássico que não erra']]},
-    redondo:{n:'02', eb:'Rosto redondo', t:'Ângulos para <em>alongar o rosto.</em>', p:'Linhas retas e cantos marcados criam contraste com as curvas naturais e deixam o rosto mais alongado.', f:[['square','Quadrada','o melhor contraste'],['cat','Gatinho','eleva as maçãs'],['aviator','Retangular','alonga a face']]},
-    quadrado:{n:'03', eb:'Rosto quadrado', t:'Curvas para <em>suavizar traços.</em>', p:'Mandíbula marcada pede armações arredondadas ou ovais, que equilibram os ângulos e trazem leveza.', f:[['circle','Redonda','suaviza o maxilar'],['round','Oval','equilíbrio natural'],['rimless','Sem aro','leveza total']]},
-    coracao:{n:'04', eb:'Rosto coração', t:'Leveza em cima, <em>equilíbrio embaixo.</em>', p:'Testa mais larga e queixo fino combinam com armações leves, de base arredondada ou sem aro.', f:[['rimless','Sem aro','não pesa na testa'],['round','Oval','equilibra o queixo'],['circle','Redonda fina','delicada e atual']]}
+    oval:{eb:'Rosto oval', t:'Sorte sua: <em>quase tudo cai bem.</em>', p:'O rosto oval é equilibrado, então dá para brincar. Aposte em armações um pouco mais largas que o rosto.', f:[['square','Quadrada','dá estrutura'],['cat','Gatinho','levanta o olhar'],['aviator','Aviador','clássico']], q:''},
+    redondo:{eb:'Rosto redondo', t:'Ângulos para <em>alongar o rosto.</em>', p:'Linhas retas e cantos marcados contrastam com as curvas naturais e alongam o rosto.', f:[['square','Quadrada','melhor contraste'],['cat','Gatinho','eleva as maçãs'],['aviator','Retangular','alonga a face']], q:'quadrad'},
+    quadrado:{eb:'Rosto quadrado', t:'Curvas para <em>suavizar os traços.</em>', p:'Mandíbula marcada pede armações arredondadas ou ovais, que equilibram os ângulos.', f:[['circle','Redonda','suaviza o maxilar'],['round','Oval','equilíbrio'],['rimless','Sem aro','leveza']], q:'redond'},
+    coracao:{eb:'Rosto coração', t:'Leveza em cima, <em>equilíbrio embaixo.</em>', p:'Testa mais larga e queixo fino combinam com armações leves, de base arredondada ou sem aro.', f:[['rimless','Sem aro','não pesa'],['round','Oval','equilibra o queixo'],['circle','Redonda fina','delicada']], q:'oval'}
   };
-  const renderFace = k => {
-    const d = faces[k];
-    $('#fNum').textContent = d.n; $('#fEyebrow').textContent = d.eb; $('#fTitle').innerHTML = d.t; $('#fText').textContent = d.p;
-    $('#fFrames').innerHTML = d.f.map(([s, b, sm]) => `<div><svg viewBox="0 0 150 56" aria-hidden="true">${F[s]}${bridge}</svg><b>${b}</b><small>${sm}</small></div>`).join('');
-  };
-  $$('.face').forEach(b => b.addEventListener('click', () => { $$('.face').forEach(x => x.setAttribute('aria-pressed', x === b)); renderFace(b.dataset.face); }));
+  let faceQ = '';
+  const renderFace = k => { const d = faces[k]; faceQ = d.q;
+    $('#fEyebrow').textContent = d.eb; $('#fTitle').innerHTML = d.t; $('#fText').textContent = d.p;
+    $('#fFrames').innerHTML = d.f.map(([s, b, sm]) => `<div><svg viewBox="0 0 150 56" aria-hidden="true">${F[s]}${bridge}</svg><b>${b}</b><small>${sm}</small></div>`).join(''); };
+  $$('.face').forEach(b => b.onclick = () => { $$('.face').forEach(x => x.setAttribute('aria-pressed', x === b)); renderFace(b.dataset.face); });
+  $('#fBtn').onclick = () => { query = faceQ; setFilter('todos'); };
   renderFace('oval');
 
-  // strip controls
-  const strip = $('#strip');
-  $$('.strip-ctrl button').forEach(b => b.addEventListener('click', () => strip.scrollBy({left: +b.dataset.dir * (strip.querySelector('figure').offsetWidth + 16), behavior:'smooth'})));
+  let tt; function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 2200); }
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.1, rootMargin:'0px 0px -40px'});
+  $$('.rv').forEach(el => io.observe(el));
 })();
 </script>
 </body>

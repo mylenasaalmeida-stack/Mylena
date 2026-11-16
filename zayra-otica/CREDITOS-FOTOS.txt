@@ -1,0 +1,20 @@
+Fotos da pasta img/
+
+Fotos da própria Zayra Ótica (recortadas do Instagram @zayraotica):
+aro-*.jpg, cliente-*.jpg, equipe-*.jpg, mostruario-mao.jpg, oval-dourado-fundo-branco.jpg
+-> Troque pelos arquivos originais em alta resolução, mantendo o mesmo nome.
+
+Fotos de banco de imagens (Pexels, licença gratuita para uso comercial, sem necessidade de crédito):
+modelo-dourado.jpg ............ pexels.com/photo/30721036
+modelo-bege.jpg ............... pexels.com/photo/9197411
+modelo-aro-redondo.jpg ........ pexels.com/photo/1852079
+modelo-cidade.jpg ............. pexels.com/photo/1239291
+modelo-sorriso.jpg ............ pexels.com/photo/5439183
+modelo-masculino.jpg .......... pexels.com/photo/1878687
+modelo-senior.jpg ............. pexels.com/photo/5990259
+modelo-senior-2.jpg ........... pexels.com/photo/5335290 (reserva)
+ajuste-otica.jpg .............. pexels.com/photo/5752308
+produto-preto-retangular.jpg .. pexels.com/photo/18279387 (logo da marca removido)
+produto-metal-mesa.jpg ........ pexels.com/photo/28938434
+produto-trio.jpg .............. pexels.com/photo/27399360 (reserva)
+glasses-*.jpg ................. Unsplash (reserva)
