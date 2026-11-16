@@ -122,3 +122,18 @@ P2['F7-combo-cabelo-barba'] = f'''<section class="p y">{hd('Combo')}
 for n, h in P2.items():
     open(f'{n}.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="margin:0">{h}</body></html>')
 print(len(P2), 'artes novas')
+
+# ---- F8: versão de feed do vídeo "3 coisas que estragam teu corte" ----
+F8 = f'''<section class="p y">{hd('Salva esse post')}
+<div class="c"><div class="lab">Tu faz qual delas?</div>
+<div class="big" style="font-size:96px;line-height:1;margin-top:18px">3 coisas que estragam<br>teu corte em 3 dias</div>
+<div style="margin-top:40px">
+<div style="display:grid;grid-template-columns:96px 1fr;gap:0 26px;align-items:center;background:{K};color:{W};border-radius:24px;padding:20px 26px;margin-bottom:16px">
+<div class="big" style="font-size:90px;color:{Y};text-align:center">1</div><div><div class="big" style="font-size:52px">Tirar o pezinho em casa</div><div style="font-size:24px;color:#bdbab2;margin-top:6px">A linha sobe e o degradê perde o desenho.</div></div></div>
+<div style="display:grid;grid-template-columns:96px 1fr;gap:0 26px;align-items:center;background:{K};color:{W};border-radius:24px;padding:20px 26px;margin-bottom:16px">
+<div class="big" style="font-size:90px;color:{Y};text-align:center">2</div><div><div class="big" style="font-size:52px">Dormir com o cabelo molhado</div><div style="font-size:24px;color:#bdbab2;margin-top:6px">O topo acorda marcado e perde a forma.</div></div></div>
+<div style="display:grid;grid-template-columns:96px 1fr;gap:0 26px;align-items:center;background:{K};color:{W};border-radius:24px;padding:20px 26px">
+<div class="big" style="font-size:90px;color:{Y};text-align:center">3</div><div><div class="big" style="font-size:52px">Pomada demais</div><div style="font-size:24px;color:#bdbab2;margin-top:6px">Pesa, gruda o fio e o corte parece velho.</div></div></div></div></div>
+{rod('Passou de 15 dias? Agenda')}</section>'''
+open('F8-3-coisas-que-estragam.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body style="margin:0">{F8}</body></html>')
+print('F8 ok')
