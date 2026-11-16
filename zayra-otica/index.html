@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zayra Ótica · Óculos de grau em João Pessoa</title>
+<meta name="description" content="Óculos de grau e multifocais no Centro de João Pessoa. Shopping Terceirão, Box 218, entrada pela Duque de Caxias. Atendimento também a domicílio.">
+<meta name="theme-color" content="#F5EFE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EFE6; --paper:#FBF8F3; --sand:#EADFCF; --sand-2:#DCCDB6;
+  --ink:#16130F; --ink-2:#2A251F; --muted:#6F655A; --line:rgba(22,19,15,.14);
+  --gold:#A9834B; --gold-2:#C6A56F; --gold-soft:#E8D6B4;
+  --wa:#1F8F4E;
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+.eyebrow.line{display:inline-flex;align-items:center;gap:14px}
+.eyebrow.line::before{content:"";width:36px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(2.3rem,5.2vw,4rem)}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+.lead{font-size:clamp(1rem,1.4vw,1.12rem);color:var(--muted);max-width:52ch;font-weight:300}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:999px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:transform .25s,background .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-gold{background:var(--gold);color:var(--paper)}
+.btn-gold:hover{background:var(--paper);color:var(--ink)}
+.link-u{border-bottom:1px solid var(--gold);padding-bottom:2px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+
+/* announcement */
+.announce{background:var(--ink);color:var(--sand);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-align:center;padding:10px var(--gut)}
+.announce b{color:var(--gold-2);font-weight:500}
+.show-m{display:none}
+@media (max-width:640px){.hide-m{display:none}.show-m{display:inline}.announce{font-size:.64rem;letter-spacing:.16em}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:40px;height:40px}
+.brand .wm{display:flex;flex-direction:column;line-height:1}
+.brand .wm b{font-family:var(--sans);font-weight:400;letter-spacing:.42em;font-size:1rem}
+.brand .wm small{font-size:.55rem;letter-spacing:.6em;color:var(--muted);margin-top:4px}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+.nav ul a{position:relative;padding:6px 0}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
+.nav ul a:hover::after{right:0}
+.nav .btn{padding:12px 20px}
+@media (max-width:900px){.nav ul{display:none}.nav .btn span{display:none}.nav .btn{padding:12px}}
+
+/* hero */
+.hero{position:relative;padding:clamp(40px,7vw,90px) 0 clamp(60px,8vw,110px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);margin:22px 0 26px}
+.hero h1 .thin{font-weight:400}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(18px,3.5vw,40px);margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+@media (max-width:520px){.hero .facts{grid-template-columns:1fr 1fr}}
+.hero .facts div{font-size:.78rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.hero .facts b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:500;color:var(--ink);letter-spacing:0;text-transform:none;line-height:1.1;margin-bottom:4px}
+.hero-art{position:relative;aspect-ratio:4/5}
+.hero-art .arc{position:absolute;inset:-6% -10% auto auto;width:115%;color:var(--gold);opacity:.9;pointer-events:none}
+.hero-art .main{position:absolute;inset:0 0 0 12%;border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--sand)}
+.hero-art .main img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:slowzoom 14s ease-in-out infinite alternate}
+@keyframes slowzoom{to{transform:scale(1.12)}}
+.hero-art .chip{position:absolute;left:0;bottom:8%;width:42%;aspect-ratio:3/4;border-radius:6px;overflow:hidden;border:6px solid var(--cream);box-shadow:0 30px 60px -30px rgba(22,19,15,.45)}
+.hero-art .chip img{width:100%;height:100%;object-fit:cover}
+.hero-art .stamp{position:absolute;right:-2%;bottom:-3%;width:118px;height:118px;color:var(--ink)}
+.hero-art .stamp .rot{animation:spin 22s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:460px;width:100%;margin:10px auto 0}
+}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:var(--sand);overflow:hidden;padding:20px 0;border-block:1px solid var(--ink)}
+.ribbon .track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.ribbon span{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.ribbon span::after{content:"";width:8px;height:8px;border:1px solid var(--gold-2);transform:rotate(45deg)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:clamp(70px,10vw,140px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head h2{margin-top:16px;max-width:16ch}
+
+/* style switch */
+.styles{background:var(--paper)}
+.switch{display:inline-flex;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px;position:relative}
+.switch button{position:relative;z-index:1;padding:12px 24px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-radius:999px;transition:color .35s}
+.switch button[aria-pressed="true"]{color:var(--paper)}
+.switch .pill{position:absolute;top:5px;bottom:5px;left:5px;border-radius:999px;background:var(--ink);transition:transform .45s cubic-bezier(.7,0,.2,1),width .45s}
+.style-stage{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
+.style-copy h3{font-size:clamp(2.2rem,4vw,3.4rem);margin:12px 0 18px}
+.style-copy ul{list-style:none;margin:26px 0 34px;display:grid;gap:12px}
+.style-copy li{display:flex;gap:14px;align-items:baseline;font-weight:300}
+.style-copy li::before{content:"";width:18px;height:1px;background:var(--gold);flex:none;transform:translateY(-4px)}
+.style-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.style-imgs figure{border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:var(--sand)}
+.style-imgs figure:nth-child(2){margin-top:48px}
+.style-imgs img{width:100%;height:100%;object-fit:cover;transition:opacity .45s,transform .8s}
+.fade-swap{opacity:0;transform:scale(1.03)}
+.style-copy>*{transition:opacity .35s,transform .35s}
+.style-copy.out>*{opacity:0;transform:translateY(8px)}
+@media (max-width:860px){.style-stage{grid-template-columns:1fr}}
+
+/* collection */
+.grid-col{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px)}
+.card{position:relative;display:block}
+.card figure{aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:var(--sand)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.07)}
+.card .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;gap:10px}
+.card h3{font-size:1.5rem}
+.card .meta span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.card .ask{position:absolute;left:12px;right:12px;bottom:72px;background:rgba(251,248,243,.94);padding:12px 14px;border-radius:3px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;opacity:0;transform:translateY(10px);transition:.35s}
+.card:hover .ask{opacity:1;transform:none}
+@media (max-width:900px){.grid-col{grid-template-columns:repeat(2,1fr)}.card .ask{display:none}}
+
+/* face guide */
+.guide{background:var(--sand)}
+.guide .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,6vw,90px);align-items:start}
+.faces{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:30px 0 0}
+.face{border:1px solid var(--sand-2);background:var(--cream);border-radius:8px;padding:18px 8px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;transition:.3s}
+.face svg{width:44px;height:54px;color:var(--ink)}
+.face:hover{border-color:var(--gold)}
+.face[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.face[aria-pressed="true"] svg{color:var(--gold-2)}
+.result{background:var(--paper);border-radius:10px;padding:clamp(24px,4vw,44px);position:relative;overflow:hidden;min-height:100%}
+.result .num{position:absolute;right:-10px;top:-40px;font-family:var(--serif);font-size:12rem;line-height:1;color:var(--sand);font-style:italic;pointer-events:none}
+.result h3{font-size:clamp(2rem,3.4vw,2.8rem);margin:12px 0 14px;position:relative}
+.result p{position:relative;color:var(--muted);font-weight:300;max-width:46ch}
+.result .frames{display:flex;gap:16px;margin:28px 0;position:relative;flex-wrap:wrap}
+.result .frames div{flex:1 1 0;min-width:0;border-top:1px solid var(--line);padding-top:14px}
+.result .frames svg{width:100%;max-width:150px;height:56px;color:var(--ink);margin-bottom:8px}
+.result .frames b{font-family:var(--serif);font-size:1.25rem;font-weight:500;display:block}
+.result .frames small{color:var(--muted);font-size:.8rem}
+@media (max-width:900px){.guide .wrap{grid-template-columns:1fr}}
+@media (max-width:420px){.faces{grid-template-columns:repeat(2,1fr)}}
+
+/* multifocal */
+.multi{background:var(--ink);color:var(--paper);overflow:hidden}
+.multi .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.multi h2 em{color:var(--gold-2)}
+.multi .lead{color:#BDB2A3}
+.multi-img{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden}
+.multi-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.multi-img .lens{position:absolute;left:8%;bottom:8%;right:8%;background:rgba(22,19,15,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px 20px;border-radius:4px;border:1px solid rgba(198,165,111,.4)}
+.lens .zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.lens .zones div{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#CFC4B4}
+.lens .zones b{display:block;font-family:var(--serif);font-size:1.25rem;letter-spacing:0;text-transform:none;color:var(--paper);font-weight:500}
+.lens .bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--gold-soft),var(--gold),#6d5330);margin-top:12px}
+.pains{list-style:none;margin:36px 0 40px;border-top:1px solid rgba(255,255,255,.12)}
+.pains li{display:grid;grid-template-columns:48px 1fr;gap:10px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.pains .n{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold-2);line-height:1}
+.pains b{font-weight:500;display:block;margin-bottom:2px}
+.pains span{color:#BDB2A3;font-weight:300;font-size:.95rem}
+@media (max-width:900px){.multi .wrap{grid-template-columns:1fr}.multi-img{order:-1;max-width:520px}}
+
+/* home visit */
+.home .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.steps{list-style:none;margin-top:40px;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:70px 1fr;padding:24px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps .k{font-family:var(--serif);font-size:2.6rem;line-height:.9;color:var(--gold)}
+.steps h3{font-size:1.6rem;margin-bottom:4px}
+.steps p{color:var(--muted);font-weight:300}
+.home-imgs{position:relative;aspect-ratio:1/1.08}
+.home-imgs figure{position:absolute;overflow:hidden;border-radius:4px;background:var(--sand)}
+.home-imgs figure img{width:100%;height:100%;object-fit:cover}
+.home-imgs .a{inset:0 22% 18% 0}
+.home-imgs .b{right:0;bottom:0;width:48%;aspect-ratio:3/4;border:6px solid var(--cream)}
+.home-imgs .tag{position:absolute;top:22px;left:22px;background:var(--paper);padding:10px 16px;border-radius:999px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:flex;gap:8px;align-items:center}
+.home-imgs .tag i{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(31,143,78,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(31,143,78,0)}100%{box-shadow:0 0 0 0 rgba(31,143,78,0)}}
+@media (max-width:900px){.home .wrap{grid-template-columns:1fr}.home-imgs{max-width:520px;width:100%}}
+
+/* people */
+.people{background:var(--paper);padding-bottom:0}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gut) clamp(70px,10vw,130px);scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 clamp(220px,24vw,300px);scroll-snap-align:start;position:relative}
+.strip figure .ph{aspect-ratio:3/4;border-radius:4px;overflow:hidden;background:var(--sand)}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.strip figure:hover img{transform:scale(1.05)}
+.strip figcaption{margin-top:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.strip figcaption b{display:block;font-family:var(--serif);font-size:1.3rem;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500}
+.strip-ctrl{display:flex;gap:10px}
+.strip-ctrl button{width:50px;height:50px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:.25s}
+.strip-ctrl button:hover{background:var(--ink);color:var(--paper)}
+.strip-ctrl svg{width:18px;height:18px}
+
+/* visit */
+.visit .box{display:grid;grid-template-columns:1fr 1.15fr;background:var(--ink);color:var(--paper);border-radius:10px;overflow:hidden}
+.visit .info{padding:clamp(28px,5vw,60px)}
+.visit h2 em{color:var(--gold-2)}
+.visit dl{margin:34px 0 36px;display:grid;gap:22px}
+.visit dt{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);margin-bottom:4px}
+.visit dd{font-family:var(--serif);font-size:1.45rem;line-height:1.25}
+.visit dd small{display:block;font-family:var(--sans);font-size:.9rem;color:#BDB2A3;font-weight:300;margin-top:4px}
+.visit .cta{display:flex;gap:12px;flex-wrap:wrap}
+.visit .btn-ghost{border-color:rgba(255,255,255,.4);color:var(--paper)}
+.visit .btn-ghost:hover{background:var(--paper);color:var(--ink)}
+.map{position:relative;min-height:420px;background:#2a251f}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) sepia(.25) contrast(.95)}
+@media (max-width:900px){.visit .box{grid-template-columns:1fr}.map{min-height:320px}}
+
+/* final */
+.final{text-align:center;padding:clamp(80px,12vw,160px) 0;overflow:hidden}
+.final .logo-big{width:clamp(90px,12vw,130px);margin:0 auto 30px;color:var(--ink)}
+.final h2{font-size:clamp(2.6rem,7vw,5.6rem);max-width:14ch;margin:0 auto 24px}
+.final .lead{margin:0 auto 38px}
+
+footer{border-top:1px solid var(--line);padding:40px 0 100px;font-size:.82rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:24px;flex-wrap:wrap}
+footer a:hover{color:var(--gold)}
+
+/* floating wa */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;border-radius:999px;padding:14px 20px 14px 16px;box-shadow:0 18px 40px -14px rgba(31,143,78,.7);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transform:translateY(120px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.fab.show{transform:none}
+.fab svg{width:22px;height:22px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 100 100">
+      <path d="M22 30 A38 38 0 0 1 88 44" fill="none" stroke="#A9834B" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M31 33 H69 L33 69 H71" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M77 33 L41 69" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M26 76 H80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 6.9 3.8Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </defs>
+</svg>
+
+<div class="announce"><span class="hide-m">Atendimento a domicílio em João Pessoa · </span><b>chame no WhatsApp</b><span class="hide-m"> e a Zayra vai até você</span><span class="show-m"> · a Zayra vai até você</span></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand" aria-label="Zayra Ótica, início">
+      <svg><use href="#logo"/></svg>
+      <span class="wm"><b>ZAYRA</b><small>ÓTICA</small></span>
+    </a>
+    <ul>
+      <li><a href="#estilos">Estilos</a></li>
+      <li><a href="#colecao">Armações</a></li>
+      <li><a href="#multifocais">Multifocais</a></li>
+      <li><a href="#domicilio">Domicílio</a></li>
+      <li><a href="#visita">Visite</a></li>
+    </ul>
+    <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span>WhatsApp</span></a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow line rv">Ótica no Centro de João Pessoa</span>
+      <h1 class="rv d1"><span class="thin">Seus óculos</span><br>também fazem<br><em>parte do look.</em></h1>
+      <p class="lead rv d2">Óculos de grau e multifocais escolhidos com calma, provados no rosto e ajustados por quem entende. Um detalhe que muda como você enxerga e como você é vista.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Ver modelos no WhatsApp</a>
+        <a class="btn btn-ghost" href="#visita">Como chegar</a>
+      </div>
+      <div class="facts rv d3">
+        <div><b>Grau &amp; multifocal</b>do simples ao progressivo</div>
+        <div><b>Box 218</b>Shopping Terceirão</div>
+        <div><b>Em casa</b>atendimento a domicílio</div>
+      </div>
+    </div>
+
+    <div class="hero-art rv d1">
+      <svg class="arc" viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M60 120 A170 170 0 0 1 360 170" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <div class="main"><img src="img/cliente-aro-fino.jpg" alt="Cliente usando óculos de aro fino dourado sem aro inferior"></div>
+      <div class="chip"><img src="img/aro-dourado-redondo.jpg" alt="Armação redonda dourada sobre fundo bege"></div>
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="58" fill="#FBF8F3"/>
+        <g class="rot">
+          <defs><path id="circ" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+          <text font-family="Jost, sans-serif" font-size="9.5" letter-spacing="3.2" fill="currentColor"><textPath href="#circ">ZAYRA ÓTICA · JOÃO PESSOA · BOX 218 ·</textPath></text>
+        </g>
+        <use href="#logo" x="38" y="38" width="44" height="44"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="track">
+    <span>Óculos de grau</span><span>Multifocais</span><span>Prova no rosto</span><span>Ajuste na hora</span><span>Atendimento a domicílio</span><span>Centro de João Pessoa</span>
+    <span>Óculos de grau</span><span>Multifocais</span><span>Prova no rosto</span><span>Ajuste na hora</span><span>Atendimento a domicílio</span><span>Centro de João Pessoa</span>
+  </div>
+</div>
+
+<!-- ESTILOS -->
+<section class="sec styles" id="estilos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow line rv">Qual é a sua?</span>
+        <h2 class="rv d1">Discreta <em>ou</em> marcante?</h2>
+      </div>
+      <div class="switch rv d2" role="group" aria-label="Escolha um estilo">
+        <span class="pill" id="pill"></span>
+        <button aria-pressed="true" data-style="discreta">Discreta</button>
+        <button aria-pressed="false" data-style="marcante">Marcante</button>
+      </div>
+    </div>
+
+    <div class="style-stage">
+      <div class="style-copy" id="styleCopy">
+        <span class="eyebrow" id="sEyebrow">Estilo 01 · Discreta</span>
+        <h3 id="sTitle">Leve, fina, quase <em>invisível.</em></h3>
+        <p class="lead" id="sText">Metal dourado, aros finos ou sem aro. Para quem quer enxergar bem sem que os óculos roubem a cena do rosto.</p>
+        <ul id="sList"><li>Metal dourado e titânio</li><li>Aro fino, fio de nylon ou sem aro</li><li>Combina com trabalho, festa e dia a dia</li></ul>
+        <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span id="sCta">Quero ver as discretas</span></a>
+      </div>
+      <div class="style-imgs">
+        <figure><img id="sImg1" src="img/cliente-oval-dourado.jpg" alt="Cliente com óculos oval dourado"></figure>
+        <figure><img id="sImg2" src="img/oval-dourado-fundo-branco.jpg" alt="Armação oval dourada"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLEÇÃO -->
+<section class="sec" id="colecao">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow line rv">No mostruário</span>
+        <h2 class="rv d1">Armações para <em>cada rosto.</em></h2>
+      </div>
+      <p class="lead rv d2">Do acetato tartaruga ao metal dourado. Modelos nacionais e importados: peça fotos pelo WhatsApp ou venha provar no Box 218.</p>
+    </div>
+    <div class="grid-col">
+      <a class="card rv" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
+        <figure><img src="img/aro-dourado-redondo.jpg" alt="Armação redonda de metal dourado" loading="lazy"></figure>
+        <span class="ask">Pedir fotos deste estilo</span>
+        <div class="meta"><h3>Metal redondo</h3><span>Dourado</span></div>
+      </a>
+      <a class="card rv d1" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
+        <figure><img src="img/aro-tartaruga.jpg" alt="Armação redonda de acetato tartaruga" loading="lazy"></figure>
+        <span class="ask">Pedir fotos deste estilo</span>
+        <div class="meta"><h3>Tartaruga</h3><span>Acetato</span></div>
+      </a>
+      <a class="card rv d2" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
+        <figure><img src="img/aro-preto.jpg" alt="Armação quadrada de acetato preto" loading="lazy"></figure>
+        <span class="ask">Pedir fotos deste estilo</span>
+        <div class="meta"><h3>Preto clássico</h3><span>Quadrado</span></div>
+      </a>
+      <a class="card rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener">
+        <figure><img src="img/aro-transparente.jpg" alt="Armação transparente com hastes nude" loading="lazy"></figure>
+        <span class="ask">Pedir fotos deste estilo</span>
+        <div class="meta"><h3>Cristal</h3><span>Transparente</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GUIA DE ROSTO -->
+<section class="sec guide" id="guia">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow line rv">Guia rápido</span>
+      <h2 class="rv d1">Qual armação <em>combina</em> com você?</h2>
+      <p class="lead rv d2" style="margin-top:18px">Toque no formato que mais parece com o seu rosto. Na loja, a gente confirma provando: o espelho sempre tem a palavra final.</p>
+      <div class="faces rv d3" role="group" aria-label="Formato do rosto">
+        <button class="face" aria-pressed="true" data-face="oval"><svg viewBox="0 0 44 54"><ellipse cx="22" cy="27" rx="16" ry="23" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Oval</button>
+        <button class="face" aria-pressed="false" data-face="redondo"><svg viewBox="0 0 44 54"><circle cx="22" cy="27" r="19" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Redondo</button>
+        <button class="face" aria-pressed="false" data-face="quadrado"><svg viewBox="0 0 44 54"><rect x="5" y="6" width="34" height="42" rx="7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Quadrado</button>
+        <button class="face" aria-pressed="false" data-face="coracao"><svg viewBox="0 0 44 54"><path d="M4 12 Q22 2 40 12 Q40 34 22 50 Q4 34 4 12Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Coração</button>
+      </div>
+    </div>
+    <div class="result rv d2" aria-live="polite">
+      <span class="num" id="fNum">01</span>
+      <span class="eyebrow" id="fEyebrow">Rosto oval</span>
+      <h3 id="fTitle">Sorte sua: <em>quase tudo cai bem.</em></h3>
+      <p id="fText">O rosto oval é equilibrado, então dá pra brincar. Aposte em armações um pouco mais largas que o rosto para manter a proporção.</p>
+      <div class="frames" id="fFrames"></div>
+      <a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Pedir sugestões</a>
+    </div>
+  </div>
+</section>
+
+<!-- MULTIFOCAIS -->
+<section class="sec multi" id="multifocais">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow line rv" style="color:var(--gold-2)">Multifocais</span>
+      <h2 class="rv d1">Perto, meio e longe <em>num óculos só.</em></h2>
+      <p class="lead rv d2" style="margin-top:20px">Multifocal comprado pela internet costuma dar errado porque depende de medida no rosto. Aqui ela é feita olhando para você, com a armação que você vai usar.</p>
+      <ul class="pains rv d2">
+        <li><span class="n">i</span><div><b>Medição no seu rosto</b><span>Altura e distância das pupilas tiradas com a armação escolhida, não por estimativa.</span></div></li>
+        <li><span class="n">ii</span><div><b>Armação certa para a lente</b><span>Nem toda armação aceita multifocal bem. A gente orienta antes de você se apaixonar.</span></div></li>
+        <li><span class="n">iii</span><div><b>Ajuste depois da entrega</b><span>Hastes, plaquetas e encaixe ajustados para o óculos ficar firme e confortável.</span></div></li>
+      </ul>
+      <a class="btn btn-gold rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Tirar dúvidas sobre multifocal</a>
+    </div>
+    <div class="multi-img rv d1">
+      <img src="img/glasses-hand.jpg" alt="Mão segurando óculos com a paisagem nítida através da lente" loading="lazy">
+      <div class="lens">
+        <span class="eyebrow" style="color:var(--gold-2)">Como a lente trabalha</span>
+        <div class="zones"><div><b>Longe</b>topo</div><div><b>Meio</b>corredor</div><div><b>Perto</b>base</div></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMICÍLIO -->
+<section class="sec home" id="domicilio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow line rv">Zayra em casa</span>
+      <h2 class="rv d1">Não pode vir? <em>A ótica vai até você.</em></h2>
+      <p class="lead rv d2" style="margin-top:20px">Ideal para quem tem rotina corrida, para idosos e para quem prefere escolher com calma, no sofá de casa.</p>
+      <ol class="steps">
+        <li class="rv"><span class="k">1</span><div><h3>Chame no WhatsApp</h3><p>Conte o que procura e mande sua receita, se já tiver.</p></div></li>
+        <li class="rv d1"><span class="k">2</span><div><h3>Combine dia e horário</h3><p>A gente leva uma seleção de armações pensada para você.</p></div></li>
+        <li class="rv d2"><span class="k">3</span><div><h3>Prove e escolha em casa</h3><p>Medição e escolha ali mesmo. Depois é só esperar seus óculos prontos.</p></div></li>
+      </ol>
+      <div style="margin-top:34px" class="rv d3"><a class="btn btn-dark" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Agendar visita em casa</a></div>
+    </div>
+    <div class="home-imgs rv d1">
+      <figure class="a"><img src="img/equipe-mostruario.jpg" alt="Atendente da Zayra organizando o mostruário de armações" loading="lazy"></figure>
+      <figure class="b"><img src="img/mostruario-mao.jpg" alt="Mão escolhendo armação transparente no mostruário" loading="lazy"></figure>
+      <span class="tag"><i></i>Agenda aberta</span>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="sec people" id="clientes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow line rv">Quem já usa</span>
+        <h2 class="rv d1">João Pessoa <em>enxergando melhor.</em></h2>
+      </div>
+      <div class="strip-ctrl rv d2">
+        <button aria-label="Anterior" data-dir="-1"><svg style="transform:rotate(180deg)"><use href="#arrow"/></svg></button>
+        <button aria-label="Próximo" data-dir="1"><svg><use href="#arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="strip" id="strip">
+    <figure><div class="ph"><img src="img/cliente-sorriso.jpg" alt="Cliente sorrindo com óculos novos" loading="lazy"></div><figcaption><b>Gatinho suave</b>Acetato nude</figcaption></figure>
+    <figure><div class="ph"><img src="img/cliente-carro.jpg" alt="Cliente com óculos oval de metal" loading="lazy"></div><figcaption><b>Oval de metal</b>Detalhe nas hastes</figcaption></figure>
+    <figure><div class="ph"><img src="img/cliente-oval-dourado.jpg" alt="Cliente com óculos oval dourado" loading="lazy"></div><figcaption><b>Oval dourado</b>Estilo discreto</figcaption></figure>
+    <figure><div class="ph"><img src="img/cliente-ajuste.jpg" alt="Cliente ajustando os óculos no rosto" loading="lazy"></div><figcaption><b>Meio aro</b>Leve no rosto</figcaption></figure>
+    <figure><div class="ph"><img src="img/cliente-aro-fino.jpg" alt="Cliente com óculos sem aro" loading="lazy"></div><figcaption><b>Sem aro</b>Quase invisível</figcaption></figure>
+    <figure><div class="ph"><img src="img/equipe-camisa.jpg" alt="Atendente da Zayra segurando uma armação" loading="lazy"></div><figcaption><b>Feito com cuidado</b>Equipe Zayra</figcaption></figure>
+  </div>
+</section>
+
+<!-- VISITA -->
+<section class="sec visit" id="visita">
+  <div class="wrap">
+    <div class="box rv">
+      <div class="info">
+        <span class="eyebrow line" style="color:var(--gold-2)">Visite a loja</span>
+        <h2 style="margin-top:16px">Experimente <em>no Terceirão.</em></h2>
+        <dl>
+          <div><dt>Endereço</dt><dd>Shopping Terceirão, Box 218<small>Centro de João Pessoa, PB · entrada pela Av. Duque de Caxias</small></dd></div>
+          <div><dt>Atendimento</dt><dd>Na loja ou a domicílio<small>Consulte horários e disponibilidade pelo WhatsApp</small></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/zayraotica" target="_blank" rel="noopener">@zayraotica</a></dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn btn-gold" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Combinar visita</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Shopping+Terceir%C3%A3o+Jo%C3%A3o+Pessoa" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Abrir no mapa</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Mapa do Shopping Terceirão, João Pessoa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Shopping+Terceir%C3%A3o,+Jo%C3%A3o+Pessoa+-+PB&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <svg class="logo-big rv" viewBox="0 0 100 100"><use href="#logo"/></svg>
+    <h2 class="rv d1">Olhar com mais estilo, <em>conforto e confiança.</em></h2>
+    <p class="lead rv d2">Mande uma mensagem e receba fotos dos modelos que combinam com você, antes mesmo de sair de casa.</p>
+    <a class="btn btn-dark rv d3" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar com a Zayra</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#topo" class="brand"><svg style="width:34px;height:34px"><use href="#logo"/></svg><span class="wm"><b style="font-size:.85rem">ZAYRA</b><small>ÓTICA</small></span></a>
+    <nav><a href="#colecao">Armações</a><a href="#multifocais">Multifocais</a><a href="#domicilio">Domicílio</a><a href="https://instagram.com/zayraotica" target="_blank" rel="noopener">Instagram</a></nav>
+    <span>Shopping Terceirão · Box 218 · Centro, João Pessoa · PB</span>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="https://wa.me/message/Y6SNEQ7AV47CN1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#wa"/></svg>Fale conosco</a>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+  // nav + fab
+  const nav = $('#nav'), fab = $('#fab');
+  const onScroll = () => { const y = scrollY; nav.classList.toggle('scrolled', y > 10); fab.classList.toggle('show', y > 600); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -40px'});
+  $$('.rv').forEach(el => io.observe(el));
+
+  // style switch
+  const styles = {
+    discreta: {eb:'Estilo 01 · Discreta', t:'Leve, fina, quase <em>invisível.</em>', p:'Metal dourado, aros finos ou sem aro. Para quem quer enxergar bem sem que os óculos roubem a cena do rosto.', l:['Metal dourado e titânio','Aro fino, fio de nylon ou sem aro','Combina com trabalho, festa e dia a dia'], c:'Quero ver as discretas', i1:['img/cliente-oval-dourado.jpg','Cliente com óculos oval dourado'], i2:['img/oval-dourado-fundo-branco.jpg','Armação oval dourada']},
+    marcante: {eb:'Estilo 02 · Marcante', t:'Presença de quem <em>chega e é notada.</em>', p:'Acetato encorpado, tartaruga e preto. A armação vira o acessório principal e dá personalidade ao rosto inteiro.', l:['Acetato preto, tartaruga e cores','Formas quadradas, redondas e gatinho','Assume o protagonismo do look'], c:'Quero ver as marcantes', i1:['img/cliente-sorriso.jpg','Cliente sorrindo com óculos de acetato'], i2:['img/aro-tartaruga.jpg','Armação de acetato tartaruga']}
+  };
+  const pill = $('#pill'), btns = $$('.switch button'), copy = $('#styleCopy');
+  const placePill = b => { pill.style.width = b.offsetWidth + 'px'; pill.style.transform = `translateX(${b.offsetLeft - 5}px)`; };
+  const setStyle = (key, b) => {
+    btns.forEach(x => x.setAttribute('aria-pressed', x === b)); placePill(b);
+    const s = styles[key]; copy.classList.add('out');
+    const imgs = [$('#sImg1'), $('#sImg2')]; imgs.forEach(i => i.classList.add('fade-swap'));
+    setTimeout(() => {
+      $('#sEyebrow').textContent = s.eb; $('#sTitle').innerHTML = s.t; $('#sText').textContent = s.p;
+      $('#sList').innerHTML = s.l.map(x => `<li>${x}</li>`).join(''); $('#sCta').textContent = s.c;
+      [[imgs[0], s.i1], [imgs[1], s.i2]].forEach(([el, [src, alt]]) => { el.onload = () => el.classList.remove('fade-swap'); el.src = src; el.alt = alt; if (el.complete) el.classList.remove('fade-swap'); });
+      copy.classList.remove('out');
+    }, 320);
+  };
+  btns.forEach(b => b.addEventListener('click', () => setStyle(b.dataset.style, b)));
+  const initPill = () => placePill(btns.find(b => b.getAttribute('aria-pressed') === 'true'));
+  addEventListener('resize', initPill); (document.fonts ? document.fonts.ready : Promise.resolve()).then(initPill); initPill();
+
+  // face guide
+  const F = {
+    round:'<rect x="8" y="12" width="56" height="34" rx="17" fill="none" stroke="currentColor" stroke-width="3"/><rect x="86" y="12" width="56" height="34" rx="17" fill="none" stroke="currentColor" stroke-width="3"/>',
+    circle:'<circle cx="38" cy="29" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="112" cy="29" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/>',
+    square:'<rect x="10" y="10" width="54" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="4"/><rect x="86" y="10" width="54" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="4"/>',
+    cat:'<path d="M8 14 Q36 4 64 16 Q62 46 36 46 Q10 46 8 14Z" fill="none" stroke="currentColor" stroke-width="3.4"/><path d="M86 16 Q114 4 142 14 Q140 46 114 46 Q88 46 86 16Z" fill="none" stroke="currentColor" stroke-width="3.4"/>',
+    aviator:'<path d="M8 14 H64 Q64 46 38 46 Q10 46 8 14Z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M86 14 H142 Q140 46 112 46 Q86 46 86 14Z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 14 H142" stroke="currentColor" stroke-width="2.2"/>',
+    rimless:'<ellipse cx="38" cy="29" rx="28" ry="17" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4"/><ellipse cx="112" cy="29" rx="28" ry="17" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4"/>'
+  };
+  const bridge = '<path d="M64 24 Q75 16 86 24" fill="none" stroke="currentColor" stroke-width="2.2"/>';
+  const faces = {
+    oval:{n:'01', eb:'Rosto oval', t:'Sorte sua: <em>quase tudo cai bem.</em>', p:'O rosto oval é equilibrado, então dá pra brincar. Aposte em armações um pouco mais largas que o rosto para manter a proporção.', f:[['square','Quadrada','dá estrutura'],['cat','Gatinho','levanta o olhar'],['aviator','Aviador','clássico que não erra']]},
+    redondo:{n:'02', eb:'Rosto redondo', t:'Ângulos para <em>alongar o rosto.</em>', p:'Linhas retas e cantos marcados criam contraste com as curvas naturais e deixam o rosto mais alongado.', f:[['square','Quadrada','o melhor contraste'],['cat','Gatinho','eleva as maçãs'],['aviator','Retangular','alonga a face']]},
+    quadrado:{n:'03', eb:'Rosto quadrado', t:'Curvas para <em>suavizar traços.</em>', p:'Mandíbula marcada pede armações arredondadas ou ovais, que equilibram os ângulos e trazem leveza.', f:[['circle','Redonda','suaviza o maxilar'],['round','Oval','equilíbrio natural'],['rimless','Sem aro','leveza total']]},
+    coracao:{n:'04', eb:'Rosto coração', t:'Leveza em cima, <em>equilíbrio embaixo.</em>', p:'Testa mais larga e queixo fino combinam com armações leves, de base arredondada ou sem aro.', f:[['rimless','Sem aro','não pesa na testa'],['round','Oval','equilibra o queixo'],['circle','Redonda fina','delicada e atual']]}
+  };
+  const renderFace = k => {
+    const d = faces[k];
+    $('#fNum').textContent = d.n; $('#fEyebrow').textContent = d.eb; $('#fTitle').innerHTML = d.t; $('#fText').textContent = d.p;
+    $('#fFrames').innerHTML = d.f.map(([s, b, sm]) => `<div><svg viewBox="0 0 150 56" aria-hidden="true">${F[s]}${bridge}</svg><b>${b}</b><small>${sm}</small></div>`).join('');
+  };
+  $$('.face').forEach(b => b.addEventListener('click', () => { $$('.face').forEach(x => x.setAttribute('aria-pressed', x === b)); renderFace(b.dataset.face); }));
+  renderFace('oval');
+
+  // strip controls
+  const strip = $('#strip');
+  $$('.strip-ctrl button').forEach(b => b.addEventListener('click', () => strip.scrollBy({left: +b.dataset.dir * (strip.querySelector('figure').offsetWidth + 16), behavior:'smooth'})));
+})();
+</script>
+</body>
+</html>
