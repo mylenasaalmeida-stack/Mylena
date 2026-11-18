@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V12 Autos · Seminovos com procedência em Recife</title>
+<meta name="description" content="V12 Autos: seminovos revisados, com garantia e procedência em Recife-PE. Financiamento em até 60x, aceitamos seu usado na troca e vendemos online para toda a Paraíba. Av. Recife, 592 – Areias.">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="icon" type="image/png" href="img/carro-icone.png">
+<meta property="og:title" content="V12 Autos · Qualidade e confiança em cada quilômetro">
+<meta property="og:description" content="Seminovos revisados e com garantia em Recife. Financiamos em até 60x e aceitamos seu usado.">
+<meta property="og:image" content="img/fachada-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0C0E; --ink-2:#121417; --ink-3:#1A1D21; --line:#25292E;
+  --steel:#8A9099; --silver:#C9CCD1; --white:#F5F5F3;
+  --paper:#F3F3F1; --card:#FFFFFF; --text:#16181B; --muted:#5E646C; --line-l:#E2E3E0;
+  --red:#E1251B; --red-d:#B5190F; --gold:#F5C518; --wa:#1FA855; --wa-d:#178A45;
+  --brand:"Michroma", "Eurostile", "Arial Black", sans-serif;
+  --head:"Sora", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:14px; --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--white);font-family:var(--body);line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--brand);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--steel)}
+.eyebrow.red{color:var(--red)}
+h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4vw,44px);font-weight:700}
+.sec{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head p{max-width:520px;color:var(--steel)}
+.light{background:var(--paper);color:var(--text)}
+.light .sec-head p{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-d)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+.btn-ghost{background:transparent;border:1px solid #3A3F46;color:var(--white)}
+.btn-ghost:hover{border-color:var(--silver)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+.ico{width:20px;height:20px;flex:none}
+
+/* top bar */
+.topbar{background:#050506;border-bottom:1px solid var(--line);font-size:13px;color:var(--steel)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
+.topbar span{display:inline-flex;align-items:center;gap:8px}
+.topbar .ico{width:14px;height:14px}
+.topbar .right{display:flex;gap:22px}
+@media (max-width:820px){.topbar .hide-m{display:none}}
+@media (max-width:520px){.topbar .addr{display:none}.topbar .wrap{justify-content:center}}
+
+/* header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(11,12,14,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo img{height:46px;width:auto}
+.menu{display:flex;gap:30px;font-size:14.5px;font-weight:500;color:var(--silver)}
+.menu a:hover{color:#fff}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .btn{height:44px;padding:0 18px;font-size:14px}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer}
+@media (max-width:980px){
+  .menu{position:fixed;inset:114px 0 auto 0;flex-direction:column;gap:0;background:var(--ink-2);border-bottom:1px solid var(--line);padding:8px 24px 20px;transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;transition:transform .25s,opacity .25s,visibility .25s}
+  .menu.open{transform:none;opacity:1;visibility:visible;pointer-events:auto}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .burger{display:inline-flex}
+  .nav-cta .btn span{display:none}
+  .nav-cta .btn{width:44px;padding:0}
+}
+
+/* hero */
+.hero{position:relative;padding:72px 0 0;background:
+  radial-gradient(900px 500px at 78% 30%,rgba(201,204,209,.10),transparent 60%),
+  radial-gradient(700px 400px at 10% 100%,rgba(225,37,27,.10),transparent 60%),var(--ink)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;margin:18px 0 20px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#fff,#9da2aa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:18px;color:var(--silver);max-width:520px}
+.hero-ctas{display:flex;gap:12px;margin:30px 0 34px;flex-wrap:wrap}
+.hero-proof{display:flex;gap:34px;flex-wrap:wrap}
+.hero-proof b{display:block;font-family:var(--head);font-size:26px;font-weight:700}
+.hero-proof small{color:var(--steel);font-size:13px}
+.hero-visual{position:relative}
+.hero-car{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,.8);aspect-ratio:4/3;background:#000}
+.hero-car img{width:100%;height:100%;object-fit:cover}
+.hero-tag{position:absolute;left:-22px;bottom:28px;background:#fff;color:var(--text);border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px -12px rgba(0,0,0,.6);min-width:230px}
+.hero-tag .k{font-size:12px;color:var(--muted);font-weight:500}
+.hero-tag .v{font-family:var(--head);font-weight:800;font-size:22px}
+.hero-tag .s{font-size:12.5px;color:var(--muted)}
+.hero-badge{position:absolute;right:18px;top:18px;background:var(--red);color:#fff;font-family:var(--brand);font-size:10px;letter-spacing:.2em;padding:8px 12px;border-radius:999px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-tag{left:12px;bottom:12px}}
+
+/* search */
+.search{position:relative;z-index:2;margin-top:64px;transform:translateY(50%)}
+.search-box{background:#fff;color:var(--text);border-radius:20px;padding:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);display:grid;grid-template-columns:repeat(3,1fr) auto;gap:14px;align-items:end}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.field select,.field input{width:100%;height:52px;border:1px solid var(--line-l);border-radius:12px;padding:0 14px;background:#FAFAF9;color:var(--text);font-size:15px;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235E646C' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field select:focus,.field input:focus{outline:2px solid var(--ink);outline-offset:1px}
+.search-box .btn{height:52px;border-radius:12px;padding:0 28px}
+@media (max-width:900px){.search{transform:none;margin-top:40px;padding-bottom:48px}.search-box{grid-template-columns:1fr 1fr}.search-box .btn{grid-column:1/-1}.trust{padding-top:56px}}
+@media (max-width:520px){.search-box{grid-template-columns:1fr}}
+
+/* trust strip */
+.trust{background:var(--paper);color:var(--text);padding:120px 0 56px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.trust-item{display:flex;gap:14px;align-items:flex-start;padding:22px;border-radius:var(--r);background:#fff;border:1px solid var(--line-l)}
+.trust-item .ic{width:46px;height:46px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+.trust-item b{font-family:var(--head);font-size:16px;display:block;margin-bottom:2px}
+.trust-item p{font-size:13.5px;color:var(--muted)}
+@media (max-width:980px){.trust-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.trust-grid{grid-template-columns:1fr}}
+
+/* stock */
+#estoque{padding-top:56px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line-l);background:#fff;font-size:14px;font-weight:500;cursor:pointer;color:var(--text)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sort{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+.sort select{height:40px;border:1px solid var(--line-l);border-radius:10px;padding:0 12px;background:#fff;color:var(--text)}
+.count{font-size:14px;color:var(--muted);margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.car{background:var(--card);border:1px solid var(--line-l);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.car:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(0,0,0,.35)}
+.car .ph{position:relative;aspect-ratio:4/3;background:#111;overflow:hidden}
+.car .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.car:hover .ph img{transform:scale(1.04)}
+.badge{position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:8px;background:#fff;color:var(--text)}
+.badge.red{background:var(--red);color:#fff}
+.badge.gold{background:var(--gold);color:#1a1400}
+.badge.dark{background:var(--ink);color:#fff}
+.car .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.car .brand{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.car h3{font-size:19px;font-weight:700;margin:2px 0 4px}
+.car .ver{font-size:13.5px;color:var(--muted);min-height:20px}
+.specs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 16px}
+.specs span{font-size:12px;font-weight:500;padding:5px 9px;border-radius:7px;background:#F1F1EF;color:#3B4046}
+.price{margin-top:auto;border-top:1px dashed var(--line-l);padding-top:14px}
+.price .lbl{font-size:12px;color:var(--muted)}
+.price .val{font-family:var(--head);font-weight:800;font-size:26px;letter-spacing:-.02em}
+.price .inst{font-size:13.5px;color:#2b2f34}
+.price .inst b{color:var(--text)}
+.car .btn{margin-top:16px;width:100%;height:48px;font-size:14.5px}
+.stock-note{margin-top:28px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border:1px solid var(--line-l);border-radius:16px;padding:20px 22px}
+.stock-note p{color:var(--muted);font-size:14.5px;max-width:640px}
+.empty{grid-column:1/-1;text-align:center;padding:48px 16px;color:var(--muted);background:#fff;border-radius:16px;border:1px dashed var(--line-l)}
+
+/* featured */
+.feat{background:var(--ink-2)}
+.feat-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery .main{grid-column:1/-1;aspect-ratio:16/10;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.gallery .main img{width:100%;height:100%;object-fit:cover}
+.gallery button{aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:2px solid transparent;padding:0;background:#000;cursor:pointer;opacity:.65;transition:opacity .2s,border-color .2s}
+.gallery button[aria-current="true"]{border-color:#fff;opacity:1}
+.gallery button img{width:100%;height:100%;object-fit:cover}
+.feat h2{margin:14px 0 8px}
+.feat .ver{color:var(--steel);font-size:16px}
+.feat-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+.feat-list li{display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--silver);padding:12px 14px;background:var(--ink-3);border-radius:12px;border:1px solid var(--line)}
+.feat-list .ico{color:var(--red)}
+.feat-price{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.feat-price small{color:var(--steel)}
+.feat-price b{font-family:var(--head);font-size:clamp(40px,5vw,56px);font-weight:800;letter-spacing:-.03em}
+@media (max-width:900px){.feat-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.feat-list{grid-template-columns:1fr}}
+
+/* finance */
+.fin-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:start}
+.fin-copy ul{list-style:none;margin-top:26px;display:grid;gap:14px}
+.fin-copy li{display:flex;gap:12px;color:var(--muted)}
+.fin-copy li b{color:var(--text)}
+.fin-copy .ico{color:var(--red);margin-top:2px}
+.sim{background:#fff;border:1px solid var(--line-l);border-radius:22px;padding:28px;box-shadow:0 30px 60px -40px rgba(0,0,0,.35)}
+.sim h3{font-size:20px;margin-bottom:20px}
+.range{margin-bottom:22px}
+.range .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.range .top span{font-size:14px;color:var(--muted);font-weight:500}
+.range .top output{font-family:var(--head);font-weight:700;font-size:18px}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:99px;background:linear-gradient(90deg,var(--ink) var(--p,50%),#E4E4E1 var(--p,50%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:6px solid var(--ink);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:6px solid var(--ink);cursor:pointer}
+.terms{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.terms button{height:46px;border-radius:10px;border:1px solid var(--line-l);background:#FAFAF9;font-weight:600;cursor:pointer;color:var(--text)}
+.terms button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sim-out{margin-top:24px;background:var(--ink);color:#fff;border-radius:16px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.sim-out small{color:var(--steel);font-size:13px;display:block}
+.sim-out b{font-family:var(--head);font-size:32px;font-weight:800;letter-spacing:-.02em}
+.disc{font-size:12px;color:var(--muted);margin-top:14px}
+@media (max-width:900px){.fin-grid{grid-template-columns:1fr}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{position:relative;padding:28px 22px;border-radius:18px;background:var(--ink-2);border:1px solid var(--line)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--brand);font-size:12px;letter-spacing:.2em;color:var(--red)}
+.step h3{font-size:19px;margin:18px 0 8px}
+.step p{color:var(--steel);font-size:14.5px}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* trade */
+.trade{background:linear-gradient(120deg,#16181B,#0B0C0E);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trade-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.trade p.lead{color:var(--silver);font-size:17px;margin-top:14px}
+.form{background:var(--ink-3);border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form .full{grid-column:1/-1}
+.form .field label{color:var(--steel)}
+.form .field input,.form .field select{background:#0F1113;border-color:#2C3036;color:#fff}
+.form .field input::placeholder{color:#6B717A}
+.form .field input:focus,.form .field select:focus{outline-color:#fff}
+@media (max-width:900px){.trade-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.form{grid-template-columns:1fr}}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.why-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.why-photos figure{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:3/4;background:#ddd}
+.why-photos figure:first-child{margin-top:40px}
+.why-photos img{width:100%;height:100%;object-fit:cover}
+.why-photos figcaption{position:absolute;left:10px;bottom:10px;right:10px;background:rgba(11,12,14,.82);color:#fff;font-size:12.5px;padding:8px 10px;border-radius:10px;backdrop-filter:blur(6px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+.stat{background:#fff;border:1px solid var(--line-l);border-radius:14px;padding:18px}
+.stat b{font-family:var(--head);font-size:28px;font-weight:800;display:block;letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--muted)}
+.why-list{list-style:none;display:grid;gap:14px}
+.why-list li{display:flex;gap:14px}
+.why-list .ic{width:38px;height:38px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+.why-list b{display:block;font-family:var(--head)}
+.why-list p{font-size:14.5px;color:var(--muted)}
+@media (max-width:900px){.why-grid{grid-template-columns:1fr}}
+
+/* regions */
+.region{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.region-card{border-radius:20px;padding:34px;border:1px solid var(--line);background:var(--ink-2);position:relative;overflow:hidden}
+.region-card.alt{background:var(--red);border-color:var(--red)}
+.region-card h3{font-size:clamp(22px,3vw,30px);margin:12px 0 10px}
+.region-card p{color:var(--silver);max-width:460px}
+.region-card.alt p,.region-card.alt .eyebrow{color:#ffe1de}
+.region-card .btn{margin-top:22px}
+@media (max-width:900px){.region{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid var(--line-l);padding:4px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-family:var(--head);font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;font-weight:300;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--muted);max-width:720px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+.contact-card{background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;gap:22px}
+.c-row{display:flex;gap:14px}
+.c-row .ic{width:44px;height:44px;border-radius:12px;background:var(--ink-3);border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.c-row small{display:block;color:var(--steel);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.c-row b{font-family:var(--head);font-size:17px;font-weight:600}
+.c-row p{color:var(--silver);font-size:14.5px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:14.5px;color:var(--silver)}
+.hours .open{color:#7DDC9B}
+.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);min-height:420px;background:#15171a}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:#13261a;color:#7DDC9B}
+.status.closed{background:#2a1513;color:#ff9b93}
+.status i{width:8px;height:8px;border-radius:50%;background:currentColor}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:#050506;border-top:1px solid var(--line);padding:56px 0 110px;color:var(--steel);font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot img{height:64px;width:auto;margin-bottom:14px}
+.foot h4{font-family:var(--head);color:#fff;font-size:14px;margin-bottom:12px}
+.foot ul{list-style:none;display:grid;gap:8px}
+.foot a:hover{color:#fff}
+.legal{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+@media (max-width:820px){.foot{grid-template-columns:1fr 1fr}}
+@media (min-width:821px){footer{padding-bottom:56px}}
+
+/* floating */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(31,168,85,.6);transition:transform .2s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:32px;height:32px;color:#fff}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.2s infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.5);opacity:0}}
+.mbar{display:none}
+@media (max-width:820px){
+  .wa-float{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(11,12,14,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar .btn{height:48px;font-size:14.5px}
+  .wrap{padding:0 16px}
+  .sec{padding:72px 0}
+}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.5-1-1.6-1.6-3-1.6-1.7 0-3 .9-3 2.2 0 3 6 1.5 6 4.4 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.7-3.1-1.7M12 6v1.6M12 16.4V18"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="addr"><svg class="ico"><use href="#i-pin"/></svg>Av. Recife, 592 · Areias · Recife-PE</span>
+    <div class="right">
+      <span class="hide-m"><svg class="ico"><use href="#i-clock"/></svg>Seg a Sex 08h–17h · Sáb 08h–13h</span>
+      <a href="https://www.instagram.com/v12autos_/" target="_blank" rel="noopener" class="hide-m" style="display:inline-flex;gap:8px;align-items:center"><svg class="ico"><use href="#i-ig"/></svg>@v12autos_</a>
+      <a href="tel:+5581991797331" style="display:inline-flex;gap:8px;align-items:center"><svg class="ico"><use href="#i-phone"/></svg>(81) 99179-7331</a>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#topo" class="logo" aria-label="V12 Autos — início"><img src="img/logo-branco.png" alt="V12 Autos"></a>
+    <nav class="menu" id="menu">
+      <a href="#estoque">Estoque</a>
+      <a href="#financiamento">Financiamento</a>
+      <a href="#troca">Venda seu carro</a>
+      <a href="#sobre">Por que a V12</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-wa" data-wa="Olá, V12 Autos! Vim pelo site e gostaria de atendimento." href="#"><svg class="ico"><use href="#i-wa"/></svg><span>Falar no WhatsApp</span></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Seminovos · Recife-PE</span>
+        <h1>Qualidade e confiança <em>em cada quilômetro.</em></h1>
+        <p class="lead">Realize o sonho do carro novo com nossos seminovos: revisados, com garantia e procedência. Financiamos em até 60x e aceitamos seu usado na troca.</p>
+        <div class="hero-ctas">
+          <a href="#estoque" class="btn btn-red">Ver estoque <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <a href="#" class="btn btn-ghost" data-wa="Olá! Quero agendar uma visita na V12 Autos."><svg class="ico"><use href="#i-wa"/></svg>Agendar visita</a>
+        </div>
+        <div class="hero-proof">
+          <div><b>9 mil+</b><small>seguidores no Instagram</small></div>
+          <div><b>60x</b><small>para financiar</small></div>
+          <div><b>PE + PB</b><small>loja física e venda online</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-car"><img src="img/bmw-320i.jpg" alt="BMW 320i azul no estoque da V12 Autos"></div>
+        <span class="hero-badge">REPASSE DE CONSÓRCIO</span>
+        <div class="hero-tag">
+          <div class="k">BMW 320i Modern/Sport 2.0 Flex</div>
+          <div class="v">R$ 75.990 + 72x</div>
+          <div class="s">de R$ 965,00 · entrada + parcelas</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="search" id="busca" aria-label="Buscar no estoque">
+      <div class="search-box">
+        <div class="field">
+          <label for="f-marca">Marca</label>
+          <select id="f-marca"><option value="">Todas as marcas</option></select>
+        </div>
+        <div class="field">
+          <label for="f-tipo">Categoria</label>
+          <select id="f-tipo">
+            <option value="">Todas</option>
+            <option>SUV</option><option>Picape</option><option>Sedã</option><option>Utilitário</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-preco">Até quanto quer investir?</label>
+          <select id="f-preco">
+            <option value="">Qualquer valor</option>
+            <option value="80000">Até R$ 80 mil</option>
+            <option value="100000">Até R$ 100 mil</option>
+            <option value="150000">Até R$ 150 mil</option>
+          </select>
+        </div>
+        <button class="btn btn-dark" type="submit"><svg class="ico"><use href="#i-search"/></svg>Buscar carros</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="trust">
+  <div class="wrap trust-grid">
+    <div class="trust-item reveal"><div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div><div><b>Revisado e com garantia</b><p>Cada carro passa por revisão antes de ir para o pátio.</p></div></div>
+    <div class="trust-item reveal"><div class="ic"><svg class="ico"><use href="#i-award"/></svg></div><div><b>Procedência garantida</b><p>Histórico verificado e documentação em dia.</p></div></div>
+    <div class="trust-item reveal"><div class="ic"><svg class="ico"><use href="#i-coin"/></svg></div><div><b>Financiamos em até 60x</b><p>Parcelas que cabem no seu bolso, com aprovação rápida.</p></div></div>
+    <div class="trust-item reveal"><div class="ic"><svg class="ico"><use href="#i-swap"/></svg></div><div><b>Aceitamos seu usado</b><p>Seu carro atual pode virar a entrada do próximo.</p></div></div>
+  </div>
+</section>
+
+<!-- ESTOQUE -->
+<section class="sec light" id="estoque">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow red">Estoque V12</span><h2>Carros disponíveis</h2></div>
+      <p>Seleção de veículos do nosso pátio na Av. Recife. Clique em “Tenho interesse” e fale direto com um consultor sobre o carro escolhido.</p>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria">
+        <button class="chip" aria-pressed="true" data-cat="">Todos</button>
+        <button class="chip" aria-pressed="false" data-cat="SUV">SUVs</button>
+        <button class="chip" aria-pressed="false" data-cat="Picape">Picapes</button>
+        <button class="chip" aria-pressed="false" data-cat="Sedã">Sedãs</button>
+        <button class="chip" aria-pressed="false" data-cat="Utilitário">Utilitários</button>
+      </div>
+      <label class="sort">Ordenar
+        <select id="ordem">
+          <option value="dest">Destaques</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+          <option value="ano">Mais novos</option>
+        </select>
+      </label>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+    <div class="stock-note">
+      <p><b style="color:var(--text)">O estoque gira rápido.</b> Novidades chegam toda semana e aparecem primeiro no nosso Instagram. Não achou o modelo que procura? A gente busca para você.</p>
+      <a href="#" class="btn btn-dark" data-wa="Olá! Estou procurando um carro específico, podem me ajudar a encontrar?">Encomendar meu carro</a>
+    </div>
+  </div>
+</section>
+
+<!-- DESTAQUE -->
+<section class="sec feat">
+  <div class="wrap feat-grid">
+    <div class="gallery reveal" id="gallery">
+      <div class="main"><img id="g-main" src="img/duster-prata.jpg" alt="Renault Duster Intense 2024 prata"></div>
+      <button aria-current="true" data-src="img/duster-prata.jpg" aria-label="Foto lateral"><img src="img/duster-prata.jpg" alt=""></button>
+      <button aria-current="false" data-src="img/duster-painel.jpg" aria-label="Foto do painel"><img src="img/duster-painel.jpg" alt=""></button>
+      <button aria-current="false" data-src="img/duster-prata-traseira.jpg" aria-label="Foto traseira"><img src="img/duster-prata-traseira.jpg" alt=""></button>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow red">Oferta em destaque</span>
+      <h2>Renault Duster Intense 2024</h2>
+      <p class="ver">1.6 Flex 16V · Câmbio manual</p>
+      <ul class="feat-list">
+        <li><svg class="ico"><use href="#i-check"/></svg>Motor 1.6 flex, potente e econômico</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>16V, mais desempenho</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Câmbio manual, mais controle</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Design robusto e moderno</li>
+      </ul>
+      <div class="feat-price"><small>por apenas</small><b>R$ 88.990</b></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-wa" data-wa="Olá! Tenho interesse no Renault Duster Intense 2024 1.6 de R$ 88.990. Ainda está disponível?"><svg class="ico"><use href="#i-wa"/></svg>Quero esse carro</a>
+        <a href="#financiamento" class="btn btn-ghost" data-sim="88990">Simular parcelas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAMENTO -->
+<section class="sec light" id="financiamento">
+  <div class="wrap fin-grid">
+    <div class="fin-copy reveal">
+      <span class="eyebrow red">Financiamento</span>
+      <h2 style="margin-top:12px">Saia de carro novo com parcelas que cabem no bolso.</h2>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Até 60x</b> com os principais bancos do mercado.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Seu usado como entrada:</b> avaliamos na hora e abatemos do valor.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Repasse de consórcio:</b> oportunidades de entrada + parcelas, como o BMW 320i.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Análise pelo WhatsApp:</b> mande seus dados e receba a resposta sem sair de casa.</span></li>
+      </ul>
+    </div>
+    <div class="sim reveal" id="sim">
+      <h3>Simule seu financiamento</h3>
+      <div class="range">
+        <div class="top"><span>Valor do carro</span><output id="o-valor"></output></div>
+        <input type="range" id="r-valor" min="30000" max="250000" step="10" value="88990">
+      </div>
+      <div class="range">
+        <div class="top"><span>Entrada</span><output id="o-entrada"></output></div>
+        <input type="range" id="r-entrada" min="0" max="100" step="1" value="30">
+      </div>
+      <div class="range" style="margin-bottom:10px">
+        <div class="top"><span>Prazo</span></div>
+        <div class="terms" id="terms">
+          <button type="button" data-n="12" aria-pressed="false">12x</button>
+          <button type="button" data-n="24" aria-pressed="false">24x</button>
+          <button type="button" data-n="36" aria-pressed="false">36x</button>
+          <button type="button" data-n="48" aria-pressed="true">48x</button>
+          <button type="button" data-n="60" aria-pressed="false">60x</button>
+        </div>
+      </div>
+      <div class="sim-out">
+        <div><small>Parcela estimada</small><b id="o-parcela">—</b></div>
+        <a href="#" class="btn btn-wa" id="sim-send"><svg class="ico"><use href="#i-wa"/></svg>Enviar para análise</a>
+      </div>
+      <p class="disc">Simulação ilustrativa com taxa de referência de 1,89% a.m. Valores finais dependem da análise de crédito e do banco escolhido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Como funciona</span><h2>Do primeiro “oi” até a chave na mão</h2></div>
+      <p>Processo simples, transparente e no seu ritmo, seja na loja ou 100% online.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Escolha o carro</h3><p>Navegue pelo estoque aqui no site ou no nosso Instagram e separe os favoritos.</p></div>
+      <div class="step reveal"><h3>Fale com um consultor</h3><p>Pelo WhatsApp você tira dúvidas, recebe mais fotos e vídeos e agenda sua visita.</p></div>
+      <div class="step reveal"><h3>Simule e aprove</h3><p>Financiamento, troca com seu usado ou repasse de consórcio. A gente monta a melhor condição.</p></div>
+      <div class="step reveal"><h3>Saia dirigindo</h3><p>Documentação resolvida e carro revisado. É só pegar a chave e realizar o sonho.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TROCA -->
+<section class="sec trade" id="troca">
+  <div class="wrap trade-grid">
+    <div class="reveal">
+      <span class="eyebrow red">Venda ou troque seu carro</span>
+      <h2 style="margin-top:12px">Seu usado vale como entrada.</h2>
+      <p class="lead">Preencha os dados do seu veículo e receba uma avaliação pelo WhatsApp. Sem compromisso, sem burocracia e com pagamento justo.</p>
+    </div>
+    <form class="form reveal" id="form-troca">
+      <div class="field"><label for="t-marca">Marca e modelo</label><input id="t-marca" required placeholder="Ex.: Hyundai HB20"></div>
+      <div class="field"><label for="t-ano">Ano</label><input id="t-ano" inputmode="numeric" required placeholder="Ex.: 2020"></div>
+      <div class="field"><label for="t-km">Quilometragem</label><input id="t-km" inputmode="numeric" placeholder="Ex.: 45.000"></div>
+      <div class="field"><label for="t-obj">O que você quer?</label>
+        <select id="t-obj"><option>Trocar por um carro da V12</option><option>Vender meu carro</option></select></div>
+      <div class="field full"><label for="t-nome">Seu nome</label><input id="t-nome" required placeholder="Como podemos te chamar?"></div>
+      <button class="btn btn-wa full" type="submit"><svg class="ico"><use href="#i-wa"/></svg>Quero minha avaliação</button>
+    </form>
+  </div>
+</section>
+
+<!-- POR QUE CONFIAR -->
+<section class="sec light" id="sobre">
+  <div class="wrap why-grid">
+    <div class="why-photos reveal">
+      <figure><img src="img/entrega-l200.jpg" alt="Clientes recebendo uma Mitsubishi L200 na V12 Autos"><figcaption>Entregue · mais um sonho realizado</figcaption></figure>
+      <figure><img src="img/entrega-s10.jpg" alt="Cliente recebendo uma Chevrolet S10 na V12 Autos"><figcaption>Entregue · S10 com novo dono</figcaption></figure>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow red">Por que a V12</span>
+      <h2 style="margin-top:12px">Confiança que se vê no pátio e nas entregas.</h2>
+      <div class="stats">
+        <div class="stat"><b>9.050</b><span>seguidores acompanhando</span></div>
+        <div class="stat"><b>396</b><span>publicações de estoque e entregas</span></div>
+        <div class="stat"><b>60x</b><span>para financiar</span></div>
+      </div>
+      <ul class="why-list">
+        <li><div class="ic"><svg class="ico"><use href="#i-store"/></svg></div><div><b>Loja física em Recife</b><p>Pátio coberto na Av. Recife, 592, em Areias. Venha ver, ligar o motor e fazer seu test drive.</p></div></li>
+        <li><div class="ic"><svg class="ico"><use href="#i-doc"/></svg></div><div><b>Tudo às claras</b><p>Preço, entrada e parcelas divulgados abertamente. Procedência e documentação conferidas antes da venda.</p></div></li>
+        <li><div class="ic"><svg class="ico"><use href="#i-shield"/></svg></div><div><b>Pós-venda de verdade</b><p>Carros revisados e com garantia. Você compra e continua tendo com quem falar.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ATENDIMENTO REGIONAL -->
+<section class="sec" style="padding-bottom:40px">
+  <div class="wrap region">
+    <div class="region-card reveal">
+      <span class="eyebrow">Venda direta e online</span>
+      <h3>Atendemos Recife, Região Metropolitana e toda a Paraíba.</h3>
+      <p>Mora em Campina Grande ou em outra cidade da Paraíba? Fazemos a venda direta e online: fotos, vídeos, documentação e financiamento à distância, com toda a segurança.</p>
+      <a href="#" class="btn btn-ghost" data-wa="Olá! Sou de fora de Recife e quero comprar online pela V12 Autos. Como funciona?"><svg class="ico"><use href="#i-globe"/></svg>Comprar à distância</a>
+    </div>
+    <div class="region-card alt reveal">
+      <span class="eyebrow">Repasse de consórcio</span>
+      <h3>Carro premium com entrada + parcelas.</h3>
+      <p>Oportunidades como a BMW 320i Modern/Sport: entrada de R$ 75.990 + 72x de R$ 965,00.</p>
+      <a href="#" class="btn btn-dark" data-wa="Olá! Quero saber mais sobre os repasses de consórcio da V12 Autos.">Ver oportunidades</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow red">Dúvidas frequentes</span><h2>Perguntas que todo mundo faz</h2></div></div>
+    <div class="faq">
+      <details><summary>Os carros têm garantia?</summary><p>Sim. Todos os veículos são revisados antes da venda e saem com garantia. As condições específicas de cada carro são informadas pelo consultor no atendimento.</p></details>
+      <details><summary>Em quantas vezes posso financiar?</summary><p>Financiamos em até 60x, sujeito à análise de crédito. Você pode simular aqui no site e mandar a simulação direto para o nosso WhatsApp.</p></details>
+      <details><summary>Vocês aceitam meu carro como parte do pagamento?</summary><p>Aceitamos. Avaliamos seu usado e o valor entra como entrada do próximo carro. Use o formulário “Venda seu carro” para adiantar a avaliação.</p></details>
+      <details><summary>Moro fora de Recife. Consigo comprar?</summary><p>Consegue. Fazemos venda direta e online para toda a Paraíba, incluindo Campina Grande, e outras cidades. Enviamos fotos e vídeos detalhados e cuidamos da documentação.</p></details>
+      <details><summary>Preciso agendar para visitar a loja?</summary><p>Não é obrigatório, mas agendar pelo WhatsApp garante que o carro que você quer esteja separado e um consultor disponível. Funcionamos de segunda a sexta das 08h às 17h e aos sábados das 08h às 13h.</p></details>
+      <details><summary>O que é repasse de consórcio?</summary><p>É quando você assume uma carta de consórcio já contemplada: paga uma entrada e segue com as parcelas restantes. É uma forma de ter um carro de categoria superior com parcelas menores.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec" id="contato">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Visite a V12</span><h2>Estamos em Areias, Recife</h2></div>
+      <span class="status" id="status"><i></i><span>—</span></span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="c-row"><div class="ic"><svg class="ico"><use href="#i-pin"/></svg></div><div><small>Endereço</small><b>Av. Recife, 592</b><p>Areias, Recife-PE · CEP 50860-000</p></div></div>
+        <div class="c-row"><div class="ic"><svg class="ico"><use href="#i-wa"/></svg></div><div><small>WhatsApp e telefone</small><b><a href="tel:+5581991797331">(81) 99179-7331</a></b><p>Atendimento rápido com consultor</p></div></div>
+        <div class="c-row"><div class="ic"><svg class="ico"><use href="#i-clock"/></svg></div><div><small>Horário de funcionamento</small>
+          <div class="hours" style="margin-top:6px"><span>Segunda a sexta</span><b>08h às 17h</b><span>Sábado</span><b>08h às 13h</b><span>Domingo</span><span>Fechado</span></div></div></div>
+        <div class="c-row"><div class="ic"><svg class="ico"><use href="#i-ig"/></svg></div><div><small>Instagram</small><b><a href="https://www.instagram.com/v12autos_/" target="_blank" rel="noopener">@v12autos_</a></b><p>Estoque novo e entregas todos os dias</p></div></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="#" class="btn btn-wa" data-wa="Olá! Quero agendar uma visita na V12 Autos."><svg class="ico"><use href="#i-wa"/></svg>Agendar visita</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Recife,+592,+Areias,+Recife+-+PE,+50860-000" target="_blank" rel="noopener" class="btn btn-ghost">Como chegar</a>
+        </div>
+      </div>
+      <div class="map"><iframe title="Mapa da V12 Autos" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Recife,+592,+Areias,+Recife+-+PE,+50860-000&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><img src="img/logo-branco.png" alt="V12 Autos"><p>Qualidade e confiança em cada quilômetro. Seminovos revisados, com garantia e procedência em Recife-PE.</p></div>
+      <div><h4>Navegue</h4><ul><li><a href="#estoque">Estoque</a></li><li><a href="#financiamento">Financiamento</a></li><li><a href="#troca">Venda seu carro</a></li><li><a href="#sobre">Por que a V12</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="tel:+5581991797331">(81) 99179-7331</a></li><li><a href="https://www.instagram.com/v12autos_/" target="_blank" rel="noopener">@v12autos_</a></li><li>Av. Recife, 592 · Areias</li><li>Recife-PE · 50860-000</li></ul></div>
+      <div><h4>Horários</h4><ul><li>Seg a Sex · 08h–17h</li><li>Sábado · 08h–13h</li><li>Domingo · fechado</li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="ano"></span> V12 Autos. Todos os direitos reservados.</span><span>Preços e condições sujeitos a alteração e à disponibilidade do estoque. Fotos dos veículos reais da loja.</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" data-wa="Olá, V12 Autos! Vim pelo site e gostaria de atendimento." aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<div class="mbar">
+  <a class="btn btn-ghost" href="#estoque">Ver estoque</a>
+  <a class="btn btn-wa" href="#" data-wa="Olá, V12 Autos! Vim pelo site e gostaria de atendimento."><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+</div>
+
+<script>
+const WA = "5581991797331";
+const waLink = m => `https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const brl2 = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL",minimumFractionDigits:2});
+
+/* Estoque — edite aqui para atualizar os carros do site */
+const CARROS = [
+  {marca:"Renault",modelo:"Duster Intense",versao:"1.6 Flex 16V · Manual",ano:2024,cat:"SUV",foto:"img/duster-prata-frente.jpg",preco:88990,badge:["Oferta","red"],specs:["2024","Manual","Flex"],dest:1},
+  {marca:"BMW",modelo:"320i Modern/Sport",versao:"2.0 TB Flex 16V · Automático",ano:null,cat:"Sedã",foto:"img/bmw-320i.jpg",entrada:75990,parc:[72,965],badge:["Repasse de consórcio","dark"],specs:["Automático","Flex","4 portas"],dest:2},
+  {marca:"Jeep",modelo:"Renegade",versao:"1.3 Turbo",ano:2025,cat:"SUV",foto:"img/renegade-preto.jpg",entrada:74990,parc:[71,808],badge:["Novidade","gold"],specs:["2025","Turbo"],dest:3},
+  {marca:"Fiat",modelo:"Fiorino",versao:"0 km · Garantia de fábrica",ano:2027,cat:"Utilitário",foto:"img/fiorino.jpg",badge:["0 km","red"],specs:["2027","0 km","Garantia de fábrica"],dest:4},
+  {marca:"Mitsubishi",modelo:"L200 Triton",versao:"Cabine dupla",ano:null,cat:"Picape",foto:"img/l200-frente.jpg",entrada:73990,parc:[null,960],badge:["Oportunidade","gold"],specs:["Picape","Cabine dupla"],dest:5},
+  {marca:"Jeep",modelo:"Compass Sport",versao:"Sport",ano:2018,cat:"SUV",foto:"img/compass.jpg",preco:77990,specs:["2018","Sport"],dest:6},
+  {marca:"Renault",modelo:"Duster",versao:"Parcelas a partir de R$ 544",ano:null,cat:"SUV",foto:"img/duster-branca.jpg",entrada:59900,parc:[67,544],specs:["SUV","Branco"],dest:7},
+  {marca:"Chevrolet",modelo:"S10",versao:"Consulte versão e ano",ano:null,cat:"Picape",foto:"img/s10-branca.jpg",specs:["Picape","Branca"],dest:8},
+];
+
+const grid=document.getElementById("grid"), count=document.getElementById("count");
+const st={cat:"",marca:"",max:0,ordem:"dest"};
+const valorRef=c=>c.preco||(c.entrada&&c.parc&&c.parc[0]?c.entrada+c.parc[0]*c.parc[1]:c.entrada)||Infinity;
+
+function card(c){
+  const nome=`${c.marca} ${c.modelo}${c.ano?" "+c.ano:""}`;
+  let price;
+  if(c.preco) price=`<div class="lbl">Preço à vista</div><div class="val">${brl(c.preco)}</div><div class="inst">ou financie em até <b>60x</b></div>`;
+  else if(c.entrada) price=`<div class="lbl">Entrada</div><div class="val">${brl(c.entrada)}</div><div class="inst">+ ${c.parc[0]?`<b>${c.parc[0]}x</b> de `:"parcelas de "}<b>${brl2(c.parc[1])}</b></div>`;
+  else price=`<div class="lbl">Condição especial</div><div class="val" style="font-size:21px">Consulte</div><div class="inst">Fale com um consultor</div>`;
+  const msg=`Olá! Tenho interesse no ${nome}${c.versao?" ("+c.versao+")":""}. Ainda está disponível?`;
+  return `<article class="car">
+    <div class="ph"><img loading="lazy" src="${c.foto}" alt="${nome}">${c.badge?`<span class="badge ${c.badge[1]}">${c.badge[0]}</span>`:""}</div>
+    <div class="body"><span class="brand">${c.marca}</span><h3>${c.modelo}${c.ano?` <span style="font-weight:500;color:var(--muted)">${c.ano}</span>`:""}</h3><div class="ver">${c.versao||""}</div>
+    <div class="specs">${c.specs.map(s=>`<span>${s}</span>`).join("")}</div>
+    <div class="price">${price}</div>
+    <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink(msg)}"><svg class="ico"><use href="#i-wa"/></svg>Tenho interesse</a></div>
+  </article>`;
+}
+function render(){
+  let l=CARROS.filter(c=>(!st.cat||c.cat===st.cat)&&(!st.marca||c.marca===st.marca)&&(!st.max||valorRef(c)<=st.max||valorRef(c)===Infinity));
+  const s={dest:(a,b)=>a.dest-b.dest,menor:(a,b)=>valorRef(a)-valorRef(b),maior:(a,b)=>(valorRef(b)===Infinity?-1:valorRef(b))-(valorRef(a)===Infinity?-1:valorRef(a)),ano:(a,b)=>(b.ano||0)-(a.ano||0)}[st.ordem];
+  l.sort(s);
+  count.textContent=`${l.length} ${l.length===1?"veículo encontrado":"veículos encontrados"}`;
+  grid.innerHTML=l.length?l.map(card).join(""):`<div class="empty">Nenhum carro com esses filtros agora.<br><br><a class="btn btn-dark" target="_blank" rel="noopener" href="${waLink("Olá! Não encontrei no site o carro que procuro. Podem me ajudar?")}">Pedir ao consultor</a></div>`;
+}
+// marcas
+const fm=document.getElementById("f-marca");
+[...new Set(CARROS.map(c=>c.marca))].sort().forEach(m=>fm.insertAdjacentHTML("beforeend",`<option>${m}</option>`));
+function setChip(cat){document.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.cat===cat))}
+document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;st.cat=b.dataset.cat;setChip(st.cat);document.getElementById("f-tipo").value=st.cat;render()});
+document.getElementById("ordem").addEventListener("change",e=>{st.ordem=e.target.value;render()});
+document.getElementById("busca").addEventListener("submit",e=>{e.preventDefault();st.marca=fm.value;st.cat=document.getElementById("f-tipo").value;st.max=+document.getElementById("f-preco").value||0;setChip(st.cat);render();document.getElementById("estoque").scrollIntoView({behavior:"smooth"})});
+render();
+
+// links de WhatsApp
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=waLink(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+
+// galeria
+document.getElementById("gallery").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;document.getElementById("g-main").src=b.dataset.src;document.querySelectorAll("#gallery button").forEach(x=>x.setAttribute("aria-current",x===b))});
+
+// simulador
+const rv=document.getElementById("r-valor"), re=document.getElementById("r-entrada");
+let prazo=48; const taxa=.0189;
+function fill(r){r.style.setProperty("--p",((r.value-r.min)/(r.max-r.min)*100)+"%")}
+function sim(){
+  const v=+rv.value, e=Math.round(v*re.value/100), f=v-e;
+  const p=f<=0?0:f*taxa/(1-Math.pow(1+taxa,-prazo));
+  document.getElementById("o-valor").textContent=brl(v);
+  document.getElementById("o-entrada").textContent=`${brl(e)} (${re.value}%)`;
+  document.getElementById("o-parcela").textContent=f<=0?"À vista":`${prazo}x ${brl2(p)}`;
+  document.getElementById("sim-send").href=waLink(`Olá! Fiz uma simulação no site da V12 Autos:\n• Valor do carro: ${brl(v)}\n• Entrada: ${brl(e)}\n• Prazo: ${prazo}x\n• Parcela estimada: ${brl2(p)}\nGostaria de fazer a análise de crédito.`);
+  document.getElementById("sim-send").target="_blank";
+  fill(rv);fill(re);
+}
+[rv,re].forEach(r=>r.addEventListener("input",sim));
+document.getElementById("terms").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;prazo=+b.dataset.n;document.querySelectorAll("#terms button").forEach(x=>x.setAttribute("aria-pressed",x===b));sim()});
+document.querySelectorAll("[data-sim]").forEach(a=>a.addEventListener("click",()=>{rv.value=a.dataset.sim;sim()}));
+sim();
+
+// troca
+document.getElementById("form-troca").addEventListener("submit",e=>{e.preventDefault();const g=id=>document.getElementById(id).value.trim();
+  window.open(waLink(`Olá! Sou ${g("t-nome")} e quero avaliar meu carro.\n• Veículo: ${g("t-marca")}\n• Ano: ${g("t-ano")}\n• KM: ${g("t-km")||"não informado"}\n• Objetivo: ${g("t-obj")}`),"_blank","noopener")});
+
+// aberto agora? (horário de Recife, UTC-3)
+(function(){const now=new Date(Date.now()+(new Date().getTimezoneOffset()-180)*60000);const d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+  const open=(d>=1&&d<=5&&h>=8&&h<17)||(d===6&&h>=8&&h<13);const s=document.getElementById("status");
+  s.classList.toggle("closed",!open);s.querySelector("span").textContent=open?"Aberto agora":"Fechado agora · fale pelo WhatsApp"})();
+
+// menu mobile
+const bg=document.getElementById("burger"), mn=document.getElementById("menu");
+bg.addEventListener("click",()=>{const o=mn.classList.toggle("open");bg.setAttribute("aria-expanded",o)});
+mn.addEventListener("click",e=>{if(e.target.tagName==="A"){mn.classList.remove("open");bg.setAttribute("aria-expanded",false)}});
+
+// animações
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+document.getElementById("ano").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
