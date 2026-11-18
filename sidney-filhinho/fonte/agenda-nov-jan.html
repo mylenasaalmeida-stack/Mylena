@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Agenda Nov Jan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+/* Fonte das artes da agenda Nov 2026 · Jan 2027. Mesma identidade do kit (palco, couro, âmbar).
+   Render: node render.js (gera ../png/*.png) */
+:root{--palco:#100d0b;--couro:#1d1713;--linha:#3a2f27;--creme:#f2e8d8;--poeira:#b3a491;--ambar:#e0a646;
+  --fd:"Big Shoulders Display",Impact,sans-serif;--fc:"Archivo",Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:#333;display:flex;flex-direction:column;gap:40px;padding:40px;align-items:flex-start}
+.art{position:relative;overflow:hidden;background:var(--palco);color:var(--creme);font-family:var(--fd);width:1080px}
+.mono{position:absolute;top:54px;left:54px;width:140px;height:140px;border:5px solid var(--ambar);display:grid;place-items:center;font-weight:900;font-size:69px;color:var(--ambar);letter-spacing:-.02em;z-index:2}
+.k{font-family:var(--fc);font-weight:600;font-size:33px;letter-spacing:.18em;text-transform:uppercase;color:var(--ambar)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:4px solid var(--ambar);padding-top:26px;font-family:var(--fc);font-size:34px;font-weight:600}
+.bar b{color:var(--ambar);white-space:nowrap}
+
+/* ---------- AGENDA (feed 4:5) ---------- */
+.agenda{height:1350px}
+.agenda .ph{position:absolute;top:0;left:42%;width:58%;height:100%;object-fit:cover;object-position:40% 20%;filter:saturate(.35) sepia(.5) brightness(.75)}
+.agenda .fx{position:absolute;inset:0;background:linear-gradient(90deg,var(--palco) 40%,rgba(16,13,11,.55) 70%,rgba(16,13,11,.2))}
+.agenda .head{position:absolute;top:236px;left:65px;z-index:2;display:flex;flex-direction:column;gap:8px}
+.agenda .head .t{font-weight:900;text-transform:uppercase;line-height:.86;font-size:150px}
+.agenda .body{position:absolute;left:65px;right:65px;bottom:62px;z-index:2;display:flex;flex-direction:column;gap:22px}
+.rows{display:flex;flex-direction:column;gap:12px}
+.mes{font-family:var(--fc);font-weight:600;font-size:22px;letter-spacing:.2em;text-transform:uppercase;color:var(--poeira);margin:6px 0 -2px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;background:rgba(16,13,11,.8);border-left:8px solid var(--ambar);padding:12px 26px}
+.row .d{font-weight:900;font-size:68px;line-height:.9;text-align:center}
+.row .d small{display:block;font-size:26px;font-weight:700;color:var(--ambar);letter-spacing:.1em;margin-top:4px}
+.row .w{font-family:var(--fc);font-size:30px;line-height:1.25;color:var(--creme)}
+.row .w b{display:block;font-family:var(--fd);font-size:46px;font-weight:800;text-transform:uppercase;line-height:1}
+
+/* ---------- STORY (9:16) ---------- */
+.story{height:1920px}
+.story .ph{position:absolute;top:0;left:0;width:1080px;height:870px;object-fit:cover}
+.story .fx{position:absolute;left:0;right:0;top:560px;height:310px;background:linear-gradient(180deg,rgba(16,13,11,0),var(--palco))}
+.story .body{position:absolute;left:65px;right:65px;top:880px;bottom:62px;display:flex;flex-direction:column;z-index:2}
+.story .data{display:flex;align-items:flex-end;gap:44px;margin-top:22px}
+.story .num{font-weight:900;font-size:400px;line-height:.78;letter-spacing:-.01em}
+.story .mesx{display:flex;flex-direction:column;gap:6px;padding-bottom:12px}
+.story .mesx b{font-weight:800;font-size:96px;line-height:.9;color:var(--ambar);text-transform:uppercase}
+.story .mesx span{font-family:var(--fc);font-weight:600;font-size:40px}
+.story .local{font-weight:900;font-size:118px;line-height:.9;text-transform:uppercase;margin-top:48px}
+.story .sub{font-family:var(--fc);font-size:42px;line-height:1.45;color:var(--poeira);margin-top:36px}
+.story .bar{margin-top:auto}
+.story .bar span{line-height:1.55}
+</style></head><body>
+
+<!-- AGENDA NOV · JAN -->
+<div class="art agenda" id="fixado-2-agenda-nov-jan">
+  <img class="ph" src="img/agenda-teclado.jpg" alt="">
+  <div class="fx"></div><span class="mono">SF</span>
+  <div class="head"><span class="k">Agenda de shows</span><span class="t">Nov · Jan</span></div>
+  <div class="body">
+    <div class="rows">
+      <div class="row"><span class="d">22<small>NOV · DOM</small></span><span class="w"><b>Recanto dos Forrozeiros</b>Tavares – PB</span></div>
+      <div class="row"><span class="d">27<small>NOV · SEX</small></span><span class="w"><b>Espetinho do Paulinho</b>Praça do Lápis · Monteiro – PB</span></div>
+      <div class="row"><span class="d">28<small>NOV · SÁB</small></span><span class="w"><b>Dicumê da Cida</b>Serra Talhada – PE</span></div>
+      <div class="row"><span class="d">29<small>NOV · DOM</small></span><span class="w"><b>Churrascaria Manoel de Cândido</b>A partir das 12h</span></div>
+      <div class="row"><span class="d">16<small>JAN · SÁB</small></span><span class="w"><b>Bar do Véi de Tico</b>Juru – PB</span></div>
+      <div class="row"><span class="d">17<small>JAN · DOM</small></span><span class="w"><b>Churrascaria Timbaúba</b>Juru – PB</span></div>
+    </div>
+    <div class="bar"><span>Datas abertas em dezembro</span><b>(83) 99813-7990</b></div>
+  </div>
+</div>
+
+<!-- STORIES -->
+<div class="art story" id="story-show-22-11">
+  <img class="ph" src="img/foto-story-27-12.jpg" alt=""><div class="fx"></div>
+  <div class="body"><span class="k">Agenda de shows</span>
+    <div class="data"><span class="num">22</span><div class="mesx"><b>Novembro</b><span>Domingo</span></div></div>
+    <div class="local">Recanto dos<br>Forrozeiros</div>
+    <p class="sub">Tavares – PB</p>
+    <div class="bar"><span>Sidney Filhinho · forró, piseiro e arrocha</span><b>(83) 99813-7990</b></div></div>
+</div>
+
+<div class="art story" id="story-show-27-11">
+  <img class="ph" src="img/foto-story-29-11.jpg" alt=""><div class="fx"></div>
+  <div class="body"><span class="k">Sextou com forró</span>
+    <div class="data"><span class="num">27</span><div class="mesx"><b>Novembro</b><span>Sexta-feira</span></div></div>
+    <div class="local">Espetinho<br>do Paulinho</div>
+    <p class="sub">Na Praça do Lápis ✏️<br>Monteiro – PB</p>
+    <div class="bar"><span>Sidney Filhinho · forró, piseiro e arrocha</span><b>(83) 99813-7990</b></div></div>
+</div>
+
+<div class="art story" id="story-show-28-11">
+  <img class="ph" src="img/foto-story-14-11.jpg" alt=""><div class="fx"></div>
+  <div class="body"><span class="k">Agenda de shows</span>
+    <div class="data"><span class="num">28</span><div class="mesx"><b>Novembro</b><span>Sábado</span></div></div>
+    <div class="local">Dicumê<br>da Cida</div>
+    <p class="sub">Serra Talhada – PE</p>
+    <div class="bar"><span>Sidney Filhinho · forró, piseiro e arrocha</span><b>(83) 99813-7990</b></div></div>
+</div>
+
+<div class="art story" id="story-show-16-01">
+  <img class="ph" src="img/foto-story-27-12.jpg" alt=""><div class="fx"></div>
+  <div class="body"><span class="k">Agenda de shows</span>
+    <div class="data"><span class="num">16</span><div class="mesx"><b>Janeiro</b><span>Sábado</span></div></div>
+    <div class="local">Bar do<br>Véi de Tico</div>
+    <p class="sub">Juru – PB</p>
+    <div class="bar"><span>Sidney Filhinho · forró, piseiro e arrocha</span><b>(83) 99813-7990</b></div></div>
+</div>
+
+<div class="art story" id="story-show-17-01">
+  <img class="ph" src="img/foto-story-14-11.jpg" alt=""><div class="fx"></div>
+  <div class="body"><span class="k">É dia de forró</span>
+    <div class="data"><span class="num">17</span><div class="mesx"><b>Janeiro</b><span>Domingo</span></div></div>
+    <div class="local">Churrascaria<br>Timbaúba</div>
+    <p class="sub">Juru – PB</p>
+    <div class="bar"><span>Sidney Filhinho · forró, piseiro e arrocha</span><b>(83) 99813-7990</b></div></div>
+</div>
+
+</body></html>
