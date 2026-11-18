@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fisheria Pescado · Camarão de praia, peixes e frutos do mar em Recife e Jaboatão</title>
+<meta name="description" content="O melhor camarão de praia do Brasil. Peixes, filés, postas, frutos do mar e petiscos com entrega em Recife e Jaboatão. Monte sua sacola e finalize o pedido pelo WhatsApp.">
+<meta name="theme-color" content="#145F69">
+<link rel="icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fisheria Pescado · Cardápio digital">
+<meta property="og:description" content="O melhor camarão de praia do Brasil. Monte sua sacola e peça pelo WhatsApp.">
+<meta property="og:image" content="img/g/477.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SeafoodRestaurant","name":"Fisheria Pescado","image":"img/logo.png","telephone":"+55 81 99526-7641","email":"fisheriapescado@gmail.com","servesCuisine":"Pescados e frutos do mar","address":{"@type":"PostalAddress","streetAddress":"Rua Maestro Nelson Ferreira, 742","addressLocality":"Jaboatão dos Guararapes","addressRegion":"PE","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"12:00"}],"sameAs":["https://www.instagram.com/fisheriapescado/"]}
+</script>
+<style>
+:root{
+  --teal:#145F69; --teal-2:#1B7682; --teal-deep:#0C424A; --teal-ink:#08323A;
+  --aqua:#E6F2F3; --aqua-2:#D3E8EA; --foam:#F6FAFA;
+  --ink:#16292C; --muted:#5B7275; --line:#D5E4E6;
+  --lime:#7BD85B; --red:#D83A2E; --gold:#F2B33D; --coral:#F26B3A;
+  --serif:"Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:18px; --shadow:0 10px 30px -12px rgba(8,50,58,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:150px}
+body{background:var(--foam);color:var(--ink);font-family:var(--body);line-height:1.5;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+body.lock{overflow:hidden}
+.hide{display:none!important}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .15s, background .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:#25D366;color:#06351b;box-shadow:0 8px 20px -8px rgba(37,211,102,.7)}
+.btn-wa:hover{background:#2fe072}
+.btn-light{background:#fff;color:var(--teal-deep)}
+.btn-light:hover{background:var(--aqua)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-2)}
+
+/* ---------- TOP BAR ---------- */
+.ribbon{background:var(--teal-ink);color:#CFEDEF;font-size:13px}
+.ribbon .wrap{display:flex;justify-content:center;gap:8px 26px;flex-wrap:wrap;padding:7px 0;text-align:center}
+.ribbon b{color:#fff}
+.status{display:inline-flex;align-items:center;gap:7px;font-weight:600}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(123,216,91,.25)}
+.status.closed i{background:var(--gold);box-shadow:0 0 0 3px rgba(242,179,61,.25)}
+@media (max-width:640px){ .ribbon .opt{display:none} }
+
+.top{position:sticky;top:0;z-index:40;background:rgba(246,250,250,.93);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand img{width:46px;height:46px;border-radius:50%}
+.brand b{font-family:Impact,"Arial Narrow Bold","Oswald",sans-serif;font-weight:700;font-style:italic;font-size:22px;letter-spacing:.02em;color:var(--teal);line-height:1}
+.brand small{display:block;font-size:10.5px;letter-spacing:.28em;color:var(--muted);font-weight:500;margin-top:3px}
+.nav{display:flex;gap:24px;margin-left:auto;font-weight:500;font-size:15px}
+.nav a{color:var(--muted);transition:color .2s}
+.nav a:hover{color:var(--teal)}
+.top-actions{display:flex;gap:10px;align-items:center;margin-left:20px}
+.bag-btn{position:relative;display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 12px;border-radius:999px;background:var(--teal);color:#fff;font-weight:700;font-size:15px}
+.bag-btn svg{width:22px;height:22px}
+.bag-btn .count{min-width:22px;height:22px;border-radius:11px;background:var(--lime);color:var(--teal-ink);font-size:12.5px;display:grid;place-items:center;padding:0 6px}
+.bag-btn.bump{animation:bump .4s ease}
+@keyframes bump{40%{transform:scale(1.12)}}
+.wa-mini{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#06351b}
+.wa-mini svg{width:22px;height:22px}
+@media (max-width:900px){ .nav{display:none} .top-actions{margin-left:auto} .bag-label{display:none} }
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:radial-gradient(120% 90% at 80% 10%, #1E7C88 0%, var(--teal) 45%, var(--teal-deep) 100%);color:#fff;overflow:hidden;isolation:isolate}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 110px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#BFE6EA}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--lime)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,5.6vw,64px);line-height:1.05;margin:16px 0 18px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:400;color:#BFF1A6}
+.hero p.lead{font-size:clamp(17px,2vw,19px);color:#D8EEF0;max-width:33em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:14.5px;color:#CBE7EA}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts svg{width:18px;height:18px;color:var(--lime)}
+.hero-art{position:relative;justify-self:center;width:min(420px,100%);aspect-ratio:1}
+.hero-art .photo{position:absolute;inset:0;border-radius:32px;overflow:hidden;transform:rotate(3deg);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);border:6px solid rgba(255,255,255,.9)}
+.hero-art .photo img{width:100%;height:100%;object-fit:cover}
+.hero-art .seal{position:absolute;left:-10%;top:-8%;width:34%;border-radius:50%;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:rotate(-8deg)}
+.hero-art .badge{position:absolute;right:-5%;bottom:6%;background:#fff;color:var(--teal-deep);border-radius:16px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px;line-height:1.25;transform:rotate(-3deg)}
+.hero-art .badge b{display:block;font-family:var(--serif);font-size:22px;color:var(--teal)}
+.school{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.school svg{position:absolute;color:rgba(255,255,255,.08)}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:80px;color:var(--foam)}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding:32px 0 100px;gap:26px}
+  .hero-art{width:min(300px,78vw);justify-self:center}
+}
+
+/* ---------- SECTION HEADS ---------- */
+section{padding:72px 0}
+.sec-head{text-align:center;margin-bottom:28px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(28px,4.4vw,44px);color:var(--teal);letter-spacing:.04em;text-transform:uppercase;line-height:1.1}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:40em;margin-inline:auto}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;color:var(--teal)}
+.divider::before,.divider::after{content:"";height:1.5px;width:64px;background:currentColor;opacity:.6}
+.divider svg{width:46px;height:20px}
+
+/* ---------- FEATURED SHRIMP ---------- */
+.feat{margin-top:-64px;position:relative;z-index:2;padding:0}
+.feat-card{background:#fff;border-radius:28px;box-shadow:var(--shadow);padding:26px}
+.feat-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.feat-top h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,32px);color:var(--teal-deep);line-height:1.15}
+.feat-top p{color:var(--muted);font-size:15px;margin-top:4px}
+.feat-top a{font-weight:700;color:var(--teal);display:inline-flex;gap:6px;align-items:center}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.card .ph{position:relative;aspect-ratio:1;background:var(--aqua);cursor:zoom-in}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .ph img{transform:scale(1.04)}
+.card .ribbon-off{position:absolute;left:10px;top:10px;background:var(--red);color:#fff;font-weight:700;font-size:12.5px;padding:4px 9px;border-radius:8px}
+.card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .nm{font-family:var(--serif);font-size:16.5px;line-height:1.25}
+.card .sz{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted)}
+.card .ft{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:auto}
+@media (max-width:900px){
+  .feat-card{padding:18px}
+  .cards{grid-template-columns:repeat(4,68%);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -18px;padding:2px 18px 6px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{scroll-snap-align:start}
+}
+@media (min-width:560px) and (max-width:900px){ .cards{grid-template-columns:repeat(4,42%)} }
+
+/* ---------- MENU ---------- */
+.menu-bar{position:sticky;top:68px;z-index:30;background:rgba(246,250,250,.95);backdrop-filter:blur(10px);padding:12px 0;border-bottom:1px solid var(--line)}
+.search{position:relative;margin-bottom:10px}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:var(--muted)}
+.search input{width:100%;height:48px;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:0 44px 0 46px;font-size:16px;outline:none;transition:border-color .2s}
+.search input:focus{border-color:var(--teal-2)}
+.search .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;display:none;place-items:center;color:var(--muted)}
+.search.has .clear{display:grid}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:flex;align-items:center;gap:7px;height:40px;padding:0 15px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:600;font-size:14.5px;color:var(--teal-deep);transition:all .2s}
+.tab svg{width:18px;height:18px}
+.tab:hover{border-color:var(--teal-2)}
+.tab.on{background:var(--teal);border-color:var(--teal);color:#fff}
+
+.cat{padding-top:36px}
+.cat-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.cat-ico{width:52px;height:52px;border-radius:16px;background:var(--teal);color:#fff;display:grid;place-items:center;flex:none}
+.cat-ico svg{width:30px;height:30px}
+.cat-head h3{font-family:var(--serif);font-size:clamp(23px,3.2vw,30px);color:var(--teal-deep);text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+.cat-head p{color:var(--muted);font-size:14px;margin-top:2px}
+
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:18px}
+.panel-head{background:var(--teal);color:#fff;padding:12px 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.panel-head h4{font-family:var(--serif);font-weight:400;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+.panel-head small{font-size:13px;color:#BFE6EA;letter-spacing:.04em}
+.panel-head.alt{background:var(--teal-deep)}
+.list{display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:860px){ .list{grid-template-columns:1fr} }
+
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:center;padding:14px 16px;border-top:1px dashed var(--line)}
+.list .item:nth-child(-n+2){border-top:0}
+@media (min-width:861px){ .list .item:nth-child(odd){border-right:1px dashed var(--line)} }
+@media (max-width:860px){ .list .item:nth-child(2){border-top:1px dashed var(--line)} }
+.thumb{width:76px;height:76px;border-radius:14px;overflow:hidden;background:var(--aqua);flex:none;display:grid;place-items:center;color:var(--teal);position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb svg{width:34px;height:34px;opacity:.45}
+button.thumb{cursor:zoom-in}
+.item .nm{font-family:var(--serif);font-size:16.5px;line-height:1.28;color:var(--ink)}
+.item .sz{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted)}
+.item .ds{font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--aqua);color:var(--teal)}
+.tag.warn{background:#FFF1D6;color:#8A5A00}
+.tag.off{background:#FDE3E0;color:var(--red)}
+.tag.hot{background:#FFE7DC;color:#B4410F}
+.buy{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.price{text-align:right;line-height:1.15}
+.price b{display:block;font-family:var(--serif);font-size:17.5px;color:var(--teal-deep);white-space:nowrap}
+.price s{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.price .per{font-size:12px;color:var(--muted)}
+.price.promo b{color:var(--red)}
+.add{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;flex:none;transition:background .2s, transform .15s;box-shadow:0 6px 14px -8px rgba(8,50,58,.8)}
+.add:hover{background:var(--teal-2)}
+.add:active{transform:scale(.9)}
+.add svg{width:20px;height:20px}
+.stepper{display:flex;align-items:center;background:var(--aqua);border-radius:999px;height:42px;flex:none}
+.stepper button{width:36px;height:42px;display:grid;place-items:center;color:var(--teal-deep)}
+.stepper button svg{width:16px;height:16px}
+.stepper output{min-width:30px;text-align:center;font-weight:700;font-size:14px;color:var(--teal-deep);white-space:nowrap}
+.opt-row{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{height:32px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;font-weight:600;color:var(--teal-deep);transition:all .15s}
+.chip.on{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+.chip:hover:not(.on){border-color:var(--teal-2)}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 18px;background:var(--aqua);color:var(--teal-deep);font-family:var(--serif);font-style:italic;font-size:14.5px;border-top:1px solid var(--line)}
+.note svg{width:20px;height:20px;flex:none;margin-top:2px}
+.empty{display:none;text-align:center;padding:48px 16px;color:var(--muted)}
+.empty b{display:block;font-family:var(--serif);font-size:22px;color:var(--teal-deep);margin-bottom:6px}
+@media (max-width:520px){
+  .item{grid-template-columns:auto 1fr;padding:14px 14px;gap:4px 12px;align-items:start}
+  .thumb{width:68px;height:68px;grid-row:span 2}
+  .item .nm{font-size:16px}
+  .buy{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;margin-top:6px}
+  .price{text-align:left}
+  .opt-row{grid-column:1/-1}
+}
+
+/* ---------- HOW ---------- */
+.how{background:var(--teal-deep);color:#fff}
+.how .sec-head h2{color:#fff}
+.how .sec-head p{color:#BFE6EA}
+.how .divider{color:#9FD6DC}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px}
+.step i{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--lime);color:var(--teal-ink);font-style:normal;font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:#CBE7EA;font-size:15px}
+@media (max-width:900px){ .steps{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .steps{grid-template-columns:1fr} }
+
+/* ---------- REVIEWS ---------- */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.stars{display:flex;gap:2px;color:var(--gold)}
+.stars svg{width:18px;height:18px}
+.rev q{font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--ink);quotes:"“" "”"}
+.rev .who{margin-top:auto;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14.5px}
+.rev .who span{width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:14px}
+.rev .who small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+@media (max-width:900px){ .reviews{grid-template-columns:1fr} }
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px}
+.faq summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--teal-deep)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;font-weight:400;color:var(--teal);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 16px;color:var(--muted)}
+
+/* ---------- LOJA ---------- */
+.store{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch}
+.store-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.store-card h3{font-family:var(--serif);font-size:26px;color:var(--teal-deep);line-height:1.2}
+.info{display:flex;gap:14px;align-items:flex-start}
+.info .ic{width:44px;height:44px;border-radius:14px;background:var(--aqua);color:var(--teal);display:grid;place-items:center;flex:none}
+.info .ic svg{width:22px;height:22px}
+.info b{display:block;font-size:15px}
+.info span{color:var(--muted);font-size:15px}
+.info a{color:var(--teal);font-weight:600}
+.hours{display:grid;grid-template-columns:auto auto;gap:2px 16px;color:var(--muted);font-size:15px}
+.hours .today{color:var(--teal-deep);font-weight:700}
+.store-card .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--aqua)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+@media (max-width:900px){ .store{grid-template-columns:1fr} .map,.map iframe{min-height:300px} }
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--teal);color:#fff;padding:40px 0 120px}
+.foot{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+.foot img{width:84px;height:84px;border-radius:50%}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:center}
+.foot-links a{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px}
+.foot-links svg{width:24px;height:24px}
+.motto{border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 22px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;text-align:center;line-height:1.6}
+.copy{text-align:center;color:#A9D6DB;font-size:13px;margin-top:28px}
+@media (max-width:900px){ .foot{grid-template-columns:1fr;justify-items:center;text-align:center} }
+
+/* ---------- FLOATING ---------- */
+.bagbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;display:flex;justify-content:center;pointer-events:none;transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.9,.3,1.2)}
+.bagbar.show{transform:none}
+.bagbar button{pointer-events:auto;width:min(520px,100%);height:60px;border-radius:18px;background:var(--teal-ink);color:#fff;display:flex;align-items:center;gap:12px;padding:0 10px 0 18px;box-shadow:0 18px 40px -12px rgba(8,50,58,.7)}
+.bagbar .q{background:var(--lime);color:var(--teal-ink);border-radius:10px;min-width:30px;height:30px;display:grid;place-items:center;font-weight:700;font-size:14px;padding:0 8px}
+.bagbar .t{font-weight:700;font-size:16px}
+.bagbar .v{margin-left:auto;background:rgba(255,255,255,.12);border-radius:12px;height:42px;padding:0 14px;display:flex;align-items:center;font-weight:700;gap:6px}
+.bagbar .v svg{width:18px;height:18px}
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:44;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 26px -8px rgba(0,0,0,.45);transition:transform .3s, bottom .35s}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.06)}
+body.has-bag .wa-float{bottom:calc(86px + env(safe-area-inset-bottom))}
+
+/* ---------- DRAWER ---------- */
+.scrim{position:fixed;inset:0;background:rgba(8,40,46,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .3s, visibility .3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--foam);z-index:61;display:flex;flex-direction:column;transform:translateX(102%);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 50px -20px rgba(0,0,0,.4)}
+.drawer.open{transform:none}
+.d-head{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--teal);color:#fff}
+.d-head h2{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:.04em}
+.d-head .x{margin-left:auto;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12)}
+.d-head .x svg{width:20px;height:20px}
+.d-head .back{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12)}
+.d-body{flex:1;overflow-y:auto;padding:16px 18px 24px;overscroll-behavior:contain}
+.d-foot{padding:14px 18px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:8px 12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;margin-bottom:10px;align-items:start}
+.line .thumb{width:56px;height:56px;border-radius:12px}
+.line .thumb svg{width:26px;height:26px}
+.line .nm{font-family:var(--serif);font-size:15.5px;line-height:1.3}
+.line .sz{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--muted)}
+.line .sub{font-size:13px;color:var(--muted)}
+.line .lp{font-weight:700;color:var(--teal-deep);text-align:right;white-space:nowrap}
+.line .row2{grid-column:2/-1;display:flex;align-items:center;justify-content:space-between}
+.line .rm{font-size:13.5px;color:var(--red);font-weight:600;padding:6px 0}
+.sum{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.sum span{color:var(--muted)}
+.sum b{font-family:var(--serif);font-size:24px;color:var(--teal-deep)}
+.fine{font-size:12.5px;color:var(--muted);margin-bottom:12px;line-height:1.4}
+.d-foot .btn{width:100%}
+.bag-empty{text-align:center;padding:50px 10px;color:var(--muted)}
+.bag-empty svg{width:72px;height:72px;margin:0 auto 14px;color:var(--aqua-2)}
+.bag-empty b{display:block;font-family:var(--serif);font-size:21px;color:var(--teal-deep);margin-bottom:6px}
+
+.form{display:flex;flex-direction:column;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px;color:var(--teal-deep)}
+.form label i{font-style:normal;font-weight:400;color:var(--muted)}
+.form input,.form textarea{height:48px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 14px;font-size:16px;font-weight:400;outline:none;color:var(--ink)}
+.form textarea{height:84px;padding:12px 14px;resize:vertical}
+.form input:focus,.form textarea:focus{border-color:var(--teal-2)}
+.form .err{border-color:var(--red)!important}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg.three{grid-template-columns:repeat(3,1fr)}
+.seg button{height:48px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:14.5px;color:var(--teal-deep)}
+.seg button.on{border-color:var(--teal);background:var(--teal);color:#fff}
+.fs{border:0}
+.fs legend{font-weight:600;font-size:14px;color:var(--teal-deep);margin-bottom:6px}
+.recap{background:var(--aqua);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--teal-deep);display:flex;justify-content:space-between}
+.fnote{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:var(--aqua);color:var(--teal-deep);font-size:14px;border-radius:12px}
+.fnote svg{width:20px;height:20px;flex:none;margin-top:1px}
+
+/* ---------- ZOOM ---------- */
+.zoom{position:fixed;inset:0;z-index:65;display:grid;place-items:center;padding:16px;background:rgba(8,40,46,.6);opacity:0;visibility:hidden;transition:opacity .25s, visibility .25s}
+.zoom.open{opacity:1;visibility:visible}
+.zbox{width:min(440px,100%);max-height:100%;overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);transform:translateY(16px);transition:transform .25s}
+.zoom.open .zbox{transform:none}
+.zbox .zimg{position:relative;aspect-ratio:1;background:var(--aqua)}
+.zbox .zimg img{width:100%;height:100%;object-fit:cover}
+.zbox .zx{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:var(--teal-deep)}
+.zbox .zx svg{width:20px;height:20px}
+.zbox .zbd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.zbox .nm{font-family:var(--serif);font-size:21px;line-height:1.25;color:var(--teal-deep)}
+.zbox .ds{color:var(--muted);font-size:14.5px}
+.zbox .ft{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.zbox .opt-row{margin:0}
+.zbox .price{text-align:left}
+
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translate(-50%,20px);width:max-content;background:var(--teal-ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;z-index:70;opacity:0;transition:all .3s;pointer-events:none;display:flex;gap:8px;align-items:center;max-width:calc(100% - 32px)}
+.toast svg{width:18px;height:18px;color:var(--lime);flex:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<!-- ============ SVG SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.39 1.01 2.56.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6L12 16.8 6.6 19.6l1.1-6L3.2 9.4l6.1-.8L12 3Z"/></symbol>
+    <symbol id="i-starf" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6L12 16.8 6.6 19.6l1.1-6L3.2 9.4l6.1-.8L12 3Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></symbol>
+    <!-- category icons -->
+    <symbol id="c-shrimp" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7c4 2 5.5 6 4.5 10-1.3 5.2-6.6 8.5-11.5 8-3.2-.3-5.5-2.3-6.5-4.5l4.5-1.5c.8 1.3 2.2 2 3.7 1.8 3-.3 5.3-3 5-6.1-.2-1.8-1.3-3.3-2.9-4"/><path d="M8.5 21 5 24.5M8.5 21l-4.5.5M14 12l4-2M15.5 15.5l4.5-.5M14.5 19l4 1.5"/><path d="M22 7c-3-1.5-8-1-11 1M22 7l3-3M23.5 8.5 28 7"/><circle cx="20.5" cy="9.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="c-sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="13" r="5"/><path d="M16 3v2.5M16 20.5V23M6 13h2.5M23.5 13H26M8.9 5.9l1.8 1.8M21.3 18.3l1.8 1.8M8.9 20.1l1.8-1.8M21.3 7.7l1.8-1.8"/><path d="M3 27c3-2 6-2 9 0s6 2 9 0 6-2 8 0"/></symbol>
+    <symbol id="c-fillet" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3-6 10-9 18-8 3 .4 5.5 2 6 4.5.6 3-1.6 5.5-5 6.5-6 1.8-13 1-19-3Z"/><path d="M10 14c1 2 1 4 0 6M15 12.3c1.2 2.4 1.2 5.2 0 7.7M20 12c1 2.6 1 5.4 0 8"/></symbol>
+    <symbol id="c-steak" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="16" rx="11" ry="9"/><path d="M16 7v18M16 16c-3.5-1-6-3.5-7-6.5M16 16c3.5-1 6-3.5 7-6.5M16 16c-3.5 1-6 3.5-7 6.5M16 16c3.5 1 6 3.5 7 6.5"/><circle cx="16" cy="16" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="c-fish" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c4-6 10-8 15-7 3.5.7 6 3 7.5 5.5L30 10v12l-4.5-4.5C24 20 21.5 22.3 18 23c-5 1-11-1-15-7Z"/><circle cx="9" cy="14.5" r="1" fill="currentColor"/><path d="M13 12c1.2 2.6 1.2 5.4 0 8"/></symbol>
+    <symbol id="c-crab" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="19" rx="8" ry="5.5"/><path d="M8.5 17 4 15M8.5 20 3.5 20.5M9.5 22.5 5.5 26M23.5 17l4.5-2M23.5 20l5 .5M22.5 22.5l4 3.5"/><path d="M11 14c-2-1-3.5-3.5-3-6 1.5.5 2.5 1.5 3 3M7.7 8C7 6.5 7.5 5 9 4M21 14c2-1 3.5-3.5 3-6-1.5.5-2.5 1.5-3 3M24.3 8c.7-1.5.2-3-1.3-4"/><circle cx="13.5" cy="15.5" r=".8" fill="currentColor"/><circle cx="18.5" cy="15.5" r=".8" fill="currentColor"/></symbol>
+    <symbol id="c-basket" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="3.5"/><circle cx="18" cy="9.5" r="3.5"/><circle cx="22.5" cy="13" r="3"/><path d="M4 15h24l-2.5 11h-19L4 15ZM10 15l1 11M16 15v11M22 15l-1 11M5 19.5h22"/></symbol>
+    <symbol id="c-box" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h24v15H4zM2.5 6.5h27V11h-27z"/><path d="M16 6.5V26M16 6.5c-2-4-7-4-7-1.5S13 6.5 16 6.5c3 0 7 1 7-1.5s-5-2.5-7 1.5"/></symbol>
+    <symbol id="c-sushi" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="16" rx="8" ry="3.5"/><path d="M4 16v6c0 2 3.6 3.5 8 3.5s8-1.5 8-3.5v-6"/><ellipse cx="12" cy="16" rx="3.5" ry="1.5"/><path d="M18 11 29 4M20.5 13.5 30 8.5"/></symbol>
+    <symbol id="c-pepper" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9c-4 0-5 3-6.5 7.5S9 26 4 27c7 1.5 14-1 17.5-6.5 2.5-4 2.5-11.5-1.5-11.5Z"/><path d="M20 9c0-2.5 1.5-4.5 4-5M20 9c2 0 3.5.8 4.5 2"/></symbol>
+    <symbol id="c-jar" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5h12v4H10zM9 9h14l1 3v13a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V12l1-3Z"/><path d="M8 15h16v7H8"/></symbol>
+    <symbol id="fishline" viewBox="0 0 46 20" fill="currentColor"><path d="M2 8c3-4 8-5.5 12-4.5 2 .5 3.6 1.7 4.6 3L22 4v8l-3.4-2.5c-1 1.3-2.6 2.5-4.6 3C10 13.5 5 12 2 8Z"/><path d="M24 14c2-2.6 5.2-3.6 7.8-3 1.3.3 2.4 1.1 3 2l2.2-1.6v5.2l-2.2-1.6c-.6.9-1.7 1.7-3 2-2.6.6-5.8-.4-7.8-3Z" opacity=".75"/><path d="M28 5c1.7-2.2 4.4-3 6.6-2.5 1.1.3 2 .9 2.6 1.7l1.9-1.4v4.4l-1.9-1.4c-.6.8-1.5 1.4-2.6 1.7C32.4 8 29.7 7.2 28 5Z" opacity=".55"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ RIBBON + HEADER ============ -->
+<div class="ribbon">
+  <div class="wrap">
+    <span class="status" id="status"><i></i><span>Seg a sáb 8h às 19h · dom 8h às 12h</span></span>
+    <span class="opt">Entregamos em <b>Recife e Jaboatão</b></span>
+    <span class="opt">Peça pelo WhatsApp <b>(81) 99526-7641</b></span>
+  </div>
+</div>
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Fisheria Pescado, início">
+      <img src="img/logo.png" alt="" width="46" height="46">
+      <span><b>FISHERIA</b><small>PESCADO</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#como-pedir">Como pedir</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#loja">Loja física</a>
+    </nav>
+    <div class="top-actions">
+      <a class="wa-mini" data-wa href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      <button class="bag-btn" id="bagBtn" aria-label="Abrir sacola">
+        <svg><use href="#i-bag"/></svg><span class="bag-label">Sacola</span><span class="count" id="bagCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" style="padding:0">
+  <div class="school" aria-hidden="true">
+    <svg style="width:240px;left:4%;top:14%"><use href="#fishline"/></svg>
+    <svg style="width:160px;right:5%;top:6%;transform:scaleX(-1)"><use href="#fishline"/></svg>
+    <svg style="width:120px;left:44%;bottom:24%"><use href="#fishline"/></svg>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Peixaria · desde 2016</span>
+      <h1>O melhor camarão de praia <em>do Brasil</em>, na sua porta.</h1>
+      <p class="lead">Camarões, peixes, filés, frutos do mar e petiscos prontos pra fritar. Monte sua sacola aqui e finalize o pedido no WhatsApp, sem cadastro.</p>
+      <div class="hero-cta">
+        <a href="#cardapio" class="btn btn-light">Ver cardápio <svg><use href="#i-right"/></svg></a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-wa"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+      </div>
+      <div class="facts">
+        <span><svg><use href="#i-truck"/></svg>Delivery em Recife e Jaboatão</span>
+        <span><svg><use href="#i-pin"/></svg>Loja em Piedade</span>
+        <span><svg><use href="#i-star"/></svg>100 mil seguidores</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="photo"><img src="img/g/477.jpg" alt="Camarão de praia GODZILLA da Fisheria" width="640" height="640" fetchpriority="high"></div>
+      <img class="seal" src="img/logo.png" alt="Fisheria Pescado, desde 2016" width="140" height="140">
+      <div class="badge"><b>GODZILLA</b>camarão de praia</div>
+    </div>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 48c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0v32H0Z"/><path fill="currentColor" opacity=".35" d="M0 36c120-22 240-22 360 0s240 22 360 0 240-22 360 0 240 22 360 0v44H0Z"/></svg>
+</section>
+
+<!-- ============ DESTAQUE: CAMARÃO DE PRAIA ============ -->
+<section class="feat">
+  <div class="wrap">
+    <div class="feat-card">
+      <div class="feat-top">
+        <div>
+          <h2>Camarão de praia, pronto para o consumo</h2>
+          <p>O carro-chefe da casa, do M ao GODZILLA.</p>
+        </div>
+        <a href="#cat-praia" data-jump="praia">Ver todos os tamanhos <svg width="16" height="16"><use href="#i-right"/></svg></a>
+      </div>
+      <div class="cards" id="featCards"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARDÁPIO ============ -->
+<section id="cardapio" style="padding-top:64px">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Cardápio</h2>
+      <div class="divider" aria-hidden="true"><svg><use href="#fishline"/></svg></div>
+      <p>Toque no <b>+</b> para colocar na sacola e na foto para ampliar. Itens por kg: o valor final é confirmado na pesagem.</p>
+    </div>
+  </div>
+  <div class="menu-bar">
+    <div class="wrap">
+      <div class="search" id="searchBox">
+        <svg><use href="#i-search"/></svg>
+        <label class="sr" for="q">Buscar no cardápio</label>
+        <input id="q" type="text" enterkeyhint="search" placeholder="Buscar: camarão, salmão, bolinho…" autocomplete="off">
+        <button class="clear" id="qClear" aria-label="Limpar busca"><svg width="18" height="18"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="tabs" id="tabs" aria-label="Categorias"></div>
+    </div>
+  </div>
+  <div class="wrap" id="menu"></div>
+  <div class="wrap"><div class="empty" id="empty"><b>Nada encontrado</b>Não achou o que procura? Chama a gente no WhatsApp que a gente confere.</div></div>
+</section>
+
+<!-- ============ COMO PEDIR ============ -->
+<section class="how" id="como-pedir">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Como pedir</h2>
+      <div class="divider" aria-hidden="true"><svg><use href="#fishline"/></svg></div>
+      <p>Sem cadastro e sem senha. Receba seu pescado favorito no conforto da sua casa.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><i>1</i><h3>Escolha</h3><p>Navegue pelo cardápio e toque no + para colocar os produtos na sacola.</p></div>
+      <div class="step"><i>2</i><h3>Revise a sacola</h3><p>Ajuste quantidades e quilos. Itens por kg são pesados na hora do preparo.</p></div>
+      <div class="step"><i>3</i><h3>Seus dados</h3><p>Diga se é entrega ou retirada na loja e como prefere pagar.</p></div>
+      <div class="step"><i>4</i><h3>Envie no WhatsApp</h3><p>O pedido chega pronto pra nossa equipe, que confirma o valor final e a entrega.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÕES ============ -->
+<section id="avaliacoes">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Quem compra, volta</h2>
+      <div class="divider" aria-hidden="true"><svg><use href="#fishline"/></svg></div>
+      <p>Avaliações de clientes da Fisheria no Google.</p>
+    </div>
+    <div class="reviews">
+      <figure class="rev">
+        <div class="stars" aria-label="5 estrelas"><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg></div>
+        <q>Tudo fresquinho, bem embalado, variedades de pescado e crustáceos. Para quem quer praticidade, esse é o lugar. Entrega com taxa justa.</q>
+        <figcaption class="who"><span>S</span><div>Sheila M.<small>Cliente do delivery</small></div></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 estrelas"><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg></div>
+        <q>Excelente qualidade e variedade de produtos, ótimo atendimento, tanto na loja física quanto no delivery. Preço muito bom! Sou cliente desde sempre.</q>
+        <figcaption class="who"><span>J</span><div>Jaime V.<small>Cliente da loja e do delivery</small></div></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 estrelas"><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg><svg><use href="#i-starf"/></svg></div>
+        <q>Top demais, variedade e qualidade que não se encontra em outro lugar. Atendimento de primeira, ambiente impecável na limpeza.</q>
+        <figcaption class="who"><span>M</span><div>Marcos C.<small>Cliente da loja</small></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="duvidas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Dúvidas</h2>
+      <div class="divider" aria-hidden="true"><svg><use href="#fishline"/></svg></div>
+    </div>
+    <div class="faq">
+      <details><summary>Como funcionam as entregas?</summary><p>Entregamos em Recife e Jaboatão. Você monta a sacola aqui no site, envia pelo WhatsApp e a nossa equipe confirma a taxa e o horário da entrega.</p></details>
+      <details><summary>Como funcionam os itens vendidos por kg?</summary><p>Peixes, postas e filés por kg são pesados na hora do preparo. O site mostra um valor estimado e a equipe confirma o valor final no WhatsApp.</p></details>
+      <details><summary>Quais as formas de pagamento?</summary><p>Pix, cartão ou dinheiro. Se for pagar em dinheiro, informe o troco ao finalizar o pedido.</p></details>
+      <details><summary>Qual a diferença entre filé, posta e isca?</summary><p>O filé é sem espinhas, ideal para grelhar ou empanar. A posta é uma fatia com osso, ótima para moquecas e caldeiradas. Já a isca é perfeita para petiscar!</p></details>
+      <details><summary>Peixe congelado perde a qualidade?</summary><p>Não! Quando bem congelado, o peixe mantém seus nutrientes, textura e sabor. É uma forma prática e segura de consumir com qualidade.</p></details>
+      <details><summary>Frutos do mar fazem bem à saúde?</summary><p>Com certeza! Eles são ricos em ômega-3, que ajuda no funcionamento do coração e do cérebro e ainda fortalece o sistema imunológico.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOJA ============ -->
+<section id="loja" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Loja física</h2>
+      <div class="divider" aria-hidden="true"><svg><use href="#fishline"/></svg></div>
+    </div>
+    <div class="store">
+      <div class="store-card">
+        <h3>Vem escolher pessoalmente o seu pescado</h3>
+        <div class="info"><div class="ic"><svg><use href="#i-pin"/></svg></div><div><b>Endereço</b><span>Rua Maestro Nelson Ferreira, 742<br>Piedade, Jaboatão dos Guararapes · PE</span></div></div>
+        <div class="info"><div class="ic"><svg><use href="#i-clock"/></svg></div><div><b>Horário</b>
+          <div class="hours" id="hours"><span data-d="1-6">Segunda a sábado</span><span data-d="1-6">8h às 19h</span><span data-d="0">Domingo</span><span data-d="0">8h às 12h</span></div></div></div>
+        <div class="info"><div class="ic"><svg><use href="#i-wa"/></svg></div><div><b>WhatsApp · Disk Fish Delivery</b><span><a data-wa href="#" target="_blank" rel="noopener">(81) 99526-7641</a></span></div></div>
+        <div class="info"><div class="ic"><svg><use href="#i-mail"/></svg></div><div><b>E-mail</b><span><a href="mailto:fisheriapescado@gmail.com">fisheriapescado@gmail.com</a></span></div></div>
+        <div class="btns">
+          <a class="btn btn-teal" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rua+Maestro+Nelson+Ferreira,+742,+Piedade,+Jaboat%C3%A3o+dos+Guararapes,+PE"><svg><use href="#i-pin"/></svg>Como chegar</a>
+          <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Mapa da loja Fisheria Pescado em Piedade" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rua+Maestro+Nelson+Ferreira,+742,+Piedade,+Jaboat%C3%A3o+dos+Guararapes,+PE&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img src="img/logo.png" alt="Fisheria Pescado" loading="lazy">
+      <div class="foot-links">
+        <a href="https://www.instagram.com/fisheriapescado/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@fisheriapescado</a>
+        <a data-wa href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>(81) 99526-7641</a>
+        <a href="#como-pedir"><svg><use href="#i-truck"/></svg>Fazemos entregas!</a>
+      </div>
+      <div class="motto">Frescor que você confia,<br>qualidade que você merece.</div>
+    </div>
+    <p class="copy">Fisheria Pescado · desde 2016 · Preços sujeitos a alteração e à disponibilidade do dia. Fotos ilustrativas.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ============ -->
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<div class="bagbar" id="bagbar"><button id="bagbarBtn"><span class="q" id="bbQ">0</span><span class="t">Ver sacola</span><span class="v"><span id="bbV">R$ 0,00</span><svg><use href="#i-right"/></svg></span></button></div>
+
+<!-- ============ DRAWER ============ -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <div class="d-head">
+    <button class="back hide" id="dBack" aria-label="Voltar para a sacola"><svg width="20" height="20"><use href="#i-left"/></svg></button>
+    <svg width="24" height="24" id="dIco"><use href="#i-bag"/></svg>
+    <h2 id="dTitle">Sua sacola</h2>
+    <button class="x" id="dClose" aria-label="Fechar"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <div class="d-body" id="dBody"></div>
+  <div class="d-foot" id="dFoot"></div>
+</aside>
+
+<!-- ============ ZOOM ============ -->
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-labelledby="zName" aria-hidden="true">
+  <div class="zbox" id="zbox"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><svg><use href="#i-check"/></svg><span></span></div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO: telefone, horário e produtos
+   ========================================================= */
+const WHATS = "5581995267641";
+// Horário (0 = domingo … 6 = sábado): [abre, fecha] em horas
+const HOURS = {0:[8,12],1:[8,19],2:[8,19],3:[8,19],4:[8,19],5:[8,19],6:[8,19]};
+
+/* Cada produto:
+   n = nome · s = embalagem/tamanho · d = descrição · p = preço
+   kg = vendido por kg · o = opções · oi = foto de cada opção (mesma ordem de "o")
+   old = preço "de" (promoção) · c = sob consulta · img = foto (pasta img/t e img/g)
+   hot = destaque · tag = selo */
+const CATS = [
+ { id:"praia", name:"Camarão de praia", icon:"c-sun", sub:"Pronto para o consumo: o carro-chefe da casa",
+   groups:[
+    { title:"Camarão de praia", tag:"pronto para o consumo", items:[
+      {k:"godzilla1", n:"Camarão de praia GODZILLA", s:"1kg", p:150, old:200, img:477, hot:1},
+      {k:"godzilla4", n:"Camarão de praia GODZILLA", s:"400g", p:79.90, img:475},
+      {k:"dino1", n:"Camarão de praia DINOSSAURO", s:"1kg", p:117.90, old:187.25, img:421, hot:1},
+      {k:"dino4", n:"Camarão de praia DINOSSAURO", s:"400g", p:74.90, img:419},
+      {k:"xgg1", n:"Camarão de praia XGG", s:"1kg", p:137.25, img:297},
+      {k:"xgg4", n:"Camarão de praia XGG", s:"400g", p:54.90, img:297},
+      {k:"m1", n:"Camarão de praia M", s:"1kg", p:69.75, img:63},
+      {k:"m4", n:"Camarão de praia M", s:"400g", p:27.90, img:299},
+      {k:"m2promo", n:"Promocional: camarão de praia M", s:"2kg", p:139.50, img:449, tag:"Promo"},
+    ]},
+ ]},
+ { id:"camaroes", name:"Camarões", icon:"c-shrimp", sub:"Frescos inteiros e filés",
+   groups:[
+    { title:"Camarões frescos inteiros", tag:"cru", items:[
+      {n:"Camarão M 12g", s:"1kg", p:40, img:53},
+      {n:"Camarão G 20-24g", s:"1kg", p:65, img:55},
+      {n:"Camarão GG 30-34g", s:"1kg", p:85, img:59},
+      {n:"Promocional: camarão fresco M", s:"3kg", p:120, img:453, tag:"Promo"},
+    ]},
+    { title:"Filés de camarão", tag:"já limpo, com vísceras", short:"Filé de camarão", items:[
+      {n:"Filé padrão M", s:"1kg", p:85, img:423},
+      {n:"Filé padrão G", s:"1kg", p:120},
+      {n:"Filé padrão GG", s:"1kg", p:150},
+    ]},
+    { title:"Filés de camarão eviscerados", tag:"já limpo e sem vísceras", short:"Filé eviscerado", items:[
+      {n:"Filé padrão 61/70 M", s:"1kg", p:107.90, img:275},
+      {n:"Filé padrão 51/60 M grande", s:"1kg", p:119.90},
+      {n:"Filé padrão 31/35 G", s:"1kg", p:130, img:93},
+      {n:"Filé padrão 21/25 GG", s:"1kg", p:160, img:387},
+    ]},
+ ]},
+ { id:"files", name:"Filé de peixe", icon:"c-fillet", sub:"Sem espinhas. Preços por kg",
+   groups:[
+    { title:"Filé de peixe", tag:"(kg)", short:"Filé", items:[
+      {n:"Lombo de salmão chileno", p:129.90, kg:1, img:25},
+      {n:"Cauda de salmão chileno", p:94.90, kg:1, img:267},
+      {n:"Filé de camurim / robalo", p:99.90, kg:1, img:319},
+      {n:"Lombo de bacalhau Saithe", p:110, kg:1},
+      {n:"Filé de bacalhau do Porto desfiado", s:"400g", p:85, img:381},
+      {n:"Pescada amarela", p:75, kg:1, img:17},
+      {n:"Isca de pescada amarela", p:50, kg:1},
+      {n:"Tilápia fresca", p:64.90, kg:1, img:7},
+      {n:"Tilápia congelada", p:46.90, kg:1, img:9},
+      {n:"Filézinho de tilápia", d:"Tamanho P com finas espinhas, ideal para petiscos empanados!", p:34.90, kg:1, img:13},
+      {n:"Merluza argentina", p:47.90, kg:1, img:19},
+      {n:"Linguado", p:44, kg:1, img:11},
+      {n:"Surubim", p:47.90, kg:1, img:15},
+      {n:"Agulha branca", p:47.90, kg:1, img:33},
+      {n:"Filé de saramunete", s:"500g", p:29.90, img:351},
+      {n:"Promocional: filé de tilápia congelado", s:"3kg", p:140.70, img:447, tag:"Promo"},
+    ]},
+ ]},
+ { id:"postas", name:"Postas", icon:"c-steak", sub:"Postas de peixe, preços por kg",
+   groups:[
+    { title:"Postas de peixe", tag:"(kg)", short:"Posta", items:[
+      {n:"Pescada amarela", p:69.90, kg:1, img:87},
+      {n:"Dourado", p:59.90, kg:1, img:79},
+      {n:"Meca", p:72.90, kg:1, img:85},
+      {n:"Cioba", p:64.90, kg:1, img:259},
+      {n:"Cavala", p:54.90, kg:1},
+      {n:"Pescada branca", p:48.90, kg:1, img:83},
+      {n:"Serra", p:37.90, kg:1, img:89},
+      {n:"Corvina", p:35.90, kg:1, img:77},
+      {n:"Anchova", p:35.90, kg:1, img:73},
+      {n:"Albacora", p:34.90, kg:1, img:69},
+      {n:"Salmão chileno", p:87.90, kg:1, img:323},
+    ]},
+ ]},
+ { id:"inteiros", name:"Peixes inteiros", icon:"c-fish", sub:"Preços por kg",
+   groups:[
+    { title:"Peixes inteiros", tag:"(kg)", short:"Peixe inteiro", note:"Consulte as opções de peixes inteiros disponíveis na loja.", items:[
+      {n:"Cioba", p:64.90, kg:1},
+      {n:"Robalo / Camurim", p:54.90, kg:1},
+      {n:"Corvina", p:25, kg:1},
+      {n:"Cavalinha", p:17.90, kg:1},
+      {n:"Sardinha", p:15.90, kg:1, o:["Laje","Charuto"]},
+      {n:"Agulha branca", p:43.90, kg:1},
+    ]},
+ ]},
+ { id:"frutos", name:"Frutos do mar", icon:"c-crab", sub:"Polvo, lula, mariscos, siri, caranguejo e lagosta",
+   groups:[
+    { title:"Frutos do mar", items:[
+      {n:"Polvo inteiro", s:"1kg", p:79.90, img:271},
+      {n:"Tentáculos de pota (lula gigante)", s:"1kg", p:69.90, img:429},
+      {n:"Anéis de lula", s:"500g", p:40, img:375},
+      {n:"Lambreta", s:"12 unidades", p:34.90},
+      {n:"Kit caldeirada", s:"800g", p:43.90, img:31},
+      {n:"Kit caldeirada", s:"1kg", p:52.90, img:41},
+      {n:"Sururu", s:"1kg · já limpo", p:59.90, img:49},
+      {n:"Marisco", s:"1kg · já limpo", p:38.90, img:51},
+      {n:"Mexilhão", s:"500g · já limpo", p:37.90, img:263},
+      {n:"Kani Kama", s:"250g", p:15.50, img:91},
+      {n:"Carne de siri PURA", s:"500g", p:50, img:47},
+      {n:"Carne de aratu de mangue", s:"1kg", p:90},
+      {n:"Carne de caranguejo", s:"1kg", p:75, img:43},
+      {n:"Patola na casca", s:"500g", p:37.50, img:35},
+      {n:"Filé da patola de caranguejo", s:"500g", p:100},
+      {n:"Caranguejo inteiro pré-cozido", s:"6 unidades", p:29.90, img:39},
+    ]},
+    { title:"Sob consulta", alt:true, note:"Disponibilidade confirmada pela equipe no WhatsApp.", items:[
+      {n:"Cauda de lagosta", s:"1kg", p:230, old:250, c:1, img:425},
+      {n:"Lagosta inteira", s:"1kg", p:125, c:1, img:331},
+      {n:"Pernil de lagosta", s:"400g", p:67.90, o:["Cru","Pré-cozido"], c:1, img:339},
+      {n:"Siri mole", s:"500g", p:70, c:1},
+      {n:"Carne de aratu de pedra", s:"500g", p:70, c:1},
+    ]},
+ ]},
+ { id:"petiscos", name:"Petiscos", icon:"c-basket", sub:"Prontos pra fritar ou pra servir",
+   groups:[
+    { title:"Bolinhos e dadinhos", items:[
+      {k:"bolinhos", n:"Bolinhos", s:"10 unidades", d:"Todos os sabores por R$ 14,90. Escolha o sabor:", p:14.90, img:121,
+       o:["Salmão","Bacalhau","Bacalhau c/ macaxeira","Camarão","Siri","Carne de sol","Charque","Charque com queijo","Queijo mussarela","Queijo provolone","Calabresa"],
+       oi:[121,105,103,111,129,247,119,113,125,123,107], hot:1},
+      {n:"Dadinho de tapioca", s:"10 unidades", p:14.90, img:137},
+      {n:"Dadinho de tapioca c/ charque", p:19.90, img:417},
+      {n:"Dadinho de tapioca c/ camarão", p:19.90, img:415},
+      {n:"Dadinho de tapioca Fazenda Malhadinha", s:"350g", p:29.90, o:["Tradicional","Carne de sol","Zero lactose"], oi:[461,459,457], img:461},
+      {n:"Croquete de costela", s:"10 unidades", p:24.90, img:435},
+    ]},
+    { title:"Outros petiscos", items:[
+      {n:"Pastel de frango c/ azeitonas", s:"10 unidades", p:27.90, img:411},
+      {n:"Pastel de camarão c/ bacon", s:"10 unidades", p:27.90, img:413},
+      {n:"Mini coxinhas", s:"20 unidades", d:"Sabores sujeitos à disponibilidade.", p:27.90, o:["Frango","Camarão","Bacalhau"], oi:[135,133,127], img:135},
+      {n:"Camarão empanado c/ queijo mussarela", s:"10 unidades", p:44.90, img:99},
+      {n:"Camarão empanado c/ cream cheese", s:"10 unidades", p:44.90, img:97},
+      {n:"Camarão empanado (sem recheio)", s:"240g", p:32.90},
+      {n:"Casquinha de caranguejo", s:"4 unidades", d:"Ensopado de caranguejo já pronto, dentro da própria casquinha do caranguejo, finalizado com queijo ralado por cima.", p:34.90, img:261},
+      {n:"Bobó de camarão", s:"500g", p:49.90, img:465},
+      {n:"Carpaccio de salmão defumado", s:"100g", p:34.90, img:389},
+      {n:"Guioza com legumes", s:"10 unidades", p:27.90, o:["Suína","Bovina"], oi:[361,359], img:361},
+      {n:"Rolinho primavera", s:"5 unidades", p:34.90, o:["Carne","Queijo"]},
+    ]},
+ ]},
+ { id:"kits", name:"Kits", icon:"c-box", sub:"Combos que salvam o almoço",
+   groups:[
+    { title:"Combos e kits", note:"Composição e quantidades de cada kit confirmadas no WhatsApp.", items:[
+      {n:"Kit Meca + Marisco", p:100, tag:"Kit 100K"},
+      {n:"Kit Caranguejo + Sururu + Leite de coco + Bolinho", p:100, tag:"Kit 100K"},
+    ]},
+ ]},
+ { id:"orientais", name:"Orientais", icon:"c-sushi", sub:"Tudo pra fazer yakisoba e sushi em casa",
+   groups:[
+    { title:"Orientais", items:[
+      {n:"Macarrão para yakisoba", s:"500g", p:17.90},
+      {n:"Macarrão bifum", s:"500g", p:17.90, img:293},
+      {n:"Molho para yakisoba", s:"500ml", d:"Preparo já pronto para fazer yakisoba em casa.", p:24.90, img:193},
+      {n:"Molho de ostra", s:"500ml", p:32.90, img:291},
+      {n:"Óleo de gergelim", s:"100ml", p:21.90, img:287},
+      {n:"Molho teriyaki", s:"180ml", p:14.90, img:203},
+      {n:"Molho tarê", s:"180ml", p:14.90, img:199},
+      {n:"Molho shoyu suave", s:"150ml", d:"Com menos sódio, mais saudável.", p:15.90, img:197},
+      {n:"Molho shoyu tradicional", s:"150ml", p:15.90, img:195},
+      {n:"Molho shoyu tradicional", s:"500ml", d:"Comprando o shoyu de 500ml, você garante uma molheira de vidro de 150ml vazia para armazenar seu shoyu porcionado!", p:29.90},
+      {n:"Molho agridoce", s:"180ml", p:14.90, img:189},
+      {n:"Molho sweet chilli", s:"175ml", p:17.90, img:201},
+      {n:"Arroz japonês", s:"250g", p:6.50},
+      {n:"Alga nori", s:"10 folhas", p:19.90},
+      {n:"Sudare", s:"1 unidade", d:"Esteira para fazer sushi em casa. Compra uma vez, usa pra sempre!", p:19.90},
+      {n:"Hashi", s:"1 unidade", p:1, img:249},
+      {n:"Refil de gás para maçarico", s:"400ml", p:19.90, img:219},
+    ]},
+ ]},
+ { id:"temperos", name:"Temperos e molhos", icon:"c-pepper", sub:"Temperos prontos a R$ 5,00 e pimentas artesanais",
+   groups:[
+    { title:"Temperos prontos", short:"Tempero", items:[
+      {n:"Caldo de camarão", p:5, img:163},
+      {n:"Caldo de camarão com limão", p:5, img:165},
+      {n:"Frutos do mar", p:5, img:155},
+      {n:"Frutos do mar com limão siciliano", p:5, img:153},
+      {n:"Assa peixe", d:"Ideal para fazer peixes fritos ou assados.", p:5, img:167},
+      {n:"Meu peixe", d:"Ideal para fazer peixes no molho e ensopados.", p:5, img:149},
+      {n:"Chimichurri", p:5, img:161},
+      {n:"Lemon pepper", p:5, img:151},
+    ]},
+    { title:"Pimentas", items:[
+      {n:"Molho de pimenta artesanal", s:"275ml", p:25, img:431},
+      {n:"Molho de pimenta artesanal", s:"750ml", p:60, img:433},
+      {n:"Molho de pimenta Bravo", s:"60ml", p:17.90, o:["Original","Suave","Habanero"], oi:[211,213,217], img:211},
+    ]},
+ ]},
+ { id:"mercearia", name:"Mercearia e bebidas", icon:"c-jar", sub:"Pra completar a receita e brindar",
+   groups:[
+    { title:"Mercearia", items:[
+      {n:"Leite de coco", s:"200ml", p:9.90, img:233},
+      {n:"Leite de coco", s:"500ml", p:21.90},
+      {n:"Farinha panko", s:"200g", p:10},
+      {n:"Farinha panko", s:"1kg", p:35, img:179},
+      {n:"Creme de leite", s:"200ml", p:4.50},
+    ]},
+    { title:"Bebidas", note:"Chopp de vinho nos sabores uva, pêssego e abacaxi. Consultar a disponibilidade.", items:[
+      {n:"Chopp de vinho ALAMOA", s:"300ml", p:8.90, o:["Uva","Pêssego","Abacaxi"], oi:[237,null,345], img:237},
+      {n:"Chopp de vinho ALAMOA", s:"500ml", p:15.90, o:["Uva","Pêssego","Abacaxi"], oi:[241,null,345], img:241},
+      {n:"Vinho suave Quinta Morgado", p:19.90, o:["Tinto","Branco"], oi:[229,225], img:229},
+    ]},
+ ]},
+];
+// Destaques do topo (chaves "k" dos produtos)
+const FEATURED = ["godzilla1","dino1","xgg4","m1"];
+
+/* =========================================================
+   APP
+   ========================================================= */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const kgFmt = q => (q % 1 ? q.toLocaleString("pt-BR",{minimumFractionDigits:1}) : q) + " kg";
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KG_STEP = 0.5;
+
+const PRODUCTS = {}, BYKEY = {};
+CATS.forEach(cat => cat.groups.forEach((g,gi) => g.items.forEach((it,ii) => {
+  it.id = `${cat.id}-${gi}-${ii}`;
+  it.cat = cat; it.group = g;
+  it.label = (g.short ? g.short + " · " : "") + it.n;
+  it.sel = it.o ? it.o[0] : null;
+  PRODUCTS[it.id] = it; if (it.k) BYKEY[it.k] = it;
+})));
+const imgOf = (p, opt) => { if (p.o && p.oi){ const i = p.o.indexOf(opt ?? p.sel); if (i >= 0 && p.oi[i]) return p.oi[i]; } return p.img; };
+const thumbHTML = (p, opt, cls="thumb", zoomable=true) => {
+  const im = imgOf(p, opt);
+  const inner = im ? `<img src="img/t/${im}.jpg" alt="" loading="lazy" width="200" height="200">` : `<svg><use href="#${p.cat.icon}"/></svg>`;
+  return zoomable ? `<button class="${cls}" data-zoom="${p.id}" aria-label="Ver detalhes de ${esc(p.n)}">${inner}</button>` : `<div class="${cls}" aria-hidden="true">${inner}</div>`;
+};
+
+/* ---------- Status aberto/fechado (horário de Recife) ---------- */
+function recifeNow(){
+  const parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/Recife",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+  const get = t => parts.find(x=>x.type===t).value;
+  const day = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(get("weekday"));
+  return {day, h: +get("hour") + (+get("minute"))/60};
+}
+function renderStatus(){
+  let open = false, txt;
+  try {
+    const {day,h} = recifeNow(), [a,b] = HOURS[day];
+    open = h >= a && h < b;
+    if (open) txt = `Aberto agora · até ${b}h`;
+    else if (h < a) txt = `Fechado · abre hoje às ${a}h`;
+    else { const nd=(day+1)%7; txt = `Fechado · abre ${nd===0?"domingo":"amanhã"} às ${HOURS[nd][0]}h`; }
+    $$("#hours [data-d]").forEach(el=>{ const d=el.dataset.d; if ((d==="0" && day===0) || (d==="1-6" && day>0)) el.classList.add("today"); });
+  } catch(e){ return; }
+  const s = $("#status"); s.classList.toggle("closed", !open); s.querySelector("span").textContent = txt;
+}
+
+/* ---------- WhatsApp ---------- */
+const waLink = txt => `https://wa.me/${WHATS}?text=${encodeURIComponent(txt)}`;
+$$("[data-wa]").forEach(a => a.href = waLink("Olá, Fisheria! Vim pelo site e gostaria de fazer um pedido 🐟"));
+
+/* ---------- Sacola (salva no aparelho) ---------- */
+let cart = [];
+try { cart = (JSON.parse(localStorage.getItem("fisheria-bag")) || []).filter(l => PRODUCTS[l.id]); } catch(e) {}
+const save = () => { try { localStorage.setItem("fisheria-bag", JSON.stringify(cart)); } catch(e) {} };
+const key = (id,opt) => id + "|" + (opt || "");
+const findLine = (id,opt) => cart.find(l => key(l.id,l.opt) === key(id,opt));
+const lineTotal = l => PRODUCTS[l.id].p * l.q;
+const total = () => cart.reduce((s,l) => s + lineTotal(l), 0);
+const units = () => cart.reduce((s,l) => s + (PRODUCTS[l.id].kg ? 1 : l.q), 0);
+const hasKg = () => cart.some(l => PRODUCTS[l.id].kg);
+
+function addItem(id, opt, delta){
+  const p = PRODUCTS[id];
+  let l = findLine(id,opt);
+  if (!l){
+    if (delta <= 0) return;
+    cart.push({id, opt, q:1}); // primeiro toque: 1 unidade ou 1 kg
+    save(); refresh();
+    toast(`${p.n}${opt ? " (" + opt + ")" : ""} na sacola${p.kg ? " · 1 kg" : ""}`);
+    return;
+  }
+  l.q = Math.round((l.q + delta*(p.kg ? KG_STEP : 1))*10)/10;
+  if (l.q <= 0) cart = cart.filter(x => x !== l);
+  save(); refresh();
+}
+
+/* ---------- Render ---------- */
+const qtyLabel = (p,q) => p.kg ? kgFmt(q) : q;
+function buyHTML(p){
+  const l = findLine(p.id, p.sel);
+  if (!l) return `<button class="add" data-add="${p.id}" aria-label="Adicionar ${esc(p.n)} à sacola"><svg><use href="#i-plus"/></svg></button>`;
+  return `<div class="stepper"><button data-dec="${p.id}" aria-label="Diminuir"><svg><use href="#i-minus"/></svg></button><output>${qtyLabel(p,l.q)}</output><button data-add="${p.id}" aria-label="Aumentar"><svg><use href="#i-plus"/></svg></button></div>`;
+}
+const priceHTML = p => `<div class="price${p.old?" promo":""}">${p.old?`<s>de ${brl(p.old)}</s>`:""}<b>${brl(p.p)}</b>${p.kg?`<span class="per">por kg</span>`:""}</div>`;
+const optsHTML = p => p.o ? `<div class="opt-row" role="group" aria-label="Opções de ${esc(p.n)}">${p.o.map(o=>`<button class="chip${o===p.sel?" on":""}" data-opt="${p.id}" data-val="${esc(o)}" aria-pressed="${o===p.sel}">${esc(o)}</button>`).join("")}</div>` : "";
+function tagsHTML(p){
+  const t = [];
+  if (p.hot) t.push(`<span class="tag hot">Mais pedido</span>`);
+  if (p.tag) t.push(`<span class="tag">${esc(p.tag)}</span>`);
+  if (p.c) t.push(`<span class="tag warn">Sob consulta</span>`);
+  if (p.old) t.push(`<span class="tag off">-${Math.round((1-p.p/p.old)*100)}%</span>`);
+  return t.length ? `<div class="tags">${t.join("")}</div>` : "";
+}
+function itemHTML(p){
+  return `<div class="item" data-item="${p.id}" data-search="${esc(norm([p.n,p.s,p.d,(p.o||[]).join(" "),p.cat.name,p.group.title,p.tag].filter(Boolean).join(" ")))}">
+    <span data-thumb="${p.id}">${thumbHTML(p)}</span>
+    <div><div class="nm">${esc(p.n)} ${p.s?`<span class="sz">(${esc(p.s)})</span>`:""}</div>${p.d?`<div class="ds">${esc(p.d)}</div>`:""}${tagsHTML(p)}</div>
+    <div class="buy">${priceHTML(p)}<span data-buy="${p.id}">${buyHTML(p)}</span></div>${optsHTML(p)}</div>`;
+}
+function renderMenu(){
+  $("#tabs").innerHTML = CATS.map((c,i)=>`<button class="tab${i?"":" on"}" data-tab="${c.id}" aria-current="${!i}"><svg><use href="#${c.icon}"/></svg>${c.name}</button>`).join("");
+  $("#menu").innerHTML = CATS.map(c=>`
+    <div class="cat" id="cat-${c.id}" data-cat="${c.id}">
+      <div class="cat-head"><div class="cat-ico"><svg><use href="#${c.icon}"/></svg></div><div><h3>${c.name}</h3><p>${c.sub}</p></div></div>
+      ${c.groups.map(g=>`<div class="panel" data-group>
+          <div class="panel-head${g.alt?" alt":""}"><h4>${g.title}</h4>${g.tag?`<small>${g.tag}</small>`:""}</div>
+          <div class="list">${g.items.map(itemHTML).join("")}</div>
+          ${g.note?`<div class="note"><svg><use href="#i-info"/></svg>${g.note}</div>`:""}
+        </div>`).join("")}
+    </div>`).join("");
+  $("#featCards").innerHTML = FEATURED.map(k=>BYKEY[k]).filter(Boolean).map(p=>`
+    <article class="card">
+      <button class="ph" data-zoom="${p.id}" aria-label="Ver detalhes de ${esc(p.n)}"><img src="img/g/${p.img}.jpg" alt="${esc(p.n)}" loading="lazy" width="640" height="640">${p.old?`<span class="ribbon-off">-${Math.round((1-p.p/p.old)*100)}%</span>`:""}</button>
+      <div class="bd"><div class="nm">${esc(p.n.replace("Camarão de praia ",""))} <span class="sz">(${esc(p.s)})</span></div>
+        <div class="ft">${priceHTML(p)}<span data-buy="${p.id}">${buyHTML(p)}</span></div></div>
+    </article>`).join("");
+}
+function refreshItem(id){
+  const p = PRODUCTS[id];
+  $$(`[data-buy="${id}"]`).forEach(el => el.innerHTML = buyHTML(p));
+}
+
+/* ---------- Header + barra ---------- */
+function refresh(){
+  Object.keys(PRODUCTS).forEach(refreshItem);
+  const n = units(), t = total();
+  $("#bagCount").textContent = n;
+  $("#bbQ").textContent = n; $("#bbV").textContent = brl(t);
+  $("#bagbar").classList.toggle("show", n > 0 && !drawerOpen);
+  document.body.classList.toggle("has-bag", n > 0 && !drawerOpen);
+  const b = $("#bagBtn"); b.classList.remove("bump"); void b.offsetWidth; if (n) b.classList.add("bump");
+  if (drawerOpen && view === "bag") renderBag();
+}
+
+let tt;
+function toast(msg){ const t=$("#toast"); t.querySelector("span").textContent=msg; t.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("show"),1800); }
+
+/* ---------- Zoom do produto ---------- */
+let zoomId = null, zoomFrom;
+function openZoom(id){
+  zoomId = id; zoomFrom = document.activeElement;
+  renderZoom();
+  $("#zoom").classList.add("open"); $("#zoom").setAttribute("aria-hidden","false"); document.body.classList.add("lock");
+  setTimeout(()=>$("#zbox .zx").focus(), 50);
+}
+function renderZoom(){
+  const p = PRODUCTS[zoomId], im = imgOf(p);
+  $("#zbox").innerHTML = `
+    <div class="zimg">${im?`<img src="img/g/${im}.jpg" alt="${esc(p.n)}">`:`<div class="thumb" style="width:100%;height:100%;border-radius:0"><svg style="width:96px;height:96px"><use href="#${p.cat.icon}"/></svg></div>`}
+      <button class="zx" data-zclose aria-label="Fechar"><svg><use href="#i-x"/></svg></button></div>
+    <div class="zbd">
+      <div class="nm" id="zName">${esc(p.n)} ${p.s?`<span class="sz">(${esc(p.s)})</span>`:""}</div>
+      ${p.d?`<p class="ds">${esc(p.d)}</p>`:""}${tagsHTML(p)}${optsHTML(p)}
+      <div class="ft">${priceHTML(p)}<span data-buy="${p.id}">${buyHTML(p)}</span></div>
+      ${p.kg?`<p class="ds">Vendido por kg: valor final confirmado na pesagem.</p>`:""}
+    </div>`;
+}
+function closeZoom(){
+  if (!zoomId) return; zoomId = null;
+  $("#zoom").classList.remove("open"); $("#zoom").setAttribute("aria-hidden","true");
+  if (!drawerOpen) document.body.classList.remove("lock");
+  zoomFrom && zoomFrom.focus && zoomFrom.focus();
+}
+
+/* ---------- Sacola / checkout ---------- */
+let drawerOpen = false, view = "bag", lastFocus;
+const form = (()=>{ try { return JSON.parse(localStorage.getItem("fisheria-cliente")) || {}; } catch(e){ return {}; } })();
+form.mode ||= "Entrega"; form.pay ||= "Pix";
+const saveForm = () => { try { localStorage.setItem("fisheria-cliente", JSON.stringify({name:form.name,addr:form.addr,ref:form.ref,mode:form.mode,pay:form.pay})); } catch(e){} };
+
+function openDrawer(v="bag"){
+  lastFocus = document.activeElement;
+  drawerOpen = true; view = v;
+  $("#drawer").classList.add("open"); $("#scrim").classList.add("open");
+  $("#drawer").setAttribute("aria-hidden","false"); document.body.classList.add("lock");
+  render(); refresh();
+  setTimeout(()=>$("#dClose").focus(), 60);
+}
+function closeDrawer(){
+  drawerOpen = false;
+  $("#drawer").classList.remove("open"); $("#scrim").classList.remove("open");
+  $("#drawer").setAttribute("aria-hidden","true"); document.body.classList.remove("lock");
+  refresh(); lastFocus && lastFocus.focus();
+}
+const render = () => view === "bag" ? renderBag() : renderCheckout();
+
+function renderBag(){
+  $("#dTitle").textContent = "Sua sacola"; $("#dBack").classList.add("hide"); $("#dIco").classList.remove("hide");
+  if (!cart.length){
+    $("#dBody").innerHTML = `<div class="bag-empty"><svg><use href="#i-bag"/></svg><b>Sua sacola está vazia</b>Escolha seus produtos no cardápio e eles aparecem aqui.</div>`;
+    $("#dFoot").innerHTML = `<button class="btn btn-teal" data-close>Ver cardápio</button>`;
+    return;
+  }
+  $("#dBody").innerHTML = cart.map((l,i)=>{ const p = PRODUCTS[l.id]; return `
+    <div class="line">
+      ${thumbHTML(p, l.opt, "thumb", false)}
+      <div><div class="nm">${esc(p.label)}${l.opt?` · ${esc(l.opt)}`:""}</div>
+      <div class="sub">${p.s?esc(p.s)+" · ":""}${brl(p.p)}${p.kg?"/kg":" cada"}${p.c?" · sob consulta":""}</div></div>
+      <div class="lp">${p.kg?"≈ ":""}${brl(lineTotal(l))}</div>
+      <div class="row2">
+        <div class="stepper"><button data-ldec="${i}" aria-label="Diminuir"><svg><use href="#i-minus"/></svg></button><output>${qtyLabel(p,l.q)}</output><button data-linc="${i}" aria-label="Aumentar"><svg><use href="#i-plus"/></svg></button></div>
+        <button class="rm" data-lrm="${i}">Remover</button>
+      </div>
+    </div>`; }).join("");
+  $("#dFoot").innerHTML = `
+    <div class="sum"><span>Subtotal${hasKg()?" estimado":""}</span><b>${brl(total())}</b></div>
+    <p class="fine">${hasKg()?"Itens por kg são pesados no preparo, o valor final pode variar um pouco. ":""}Taxa de entrega combinada no WhatsApp.</p>
+    <button class="btn btn-teal" data-next>Continuar <svg><use href="#i-right"/></svg></button>`;
+}
+function renderCheckout(){
+  $("#dTitle").textContent = "Finalizar pedido"; $("#dBack").classList.remove("hide"); $("#dIco").classList.add("hide");
+  const del = form.mode === "Entrega";
+  $("#dBody").innerHTML = `
+    <div class="form">
+      <div class="recap"><span>${units()} ${units()===1?"item":"itens"} na sacola</span><b>${brl(total())}</b></div>
+      <label>Seu nome<input id="fName" autocomplete="name" value="${esc(form.name||"")}" placeholder="Como podemos te chamar?"></label>
+      <fieldset class="fs"><legend>Como você quer receber?</legend>
+        <div class="seg">${["Entrega","Retirada na loja"].map(m=>`<button type="button" data-mode="${m}" class="${form.mode===m?"on":""}" aria-pressed="${form.mode===m}">${m}</button>`).join("")}</div>
+      </fieldset>
+      ${del ? `
+      <label>Endereço completo<textarea id="fAddr" autocomplete="street-address" placeholder="Rua, número, bairro e cidade">${esc(form.addr||"")}</textarea></label>
+      <label><span>Ponto de referência <i>(opcional)</i></span><input id="fRef" value="${esc(form.ref||"")}" placeholder="Ex.: perto da padaria"></label>`
+      : `<div class="fnote"><svg><use href="#i-pin"/></svg><span>Retirada na Rua Maestro Nelson Ferreira, 742 · Piedade. A equipe avisa quando estiver pronto.</span></div>`}
+      <fieldset class="fs"><legend>Forma de pagamento</legend>
+        <div class="seg three">${["Pix","Cartão","Dinheiro"].map(m=>`<button type="button" data-pay="${m}" class="${form.pay===m?"on":""}" aria-pressed="${form.pay===m}">${m}</button>`).join("")}</div>
+      </fieldset>
+      ${form.pay==="Dinheiro"?`<label><span>Troco para quanto? <i>(opcional)</i></span><input id="fChange" inputmode="decimal" value="${esc(form.change||"")}" placeholder="Ex.: 200"></label>`:""}
+      <label><span>Observações <i>(opcional)</i></span><textarea id="fObs" placeholder="Ex.: camarão limpo, peixe em postas finas…">${esc(form.obs||"")}</textarea></label>
+    </div>`;
+  $("#dFoot").innerHTML = `<button class="btn btn-wa" data-send><svg><use href="#i-wa"/></svg>Enviar pedido no WhatsApp</button>`;
+}
+function readForm(){
+  [["name","fName"],["addr","fAddr"],["ref","fRef"],["change","fChange"],["obs","fObs"]].forEach(([k,id])=>{ const e=document.getElementById(id); if (e) form[k]=e.value.trim(); });
+}
+function buildMessage(){
+  const L = ["*NOVO PEDIDO · SITE FISHERIA* 🐟", ""];
+  cart.forEach(l => { const p = PRODUCTS[l.id];
+    L.push(`• ${p.kg ? kgFmt(l.q) : l.q + "x"} ${p.label}${p.s?" ("+p.s+")":""}${l.opt?" · "+l.opt:""}${p.c?" [sob consulta]":""} = ${p.kg?"≈ ":""}${brl(lineTotal(l))}`);
+  });
+  L.push("", `*Subtotal${hasKg()?" estimado":""}:* ${brl(total())}`);
+  if (hasKg()) L.push("_Itens por kg: valor final após a pesagem._");
+  L.push("", `*Nome:* ${form.name}`, `*Recebimento:* ${form.mode}`);
+  if (form.mode === "Entrega"){ L.push(`*Endereço:* ${form.addr}`); if (form.ref) L.push(`*Referência:* ${form.ref}`); }
+  L.push(`*Pagamento:* ${form.pay}${form.pay==="Dinheiro" && form.change ? " (troco para R$ "+form.change+")" : ""}`);
+  if (form.obs) L.push(`*Obs.:* ${form.obs}`);
+  if (form.mode === "Entrega") L.push("", "Pode me informar a taxa de entrega? Obrigado(a)!");
+  return L.join("\n");
+}
+function send(){
+  readForm();
+  const bad = [];
+  if (!form.name) bad.push("fName");
+  if (form.mode === "Entrega" && !form.addr) bad.push("fAddr");
+  $$(".form .err").forEach(e=>e.classList.remove("err"));
+  if (bad.length){ bad.forEach(id=>document.getElementById(id).classList.add("err")); document.getElementById(bad[0]).focus(); toast("Preencha os campos destacados"); return; }
+  saveForm();
+  window.open(waLink(buildMessage()), "_blank");
+}
+
+/* ---------- Eventos ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("button,a"); if (!t) { if (e.target.id === "zoom") closeZoom(); return; }
+  const d = t.dataset;
+  if (d.add){ const p = PRODUCTS[d.add]; addItem(p.id, p.sel, 1); }
+  else if (d.dec){ const p = PRODUCTS[d.dec]; addItem(p.id, p.sel, -1); }
+  else if (d.opt){ const p = PRODUCTS[d.opt]; p.sel = d.val;
+    $$(`[data-opt="${p.id}"]`).forEach(c=>{ const on = c.dataset.val===p.sel; c.classList.toggle("on",on); c.setAttribute("aria-pressed",on); });
+    $$(`[data-thumb="${p.id}"]`).forEach(el=>el.innerHTML = thumbHTML(p));
+    if (zoomId === p.id){ const z=$("#zbox .zimg img"), im=imgOf(p); if (z && im) z.src=`img/g/${im}.jpg`; }
+    refreshItem(p.id); }
+  else if (d.zoom){ openZoom(d.zoom); }
+  else if (d.zclose!==undefined){ closeZoom(); }
+  else if (d.linc!==undefined){ const l = cart[+d.linc]; addItem(l.id,l.opt,1); }
+  else if (d.ldec!==undefined){ const l = cart[+d.ldec]; addItem(l.id,l.opt,-1); }
+  else if (d.lrm!==undefined){ cart.splice(+d.lrm,1); save(); refresh(); }
+  else if (d.next!==undefined){ view="checkout"; render(); $("#dBody").scrollTop=0; }
+  else if (d.mode){ readForm(); form.mode=d.mode; renderCheckout(); }
+  else if (d.pay){ readForm(); form.pay=d.pay; renderCheckout(); }
+  else if (d.send!==undefined){ send(); }
+  else if (d.close!==undefined){ closeDrawer(); jump(CATS[0].id); }
+  else if (d.tab){ jump(d.tab); }
+  else if (d.jump){ e.preventDefault(); jump(d.jump); }
+});
+$("#bagBtn").onclick = () => openDrawer("bag");
+$("#bagbarBtn").onclick = () => openDrawer("bag");
+$("#dClose").onclick = closeDrawer;
+$("#scrim").onclick = closeDrawer;
+$("#dBack").onclick = () => { readForm(); view="bag"; render(); };
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape"){ if (zoomId) return closeZoom(); if (drawerOpen) return closeDrawer(); }
+  const box = zoomId ? $("#zoom") : drawerOpen ? $("#drawer") : null;
+  if (box && e.key === "Tab"){
+    const f = [...box.querySelectorAll("button,input,textarea,a")].filter(x=>!x.closest(".hide"));
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f.at(-1).focus(); }
+    else if (!e.shiftKey && document.activeElement === f.at(-1)){ e.preventDefault(); f[0].focus(); }
+  }
+});
+
+/* ---------- Abas / scroll ---------- */
+const barH = () => $(".top").offsetHeight + $(".menu-bar").offsetHeight;
+function jump(id){
+  if ($("#q").value){ $("#q").value=""; filter(""); }
+  const el = document.getElementById("cat-"+id);
+  jumping = true; clearTimeout(jumpT); jumpT = setTimeout(()=>jumping=false, 1200);
+  window.scrollTo({top: el.getBoundingClientRect().top + scrollY - barH() + 4, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  setTab(id);
+}
+let jumping = false, jumpT;
+function setTab(id){
+  $$(".tab").forEach(t=>{ const on=t.dataset.tab===id; t.classList.toggle("on",on); t.setAttribute("aria-current",on);
+    if (on){ const bar=$("#tabs"); bar.scrollTo({left:t.offsetLeft - bar.clientWidth/2 + t.clientWidth/2, behavior:"smooth"}); } });
+}
+let spy = 0;
+window.addEventListener("scroll", () => {
+  if (spy || jumping) return; spy = requestAnimationFrame(()=>{ spy = 0;
+    const off = barH() + 12; let cur = CATS[0].id;
+    $$(".cat:not(.hide)").forEach(c=>{ if (c.getBoundingClientRect().top - off <= 0) cur = c.dataset.cat; });
+    const on = $(".tab.on"); if (!on || on.dataset.tab !== cur) setTab(cur);
+  });
+}, {passive:true});
+
+/* ---------- Busca ---------- */
+function filter(q){
+  const words = norm(q.trim()).split(/\s+/).filter(Boolean); let any = false;
+  $("#searchBox").classList.toggle("has", !!q);
+  $$(".cat").forEach(cat=>{
+    let catAny = false;
+    cat.querySelectorAll("[data-group]").forEach(g=>{
+      let gAny = false;
+      g.querySelectorAll(".item").forEach(it=>{ const ok = words.every(w=>it.dataset.search.includes(w)); it.classList.toggle("hide",!ok); gAny ||= ok; });
+      g.classList.toggle("hide",!gAny); catAny ||= gAny;
+    });
+    cat.classList.toggle("hide",!catAny); any ||= catAny;
+  });
+  $("#empty").style.display = any ? "none" : "block";
+}
+$("#q").addEventListener("input", e => {
+  filter(e.target.value);
+  const top = $("#cardapio").getBoundingClientRect().top + scrollY + $("#cardapio .sec-head").offsetHeight - 8;
+  if (scrollY > top) window.scrollTo({top});
+});
+$("#qClear").onclick = () => { $("#q").value=""; filter(""); $("#q").focus(); };
+
+renderMenu(); refresh(); renderStatus(); setInterval(renderStatus, 60000);
+</script>
+</body>
+</html>
