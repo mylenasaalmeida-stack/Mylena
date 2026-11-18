@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lounge Music · A casinha mais amada do PE</title>
+<meta name="description" content="Lounge Music PE: o melhor sábado da Zona Sul. Ingressos antecipados, compra sem taxa via PIX, condições especiais para aniversariantes e fotos das noites.">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E3242B; --red-2:#B3151B; --red-ink:#5C0A0D;
+  --ink:#0B0B0D; --ink-2:#141417; --ink-3:#1E1E22;
+  --white:#FFFFFF; --mute:#A9A9B2; --line:rgba(255,255,255,.14);
+  --wa:#25D366;
+  --display:"Anton","Impact","Arial Narrow",sans-serif;
+  --heavy:"Archivo Black","Arial Black",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--white);font-family:var(--body);line-height:1.55;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:8px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* chevrons — a assinatura do link da bio */
+.chev{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.chev::before,.chev::after{content:"";position:absolute;top:-10%;bottom:-10%;width:46vw;max-width:620px;
+  background:repeating-linear-gradient(135deg,transparent 0 46px,rgba(227,36,43,.85) 46px 86px,transparent 86px 120px,rgba(179,21,27,.55) 120px 150px);
+  -webkit-mask:linear-gradient(90deg,#000 10%,transparent 92%);mask:linear-gradient(90deg,#000 10%,transparent 92%)}
+.chev::before{left:-6vw;clip-path:polygon(0 0,100% 50%,0 100%)}
+.chev::after{right:-6vw;transform:scaleX(-1);clip-path:polygon(0 0,100% 50%,0 100%)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,11,13,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:40px;height:40px;border-radius:50%;background:#fff}
+.brand b{font-family:var(--heavy);letter-spacing:.04em;font-size:15px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500;color:#ddd}
+.nav ul a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;font-weight:700;font-size:15px;padding:14px 24px;transition:transform .2s,background .2s,box-shadow .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -10px rgba(227,36,43,.8)}
+.btn-red:hover{background:#f23038}
+.btn-ghost{border:2px solid #fff}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+@media (max-width:440px){.nav .brand b{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:110px 0 70px;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url(img/neon-music.jpg) center 30%/cover;filter:saturate(1.1) brightness(.42)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 40%,rgba(11,11,13,.2),rgba(11,11,13,.9) 70%),linear-gradient(180deg,transparent 60%,var(--ink))}
+.hero .chev{z-index:-1;opacity:.9}
+.hero-logo{width:132px;height:132px;border-radius:50%;background:#fff;margin:0 auto 26px;box-shadow:0 0 0 6px rgba(255,255,255,.08),0 20px 60px -10px rgba(227,36,43,.6)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--heavy);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(227,36,43,.18);border:1px solid rgba(227,36,43,.6);padding:8px 16px;border-radius:999px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(56px,13vw,170px);letter-spacing:.01em;margin:22px 0 12px}
+.hero h1 span{color:var(--red);text-shadow:0 0 40px rgba(227,36,43,.55)}
+.hero p.lead{font-size:clamp(17px,2.2vw,21px);color:#e6e6ea;max-width:620px;margin:0 auto 34px}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+
+/* marquee */
+.tickwrap{overflow:hidden;margin-top:-24px;padding:10px 0;position:relative;z-index:2}
+.ticker{background:var(--red);overflow:hidden;border-block:2px solid #000;transform:rotate(-1.2deg);margin:0 -20px}
+.ticker div{display:flex;gap:40px;width:max-content;padding:14px 0;animation:tick 28s linear infinite;font-family:var(--display);font-size:26px;text-transform:uppercase;letter-spacing:.04em}
+.ticker span::after{content:"✦";margin-left:40px;color:#000}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:110px 0}
+.eyebrow{font-family:var(--heavy);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(42px,6.4vw,82px);line-height:.95;letter-spacing:.01em}
+.sub{color:var(--mute);font-size:17px;max-width:560px;margin-top:16px}
+
+/* atalhos (os botões da bio, repaginados) */
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px}
+.q{position:relative;overflow:hidden;border-radius:var(--r);padding:26px 24px 24px;background:var(--ink-2);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-height:220px;transition:transform .25s,border-color .25s,background .25s}
+.q:hover{transform:translateY(-4px);border-color:var(--red);background:var(--ink-3)}
+.q .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(227,36,43,.14);color:var(--red);font-size:24px}
+.q h3{font-family:var(--heavy);font-size:19px;line-height:1.2;text-transform:uppercase;letter-spacing:.01em}
+.q p{color:var(--mute);font-size:14.5px;flex:1}
+.q .go{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;color:#fff}
+.q .go svg{transition:transform .2s}
+.q:hover .go svg{transform:translateX(4px)}
+.q.hot{background:linear-gradient(150deg,var(--red) 0%,var(--red-2) 60%,var(--red-ink) 100%);border-color:transparent}
+.q.hot .ic{background:rgba(0,0,0,.22);color:#fff}
+.q.hot p{color:rgba(255,255,255,.85)}
+.tag{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#000;color:#fff;padding:5px 10px;border-radius:999px}
+
+/* a casa */
+.casa{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.casa-photos{position:relative;aspect-ratio:4/5}
+.casa-photos img{position:absolute;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.casa-photos .a{inset:0 22% 18% 0;width:78%;height:82%}
+.casa-photos .b{right:0;bottom:0;width:52%;height:52%;border:6px solid var(--ink)}
+.badge{position:absolute;left:-14px;bottom:10%;background:var(--red);font-family:var(--display);text-transform:uppercase;font-size:22px;line-height:1;padding:16px 20px;border-radius:16px;transform:rotate(-6deg);box-shadow:0 14px 30px -8px rgba(227,36,43,.7)}
+.badge small{display:block;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.14em;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.stat{border-top:2px solid var(--red);padding-top:14px}
+.stat b{font-family:var(--display);font-size:40px;font-weight:400;display:block;line-height:1}
+.stat span{font-size:13px;color:var(--mute)}
+.casa .copy p{color:#d6d6dc;font-size:17px;margin-top:18px}
+@media (max-width:900px){.casa{grid-template-columns:1fr;gap:48px}.casa-photos{max-width:480px;width:100%;margin-inline:auto}}
+
+/* noites */
+.nights{background:var(--ink-2);border-block:1px solid var(--line);overflow:hidden}
+.nights .chev{opacity:.12}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.night{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;isolation:isolate}
+.night img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.night:hover img{transform:scale(1.05)}
+.night::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.92))}
+.night .in{position:absolute;left:0;right:0;bottom:0;padding:24px}
+.night .day{font-family:var(--heavy);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--red);display:inline-block;padding:5px 10px;border-radius:6px}
+.night h3{font-family:var(--display);font-weight:400;font-size:38px;text-transform:uppercase;line-height:1;margin:12px 0 6px}
+.night p{font-size:14.5px;color:#d8d8de}
+@media (max-width:900px){.cards{grid-template-columns:1fr;max-width:460px;margin-inline:auto}.night{aspect-ratio:4/5}}
+
+/* aniversariante */
+.niver{display:grid;grid-template-columns:1fr 1fr;border-radius:32px;overflow:hidden;background:linear-gradient(135deg,var(--red) 0%,var(--red-2) 55%,var(--red-ink) 100%);position:relative}
+.niver .txt{padding:64px 56px;position:relative;z-index:1}
+.niver .eyebrow{color:#fff;opacity:.8}
+.niver ul{list-style:none;margin:28px 0 34px;display:grid;gap:12px}
+.niver li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px}
+.niver li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/13px no-repeat}
+.niver .btn-dark{background:#000;color:#fff}
+.niver .btn-dark:hover{background:#1a1a1a}
+.niver .ph{position:relative;min-height:420px}
+.niver .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.niver .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--red-2),transparent 40%)}
+.confetti{position:absolute;font-size:46px;z-index:2;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+@media (max-width:900px){.niver{grid-template-columns:1fr}.niver .txt{padding:44px 26px}.niver .ph{min-height:340px;order:-1}.niver .ph::before{background:linear-gradient(0deg,var(--red),transparent 50%)}}
+
+/* pix */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;counter-reset:s}
+.step{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--red);display:block;margin-bottom:14px}
+.step h3{font-family:var(--heavy);font-size:18px;text-transform:uppercase;margin-bottom:8px}
+.step p{color:var(--mute);font-size:15px}
+.pix-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-top:26px;padding:24px 28px;border-radius:var(--r);border:1px dashed rgba(227,36,43,.6);background:rgba(227,36,43,.06)}
+.pix-cta strong{font-size:18px}
+.pix-cta span{color:var(--mute);font-size:14px;display:block}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+
+/* galeria */
+.gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.gal{columns:4 240px;column-gap:14px;margin-top:44px}
+.gal a{display:block;margin-bottom:14px;border-radius:16px;overflow:hidden;break-inside:avoid;position:relative}
+.gal img{width:100%;transition:transform .5s,filter .5s;filter:saturate(.95)}
+.gal a:hover img{transform:scale(1.04);filter:saturate(1.15)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.94);display:none;place-items:center;padding:20px}
+.lb.open{display:grid}
+.lb img{max-height:88vh;max-width:min(92vw,900px);border-radius:14px}
+.lb button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#000;font-size:22px;cursor:pointer}
+
+/* local */
+.local{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.info{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:36px 32px;display:grid;gap:22px;align-content:start}
+.info .row small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:4px}
+.info .row p{font-size:17px}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--ink-2)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+@media (max-width:900px){.local{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 110px;position:relative;overflow:hidden}
+footer .wrap{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:center}
+.socials{display:flex;gap:12px}
+.socials a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink-3);border:1px solid var(--line);transition:background .2s,transform .2s}
+.socials a:hover{background:var(--red);transform:translateY(-3px)}
+.socials svg{width:22px;height:22px}
+footer small{color:var(--mute);font-size:13px}
+.age{display:inline-block;border:1.5px solid var(--mute);border-radius:6px;padding:1px 6px;font-weight:700;margin-right:6px}
+
+/* whatsapp flutuante */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:#04330f;font-weight:700;padding:14px 20px 14px 16px;border-radius:999px;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
+.fab:hover{transform:translateY(-3px)}
+.fab svg{width:24px;height:24px}
+@media (max-width:560px){.fab span{display:none}.fab{padding:15px}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand"><img src="img/logo.png" alt=""><b>LOUNGE MUSIC</b></a>
+    <ul>
+      <li><a href="#ingressos">Ingressos</a></li>
+      <li><a href="#casa">A casa</a></li>
+      <li><a href="#aniversariantes">Aniversariantes</a></li>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#local">Como chegar</a></li>
+    </ul>
+    <a class="btn btn-red" data-link="ingressos" href="#">Comprar ingresso</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="hero-bg" role="img" aria-label="Neon Music na parede de tijolos do Lounge"></div>
+    <div class="chev"></div>
+    <div class="wrap">
+      <img class="hero-logo" src="img/logo.png" alt="Lounge Music">
+      <span class="kicker"><i></i> Todo sábado · Zona Sul</span>
+      <h1>A casinha<br>mais amada<br><span>do PE</span></h1>
+      <p class="lead">O melhor sábado da Zona Sul tem endereço. Garanta seu ingresso antecipado ou compre sem taxa direto no PIX.</p>
+      <div class="ctas">
+        <a class="btn btn-red" data-link="ingressos" href="#">🎟️ Ingressos antecipados</a>
+        <a class="btn btn-ghost" data-wa="pix" href="#">💸 Comprar sem taxa via PIX</a>
+      </div>
+    </div>
+    <span class="scroll">Role ↓</span>
+  </section>
+
+  <div class="tickwrap" aria-hidden="true"><div class="ticker"><div>
+    <span>Melhor sábado da Zona Sul</span><span>Compre sem taxa via PIX</span><span>Aniversariante tem condição especial</span><span>A casinha mais amada do PE</span>
+    <span>Melhor sábado da Zona Sul</span><span>Compre sem taxa via PIX</span><span>Aniversariante tem condição especial</span><span>A casinha mais amada do PE</span>
+  </div></div></div>
+
+  <!-- ATALHOS -->
+  <section class="sec" id="ingressos">
+    <div class="wrap">
+      <p class="eyebrow reveal">Tudo num clique</p>
+      <h2 class="reveal">Bora pro Lounge?</h2>
+      <p class="sub reveal">Escolha como quer garantir sua noite. Os botões de WhatsApp já abrem a conversa com a mensagem pronta.</p>
+      <div class="quick">
+        <a class="q hot reveal" data-wa="pix" href="#">
+          <span class="tag">Sem taxa</span>
+          <span class="ic">💸</span>
+          <h3>Compre sem taxa, via PIX</h3>
+          <p>Fale com a equipe no WhatsApp, pague no PIX e receba seu ingresso sem taxa de serviço.</p>
+          <span class="go">Chamar no WhatsApp <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="q reveal" data-link="ingressos" href="#" target="_blank" rel="noopener">
+          <span class="ic">🎟️</span>
+          <h3>Ingressos antecipados</h3>
+          <p>Lotes promocionais na Outgo. Quanto antes, melhor o preço.</p>
+          <span class="go">Ver ingressos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="q reveal" data-wa="niver" href="#">
+          <span class="ic">🥳</span>
+          <h3>Condições para aniversariantes</h3>
+          <p>Vai comemorar? Chama a gente e monte sua noite com condições especiais.</p>
+          <span class="go">Quero comemorar <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="q reveal" data-wa="shows" href="#">
+          <span class="ic">🎤</span>
+          <h3>Informações sobre shows</h3>
+          <p>Line-up, horários, camarote e reservas. Tira sua dúvida direto com a equipe.</p>
+          <span class="go">Perguntar <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A CASA -->
+  <section class="sec" id="casa" style="padding-top:20px">
+    <div class="wrap casa">
+      <div class="casa-photos reveal">
+        <img class="a" src="img/amigas-9anos.jpg" alt="Amigas curtindo a noite no Lounge Music" loading="lazy">
+        <img class="b" src="img/copo-lounge.jpg" alt="Copo personalizado do Lounge" loading="lazy">
+        <div class="badge">9 anos<small>de história</small></div>
+      </div>
+      <div class="copy">
+        <p class="eyebrow reveal">A casa</p>
+        <h2 class="reveal">Daquele jeito que você respeita</h2>
+        <p class="reveal">O Lounge Music é a casinha que virou ponto de encontro da Zona Sul. Pista cheia, camarote, open bar nas noites certas e aquele som que vai do brega funk ao piseiro sem pedir licença.</p>
+        <p class="reveal">É a quarta-feira pensando no sábado. É chegar com a galera e sair com história pra contar.</p>
+        <div class="stats reveal">
+          <div class="stat"><b>9+</b><span>anos de noite</span></div>
+          <div class="stat"><b>SÁB</b><span>a noite oficial</span></div>
+          <div class="stat"><b>0%</b><span>de taxa no PIX</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOITES -->
+  <section class="sec nights">
+    <div class="chev"></div>
+    <div class="wrap">
+      <p class="eyebrow reveal">Experiência</p>
+      <h2 class="reveal">Escolha seu rolê</h2>
+      <div class="cards">
+        <article class="night reveal">
+          <img src="img/pista.jpg" alt="Pista do Lounge Music" loading="lazy">
+          <div class="in"><span class="day">Pista</span><h3>O sabadão</h3><p>Luz, grave e a pista mais disputada da cidade.</p></div>
+        </article>
+        <article class="night reveal">
+          <img src="img/camarote.jpg" alt="Camarote do Lounge Music" loading="lazy">
+          <div class="in"><span class="day">Camarote</span><h3>Vista de cima</h3><p>Espaço reservado pra você e a galera. Consulte disponibilidade.</p></div>
+        </article>
+        <article class="night reveal">
+          <img src="img/sabadao-brasil.jpg" alt="Noite temática no Lounge Music" loading="lazy">
+          <div class="in"><span class="day">Especiais</span><h3>Noites temáticas</h3><p>Datas comemorativas, convidados e atrações que viram assunto.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIVERSARIANTES -->
+  <section class="sec" id="aniversariantes">
+    <div class="wrap">
+      <div class="niver reveal">
+        <div class="txt">
+          <p class="eyebrow">Aniversariantes</p>
+          <h2>Seu niver<br>é no Lounge</h2>
+          <ul>
+            <li>Condições especiais pra quem faz aniversário</li>
+            <li>Lista pros seus convidados</li>
+            <li>Ajuda pra reservar camarote ou espaço pra galera</li>
+          </ul>
+          <a class="btn btn-dark" data-wa="niver" href="#">Quero minhas condições →</a>
+        </div>
+        <div class="ph">
+          <img src="img/noite.jpg" alt="Cliente comemorando no Lounge Music" loading="lazy">
+          <span class="confetti" style="top:22px;right:26px">🎉</span>
+          <span class="confetti" style="bottom:30px;right:40%">🎂</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIX -->
+  <section class="sec" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow reveal">Sem taxa</p>
+      <h2 class="reveal">Compre no PIX em 3 passos</h2>
+      <div class="steps">
+        <div class="step reveal"><h3>Chama no Zap</h3><p>Toque no botão e a conversa já abre com a mensagem pronta.</p></div>
+        <div class="step reveal"><h3>Faz o PIX</h3><p>A equipe passa o valor da noite e a chave PIX. Sem taxa de serviço.</p></div>
+        <div class="step reveal"><h3>Nome na lista</h3><p>Envie o comprovante e pronto: é só chegar e curtir.</p></div>
+      </div>
+      <div class="pix-cta reveal">
+        <div><strong>Prefere pagar no cartão?</strong><span>Os ingressos antecipados também estão na Outgo.</span></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-red" data-wa="pix" href="#">Comprar via PIX</a>
+          <a class="btn btn-ghost" data-link="ingressos" href="#" target="_blank" rel="noopener">Ir para a Outgo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTOS -->
+  <section class="sec" id="fotos" style="padding-top:20px">
+    <div class="wrap">
+      <div class="gal-head">
+        <div>
+          <p class="eyebrow reveal">Fotos tiradas no Lounge 📸</p>
+          <h2 class="reveal">Se achou?</h2>
+          <p class="sub reveal">As fotos de cada noite ficam no nosso álbum. Procure a data e salve as suas.</p>
+        </div>
+        <a class="btn btn-ghost reveal" data-link="fotos" href="#" target="_blank" rel="noopener">Abrir álbum completo ↗</a>
+      </div>
+      <div class="gal" id="gal">
+        <a href="img/neon-music.jpg"><img src="img/neon-music.jpg" alt="Foto no neon Music" loading="lazy"></a>
+        <a href="img/camarote.jpg"><img src="img/camarote.jpg" alt="Selfie no camarote" loading="lazy"></a>
+        <a href="img/copo-lounge.jpg"><img src="img/copo-lounge.jpg" alt="Brinde com o copo do Lounge" loading="lazy"></a>
+        <a href="img/amigas-9anos.jpg"><img src="img/amigas-9anos.jpg" alt="Amigas no aniversário de 9 anos" loading="lazy"></a>
+        <a href="img/pista.jpg"><img src="img/pista.jpg" alt="Na pista do Lounge" loading="lazy"></a>
+        <a href="img/sabadao-brasil.jpg"><img src="img/sabadao-brasil.jpg" alt="Noite com a camisa do Brasil" loading="lazy"></a>
+        <a href="img/noite.jpg"><img src="img/noite.jpg" alt="Sabadou no Lounge Music" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL -->
+  <section class="sec" id="local" style="padding-top:20px">
+    <div class="wrap">
+      <p class="eyebrow reveal">Como chegar</p>
+      <h2 class="reveal" style="margin-bottom:40px">Te vejo no sábado</h2>
+      <div class="local">
+        <div class="info reveal">
+          <div class="row"><small>Onde</small><p id="endereco">Piedade · Jaboatão dos Guararapes, PE</p></div>
+          <div class="row"><small>Quando</small><p>Todo sábado à noite + datas especiais</p></div>
+          <div class="row"><small>Contato</small><p>WhatsApp e Instagram <b>@loungemusicpe</b></p></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-red" data-link="maps" href="#" target="_blank" rel="noopener">Abrir no Maps</a>
+            <a class="btn btn-ghost" data-wa="shows" href="#">Falar com a equipe</a>
+          </div>
+        </div>
+        <div class="map reveal"><iframe id="mapa" title="Mapa do Lounge Music" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="chev" style="opacity:.15"></div>
+  <div class="wrap">
+    <a href="#topo" class="brand"><img src="img/logo.png" alt=""><b>LOUNGE MUSIC · PE</b></a>
+    <nav class="socials" aria-label="Redes sociais">
+      <a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a data-link="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.4V11H7v4h3v9h4v-9h3l1-4h-4V8.7c0-.5.3-.7 1-.7z"/></svg></a>
+      <a data-link="maps" href="#" target="_blank" rel="noopener" aria-label="Localização"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+      <a data-wa="shows" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
+    </nav>
+    <small><span class="age">18+</span>Proibida a entrada de menores. Beba com moderação. © <span id="ano"></span> Lounge Music PE</small>
+  </div>
+</footer>
+
+<a class="fab" data-wa="pix" href="#" aria-label="Comprar via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
+  <span>Ingresso sem taxa</span>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button aria-label="Fechar">✕</button><img alt=""></div>
+
+<script>
+/* ======== CONFIGURAÇÃO: troque aqui ======== */
+const CONFIG = {
+  whatsapp: "5581999999999", // TODO: número oficial do Lounge (DDI+DDD+número, só dígitos)
+  mensagens: {
+    pix:   "Gostaria de comprar ingresso sem taxa, via PIX 💸",
+    niver: "Oii, queria saber das condições especiais para aniversariantes 🥳",
+    shows: "Oi! Queria informações sobre os próximos shows 🎤"
+  },
+  links: {
+    ingressos: "https://outgo.com.br/loungemusic",
+    fotos:     "https://drive.google.com/drive/folders/1c65cW00EBROlgVwmMsYIGylrBPxstXKo",
+    instagram: "https://www.instagram.com/loungemusicpe/",
+    facebook:  "https://www.facebook.com/loungemusicpe",
+    maps:      "https://www.google.com/maps/search/?api=1&query=Lounge+Music+Piedade+Jaboat%C3%A3o"
+  },
+  mapaEmbed: "https://www.google.com/maps?q=Lounge+Music+Piedade+Jaboat%C3%A3o&output=embed"
+};
+/* =========================================== */
+
+document.querySelectorAll("[data-wa]").forEach(a=>{
+  a.href = "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(CONFIG.mensagens[a.dataset.wa]||"");
+  a.target="_blank"; a.rel="noopener";
+});
+document.querySelectorAll("[data-link]").forEach(a=>{
+  a.href = CONFIG.links[a.dataset.link]||"#"; a.target="_blank"; a.rel="noopener";
+});
+document.getElementById("mapa").src = CONFIG.mapaEmbed;
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+const nav=document.getElementById("nav");
+const onScroll=()=>nav.classList.toggle("solid",scrollY>40);
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const lb=document.getElementById("lb"),lbImg=lb.querySelector("img");
+document.getElementById("gal").addEventListener("click",e=>{
+  const a=e.target.closest("a");if(!a)return;e.preventDefault();
+  lbImg.src=a.href;lbImg.alt=a.querySelector("img").alt;lb.classList.add("open");
+});
+lb.addEventListener("click",e=>{if(e.target!==lbImg)lb.classList.remove("open")});
+addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("open")});
+</script>
+</body>
+</html>
