@@ -7,7 +7,7 @@
 <meta name="description" content="Renan Gonzaga, psicólogo. Psicoterapia orientada pela Terapia Cognitivo-Comportamental (TCC): ansiedade, depressão, TDAH, relacionamentos, sexualidade e diversidade LGBT+.">
 <meta property="og:title" content="Renan Gonzaga · Psicólogo">
 <meta property="og:description" content="Psicoterapia com base na TCC. Um espaço construído em conjunto, com acolhimento e ferramentas para mais autonomia.">
-<meta property="og:image" content="img/renan-perfil.jpg">
+<meta property="og:image" content="img/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -82,18 +82,18 @@ h2 em,h1 em{font-style:italic;color:var(--blue-deep)}
 .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
 .tag{font-size:13.5px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft)}
 
-.portrait{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:1}
+.portrait{position:relative;justify-self:center;width:min(430px,100%);aspect-ratio:4/5}
 .portrait .blob{
-  position:absolute;inset:-6%;border-radius:46% 54% 50% 50% / 52% 44% 56% 48%;
+  position:absolute;width:78%;aspect-ratio:1;left:-12%;bottom:-8%;border-radius:46% 54% 50% 50% / 52% 44% 56% 48%;
   background:radial-gradient(circle at 30% 30%, var(--sky), #b9d2f0 60%, var(--sand));
   animation:morph 14s ease-in-out infinite;
 }
 .portrait .photo{
-  position:absolute;inset:4%;border-radius:50%;overflow:hidden;
-  box-shadow:0 30px 70px -25px rgba(20,33,61,.45);background:#cfdbe8;
+  position:absolute;inset:0;border-radius:999px 999px 36px 36px;overflow:hidden;
+  box-shadow:0 40px 80px -30px rgba(20,33,61,.5);background:#cfdbe8;
 }
-.portrait .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.07)}
-.portrait .ring{position:absolute;inset:-14%;border:1.5px dashed rgba(31,78,140,.25);border-radius:50%;animation:spin 60s linear infinite}
+.portrait .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.portrait .ring{position:absolute;inset:-18px -18px 40px 18px;border:1.5px solid rgba(31,78,140,.22);border-radius:999px 999px 40px 40px}
 .badge{
   position:absolute;background:var(--card);border-radius:20px;padding:14px 18px;
   box-shadow:0 18px 40px -18px rgba(20,33,61,.35);font-size:14px;line-height:1.35;
@@ -102,9 +102,9 @@ h2 em,h1 em{font-style:italic;color:var(--blue-deep)}
 .badge i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-style:normal;flex:none}
 .badge strong{display:block;font-weight:600}
 .badge small{color:var(--muted)}
-.badge.b1{left:-8%;bottom:10%}
+.badge.b1{left:-12%;bottom:12%}
 .badge.b1 i{background:var(--sky);color:var(--blue-deep)}
-.badge.b2{right:-6%;top:8%}
+.badge.b2{right:-8%;top:30%}
 .badge.b2 i{background:#F6DCCF;color:var(--clay)}
 @keyframes morph{50%{border-radius:56% 44% 42% 58% / 44% 58% 42% 56%}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -173,17 +173,22 @@ section{padding:120px 0}
   content:"";position:absolute;width:620px;height:620px;border-radius:50%;
   background:radial-gradient(circle, rgba(59,130,214,.35), transparent 65%);right:-200px;top:-200px;
 }
-.quote .wrap{position:relative;max-width:980px;text-align:center}
+.quote .wrap{position:relative;display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;align-items:center}
+.quote-photo{position:relative;border-radius:999px 999px 32px 32px;overflow:hidden;aspect-ratio:461/667;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.quote-photo img{width:100%;height:100%;object-fit:cover}
+.quote-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
 .quote .mark{font-family:"Fraunces",serif;font-size:120px;line-height:.6;color:var(--sand);display:block;height:60px}
 .quote blockquote{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,3.6vw,46px);line-height:1.25;letter-spacing:-.015em}
 .quote blockquote em{color:var(--sky)}
-.quote cite{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:40px;font-style:normal;color:#B9C3D6;font-size:15px}
-.quote cite img{width:52px;height:52px;border-radius:50%;object-fit:cover;transform:scale(1.07)}
+.quote cite{display:flex;align-items:center;gap:14px;margin-top:40px;font-style:normal;color:#B9C3D6;font-size:15px}
+.quote cite img{width:52px;height:52px;border-radius:50%;object-fit:cover}
 
 /* passos */
 .steps .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
 .steps .sticky{position:sticky;top:120px}
 .steps .sticky p{color:var(--ink-soft);margin:22px 0 34px}
+.space-photo{margin-top:44px;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 60px -30px rgba(20,33,61,.45)}
+.space-photo img{width:100%;height:100%;object-fit:cover}
 .step{display:grid;grid-template-columns:72px 1fr;gap:24px;padding:34px 0;border-top:1px solid var(--line)}
 .step:last-child{border-bottom:1px solid var(--line)}
 .step .n{font-family:"Fraunces",serif;font-size:44px;line-height:1;color:var(--blue);font-weight:300}
@@ -239,11 +244,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .nav-links a:not(.btn){display:none}
   .hero{padding:120px 0 80px}
   .hero .wrap,.approach .wrap,.steps .wrap{grid-template-columns:1fr;gap:56px}
-  .portrait{width:min(360px,82%);order:-1;margin-top:20px}
+  .portrait{width:min(340px,76%);order:-1;margin-top:24px}
   .badge.b1{left:-14%}.badge.b2{right:-12%}
   .pillar-grid{grid-template-columns:1fr}
   .area-grid{grid-template-columns:repeat(2,1fr)}
   .steps .sticky{position:static}
+  .quote .wrap{grid-template-columns:1fr;gap:48px;text-align:center}
+  .quote-photo{width:min(300px,75%);margin:0 auto}
+  .quote cite{justify-content:center}
   .final-card{grid-template-columns:1fr;padding:56px 32px;border-radius:36px}
   .final-card .phone{text-align:left}
   section{padding:88px 0}
@@ -255,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .nav-links .btn span{display:none}
   .badge{padding:10px 12px;font-size:12.5px;border-radius:16px}
   .badge i{width:30px;height:30px;border-radius:10px}
-  .badge.b1{left:-6%;bottom:2%}.badge.b2{right:-6%;top:0}
+  .badge.b1{left:-14%;bottom:8%}.badge.b2{right:-14%;top:26%}
   .area-grid{gap:10px}
   .area{min-height:120px;padding:18px 16px}
   .area h4{font-size:18px}
@@ -319,7 +327,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="portrait reveal d2">
         <div class="ring"></div>
         <div class="blob"></div>
-        <div class="photo"><img src="img/renan-perfil.jpg" alt="Renan Gonzaga, psicólogo, sorrindo, de blazer azul"></div>
+        <div class="photo"><img src="img/hero.jpg" alt="Renan Gonzaga, psicólogo, sorrindo, de blazer azul e camisa branca" fetchpriority="high"></div>
         <div class="badge b1">
           <i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6C19 16.6 12 21 12 21z"/></svg></i>
           <div><strong>Acolhimento</strong><small>sem julgamentos</small></div>
@@ -426,9 +434,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <!-- CITAÇÃO -->
   <section class="quote">
     <div class="wrap">
+      <figure class="quote-photo reveal"><img src="img/evento.jpg" alt="Renan Gonzaga de terno azul e gravata vermelha"></figure>
+      <div>
       <span class="mark reveal">“</span>
       <blockquote class="reveal d1">Acredito em uma psicoterapia <em>construída em conjunto</em>, que ofereça acolhimento para suas vulnerabilidades, espaço para suas descobertas e ferramentas para que você desenvolva maior autonomia na própria vida.</blockquote>
-      <cite class="reveal d2"><img src="img/renan-perfil.jpg" alt="">Renan Gonzaga · Psicólogo</cite>
+      <cite class="reveal d2"><img src="img/avatar.jpg" alt="">Renan Gonzaga · Psicólogo</cite>
+      </div>
     </div>
   </section>
 
@@ -443,6 +454,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
           Falar com Renan
         </a>
+        <figure class="space-photo reveal d2"><img src="img/espaco.jpg" alt="Renan Gonzaga sorrindo em um ambiente claro e acolhedor"></figure>
       </div>
       <div>
         <div class="step reveal">
