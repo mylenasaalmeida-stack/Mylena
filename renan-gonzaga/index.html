@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renan Gonzaga · Psicólogo</title>
+<meta name="description" content="Renan Gonzaga, psicólogo. Psicoterapia orientada pela Terapia Cognitivo-Comportamental (TCC): ansiedade, depressão, TDAH, relacionamentos, sexualidade e diversidade LGBT+.">
+<meta property="og:title" content="Renan Gonzaga · Psicólogo">
+<meta property="og:description" content="Psicoterapia com base na TCC. Um espaço construído em conjunto, com acolhimento e ferramentas para mais autonomia.">
+<meta property="og:image" content="img/renan-perfil.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F1EA;
+  --bg-2:#EDE5D9;
+  --ink:#14213D;
+  --ink-soft:#3D4A66;
+  --muted:#6B7385;
+  --blue:#3B82D6;
+  --blue-deep:#1F4E8C;
+  --sky:#CFE0F5;
+  --sand:#E4C9A8;
+  --clay:#C8775A;
+  --card:#FFFDF9;
+  --line:rgba(20,33,61,.12);
+  --wa:#1FAF5A;
+  --radius:28px;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.serif{font-family:"Fraunces",Georgia,serif}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--blue-deep);
+}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:clamp(34px,4.6vw,56px)}
+h2 em,h1 em{font-style:italic;color:var(--blue-deep)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:17px 28px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 30px -10px rgba(20,33,61,.55)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--blue-deep)}
+.btn-ghost{color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s, box-shadow .3s}
+.nav.scrolled{background:rgba(246,241,234,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-family:"Fraunces",serif;font-weight:500;font-size:22px;letter-spacing:-.01em}
+.brand span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{text-decoration:none;font-size:15px;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn{padding:11px 20px;font-size:14px;color:#fff}
+
+/* hero */
+.hero{position:relative;padding:150px 0 110px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(44px,6.4vw,84px);margin:22px 0 26px}
+.hero p.lead{font-size:clamp(18px,1.6vw,20px);color:var(--ink-soft);max-width:520px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.tag{font-size:13.5px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft)}
+
+.portrait{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:1}
+.portrait .blob{
+  position:absolute;inset:-6%;border-radius:46% 54% 50% 50% / 52% 44% 56% 48%;
+  background:radial-gradient(circle at 30% 30%, var(--sky), #b9d2f0 60%, var(--sand));
+  animation:morph 14s ease-in-out infinite;
+}
+.portrait .photo{
+  position:absolute;inset:4%;border-radius:50%;overflow:hidden;
+  box-shadow:0 30px 70px -25px rgba(20,33,61,.45);background:#cfdbe8;
+}
+.portrait .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.07)}
+.portrait .ring{position:absolute;inset:-14%;border:1.5px dashed rgba(31,78,140,.25);border-radius:50%;animation:spin 60s linear infinite}
+.badge{
+  position:absolute;background:var(--card);border-radius:20px;padding:14px 18px;
+  box-shadow:0 18px 40px -18px rgba(20,33,61,.35);font-size:14px;line-height:1.35;
+  display:flex;gap:12px;align-items:center;
+}
+.badge i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-style:normal;flex:none}
+.badge strong{display:block;font-weight:600}
+.badge small{color:var(--muted)}
+.badge.b1{left:-8%;bottom:10%}
+.badge.b1 i{background:var(--sky);color:var(--blue-deep)}
+.badge.b2{right:-6%;top:8%}
+.badge.b2 i{background:#F6DCCF;color:var(--clay)}
+@keyframes morph{50%{border-radius:56% 44% 42% 58% / 44% 58% 42% 56%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{background:var(--ink);color:#E9EEF7;padding:22px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:48px;animation:slide 40s linear infinite;font-family:"Fraunces",serif;font-size:24px;font-style:italic}
+.marquee-track span{display:inline-flex;align-items:center;gap:48px}
+.marquee-track span::after{content:"✦";font-style:normal;font-size:14px;color:var(--sand)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:120px 0}
+
+/* abordagem */
+.approach .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.approach p{color:var(--ink-soft);margin-top:22px}
+.approach p strong{color:var(--ink);font-weight:600}
+.triangle{position:relative;width:100%;max-width:470px;justify-self:center}
+.triangle svg{width:100%;height:auto;overflow:visible}
+.triangle .node{
+  position:absolute;transform:translate(-50%,-50%);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:12px 22px;
+  font-family:"Fraunces",serif;font-size:20px;white-space:nowrap;box-shadow:0 14px 30px -18px rgba(20,33,61,.4)
+}
+.triangle .center{
+  position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);text-align:center;
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5
+}
+.triangle .center b{display:block;white-space:nowrap;font-family:"Fraunces",serif;font-size:30px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500}
+.flow{stroke-dasharray:6 8;animation:dash 3s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-56}}
+
+/* pilares */
+.pillars{background:var(--bg-2);border-radius:48px;margin:0 16px}
+.pillars-head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.pillars-head p{max-width:420px;color:var(--ink-soft)}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.pillar{background:var(--card);border-radius:var(--radius);padding:38px 34px 40px;position:relative;transition:transform .35s ease}
+.pillar:hover{transform:translateY(-6px)}
+.pillar .num{font-family:"Fraunces",serif;font-size:15px;color:var(--blue);font-style:italic}
+.pillar h3{font-size:28px;margin:16px 0 14px}
+.pillar p{color:var(--ink-soft);font-size:16px}
+.pillar .ic{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:var(--sky);color:var(--blue-deep);margin-bottom:26px}
+.pillar:nth-child(2) .ic{background:#F6DCCF;color:var(--clay)}
+.pillar:nth-child(3) .ic{background:#E3E8D5;color:#4F6B3A}
+.pillar .ic svg{width:26px;height:26px}
+
+/* areas */
+.areas-head{text-align:center;max-width:720px;margin:0 auto}
+.areas-head p{color:var(--ink-soft);margin-top:18px}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.area{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 22px;
+  display:flex;flex-direction:column;gap:14px;min-height:150px;justify-content:space-between;
+  transition:background .3s, color .3s, transform .3s, border-color .3s;cursor:default;
+}
+.area:hover{background:var(--ink);color:#fff;transform:translateY(-4px);border-color:var(--ink)}
+.area:hover .area-dot{background:var(--sand)}
+.area-dot{width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.area h4{font-family:"Fraunces",serif;font-weight:400;font-size:21px;line-height:1.2}
+.area.wide{grid-column:span 2}
+
+/* quote */
+.quote{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.quote::before{
+  content:"";position:absolute;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle, rgba(59,130,214,.35), transparent 65%);right:-200px;top:-200px;
+}
+.quote .wrap{position:relative;max-width:980px;text-align:center}
+.quote .mark{font-family:"Fraunces",serif;font-size:120px;line-height:.6;color:var(--sand);display:block;height:60px}
+.quote blockquote{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(28px,3.6vw,46px);line-height:1.25;letter-spacing:-.015em}
+.quote blockquote em{color:var(--sky)}
+.quote cite{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:40px;font-style:normal;color:#B9C3D6;font-size:15px}
+.quote cite img{width:52px;height:52px;border-radius:50%;object-fit:cover;transform:scale(1.07)}
+
+/* passos */
+.steps .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.steps .sticky{position:sticky;top:120px}
+.steps .sticky p{color:var(--ink-soft);margin:22px 0 34px}
+.step{display:grid;grid-template-columns:72px 1fr;gap:24px;padding:34px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{font-family:"Fraunces",serif;font-size:44px;line-height:1;color:var(--blue);font-weight:300}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{color:var(--ink-soft)}
+
+/* cta final */
+.final{padding:40px 0 120px}
+.final-card{
+  background:linear-gradient(135deg,var(--blue-deep),#2B6CB8 55%,var(--blue));
+  color:#fff;border-radius:48px;padding:80px 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;position:relative;overflow:hidden
+}
+.final-card::after{content:"";position:absolute;width:420px;height:420px;border:1.5px solid rgba(255,255,255,.18);border-radius:50%;right:-120px;bottom:-180px}
+.final-card h2 em{color:var(--sand)}
+.final-card p{color:#DCE6F5;margin:20px 0 34px;max-width:520px}
+.final-card .btn-primary{background:#fff;color:var(--ink)}
+.final-card .btn-primary:hover{background:var(--sand)}
+.final-card .phone{font-family:"Fraunces",serif;font-size:clamp(26px,3vw,36px);text-decoration:none;display:block;text-align:right;position:relative;z-index:1}
+.final-card .phone small{display:block;font-family:"DM Sans",sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#BFD2EE;margin-bottom:8px}
+
+/* aviso crise */
+.care{max-width:var(--max);margin:0 auto 60px;padding:0 24px}
+.care-box{border:1px solid var(--line);border-radius:22px;padding:22px 26px;display:flex;gap:18px;align-items:flex-start;background:var(--card);font-size:15px;color:var(--ink-soft)}
+.care-box svg{flex:none;width:24px;height:24px;color:var(--clay);margin-top:2px}
+.care-box b{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:36px 0 46px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* whatsapp flutuante */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;
+  background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(31,175,90,.6);
+  transition:transform .25s;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);animation:pulse 2.4s ease-out infinite;z-index:-1}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* responsivo */
+@media (max-width:980px){
+  .nav-links a:not(.btn){display:none}
+  .hero{padding:120px 0 80px}
+  .hero .wrap,.approach .wrap,.steps .wrap{grid-template-columns:1fr;gap:56px}
+  .portrait{width:min(360px,82%);order:-1;margin-top:20px}
+  .badge.b1{left:-14%}.badge.b2{right:-12%}
+  .pillar-grid{grid-template-columns:1fr}
+  .area-grid{grid-template-columns:repeat(2,1fr)}
+  .steps .sticky{position:static}
+  .final-card{grid-template-columns:1fr;padding:56px 32px;border-radius:36px}
+  .final-card .phone{text-align:left}
+  section{padding:88px 0}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .brand b{font-size:19px}
+  .nav-links .btn span{display:none}
+  .badge{padding:10px 12px;font-size:12.5px;border-radius:16px}
+  .badge i{width:30px;height:30px;border-radius:10px}
+  .badge.b1{left:-6%;bottom:2%}.badge.b2{right:-6%;top:0}
+  .area-grid{gap:10px}
+  .area{min-height:120px;padding:18px 16px}
+  .area h4{font-size:18px}
+  .area.wide{grid-column:span 2}
+  .pillars{margin:0 8px;border-radius:32px}
+  .pillar{padding:30px 24px}
+  .step{grid-template-columns:52px 1fr;gap:14px}
+  .step .n{font-size:34px}
+  .btn{width:100%;justify-content:center}
+  .nav-links .btn{width:auto}
+  .final-card{padding:44px 22px}
+  .triangle{max-width:300px;margin-top:10px}
+  .triangle .node{font-size:15px;padding:9px 14px}
+  .triangle .node.l{left:20%!important}
+  .triangle .node.r{left:82%!important}
+  .triangle .center b{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- Link do WhatsApp com mensagem pronta -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="brand"><b>Renan Gonzaga</b><span>Psicólogo</span></a>
+    <nav class="nav-links">
+      <a href="#abordagem">Abordagem</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#como-comecar">Como começar</a>
+      <a class="btn btn-primary js-wa" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+        <span>Agendar</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow reveal">Psicoterapia · TCC</span>
+        <h1 class="reveal d1">Entender o que se repete. <em>Construir outros caminhos.</em></h1>
+        <p class="lead reveal d2">Sou Renan Gonzaga, psicólogo. Ofereço um espaço para olhar com cuidado para seus pensamentos, emoções e comportamentos, e para desenvolver novas formas de lidar com a vida, no seu tempo.</p>
+        <div class="hero-ctas reveal d3">
+          <a class="btn btn-primary js-wa" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+            Agendar uma conversa
+          </a>
+          <a class="btn btn-ghost" href="#abordagem">Conhecer meu trabalho</a>
+        </div>
+        <div class="hero-tags reveal d3">
+          <span class="tag">Terapia Cognitivo-Comportamental</span>
+          <span class="tag">Espaço seguro para a diversidade LGBT+</span>
+          <span class="tag">Ansiedade · Depressão · TDAH</span>
+        </div>
+      </div>
+
+      <div class="portrait reveal d2">
+        <div class="ring"></div>
+        <div class="blob"></div>
+        <div class="photo"><img src="img/renan-perfil.jpg" alt="Renan Gonzaga, psicólogo, sorrindo, de blazer azul"></div>
+        <div class="badge b1">
+          <i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6C19 16.6 12 21 12 21z"/></svg></i>
+          <div><strong>Acolhimento</strong><small>sem julgamentos</small></div>
+        </div>
+        <div class="badge b2">
+          <i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></i>
+          <div><strong>Construída</strong><small>em conjunto</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Ansiedade</span><span>Depressão</span><span>TDAH</span><span>Relacionamentos</span><span>Autoestima</span><span>Sexualidade</span><span>Diversidade LGBT+</span><span>Crises emocionais</span><span>Sentido na vida</span>
+      <span>Ansiedade</span><span>Depressão</span><span>TDAH</span><span>Relacionamentos</span><span>Autoestima</span><span>Sexualidade</span><span>Diversidade LGBT+</span><span>Crises emocionais</span><span>Sentido na vida</span>
+    </div>
+  </div>
+
+  <!-- ABORDAGEM -->
+  <section class="approach" id="abordagem">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow reveal">Abordagem</span>
+        <h2 class="reveal d1">Como você pensa, sente e age <em>conversa entre si.</em></h2>
+        <p class="reveal d2">Minha atuação é orientada pela <strong>Terapia Cognitivo-Comportamental (TCC)</strong>. Busco compreender como seus pensamentos, emoções e comportamentos se relacionam com suas experiências e influenciam a maneira como você se percebe, se relaciona e enfrenta as situações da vida.</p>
+        <p class="reveal d3">Quando esses três se conectam de um jeito que machuca, a gente investiga juntos. E, aos poucos, abre espaço para outras respostas.</p>
+      </div>
+
+      <div class="triangle reveal d2" aria-label="Diagrama: pensamentos, emoções e comportamentos se influenciam mutuamente">
+        <svg viewBox="0 0 400 360" fill="none">
+          <path d="M200 40 L360 310 L40 310 Z" stroke="#1F4E8C" stroke-opacity=".18" stroke-width="1.5"/>
+          <path class="flow" d="M200 40 L360 310 L40 310 Z" stroke="#3B82D6" stroke-width="2"/>
+          <circle cx="200" cy="200" r="70" fill="#CFE0F5" fill-opacity=".55"/>
+        </svg>
+        <div class="node" style="left:50%;top:11%">Pensamentos</div>
+        <div class="node r" style="left:88%;top:86%">Emoções</div>
+        <div class="node l" style="left:12%;top:86%">Comportamentos</div>
+        <div class="center">você<b>& sua história</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="pillars">
+    <div class="wrap">
+      <div class="pillars-head">
+        <div>
+          <span class="eyebrow reveal">Na psicoterapia</span>
+          <h2 class="reveal d1">Ir além do que dói <em>agora.</em></h2>
+        </div>
+        <p class="reveal d2">Com estratégias e recursos que façam sentido para a sua realidade, respeitando seu tempo e suas possibilidades.</p>
+      </div>
+
+      <div class="pillar-grid">
+        <article class="pillar reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2zM8 7h6M8 11h4"/></svg></div>
+          <span class="num">01</span>
+          <h3>Compreender sua história</h3>
+          <p>Olhar para de onde você vem e para as experiências que moldaram a forma como você se vê e vê o mundo.</p>
+        </article>
+        <article class="pillar reveal d1">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div>
+          <span class="num">02</span>
+          <h3>Investigar o que se repete</h3>
+          <p>Reconhecer padrões nos pensamentos, nas relações e nas escolhas, e entender quais necessidades emocionais estão por trás deles.</p>
+        </article>
+        <article class="pillar reveal d2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 8 4 3 4c0 5 4 8 9 8zM12 12c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div>
+          <span class="num">03</span>
+          <h3>Desenvolver novas formas</h3>
+          <p>Construir ferramentas práticas para lidar com as dificuldades e ganhar mais autonomia na própria vida.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATUAÇÃO -->
+  <section id="atuacao">
+    <div class="wrap">
+      <div class="areas-head">
+        <span class="eyebrow reveal">Experiências</span>
+        <h2 class="reveal d1">Temas que fazem parte <em>do meu trabalho</em></h2>
+        <p class="reveal d2">Se você se reconhece em algum deles, ou em algo que não está na lista, pode me chamar para conversar.</p>
+      </div>
+
+      <div class="area-grid">
+        <div class="area reveal"><span class="area-dot"></span><h4>Ansiedade</h4></div>
+        <div class="area reveal d1"><span class="area-dot"></span><h4>Depressão</h4></div>
+        <div class="area reveal d2"><span class="area-dot"></span><h4>TDAH</h4></div>
+        <div class="area reveal d3"><span class="area-dot"></span><h4>Crises emocionais</h4></div>
+        <div class="area wide reveal"><span class="area-dot"></span><h4>Sexualidade e diversidade LGBT+</h4></div>
+        <div class="area reveal d1"><span class="area-dot"></span><h4>Relacionamentos</h4></div>
+        <div class="area reveal d2"><span class="area-dot"></span><h4>Suicidologia</h4></div>
+        <div class="area reveal"><span class="area-dot"></span><h4>Autoestima e autoimagem</h4></div>
+        <div class="area reveal d1"><span class="area-dot"></span><h4>Habilidades sociais</h4></div>
+        <div class="area wide reveal d2"><span class="area-dot"></span><h4>Dinâmicas de apego</h4></div>
+        <div class="area wide reveal"><span class="area-dot"></span><h4>Busca por sentido na vida</h4></div>
+        <div class="area wide reveal d1"><span class="area-dot"></span><h4>Cuidado psicossocial em redução de riscos e danos</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITAÇÃO -->
+  <section class="quote">
+    <div class="wrap">
+      <span class="mark reveal">“</span>
+      <blockquote class="reveal d1">Acredito em uma psicoterapia <em>construída em conjunto</em>, que ofereça acolhimento para suas vulnerabilidades, espaço para suas descobertas e ferramentas para que você desenvolva maior autonomia na própria vida.</blockquote>
+      <cite class="reveal d2"><img src="img/renan-perfil.jpg" alt="">Renan Gonzaga · Psicólogo</cite>
+    </div>
+  </section>
+
+  <!-- COMO COMEÇAR -->
+  <section class="steps" id="como-comecar">
+    <div class="wrap">
+      <div class="sticky">
+        <span class="eyebrow reveal">Como começar</span>
+        <h2 class="reveal d1">O primeiro passo <em>pode ser uma mensagem.</em></h2>
+        <p class="reveal d2">Não precisa saber explicar tudo. Me chama no WhatsApp e a gente vê junto o melhor caminho.</p>
+        <a class="btn btn-primary js-wa reveal d3" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+          Falar com Renan
+        </a>
+      </div>
+      <div>
+        <div class="step reveal">
+          <span class="n">01</span>
+          <div><h3>Você manda uma mensagem</h3><p>Pelo WhatsApp, do jeito que for mais confortável. Pode ser só um “oi, quero começar terapia”.</p></div>
+        </div>
+        <div class="step reveal d1">
+          <span class="n">02</span>
+          <div><h3>A gente combina os detalhes</h3><p>Tiro suas dúvidas sobre o atendimento e encontramos um horário que caiba na sua rotina.</p></div>
+        </div>
+        <div class="step reveal d2">
+          <span class="n">03</span>
+          <div><h3>Primeira sessão</h3><p>Um encontro para você falar sobre o que te trouxe até aqui e para começarmos a construir o processo juntos.</p></div>
+        </div>
+        <div class="step reveal d3">
+          <span class="n">04</span>
+          <div><h3>Seguimos no seu tempo</h3><p>Com sigilo, cuidado e estratégias pensadas para a sua realidade.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <div class="final-card reveal">
+        <div>
+          <h2>Você não precisa atravessar isso <em>sem apoio.</em></h2>
+          <p>Um espaço de escuta, acolhimento e construção conjunta está a uma mensagem de distância.</p>
+          <a class="btn btn-primary js-wa" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+        </div>
+        <a class="phone js-wa" href="#"><small>WhatsApp</small>(71) 99279-2527</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="care">
+    <div class="care-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      <p><b>Em situação de crise ou risco imediato,</b> não espere pelo agendamento: ligue para o <b>CVV (188)</b>, disponível 24h e gratuito, ou para o <b>SAMU (192)</b>, ou procure o pronto-atendimento mais próximo.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Renan Gonzaga · Psicólogo · CRP 03/00000</span>
+    <span>Psicoterapia orientada pela TCC</span>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+</a>
+
+<script>
+  // WhatsApp: número e mensagem inicial
+  const WA_NUM = "5571992792527";
+  const WA_MSG = "Olá, Renan! Vim pelo seu site e gostaria de saber mais sobre a psicoterapia.";
+  const waUrl = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(WA_MSG);
+  document.querySelectorAll(".js-wa").forEach(a => { a.href = waUrl; a.target = "_blank"; a.rel = "noopener"; });
+
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", scrollY > 20);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
