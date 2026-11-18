@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lá no Morro · Hambúrguer na brasa no Morro da Conceição, Recife</title>
-<meta name="description" content="Burger artesanal na brasa, muito cheddar e bacon, espetinho no ponto e bebida trincando. Esse é o padrão Lá no Morro, no Morro da Conceição, Recife.">
+<title>Lá no Morro · Burguer & Drinks no Morro da Conceição, Recife</title>
+<meta name="description" content="Burguer artesanal na brasa, drinks, muito cheddar e bacon e espetinho no ponto. Rua do Morro da Conceição, 268, Recife. Peça pelo nosso delivery.">
 <meta name="theme-color" content="#0A0908">
 <meta property="og:title" content="Lá no Morro · Esse é o padrão">
 <meta property="og:description" content="Hambúrguer na brasa, muito cheddar e bacon, espetinhos e bebida gelada no Morro da Conceição, Recife.">
@@ -268,8 +268,8 @@ section{position:relative}
 .c-espeto,.c-bebida{grid-column:span 2}
 .c-bebida{background:radial-gradient(ellipse 70% 90% at 82% 40%,rgba(139,225,43,.16),transparent 70%),var(--char)}
 .c-bebida::before{background:linear-gradient(90deg,rgba(10,9,8,.95) 30%,rgba(10,9,8,.3) 70%,rgba(10,9,8,0))}
-.c-bebida .ph{left:auto;width:60%;display:grid;grid-template-columns:1fr 1fr}
-.c-bebida .ph img{object-position:50% 30%}
+.c-bebida .ph{left:auto;width:62%}
+.c-bebida .ph img{object-position:50% 45%}
 .c-bebida .body{max-width:62%}
 .c-espeto .ph img{object-position:50% 45%}
 .menu-note{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:22px 26px;border-radius:var(--r);border:1px dashed rgba(246,183,60,.35);color:#D4CABD}
@@ -315,7 +315,7 @@ section{position:relative}
 .espeto-photo .main{border-radius:var(--r);overflow:hidden;transform:rotate(-2deg);box-shadow:0 50px 100px -40px #000;border:6px solid var(--paper)}
 .espeto-photo .main img{width:100%;aspect-ratio:1/1.08;object-fit:cover}
 .espeto-photo .sticker{position:absolute;right:-26px;top:-34px;width:42%;border-radius:16px;overflow:hidden;transform:rotate(6deg);border:5px solid var(--paper);box-shadow:0 30px 60px -20px #000}
-.espeto-photo .sticker img{aspect-ratio:1/1.15;object-fit:cover;object-position:30% 30%;width:100%}
+.espeto-photo .sticker img{aspect-ratio:1/1.1;object-fit:cover;object-position:50% 40%;width:100%}
 .espeto h2{font-size:clamp(52px,7.4vw,118px)}
 .espeto h2 .warn{display:inline-block;background:var(--gold);color:var(--ink);padding:.06em .18em .02em;transform:rotate(-2deg);margin-bottom:.12em}
 .flavors{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 30px}
@@ -337,7 +337,15 @@ section{position:relative}
 .e2{grid-column:6/13;min-height:250px}
 .e2 img{object-position:50% 40%}
 .e3{grid-column:6/9;min-height:300px}
-.e3 img{object-position:50% 45%}
+.e3 img{object-position:50% 30%}
+.e1 img{object-position:50% 70%}
+.exp-grid .cap{position:absolute;left:16px;bottom:16px;right:16px}
+.exp-grid .cap .torn{font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.stat{border-radius:var(--r);padding:26px 24px;background:var(--char);border:1px solid var(--line)}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:1;color:var(--gold)}
+.stat span{display:block;margin-top:8px;color:#CFC5B8;font-size:14.5px}
+@media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
 .e4{grid-column:9/13;min-height:300px;background:var(--gold)!important;color:var(--ink);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
 .e4 .display{font-size:clamp(34px,3.4vw,52px)}
 .e4 p{font-weight:600}
@@ -375,7 +383,7 @@ section{position:relative}
 .ig-avatar{width:74px;height:74px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#F6B73C,#FF5B1F,#C13584,#F6B73C)}
 .ig-avatar div{width:100%;height:100%;border-radius:50%;background:var(--ink);display:grid;place-items:center;border:3px solid var(--coal)}
 .ig-avatar .logo{width:38px;color:var(--cream)}
-@media (max-width:560px){.feed-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.feed-grid{grid-template-columns:repeat(2,1fr)}.feed-grid a:nth-child(9){display:none}}
 
 /* ---------- ONDE ---------- */
 .where{background:var(--ink);overflow:hidden}
@@ -412,6 +420,9 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
 .foot .brand .logo{width:54px}
 .foot nav{display:flex;flex-wrap:wrap;gap:22px}
 .foot nav a:hover{color:var(--gold)}
+.jobs{margin-top:40px;padding:24px 26px;border-radius:var(--r);border:1px dashed rgba(246,183,60,.35);display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center;justify-content:space-between;color:#D4CABD}
+.jobs p{margin-top:8px}
+.jobs b{color:var(--cream)}
 .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px}
 @media (min-width:761px){footer{padding-bottom:56px}}
 
@@ -447,6 +458,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
   <symbol id="i-beer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h10v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z"/><path d="M15 11h2.5a2.5 2.5 0 0 1 0 5H15"/><path d="M5 8a2.5 2.5 0 0 1 2.4-3.2A3.2 3.2 0 0 1 12.8 4 2.6 2.6 0 0 1 15 8"/><path d="M8.5 12v6M11.5 12v6"/></g></symbol>
   <symbol id="i-burger" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5C3.5 6.4 7.3 3.5 12 3.5s8.5 2.9 8.5 7z"/><path d="M3 14c1.2 0 1.2 1 2.4 1s1.2-1 2.4-1 1.2 1 2.4 1 1.2-1 2.4-1 1.2 1 2.4 1 1.2-1 2.4-1 1.2 1 2.4 1"/><path d="M4 18h16a0 0 0 0 1 0 0 2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18z"/></g></symbol>
   <symbol id="i-people" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"/><circle cx="16.5" cy="9" r="2.6"/><path d="M2.5 20c.6-3.4 2.8-5.4 5.5-5.4s4.9 2 5.5 5.4"/><path d="M14 14.8c.8-.4 1.6-.6 2.5-.6 2.4 0 4.3 1.7 5 4.8"/></g></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></g></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h15M13 6l6 6-6 6"/></symbol>
   <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></g></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></g></symbol>
@@ -466,7 +478,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
   <div class="wrap">
     <a href="#topo" class="brand" aria-label="Lá no Morro, início">
       <svg class="logo" style="aspect-ratio:.855"><use href="#lnm"/></svg>
-      <span>Morro da Conceição<br>Recife · PE</span>
+      <span>Burguer & Drinks<br>Morro da Conceição · Recife</span>
     </a>
     <nav class="nav-links" aria-label="Seções">
       <a href="#padrao">O padrão</a>
@@ -476,7 +488,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       <a href="#onde">Onde estamos</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-gold btn-sm" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir agora</a>
+      <a class="btn btn-gold btn-sm" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Pedir agora</a>
       <button class="burger-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><i></i></button>
     </div>
   </div>
@@ -487,7 +499,8 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
   <a class="m" href="#espetinhos">Espetinhos</a>
   <a class="m" href="#resenha">A resenha</a>
   <a class="m" href="#onde">Onde estamos</a>
-  <a class="btn btn-gold" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+  <a class="btn btn-gold" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Fazer pedido no delivery</a>
+  <a class="btn btn-ghost" data-wa="Oi! Vim pelo site 👋" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
 </div>
 
 <main id="topo">
@@ -506,13 +519,13 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       </h1>
       <p class="lead fade-up d2">Burger artesanal na brasa, pão brioche, muito cheddar e bacon, espetinho no ponto e bebida trincando. Aquele padrão que só quem prova entende.</p>
       <div class="hero-cta fade-up d3">
-        <a class="btn btn-gold" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+        <a class="btn btn-gold" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Fazer meu pedido</a>
         <a class="btn btn-ghost" href="#cardapio">Ver o cardápio <svg><use href="#i-arrow"/></svg></a>
       </div>
       <div class="hero-facts fade-up d4">
         <span><svg><use href="#i-fire"/></svg>Burger na brasa</span>
         <span><svg><use href="#i-beer"/></svg>Bebida gelada</span>
-        <span><svg><use href="#i-pin"/></svg>Morro da Conceição, Recife</span>
+        <span><svg><use href="#i-pin"/></svg>Rua do Morro da Conceição, 268</span>
       </div>
     </div>
 
@@ -542,7 +555,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
 </section>
 
 <div class="ticker" aria-hidden="true"><div class="track" data-dup>
-  <span>Burger na brasa</span><span>Muito cheddar</span><span>Bacon sem economia</span><span>Espetinho no ponto</span><span>Bebida trincando</span><span>Resenha garantida</span><span>Pão brioche</span>
+  <span>Burguer na brasa</span><span>Drinks</span><span>Muito cheddar</span><span>Bacon sem economia</span><span>Espetinho no ponto</span><span>Bebida trincando</span><span>Resenha garantida</span><span>Pão brioche</span>
 </div></div>
 
 <!-- ANATOMIA -->
@@ -570,7 +583,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       <div class="step" data-step="2"><span class="num">03 · Crocância</span><h3 class="display">Bacon</h3><p>Fatias generosas, tostadas até ficar crocantes. Aqui bacon não é detalhe, é camada.</p></div>
       <div class="step" data-step="3"><span class="num">04 · Sem economia</span><h3 class="display">Muito cheddar</h3><p>Derretido em cima de cada carne, escorrendo pela borda. Do jeito que tem que ser.</p></div>
       <div class="step" data-step="4"><span class="num">05 · O coração</span><h3 class="display">2 blends<br>artesanais de 150g</h3><p>Duas carnes moldadas na casa e seladas na brasa. É daí que vem o sabor de verdade.</p>
-        <a class="btn btn-gold" style="margin-top:14px;align-self:flex-start" data-wa="Oi! Vim pelo site e quero o burger duplo com cheddar e bacon 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Quero esse</a></div>
+        <a class="btn btn-gold" style="margin-top:14px;align-self:flex-start" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Quero esse</a></div>
     </div>
   </div>
 </section>
@@ -590,7 +603,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
           <h3>Alto Santa Terezinha<small>Cheese Cupim</small></h3>
           <p>Cupim desfiado, cebola caramelizada e geleia de bacon em cima do blend artesanal. O burger que virou o padrão.</p>
           <div class="chips"><span>Pão brioche</span><span>Blend artesanal 150g</span><span>Cupim desfiado</span><span>Cream cheese</span><span>Cebola caramelizada</span><span>Geleia de bacon</span><span>Creme especial</span></div>
-          <a class="go" data-wa="Oi! Vim pelo site e quero o Alto Santa Terezinha (Cheese Cupim) 🔥" href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
+          <a class="go" data-order href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
       <article class="card c-dupla rv" data-tilt>
@@ -599,7 +612,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
           <span class="tag">Pra fome grande</span>
           <h3>Dupla de carnes<small>Cheddar & bacon</small></h3>
           <div class="chips"><span>2 blends de 150g</span><span>Muito cheddar</span><span>Bacon</span><span>Creme especial</span></div>
-          <a class="go" data-wa="Oi! Vim pelo site e quero o burger com dupla de carnes, cheddar e bacon 🍔" href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
+          <a class="go" data-order href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
       <article class="card rv" data-tilt>
@@ -607,7 +620,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
         <div class="body">
           <span class="tag">Experiência</span>
           <h3>Córrego do Euclides<small>A piscina de cheddar</small></h3>
-          <a class="go" data-wa="Oi! Vim pelo site e quero o Córrego do Euclides 🧀🥓" href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
+          <a class="go" data-order href="#" target="_blank" rel="noopener">Pedir esse <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
       <article class="card rv" data-tilt>
@@ -615,7 +628,7 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
         <div class="body">
           <span class="tag">Porção</span>
           <h3>Batata cheddar<small>& bacon</small></h3>
-          <a class="go" data-wa="Oi! Vim pelo site e quero a batata com cheddar e bacon 🍟" href="#" target="_blank" rel="noopener">Pedir essa <svg><use href="#i-arrow"/></svg></a>
+          <a class="go" data-order href="#" target="_blank" rel="noopener">Pedir essa <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
       <article class="card c-espeto rv" data-tilt>
@@ -627,18 +640,18 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
         </div>
       </article>
       <article class="card c-bebida rv" data-tilt>
-        <div class="ph"><img src="{{IMG:copo}}" alt="Drink verde no copo personalizado Lá no Morro" loading="lazy"><img src="{{IMG:heineken}}" alt="Cerveja long neck gelada" loading="lazy"></div>
+        <div class="ph"><img src="{{IMG:brinde}}" alt="Brinde com drink no copo Lá no Morro e cerveja gelada" loading="lazy"></div>
         <div class="body">
-          <span class="tag">Trincando</span>
-          <h3>Bebida gelada<small>pra completar o combo</small></h3>
-          <p>Cerveja estalando de gelada e drinks no copo da casa. Lanche bom pede bebida à altura.</p>
-          <a class="go" data-wa="Oi! Vim pelo site e queria saber das bebidas 🍺" href="#" target="_blank" rel="noopener">Ver bebidas no WhatsApp <svg><use href="#i-arrow"/></svg></a>
+          <span class="tag">Bar · Drinks</span>
+          <h3>Drinks & bebida gelada<small>pra brindar com a galera</small></h3>
+          <p>Drinks no copo da casa e cerveja estalando de gelada. Tem coisa melhor do que brindar os bons momentos?</p>
+          <a class="go" data-order href="#" target="_blank" rel="noopener">Ver drinks e bebidas <svg><use href="#i-arrow"/></svg></a>
         </div>
       </article>
     </div>
     <div class="menu-note rv">
-      <span><strong>Cardápio completo, preços e combos</strong> direto no nosso WhatsApp.</span>
-      <a class="btn btn-gold btn-sm" data-wa="Oi! Vim pelo site, pode me mandar o cardápio completo? 📋" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir o cardápio</a>
+      <span><strong>Cardápio completo, preços e combos</strong> no nosso delivery. Escolhe, monta o pedido e a brasa faz o resto.</span>
+      <a class="btn btn-gold btn-sm" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Abrir o cardápio</a>
     </div>
   </div>
 </section>
@@ -651,14 +664,14 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       <h2 class="display grit" aria-label="Muito cheddar e bacon"><span id="muito">MUIIIT<span class="o">O</span><span class="o">O</span><span class="o">O</span></span><span class="line2">cheddar e bacon!!</span></h2>
       <div class="cheddar-quote">
         <p>Quando o assunto é cheddar e bacon, aqui não existe economia. Tem combinação que simplesmente não tem erro.</p>
-        <a class="btn btn-dark" data-wa="Oi! Vim pelo site e quero algo com MUITO cheddar e bacon 🧀🥓" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Quero cheddar</a>
+        <a class="btn btn-dark" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Quero cheddar</a>
       </div>
     </div>
     <div class="drips" aria-hidden="true"><svg id="drips" preserveAspectRatio="none" viewBox="0 0 1200 170"></svg></div>
   </div>
   <div class="wrap">
     <div class="cheddar-photos">
-      <figure class="rv"><img src="{{IMG:corrego-top}}" alt="Panelinha com lanches afogados em cheddar e bacon" loading="lazy"><figcaption><span class="torn">Tem lanche… e tem experiência!</span></figcaption></figure>
+      <figure class="rv"><img src="{{IMG:mesa}}" alt="Mesa com batata cheddar e bacon, Córrego do Euclides e burger" loading="lazy"><figcaption><span class="torn">Comida boa e mesa cheia!</span></figcaption></figure>
       <figure class="rv"><img src="{{IMG:batata-maos}}" alt="Duas pessoas dividindo a porção de batata com cheddar e bacon" loading="lazy"><figcaption><span class="torn">Ninguém consegue comer sozinho</span></figcaption></figure>
     </div>
   </div>
@@ -673,14 +686,15 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
   <div class="wrap espeto-grid">
     <div class="espeto-photo rv">
       <div class="main"><img src="{{IMG:espetos}}" alt="Três espetinhos na brasa com acompanhamentos" loading="lazy"></div>
-      <div class="sticker"><img src="{{IMG:cuidado}}" alt="Cliente provando um espetinho" loading="lazy"></div>
+      <div class="sticker"><img src="{{IMG:sexta}}" alt="Amigas brindando com espetinhos" loading="lazy"></div>
     </div>
     <div class="rv">
       <span class="kicker">Espetinhos na brasa</span>
       <h2 class="display grit"><span class="warn">Cuidado:</span><br>causa vontade<br>de <span class="gold">repetir!</span></h2>
+      <p class="hand" style="margin-bottom:10px">aqui a sexta é muito mais gostosa!</p>
       <p class="lead">Aqui, cada espetinho é preparado no capricho, no ponto certo e com aquele gostinho de pede mais. Com vinagrete, farofa e molho pra acompanhar.</p>
       <div class="flavors"><span>Frango</span><span>Carne</span><span>Bacon</span><span class="more">+ outros sabores</span></div>
-      <a class="btn btn-gold" data-wa="Oi! Vim pelo site e quero pedir espetinhos 🔥 Quais sabores tem hoje?" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir espetinhos</a>
+      <a class="btn btn-gold" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Pedir espetinhos</a>
     </div>
   </div>
 </section>
@@ -694,13 +708,19 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       <p class="lead">Aqui a resenha é garantida: bebida gelada, hambúrguer na brasa e a galera reunida lá no alto do Morro da Conceição.</p>
     </div>
     <div class="exp-grid">
-      <figure class="e1 rv"><img src="{{IMG:heineken}}" alt="Brinde com cerveja gelada em frente ao letreiro Lá no Morro" loading="lazy"></figure>
+      <figure class="e1 rv"><img src="{{IMG:balcao}}" alt="Burger de cupim com onion ring no salão do Lá no Morro, com o balcão e o letreiro ao fundo" loading="lazy"><figcaption class="cap"><span class="torn">Essa foto também te deu fome?</span></figcaption></figure>
       <figure class="e2 rv"><img src="{{IMG:neon}}" alt="Letreiro luminoso Lá no Morro no salão" loading="lazy"></figure>
-      <figure class="e3 rv"><img src="{{IMG:dupla-mao}}" alt="Dois burgers da casa nas mãos do chapeiro" loading="lazy"></figure>
+      <figure class="e3 rv"><img src="{{IMG:mordida}}" alt="Cliente mordendo um burger da casa" loading="lazy"><figcaption class="cap"><span class="torn">Impossível resistir…</span></figcaption></figure>
       <figure class="e4 rv">
         <span class="display">Segunda também é dia de comer bem!</span>
-        <p>Por aqui a brasa já tá acesa e os burgers saindo no ponto.</p>
+        <p>Por aqui a brasa já tá acesa e os burgers saindo no ponto. E sábado combina com comida boa e mesa cheia.</p>
       </figure>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b data-count="35.1">35,1 mil</b><span>seguidores no Instagram</span></div>
+      <div class="stat rv"><b>Burguer</b><span>artesanal, feito na brasa</span></div>
+      <div class="stat rv"><b>Drinks</b><span>bar com drinks e cerveja gelada</span></div>
+      <div class="stat rv"><b>Delivery</b><span>pedido online, direto da casa</span></div>
     </div>
     <div class="pillars">
       <div class="pillar rv"><svg><use href="#i-fire"/></svg><h3>Brasa acesa</h3><p>Hambúrguer e espetinho feitos na brasa, que é de onde vem aquele sabor que não dá pra copiar.</p></div>
@@ -720,22 +740,27 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       </div>
       <a class="ig-handle" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener">
         <span class="ig-avatar"><div><svg class="logo" style="aspect-ratio:.855"><use href="#lnm"/></svg></div></span>
-        <span><b style="font-size:18px">@lanomorro268</b><br><small style="color:var(--muted)">Siga pra ver o que sai da brasa hoje</small></span>
+        <span><b style="font-size:18px">@lanomorro268</b><br><small style="color:var(--muted)">35,1 mil seguidores · siga pra ver o que sai da brasa hoje</small></span>
       </a>
     </div>
     <div class="quotes rv" aria-label="Frases do nosso Instagram">
       <div class="quote"><p>Aqui a resenha é garantida, bebida gelada e hambúrguer na brasa.</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
       <div class="quote"><p>Aqui a fome não tem vez: é lanche caprichado e bebida trincando.</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
       <div class="quote"><p>Domingo combina com descanso… e uma porção que ninguém come sozinho.</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
+      <div class="quote"><p>Impossível resistir… e nem adianta tentar!</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
+      <div class="quote"><p>Aqui o sextou é diferente! Muita alegria, comida gostosa e resenha.</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
       <div class="quote"><p>Aquele padrão que só quem prova entende!</p><small><svg><use href="#i-ig"/></svg>@lanomorro268</small></div>
     </div>
     <div class="feed-grid" style="margin-top:40px">
       <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:padrao}}" alt="Post: Esse é o padrão Lá no Morro" loading="lazy"><span>Esse é o padrão Lá no Morro!</span></a>
+      <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:impossivel-art}}" alt="Post: Impossível resistir" loading="lazy"><span>Impossível resistir…</span></a>
       <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:cheddar-art}}" alt="Post: Muito cheddar e bacon" loading="lazy"><span>Muuuito cheddar e bacon</span></a>
       <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:cupim-art}}" alt="Post: anatomia do Alto Santa Terezinha" loading="lazy"><span>Alto Santa Terezinha</span></a>
       <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:brioche-art}}" alt="Post: pão brioche, creme especial e 2 hambúrgueres de 150g" loading="lazy"><span>Dupla de carnes artesanais</span></a>
       <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:cuidado}}" alt="Post: Cuidado, causa vontade de repetir" loading="lazy"><span>Cuidado: causa vontade de repetir!</span></a>
-      <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:corrego}}" alt="Post: Córrego do Euclides" loading="lazy"><span>Córrego do Euclides</span></a>
+      <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:bateu-art}}" alt="Post: Bateu a fome? Pede Lá no Morro" loading="lazy"><span>Bateu a fome? Pede Lá no Morro!</span></a>
+      <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:sexta-art}}" alt="Post: Aqui a sexta é muito mais gostosa" loading="lazy"><span>Aqui a sexta é muito mais gostosa!</span></a>
+      <a class="rv" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><img src="{{IMG:dupla-mao}}" alt="Post: Segunda também é dia de comer bem" loading="lazy"><span>Segunda também é dia de comer bem!</span></a>
     </div>
   </div>
 </section>
@@ -747,23 +772,25 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
       <span class="kicker">Onde estamos</span>
       <h2 class="display grit" style="margin-top:16px">Bora subir<br>o <span class="gold">morro?</span></h2>
       <div class="info-list">
-        <a class="info" href="https://www.google.com/maps/search/?api=1&query=L%C3%A1%20no%20Morro%20Morro%20da%20Concei%C3%A7%C3%A3o%20Recife" target="_blank" rel="noopener">
-          <span class="ic"><svg><use href="#i-pin"/></svg></span><span><b>Morro da Conceição</b><small>Recife · Pernambuco</small></span></a>
+        <a class="info" href="https://www.google.com/maps/search/?api=1&query=L%C3%A1%20no%20Morro%20Rua%20do%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20268%20-%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20Recife%20-%20PE%2C%2050060-130" target="_blank" rel="noopener">
+          <span class="ic"><svg><use href="#i-pin"/></svg></span><span><b>Rua do Morro da Conceição, 268</b><small>Morro da Conceição · Recife – PE · 50060-130</small></span></a>
+        <a class="info" data-order href="#" target="_blank" rel="noopener">
+          <span class="ic"><svg><use href="#i-bag"/></svg></span><span><b>Delivery Lá no Morro</b><small>Cardápio completo e pedido online</small></span></a>
         <a class="info" data-wa="Oi! Vim pelo site 👋" href="#" target="_blank" rel="noopener">
           <span class="ic"><svg><use href="#i-wa"/></svg></span><span><b>(81) 9 9362-8267</b><small>Pedidos e reservas pelo WhatsApp</small></span></a>
         <a class="info" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener">
           <span class="ic"><svg><use href="#i-ig"/></svg></span><span><b>@lanomorro268</b><small>Novidades, horários e promoções</small></span></a>
         <div class="info">
-          <span class="ic"><svg><use href="#i-clock"/></svg></span><span><b>A brasa acende à noite</b><small>Confira o horário do dia no nosso Instagram</small></span></div>
+          <span class="ic"><svg><use href="#i-clock"/></svg></span><span><b>A brasa acende à noite</b><small>Horários no destaque “Horários” do nosso Instagram</small></span></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px">
-        <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=L%C3%A1%20no%20Morro%20Morro%20da%20Concei%C3%A7%C3%A3o%20Recife" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Como chegar</a>
+        <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=Rua%20do%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20268%20-%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20Recife%20-%20PE%2C%2050060-130" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Como chegar</a>
         <a class="btn btn-ghost" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
       </div>
     </div>
     <div class="map rv">
-      <div class="map-fallback">Mapa · Morro da Conceição, Recife</div>
-      <iframe title="Mapa do Morro da Conceição, Recife" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Morro%20da%20Concei%C3%A7%C3%A3o%2C%20Recife%20-%20PE&z=16&output=embed"></iframe>
+      <div class="map-fallback">Rua do Morro da Conceição, 268 · Recife</div>
+      <iframe title="Mapa do Morro da Conceição, Recife" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua%20do%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20268%20-%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20Recife%20-%20PE%2C%2050060-130&z=17&output=embed"></iframe>
       <div class="pin" aria-hidden="true"><div><svg class="logo"><use href="#lnm"/></svg></div><i></i></div>
     </div>
   </div>
@@ -775,9 +802,9 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
   <div class="wrap" style="position:relative">
     <svg class="logo logo-big rv" style="aspect-ratio:.855"><use href="#lnm"/></svg>
     <h2 class="display grit rv">A brasa já<br>tá <span class="gold">acesa.</span></h2>
-    <p class="rv">Bebida gelada e hambúrguer no ponto: é Lá no Morro. Manda a mensagem que a gente prepara o seu.</p>
+    <p class="rv">Bebida gelada e hambúrguer no ponto: é Lá no Morro. Faz o pedido no nosso delivery que a gente prepara o seu.</p>
     <div class="btns rv">
-      <a class="btn btn-gold" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Fazer meu pedido</a>
+      <a class="btn btn-gold" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Fazer meu pedido</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/lanomorro268/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@lanomorro268</a>
     </div>
   </div>
@@ -794,24 +821,31 @@ footer{background:#070605;border-top:1px solid var(--line);padding:56px 0 110px;
         <a data-wa="Oi! Vim pelo site 👋" href="#" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
-    <div class="foot-bottom"><span>© <span id="y">2026</span> Lá no Morro · Morro da Conceição, Recife – PE</span><span>(81) 9 9362-8267 · @lanomorro268</span></div>
+    <div class="jobs rv">
+      <div><span class="kicker">Trabalhe com a gente</span><p><b>Estamos contratando:</b> cozinheiro, auxiliar de cozinha, chapeiro, barman, garçom e motoboy.</p></div>
+      <a class="btn btn-ghost btn-sm" href="https://wa.me/5581973348831?text=Oi!%20Vi%20a%20vaga%20no%20site%20do%20L%C3%A1%20no%20Morro%20e%20quero%20mandar%20meu%20curr%C3%ADculo." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Mandar currículo · (81) 9 7334-8831</a>
+    </div>
+    <div class="foot-bottom"><span>© <span id="y">2026</span> Lá no Morro · Burguer & Drinks · Rua do Morro da Conceição, 268, Recife – PE</span><span>(81) 9 9362-8267 · @lanomorro268</span></div>
   </div>
 </footer>
 
 <a class="fab" id="fab" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp"><svg><use href="#i-wa"/></svg></a>
 <div class="mbar" id="mbar">
-  <a class="btn btn-gold" data-wa="Oi! Vim pelo site e quero fazer um pedido 🍔" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pedir agora</a>
-  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=L%C3%A1%20no%20Morro%20Morro%20da%20Concei%C3%A7%C3%A3o%20Recife" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Chegar</a>
+  <a class="btn btn-gold" data-order href="#" target="_blank" rel="noopener"><svg><use href="#i-bag"/></svg>Pedir agora</a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Rua%20do%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20268%20-%20Morro%20da%20Concei%C3%A7%C3%A3o%2C%20Recife%20-%20PE%2C%2050060-130" target="_blank" rel="noopener"><svg><use href="#i-route"/></svg>Chegar</a>
 </div>
 
 <script>
 (()=>{
 const WA="5581993628267";
+const ORDER="https://pedido.anota.ai/loja/l-no-morro?f=msa";
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 
 /* fotos repetidas reaproveitam a mesma imagem */
 $$("img[data-same]").forEach(i=>i.src=$(`img[data-key="${i.dataset.same}"]`).src);
+/* pedidos vão para o delivery oficial da casa */
+$$("[data-order]").forEach(a=>a.href=ORDER);
 /* links do WhatsApp com mensagem pronta */
 $$("[data-wa]").forEach(a=>a.href=`https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.wa)}`);
 $("#y").textContent=new Date().getFullYear();
