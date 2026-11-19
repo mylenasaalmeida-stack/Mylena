@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800;1,900&family=Barlow:wght@500;600;700&family=Caveat:wght@700&display=block" rel="stylesheet">
+<style>
+:root{--red:#C91F25;--red-900:#6E0E12;--cheese:#F3B623;--coal:#1B1411;--cream:#FBF4E6;--wa:#25D366;
+  --display:"Barlow Condensed",Impact,sans-serif;--body:"Barlow",sans-serif;--hand:"Caveat",cursive}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#555;display:flex;gap:40px;padding:40px;align-items:flex-start;font-family:var(--body)}
+.art{position:relative;overflow:hidden;flex:none}
+.story{width:1080px;height:1920px}
+.feed{width:1080px;height:1350px}
+.grid{position:absolute;inset:0;background:var(--red);
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 2px,transparent 2px 72px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 2px,transparent 2px 72px)}
+.glow{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(243,182,35,.35),transparent)}
+.logo{position:absolute;left:50%;transform:translateX(-50%)}
+h1,.big{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;line-height:.86;color:#fff;letter-spacing:-.005em}
+.hand{font-family:var(--hand);font-weight:700;color:var(--cheese)}
+.pill{display:inline-flex;align-items:center;gap:18px;border-radius:999px;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase}
+.board{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a5a35,#5b3720 70%);box-shadow:0 50px 100px rgba(60,0,0,.55), inset 0 0 0 14px rgba(0,0,0,.12)}
+.board img{position:absolute;inset:4%;width:92%;height:92%;border-radius:50%;object-fit:cover;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.seal{position:absolute;border-radius:50%;background:var(--cheese);color:#3A2200;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95;box-shadow:0 18px 40px rgba(60,0,0,.4)}
+.seal::before{content:"";position:absolute;inset:12px;border-radius:50%;border:3px dashed rgba(58,34,0,.35)}
+.dot{width:30px;height:30px;border-radius:50%;background:#3BD16F;box-shadow:0 0 0 12px rgba(59,209,111,.28)}
+.wa svg{width:46px;height:46px}
+
+/* ---- story 1: abertos ---- */
+#s1 .logo{top:150px;width:330px}
+#s1 .status{position:absolute;top:400px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.24);color:#fff;padding:18px 34px 18px 26px;font-size:40px;letter-spacing:.06em;white-space:nowrap}
+#s1 .hand{position:absolute;top:500px;width:100%;text-align:center;font-size:84px;transform:rotate(-3deg)}
+#s1 h1{position:absolute;top:595px;width:100%;text-align:center;font-size:250px}
+#s1 .board{width:800px;height:800px;left:140px;top:1075px}
+#s1 .seal{width:260px;height:260px;left:60px;top:1040px;font-size:44px;transform:rotate(-10deg);z-index:2}
+#s1 .seal small{display:block;font-family:var(--hand);text-transform:none;font-style:normal;font-size:38px;color:#A3161C}
+#s1 .bar{position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(180deg,transparent,rgba(40,4,6,.88) 45%)}
+#s1 .cta{position:absolute;bottom:250px;left:50%;transform:translateX(-50%);background:var(--cheese);color:#2A1700;padding:26px 54px;font-size:56px;box-shadow:0 10px 0 #B3810A;white-space:nowrap}
+#s1 .info{position:absolute;bottom:165px;width:100%;text-align:center;color:#FFE1D9;font-size:36px;font-weight:600;letter-spacing:.02em}
+
+/* ---- story 2: saindo do forno ---- */
+#s2{background:var(--coal)}
+#s2 .ph{position:absolute;left:0;right:0;overflow:hidden}
+#s2 .ph img{width:100%;height:100%;object-fit:cover}
+#s2 .p1{top:0;height:930px}
+#s2 .p1 img{object-position:50% 70%}
+#s2 .p2{bottom:0;height:900px}
+#s2 .p2 img{object-position:45% 55%}
+#s2 .p1::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,20,17,.55),transparent 30%)}
+#s2 .p2::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,20,17,.85),transparent 40%)}
+#s2 .logo{top:140px;width:300px;z-index:3}
+#s2 .band{position:absolute;left:-40px;right:-40px;top:800px;height:340px;background:var(--red);transform:rotate(-4deg);z-index:2;box-shadow:0 30px 60px rgba(0,0,0,.45);
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 2px,transparent 2px 72px),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 2px,transparent 2px 72px)}
+#s2 .band .hand{position:absolute;left:110px;top:-6px;font-size:86px;transform:rotate(-2deg)}
+#s2 .band .big{position:absolute;left:96px;top:110px;font-size:158px;white-space:nowrap}
+#s2 .tag{position:absolute;z-index:3;background:rgba(27,20,17,.82);color:#F7EEDC;padding:12px 24px;border-radius:999px;font-size:30px;font-weight:600}
+#s2 .t1{left:60px;top:690px}
+#s2 .t2{right:60px;top:1180px}
+#s2 .cta{position:absolute;z-index:3;bottom:260px;left:50%;transform:translateX(-50%);background:var(--wa);color:#04260E;padding:26px 50px;font-size:54px;box-shadow:0 10px 0 #128C3E;white-space:nowrap}
+#s2 .info{position:absolute;z-index:3;bottom:180px;width:100%;text-align:center;color:#F7EEDC;font-size:36px;font-weight:600}
+
+/* ---- feed ---- */
+#f1 .board{width:780px;height:780px;left:390px;top:560px}
+#f1 .glow{width:1100px;height:1100px;left:230px;top:400px}
+#f1 .logo{top:70px;left:80px;transform:none;width:250px}
+#f1 .hand{position:absolute;left:80px;top:215px;font-size:68px;transform:rotate(-3deg);transform-origin:left}
+#f1 h1{position:absolute;left:76px;top:300px;font-size:128px;white-space:nowrap;z-index:3}
+#f1 .sub{position:absolute;left:80px;top:600px;width:330px;color:#FFE1D9;font-size:34px;line-height:1.35;font-weight:500}
+#f1 .seal{width:290px;height:290px;left:120px;top:860px;transform:rotate(-10deg);font-size:46px;z-index:2}
+#f1 .seal small{display:block;font-family:var(--body);font-style:normal;font-weight:700;text-transform:none;font-size:25px;line-height:1.3;margin-top:6px}
+#f1 .foot{z-index:4;position:absolute;left:0;right:0;bottom:0;height:150px;background:var(--coal);display:flex;align-items:center;justify-content:space-between;padding:0 80px;color:#F7EEDC}
+#f1 .foot b{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:46px;color:var(--cheese)}
+#f1 .foot span{font-size:32px;font-weight:600;display:flex;align-items:center;gap:14px}
+#f1 .foot svg{width:40px;height:40px;color:var(--wa)}
+
+.board .ph{position:absolute;inset:4%;border-radius:50%;overflow:hidden}
+.board .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none;transform:scale(1.14)}
+.n2{position:absolute;z-index:4;width:150px;height:150px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-style:italic;font-size:62px;box-shadow:0 12px 30px rgba(60,0,0,.35);transform:rotate(-8deg)}
+.bottle{position:relative;width:120px;height:300px;flex:none}
+.bottle .cap{position:absolute;left:38px;top:0;width:44px;height:26px;border-radius:6px;background:#fff}
+.bottle .neck{position:absolute;left:30px;top:22px;width:60px;height:60px;background:linear-gradient(90deg,#2a1810,#4a2c1e 40%,#2a1810);clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+.bottle .body{position:absolute;left:0;top:80px;width:120px;height:220px;border-radius:26px 26px 30px 30px;background:linear-gradient(90deg,#1f120c,#4a2c1e 35%,#1f120c)}
+.bottle .label{position:absolute;left:0;top:150px;width:120px;height:80px;background:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-style:italic;font-size:44px;color:var(--red)}
+.bottle .shine{position:absolute;left:22px;top:96px;width:14px;height:180px;border-radius:8px;background:rgba(255,255,255,.28)}
+.deal{display:flex;align-items:center;gap:30px;background:var(--coal);border-radius:36px;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.deal .t{color:#F7EEDC;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95}
+.deal .t b{display:block;color:#fff;font-weight:900}
+.deal .t em{font-style:italic;color:var(--cheese)}
+/* feed */
+#q1 .logo{top:60px;left:70px;transform:none;width:230px}
+#q1 .hand{position:absolute;left:72px;top:235px;font-size:66px;transform:rotate(-3deg);transform-origin:left}
+#q1 h1{position:absolute;left:68px;top:320px;font-size:128px;z-index:3}
+#q1 .b1{width:560px;height:560px;left:540px;top:150px}
+#q1 .b2{width:470px;height:470px;left:610px;top:620px}
+#q1 .x1{left:520px;top:160px}
+#q1 .deal{position:absolute;left:70px;top:640px;padding:30px 44px 30px 34px;transform:rotate(-2deg);z-index:5}
+#q1 .deal .t{font-size:52px}
+#q1 .deal .t b{font-size:150px;margin:6px 0}
+#q1 .sub{position:absolute;left:72px;top:1080px;color:#FFE1D9;font-size:32px;font-weight:600;z-index:5}
+#q1 .foot{z-index:6;position:absolute;left:0;right:0;bottom:0;height:120px;background:var(--coal);display:flex;align-items:center;justify-content:space-between;padding:0 70px;color:#F7EEDC}
+#q1 .foot b{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:42px;color:var(--cheese)}
+#q1 .foot span{font-size:32px;font-weight:600;display:flex;align-items:center;gap:14px}
+#q1 .foot svg{width:40px;height:40px;color:var(--wa)}
+/* story */
+#q2 .logo{top:120px;width:300px}
+#q2 .hand{position:absolute;top:320px;width:100%;text-align:center;font-size:80px;transform:rotate(-2deg)}
+#q2 h1{position:absolute;top:410px;width:100%;text-align:center;font-size:170px}
+#q2 .b1{width:560px;height:560px;left:50px;top:760px}
+#q2 .b2{width:490px;height:490px;left:530px;top:820px}
+#q2 .x1{left:60px;top:750px}
+#q2 .deal{position:absolute;left:50%;top:1340px;transform:translateX(-50%) rotate(-2deg);padding:30px 50px 30px 40px;z-index:5;white-space:nowrap}
+#q2 .deal .t{font-size:54px}
+#q2 .deal .t b{font-size:150px;margin:6px 0}
+#q2 .cta{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);background:var(--wa);color:#04260E;padding:24px 48px;font-size:50px;box-shadow:0 10px 0 #128C3E;white-space:nowrap;z-index:5}
+#q2 .cta svg{width:44px;height:44px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.33-1.99 1.38-.51.05-.99.24-3.33-.69-2.81-1.11-4.6-3.98-4.74-4.17-.14-.18-1.13-1.5-1.13-2.87 0-1.36.71-2.03.97-2.31.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.09.18-.14.3-.28.46-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.92 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.18.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.27.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></symbol></svg>
+<div class="art feed" id="q1">
+  <div class="grid"></div><div class="glow" style="width:1100px;height:1100px;left:300px;top:150px"></div>
+  <img class="logo" src="logo.png" alt="">
+  <div class="hand">promoção da casa</div>
+  <h1>2 pizzas<br>grandes</h1>
+  <div class="board b1"><div class="ph"><img src="calab-top.jpg" alt=""></div></div><div class="board b2"><div class="ph"><img src="marg-top.jpg" alt=""></div></div><div class="n2 x1">2x</div>
+  <div class="deal"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="body"></div><div class="label">1L</div><div class="shine"></div></div><div class="t">mais<b>R$ 2</b>e leva o <em>refri 1 litro</em></div></div>
+  <div class="sub">Pediu duas grandes? O refri sai por R$ 2.</div>
+  <div class="foot"><b>Peça pelo link da bio</b><span><svg><use href="#wa"/></svg>(81) 98635-2086</span></div>
+</div>
+<div class="art story" id="q2">
+  <div class="grid"></div><div class="glow" style="width:1300px;height:1300px;left:-110px;top:750px"></div>
+  <img class="logo" src="logo.png" alt="">
+  <div class="hand">promoção da casa</div>
+  <h1>2 pizzas<br>grandes</h1>
+  <div class="board b1"><div class="ph"><img src="calab-top.jpg" alt=""></div></div><div class="board b2"><div class="ph"><img src="marg-top.jpg" alt=""></div></div><div class="n2 x1">2x</div>
+  <div class="deal"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="body"></div><div class="label">1L</div><div class="shine"></div></div><div class="t">mais<b>R$ 2</b>e leva o <em>refri 1 litro</em></div></div>
+  <div class="pill cta"><svg><use href="#wa"/></svg>Peça pelo link 👆</div>
+</div>
+</body></html>
