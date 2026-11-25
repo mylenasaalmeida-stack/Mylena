@@ -9,6 +9,7 @@ EXTRA = '''<style>
 .q li:before{counter-increment:q;content:counter(q);position:absolute;left:0;top:2mm;font-family:'Roboto Condensed';font-weight:800;color:var(--red)}
 .q .o{display:flex;gap:6mm;margin-top:1mm;font-size:8.2pt;color:#444}
 .fill td{height:8mm}
+td{padding:3.8px 7px}h3.sub{margin:3mm 0 1.5mm}
 .big{font-family:'Roboto Condensed';font-weight:800;color:var(--red);font-size:20pt;line-height:1}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
 .card{background:var(--cream);border-radius:6px;padding:3.5mm 4mm;border-top:3px solid var(--red)}
@@ -117,7 +118,7 @@ r2 = cover('Procedimentos Operacionais Padronizados', 'Os 4 POPs', 'da Speciale'
 
 def pop(num, titulo, campos, procedimento, monit, acao, verif):
     head = table(['Campo', 'Informação'], [['POP nº', f'{num:02d}'], ['Título', titulo]] + campos + [
-        ['Elaborado em', 'Novembro/2026 · versão 1.0'], ['Responsável', LN]], widths=['24%', '76%'])
+        ['Elaborado em', 'Novembro/2026 · versão 1.0'], ['Responsável pela execução', 'Nome e função: ________________________'], ['Aprovado por', 'Responsável pelo estabelecimento: ________________________ · Data: ___/___/____']], widths=['24%', '76%'])
     return (sec(f'{num:02d}', titulo) + head + '<h3 class="sub">Procedimento</h3>' + procedimento +
             '<h3 class="sub">Monitoramento, ação corretiva e verificação</h3>' +
             table(['Etapa', 'Como fazer'], [['Monitoramento', monit], ['Ação corretiva', acao], ['Verificação', verif]], widths=['22%', '78%']))
@@ -311,4 +312,39 @@ s4 = spage('<div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm">' + 
     sticker('Bancada limpa', '<p style="font-size:12pt;font-weight:600">A cada pizza: só o que vai para ela.</p><p style="font-size:9.5pt;margin-top:2mm">No fim do turno: limpar e depois desinfetar.</p>', h='58mm', color='#555'),
     sticker('Está doente?', '<p style="font-size:12pt;font-weight:600">Diarreia, febre, vômito, ferida?</p><p style="font-size:9.5pt;margin-top:2mm">Avise o responsável antes de entrar na cozinha.</p>', h='58mm'),
     sticker('Termômetro', '<p style="font-size:12pt;font-weight:600">Anote a temperatura 2 vezes ao dia.</p><p style="font-size:9.5pt;margin-top:2mm">Fora do limite? Ajuste, confira em 30 min e avise.</p>', h='58mm', color='#1f4f8a')]) + '</div>')
-open('trein_adesivos.html', 'w').write(html('Speciale · Adesivos e cartazes', [s1, s2, s4, s3]).replace('</head>', SCSS + '</head>'))
+
+
+def popcard(num, titulo, cor, onde, itens, freq):
+    lis = ''.join(f'<li style="margin:4.5mm 0">{x}</li>' for x in itens)
+    fr = ''.join(f'<tr><td style="padding:3.5mm 3mm;border-bottom:1px solid #e6dccf"><b>{a}</b></td><td style="padding:3.5mm 3mm;border-bottom:1px solid #e6dccf">{b}</td></tr>' for a, b in freq)
+    return spage(f'''<div class="stk" style="height:270mm"><div class="hd" style="background:{cor};font-size:13pt;padding:5mm 8mm">POP {num:02d} · resumo para afixar<div style="font-size:26pt;margin-top:2mm">{titulo}</div></div>
+<div class="bd" style="padding:9mm 9mm;font-size:15pt">
+<div style="font-size:11pt;color:#666;margin-bottom:4mm">Afixar em: {onde}</div>
+<ol style="padding-left:7mm;line-height:1.45">{lis}</ol>
+<table style="width:100%;border-collapse:collapse;margin-top:10mm;font-size:13pt"><thead><tr><th style="text-align:left;background:#231a18;color:#fff;padding:2mm 3mm">O quê</th><th style="text-align:left;background:#231a18;color:#fff;padding:2mm 3mm">Frequência</th></tr></thead><tbody>{fr}</tbody></table>
+<div style="margin-top:12mm;font-size:10pt;color:#555">Documento completo, monitoramento e planilhas: pasta de Boas Práticas da cozinha · RDC ANVISA 216/2004.<br>Responsável: ______________________ · Aprovado em ___/___/____</div></div></div>''')
+
+
+P1 = popcard(1, 'Higienização', 'var(--red)', 'área de produção, perto da pia de utensílios', [
+    'Retire os resíduos e a sujeira maior.', 'Lave com detergente e água.', 'Enxágue bem.',
+    'Desinfete com o produto da casa, diluído como no rótulo, e respeite o tempo de ação.', 'Deixe secar ao natural ou use papel toalha.',
+    'Anote na planilha de higienização e rubrique.'], [
+    ('Bancadas', 'Entre tarefas e no fim do turno'), ('Utensílios, bisnagas e bicos', 'Após cada uso'), ('Masseira e balança', 'Após cada uso'),
+    ('Piso, ralos e lixeiras', 'Diária'), ('Geladeiras e paredes', 'Semanal'), ('Teto, luminárias e coifa', 'Mensal')])
+P2 = popcard(2, 'Controle de pragas', '#555', 'estoque e área de recebimento', [
+    'Alimentos sempre tampados e fora do chão.', 'Lixeira com tampa e pedal; lixo retirado no fim do dia.',
+    'Telas, ralos fechados e portas vedadas.', 'Caixas de papelão do fornecedor fora do estoque.',
+    'Viu sinal de praga (fezes, roedura, inseto)? Avise o responsável na hora.', 'Veneno só pela empresa especializada; guarde o comprovante.'], [
+    ('Ronda de sinais de pragas', 'Diária'), ('Retirada do lixo', 'Diária'), ('Empresa especializada', 'A confirmar com a empresa')])
+P3 = popcard(3, 'Caixa d\'água', '#1f4f8a', 'perto da pia ou na pasta de Boas Práticas', [
+    'A caixa d\'água fica sempre tampada e sem rachaduras.', 'Higienização a cada 6 meses, no máximo.',
+    'Durante a limpeza, não usar a água para preparar alimentos.', 'Trocar o filtro da cozinha conforme o fabricante.',
+    'Água com cor, cheiro ou gosto estranho: não use e avise.', 'Anote data e responsável na planilha do reservatório.'], [
+    ('Higienização do reservatório', 'A cada 6 meses (máximo)'), ('Troca do filtro', 'Conforme o fabricante'), ('Conferência visual da água', 'Diária')])
+P4 = popcard(4, 'Higiene dos manipuladores', '#2f8a4e', 'entrada da cozinha', [
+    'Uniforme limpo, sapato fechado e touca cobrindo todo o cabelo.', 'Sem anel, brinco, relógio, pulseira, colar ou piercing.',
+    'Unhas curtas, limpas e sem esmalte.', 'Lave as mãos ao chegar e a cada troca de tarefa.',
+    'Não fume, coma, masque chiclete ou use celular na produção.', 'Diarreia, febre, vômito ou ferida? Avise antes de entrar.'], [
+    ('Checagem na entrada do turno', 'Diária, pelo supervisor'), ('Lavagem das mãos', 'Sempre que trocar de tarefa'), ('Treinamento', 'Na admissão e a cada 6 meses')])
+
+open('trein_adesivos.html', 'w').write(html('Speciale · Adesivos e cartazes', [s1, P1, P2, P3, P4, s2, s4, s3]).replace('</head>', SCSS + '</head>'))
