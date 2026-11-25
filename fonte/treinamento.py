@@ -60,7 +60,7 @@ temas = [('Higiene pessoal', ['Uniforme limpo, trocado todo dia e usado só no t
          ('Lavagem das mãos', ['Ao chegar, ao voltar do banheiro, ao trocar de tarefa, depois de tocar em cru, lixo, dinheiro, celular, rosto ou cabelo, depois de tossir ou espirrar.', 'Lavatório exclusivo, sabonete líquido, papel toalha e lixeira com pedal.', 'Passo a passo de 40 a 60 segundos (adesivo na pia).', 'Luva não substitui a lavagem: lavar antes de calçar e trocar a cada tarefa.']),
          ('Contaminação cruzada', ['Separar cru (frango, ovo, carnes) de pronto (queijos, presunto, molho).', 'Tábuas, facas e potes separados ou higienizados entre usos.', 'Pano de prato não serve para tudo: usar papel toalha ou pano exclusivo e trocado.', 'Bisnaga e bico de catupiry higienizados; saco de confeitar descartado no fim do turno.', 'Na bancada, só o que vai para a pizza agora.']),
          ('Temperaturas', ['Geladeira até 5 °C; freezer a −18 °C ou menos (conferir e anotar 2 vezes ao dia).', 'Descongelar dentro da geladeira, nunca na bancada ou na pia; não recongelar.', 'Alimento cozido (como o frango) atinge pelo menos 70 °C em todas as partes.', 'Alimento quente mantido a 60 °C ou mais por até 6 h; alimento preparado e refrigerado até 5 °C dura no máximo 5 dias.', 'Resfriar rápido: de 60 °C a 10 °C em até 2 h, em recipientes rasos.']),
-         ('Armazenamento e validade', ['Nada direto no chão: estrados ou prateleiras a 25 cm do piso.', 'Etiqueta em tudo que é aberto, porcionado ou preparado: produto, data, validade, responsável.', 'PVPS: primeiro que vence, primeiro que sai.', 'Crus embaixo, prontos em cima na geladeira; tudo tampado.', 'Produtos de limpeza longe dos alimentos.']),
+         ('Armazenamento e validade', ['Nada direto no chão: estrados ou prateleiras afastados do piso e da parede.', 'Etiqueta em tudo que é aberto, porcionado ou preparado: produto, data, validade, responsável.', 'PVPS: primeiro que vence, primeiro que sai.', 'Crus embaixo, prontos em cima na geladeira; tudo tampado.', 'Produtos de limpeza longe dos alimentos.']),
          ('Higienização', ['Limpar (tirar a sujeira) e depois desinfetar (matar os micróbios).', 'Usar só produtos regularizados na ANVISA e diluir conforme o rótulo.', 'Bancada e utensílios: a cada troca de tarefa e no fim do turno.', 'Escovas e esponjas trocadas com frequência; panos de limpeza separados por área.', 'Seguir o POP 01 e anotar na planilha.'])]
 p2 = sec('03', 'Pontos a abordar em cada tema') + '<div class="two">' + ''.join(
     f'<div class="card"><h4>{t}</h4>{ul(xs)}</div>' for t, xs in temas) + '</div>'
@@ -80,7 +80,7 @@ p3 = sec('04', 'Dinâmicas') + table(['Dinâmica', 'Como fazer'], din, widths=['
         'Quem estiver doente avisa antes de entrar na cozinha.']) + \
     '<div class="box"><h5>Documentos da casa que a equipe precisa conhecer</h5>' + ul([
         'Manual de Boas Práticas (a elaborar ou confirmar se existe).',
-        'Os 4 POPs obrigatórios (entregues neste pacote): higienização, pragas, caixa d\'água e higiene dos manipuladores.',
+        'Os 8 POPs (entregues neste pacote): os 4 obrigatórios da RDC 216 e os 4 da operação (recebimento, hortifrútis, forno a lenha, delivery e salão).',
         'Fichas técnicas e receitas de produção das pizzas.',
         'Planilhas de registro: temperatura, higienização e treinamento.']) + '</div>'
 
@@ -110,10 +110,10 @@ subs1 = ['Objetivo e agenda', 'Pontos a abordar', 'Dinâmicas e combinados', 'Av
 doc('trein_roteiro.html', 'Speciale · Treinamento em Boas Práticas', [r1] + [page(D1, s, i + 2, T1, F1, c) for i, (s, c) in enumerate(zip(subs1, [p1, p2, p3, p4, p5]))])
 
 # =================== 2. POPs ===================
-D2, F2, T2 = 'POPs · PROCEDIMENTOS OPERACIONAIS PADRONIZADOS', 'Speciale Pizzas Artesanais · POPs exigidos pela RDC ANVISA 216/2004 (item 4.11)', 8
-r2 = cover('Procedimentos Operacionais Padronizados', 'Os 4 POPs', 'da Speciale',
-           'Os quatro POPs exigidos pela RDC 216/2004 para serviços de alimentação, já adaptados à pizzaria, com as planilhas de registro.',
-           [('4 POPs', 'obrigatórios pela RDC 216/2004'), ('Registro', 'planilhas para monitorar e verificar'), ('Revisar', 'a cada ano ou quando algo mudar')])
+D2, F2, T2 = 'POPs · PROCEDIMENTOS OPERACIONAIS PADRONIZADOS', 'Speciale Pizzas Artesanais · POPs · RDC ANVISA 216/2004', 12
+r2 = cover('Procedimentos Operacionais Padronizados', 'Os 8 POPs', 'da Speciale',
+           'Os quatro POPs exigidos pela RDC 216/2004 e mais quatro operacionais da pizzaria (recebimento, hortifrútis, forno a lenha e delivery/salão), com as planilhas de registro.',
+           [('8 POPs', '4 obrigatórios pela RDC 216 + 4 da operação'), ('Registro', 'planilhas para monitorar e verificar'), ('Revisar', 'a cada ano ou quando algo mudar')])
 
 
 def pop(num, titulo, campos, procedimento, monit, acao, verif):
@@ -190,22 +190,82 @@ pop4 = pop(4, 'Higiene e saúde dos manipuladores',
            'Fora do padrão: corrigir antes de entrar na cozinha. Doente: afastar da manipulação e orientar a procurar atendimento.',
            'Responsável confere a planilha semanalmente e mantém os registros de treinamento e de saúde arquivados.')
 
+
+pop5 = pop(5, 'Recebimento e armazenamento de mercadorias',
+           [['Objetivo', 'Receber só o que está adequado e guardar cada produto no lugar e na temperatura certos.'],
+            ['Aplica-se a', 'Toda mercadoria que entra: farinha, queijos, frios, frango, hortifrúti, bebidas, embalagens.']],
+           table(['Etapa', 'Como fazer'], [
+               ['1. Conferir a entrega', 'Veículo limpo e fechado; entregador com uniforme limpo; produto refrigerado ou congelado transportado frio.'],
+               ['2. Conferir o produto', 'Embalagem íntegra, sem amassado, furo ou vazamento; rótulo com nome, lote, validade e registro; validade suficiente para o uso.'],
+               ['3. Medir a temperatura', 'Refrigerados e congelados: medir com termômetro e comparar com o indicado no rótulo ou na especificação do fornecedor.'],
+               ['4. Reprovar quando preciso', 'Fora do padrão: devolver na hora e anotar o motivo na planilha de recebimento.'],
+               ['5. Guardar', 'Primeiro congelados e refrigerados, depois secos. Retirar caixas de papelão. Nada no chão: estrados ou prateleiras afastados do piso e da parede.'],
+               ['6. Organizar', 'PVPS (primeiro que vence, primeiro que sai); crus embaixo e prontos em cima; tudo tampado; produto aberto ou porcionado etiquetado.'],
+           ], widths=['26%', '74%']),
+           'Quem recebe anota na Planilha de Recebimento: data, fornecedor, produto, validade, temperatura, aprovado ou reprovado.',
+           'Produto inadequado: devolver ou separar identificado como “não usar” e avisar o responsável.',
+           'Responsável confere a planilha semanalmente e avalia os fornecedores com mais reprovações.')
+
+pop6 = pop(6, 'Higienização de hortifrútis',
+           [['Objetivo', 'Retirar sujeira e reduzir micro-organismos de frutas, verduras e legumes consumidos crus ou usados no preparo.'],
+            ['Aplica-se a', 'Tomate, manjericão, cebola e demais hortifrútis.']],
+           table(['Etapa', 'Como fazer'], [
+               ['1. Selecionar', 'Retirar folhas, partes estragadas e unidades amassadas ou com mofo.'],
+               ['2. Lavar', 'Lavar um a um em água corrente potável, esfregando com as mãos.'],
+               ['3. Desinfetar', 'Imergir em solução clorada própria para alimentos, na diluição e no tempo indicados no rótulo do produto.'],
+               ['4. Enxaguar', 'Enxaguar em água corrente potável para retirar o produto.'],
+               ['5. Guardar', 'Em recipiente limpo, tampado e etiquetado, sob refrigeração até o uso.'],
+           ], widths=['22%', '78%']) + '<p class="note">Usar somente produto com registro na ANVISA indicado para hortifrútis. Não usar água sanitária comum que tenha perfume ou outros aditivos. Bacia e utensílios exclusivos para esta etapa.</p>',
+           'Quem higieniza registra data, hora, produto usado e diluição.',
+           'Diluição errada ou etapa pulada: refazer a higienização do lote.',
+           'Responsável confere a diluição preparada e o registro uma vez por semana.')
+
+pop7 = pop(7, 'Operação do forno a lenha',
+           [['Objetivo', 'Assar as pizzas no ponto certo, com segurança para a equipe e sem contaminar os alimentos.'],
+            ['Aplica-se a', 'Forno a lenha, lenha, pá, cortador e área ao redor do forno.']],
+           table(['Tema', 'Como fazer'], [
+               ['Lenha', 'Seca, sem pintura, verniz, cola ou tratamento químico. Guardada em local separado dos alimentos, elevada do chão e sem sinais de pragas.'],
+               ['Acendimento', 'Pelo responsável da praça do forno, com antecedência para atingir o ponto antes da abertura; nunca usar álcool, gasolina ou líquido inflamável.'],
+               ['Ponto e tempo', 'Ponto ideal de 340 a 380 °C (forno sem marcador de temperatura); pizza por 3 a 4 min; conferir muçarela derretida e borda dourada.'],
+               ['Segurança', 'Luva térmica de cano longo; área livre de caixas, papel e embalagens; extintor próximo, sinalizado e dentro da validade.'],
+               ['Cinzas', 'Retirar com o forno frio, em recipiente metálico com tampa, longe de material inflamável; descartar só quando totalmente frias.'],
+               ['Pá e cortador', 'Limpos a cada turno; pá guardada em local limpo, sem contato com o chão.'],
+           ], widths=['20%', '80%']),
+           'Responsável da praça confere na abertura: lenha, área limpa, extintor e luva; anota na planilha de higienização.',
+           'Lenha inadequada: não usar e separar. Extintor vencido ou ausente: avisar a gerência na hora.',
+           'Responsável confere semanalmente a área do forno e a validade do extintor.')
+
+pop8 = pop(8, 'Expedição, delivery e salão',
+           [['Objetivo', 'Levar a pizza ao cliente quente, íntegra e sem contaminação, no salão ou no delivery.'],
+            ['Aplica-se a', 'Expedição, entregadores, atendentes e caixa.']],
+           table(['Etapa', 'Como fazer'], [
+               ['Embalagem', 'Caixa limpa, guardada protegida de pó e pragas; pizza cortada e embalada logo após sair do forno; caixa fechada (lacre, se houver).'],
+               ['Conferência', 'Pedido, sabor, tamanho e itens extras conferidos antes de sair.'],
+               ['Bag térmica', 'Uso exclusivo para alimentos; higienizada por dentro no fim de cada turno; nada de capacete, roupas ou objetos pessoais dentro.'],
+               ['Entregador', 'Mãos higienizadas, não toca na pizza nem abre a caixa; entrega no menor tempo possível.'],
+               ['Salão', 'Mesas e cardápios higienizados a cada cliente; talheres e guardanapos protegidos; pizza servida logo após sair do forno.'],
+               ['Caixa e atendimento', 'Quem manuseia dinheiro não manipula alimentos sem lavar as mãos antes.'],
+           ], widths=['22%', '78%']),
+           'Expedição registra horário de saída do pedido; atendente marca a higienização das mesas na planilha do salão.',
+           'Caixa danificada ou bag suja: trocar antes da saída. Reclamação de temperatura ou de atraso: registrar e avisar o supervisor.',
+           'Supervisor confere bags, caixas e salão no fim de cada turno.')
+
 days = ''.join(f'<th style="text-align:center;padding:4px 2px">{d}</th>' for d in range(1, 16))
 def grade(rows, first='Item'):
     body = ''.join(f'<tr><td style="font-size:7.6pt">{r}</td>' + '<td></td>' * 15 + '</tr>' for r in rows)
     return f'<table class="fill"><thead><tr><th>{first}</th>{days}</tr></thead><tbody>{body}</tbody></table>'
 
 
-plan1 = sec('05', 'Planilha · temperatura de geladeira e freezer') + '<p class="note" style="margin:-1mm 0 2mm">Medir na abertura (A) e no fechamento (F). Geladeira: até 5 °C · Freezer: −18 °C ou menos. Fora do limite: ajustar, conferir de novo em 30 min e avisar o responsável. Mês: ________ (dias 1 a 15; usar outra folha para 16 a 31).</p>' + \
+plan1 = sec('09', 'Planilha · temperatura de geladeira e freezer') + '<p class="note" style="margin:-1mm 0 2mm">Medir na abertura (A) e no fechamento (F). Geladeira: até 5 °C · Freezer: −18 °C ou menos. Fora do limite: ajustar, conferir de novo em 30 min e avisar o responsável. Mês: ________ (dias 1 a 15; usar outra folha para 16 a 31).</p>' + \
     grade(['Geladeira 1 · A', 'Geladeira 1 · F', 'Geladeira 2 · A', 'Geladeira 2 · F', 'Freezer · A', 'Freezer · F', 'Rubrica'], 'Equipamento')
-plan2 = sec('06', 'Planilha · higienização (POP 01)') + '<p class="note" style="margin:-1mm 0 2mm">Marcar ✓ e rubricar quando feito. Mês: ________</p>' + \
+plan2 = sec('10', 'Planilha · higienização (POP 01)') + '<p class="note" style="margin:-1mm 0 2mm">Marcar ✓ e rubricar quando feito. Mês: ________</p>' + \
     grade(['Bancadas (fim do turno)', 'Utensílios e bisnagas', 'Masseira e balança', 'Piso e ralos', 'Lixeiras', 'Geladeiras (semanal)', 'Paredes e portas (semanal)', 'Teto e coifa (mensal)'], 'Área')
-plan3 = sec('07', 'Planilha · higiene pessoal (POP 04)') + '<p class="note" style="margin:-1mm 0 2mm">Na entrada do turno: uniforme, touca, sem adornos, unhas e saúde OK = ✓. Mês: ________</p>' + \
+plan3 = sec('11', 'Planilha · higiene pessoal (POP 04)') + '<p class="note" style="margin:-1mm 0 2mm">Na entrada do turno: uniforme, touca, sem adornos, unhas e saúde OK = ✓. Mês: ________</p>' + \
     grade([f'Funcionário {i}: __________' for i in range(1, 8)], 'Nome') + \
-    sec('08', 'Planilha · reservatório e pragas (POP 02 e 03)') + table(['Data', 'Serviço', 'Empresa / responsável', 'Próxima data', 'Comprovante?', 'Visto'],
+    sec('12', 'Planilha · reservatório e pragas (POP 02 e 03)') + table(['Data', 'Serviço', 'Empresa / responsável', 'Próxima data', 'Comprovante?', 'Visto'],
                                                                          [['', 'Limpeza da caixa d\'água', '', '', '☐', ''], ['', 'Troca do filtro', '', '', '☐', ''], ['', 'Controle de pragas', '', '', '☐', ''], ['', 'Controle de pragas', '', '', '☐', ''], ['', '', '', '', '☐', '']], widths=['12%', '24%', '26%', '14%', '12%', '12%']).replace('<table', '<table class="fill"')
-subs2 = ['POP 01 · Higienização', 'POP 02 · Pragas', 'POP 03 · Reservatório de água', 'POP 04 · Manipuladores', 'Planilha de temperatura', 'Planilha de higienização', 'Higiene pessoal, água e pragas']
-doc('trein_pops.html', 'Speciale · POPs', [r2] + [page(D2, s, i + 2, T2, F2, c) for i, (s, c) in enumerate(zip(subs2, [pop1, pop2, pop3, pop4, plan1, plan2, plan3]))])
+subs2 = ['POP 01 · Higienização', 'POP 02 · Pragas', 'POP 03 · Reservatório de água', 'POP 04 · Manipuladores', 'POP 05 · Recebimento', 'POP 06 · Hortifrútis', 'POP 07 · Forno a lenha', 'POP 08 · Delivery e salão', 'Planilha de temperatura', 'Planilha de higienização', 'Higiene pessoal, água e pragas']
+doc('trein_pops.html', 'Speciale · POPs', [r2] + [page(D2, s, i + 2, T2, F2, c) for i, (s, c) in enumerate(zip(subs2, [pop1, pop2, pop3, pop4, pop5, pop6, pop7, pop8, plan1, plan2, plan3]))])
 
 # =================== 3. CARTILHA ===================
 D3, F3, T3 = 'CARTILHA · BOAS PRÁTICAS', 'Speciale Pizzas Artesanais · Cartilha da equipe · RDC ANVISA 216/2004', 3
