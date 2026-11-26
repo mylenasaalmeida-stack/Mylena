@@ -105,7 +105,7 @@ s5 = sl(7, '2ª visita · operação', 'Padronizar <span>para economizar</span>'
         f'<div class="card"><h4>Entregues</h4>{ul(["<b>Guia “Como medir o catupiry”</b>: comparação de métodos, teste de pesagem, formulários e conferência semanal.", "<b>Guia “Bico no catupiry”</b>: marcas, opções sem trocar o fornecedor e lista de compras.", "<b>Materiais e sugestão de compras</b>: gabarito, balança, termômetro e plano de compras."])}</div>' +
         th([('cat', 'Como medir o catupiry'), ('bico', 'Bico no catupiry')], 92) + '</div>')
 
-s6 = sl(8, '2ª visita · marca', 'Uma marca para a <span>nova fase</span>', '<div class="cols" style="grid-template-columns:1fr 1.25fr">' +
+s6 = sl(8, 'Extra · marca e cardápio', 'Uma marca para a <span>nova fase</span>', '<div class="cols" style="grid-template-columns:1fr 1.25fr">' +
         f'<div class="card"><h4>Propostas</h4>{ul(["<b>Proposta comercial</b> de identidade visual e cardápio, com pacotes e combos.", "<b>Cardápio em preto e verde</b>: tríptico de mesa e cardápio redondo, com preços (Média R$ 45).", "<b>Cardápio digital</b> no site, com pedido pelo WhatsApp.", "<b>Questionário de briefing</b> para fechar marca e cardápio."])}</div>' +
         th([('prop', 'Proposta'), ('dig', 'Cardápio digital'), ('quest', 'Briefing')], 62) + th([('card3', 'Cardápio em tamanho real')], 44) + '</div>')
 
@@ -127,4 +127,11 @@ s10 = f'''<section class="s" style="background:{INK};color:#fff"><div class="chk
 <div style="display:flex;gap:12mm;margin-top:10mm">''' + ''.join(f'<div><div class="big" style="color:{OR}">{a}</div><div style="font-size:10pt;opacity:.85;margin-top:1mm">{b}</div></div>' for a, b in [('2', 'visitas realizadas'), ('8', 'POPs elaborados'), ('8', 'praças organizadas'), ('1', 'visita de implantação')]) + '''</div></div></div>
 <div class="chk" style="bottom:0"></div></section>'''
 
-open('apresentacao.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Speciale · Relatório de acompanhamento</title>{CSS}</head><body>{capa}{s2}{s3}{s3b}{s4}{s4b}{s5}{s6}{s7}{s8}{s9}{s10}</body></html>')
+import re as _re
+exec(open('rel_slides.py').read().split('\n', 1)[1])
+_ALL = [capa, r1, s2, s3, s3b, s4, s4b, r2, s5, s7, s8, r3, r4, r5, r6, s9, s6, r7, s10]
+_T = len(_ALL)
+_body = ''
+for _i, _x in enumerate(_ALL, 1):
+    _body += _re.sub(r'<div class="n">\d+ / \d+</div>', f'<div class="n">{_i} / {_T}</div>', _x)
+open('apresentacao.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Speciale · Relatório de acompanhamento</title>{CSS}</head><body>{_body}</body></html>')
