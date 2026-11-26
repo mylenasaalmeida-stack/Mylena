@@ -66,7 +66,7 @@ s2 = sl(2, 'Visão geral', 'Três visitas, <span>um plano</span>', f'''<div clas
 <div class="v" style="background:{CR}"><div class="d">1</div><h4>Diagnóstico</h4><small>1ª visita · {DATA}</small>
 {ul(['Conversa com o proprietário', 'Diagnóstico do local e da operação', 'Questionários entregues à equipe'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
 <div class="v" style="background:{CR}"><div class="d">2</div><h4>Retorno e melhorias</h4><small>2ª visita · {DATA}</small>
-{ul(['Retorno do diagnóstico', 'Melhorias propostas para a operação', 'Materiais de boas práticas (POPs, cartilha, sinalização)'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
+{ul(['Retorno do diagnóstico', 'Melhorias propostas para a operação', 'Padronização da operação e materiais de boas práticas'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
 <div class="v" style="background:{CR}"><div class="d">3</div><h4>Orientação e entrega</h4><small>3ª visita · {DATA}</small>
 {ul(['Orientação de boas práticas à equipe', 'Entrega do caderno com os POPs obrigatórios', 'Entrega dos adesivos para colagem'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div></div>''')
 
@@ -124,9 +124,13 @@ s10 = f'''<section class="s" style="background:{INK};color:#fff"><div class="chk
 <div style="display:flex;gap:12mm;margin-top:10mm">''' + ''.join(f'<div><div class="big" style="color:{OR}">{a}</div><div style="font-size:10pt;opacity:.85;margin-top:1mm">{b}</div></div>' for a, b in [('3', 'visitas realizadas'), ('4', 'POPs obrigatórios no caderno'), ('16', 'adesivos entregues'), ('8', 'praças organizadas')]) + '''</div></div></div>
 <div class="chk" style="bottom:0"></div></section>'''
 
+
+s5p = sl(0, '2ª visita · operação', 'Padronização <span>da operação</span>', '<div class="cols" style="grid-template-columns:1.1fr 1fr">' +
+        f'<div class="card"><h4>Receitas e processos padronizados</h4>{ul(["<b>Fichas técnicas</b> das pizzas: ingredientes por pizza, etapas de montagem numeradas e pontos críticos de controle.", "<b>Receitas de produção</b> simplificadas para a equipe (massa e pizzas), com o passo a passo e o ponto de cada etapa.", "<b>Porções padronizadas</b> por tamanho (Broto, Média e Grande) e peso da bolinha de massa.", "<b>Temperaturas e tempos</b>: forno a lenha (340 a 380 °C, 3 a 4 min), armazenamento e descongelamento.", "<b>Armazenamento e validade</b> dos ingredientes em cada ficha, conforme a RDC 216."])}</div>' +
+        th([('ft3', 'Ficha técnica · montagem'), ('rec', 'Receita de produção')], 92) + '</div>')
 import re as _re
 exec(open('rel_slides.py').read().split('\n', 1)[1])
-_ALL = [capa, r1, s2, s3, s4, s4b, r2, s7, s8, r3, r4, r5, r6, s9, r7, s10]
+_ALL = [capa, r1, s2, s3, s4, s4b, r2, s5p, s7, s8, r3, r4, r5, r6, s9, r7, s10]
 _T = len(_ALL)
 _body = ''
 for _i, _x in enumerate(_ALL, 1):
