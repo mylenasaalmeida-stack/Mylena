@@ -58,7 +58,7 @@ capa = f'''<section class="s" style="background:{RED};color:#fff"><div class="ch
 <div style="position:absolute;top:48mm;left:0;right:0">
 <div style="font-size:11pt;font-weight:600;letter-spacing:4px;color:#ffd2ae">RELATÓRIO DE ACOMPANHAMENTO</div>
 <div style="font-family:'Roboto Condensed';font-weight:800;text-transform:uppercase;font-size:56pt;line-height:.95;margin-top:4mm">O que fizemos<br><span style="color:#ffd2ae">na Speciale</span></div>
-<p style="font-size:13pt;margin-top:6mm;max-width:190mm;opacity:.95">Diagnóstico, melhorias propostas e materiais entregues para organizar a operação, a marca e as boas práticas.</p></div>
+<p style="font-size:13pt;margin-top:6mm;max-width:190mm;opacity:.95">Diagnóstico, orientação da equipe e materiais de boas práticas conforme a RDC ANVISA 216/2004.</p></div>
 <div style="position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:9.5pt;border-top:1px solid rgba(255,255,255,.4);padding-top:4mm"><span>Speciale Pizzas Artesanais · Recife</span><span>Novembro de 2026</span></div></div>
 <div class="chk" style="bottom:0;background:repeating-conic-gradient(#fff 0 25%,{RED} 0 50%) 0 0/9px 9px"></div></section>'''
 
@@ -66,15 +66,14 @@ s2 = sl(2, 'Visão geral', 'Três visitas, <span>um plano</span>', f'''<div clas
 <div class="v" style="background:{CR}"><div class="d">1</div><h4>Diagnóstico</h4><small>1ª visita · {DATA}</small>
 {ul(['Conversa com o proprietário', 'Diagnóstico do local e da operação', 'Questionários entregues à equipe'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
 <div class="v" style="background:{CR}"><div class="d">2</div><h4>Retorno e melhorias</h4><small>2ª visita · {DATA}</small>
-{ul(['Retorno do diagnóstico', 'Melhorias propostas para a operação', 'Materiais de padronização, marca e boas práticas'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
+{ul(['Retorno do diagnóstico', 'Melhorias propostas para a operação', 'Materiais de boas práticas (POPs, cartilha, sinalização)'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
 <div class="v" style="background:{CR}"><div class="d">3</div><h4>Orientação e entrega</h4><small>3ª visita · {DATA}</small>
 {ul(['Orientação de boas práticas à equipe', 'Entrega do caderno com os POPs obrigatórios', 'Entrega dos adesivos para colagem'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div></div>''')
 
-s3 = sl(3, '1ª visita', 'Conhecer a casa <span>por dentro</span>', f'''<div style="display:grid;grid-template-columns:1fr 62mm;gap:7mm"><div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+s3 = sl(3, '1ª visita', 'Conhecer a casa <span>por dentro</span>', f'''<div><div class="cols" style="grid-template-columns:1fr 1fr 1fr">
 <div class="card"><div class="big">01</div><h4 style="margin-top:3mm">Conversa com o dono</h4>{ul(['Diagnóstico inicial da operação', 'Falta de orientação sobre as boas práticas exigidas pela norma (RDC 216)', 'Pouco conhecimento sobre armazenamento, validade e etiquetagem dos alimentos'])}</div>
 <div class="card"><div class="big">02</div><h4 style="margin-top:3mm">Diagnóstico do local</h4>{ul(['Visita à cozinha, estoque, salão e área do forno', 'Acompanhamento da produção da massa e da montagem', 'Registro fotográfico da operação'])}</div>
-<div class="card"><div class="big">03</div><h4 style="margin-top:3mm">Questionários à equipe</h4>{ul(['Questionários entregues aos funcionários', 'Rotina, dificuldades e sugestões de quem está na operação', 'Base para as melhorias propostas'])}</div></div>
-<figure style="text-align:center;font-size:8.5pt;color:#555"><img src="img/visita/equipe.jpg" style="width:62mm;height:118mm;object-fit:cover;object-position:50% 30%;border-radius:6px;display:block;margin-bottom:2mm">Equipe na visita técnica</figure></div>''')
+<div class="card"><div class="big">03</div><h4 style="margin-top:3mm">Questionários à equipe</h4>{ul(['Questionários entregues aos funcionários', 'Rotina, dificuldades e sugestões de quem está na operação', 'Base para as melhorias propostas'])}</div></div></div>''')
 
 s3b = sl(4, '1ª visita · registro', 'Onde <span>melhorar</span>', '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4mm"><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/farinha.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#1f5fa8;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Armazenamento</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Farinha</b>Sacos rasgados e abertos, bacia e balde por cima.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Estrado + contentor com tampa para o saco aberto</div></figure><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/farinha-chao.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#6b3fa0;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Prateleira</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Farinha</b>Sacos no chão e na parede, embalagens vazias e vassoura junto.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Estrado de plástico afastado da parede; vassoura em local próprio</div></figure><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/caixas.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#6b3fa0;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Prateleira</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Caixas de pizza</b>Amontoadas, papelão no chão e parede com umidade.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Prateleira para embalagens e reparo da umidade</div></figure><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/freezer.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#2f8a4e;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Etiquetagem</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Freezer</b>Gelo acumulado, ferrugem na vedação, potes sem etiqueta.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Degelo, higienização e etiqueta em todos os potes</div></figure><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/bancada.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#d7141a;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Higienização</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Bancada</b>Lixeira aberta sob a bancada e excesso de farinha.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Lixeira com tampa e pedal; limpeza entre as pizzas</div></figure><figure style="font-size:8.2pt;line-height:1.3;color:#333"><div style="position:relative"><img src="img/visita/banheiro.jpg" style="width:100%;height:86mm;object-fit:cover;border-radius:5px;display:block"><span style="position:absolute;left:2mm;top:2mm;background:#555;color:#fff;font-weight:700;font-size:7.5pt;padding:.6mm 2.4mm;border-radius:20mm">Manutenção</span></div> <b style="display:block;font-family:Roboto Condensed;text-transform:uppercase;font-size:10.5pt;margin-top:2mm">Banheiro</b>Infiltração, mofo e reboco descascando no teto.<div style="margin-top:1.5mm;color:#2f8a4e;font-weight:600">→ Reparo do teto; lixeira com tampa e pedal</div></figure></div>')
 s4 = sl(5, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><th style="width:28%">Ponto observado</th><th>Impacto</th><th style="width:30%">Melhoria proposta</th></tr></thead><tbody>' + ''.join(
@@ -83,17 +82,14 @@ s4 = sl(5, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><
         ('Freezer com gelo, ferrugem e sem etiquetas', 'Temperatura instável e validade sem controle', 'Degelo, higienização, etiquetas e planilha'),
         ('Estoque de caixas desorganizado e umidade', 'Embalagem contaminada e mofo', 'Organização, prateleiras e reparo da parede'),
         ('Banheiro com infiltração e mofo no teto', 'Risco sanitário e item de fiscalização', 'Reparo do teto e lixeira com tampa e pedal'),
-        ('Tamanho da pizza definido “no olho”', 'Pizzas com tamanhos e custos diferentes; sobra de massa aparada', 'Peso da bolinha, gabarito e marcação na bancada'),
-        ('Catupiry sem medida padrão', 'Quantidade varia por pizzaiolo; custo sem controle', 'Teste de pesagem e bico padrão'),
-        ('Bisnaga com ponta cortada', 'Abertura muda a cada bisnaga', 'Saco descartável + adaptador + bico'),
         ('Falta de orientação em boas práticas', 'Armazenamento, validade e etiquetagem sem padrão', 'Orientação da equipe, POPs e etiquetas'),
         ('Procedimentos não documentados', 'Risco na fiscalização e orientação difícil', 'Caderno de POPs, cartilha e sinalização'),
         ('Responsabilidades informais', 'Tarefas sem dono; ninguém confere', 'Divisão por praça e supervisores'),
-        ('Nova fase: cores e reforma', 'Marca e cardápio desatualizados', 'Proposta de identidade e cardápio')]) + '</tbody></table>')
+]) + '</tbody></table>')
 
 
-s4b = sl(6, 'Indicações de compra', 'Prateleiras, armazenamento <span>e etiquetagem</span>', '<table><thead><tr><th>Item</th><th>Para quê</th><th>Onde</th><th style="width:12%">Preço</th></tr></thead><tbody>' + ''.join(
-    f'<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td><td>cotar</td></tr>' for a, b, c in [
+s4b = sl(6, 'Adequação da estrutura', 'Armazenamento <span>e etiquetagem</span>', '<table><thead><tr><th>Item recomendado</th><th>Para quê</th><th>Onde</th></tr></thead><tbody>' + ''.join(
+    f'<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>' for a, b, c in [
         ('Estrados plásticos', 'Tirar os sacos de farinha do chão e afastar da parede', 'Área da masseira / estoque'),
         ('Contentores com tampa (alimentos)', 'Guardar a farinha do saco aberto e evitar pragas', 'Área da masseira'),
         ('Prateleiras (aço ou plástico, laváveis)', 'Organizar caixas de pizza e insumos secos fora do chão', 'Estoque de embalagens e secos'),
@@ -101,7 +97,7 @@ s4b = sl(6, 'Indicações de compra', 'Prateleiras, armazenamento <span>e etique
         ('Etiquetas adesivas / etiquetadora', 'Identificar produto, data, validade e responsável', 'Todos os potes e preparos'),
         ('Termômetro para geladeira e freezer', 'Medir e anotar a temperatura 2 vezes ao dia', 'Geladeiras e freezer'),
         ('Lixeiras com tampa e pedal', 'Substituir lixeiras abertas', 'Bancada de montagem e banheiro'),
-        ('Suporte para vassoura e rodo', 'Separar material de limpeza dos alimentos', 'Área de limpeza')]) + '</tbody></table><p style="font-size:8.5pt;color:#777;margin-top:3mm">Preços a cotar com fornecedores. Reparo da umidade (estoque) e do teto do banheiro: orçar com manutenção.</p>')
+        ('Suporte para vassoura e rodo', 'Separar material de limpeza dos alimentos', 'Área de limpeza')]) + '</tbody></table><p style="font-size:8.5pt;color:#777;margin-top:3mm">Recomendações conforme a RDC 216/2004: alimentos fora do chão, protegidos, identificados e com controle de temperatura. Reparos de umidade e do teto do banheiro indicados à gestão.</p>')
 s5 = sl(7, '2ª visita · operação', 'Padronizar <span>para economizar</span>', '<div class="cols" style="grid-template-columns:1.1fr 1fr">' +
         f'<div class="card"><h4>Entregues</h4>{ul(["<b>Guia “Como medir o catupiry”</b>: comparação de métodos, teste de pesagem, formulários e conferência semanal.", "<b>Guia “Bico no catupiry”</b>: marcas, opções sem trocar o fornecedor e lista de compras.", "<b>Materiais e sugestão de compras</b>: gabarito, balança, termômetro e plano de compras."])}</div>' +
         th([('cat', 'Como medir o catupiry'), ('bico', 'Bico no catupiry')], 92) + '</div>')
@@ -130,7 +126,7 @@ s10 = f'''<section class="s" style="background:{INK};color:#fff"><div class="chk
 
 import re as _re
 exec(open('rel_slides.py').read().split('\n', 1)[1])
-_ALL = [capa, r1, s2, s3, s3b, s4, s4b, r2, s5, s7, s8, r3, r4, r5, r6, s9, s6, r7, s10]
+_ALL = [capa, r1, s2, s3, s4, s4b, r2, s7, s8, r3, r4, r5, r6, s9, r7, s10]
 _T = len(_ALL)
 _body = ''
 for _i, _x in enumerate(_ALL, 1):
