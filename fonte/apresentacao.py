@@ -32,12 +32,12 @@ h2 span{{color:{RED}}}
 .tl small{{font-size:9pt;color:#777}}
 .tl ul{{padding-left:5mm;font-size:12.5pt;line-height:1.5;margin-top:3mm}}
 .tag{{display:inline-block;font-size:8.5pt;font-weight:700;padding:1mm 3.5mm;border-radius:20mm;margin-top:2mm}}
-table{{width:100%;border-collapse:collapse;font-size:12pt}}
+table{{width:100%;border-collapse:collapse;font-size:10pt}}
 th{{background:{INK};color:#fff;font-family:'Roboto Condensed';text-transform:uppercase;font-size:9.5pt;text-align:left;padding:2.5mm 3mm}}
-td{{padding:3.6mm 3mm;border-bottom:1px solid #eadfd2}}
+td{{padding:1.5mm 3mm;border-bottom:1px solid #eadfd2}}
 </style>'''
 
-T = 10
+T = 11
 
 
 def sl(n, k, title, body, dark=False):
@@ -70,13 +70,19 @@ s2 = sl(2, 'Visão geral', 'Três visitas, <span>um plano</span>', f'''<div clas
 <div class="v" style="background:#fff;border:2px dashed {RED}"><div class="d">3</div><h4>Implantação</h4><small>3ª visita · a agendar</small>
 {ul(['Treinamento da equipe por setor', 'Definição de responsáveis e supervisores', 'Aprovação e afixação dos POPs'])}<span class="tag" style="background:{OR};color:#fff">Próxima etapa</span></div></div>''')
 
-s3 = sl(3, '1ª visita', 'Conhecer a casa <span>por dentro</span>', f'''<div class="cols" style="grid-template-columns:1fr 1fr 1fr">
+s3 = sl(3, '1ª visita', 'Conhecer a casa <span>por dentro</span>', f'''<div style="display:grid;grid-template-columns:1fr 62mm;gap:7mm"><div class="cols" style="grid-template-columns:1fr 1fr 1fr">
 <div class="card"><div class="big">01</div><h4 style="margin-top:3mm">Conversa com o dono</h4>{ul(['Objetivos do negócio e momento da casa', 'Mudança de cores e reforma do espaço', 'Principais dores na operação'])}</div>
 <div class="card"><div class="big">02</div><h4 style="margin-top:3mm">Diagnóstico do local</h4>{ul(['Visita à cozinha, estoque, salão e área do forno', 'Acompanhamento da produção da massa e da montagem', 'Registro fotográfico da operação'])}</div>
-<div class="card"><div class="big">03</div><h4 style="margin-top:3mm">Questionários à equipe</h4>{ul(['Questionários entregues aos funcionários', 'Rotina, dificuldades e sugestões de quem está na operação', 'Base para as melhorias propostas'])}</div></div>''')
+<div class="card"><div class="big">03</div><h4 style="margin-top:3mm">Questionários à equipe</h4>{ul(['Questionários entregues aos funcionários', 'Rotina, dificuldades e sugestões de quem está na operação', 'Base para as melhorias propostas'])}</div></div>
+<figure style="text-align:center;font-size:8.5pt;color:#555"><img src="img/visita/equipe.jpg" style="width:62mm;height:118mm;object-fit:cover;object-position:50% 30%;border-radius:6px;display:block;margin-bottom:2mm">Equipe na visita técnica</figure></div>''')
 
-s4 = sl(4, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><th style="width:28%">Ponto observado</th><th>Impacto</th><th style="width:30%">Melhoria proposta</th></tr></thead><tbody>' + ''.join(
+s3b = sl(4, '1ª visita · registro', 'O que <span>encontramos</span>', '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:4mm"><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/farinha.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Sacos de farinha rasgados e abertos, com bacia e balde apoiados por cima</figure><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/farinha-chao.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Sacos encostados no chão e na parede, embalagens vazias e vassoura junto aos insumos</figure><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/caixas.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Caixas de pizza amontoadas, papelão no chão e parede com umidade</figure><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/freezer.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Acúmulo de gelo, ferrugem e sujeira na vedação; potes sem etiqueta visível</figure><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/bancada.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Montagem com cubas organizadas; lixeira aberta sob a bancada e excesso de farinha</figure><figure style="font-size:8.6pt;line-height:1.3;color:#333"><img src="img/visita/banheiro.jpg" style="width:100%;height:108mm;object-fit:cover;border-radius:5px;display:block;margin-bottom:2mm">Teto com infiltração, mofo e reboco descascando</figure></div>')
+s4 = sl(5, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><th style="width:28%">Ponto observado</th><th>Impacto</th><th style="width:30%">Melhoria proposta</th></tr></thead><tbody>' + ''.join(
     f'<tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>' for a, b, c in [
+        ('Farinha estocada no chão, sacos rasgados', 'Risco de contaminação, pragas e desperdício', 'Estrados, recipiente com tampa e POP 05'),
+        ('Freezer com gelo, ferrugem e sem etiquetas', 'Temperatura instável e validade sem controle', 'Degelo, higienização, etiquetas e planilha'),
+        ('Estoque de caixas desorganizado e umidade', 'Embalagem contaminada e mofo', 'Organização, prateleiras e reparo da parede'),
+        ('Banheiro com infiltração e mofo no teto', 'Risco sanitário e item de fiscalização', 'Reparo do teto e lixeira com tampa e pedal'),
         ('Tamanho da pizza definido “no olho”', 'Pizzas com tamanhos e custos diferentes; sobra de massa aparada', 'Peso da bolinha, gabarito e marcação na bancada'),
         ('Catupiry sem medida padrão', 'Quantidade varia por pizzaiolo; custo sem controle', 'Teste de pesagem e bico padrão'),
         ('Bisnaga com ponta cortada', 'Abertura muda a cada bisnaga', 'Saco descartável + adaptador + bico'),
@@ -84,23 +90,23 @@ s4 = sl(4, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><
         ('Responsabilidades informais', 'Tarefas sem dono; ninguém confere', 'Divisão por praça e supervisores'),
         ('Nova fase: cores e reforma', 'Marca e cardápio desatualizados', 'Proposta de identidade e cardápio')]) + '</tbody></table>')
 
-s5 = sl(5, '2ª visita · operação', 'Padronizar <span>para economizar</span>', '<div class="cols" style="grid-template-columns:1.1fr 1fr">' +
+s5 = sl(6, '2ª visita · operação', 'Padronizar <span>para economizar</span>', '<div class="cols" style="grid-template-columns:1.1fr 1fr">' +
         f'<div class="card"><h4>Entregues</h4>{ul(["<b>Guia “Como medir o catupiry”</b>: comparação de métodos, teste de pesagem, formulários e conferência semanal.", "<b>Guia “Bico no catupiry”</b>: marcas, opções sem trocar o fornecedor e lista de compras.", "<b>Materiais e sugestão de compras</b>: gabarito, balança, termômetro e plano de compras."])}</div>' +
         th([('cat', 'Como medir o catupiry'), ('bico', 'Bico no catupiry')], 92) + '</div>')
 
-s6 = sl(6, '2ª visita · marca', 'Uma marca para a <span>nova fase</span>', '<div class="cols" style="grid-template-columns:1fr 1.25fr">' +
+s6 = sl(7, '2ª visita · marca', 'Uma marca para a <span>nova fase</span>', '<div class="cols" style="grid-template-columns:1fr 1.25fr">' +
         f'<div class="card"><h4>Propostas</h4>{ul(["<b>Proposta comercial</b> de identidade visual e cardápio, com pacotes e combos.", "<b>Cardápio em preto e verde</b>: tríptico de mesa e cardápio redondo, com preços (Média R$ 45).", "<b>Cardápio digital</b> no site, com pedido pelo WhatsApp.", "<b>Questionário de briefing</b> para fechar marca e cardápio."])}</div>' +
         th([('prop', 'Proposta'), ('dig', 'Cardápio digital'), ('quest', 'Briefing')], 62) + th([('card3', 'Cardápio em tamanho real')], 44) + '</div>')
 
-s7 = sl(7, '2ª visita · boas práticas', 'Segurança dos alimentos <span>no papel e na parede</span>', '<div class="cols" style="grid-template-columns:1fr 1.45fr">' +
+s7 = sl(8, '2ª visita · boas práticas', 'Segurança dos alimentos <span>no papel e na parede</span>', '<div class="cols" style="grid-template-columns:1fr 1.45fr">' +
         f'<div class="card"><h4>Conforme a RDC ANVISA 216/2004</h4>{ul(["<b>8 POPs</b>: os 4 obrigatórios + recebimento, hortifrútis, forno a lenha e delivery/salão.", "<b>Duas versões</b>: manual completo (gestão) e guia da equipe.", "<b>Treinamento</b>: roteiro de 2 h, dinâmicas, avaliação e lista de presença.", "<b>Cartilha</b> para cada funcionário.", "<b>Sinalização</b>: cartazes dos POPs, lavagem das mãos, 16 adesivos e etiquetas."])}</div>' +
         th([('popg', 'Manual (gestão)'), ('pope', 'Guia da equipe'), ('sin2', 'Cartaz de POP'), ('cart', 'Cartilha')], 52) + '</div>')
 
-s8 = sl(8, '2ª visita · equipe', 'Cada um <span>na sua praça</span>', '<div class="cols" style="grid-template-columns:1fr 1.1fr">' +
+s8 = sl(9, '2ª visita · equipe', 'Cada um <span>na sua praça</span>', '<div class="cols" style="grid-template-columns:1fr 1.1fr">' +
         f'<div class="card"><h4>Organização da equipe</h4>{ul(["<b>8 praças</b>: massa, pré-preparo, montagem, forno, expedição, atendimento e caixa, estoque e higienização.", "<b>Supervisor por turno</b>, com rotina de abertura, turno e fechamento.", "<b>Quem higieniza cada equipamento</b>: masseira, balança, forno, geladeiras, bisnagas.", "<b>Termo de responsabilidade</b> assinado por praça."])}</div>' +
         th([('prac', 'Divisão por praça'), ('trein', 'Treinamento')], 78) + '</div>')
 
-s9 = sl(9, '3ª visita', 'Próximos <span>passos</span>', '<div class="cols" style="grid-template-columns:1fr 1fr">' +
+s9 = sl(10, '3ª visita', 'Próximos <span>passos</span>', '<div class="cols" style="grid-template-columns:1fr 1fr">' +
         f'<div class="card"><h4>Na 3ª visita</h4>{ul(["Reunião com a gestão para definir responsáveis por setor e supervisores.", "Treinamento de higienização por equipe (setor de cima e pizzaiolos).", "Aprovação, assinatura e afixação dos POPs e cartazes.", "Início das planilhas de registro (temperatura, higienização, higiene pessoal).", "Teste de pesagem do catupiry com o bico padrão."])}</div>' +
         f'<div class="card" style="border-top-color:{OR}"><h4>Decisões da casa</h4>{ul(["Validade e armazenamento da massa (geladeira ou freezer).", "Empresa de controle de pragas e data da última limpeza da caixa d\'água.", "Produtos de limpeza e de hortifrútis em uso.", "Pacote de marca e cardápio e paleta de cores.", "Lista completa de sabores, bebidas e preços."])}</div></div>')
 
@@ -110,4 +116,4 @@ s10 = f'''<section class="s" style="background:{INK};color:#fff"><div class="chk
 <div style="display:flex;gap:12mm;margin-top:10mm">''' + ''.join(f'<div><div class="big" style="color:{OR}">{a}</div><div style="font-size:10pt;opacity:.85;margin-top:1mm">{b}</div></div>' for a, b in [('2', 'visitas realizadas'), ('8', 'POPs elaborados'), ('8', 'praças organizadas'), ('1', 'visita de implantação')]) + '''</div></div></div>
 <div class="chk" style="bottom:0"></div></section>'''
 
-open('apresentacao.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Speciale · Relatório de acompanhamento</title>{CSS}</head><body>{capa}{s2}{s3}{s4}{s5}{s6}{s7}{s8}{s9}{s10}</body></html>')
+open('apresentacao.html', 'w').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Speciale · Relatório de acompanhamento</title>{CSS}</head><body>{capa}{s2}{s3}{s3b}{s4}{s5}{s6}{s7}{s8}{s9}{s10}</body></html>')
