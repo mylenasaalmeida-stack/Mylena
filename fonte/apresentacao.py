@@ -67,11 +67,11 @@ s2 = sl(2, 'Visão geral', 'Três visitas, <span>um plano</span>', f'''<div clas
 {ul(['Conversa com o proprietário', 'Diagnóstico do local e da operação', 'Questionários entregues à equipe'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
 <div class="v" style="background:{CR}"><div class="d">2</div><h4>Retorno e melhorias</h4><small>2ª visita · {DATA}</small>
 {ul(['Retorno do diagnóstico', 'Melhorias propostas para a operação', 'Materiais de padronização, marca e boas práticas'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div>
-<div class="v" style="background:#fff;border:2px dashed {RED}"><div class="d">3</div><h4>Implantação</h4><small>3ª visita · a agendar</small>
-{ul(['Treinamento da equipe por setor', 'Definição de responsáveis e supervisores', 'Aprovação e afixação dos POPs'])}<span class="tag" style="background:{OR};color:#fff">Próxima etapa</span></div></div>''')
+<div class="v" style="background:{CR}"><div class="d">3</div><h4>Orientação e entrega</h4><small>3ª visita · {DATA}</small>
+{ul(['Orientação de boas práticas à equipe', 'Entrega do caderno com os POPs obrigatórios', 'Entrega dos adesivos para colagem'])}<span class="tag" style="background:#2f8a4e;color:#fff">Concluída</span></div></div>''')
 
 s3 = sl(3, '1ª visita', 'Conhecer a casa <span>por dentro</span>', f'''<div style="display:grid;grid-template-columns:1fr 62mm;gap:7mm"><div class="cols" style="grid-template-columns:1fr 1fr 1fr">
-<div class="card"><div class="big">01</div><h4 style="margin-top:3mm">Conversa com o dono</h4>{ul(['Objetivos do negócio e momento da casa', 'Mudança de cores e reforma do espaço', 'Principais dores na operação'])}</div>
+<div class="card"><div class="big">01</div><h4 style="margin-top:3mm">Conversa com o dono</h4>{ul(['Diagnóstico inicial da operação', 'Falta de orientação sobre as boas práticas exigidas pela norma (RDC 216)', 'Pouco conhecimento sobre armazenamento, validade e etiquetagem dos alimentos'])}</div>
 <div class="card"><div class="big">02</div><h4 style="margin-top:3mm">Diagnóstico do local</h4>{ul(['Visita à cozinha, estoque, salão e área do forno', 'Acompanhamento da produção da massa e da montagem', 'Registro fotográfico da operação'])}</div>
 <div class="card"><div class="big">03</div><h4 style="margin-top:3mm">Questionários à equipe</h4>{ul(['Questionários entregues aos funcionários', 'Rotina, dificuldades e sugestões de quem está na operação', 'Base para as melhorias propostas'])}</div></div>
 <figure style="text-align:center;font-size:8.5pt;color:#555"><img src="img/visita/equipe.jpg" style="width:62mm;height:118mm;object-fit:cover;object-position:50% 30%;border-radius:6px;display:block;margin-bottom:2mm">Equipe na visita técnica</figure></div>''')
@@ -86,7 +86,8 @@ s4 = sl(5, 'Diagnóstico', 'O que <span>observamos</span>', '<table><thead><tr><
         ('Tamanho da pizza definido “no olho”', 'Pizzas com tamanhos e custos diferentes; sobra de massa aparada', 'Peso da bolinha, gabarito e marcação na bancada'),
         ('Catupiry sem medida padrão', 'Quantidade varia por pizzaiolo; custo sem controle', 'Teste de pesagem e bico padrão'),
         ('Bisnaga com ponta cortada', 'Abertura muda a cada bisnaga', 'Saco descartável + adaptador + bico'),
-        ('Procedimentos não documentados', 'Risco na fiscalização e treinamento difícil', '8 POPs, cartilha e sinalização'),
+        ('Falta de orientação em boas práticas', 'Armazenamento, validade e etiquetagem sem padrão', 'Orientação da equipe, POPs e etiquetas'),
+        ('Procedimentos não documentados', 'Risco na fiscalização e orientação difícil', 'Caderno de POPs, cartilha e sinalização'),
         ('Responsabilidades informais', 'Tarefas sem dono; ninguém confere', 'Divisão por praça e supervisores'),
         ('Nova fase: cores e reforma', 'Marca e cardápio desatualizados', 'Proposta de identidade e cardápio')]) + '</tbody></table>')
 
@@ -110,21 +111,21 @@ s6 = sl(8, 'Extra · marca e cardápio', 'Uma marca para a <span>nova fase</span
         th([('prop', 'Proposta'), ('dig', 'Cardápio digital'), ('quest', 'Briefing')], 62) + th([('card3', 'Cardápio em tamanho real')], 44) + '</div>')
 
 s7 = sl(9, '2ª visita · boas práticas', 'Segurança dos alimentos <span>no papel e na parede</span>', '<div class="cols" style="grid-template-columns:1fr 1.45fr">' +
-        f'<div class="card"><h4>Conforme a RDC ANVISA 216/2004</h4>{ul(["<b>8 POPs</b>: os 4 obrigatórios + recebimento, hortifrútis, forno a lenha e delivery/salão.", "<b>Duas versões</b>: manual completo (gestão) e guia da equipe.", "<b>Treinamento</b>: roteiro de 2 h, dinâmicas, avaliação e lista de presença.", "<b>Cartilha</b> para cada funcionário.", "<b>Sinalização</b>: cartazes dos POPs, lavagem das mãos, 16 adesivos e etiquetas."])}</div>' +
+        f'<div class="card"><h4>Conforme a RDC ANVISA 216/2004</h4>{ul(["<b>8 POPs</b>: os 4 obrigatórios + recebimento, hortifrútis, forno a lenha e delivery/salão.", "<b>Duas versões</b>: manual completo (gestão) e guia da equipe.", "<b>Orientação de boas práticas</b>: roteiro de 2 h, dinâmicas, avaliação e lista de presença.", "<b>Cartilha</b> para cada funcionário.", "<b>Sinalização</b>: cartazes dos POPs, lavagem das mãos, 16 adesivos e etiquetas."])}</div>' +
         th([('popg', 'Manual (gestão)'), ('pope', 'Guia da equipe'), ('sin2', 'Cartaz de POP'), ('cart', 'Cartilha')], 52) + '</div>')
 
 s8 = sl(10, '2ª visita · equipe', 'Cada um <span>na sua praça</span>', '<div class="cols" style="grid-template-columns:1fr 1.1fr">' +
         f'<div class="card"><h4>Organização da equipe</h4>{ul(["<b>8 praças</b>: massa, pré-preparo, montagem, forno, expedição, atendimento e caixa, estoque e higienização.", "<b>Supervisor por turno</b>, com rotina de abertura, turno e fechamento.", "<b>Quem higieniza cada equipamento</b>: masseira, balança, forno, geladeiras, bisnagas.", "<b>Termo de responsabilidade</b> assinado por praça."])}</div>' +
-        th([('prac', 'Divisão por praça'), ('trein', 'Treinamento')], 78) + '</div>')
+        th([('prac', 'Divisão por praça'), ('trein', 'Orientação de boas práticas')], 78) + '</div>')
 
-s9 = sl(11, '3ª visita', 'Próximos <span>passos</span>', '<div class="cols" style="grid-template-columns:1fr 1fr">' +
-        f'<div class="card"><h4>Na 3ª visita</h4>{ul(["Reunião com a gestão para definir responsáveis por setor e supervisores.", "Treinamento de higienização por equipe (setor de cima e pizzaiolos).", "Aprovação, assinatura e afixação dos POPs e cartazes.", "Início das planilhas de registro (temperatura, higienização, higiene pessoal).", "Teste de pesagem do catupiry com o bico padrão."])}</div>' +
-        f'<div class="card" style="border-top-color:{OR}"><h4>Decisões da casa</h4>{ul(["Validade e armazenamento da massa (geladeira ou freezer).", "Empresa de controle de pragas e data da última limpeza da caixa d\'água.", "Produtos de limpeza e de hortifrútis em uso.", "Pacote de marca e cardápio e paleta de cores.", "Lista completa de sabores, bebidas e preços."])}</div></div>')
+s9 = sl(11, '3ª visita', 'Orientação <span>e entrega</span>', '<div class="cols" style="grid-template-columns:1fr 1fr">' +
+        f'<div class="card"><h4>O que foi feito</h4>{ul(["<b>Orientação de boas práticas</b> à equipe, por setor: higiene pessoal, lavagem das mãos, armazenamento, validade, etiquetagem e higienização.", "<b>Caderno com os POPs obrigatórios</b> entregue à gestão, para assinatura e consulta.", "<b>Adesivos para colagem</b>: lavagem das mãos, geladeira e freezer, PVPS, crus e prontos, lixeira e outros.", "<b>Etiquetas de validade</b> e planilhas de registro.", "Alinhamento com a gestão sobre responsáveis por setor e supervisores."])}</div>' +
+        f'<div class="card" style="border-top-color:{OR}"><h4>Para a casa manter</h4>{ul(["Assinar e datar os POPs e deixá-los acessíveis à equipe.", "Colar os adesivos e cartazes nos pontos indicados.", "Preencher as planilhas de temperatura e higienização todos os dias.", "Etiquetar tudo o que for aberto ou porcionado.", "Comprar estrados, prateleiras, contentores e lixeiras com pedal."])}</div></div>')
 
 s10 = f'''<section class="s" style="background:{INK};color:#fff"><div class="chk" style="top:0"></div><div class="in">
 <div style="position:absolute;top:40mm;left:0;right:0"><div class="k" style="color:#ffb98a">Resumo</div>
-<div style="font-family:'Roboto Condensed';font-weight:800;text-transform:uppercase;font-size:44pt;line-height:1;margin-top:3mm">Diagnóstico feito.<br>Melhorias entregues.<br><span style="color:{OR}">Agora, implantar.</span></div>
-<div style="display:flex;gap:12mm;margin-top:10mm">''' + ''.join(f'<div><div class="big" style="color:{OR}">{a}</div><div style="font-size:10pt;opacity:.85;margin-top:1mm">{b}</div></div>' for a, b in [('2', 'visitas realizadas'), ('8', 'POPs elaborados'), ('8', 'praças organizadas'), ('1', 'visita de implantação')]) + '''</div></div></div>
+<div style="font-family:'Roboto Condensed';font-weight:800;text-transform:uppercase;font-size:44pt;line-height:1;margin-top:3mm">Diagnóstico feito.<br>Equipe orientada.<br><span style="color:{OR}">Boas práticas na rotina.</span></div>
+<div style="display:flex;gap:12mm;margin-top:10mm">''' + ''.join(f'<div><div class="big" style="color:{OR}">{a}</div><div style="font-size:10pt;opacity:.85;margin-top:1mm">{b}</div></div>' for a, b in [('3', 'visitas realizadas'), ('4', 'POPs obrigatórios no caderno'), ('16', 'adesivos entregues'), ('8', 'praças organizadas')]) + '''</div></div></div>
 <div class="chk" style="bottom:0"></div></section>'''
 
 import re as _re
